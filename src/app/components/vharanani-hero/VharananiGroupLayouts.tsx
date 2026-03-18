@@ -1,764 +1,1087 @@
-import { type ReactNode } from 'react';
+import { useState, useEffect, useRef, type ReactNode } from 'react';
+import { motion } from 'motion/react';
 import {
-  Building2, Landmark, Heart, HardHat, Globe,
-  Shield, Layers, MapPin, Mail, Phone,
-  ArrowRight, Cpu, Plane, ChevronRight,
-  Sprout, Route, TrendingUp, Users,
-  Gavel, Scale, Eye, FileCheck, Lock,
+  Building2, Landmark, Heart, HardHat, Cpu, Shield, Layers, Globe,
+  Sprout, Route, TrendingUp, Users, Gavel, FileCheck, Scale, Eye,
+  Linkedin, Twitter, Facebook, MapPin, Phone, Mail,
 } from 'lucide-react';
-import { ImagePlaceholder } from '../common/ImagePlaceholder';
+import { ImageWithFallback } from '../figma/ImageWithFallback';
 
 // ═══════════════════════════════════════════════════════════
-// WIREFRAME LABEL — shows layout name/description
+// CUSTOM useInView HOOK (IntersectionObserver)
 // ═══════════════════════════════════════════════════════════
 
-function WireframeLabel({ layout, description }: { layout: string; description: string }) {
+function useInView(ref: React.RefObject<HTMLElement | null>, options?: { once?: boolean; amount?: number }) {
+  const [inView, setInView] = useState(false);
+  const hasTriggered = useRef(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (options?.once && hasTriggered.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          hasTriggered.current = true;
+          if (options?.once) observer.disconnect();
+        } else if (!options?.once) {
+          setInView(false);
+        }
+      },
+      { threshold: options?.amount ?? 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [ref, options?.once, options?.amount]);
+
+  return inView;
+}
+
+// ═══════════════════════════════════════════════════════════
+// ANIMATED COUNTER
+// ═══════════════════════════════════════════════════════════
+
+function AnimatedCounter({ target, suffix = '', prefix = '', duration = 2000 }: { target: number; suffix?: string; prefix?: string; duration?: number }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, amount: 0.5 });
+
+  useEffect(() => {
+    if (!inView) return;
+    let start = 0;
+    const increment = target / (duration / 16);
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= target) {
+        setCount(target);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(start));
+      }
+    }, 16);
+    return () => clearInterval(timer);
+  }, [inView, target, duration]);
+
   return (
-    <div className="mb-6 pb-4" style={{ borderBottom: '2px solid var(--vharanani-burgundy)' }}>
-      <div className="flex items-center gap-3 mb-1">
-        <div
-          className="typo-caption tracking-[0.2em] uppercase px-2 py-1 font-inter"
-          style={{ color: 'white', background: 'var(--vharanani-burgundy)' }}
-        >
-          WIREFRAME
-        </div>
-        <div
-          className="font-bebas-neue typo-headline-small tracking-wide uppercase"
-          style={{ color: 'var(--vharanani-charcoal)' }}
-        >
-          {layout}
-        </div>
-      </div>
-      <div className="font-inter typo-copy-small mt-1" style={{ color: 'var(--vharanani-charcoal-60)' }}>
-        {description}
-      </div>
+    <div ref={ref} className="typo-headline-big font-bebas-neue" style={{ color: 'var(--vharanani-burgundy)' }}>
+      {prefix}{count.toLocaleString()}{suffix}
     </div>
   );
 }
 
 // ═══════════════════════════════════════════════════════════
-// WIREFRAME SPEC — shows layout structural notes
+// SECTION WRAPPER — consistent padding + animation
 // ═══════════════════════════════════════════════════════════
 
-function WireframeSpec({ items }: { items: string[] }) {
+function SectionWrapper({ children, className = '', dark = false }: { children: ReactNode; className?: string; dark?: boolean }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, amount: 0.1 });
+
   return (
-    <div className="mt-6 pt-4" style={{ borderTop: '1px dashed var(--vharanani-charcoal-20)' }}>
-      <div className="typo-caption tracking-[0.15em] uppercase mb-2 font-inter" style={{ color: 'var(--vharanani-charcoal-60)' }}>
-        LAYOUT SPEC
-      </div>
-      <div className="space-y-1">
-        {items.map((item, i) => (
-          <div key={i} className="flex items-start gap-2">
-            <div className="w-1 h-1 mt-[6px] flex-shrink-0" style={{ background: 'var(--vharanani-burgundy)' }} />
-            <div className="font-inter typo-meta" style={{ color: 'var(--vharanani-charcoal-60)' }}>{item}</div>
-          </div>
-        ))}
-      </div>
-    </div>
+    <motion.section
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+      transition={{ duration: 0.7, ease: 'easeOut' }}
+      className={`py-16 md:py-24 px-6 md:px-12 lg:px-20 ${className}`}
+      style={{ background: dark ? 'var(--vharanani-charcoal)' : '#ffffff' }}
+    >
+      {children}
+    </motion.section>
   );
 }
 
 // ═══════════════════════════════════════════════════════════
-// SECTION 2: EXECUTIVE SUMMARY — Two-column split (60/40)
+// IMAGES — Unsplash photography
+// ═══════════════════════════════════════════════════════════
+
+const IMAGES = {
+  headquarters: 'https://images.unsplash.com/photo-1726056295062-bc43f12e11f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwY29ycG9yYXRlJTIwc2t5bGluZSUyMG1vZGVybiUyMGdsYXNzJTIwYnVpbGRpbmd8ZW58MXx8fHwxNzczNzQ3NDE4fDA&ixlib=rb-4.1.0&q=80&w=1080',
+  headquartersSecondary: 'https://images.unsplash.com/photo-1585484147302-3ab2f01f9f52?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxTb3V0aCUyMEFmcmljYSUyMGluZnJhc3RydWN0dXJlJTIwY29uc3RydWN0aW9uJTIwYWVyaWFsJTIwaGlnaHdheXxlbnwxfHx8fDE3NzM3NDc0MTh8MA&ixlib=rb-4.1.0&q=80&w=1080',
+  headquartersTertiary: 'https://images.unsplash.com/photo-1758691736975-9f7f643d178e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjB0ZWFtJTIwZGl2ZXJzZSUyMHByb2Zlc3Npb25hbCUyMG9mZmljZXxlbnwxfHx8fDE3NzM3NDc0MjJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+  portfolio: 'https://images.unsplash.com/photo-1653378972336-103e1ea62721?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwaW52ZXN0bWVudCUyMHBvcnRmb2xpbyUyMGJ1c2luZXNzJTIwc3RyYXRlZ3l8ZW58MXx8fHwxNzczMDU2MzM0fDA&ixlib=rb-4.1.0&q=80&w=1080',
+  pillars: 'https://images.unsplash.com/photo-1769738360873-3ba6cac0b308?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncm93dGglMjBwaWxsYXJzJTIwY29ycG9yYXRlJTIwcGxhbm5pbmclMjB3aGl0ZWJvYXJkfGVufDF8fHx8MTc3MzA1NjMzOHww&ixlib=rb-4.1.0&q=80&w=1080',
+  leadership: 'https://images.unsplash.com/photo-1758518727707-b023e285b709?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBncm91cCUyMGxlYWRlcnNoaXAlMjBib2FyZHJvb20lMjBleGVjdXRpdmV8ZW58MXx8fHwxNzczMDU1OTEyfDA&ixlib=rb-4.1.0&q=80&w=1080',
+  impact: 'https://images.unsplash.com/photo-1658129850537-ea7517a9682f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2NpYWwlMjBpbXBhY3QlMjBjb21tdW5pdHklMjBkZXZlbG9wbWVudCUyMEFmcmljYXxlbnwxfHx8fDE3NzMwNTYzMzV8MA&ixlib=rb-4.1.0&q=80&w=1080',
+  visionMission: 'https://images.unsplash.com/photo-1656646424292-cf207f3f1749?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjB2aXNpb24lMjBtaXNzaW9uJTIwc3RhdGVtZW50JTIwYm9hcmRyb29tfGVufDF8fHx8MTc3MzA1NjMzNXww&ixlib=rb-4.1.0&q=80&w=1080',
+  governance: 'https://images.unsplash.com/photo-1556219845-95c1847629e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBnb3Zlcm5hbmNlJTIwYW5udWFsJTIwcmVwb3J0JTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc3MzA1NTkxM3ww&ixlib=rb-4.1.0&q=80&w=1080',
+  companies: 'https://images.unsplash.com/photo-1682924754699-dcf11b641343?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXN0YWluYWJsZSUyMGluZnJhc3RydWN0dXJlJTIwZGV2ZWxvcG1lbnQlMjBBZnJpY2ElMjByb2Fkc3xlbnwxfHx8fDE3NzMwNTYzMzZ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+  news: 'https://images.unsplash.com/photo-1766740606233-6573571caa6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZXdzJTIwbWVkaWElMjB1cGRhdGUlMjBjb3Jwb3JhdGUlMjBvZmZpY2V8ZW58MXx8fHwxNzczMDU2MzQyfDA&ixlib=rb-4.1.0&q=80&w=1080',
+  construction: 'https://images.unsplash.com/photo-1764222233275-87dc016c11dc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBwcm9wZXJ0eSUyMGRldmVsb3BtZW50JTIwYWVyaWFsfGVufDF8fHx8MTc3MjczNDk4N3ww&ixlib=rb-4.1.0&q=80&w=1080',
+  foundation: 'https://images.unsplash.com/photo-1694286068274-1058e6b04dcc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwY2hhcml0eSUyMGZvdW5kYXRpb24lMjBjb21tdW5pdHl8ZW58MXx8fHwxNzcyNzM0OTg2fDA&ixlib=rb-4.1.0&q=80&w=1080',
+  dmft: 'https://images.unsplash.com/photo-1707410148802-fe08fe956398?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBkZXZlbG9wbWVudCUyMGluZnJhc3RydWN0dXJlJTIwc291dGglMjBhZnJpY2F8ZW58MXx8fHwxNzcyNzM0OTg3fDA&ixlib=rb-4.1.0&q=80&w=1080',
+};
+
+
+// ═══════════════════════════════════════════════════════════
+// SECTION 1: EXECUTIVE SUMMARY — "Who We Are"
+// Full-width split layout: image left, narrative right
 // ═══════════════════════════════════════════════════════════
 
 export function GroupWireframe_ExecutiveSummary(): ReactNode {
-  return (
-    <div>
-      <WireframeLabel
-        layout="Two-Column Split (60 / 40)"
-        description="Executive summary with architectural image left, narrative + animated counters right"
-      />
+  const milestones = [
+    { year: '2001', event: 'Founded as a construction enterprise in Limpopo' },
+    { year: '2008', event: 'Achieved CIDB Grade 9 — the highest grading in SA' },
+    { year: '2015', event: 'Launched the David Mabilu Foundation for social impact' },
+    { year: '2020', event: 'Expanded into property development and strategic investments' },
+  ];
 
-      {/* Wireframe Preview */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-0 overflow-hidden" style={{ border: '2px solid var(--vharanani-charcoal-20)' }}>
-        {/* Left Column — 60% (3 of 5) */}
-        <div className="md:col-span-3 relative h-[320px] md:h-auto">
-          <ImagePlaceholder label="Architectural Detail" className="absolute inset-0 w-full h-full" />
-          {/* Wireframe overlay annotation */}
-          <div className="absolute bottom-3 left-3 px-2 py-1" style={{ background: 'rgba(0,0,0,0.7)' }}>
-            <span className="font-inter typo-meta text-white tracking-wider uppercase">60% — B&W Image / Architectural Detail</span>
+  return (
+    <SectionWrapper className="!py-0 !px-0">
+      {/* ── HERO IMAGE BAND ── */}
+      <div className="relative h-[55vh] min-h-[420px] overflow-hidden">
+        <ImageWithFallback
+          src={IMAGES.headquarters}
+          alt="Vharanani Group Corporate Headquarters"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0" style={{
+          background: 'linear-gradient(180deg, rgba(44,45,45,0.2) 0%, rgba(44,45,45,0.55) 50%, rgba(44,45,45,0.95) 100%)'
+        }} />
+        <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'var(--vharanani-burgundy)' }} />
+
+        <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 lg:px-20 pb-12 max-w-7xl mx-auto w-full">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
+            <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
+              SEC 01 — INTELLIGENCE
+            </span>
+          </div>
+          <h2 className="typo-header font-bebas-neue uppercase tracking-wide text-white mb-3" style={{ lineHeight: 0.95 }}>
+            Building Africa's<br />Future
+          </h2>
+          <div className="flex items-center gap-4 mt-2">
+            <div className="typo-caption tracking-[0.2em] uppercase px-3 py-1 font-inter" style={{ background: 'var(--vharanani-burgundy)', color: 'white' }}>
+              EST. 2001
+            </div>
+            <span className="typo-caption tracking-[0.15em] uppercase font-inter text-white/50">
+              Polokwane, Limpopo — South Africa
+            </span>
           </div>
         </div>
+      </div>
 
-        {/* Right Column — 40% (2 of 5) */}
-        <div className="md:col-span-2 p-6 md:p-8 flex flex-col justify-center" style={{ background: 'rgba(44,45,45,0.02)' }}>
-          {/* Tagline */}
-          <div
-            className="typo-caption tracking-[0.3em] uppercase font-inter mb-4"
-            style={{ color: 'var(--vharanani-burgundy)' }}
-          >
-            WHO WE ARE
-          </div>
+      {/* ── MAIN CONTENT GRID ── */}
+      <div className="px-6 md:px-12 lg:px-20 py-16 md:py-20" style={{ background: '#ffffff' }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-16">
+            {/* Left — Large statement */}
+            <div className="lg:col-span-5">
+              <div className="w-12 h-[3px] mb-8" style={{ background: 'var(--vharanani-burgundy)' }} />
+              <blockquote className="typo-subline font-bebas-neue uppercase tracking-wide mb-8" style={{ color: 'var(--vharanani-charcoal)', lineHeight: 1.2 }}>
+                A wholly Black-owned investment holding company driving infrastructure, property development, innovation, and social impact across South Africa.
+              </blockquote>
+              <p className="typo-copy-small font-inter italic pl-5" style={{ borderLeft: '2px solid var(--vharanani-burgundy)', color: 'var(--vharanani-charcoal-60)' }}>
+                "We build not just structures, but the architecture of opportunity for generations to come."
+              </p>
+            </div>
 
-          {/* Body text */}
-          <div className="font-inter typo-copy mb-6" style={{ color: 'var(--vharanani-charcoal)' }}>
-            Vharani Group is an innovation-driven African conglomerate founded and led by David Mabilu. With a diversified portfolio spanning construction, property development, mining, technology, aviation, and philanthropy.
-          </div>
+            {/* Right — Narrative */}
+            <div className="lg:col-span-7">
+              <p className="typo-copy font-inter mb-6" style={{ color: 'var(--vharanani-charcoal-80)' }}>
+                Founded by David Mabilu, the Vharanani Group represents a vision of sustainable growth rooted in African excellence. From humble beginnings in Limpopo province, the Group has evolved into one of South Africa's most respected diversified investment holding companies.
+              </p>
+              <p className="typo-copy font-inter mb-8" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+                Our portfolio spans construction and infrastructure development, property investment, social development through the David Mabilu Foundation, and strategic growth ventures — all unified by principled leadership and an unwavering commitment to uplifting communities.
+              </p>
 
-          {/* Counter Animation Stats */}
-          <div className="grid grid-cols-3 gap-3">
-            {[
-              { value: '20+', label: 'Years Experience' },
-              { value: '6+', label: 'Diversified Sectors' },
-              { value: '100%', label: 'Black-Owned' },
-            ].map((stat, i) => (
-              <div key={i} className="text-center p-3" style={{ borderTop: '3px solid var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.04)' }}>
-                <div className="font-bebas-neue typo-subline" style={{ color: 'var(--vharanani-burgundy)' }}>
-                  {stat.value}
+              {/* Two-image mosaic */}
+              <div className="grid grid-cols-2 gap-3">
+                <div className="relative h-[180px] overflow-hidden">
+                  <ImageWithFallback
+                    src={IMAGES.headquartersSecondary}
+                    alt="Vharanani infrastructure projects"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 40%, rgba(44,45,45,0.6) 100%)' }} />
+                  <div className="absolute bottom-3 left-3">
+                    <span className="typo-meta tracking-[0.15em] uppercase font-inter text-white/80">Infrastructure</span>
+                  </div>
                 </div>
-                <div className="font-inter typo-meta tracking-wider uppercase mt-1" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+                <div className="relative h-[180px] overflow-hidden">
+                  <ImageWithFallback
+                    src={IMAGES.headquartersTertiary}
+                    alt="Vharanani corporate team"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 40%, rgba(44,45,45,0.6) 100%)' }} />
+                  <div className="absolute bottom-3 left-3">
+                    <span className="typo-meta tracking-[0.15em] uppercase font-inter text-white/80">Our People</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* ── STATS BAR ── */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-0" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
+            {[
+              { value: 20, suffix: '+', label: 'Years of Impact' },
+              { value: 4, suffix: '', label: 'Operating Divisions' },
+              { value: 500, suffix: '+', label: 'Projects Delivered' },
+              { value: 5, suffix: '', label: 'Provinces Reached' },
+            ].map((stat, i) => (
+              <div
+                key={stat.label}
+                className="p-6 md:p-8 text-center"
+                style={{
+                  borderRight: i < 3 ? '1px solid var(--vharanani-charcoal-20)' : 'none',
+                  borderBottom: '1px solid var(--vharanani-charcoal-20)',
+                }}
+              >
+                <AnimatedCounter target={stat.value} suffix={stat.suffix} />
+                <div className="typo-caption tracking-[0.15em] uppercase font-inter mt-2" style={{ color: 'var(--vharanani-charcoal-60)' }}>
                   {stat.label}
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Wireframe annotation */}
-          <div className="mt-4 px-2 py-1 inline-block" style={{ background: 'rgba(137,43,28,0.08)', border: '1px dashed var(--vharanani-burgundy-60)' }}>
-            <span className="font-inter typo-meta tracking-wider uppercase" style={{ color: 'var(--vharanani-burgundy)' }}>↑ Counter animation on scroll</span>
+          {/* ── TIMELINE STRIP ── */}
+          <div className="mt-0" style={{ background: 'var(--vharanani-charcoal)' }}>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-0">
+              {milestones.map((m, i) => (
+                <motion.div
+                  key={m.year}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="p-6 md:p-8 relative"
+                  style={{
+                    borderRight: i < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none',
+                  }}
+                >
+                  <div className="typo-headline-big font-bebas-neue mb-2" style={{ color: 'var(--vharanani-burgundy)' }}>
+                    {m.year}
+                  </div>
+                  <div className="w-6 h-[2px] mb-3" style={{ background: 'rgba(255,255,255,0.15)' }} />
+                  <p className="typo-copy-small font-inter" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                    {m.event}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-
-      <WireframeSpec items={[
-        'Grid: 60/40 split — CSS grid-cols-5 (3 + 2)',
-        'Left: Full-bleed B&W image with CSS grayscale filter',
-        'Right: Small-caps tagline + body + 3-column stat counters',
-        'Stats: Counter animation triggers on scroll-into-view',
-        'Mobile: Stack vertically, image on top',
-      ]} />
-    </div>
+    </SectionWrapper>
   );
 }
 
+
 // ═══════════════════════════════════════════════════════════
-// SECTION 3: PORTFOLIO GRID — Three-card interactive Bento
-// ══════════════════════════════════════════════════════════
+// SECTION 2: PORTFOLIO GRID — "Our Portfolio"
+// Hover-expand cards for each subsidiary
+// ═══════════════════════════════════════════════════════════
 
 export function GroupWireframe_PortfolioGrid(): ReactNode {
-  const cards = [
+  const PORTFOLIO_IMAGES = {
+    construction: 'https://images.unsplash.com/photo-1768053823555-b75cd4ead6c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBzaXRlJTIwZXhjYXZhdG9yJTIwY2l2aWwlMjBlbmdpbmVlcmluZyUyMHJvYWR8ZW58MXx8fHwxNzczNzQ3NjY3fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    foundation: 'https://images.unsplash.com/photo-1632215861513-130b66fe97f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwY29tbXVuaXR5JTIwZWR1Y2F0aW9uJTIwY2hpbGRyZW4lMjBzY2hvb2wlMjBjbGFzc3Jvb218ZW58MXx8fHwxNzczNzQ3NjYzfDA&ixlib=rb-4.1.0&q=80&w=1080',
+    dmft: 'https://images.unsplash.com/photo-1505138074712-436c81be4f07?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjByZXNpZGVudGlhbCUyMGVzdGF0ZSUyMGRldmVsb3BtZW50JTIwc3VidXJiJTIwYWVyaWFsfGVufDF8fHx8MTc3Mzc0NzY2M3ww&ixlib=rb-4.1.0&q=80&w=1080',
+    holdings: 'https://images.unsplash.com/photo-1604926836687-bb58c880856a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjb3Jwb3JhdGUlMjBpbnZlc3RtZW50JTIwc3RyYXRlZ3klMjBncm93dGglMjBhYnN0cmFjdHxlbnwxfHx8fDE3NzM3NDc2NjR8MA&ixlib=rb-4.1.0&q=80&w=1080',
+  };
+
+  const divisions = [
     {
-      label: 'Construction & Infrastructure',
-      company: 'Vharani Properties',
-      focus: 'Construction & Infrastructure',
-      description: 'Delivering large-scale civil engineering and infrastructure projects across South Africa.',
+      title: 'Vharanani Properties',
+      tag: 'CONSTRUCTION & INFRASTRUCTURE',
       icon: <Building2 size={20} />,
+      image: PORTFOLIO_IMAGES.construction,
+      description: 'A leading CIDB Grade 9-rated construction company delivering large-scale civil engineering, road infrastructure, and public works projects across South Africa.',
+      stats: [
+        { value: '200+', label: 'Projects' },
+        { value: '800+', label: 'Employees' },
+        { value: 'Grade 9', label: 'CIDB Rating' },
+      ],
+      capabilities: ['Roads & Highways', 'Bridges & Structures', 'Water & Sanitation', 'Public Buildings'],
     },
     {
-      label: 'Property Development',
-      company: 'DMFT Property Developers',
-      focus: 'Property Development & Investments',
-      description: 'Managing strategic real estate assets and long-term property investments.',
+      title: 'The David Mabilu Foundation',
+      tag: 'SOCIAL DEVELOPMENT',
       icon: <Landmark size={20} />,
+      image: PORTFOLIO_IMAGES.foundation,
+      description: 'Committed to reducing poverty and sustainably improving the living standards of marginalised communities through education, housing, and entrepreneurship.',
+      stats: [
+        { value: '50K+', label: 'Lives Impacted' },
+        { value: '500+', label: 'Bursaries' },
+        { value: '5', label: 'Provinces' },
+      ],
+      capabilities: ['Education Bursaries', 'Housing Initiatives', 'Skills Development', 'Community Health'],
     },
     {
-      label: 'Social Impact',
-      company: 'David Mabilu Foundation',
-      focus: 'Social Impact',
-      description: 'Advancing education, housing access, entrepreneurship, and community upliftment.',
+      title: 'DMFT Property Developers',
+      tag: 'PROPERTY DEVELOPMENT',
       icon: <Heart size={20} />,
+      image: PORTFOLIO_IMAGES.dmft,
+      description: 'Creating exceptional residential and mixed-use developments, with a focus on accessible, quality housing and premium estate living across Gauteng and Limpopo.',
+      stats: [
+        { value: '15+', label: 'Developments' },
+        { value: '2,000+', label: 'Units' },
+        { value: 'R2B+', label: 'Portfolio Value' },
+      ],
+      capabilities: ['Residential Estates', 'Townhouse Complexes', 'Mixed-Use Precincts', 'Affordable Housing'],
     },
   ];
 
   return (
-    <div>
-      <WireframeLabel
-        layout="Three-Card Interactive Bento Grid"
-        description="Portfolio grid with hover-expand cards showing subsidiary companies and sector expertise"
-      />
-
-      {/* Wireframe Preview */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {cards.map((card, i) => (
-          <div
-            key={i}
-            className="group relative overflow-hidden transition-all duration-300 hover:-translate-y-1"
-            style={{ border: '2px solid var(--vharanani-charcoal-20)' }}
-          >
-            {/* Card Image */}
-            <div className="relative h-[200px] overflow-hidden">
-              <ImagePlaceholder label={card.label} className="absolute inset-0 w-full h-full" />
-              {/* Dark overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-              {/* Company name on image */}
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <h3 className="font-bebas-neue typo-subline tracking-wide text-white">
-                  {card.company}
-                </h3>
+    <SectionWrapper dark className="!py-0 !px-0">
+      {/* ── SECTION HEADER ── */}
+      <div className="px-6 md:px-12 lg:px-20 pt-16 md:pt-24 pb-12" style={{ background: 'var(--vharanani-charcoal)' }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+            <div className="lg:col-span-7">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
+                <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
+                  SEC 02 — HOLDINGS
+                </span>
               </div>
-              {/* Hover reveal link */}
-              <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-2 py-1 flex items-center gap-1" style={{ background: 'var(--vharanani-burgundy)' }}>
-                <span className="font-inter typo-meta text-white tracking-wider uppercase">View Details</span>
-                <ArrowRight size={10} className="text-white" />
-              </div>
+              <h2 className="typo-header font-bebas-neue uppercase tracking-wide text-white" style={{ lineHeight: 0.95 }}>
+                Our Portfolio
+              </h2>
             </div>
-
-            {/* Card Body */}
-            <div className="p-4" style={{ background: 'rgba(44,45,45,0.02)' }}>
-              <div className="flex items-center gap-2 mb-2">
-                <div style={{ color: 'var(--vharanani-burgundy)' }}>{card.icon}</div>
-                <div className="typo-caption tracking-[0.15em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
-                  {card.focus}
-                </div>
-              </div>
-              <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>
-                {card.description}
-              </div>
+            <div className="lg:col-span-5">
+              <p className="typo-copy font-inter" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                Three distinct divisions working in concert — construction, property development, and social impact — to deliver sustainable value across South Africa.
+              </p>
             </div>
-
-            {/* Bottom accent line */}
-            <div className="h-[3px] w-0 group-hover:w-full transition-all duration-500" style={{ background: 'var(--vharanani-burgundy)' }} />
           </div>
-        ))}
-      </div>
-
-      {/* Wireframe annotation */}
-      <div className="mt-3 flex items-center gap-2">
-        <div className="px-2 py-1" style={{ background: 'rgba(137,43,28,0.08)', border: '1px dashed var(--vharanani-burgundy-60)' }}>
-          <span className="font-inter typo-meta tracking-wider uppercase" style={{ color: 'var(--vharanani-burgundy)' }}>Hover: cards expand + reveal CTA link</span>
         </div>
       </div>
 
-      <WireframeSpec items={[
-        'Grid: 3-column equal cards (responsive stack on mobile)',
-        'Image: 200px height with gradient overlay + company name',
-        'Hover: translateY(-4px) + image scale(1.05) + reveal "View Details" CTA',
-        'Bottom accent: 3px burgundy line animates width on hover',
-        'Interaction: Cards link to respective division overlays',
-      ]} />
-    </div>
+      {/* ── FLAGSHIP DIVISION — Full-width hero card ── */}
+      <div style={{ background: 'var(--vharanani-charcoal)' }}>
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="grid grid-cols-1 lg:grid-cols-12 gap-0 overflow-hidden"
+            style={{ border: '1px solid rgba(255,255,255,0.1)' }}
+          >
+            {/* Image — spans 7 cols */}
+            <div className="lg:col-span-7 relative h-[320px] lg:h-[480px] overflow-hidden">
+              <ImageWithFallback
+                src={divisions[0].image}
+                alt={divisions[0].title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0" style={{
+                background: 'linear-gradient(135deg, rgba(137,43,28,0.35) 0%, rgba(44,45,45,0.3) 50%, rgba(44,45,45,0.7) 100%)'
+              }} />
+              {/* Floating number */}
+              <div className="absolute top-6 left-6">
+                <span className="typo-header font-bebas-neue" style={{ color: 'rgba(255,255,255,0.08)', lineHeight: 1 }}>01</span>
+              </div>
+              {/* Tag badge */}
+              <div className="absolute top-6 right-6">
+                <div className="px-3 py-1" style={{ background: 'var(--vharanani-burgundy)' }}>
+                  <span className="typo-meta tracking-[0.2em] uppercase font-inter text-white">Flagship</span>
+                </div>
+              </div>
+              {/* Bottom capabilities strip */}
+              <div className="absolute bottom-0 left-0 right-0 hidden md:flex">
+                {divisions[0].capabilities.map((cap, ci) => (
+                  <div
+                    key={cap}
+                    className="flex-1 py-3 px-2 text-center"
+                    style={{
+                      background: 'rgba(44,45,45,0.85)',
+                      backdropFilter: 'blur(8px)',
+                      borderRight: ci < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none',
+                    }}
+                  >
+                    <span className="typo-meta tracking-[0.1em] uppercase font-inter text-white/60">{cap}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Content — spans 5 cols */}
+            <div className="lg:col-span-5 p-8 md:p-10 flex flex-col justify-center" style={{ background: 'rgba(255,255,255,0.03)' }}>
+              <div className="flex items-center gap-2 mb-4">
+                <span style={{ color: 'var(--vharanani-burgundy)' }}>{divisions[0].icon}</span>
+                <span className="typo-caption tracking-[0.2em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
+                  {divisions[0].tag}
+                </span>
+              </div>
+              <h3 className="typo-headline-big font-bebas-neue uppercase tracking-wide text-white mb-4">
+                {divisions[0].title}
+              </h3>
+              <div className="w-10 h-[2px] mb-5" style={{ background: 'var(--vharanani-burgundy)' }} />
+              <p className="typo-copy font-inter text-white/60 mb-8">
+                {divisions[0].description}
+              </p>
+
+              {/* Stats row */}
+              <div className="grid grid-cols-3 gap-0" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+                {divisions[0].stats.map((stat, si) => (
+                  <div
+                    key={stat.label}
+                    className="p-4 text-center"
+                    style={{ borderRight: si < 2 ? '1px solid rgba(255,255,255,0.1)' : 'none' }}
+                  >
+                    <div className="typo-headline-small font-bebas-neue" style={{ color: 'var(--vharanani-burgundy)' }}>
+                      {stat.value}
+                    </div>
+                    <div className="typo-meta tracking-[0.1em] uppercase font-inter text-white/60 mt-1">
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* ── SECONDARY DIVISIONS — 2-column grid ── */}
+      <div className="px-6 md:px-12 lg:px-20 py-3" style={{ background: 'var(--vharanani-charcoal)' }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {divisions.slice(1).map((div, i) => (
+              <motion.div
+                key={div.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.15 }}
+                className="overflow-hidden"
+                style={{ border: '1px solid rgba(255,255,255,0.1)' }}
+              >
+                {/* Image top */}
+                <div className="relative h-[260px] overflow-hidden">
+                  <ImageWithFallback
+                    src={div.image}
+                    alt={div.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0" style={{
+                    background: 'linear-gradient(180deg, rgba(44,45,45,0.15) 0%, rgba(44,45,45,0.75) 100%)'
+                  }} />
+                  {/* Number */}
+                  <div className="absolute top-5 left-6">
+                    <span className="typo-header font-bebas-neue" style={{ color: 'rgba(255,255,255,0.08)', lineHeight: 1 }}>
+                      {String(i + 2).padStart(2, '0')}
+                    </span>
+                  </div>
+                  {/* Tag + icon bottom-left */}
+                  <div className="absolute bottom-5 left-6 flex items-center gap-2">
+                    <span style={{ color: 'var(--vharanani-burgundy-60)' }}>{div.icon}</span>
+                    <span className="typo-caption tracking-[0.2em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
+                      {div.tag}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-6 md:p-8" style={{ background: 'rgba(255,255,255,0.03)' }}>
+                  <h3 className="typo-subline font-bebas-neue uppercase tracking-wide text-white mb-3">
+                    {div.title}
+                  </h3>
+                  <p className="typo-copy-small font-inter text-white/50 mb-6">
+                    {div.description}
+                  </p>
+
+                  {/* Stats inline */}
+                  <div className="grid grid-cols-3 gap-0" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+                    {div.stats.map((stat, si) => (
+                      <div
+                        key={stat.label}
+                        className="py-3 px-3 text-center"
+                        style={{ borderRight: si < 2 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}
+                      >
+                        <div className="typo-headline-small font-bebas-neue" style={{ color: 'var(--vharanani-burgundy)' }}>
+                          {stat.value}
+                        </div>
+                        <div className="typo-meta tracking-[0.1em] uppercase font-inter text-white/60 mt-1">
+                          {stat.label}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Capabilities tags */}
+                  <div className="flex flex-wrap gap-2 mt-5">
+                    {div.capabilities.map((cap) => (
+                      <span
+                        key={cap}
+                        className="typo-meta tracking-[0.1em] uppercase font-inter px-2.5 py-1"
+                        style={{ border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.65)' }}
+                      >
+                        {cap}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── PORTFOLIO METRICS STRIP ── */}
+      <div className="px-6 md:px-12 lg:px-20 pb-16 md:pb-24 pt-3" style={{ background: 'var(--vharanani-charcoal)' }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="relative overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+            {/* Background image */}
+            <div className="absolute inset-0">
+              <ImageWithFallback
+                src={PORTFOLIO_IMAGES.holdings}
+                alt="Vharanani Group Holdings"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0" style={{
+                background: 'linear-gradient(90deg, rgba(137,43,28,0.9) 0%, rgba(44,45,45,0.95) 100%)'
+              }} />
+            </div>
+
+            <div className="relative grid grid-cols-1 md:grid-cols-12 gap-0">
+              {/* Left text */}
+              <div className="md:col-span-4 p-8 md:p-10 flex flex-col justify-center" style={{ borderRight: '1px solid rgba(255,255,255,0.1)' }}>
+                <div className="typo-caption tracking-[0.2em] uppercase font-inter mb-3" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                  COMBINED GROUP PORTFOLIO
+                </div>
+                <h3 className="typo-subline font-bebas-neue uppercase tracking-wide text-white mb-3">
+                  Diversified Value Creation
+                </h3>
+                <div className="w-8 h-[2px] mb-4" style={{ background: 'rgba(255,255,255,0.3)' }} />
+                <p className="typo-copy-small font-inter text-white/50">
+                  Across all divisions, the Vharanani Group has built a track record of delivery, impact, and sustainable growth.
+                </p>
+              </div>
+
+              {/* Right stats */}
+              <div className="md:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-0">
+                {[
+                  { value: 'R5B+', label: 'Combined Portfolio' },
+                  { value: '1,000+', label: 'Team Members' },
+                  { value: '3', label: 'Core Divisions' },
+                  { value: '20+', label: 'Years Operating' },
+                ].map((metric, mi) => (
+                  <div
+                    key={metric.label}
+                    className="p-6 md:p-8 text-center flex flex-col justify-center"
+                    style={{ borderRight: mi < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none', borderBottom: '1px solid rgba(255,255,255,0.08)' }}
+                  >
+                    <div className="typo-headline-big font-bebas-neue text-white">{metric.value}</div>
+                    <div className="typo-meta tracking-[0.12em] uppercase font-inter text-white/60 mt-2">{metric.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </SectionWrapper>
   );
 }
 
+
 // ═══════════════════════════════════════════════════════════
-// SECTION 4: STRATEGIC PILLARS — Horizontal step/timeline
+// SECTION 3: STRATEGIC PILLARS
+// 4-column pillar cards with step numbers
 // ═══════════════════════════════════════════════════════════
 
 export function GroupWireframe_StrategicPillars(): ReactNode {
+  const PILLAR_IMAGES = {
+    infrastructure: 'https://images.unsplash.com/photo-1750580037263-1b012684fb44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoaWdod2F5JTIwYnJpZGdlJTIwY29uc3RydWN0aW9uJTIwU291dGglMjBBZnJpY2ElMjBpbmZyYXN0cnVjdHVyZXxlbnwxfHx8fDE3NzM3NDg3NTN8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    assets: 'https://images.unsplash.com/photo-1769697694222-016642c08125?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjb21tZXJjaWFsJTIwcHJvcGVydHklMjBpbnZlc3RtZW50JTIwcmVhbCUyMGVzdGF0ZXxlbnwxfHx8fDE3NzM3NDg3NTN8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    innovation: 'https://images.unsplash.com/photo-1759836096317-e746643cc277?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwaW5ub3ZhdGlvbiUyMGRpZ2l0YWwlMjB0cmFuc2Zvcm1hdGlvbiUyMHNlcnZlcnxlbnwxfHx8fDE3NzM3NDg3NTR8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    social: 'https://images.unsplash.com/photo-1761039808115-77b271985e47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwY29tbXVuaXR5JTIwZW1wb3dlcm1lbnQlMjBzb2NpYWwlMjB1cGxpZnRtZW50JTIweW91dGh8ZW58MXx8fHwxNzczNzQ4NzU0fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    panorama: 'https://images.unsplash.com/photo-1765475467677-579353b25ce0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZXJpYWwlMjB2aWV3JTIwQWZyaWNhbiUyMGNpdHklMjB1cmJhbiUyMHBsYW5uaW5nJTIwbGFuZHNjYXBlfGVufDF8fHx8MTc3Mzc0ODc1NXww&ixlib=rb-4.1.0&q=80&w=1080',
+  };
+
   const pillars = [
-    { icon: <HardHat size={24} />, title: 'Infrastructure', description: 'Roads, bridges, clinics, schools, and essential services supporting national growth.', step: '01' },
-    { icon: <Landmark size={24} />, title: 'Asset Ownership', description: 'Developing and managing long-term property assets for sustainable economic value.', step: '02' },
-    { icon: <Cpu size={24} />, title: 'Innovation', description: 'Exploring growth in technology, aviation, and resource-driven industries.', step: '03' },
-    { icon: <Heart size={24} />, title: 'Social Impact', description: 'Investing in education, entrepreneurship, and inclusive community development.', step: '04' },
+    {
+      icon: <HardHat size={22} />,
+      title: 'Infrastructure',
+      step: '01',
+      image: PILLAR_IMAGES.infrastructure,
+      headline: 'Building the Backbone of Progress',
+      description: 'Roads, bridges, clinics, schools, and essential services supporting national growth and connecting communities across South Africa.',
+      capabilities: ['Roads & Highways', 'Bridges & Culverts', 'Public Facilities', 'Water Infrastructure'],
+      metric: { value: '200+', label: 'Projects Delivered' },
+    },
+    {
+      icon: <Landmark size={22} />,
+      title: 'Asset Ownership',
+      step: '02',
+      image: PILLAR_IMAGES.assets,
+      headline: 'Long-Term Value Creation',
+      description: 'Developing and managing property assets that generate sustainable economic value and build lasting equity for future generations.',
+      capabilities: ['Commercial Property', 'Residential Estates', 'Industrial Assets', 'Land Banking'],
+      metric: { value: 'R5B+', label: 'Asset Portfolio' },
+    },
+    {
+      icon: <Cpu size={22} />,
+      title: 'Innovation',
+      step: '03',
+      image: PILLAR_IMAGES.innovation,
+      headline: 'Pioneering New Frontiers',
+      description: 'Exploring growth in technology, aviation, and resource-driven industries that position the Group at the forefront of Africa\'s economic evolution.',
+      capabilities: ['Digital Solutions', 'Aviation Services', 'Resource Management', 'Smart Infrastructure'],
+      metric: { value: '4', label: 'Emerging Sectors' },
+    },
+    {
+      icon: <Heart size={22} />,
+      title: 'Social Impact',
+      step: '04',
+      image: PILLAR_IMAGES.social,
+      headline: 'Empowering Communities',
+      description: 'Investing in education, entrepreneurship, and inclusive community development that transforms lives and builds resilient, self-sustaining communities.',
+      capabilities: ['Education Bursaries', 'Skills Training', 'Housing Programmes', 'Health Initiatives'],
+      metric: { value: '50K+', label: 'Lives Impacted' },
+    },
   ];
 
   return (
-    <div>
-      <WireframeLabel
-        layout="Horizontal Step / Timeline Layout"
-        description="Four strategic pillars as stepped progression with connecting line and minimalist icons"
-      />
+    <SectionWrapper className="!py-0 !px-0">
+      {/* ── CINEMATIC HEADER BAND ── */}
+      <div className="relative h-[40vh] min-h-[340px] overflow-hidden">
+        <ImageWithFallback
+          src={PILLAR_IMAGES.panorama}
+          alt="Strategic growth across Africa"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0" style={{
+          background: 'linear-gradient(180deg, rgba(44,45,45,0.4) 0%, rgba(44,45,45,0.7) 50%, rgba(44,45,45,0.98) 100%)'
+        }} />
+        <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'var(--vharanani-burgundy)' }} />
 
-      {/* Light grey background section */}
-      <div className="p-6 md:p-8" style={{ background: 'var(--vharanani-charcoal-20)', border: '2px solid var(--vharanani-charcoal-20)' }}>
-        {/* Section heading */}
-        <div className="text-center mb-8">
-          <div className="typo-caption tracking-[0.3em] uppercase font-inter mb-2" style={{ color: 'var(--vharanani-burgundy)' }}>
-            THE FOUNDATION
-          </div>
-          <h3 className="font-bebas-neue typo-subline" style={{ color: 'var(--vharanani-charcoal)' }}>
-            Strategic Pillars
-          </h3>
-        </div>
-
-        {/* Horizontal timeline */}
-        <div className="relative">
-          {/* Connecting line */}
-          <div className="hidden md:block absolute top-[40px] left-[10%] right-[10%] h-[2px]" style={{ background: 'var(--vharanani-burgundy-60)' }} />
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {pillars.map((pillar, i) => (
-              <div key={i} className="text-center relative">
-                {/* Step number + icon */}
-                <div className="relative inline-flex flex-col items-center mb-4">
-                  <div className="typo-meta font-inter mb-1" style={{ color: 'var(--vharanani-burgundy)' }}>{pillar.step}</div>
-                  <div
-                    className="w-[56px] h-[56px] flex items-center justify-center relative z-10"
-                    style={{ background: 'white', border: '2px solid var(--vharanani-burgundy)' }}
-                  >
-                    <div style={{ color: 'var(--vharanani-burgundy)' }}>{pillar.icon}</div>
-                  </div>
+        <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 lg:px-20 pb-12">
+          <div className="max-w-7xl mx-auto w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+              <div className="lg:col-span-7">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
+                  <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
+                    SEC 03 — STRATEGY
+                  </span>
                 </div>
-
-                {/* Text */}
-                <div className="font-bebas-neue typo-headline-small tracking-wide mb-2" style={{ color: 'var(--vharanani-charcoal)' }}>
-                  {pillar.title}
-                </div>
-                <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>
-                  {pillar.description}
-                </div>
+                <h2 className="typo-header font-bebas-neue uppercase tracking-wide text-white" style={{ lineHeight: 0.95 }}>
+                  Strategic<br />Pillars
+                </h2>
               </div>
-            ))}
+              <div className="lg:col-span-5">
+                <p className="typo-copy font-inter text-white/50">
+                  Four interconnected pillars that define our growth trajectory — each reinforcing the others to create a resilient, diversified platform for sustainable value creation.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <WireframeSpec items={[
-        'Background: Light grey (#d5d5d5) to separate from visual sections',
-        'Grid: 4-column horizontal on desktop, vertical stack on mobile',
-        'Icons: 56px square containers with 2px burgundy border, white fill',
-        'Connecting line: 2px horizontal at icon center height (desktop only)',
-        'Typography: Bebas Neue title + Inter description per pillar',
-      ]} />
-    </div>
+      {/* ── PILLAR CARDS — Alternating layout ── */}
+      <div style={{ background: '#ffffff' }}>
+        {pillars.map((pillar, i) => {
+          const isEven = i % 2 === 0;
+          return (
+            <motion.div
+              key={pillar.step}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+                <div
+                  className="grid grid-cols-1 lg:grid-cols-12 gap-0 overflow-hidden"
+                  style={{
+                    borderLeft: '1px solid var(--vharanani-charcoal-20)',
+                    borderRight: '1px solid var(--vharanani-charcoal-20)',
+                    borderBottom: '1px solid var(--vharanani-charcoal-20)',
+                    borderTop: i === 0 ? '1px solid var(--vharanani-charcoal-20)' : 'none',
+                  }}
+                >
+                  {/* Image side */}
+                  <div className={`lg:col-span-5 relative h-[280px] lg:h-auto lg:min-h-[380px] overflow-hidden ${isEven ? '' : 'lg:order-2'}`}>
+                    <ImageWithFallback
+                      src={pillar.image}
+                      alt={pillar.title}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0" style={{
+                      background: isEven
+                        ? 'linear-gradient(135deg, rgba(137,43,28,0.4) 0%, rgba(44,45,45,0.5) 100%)'
+                        : 'linear-gradient(225deg, rgba(137,43,28,0.4) 0%, rgba(44,45,45,0.5) 100%)'
+                    }} />
+                    {/* Large ghost step number */}
+                    <div className="absolute top-4 left-6">
+                      <span className="font-bebas-neue" style={{ fontSize: '120px', lineHeight: 1, color: 'rgba(255,255,255,0.07)' }}>
+                        {pillar.step}
+                      </span>
+                    </div>
+                    {/* Bottom metric overlay */}
+                    <div className="absolute bottom-0 left-0 right-0 px-6 py-4" style={{ background: 'rgba(44,45,45,0.85)', backdropFilter: 'blur(8px)' }}>
+                      <div className="flex items-center gap-4">
+                        <div className="typo-headline-big font-bebas-neue" style={{ color: 'var(--vharanani-burgundy)' }}>
+                          {pillar.metric.value}
+                        </div>
+                        <div className="typo-caption tracking-[0.15em] uppercase font-inter text-white/50">
+                          {pillar.metric.label}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Content side */}
+                  <div className={`lg:col-span-7 p-8 md:p-12 flex flex-col justify-center ${isEven ? '' : 'lg:order-1'}`} style={{ background: i % 2 === 0 ? '#ffffff' : '#fafafa' }}>
+                    {/* Icon + tag row */}
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="w-10 h-10 flex items-center justify-center" style={{ border: '1.5px solid var(--vharanani-burgundy)', color: 'var(--vharanani-burgundy)' }}>
+                        {pillar.icon}
+                      </div>
+                      <div>
+                        <span className="typo-caption tracking-[0.2em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
+                          PILLAR {pillar.step}
+                        </span>
+                      </div>
+                      {/* Horizontal line */}
+                      <div className="flex-1 h-[1px] ml-2" style={{ background: 'var(--vharanani-charcoal-20)' }} />
+                    </div>
+
+                    <h3 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-2" style={{ color: 'var(--vharanani-charcoal)' }}>
+                      {pillar.title}
+                    </h3>
+                    <p className="typo-subline font-bebas-neue uppercase tracking-wide mb-5" style={{ color: 'var(--vharanani-burgundy)', lineHeight: 1.2 }}>
+                      {pillar.headline}
+                    </p>
+                    <p className="typo-copy font-inter mb-8" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+                      {pillar.description}
+                    </p>
+
+                    {/* Capabilities grid */}
+                    <div className="grid grid-cols-2 gap-0" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
+                      {pillar.capabilities.map((cap, ci) => (
+                        <div
+                          key={cap}
+                          className="flex items-center gap-3 p-4"
+                          style={{
+                            borderRight: ci % 2 === 0 ? '1px solid var(--vharanani-charcoal-20)' : 'none',
+                            borderBottom: ci < 2 ? '1px solid var(--vharanani-charcoal-20)' : 'none',
+                          }}
+                        >
+                          <div className="w-1.5 h-1.5 flex-shrink-0" style={{ background: 'var(--vharanani-burgundy)' }} />
+                          <span className="typo-copy-small font-inter" style={{ color: 'var(--vharanani-charcoal-80)' }}>
+                            {cap}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          );
+        })}
+      </div>
+
+      {/* ── CLOSING SUMMARY BAND ── */}
+      <div className="relative overflow-hidden" style={{ background: 'var(--vharanani-charcoal)' }}>
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-0 py-12" style={{ borderTop: '3px solid var(--vharanani-burgundy)' }}>
+            {pillars.map((pillar, i) => (
+              <motion.div
+                key={pillar.step + '-summary'}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="p-6 text-center"
+                style={{ borderRight: i < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}
+              >
+                <div className="w-10 h-10 mx-auto mb-3 flex items-center justify-center" style={{ border: '1px solid var(--vharanani-burgundy)', color: 'var(--vharanani-burgundy)' }}>
+                  {pillar.icon}
+                </div>
+                <div className="typo-headline-small font-bebas-neue uppercase tracking-wide text-white mb-1">
+                  {pillar.title}
+                </div>
+                <div className="typo-headline-big font-bebas-neue" style={{ color: 'var(--vharanani-burgundy)' }}>
+                  {pillar.metric.value}
+                </div>
+                <div className="typo-meta tracking-[0.1em] uppercase font-inter text-white/60 mt-1">
+                  {pillar.metric.label}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </SectionWrapper>
   );
 }
 
+
 // ═══════════════════════════════════════════════════════════
-// SECTION 5: LEADERSHIP FEATURE — Focus/Spotlight layout
+// SECTION 4: LEADERSHIP
+// Founder profile + executive team grid
 // ═══════════════════════════════════════════════════════════
 
 export function GroupWireframe_Leadership(): ReactNode {
+  const executives = [
+    { name: 'Chief Operating Officer', role: 'Operations & Delivery', initial: 'CO' },
+    { name: 'Chief Financial Officer', role: 'Finance & Governance', initial: 'CF' },
+    { name: 'Group Legal Counsel', role: 'Legal & Compliance', initial: 'GL' },
+    { name: 'Head of Development', role: 'Strategy & Growth', initial: 'HD' },
+  ];
+
   return (
-    <div>
-      <WireframeLabel
-        layout="Focus / Spotlight Layout"
-        description="Deep charcoal background with centered portrait left and vision statement right"
-      />
+    <SectionWrapper>
+      <div className="max-w-7xl mx-auto">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
+          <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
+            SEC 04 — PEOPLE
+          </span>
+        </div>
+        <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-12" style={{ color: 'var(--vharanani-charcoal)' }}>
+          Leadership
+        </h2>
 
-      {/* Wireframe Preview */}
-      <div
-        className="relative overflow-hidden"
-        style={{ background: 'var(--vharanani-charcoal)', border: '2px solid var(--vharanani-charcoal)' }}
-      >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-          {/* Left: Portrait */}
-          <div className="relative h-[300px] md:h-[400px] flex items-end justify-center overflow-hidden" style={{ background: 'var(--vharanani-charcoal)' }}>
-            {/* Wireframe portrait placeholder */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center" style={{ background: '#e5e5e5', border: '2px dashed #999' }}>
-              {/* Diagonal cross lines */}
-              <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
-                <line x1="0" y1="0" x2="100%" y2="100%" stroke="#bbb" strokeWidth="1" />
-                <line x1="100%" y1="0" x2="0" y2="100%" stroke="#bbb" strokeWidth="1" />
-              </svg>
-              {/* Person silhouette icon */}
-              <div className="relative z-10 flex flex-col items-center gap-3">
-                <div className="w-16 h-16 flex items-center justify-center" style={{ border: '2px solid #999' }}>
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#999" strokeWidth="1.5">
-                    <circle cx="12" cy="8" r="4" />
-                    <path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1" />
-                  </svg>
-                </div>
-                <span className="font-inter typo-meta tracking-[0.2em] uppercase" style={{ color: '#888' }}>Portrait Placeholder</span>
-                <span className="font-inter typo-meta tracking-wider" style={{ color: '#aaa' }}>Branded photo TBD</span>
-              </div>
-            </div>
-            {/* Gradient fade into charcoal */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[var(--vharanani-charcoal)] hidden md:block" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[var(--vharanani-charcoal)] via-transparent to-transparent md:hidden" />
-            {/* Wireframe annotation */}
-            <div className="absolute bottom-3 left-3 px-2 py-1" style={{ background: 'rgba(137,43,28,0.9)' }}>
-              <span className="font-inter typo-meta text-white tracking-wider uppercase">Portrait — Transparent BG</span>
-            </div>
+        {/* Founder spotlight */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 mb-12" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
+          <div className="lg:col-span-2 relative h-[360px] lg:h-auto overflow-hidden">
+            <ImageWithFallback
+              src={IMAGES.leadership}
+              alt="Executive Leadership"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 40%, rgba(44,45,45,0.8) 100%)' }} />
           </div>
-
-          {/* Right: Bio & Quote */}
-          <div className="p-6 md:p-10 flex flex-col justify-center" style={{ background: 'var(--vharanani-charcoal)' }}>
-            <div className="typo-caption tracking-[0.3em] uppercase font-inter mb-3" style={{ color: 'var(--vharanani-burgundy)' }}>
+          <div className="lg:col-span-3 p-8 md:p-12 flex flex-col justify-center" style={{ background: '#fafafa' }}>
+            <div className="typo-caption tracking-[0.2em] uppercase font-inter mb-4" style={{ color: 'var(--vharanani-burgundy)' }}>
               FOUNDER & GROUP EXECUTIVE CHAIRMAN
             </div>
-            <h2 className="font-bebas-neue typo-headline-big mb-4" style={{ color: 'white' }}>
+            <h3 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-4" style={{ color: 'var(--vharanani-charcoal)' }}>
               David Mabilu
-            </h2>
-            <div className="font-inter typo-copy mb-6" style={{ color: 'var(--vharanani-charcoal-40)' }}>
-              David Mabilu founded Vharani Group with a clear vision: to build a diversified African enterprise rooted in infrastructure, ownership, and impact. With over two decades of experience, he has led the Group's expansion across multiple sectors.
-            </div>
-
-            {/* Quote callout */}
-            <div className="p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.08)' }}>
-              <div
-                className="font-inter typo-headline-small italic"
-                style={{ lineHeight: '1.6', color: 'white' }}
-              >
-                "Building a diversified African enterprise rooted in infrastructure, ownership, and impact."
-              </div>
-              <div className="mt-2 flex items-center gap-2">
-                <div className="w-6 h-[1px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-                <div className="font-inter typo-meta tracking-wider uppercase" style={{ color: 'var(--vharanani-burgundy)' }}>David Mabilu</div>
-              </div>
-            </div>
-
-            {/* Wireframe annotation */}
-            <div className="mt-4 px-2 py-1 inline-block" style={{ background: 'rgba(137,43,28,0.15)', border: '1px dashed var(--vharanani-burgundy-60)' }}>
-              <span className="font-inter typo-meta tracking-wider uppercase" style={{ color: 'var(--vharanani-burgundy-80)' }}>↑ Large italic serif for premium feel</span>
-            </div>
+            </h3>
+            <div className="w-10 h-[2px] mb-6" style={{ background: 'var(--vharanani-burgundy)' }} />
+            <p className="typo-copy font-inter mb-4" style={{ color: 'var(--vharanani-charcoal-80)' }}>
+              A visionary entrepreneur whose leadership has guided the Vharanani Group from a single construction company to a diversified investment holding group. His commitment to excellence, ethical business practice, and community upliftment defines the Group's identity.
+            </p>
+            <blockquote className="typo-copy-small font-inter italic pl-4 mt-4" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', color: 'var(--vharanani-charcoal-60)' }}>
+              "We build not just infrastructure, but the foundations for a dignified future."
+            </blockquote>
           </div>
         </div>
-      </div>
 
-      <WireframeSpec items={[
-        'Background: Deep charcoal (#2C2D2D) for spotlight effect',
-        'Left: Professional portrait with transparent BG, gradient fade to charcoal',
-        'Right: Title hierarchy + vision statement + italic serif quote callout',
-        'Quote: 3px burgundy left border, slightly enlarged italic font',
-        'Mobile: Stack portrait above bio, gradient fade downward',
-      ]} />
-    </div>
+        {/* Executive team */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-0" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
+          {executives.map((exec, i) => (
+            <div
+              key={exec.initial}
+              className="p-6 text-center"
+              style={{
+                borderRight: i < 3 ? '1px solid var(--vharanani-charcoal-20)' : 'none',
+              }}
+            >
+              <div
+                className="w-16 h-16 mx-auto mb-4 flex items-center justify-center typo-subline font-bebas-neue"
+                style={{ background: 'var(--vharanani-charcoal)', color: 'white' }}
+              >
+                {exec.initial}
+              </div>
+              <div className="typo-headline-small font-bebas-neue uppercase tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>
+                {exec.name}
+              </div>
+              <div className="typo-caption font-inter mt-1" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+                {exec.role}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </SectionWrapper>
   );
 }
 
+
 // ═══════════════════════════════════════════════════════════
-// SECTION 6: IMPACT & GOVERNANCE — Two-row horizontal strip
+// SECTION 5: IMPACT & GOVERNANCE (combined)
+// Stats + governance principles side by side
 // ═══════════════════════════════════════════════════════════
 
 export function GroupWireframe_ImpactGovernance(): ReactNode {
-  const impactImages = [
-    { label: 'Schools Built' },
-    { label: 'Housing Delivered' },
-    { label: 'Communities Served' },
+  const governancePrinciples = [
+    { icon: <Shield size={20} />, label: 'Ethical Leadership', description: 'Principled decision-making at every level of the organisation.' },
+    { icon: <Layers size={20} />, label: 'Financial Discipline', description: 'Rigorous fiscal management and transparent oversight.' },
+    { icon: <Globe size={20} />, label: 'Risk Management', description: 'Proactive identification, assessment, and mitigation.' },
   ];
 
-  const governancePillars = [
-    { icon: <Shield size={20} />, label: 'Ethical Leadership' },
-    { icon: <Layers size={20} />, label: 'Financial Discipline' },
-    { icon: <Globe size={20} />, label: 'Risk Management' },
-  ];
-
-  return (
-    <div>
-      <WireframeLabel
-        layout="Two-Row Horizontal Strip"
-        description="Row 1: Impact tiled images — Row 2: Governance compliance ribbon with icons"
-      />
-
-      {/* Row 1: Impact */}
-      <div style={{ border: '2px solid var(--vharanani-charcoal-20)' }}>
-        <div className="p-4 md:p-6" style={{ borderBottom: '2px solid var(--vharanani-charcoal-20)' }}>
-          <div className="flex items-center justify-between mb-4">
-            <div>
-              <div className="typo-caption tracking-[0.3em] uppercase font-inter mb-1" style={{ color: 'var(--vharanani-burgundy)' }}>
-                IMPACT
-              </div>
-              <h3 className="font-bebas-neue typo-subline" style={{ color: 'var(--vharanani-charcoal)' }}>
-                Driving Sustainable Impact
-              </h3>
-            </div>
-            <div className="px-2 py-1" style={{ background: 'rgba(137,43,28,0.08)', border: '1px dashed var(--vharanani-burgundy-60)' }}>
-              <span className="font-inter typo-meta tracking-wider uppercase" style={{ color: 'var(--vharanani-burgundy)' }}>ROW 1</span>
-            </div>
-          </div>
-
-          {/* Tiled images */}
-          <div className="grid grid-cols-3 gap-3">
-            {impactImages.map((img, i) => (
-              <div key={i} className="relative h-[140px] md:h-[180px] overflow-hidden group">
-                <ImagePlaceholder label={img.label} className="absolute inset-0 w-full h-full" />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Row 2: Governance Compliance Ribbon */}
-        <div className="p-4 md:p-6" style={{ background: 'rgba(44,45,45,0.03)' }}>
-          <div className="flex items-center justify-between mb-4">
-            <div>
-              <div className="typo-caption tracking-[0.3em] uppercase font-inter mb-1" style={{ color: 'var(--vharanani-burgundy)' }}>
-                GOVERNANCE
-              </div>
-              <div className="font-bebas-neue typo-headline-small" style={{ color: 'var(--vharanani-charcoal)' }}>
-                Corporate Credibility
-              </div>
-            </div>
-            <div className="px-2 py-1" style={{ background: 'rgba(137,43,28,0.08)', border: '1px dashed var(--vharanani-burgundy-60)' }}>
-              <span className="font-inter typo-meta tracking-wider uppercase" style={{ color: 'var(--vharanani-burgundy)' }}>ROW 2</span>
-            </div>
-          </div>
-
-          {/* Compliance Ribbon */}
-          <div className="grid grid-cols-3 gap-4">
-            {governancePillars.map((item, i) => (
-              <div
-                key={i}
-                className="flex flex-col items-center text-center p-4"
-                style={{ borderTop: '3px solid var(--vharanani-burgundy)', background: 'white' }}
-              >
-                <div className="w-[48px] h-[48px] flex items-center justify-center mb-3" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
-                  <div style={{ color: 'var(--vharanani-burgundy)' }}>{item.icon}</div>
-                </div>
-                <div className="font-bebas-neue typo-headline-small tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>
-                  {item.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <WireframeSpec items={[
-        'Row 1: 3-column tiled images with gradient overlay + label',
-        'Row 2: "Compliance Ribbon" — 3 icon blocks with top burgundy accent',
-        'Structure: Clear horizontal division between Impact and Governance',
-        'Icons: 48px square containers, centered with label below',
-        'Purpose: Builds corporate credibility and trust indicators',
-      ]} />
-    </div>
-  );
-}
-
-// ═══════════════════════════════════════════════════════════
-// SECTION 7: NEWS & CONTACT — Clean Footer-Lite
-// ═══════════════════════════════════════════════════════════
-
-export function GroupWireframe_NewsContact(): ReactNode {
-  const newsItems = [
-    { date: 'Mar 2026', title: 'Vharani Group Expands Mining Portfolio', tag: 'CORPORATE' },
-    { date: 'Feb 2026', title: 'New Infrastructure Contract Awarded in Limpopo', tag: 'PROJECTS' },
-    { date: 'Jan 2026', title: 'DMF Scholarship Programme Reaches 50 Learners', tag: 'FOUNDATION' },
+  const impactStats = [
+    { value: 50000, suffix: '+', label: 'Lives Impacted' },
+    { value: 500, suffix: '+', label: 'Bursaries Awarded' },
+    { value: 200, suffix: '+', label: 'Infrastructure Projects' },
+    { value: 5, suffix: '', label: 'Provinces Reached' },
   ];
 
   return (
-    <div>
-      <WireframeLabel
-        layout="Clean Footer-Lite"
-        description="News cards + contact form left, head office info right, with footer tagline"
-      />
-
-      <div style={{ border: '2px solid var(--vharanani-charcoal-20)' }}>
-        {/* News Row */}
-        <div className="p-4 md:p-6" style={{ borderBottom: '2px solid var(--vharanani-charcoal-20)' }}>
-          <div className="typo-caption tracking-[0.3em] uppercase font-inter mb-4" style={{ color: 'var(--vharanani-burgundy)' }}>
-            LATEST NEWS
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            {newsItems.map((item, i) => (
-              <div key={i} className="p-4 group cursor-pointer transition-colors hover:bg-[rgba(137,43,28,0.03)]" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="typo-meta tracking-[0.15em] uppercase font-inter px-2 py-0.5" style={{ color: 'var(--vharanani-burgundy)', border: '1px solid var(--vharanani-burgundy)' }}>
-                    {item.tag}
-                  </div>
-                  <div className="typo-meta font-inter" style={{ color: 'var(--vharanani-charcoal-60)' }}>{item.date}</div>
-                </div>
-                <div className="font-bebas-neue typo-headline-small tracking-wide group-hover:underline" style={{ color: 'var(--vharanani-charcoal)' }}>
-                  {item.title}
-                </div>
-                <div className="flex items-center gap-1 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="font-inter typo-meta tracking-wider uppercase" style={{ color: 'var(--vharanani-burgundy)' }}>Read More</span>
-                  <ChevronRight size={10} style={{ color: 'var(--vharanani-burgundy)' }} />
-                </div>
-              </div>
-            ))}
-          </div>
+    <SectionWrapper dark>
+      <div className="max-w-7xl mx-auto">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
+          <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
+            SEC 05 — IMPACT
+          </span>
         </div>
+        <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-12 text-white">
+          Impact & Responsibility
+        </h2>
 
-        {/* Contact Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-          {/* Contact Form (left) */}
-          <div className="p-4 md:p-6" style={{ borderRight: '2px solid var(--vharanani-charcoal-20)' }}>
-            <div className="typo-caption tracking-[0.3em] uppercase font-inter mb-4" style={{ color: 'var(--vharanani-burgundy)' }}>
-              GET IN TOUCH
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Impact stats */}
+          <div>
+            <div className="relative h-[240px] mb-8 overflow-hidden">
+              <ImageWithFallback
+                src={IMAGES.impact}
+                alt="Community development impact"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0" style={{ background: 'rgba(137,43,28,0.4)' }} />
             </div>
-            <div className="space-y-3">
-              {['Name', 'Email', 'Message'].map((field, i) => (
-                <div key={i}>
-                  <div className="typo-meta tracking-[0.1em] uppercase font-inter mb-1" style={{ color: 'var(--vharanani-charcoal-60)' }}>
-                    {field}
+            <div className="grid grid-cols-2 gap-6">
+              {impactStats.map((stat) => (
+                <div key={stat.label} className="p-4" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+                  <AnimatedCounter target={stat.value} suffix={stat.suffix} />
+                  <div className="typo-caption tracking-[0.15em] uppercase font-inter mt-1" style={{ color: 'var(--vharanani-charcoal-40)' }}>
+                    {stat.label}
                   </div>
-                  <div
-                    className={`w-full ${field === 'Message' ? 'h-[60px]' : 'h-[36px]'}`}
-                    style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.03)' }}
-                  />
                 </div>
               ))}
-              <div className="flex items-center gap-2 mt-2">
-                <div className="px-4 py-2 cursor-pointer" style={{ background: 'var(--vharanani-burgundy)' }}>
-                  <span className="font-bebas-neue typo-headline-small tracking-wider text-white">Submit</span>
-                </div>
-                <div className="px-2 py-1" style={{ background: 'rgba(137,43,28,0.08)', border: '1px dashed var(--vharanani-burgundy-60)' }}>
-                  <span className="font-inter typo-meta tracking-wider uppercase" style={{ color: 'var(--vharanani-burgundy)' }}>Simple 3-field form</span>
-                </div>
-              </div>
             </div>
           </div>
 
-          {/* Head Office Info (right) */}
-          <div className="p-4 md:p-6" style={{ background: 'rgba(44,45,45,0.03)' }}>
-            <div className="typo-caption tracking-[0.3em] uppercase font-inter mb-4" style={{ color: 'var(--vharanani-burgundy)' }}>
-              HEAD OFFICE
-            </div>
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <MapPin size={16} className="mt-0.5 flex-shrink-0" style={{ color: 'var(--vharanani-burgundy)' }} />
-                <div>
-                  <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal)' }}>18 Hume Road</div>
-                  <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>Dunkeld West, Johannesburg</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone size={16} className="flex-shrink-0" style={{ color: 'var(--vharanani-burgundy)' }} />
-                <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal)' }}>+27 11 656 1418</div>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail size={16} className="flex-shrink-0" style={{ color: 'var(--vharanani-burgundy)' }} />
-                <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-burgundy)' }}>info@vharanani.com</div>
-              </div>
-
-              {/* Social links placeholder */}
-              <div className="pt-3 mt-3" style={{ borderTop: '1px solid var(--vharanani-charcoal-20)' }}>
-                <div className="typo-meta tracking-[0.15em] uppercase font-inter mb-2" style={{ color: 'var(--vharanani-charcoal-60)' }}>Social</div>
-                <div className="flex gap-2">
-                  {['Li', 'Tw', 'Fb'].map((social, i) => (
-                    <div key={i} className="w-8 h-8 flex items-center justify-center" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
-                      <span className="font-inter typo-meta" style={{ color: 'var(--vharanani-charcoal-60)' }}>{social}</span>
+          {/* Governance principles */}
+          <div>
+            <h3 className="typo-subline font-bebas-neue uppercase tracking-wide text-white mb-6">
+              Governance Principles
+            </h3>
+            <div className="space-y-0">
+              {governancePrinciples.map((principle, i) => (
+                <div
+                  key={principle.label}
+                  className="flex items-start gap-4 p-5"
+                  style={{
+                    borderBottom: i < governancePrinciples.length - 1 ? '1px solid rgba(255,255,255,0.1)' : 'none',
+                  }}
+                >
+                  <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center" style={{ border: '1px solid var(--vharanani-burgundy)', color: 'var(--vharanani-burgundy)' }}>
+                    {principle.icon}
+                  </div>
+                  <div>
+                    <div className="typo-headline-small font-bebas-neue uppercase tracking-wide text-white">
+                      {principle.label}
                     </div>
-                  ))}
+                    <div className="typo-copy-small font-inter mt-1" style={{ color: 'var(--vharanani-charcoal-40)' }}>
+                      {principle.description}
+                    </div>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
-          </div>
-        </div>
-
-        {/* Footer Tagline */}
-        <div className="p-4 text-center" style={{ background: 'var(--vharanani-charcoal)', borderTop: '2px solid var(--vharanani-charcoal)' }}>
-          <div className="font-bebas-neue typo-headline-small tracking-wider" style={{ color: 'white' }}>
-            Vharani Group
-          </div>
-          <div className="font-inter typo-meta mt-1" style={{ color: 'var(--vharanani-charcoal-40)' }}>
-            Building sustainable enterprises. Advancing African growth.
           </div>
         </div>
       </div>
-
-      <WireframeSpec items={[
-        'News: 3 small cards with tag, date, title, hover-reveal "Read More"',
-        'Contact: Simple 3-field form (Name, Email, Message) on the left',
-        'Office: Address (18 Hume Rd), phone, email, social icons on the right',
-        'Footer bar: Charcoal background with company name + tagline',
-        'Mobile: Stack news cards vertically, form above office info',
-      ]} />
-    </div>
+    </SectionWrapper>
   );
 }
 
+
 // ═══════════════════════════════════════════════════════════
-// SECTION 8: VISION & MISSION — 2×2 Grid "Four Pillars of Purpose"
+// SECTION 6: VISION & MISSION
+// Full-width cinematic split with strategic objectives
 // ═══════════════════════════════════════════════════════════
 
 export function GroupWireframe_VisionMission(): ReactNode {
-  const missionPillars = [
-    {
-      icon: <Sprout size={28} />,
-      text: 'Develop sustainable businesses across high-impact sectors.',
-      label: 'SUSTAINABLE GROWTH',
-    },
-    {
-      icon: <Route size={28} />,
-      text: 'Deliver infrastructure that improves quality of life.',
-      label: 'INFRASTRUCTURE',
-    },
-    {
-      icon: <TrendingUp size={28} />,
-      text: 'Build and manage long-term asset portfolios.',
-      label: 'ASSET MANAGEMENT',
-    },
-    {
-      icon: <Users size={28} />,
-      text: 'Foster entrepreneurship and community development.',
-      label: 'COMMUNITY',
-    },
+  const objectives = [
+    { icon: <Sprout size={28} />, text: 'Develop sustainable businesses across high-impact sectors.', label: 'SUSTAINABLE GROWTH' },
+    { icon: <Route size={28} />, text: 'Deliver infrastructure that improves quality of life.', label: 'INFRASTRUCTURE' },
+    { icon: <TrendingUp size={28} />, text: 'Build and manage long-term asset portfolios.', label: 'ASSET MANAGEMENT' },
+    { icon: <Users size={28} />, text: 'Foster entrepreneurship and community development.', label: 'COMMUNITY' },
   ];
 
   return (
-    <div>
-      <WireframeLabel
-        layout="Vision Statement + 2×2 Mission Grid"
-        description="Hero vision callout at top, followed by four mission pillar cards in a balanced 2×2 grid"
-      />
+    <SectionWrapper>
+      <div className="max-w-7xl mx-auto">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
+          <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
+            SEC 06 — MANDATE
+          </span>
+        </div>
 
-      {/* Vision Statement — full-width callout */}
-      <div className="mb-6 p-6 md:p-8" style={{ background: 'var(--vharanani-charcoal)', border: '2px solid var(--vharanani-charcoal)' }}>
-        <div className="typo-caption tracking-[0.3em] uppercase font-inter mb-3" style={{ color: 'var(--vharanani-burgundy)' }}>
-          OUR VISION
-        </div>
-        <h3
-          className="font-bebas-neue typo-subline mb-4"
-          style={{ color: 'white' }}
-        >
-          To build a diversified African enterprise that strengthens national infrastructure, drives innovation, and advances inclusive economic growth.
-        </h3>
-        <div className="font-inter typo-copy" style={{ color: 'var(--vharanani-charcoal-40)' }}>
-          Founded by David Mabilu, Vharani Group is a wholly Black-owned holding company headquartered in South Africa. Since its establishment, the Group has developed a diversified portfolio across construction, property development, mining, technology, aviation, and philanthropy.
-        </div>
-        {/* Wireframe annotation */}
-        <div className="mt-4 px-2 py-1 inline-block" style={{ background: 'rgba(137,43,28,0.15)', border: '1px dashed var(--vharanani-burgundy-60)' }}>
-          <span className="font-inter typo-meta tracking-wider uppercase" style={{ color: 'var(--vharanani-burgundy-80)' }}>Dark block — cinematic vision statement</span>
-        </div>
-      </div>
-
-      {/* Mission Header */}
-      <div className="text-center mb-6">
-        <div className="typo-caption tracking-[0.3em] uppercase font-inter mb-2" style={{ color: 'var(--vharanani-burgundy)' }}>
-          THE FOUR PILLARS OF PURPOSE
-        </div>
-        <h3 className="font-bebas-neue typo-subline" style={{ color: 'var(--vharanani-charcoal)' }}>
-          Our Mission
-        </h3>
-      </div>
-
-      {/* 2×2 Mission Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {missionPillars.map((pillar, i) => (
-          <div
-            key={i}
-            className="group p-6 transition-all duration-300 hover:-translate-y-0.5"
-            style={{
-              background: 'white',
-              border: '2px solid var(--vharanani-charcoal-20)',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
-            }}
-          >
-            {/* Icon container */}
-            <div
-              className="w-[56px] h-[56px] flex items-center justify-center mb-4 transition-colors duration-300"
-              style={{
-                border: '2px solid var(--vharanani-burgundy)',
-                background: 'rgba(137,43,28,0.04)',
-              }}
-            >
-              <div style={{ color: 'var(--vharanani-burgundy)' }}>{pillar.icon}</div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
+          {/* Vision */}
+          <div className="p-8 md:p-12" style={{ background: 'var(--vharanani-charcoal)' }}>
+            <div className="typo-caption tracking-[0.2em] uppercase font-inter mb-6" style={{ color: 'var(--vharanani-burgundy-60)' }}>
+              OUR VISION
             </div>
-
-            {/* Label */}
-            <div className="typo-caption tracking-[0.2em] uppercase font-inter mb-2" style={{ color: 'var(--vharanani-burgundy)' }}>
-              {pillar.label}
-            </div>
-
-            {/* Text */}
-            <div className="font-inter typo-copy" style={{ color: 'var(--vharanani-charcoal)' }}>
-              {pillar.text}
-            </div>
-
-            {/* Bottom accent line on hover */}
-            <div className="h-[3px] w-0 group-hover:w-full transition-all duration-500 mt-4" style={{ background: 'var(--vharanani-burgundy)' }} />
+            <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide text-white mb-6">
+              To be a leading African investment group creating sustainable value
+            </h2>
+            <div className="w-12 h-[2px] mb-6" style={{ background: 'var(--vharanani-burgundy)' }} />
+            <p className="typo-copy font-inter text-white/70">
+              We envision a future where Black-owned enterprises lead the transformation of Africa's economy through strategic investment, principled governance, and an unwavering commitment to community upliftment.
+            </p>
           </div>
-        ))}
-      </div>
 
-      {/* Wireframe annotation */}
-      <div className="mt-3 flex items-center gap-2">
-        <div className="px-2 py-1" style={{ background: 'rgba(137,43,28,0.08)', border: '1px dashed var(--vharanani-burgundy-60)' }}>
-          <span className="font-inter typo-meta tracking-wider uppercase" style={{ color: 'var(--vharanani-burgundy)' }}>White cards on light grey BG — crisp pop effect</span>
+          {/* Mission */}
+          <div className="p-8 md:p-12" style={{ background: '#fafafa' }}>
+            <div className="typo-caption tracking-[0.2em] uppercase font-inter mb-6" style={{ color: 'var(--vharanani-burgundy)' }}>
+              OUR MISSION
+            </div>
+            <h3 className="typo-subline font-bebas-neue uppercase tracking-wide mb-6" style={{ color: 'var(--vharanani-charcoal)' }}>
+              Strategic Objectives
+            </h3>
+            <div className="space-y-6">
+              {objectives.map((obj) => (
+                <div key={obj.label} className="flex items-start gap-4">
+                  <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center" style={{ border: '1.5px solid var(--vharanani-burgundy)', color: 'var(--vharanani-burgundy)' }}>
+                    {obj.icon}
+                  </div>
+                  <div>
+                    <div className="typo-caption tracking-[0.15em] uppercase font-inter mb-1" style={{ color: 'var(--vharanani-burgundy)' }}>
+                      {obj.label}
+                    </div>
+                    <div className="typo-copy-small font-inter" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+                      {obj.text}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Image strip */}
+        <div className="relative h-[180px] overflow-hidden">
+          <ImageWithFallback
+            src={IMAGES.visionMission}
+            alt="Vision and mission"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0" style={{ background: 'rgba(44,45,45,0.6)' }} />
         </div>
       </div>
-
-      <WireframeSpec items={[
-        'Vision: Full-width charcoal block with Bebas Neue headline + Inter body',
-        'Mission: 2×2 grid — each card has icon (56px square), small-caps label, body text',
-        'Cards: White bg with subtle shadow on light grey section bg for "pop" effect',
-        'Icons: Abstract geometric — Sprout, Route, TrendingUp, Users from Lucide',
-        'Hover: translateY(-2px) + 3px burgundy bottom accent animates width',
-        'Mobile: Stack cards vertically in single column',
-      ]} />
-    </div>
+    </SectionWrapper>
   );
 }
 
+
 // ═══════════════════════════════════════════════════════════
-// SECTION 9: GOVERNANCE & COMPLIANCE — Asymmetric Split (40/60) + Node Infographic
+// SECTION 7: GOVERNANCE & COMPLIANCE
+// Detailed governance framework
 // ═══════════════════════════════════════════════════════════
 
 export function GroupWireframe_Governance(): ReactNode {
-  const frameworkNodes = [
+  const principles = [
     { icon: <Gavel size={20} />, label: 'Ethical Leadership', description: 'Principled decision-making at every level' },
     { icon: <FileCheck size={20} />, label: 'Regulatory Compliance', description: 'Adherence to all statutory requirements' },
     { icon: <Scale size={20} />, label: 'Financial Discipline', description: 'Rigorous fiscal management and oversight' },
@@ -767,251 +1090,312 @@ export function GroupWireframe_Governance(): ReactNode {
   ];
 
   return (
-    <div>
-      <WireframeLabel
-        layout="Asymmetric Split (40 / 60) with Node Infographic"
-        description="Left column: governance mandate text — Right column: shield/node visualization of 5 framework pillars"
-      />
-
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-0 overflow-hidden" style={{ border: '2px solid var(--vharanani-charcoal-20)' }}>
-        {/* Left Column — 40% (2 of 5): Core Mandate */}
-        <div className="md:col-span-2 p-6 md:p-8 flex flex-col justify-center" style={{ background: 'rgba(44,45,45,0.02)' }}>
-          <div className="typo-caption tracking-[0.3em] uppercase font-inter mb-3" style={{ color: 'var(--vharanani-burgundy)' }}>
-            STRUCTURAL FRAMEWORK
-          </div>
-          <h2
-            className="font-bebas-neue typo-headline-big mb-4"
-            style={{ color: 'var(--vharanani-charcoal)' }}
-          >
-            Governance & Compliance
-          </h2>
-          <div className="font-inter typo-copy mb-6" style={{ color: 'var(--vharanani-charcoal)' }}>
-            Vharani Group operates under a structured governance framework that emphasizes accountability, integrity, and operational excellence across all portfolio companies.
-          </div>
-          <div className="p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.04)' }}>
-            <div className="font-inter typo-copy italic" style={{ color: 'var(--vharanani-charcoal)' }}>
-              Our governance model ensures operational excellence and long-term stability across all portfolio companies.
-            </div>
-          </div>
-          {/* Wireframe annotation */}
-          <div className="mt-4 px-2 py-1 inline-block" style={{ background: 'rgba(137,43,28,0.08)', border: '1px dashed var(--vharanani-burgundy-60)' }}>
-            <span className="font-inter typo-meta tracking-wider uppercase" style={{ color: 'var(--vharanani-burgundy)' }}>40% — Core mandate text block</span>
-          </div>
+    <SectionWrapper>
+      <div className="max-w-7xl mx-auto">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
+          <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
+            SEC 07 — COMPLIANCE
+          </span>
         </div>
+        <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-2" style={{ color: 'var(--vharanani-charcoal)' }}>
+          Governance & Compliance
+        </h2>
+        <p className="typo-copy font-inter mb-12 max-w-2xl" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+          Ethics, risk management, and transparent reporting define our operational framework.
+        </p>
 
-        {/* Right Column — 60% (3 of 5): Framework Visualization */}
-        <div className="md:col-span-3 p-6 md:p-8" style={{ background: 'var(--vharanani-charcoal)' }}>
-          {/* Central Shield Element */}
-          <div className="flex flex-col items-center mb-8">
-            <div
-              className="w-[80px] h-[80px] flex items-center justify-center mb-3"
-              style={{ border: '3px solid var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.15)' }}
-            >
-              <Lock size={32} style={{ color: 'var(--vharanani-burgundy)' }} />
-            </div>
-            <div className="font-bebas-neue typo-headline-small tracking-wider" style={{ color: 'white' }}>
-              Governance Framework
-            </div>
-            <div className="font-inter typo-meta tracking-wider uppercase mt-1" style={{ color: 'var(--vharanani-charcoal-40)' }}>
-              Five interconnected pillars
-            </div>
-            {/* Wireframe annotation */}
-            <div className="mt-2 px-2 py-1" style={{ background: 'rgba(137,43,28,0.15)', border: '1px dashed var(--vharanani-burgundy-60)' }}>
-              <span className="font-inter typo-meta tracking-wider uppercase" style={{ color: 'var(--vharanani-burgundy-80)' }}>Central shield — anchor element</span>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-0" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
+          {/* Image */}
+          <div className="relative h-[300px] lg:h-auto overflow-hidden">
+            <ImageWithFallback
+              src={IMAGES.governance}
+              alt="Corporate governance"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 20%, rgba(137,43,28,0.5) 100%)' }} />
+            <div className="absolute bottom-6 left-6">
+              <div className="typo-headline-small font-bebas-neue uppercase tracking-wide text-white">
+                King IV Aligned
+              </div>
+              <div className="typo-caption font-inter text-white/70 mt-1">
+                Corporate governance best practices
+              </div>
             </div>
           </div>
 
-          {/* Five Framework Nodes */}
-          <div className="space-y-3">
-            {frameworkNodes.map((node, i) => (
+          {/* Principles list */}
+          <div className="lg:col-span-2">
+            {principles.map((p, i) => (
               <div
-                key={i}
-                className="flex items-center gap-4 p-4 transition-all duration-300 hover:translate-x-1"
+                key={p.label}
+                className="flex items-start gap-4 p-6"
                 style={{
-                  background: 'rgba(255,255,255,0.05)',
-                  borderLeft: '3px solid var(--vharanani-burgundy)',
+                  borderBottom: i < principles.length - 1 ? '1px solid var(--vharanani-charcoal-20)' : 'none',
                 }}
               >
-                {/* Step indicator */}
-                <div className="font-bebas-neue typo-subline flex-shrink-0" style={{ color: 'var(--vharanani-burgundy)', opacity: 0.5 }}>
-                  {String(i + 1).padStart(2, '0')}
+                <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center" style={{ border: '1px solid var(--vharanani-burgundy)', color: 'var(--vharanani-burgundy)' }}>
+                  {p.icon}
                 </div>
-                {/* Icon */}
-                <div
-                  className="w-[44px] h-[44px] flex-shrink-0 flex items-center justify-center"
-                  style={{ border: '1px solid var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.1)' }}
-                >
-                  <div style={{ color: 'var(--vharanani-burgundy)' }}>{node.icon}</div>
-                </div>
-                {/* Text */}
-                <div className="flex-1 min-w-0">
-                  <div className="font-bebas-neue typo-headline-small tracking-wide" style={{ color: 'white' }}>
-                    {node.label}
+                <div className="flex-1">
+                  <div className="typo-headline-small font-bebas-neue uppercase tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>
+                    {p.label}
                   </div>
-                  <div className="font-inter typo-meta" style={{ color: 'var(--vharanani-charcoal-40)' }}>
-                    {node.description}
+                  <div className="typo-copy-small font-inter mt-1" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+                    {p.description}
                   </div>
                 </div>
               </div>
             ))}
           </div>
-
-          {/* Wireframe annotation */}
-          <div className="mt-4 px-2 py-1 inline-block" style={{ background: 'rgba(137,43,28,0.15)', border: '1px dashed var(--vharanani-burgundy-60)' }}>
-            <span className="font-inter typo-meta tracking-wider uppercase" style={{ color: 'var(--vharanani-burgundy-80)' }}>60% — Node infographic, fade-in on scroll</span>
-          </div>
         </div>
       </div>
-
-      <WireframeSpec items={[
-        'Layout: Asymmetric 40/60 split — CSS grid-cols-5 (2 + 3)',
-        'Left: Light bg with governance mandate text + italic quote callout',
-        'Right: Dark charcoal bg with central shield icon + 5 horizontal node bars',
-        'Nodes: Left-border burgundy accent, numbered 01–05, icon + label + description',
-        'Interaction: Nodes slide/fade in one-by-one on scroll (staggered animation)',
-        'Hover: Nodes shift right 4px (translateX) for subtle interactivity',
-      ]} />
-    </div>
+    </SectionWrapper>
   );
 }
 
+
 // ═══════════════════════════════════════════════════════════
-// SECTION 10: OUR COMPANIES — Stacked Company Cards
+// SECTION 8: OUR COMPANIES
+// Subsidiary cards with quick-link navigation
 // ═══════════════════════════════════════════════════════════
 
 export function GroupWireframe_Companies(): ReactNode {
   const companies = [
     {
-      name: 'Vharani Properties',
+      title: 'Vharanani Properties',
       tag: 'CONSTRUCTION',
-      imageLabel: 'Construction & Engineering',
       icon: <Building2 size={20} />,
-      description: 'Construction, civil engineering, infrastructure development, and facilities management. Delivering large-scale public and private sector projects across South Africa.',
-      stats: [
-        { label: 'Focus', value: 'Infrastructure' },
-        { label: 'Scale', value: 'National' },
-        { label: 'Sector', value: 'Public & Private' },
-      ],
+      image: IMAGES.construction,
+      description: 'A leading Black-owned construction and infrastructure development company delivering large-scale projects.',
+      highlights: ['CIDB Grade 9 CE & GB', 'B-BBEE Level 1', 'ISO 9001 Certified'],
     },
     {
-      name: 'DMFT Property Developers',
-      tag: 'PROPERTY',
-      imageLabel: 'Property Development',
+      title: 'The David Mabilu Foundation',
+      tag: 'SOCIAL DEVELOPMENT',
       icon: <Landmark size={20} />,
-      description: 'Property development, investment management, and facilities oversight supported by a substantial unencumbered property portfolio.',
-      stats: [
-        { label: 'Focus', value: 'Real Estate' },
-        { label: 'Portfolio', value: 'Diversified' },
-        { label: 'Strategy', value: 'Long-Term' },
-      ],
+      image: IMAGES.foundation,
+      description: 'Committed to reducing poverty and sustainably improving living standards of marginalised communities.',
+      highlights: ['Education Programmes', 'Housing Initiatives', 'Community Upliftment'],
     },
     {
-      name: 'The David Mabilu Foundation',
-      tag: 'FOUNDATION',
-      imageLabel: 'Community & Foundation',
+      title: 'DMFT Property Developers',
+      tag: 'PROPERTY DEVELOPMENT',
       icon: <Heart size={20} />,
-      description: 'Driving educational support, housing initiatives, entrepreneurship programs, and community upliftment across South Africa.',
-      stats: [
-        { label: 'Focus', value: 'Social Impact' },
-        { label: 'Reach', value: 'National' },
-        { label: 'Mandate', value: 'Upliftment' },
-      ],
+      image: IMAGES.dmft,
+      description: 'Focused on creating exceptional residential and mixed-use developments across South Africa.',
+      highlights: ['Residential Estates', 'Mixed-Use Developments', 'Townhouse Complexes'],
     },
   ];
 
   return (
-    <div>
-      <WireframeLabel
-        layout="Stacked Company Feature Cards"
-        description="Full-width stacked cards with image left (40%), company details right (60%), alternating layout"
-      />
-
-      {/* Section heading */}
-      <div className="mb-6">
-        <div className="typo-caption tracking-[0.3em] uppercase font-inter mb-2" style={{ color: 'var(--vharanani-burgundy)' }}>
-          PORTFOLIO COMPANIES
+    <SectionWrapper dark>
+      <div className="max-w-7xl mx-auto">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
+          <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
+            SEC 08 — SUBSIDIARIES
+          </span>
         </div>
-        <h3 className="font-bebas-neue typo-subline" style={{ color: 'var(--vharanani-charcoal)' }}>
+        <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-12 text-white">
           Our Companies
-        </h3>
-        <div className="font-inter typo-copy mt-2" style={{ color: 'var(--vharanani-charcoal-60)' }}>
-          Vharani Group's portfolio reflects a strategic focus on infrastructure, property ownership, and social impact.
-        </div>
-      </div>
+        </h2>
 
-      {/* Company Cards */}
-      <div className="space-y-4">
-        {companies.map((company, i) => (
-          <div
-            key={i}
-            className="group overflow-hidden transition-all duration-300 hover:-translate-y-0.5"
-            style={{ border: '2px solid var(--vharanani-charcoal-20)' }}
-          >
-            <div className={`grid grid-cols-1 md:grid-cols-5 gap-0 ${i % 2 === 1 ? 'md:direction-rtl' : ''}`}>
-              {/* Image — 40% */}
-              <div className={`md:col-span-2 relative h-[200px] md:h-auto overflow-hidden ${i % 2 === 1 ? 'md:order-2' : ''}`}>
-                <ImagePlaceholder label={company.imageLabel} className="absolute inset-0 w-full h-full" />
-                {/* Tag overlay */}
-                <div className="absolute top-3 left-3 px-2 py-1 flex items-center gap-2 z-20" style={{ background: 'var(--vharanani-burgundy)' }}>
-                  <div className="text-white">{company.icon}</div>
-                  <span className="font-inter typo-meta text-white tracking-wider uppercase">{company.tag}</span>
+        <div className="space-y-6">
+          {companies.map((company, i) => (
+            <div
+              key={company.title}
+              className="grid grid-cols-1 md:grid-cols-3 gap-0 overflow-hidden"
+              style={{ border: '1px solid rgba(255,255,255,0.1)' }}
+            >
+              {/* Image */}
+              <div className="relative h-[200px] md:h-auto overflow-hidden">
+                <ImageWithFallback
+                  src={company.image}
+                  alt={company.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0" style={{ background: 'rgba(44,45,45,0.3)' }} />
+                <div className="absolute top-4 left-4 flex items-center gap-2">
+                  <span style={{ color: 'var(--vharanani-burgundy-60)' }}>{company.icon}</span>
+                  <span className="typo-caption tracking-[0.2em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
+                    {company.tag}
+                  </span>
                 </div>
               </div>
 
-              {/* Content — 60% */}
-              <div className={`md:col-span-3 p-6 md:p-8 flex flex-col justify-center ${i % 2 === 1 ? 'md:order-1' : ''}`} style={{ background: 'rgba(44,45,45,0.02)' }}>
-                <h2 className="font-bebas-neue typo-headline-big mb-3" style={{ color: 'var(--vharanani-charcoal)' }}>
-                  {company.name}
-                </h2>
-                <div className="font-inter typo-copy mb-5" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+              {/* Content */}
+              <div className="md:col-span-2 p-6 md:p-8 flex flex-col justify-center" style={{ background: 'rgba(255,255,255,0.03)' }}>
+                <h3 className="typo-subline font-bebas-neue uppercase tracking-wide text-white mb-3">
+                  {company.title}
+                </h3>
+                <p className="typo-copy-small font-inter text-white/60 mb-4">
                   {company.description}
-                </div>
-
-                {/* Mini stats row */}
-                <div className="grid grid-cols-3 gap-3">
-                  {company.stats.map((stat, j) => (
-                    <div key={j} className="p-3 text-center" style={{ borderTop: '3px solid var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.04)' }}>
-                      <div className="font-bebas-neue typo-subline" style={{ color: 'var(--vharanani-burgundy)' }}>
-                        {stat.value}
-                      </div>
-                      <div className="font-inter typo-meta tracking-wider uppercase mt-1" style={{ color: 'var(--vharanani-charcoal-60)' }}>
-                        {stat.label}
-                      </div>
-                    </div>
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  {company.highlights.map((h) => (
+                    <span key={h} className="typo-caption tracking-[0.1em] uppercase font-inter px-3 py-1" style={{ border: '1px solid rgba(255,255,255,0.15)', color: 'var(--vharanani-charcoal-40)' }}>
+                      {h}
+                    </span>
                   ))}
-                </div>
-
-                {/* CTA */}
-                <div className="flex items-center gap-2 mt-5">
-                  <div className="px-4 py-2 cursor-pointer flex items-center gap-2 transition-all duration-300 group-hover:gap-3" style={{ background: 'var(--vharanani-charcoal)' }}>
-                    <span className="font-bebas-neue typo-headline-small tracking-wider text-white">Explore Division</span>
-                    <ArrowRight size={14} className="text-white" />
-                  </div>
                 </div>
               </div>
             </div>
-
-            {/* Bottom accent line */}
-            <div className="h-[3px] w-0 group-hover:w-full transition-all duration-500" style={{ background: 'var(--vharanani-burgundy)' }} />
-          </div>
-        ))}
-      </div>
-
-      {/* Wireframe annotation */}
-      <div className="mt-3 flex items-center gap-2">
-        <div className="px-2 py-1" style={{ background: 'rgba(137,43,28,0.08)', border: '1px dashed var(--vharanani-burgundy-60)' }}>
-          <span className="font-inter typo-meta tracking-wider uppercase" style={{ color: 'var(--vharanani-burgundy)' }}>Alternating image/text layout — editorial magazine feel</span>
+          ))}
         </div>
       </div>
+    </SectionWrapper>
+  );
+}
 
-      <WireframeSpec items={[
-        'Layout: Full-width stacked cards, 40/60 image-to-content split',
-        'Alternating: Odd cards image-left, even cards image-right',
-        'Image: Full-bleed with hover scale(1.05), category tag overlay',
-        'Content: Bebas Neue heading + Inter body + 3-column mini stats',
-        'CTA: "Explore Division" button links to respective Level 1 division view',
-        'Hover: translateY(-2px) + bottom burgundy accent line animates',
-      ]} />
-    </div>
+
+// ═══════════════════════════════════════════════════════════
+// SECTION 9: NEWS & CONTACT
+// Latest news + contact form + social links
+// ═══════════════════════════════════════════════════════════
+
+export function GroupWireframe_NewsContact(): ReactNode {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+
+  const newsItems = [
+    { date: 'MAR 2026', title: 'Vharanani Group Expands Infrastructure Portfolio', description: 'New multi-billion rand highway project awarded in Limpopo province.' },
+    { date: 'FEB 2026', title: 'Foundation Awards 100 New Bursaries', description: 'The David Mabilu Foundation continues its commitment to education.' },
+    { date: 'JAN 2026', title: 'DMFT Launches New Estate Development', description: 'A premium residential estate breaking ground in Gauteng.' },
+  ];
+
+  const socialLinks = [
+    { icon: <Linkedin size={14} />, label: 'LinkedIn' },
+    { icon: <Twitter size={14} />, label: 'Twitter' },
+    { icon: <Facebook size={14} />, label: 'Facebook' },
+  ];
+
+  return (
+    <SectionWrapper>
+      <div className="max-w-7xl mx-auto">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
+          <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
+            SEC 09 — UPDATES
+          </span>
+        </div>
+        <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-12" style={{ color: 'var(--vharanani-charcoal)' }}>
+          Sustainable Impact & News
+        </h2>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* News */}
+          <div>
+            <h3 className="typo-subline font-bebas-neue uppercase tracking-wide mb-6" style={{ color: 'var(--vharanani-charcoal)' }}>
+              Latest Updates
+            </h3>
+            <div className="space-y-0" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
+              {newsItems.map((news, i) => (
+                <motion.div
+                  key={news.title}
+                  className="p-5 cursor-pointer"
+                  style={{
+                    borderBottom: i < newsItems.length - 1 ? '1px solid var(--vharanani-charcoal-20)' : 'none',
+                  }}
+                  whileHover={{ backgroundColor: '#fafafa' }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="typo-caption tracking-[0.15em] uppercase font-inter mb-2" style={{ color: 'var(--vharanani-burgundy)' }}>
+                    {news.date}
+                  </div>
+                  <div className="typo-headline-small font-bebas-neue uppercase tracking-wide mb-1" style={{ color: 'var(--vharanani-charcoal)' }}>
+                    {news.title}
+                  </div>
+                  <div className="typo-copy-small font-inter" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+                    {news.description}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Image strip */}
+            <div className="relative h-[160px] mt-6 overflow-hidden">
+              <ImageWithFallback
+                src={IMAGES.news}
+                alt="Corporate news and updates"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0" style={{ background: 'rgba(44,45,45,0.5)' }} />
+            </div>
+          </div>
+
+          {/* Contact form */}
+          <div>
+            <h3 className="typo-subline font-bebas-neue uppercase tracking-wide mb-6" style={{ color: 'var(--vharanani-charcoal)' }}>
+              Get in Touch
+            </h3>
+
+            {/* Contact info */}
+            <div className="space-y-3 mb-8">
+              {[
+                { icon: <Mail size={16} />, text: 'info@vharanani.com' },
+                { icon: <Phone size={16} />, text: '+27 (0) 15 123 4567' },
+                { icon: <MapPin size={16} />, text: 'Polokwane, Limpopo, South Africa' },
+              ].map((item) => (
+                <div key={item.text} className="flex items-center gap-3">
+                  <span style={{ color: 'var(--vharanani-burgundy)' }}>{item.icon}</span>
+                  <span className="typo-copy-small font-inter" style={{ color: 'var(--vharanani-charcoal-80)' }}>{item.text}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Form */}
+            <div className="space-y-4" style={{ border: '1px solid var(--vharanani-charcoal-20)', padding: '24px' }}>
+              <input
+                type="text"
+                placeholder="Your Name"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                className="w-full typo-copy-small font-inter px-4 py-3 outline-none"
+                style={{ border: '1px solid var(--vharanani-charcoal-20)', background: '#fafafa', color: 'var(--vharanani-charcoal)' }}
+              />
+              <input
+                type="email"
+                placeholder="Email Address"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                className="w-full typo-copy-small font-inter px-4 py-3 outline-none"
+                style={{ border: '1px solid var(--vharanani-charcoal-20)', background: '#fafafa', color: 'var(--vharanani-charcoal)' }}
+              />
+              <textarea
+                placeholder="Your Message"
+                rows={4}
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                className="w-full typo-copy-small font-inter px-4 py-3 outline-none resize-none"
+                style={{ border: '1px solid var(--vharanani-charcoal-20)', background: '#fafafa', color: 'var(--vharanani-charcoal)' }}
+              />
+              <button
+                className="typo-headline-small font-bebas-neue uppercase tracking-[0.15em] px-8 py-3 cursor-pointer transition-opacity hover:opacity-80"
+                style={{ background: 'var(--vharanani-burgundy)', color: 'white' }}
+              >
+                Send Message
+              </button>
+            </div>
+
+            {/* Social links */}
+            <div className="flex items-center gap-4 mt-6">
+              <span className="typo-caption tracking-[0.15em] uppercase font-inter" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+                Follow Us
+              </span>
+              {socialLinks.map((link) => (
+                <motion.div
+                  key={link.label}
+                  className="w-8 h-8 flex items-center justify-center cursor-pointer"
+                  style={{ border: '1px solid var(--vharanani-charcoal-20)', color: 'var(--vharanani-charcoal-60)' }}
+                  whileHover={{ borderColor: 'var(--vharanani-burgundy)', color: 'var(--vharanani-burgundy)' }}
+                >
+                  {link.icon}
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </SectionWrapper>
   );
 }

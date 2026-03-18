@@ -1,15 +1,29 @@
 import * as React from 'react';
 import { useEffect, useRef } from 'react';
-import { X } from 'lucide-react';
+import { X, ArrowRight } from 'lucide-react';
 import { gsap } from 'gsap';
 import { safeVibrate } from '../../utils/vibration';
+
+interface MobileMenuItem {
+  label: string;
+  id: string;
+}
 
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
+  onNavigate?: (divisionId: string) => void;
+  items?: MobileMenuItem[];
 }
 
-export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
+const DEFAULT_ITEMS: MobileMenuItem[] = [
+  { label: 'Vharanani Group', id: 'group' },
+  { label: 'Vharanani Properties', id: 'properties' },
+  { label: 'David Mabilu Foundation', id: 'foundation' },
+  { label: 'DMFT Property Developers', id: 'dmft' },
+];
+
+export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavigate, items = DEFAULT_ITEMS }) => {
   const overlayRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
@@ -78,6 +92,14 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
     }
   };
 
+  const handleItemClick = (id: string) => {
+    safeVibrate(10);
+    if (onNavigate) {
+      onNavigate(id);
+    }
+    handleClose();
+  };
+
   return (
     <div
       ref={overlayRef}
@@ -90,7 +112,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
       >
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b-2 border-[var(--vharanani-charcoal)]">
-          <h2 className="text-[var(--typo-subline-size)] leading-[var(--typo-subline-line-height)] font-bebas-neue font-bold text-[var(--vharanani-burgundy)] uppercase tracking-wide">
+          <h2 className="typo-subline font-bebas-neue text-[var(--vharanani-burgundy)] uppercase tracking-wide">
             Menu
           </h2>
           <button
@@ -102,26 +124,32 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           </button>
         </div>
 
+        {/* Division Label */}
+        <div className="px-6 pt-5 pb-2">
+          <span className="font-inter typo-caption tracking-[0.25em] uppercase" style={{ color: 'var(--vharanani-burgundy)' }}>
+            EXPLORE DIVISIONS
+          </span>
+        </div>
+
         {/* Menu Items */}
-        <nav className="flex-1 overflow-y-auto p-6">
-          <ul className="space-y-4">
-            {[
-              'Residential Portfolio',
-              'Commercial Properties',
-              'Mixed-Use Developments',
-              'About Us',
-              'Contact'
-            ].map((item, index) => (
-              <li key={index}>
-                <a
-                  href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
-                  onClick={handleClose}
-                  className="block py-4 px-4 border-l-4 border-transparent hover:border-[var(--vharanani-burgundy)] hover:bg-[var(--vharanani-burgundy-20)] transition-all duration-200"
+        <nav className="flex-1 overflow-y-auto px-6 pb-6">
+          <ul className="space-y-1">
+            {items.map((item, index) => (
+              <li key={item.id}>
+                <button
+                  onClick={() => handleItemClick(item.id)}
+                  className="w-full text-left flex items-center justify-between py-4 px-4 border-l-4 border-transparent hover:border-[var(--vharanani-burgundy)] hover:bg-[var(--vharanani-burgundy-20)] transition-all duration-200 group"
                 >
-                  <span className="text-[var(--typo-headline-small-size)] leading-[var(--typo-headline-small-line-height)] font-bebas-neue text-[var(--vharanani-charcoal)] uppercase tracking-wide">
-                    {item}
-                  </span>
-                </a>
+                  <div>
+                    <span className="font-inter typo-meta tracking-[0.15em] uppercase block mb-1" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <span className="typo-headline-small font-bebas-neue text-[var(--vharanani-charcoal)] uppercase tracking-wide">
+                      {item.label}
+                    </span>
+                  </div>
+                  <ArrowRight size={14} className="text-[var(--vharanani-burgundy)] opacity-0 group-hover:opacity-100 transition-opacity" />
+                </button>
               </li>
             ))}
           </ul>
@@ -129,9 +157,22 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
 
         {/* Footer CTA */}
         <div className="p-6 border-t-2 border-[var(--vharanani-charcoal)]">
-          <button className="w-full bg-[var(--vharanani-burgundy)] hover:bg-[var(--vharanani-burgundy-80)] text-white px-6 py-4 text-[var(--typo-headline-small-size)] leading-[var(--typo-headline-small-line-height)] font-bebas-neue uppercase tracking-wide transition-colors duration-300">
+          <button
+            onClick={() => {
+              const footer = document.querySelector('footer');
+              if (footer) footer.scrollIntoView({ behavior: 'smooth' });
+              handleClose();
+            }}
+            className="w-full bg-[var(--vharanani-burgundy)] hover:bg-[var(--vharanani-burgundy-80)] text-white px-6 py-4 typo-headline-small font-bebas-neue uppercase tracking-wide transition-colors duration-300 flex items-center justify-center gap-2"
+          >
             Get in Touch
+            <ArrowRight size={14} />
           </button>
+          <div className="mt-3 text-center">
+            <a href="mailto:info@vharanani.com" className="font-inter typo-meta tracking-wider" style={{ color: 'var(--vharanani-burgundy)' }}>
+              info@vharanani.com
+            </a>
+          </div>
         </div>
       </div>
     </div>

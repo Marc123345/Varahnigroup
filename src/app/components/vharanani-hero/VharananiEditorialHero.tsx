@@ -77,7 +77,7 @@ const divisions: Division[] = [
   {
     id: 'group',
     index: '01',
-    title: 'Vharani Group',
+    title: 'Vharanani Group',
     subtitle: 'Vision. Structure. Impact.',
     type: 'GROUP',
     ref: 'Building Africa\'s Future',
@@ -91,14 +91,14 @@ const divisions: Division[] = [
       { id: 'impact', index: 'Sec 5', title: 'Impact & Responsibility', type: 'IMPACT', description: 'Community benefit and social upliftment', image: 'https://images.unsplash.com/photo-1658129850537-ea7517a9682f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2NpYWwlMjBpbXBhY3QlMjBjb21tdW5pdHklMjBkZXZlbG9wbWVudCUyMEFmcmljYXxlbnwxfHx8fDE3NzMwNTYzMzV8MA&ixlib=rb-4.1.0&q=80&w=1080' },
       { id: 'vision-mission', index: 'Sec 6', title: 'Vision & Mission', type: 'MANDATE', description: 'Our vision, mission, and corporate overview', image: 'https://images.unsplash.com/photo-1656646424292-cf207f3f1749?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjB2aXNpb24lMjBtaXNzaW9uJTIwc3RhdGVtZW50JTIwYm9hcmRyb29tfGVufDF8fHx8MTc3MzA1NjMzNXww&ixlib=rb-4.1.0&q=80&w=1080' },
       { id: 'governance', index: 'Sec 7', title: 'Governance & Compliance', type: 'COMPLIANCE', description: 'Ethics, risk management, and transparent reporting', image: 'https://images.unsplash.com/photo-1556219845-95c1847629e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBnb3Zlcm5hbmNlJTIwYW5udWFsJTIwcmVwb3J0JTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc3MzA1NTkxM3ww&ixlib=rb-4.1.0&q=80&w=1080' },
-      { id: 'companies', index: 'Sec 8', title: 'Our Companies', type: 'SUBSIDIARIES', description: 'Vharani Properties, DMFT, David Mabilu Foundation', image: 'https://images.unsplash.com/photo-1682924754699-dcf11b641343?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXN0YWluYWJsZSUyMGluZnJhc3RydWN0dXJlJTIwZGV2ZWxvcG1lbnQlMjBBZnJpY2ElMjByb2Fkc3xlbnwxfHx8fDE3NzMwNTYzMzZ8MA&ixlib=rb-4.1.0&q=80&w=1080' },
+      { id: 'companies', index: 'Sec 8', title: 'Our Companies', type: 'SUBSIDIARIES', description: 'Vharanani Properties, DMFT, David Mabilu Foundation', image: 'https://images.unsplash.com/photo-1682924754699-dcf11b641343?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXN0YWluYWJsZSUyMGluZnJhc3RydWN0dXJlJTIwZGV2ZWxvcG1lbnQlMjBBZnJpY2ElMjByb2Fkc3xlbnwxfHx8fDE3NzMwNTYzMzZ8MA&ixlib=rb-4.1.0&q=80&w=1080' },
       { id: 'sustainable-impact', index: 'Sec 9', title: 'Sustainable Impact & News', type: 'UPDATES', description: 'Driving impact, news, and contact information', image: 'https://images.unsplash.com/photo-1766740606233-6573571caa6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZXdzJTIwbWVkaWElMjB1cGRhdGUlMjBjb3Jwb3JhdGUlMjBvZmZpY2V8ZW58MXx8fHwxNzczMDU2MzQyfDA&ixlib=rb-4.1.0&q=80&w=1080' },
     ],
   },
   {
     id: 'properties',
     index: '02',
-    title: 'Vharani Properties',
+    title: 'Vharanani Properties',
     subtitle: 'Infrastructure Provider of Distinction',
     type: 'CONSTRUCTION',
     ref: 'Est. 2001',
@@ -132,8 +132,8 @@ const divisions: Division[] = [
       { id: 'housing', index: 'Sec 3', title: 'Housing', type: 'PROGRAMMES', description: 'Housing initiatives for disadvantaged families', image: 'https://images.unsplash.com/photo-1615027212409-2628cc0cc11a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21tdW5pdHklMjBob3VzaW5nJTIwY29uc3RydWN0aW9uJTIwQWZyaWNhJTIwdmlsbGFnZXxlbnwxfHx8fDE3NzMwNTc2OTF8MA&ixlib=rb-4.1.0&q=80&w=1080' },
       { id: 'community', index: 'Sec 4', title: 'Community Upliftment', type: 'PROGRAMMES', description: 'Youth, women, sports, and community support', image: 'https://images.unsplash.com/photo-1761039808597-5639866bab8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3V0aCUyMHNwb3J0cyUyMGNvbW11bml0eSUyMGRldmVsb3BtZW50JTIwQWZyaWNhfGVufDF8fHx8MTc3MzA1NzY5MXww&ixlib=rb-4.1.0&q=80&w=1080' },
       { id: 'impact', index: 'Sec 5', title: 'Our Impact', type: 'RESULTS', description: 'Meaningful contributions and lasting change', image: 'https://images.unsplash.com/photo-1611502029437-54521b5e6ada?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2NpYWwlMjBpbXBhY3QlMjBkZXZlbG9wbWVudCUyMHJ1cmFsJTIwU291dGglMjBBZnJpY2F8ZW58MXx8fHwxNzczMDU3NjkyfDA&ixlib=rb-4.1.0&q=80&w=1080' },
-      { id: 'partnerships', index: 'Sec 6', title: 'Partnerships', type: 'NETWORK', description: 'Collaborative partnerships and the Vharani Group', image: 'https://images.unsplash.com/photo-1697665387559-253e7a645e96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxub25wcm9maXQlMjBwYXJ0bmVyc2hpcCUyMGhhbmRzaGFrZSUyMGNvbW11bml0eXxlbnwxfHx8fDE3NzMwNTc2OTN8MA&ixlib=rb-4.1.0&q=80&w=1080' },
-      { id: 'heritage', index: 'Sec 7', title: 'Vharani Group Heritage', type: 'HERITAGE', description: 'The backbone — supported by the Vharani Group', image: 'https://images.unsplash.com/photo-1517598024396-46c53fb391a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwZm91bmRlciUyMHBoaWxhbnRocm9waXN0JTIwcG9ydHJhaXQlMjBjYW5kaWR8ZW58MXx8fHwxNzczMTg2MTAwfDA&ixlib=rb-4.1.0&q=80&w=1080' },
+      { id: 'partnerships', index: 'Sec 6', title: 'Partnerships', type: 'NETWORK', description: 'Collaborative partnerships and the Vharanani Group', image: 'https://images.unsplash.com/photo-1697665387559-253e7a645e96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxub25wcm9maXQlMjBwYXJ0bmVyc2hpcCUyMGhhbmRzaGFrZSUyMGNvbW11bml0eXxlbnwxfHx8fDE3NzMwNTc2OTN8MA&ixlib=rb-4.1.0&q=80&w=1080' },
+      { id: 'heritage', index: 'Sec 7', title: 'Vharanani Group Heritage', type: 'HERITAGE', description: 'The backbone — supported by the Vharanani Group', image: 'https://images.unsplash.com/photo-1517598024396-46c53fb391a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwZm91bmRlciUyMHBoaWxhbnRocm9waXN0JTIwcG9ydHJhaXQlMjBjYW5kaWR8ZW58MXx8fHwxNzczMTg2MTAwfDA&ixlib=rb-4.1.0&q=80&w=1080' },
       { id: 'get-involved', index: 'Sec 8', title: 'Contact & Get Involved', type: 'CONTACT', description: 'Join us in building opportunity', image: 'https://images.unsplash.com/photo-1665848170858-359b25d5eb81?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwc3R1ZGVudHMlMjBzbWlsaW5nJTIwY29tbXVuaXR5JTIwZ2F0aGVyaW5nJTIwd2FybXxlbnwxfHx8fDE3NzMxODYwOTh8MA&ixlib=rb-4.1.0&q=80&w=1080' },
     ],
   },
@@ -143,17 +143,17 @@ const divisions: Division[] = [
     title: 'DMFT Property Developers',
     subtitle: 'Creating Exceptional Property Developments',
     type: 'PROPERTY DEVELOPMENT',
-    ref: 'Part of Vharani Group',
+    ref: 'Part of Vharanani Group',
     description: 'A property development company focused on the creation of high-quality residential and mixed-use developments across South Africa',
     image: 'https://images.unsplash.com/photo-1707410148802-fe08fe956398?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBkZXZlbG9wbWVudCUyMGluZnJhc3RydWN0dXJlJTIwc291dGglMjBhZnJpY2F8ZW58MXx8fHwxNzcyNzM0OTg3fDA&ixlib=rb-4.1.0&q=80&w=1080',
     sections: [
-      { id: 'about', index: 'Sec 1', title: 'About DMFT', type: 'INTELLIGENCE', description: 'Company overview and Vharani Group partnership', image: 'https://images.unsplash.com/photo-1762146828422-50a8bd416d3c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9wZXJ0eSUyMGRldmVsb3BtZW50JTIwcGxhbm5pbmclMjBhcmNoaXRlY3R1cmFsJTIwYmx1ZXByaW50fGVufDF8fHx8MTc3MzA1NzQ0OHww&ixlib=rb-4.1.0&q=80&w=1080' },
+      { id: 'about', index: 'Sec 1', title: 'About DMFT', type: 'INTELLIGENCE', description: 'Company overview and Vharanani Group partnership', image: 'https://images.unsplash.com/photo-1762146828422-50a8bd416d3c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9wZXJ0eSUyMGRldmVsb3BtZW50JTIwcGxhbm5pbmclMjBhcmNoaXRlY3R1cmFsJTIwYmx1ZXByaW50fGVufDF8fHx8MTc3MzA1NzQ0OHww&ixlib=rb-4.1.0&q=80&w=1080' },
       { id: 'approach', index: 'Sec 2', title: 'Development Approach', type: 'PROCESS', description: 'Full lifecycle from land acquisition to delivery', image: 'https://images.unsplash.com/photo-1609561515089-91b7fa540820?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxxdWFsaXR5JTIwY29uc3RydWN0aW9uJTIwc3RhbmRhcmRzJTIwaW5zcGVjdGlvbnxlbnwxfHx8fDE3NzMwNTc0NDh8MA&ixlib=rb-4.1.0&q=80&w=1080' },
       { id: 'residential-estates', index: 'Sec 3', title: 'Residential Estates', type: 'DEVELOPMENTS', description: 'Secure estates for modern living', image: 'https://images.unsplash.com/photo-1722293862101-6511f044073b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjByZXNpZGVudGlhbCUyMGVzdGF0ZSUyMGdhdGVkJTIwY29tbXVuaXR5fGVufDF8fHx8MTc3MzA1NzQ0Nnww&ixlib=rb-4.1.0&q=80&w=1080' },
       { id: 'apartments-townhouses', index: 'Sec 4', title: 'Apartments & Townhouses', type: 'DEVELOPMENTS', description: 'Urban apartments and modern townhouse complexes', image: 'https://images.unsplash.com/photo-1623752938001-25a3f247ad4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcGFydG1lbnQlMjBidWlsZGluZyUyMHVyYmFuJTIwZGV2ZWxvcG1lbnR8ZW58MXx8fHwxNzczMDU3NDQ2fDA&ixlib=rb-4.1.0&q=80&w=1080' },
       { id: 'mixed-use', index: 'Sec 5', title: 'Mixed-Use Developments', type: 'DEVELOPMENTS', description: 'Integrated residential, commercial, and community spaces', image: 'https://images.unsplash.com/photo-1758304480521-e6906c8ead7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaXhlZCUyMHVzZSUyMGRldmVsb3BtZW50JTIwdXJiYW4lMjBwbGFubmluZyUyMGFlcmlhbHxlbnwxfHx8fDE3NzMwNTc0NDd8MA&ixlib=rb-4.1.0&q=80&w=1080' },
       { id: 'capabilities', index: 'Sec 6', title: 'Capabilities & Quality', type: 'STANDARDS', description: 'Development expertise and quality commitment', image: 'https://images.unsplash.com/photo-1767818017596-b9e8504704a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0b3duaG91c2UlMjBjb21wbGV4JTIwbW9kZXJuJTIwYXJjaGl0ZWN0dXJlfGVufDF8fHx8MTc3MzA1NzQ0N3ww&ixlib=rb-4.1.0&q=80&w=1080' },
-      { id: 'heritage-contact', index: 'Sec 7', title: 'Heritage & Contact', type: 'CONTACT', description: 'Vharani Group heritage and partnership enquiries', image: 'https://images.unsplash.com/photo-1646678667054-d68e27a3f085?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBhcGFydG1lbnQlMjBkcm9uZSUyMGFlcmlhbCUyMG1vZGVybiUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc3MzE4NTY3OXww&ixlib=rb-4.1.0&q=80&w=1080' },
+      { id: 'heritage-contact', index: 'Sec 7', title: 'Heritage & Contact', type: 'CONTACT', description: 'Vharanani Group heritage and partnership enquiries', image: 'https://images.unsplash.com/photo-1646678667054-d68e27a3f085?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBhcGFydG1lbnQlMjBkcm9uZSUyMGFlcmlhbCUyMG1vZGVybiUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc3MzE4NTY3OXww&ixlib=rb-4.1.0&q=80&w=1080' },
     ],
   },
 ];
@@ -231,7 +231,7 @@ function ProjectCard({ title, location, status, type }: { title: string; locatio
   );
 }
 
-// ═════════���═════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════
 // OVERLAY SECTION CONTENT (what shows when a section is clicked)
 // ═══════════════════════════════════════════════════════════
 
@@ -258,9 +258,9 @@ function getSectionContent(divisionId: string, sectionId: string): ReactNode {
             <StatCard label="Projects Value" value="Billions" icon={<Briefcase size={18} />} />
             <StatCard label="B-BBEE Level" value="1" icon={<Award size={18} />} />
           </div>
-          <ContentBlock title="About Vharani Properties" text="Vharani Properties was founded in 2001 by Chief Executive Officer David Mabilu. What began as a small operation has grown into one of South Africa's leading Black-owned and managed construction companies." />
+          <ContentBlock title="About Vharanani Properties" text="Vharanani Properties was founded in 2001 by Chief Executive Officer David Mabilu. What began as a small operation has grown into one of South Africa's leading Black-owned and managed construction companies." />
           <ContentBlock title="Two Decades of Excellence" text="With more than two decades of experience, the company has developed strong technical expertise across a broad range of infrastructure sectors, delivering projects that meet the highest standards of quality, safety, and efficiency." />
-          <ContentBlock title="" text="Today, Vharani Properties operates nationally and has successfully completed numerous high-value construction projects valued at billions of rands. Our multidisciplinary capability enables us to deliver projects of varying scale and complexity while maintaining strict adherence to quality standards, safety protocols, and responsible project management." />
+          <ContentBlock title="" text="Today, Vharanani Properties operates nationally and has successfully completed numerous high-value construction projects valued at billions of rands. Our multidisciplinary capability enables us to deliver projects of varying scale and complexity while maintaining strict adherence to quality standards, safety protocols, and responsible project management." />
           <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.04)' }}>
             <div className="font-inter typo-copy italic" style={{ color: 'var(--vharanani-charcoal)' }}>
               "Established in 2001, the company has built a national reputation for delivering high-quality infrastructure, property development, and civil engineering projects for both public and private sector clients."
@@ -349,7 +349,7 @@ function getSectionContent(divisionId: string, sectionId: string): ReactNode {
       ),
       residential: (
         <div>
-          <ContentBlock title="Residential Development" text="Vharani Properties has contributed significantly to national housing development through large-scale residential construction. These projects have supported both provincial and national housing initiatives across South Africa." />
+          <ContentBlock title="Residential Development" text="Vharanani Properties has contributed significantly to national housing development through large-scale residential construction. These projects have supported both provincial and national housing initiatives across South Africa." />
           <ListBlock title="Project Types" items={['RDP housing projects', 'Walk-up housing developments', 'Apartment complexes', 'Townhouse developments', 'Residential estates']} />
           <div className="font-bebas-neue text-lg mb-3 uppercase tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Featured Developments</div>
           <ProjectCard title="Mamelodi X5 Housing Development" location="Gauteng, ZA" status="COMPLETED" type="Residential" />
@@ -358,7 +358,7 @@ function getSectionContent(divisionId: string, sectionId: string): ReactNode {
       ),
       'property-dev': (
         <div>
-          <ContentBlock title="Property Development" text="Vharani Properties provides turnkey property development solutions across the entire development lifecycle. We have developed residential estates, rental apartment blocks, security villages, and business campuses across South Africa." />
+          <ContentBlock title="Property Development" text="Vharanani Properties provides turnkey property development solutions across the entire development lifecycle. We have developed residential estates, rental apartment blocks, security villages, and business campuses across South Africa." />
           <ListBlock title="Full Lifecycle Capabilities" items={['Land acquisition', 'Property zoning', 'Feasibility studies', 'Architectural design', 'Full project management', 'Construction and development']} />
           <div className="font-bebas-neue text-lg mb-3 uppercase tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Key Developments</div>
           <ProjectCard title="ST Maria Development" location="South Africa" status="COMPLETED" type="Property Development" />
@@ -369,7 +369,7 @@ function getSectionContent(divisionId: string, sectionId: string): ReactNode {
       ),
       accreditation: (
         <div>
-          <ContentBlock title="Accreditation & Compliance" text="Vharani Properties maintains industry certifications and regulatory compliance to ensure quality, safety, and operational excellence." />
+          <ContentBlock title="Accreditation & Compliance" text="Vharanani Properties maintains industry certifications and regulatory compliance to ensure quality, safety, and operational excellence." />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
             <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
               <div className="flex items-center gap-2 mb-3">
@@ -406,7 +406,7 @@ function getSectionContent(divisionId: string, sectionId: string): ReactNode {
       ),
       'featured-projects': (
         <div>
-          <ContentBlock title="Featured Projects" text="Vharani Properties has delivered major infrastructure projects across South Africa, spanning roads, water, residential, public institutions, and property development." />
+          <ContentBlock title="Featured Projects" text="Vharanani Properties has delivered major infrastructure projects across South Africa, spanning roads, water, residential, public institutions, and property development." />
           <div className="font-bebas-neue text-lg mb-3 uppercase tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Roads & Civil Infrastructure</div>
           <ProjectCard title="Polokwane BRT System" location="Limpopo, ZA" status="COMPLETED" type="BRT" />
           <ProjectCard title="Tshwane BRT System" location="Gauteng, ZA" status="COMPLETED" type="BRT" />
@@ -508,7 +508,7 @@ function getSectionContent(divisionId: string, sectionId: string): ReactNode {
                 <div className="typo-caption tracking-[0.15em] uppercase px-2 py-1" style={{ color: 'var(--vharanani-burgundy)', border: '1px solid var(--vharanani-burgundy)' }}>2012</div>
                 <div className="typo-caption tracking-[0.15em] uppercase" style={{ color: 'var(--vharanani-charcoal-60)' }}>Nelson Mandela Day</div>
               </div>
-              <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal)' }}>Founder David Mabilu and Vharani Properties staff spent their 67 minutes giving back at Mambo Primary School in Chiawelo, Soweto — a school Mr. Mabilu attended as a learner. The team painted classrooms, cleaned the school facilities, and donated cleaning and hygiene supplies.</div>
+              <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal)' }}>Founder David Mabilu and Vharanani Properties staff spent their 67 minutes giving back at Mambo Primary School in Chiawelo, Soweto — a school Mr. Mabilu attended as a learner. The team painted classrooms, cleaned the school facilities, and donated cleaning and hygiene supplies.</div>
             </div>
             <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
               <div className="flex items-center gap-2 mb-2">
@@ -550,7 +550,7 @@ function getSectionContent(divisionId: string, sectionId: string): ReactNode {
                 <div className="typo-caption tracking-[0.15em] uppercase px-2 py-1" style={{ color: 'var(--vharanani-burgundy)', border: '1px solid var(--vharanani-burgundy)' }}>2012</div>
                 <div className="typo-caption tracking-[0.15em] uppercase" style={{ color: 'var(--vharanani-charcoal-60)' }}>Nelson Mandela Day</div>
               </div>
-              <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal)' }}>Founder David Mabilu and Vharani Properties staff spent their 67 minutes giving back at Mambo Primary School in Chiawelo, Soweto — a school Mr. Mabilu attended as a learner. The team painted classrooms, cleaned the school facilities, and donated cleaning and hygiene supplies.</div>
+              <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal)' }}>Founder David Mabilu and Vharanani Properties staff spent their 67 minutes giving back at Mambo Primary School in Chiawelo, Soweto — a school Mr. Mabilu attended as a learner. The team painted classrooms, cleaned the school facilities, and donated cleaning and hygiene supplies.</div>
             </div>
             <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
               <div className="flex items-center gap-2 mb-2">
@@ -603,9 +603,9 @@ function getSectionContent(divisionId: string, sectionId: string): ReactNode {
           <div className="p-5 mt-6" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
             <div className="flex items-center gap-2 mb-3">
               <Layers size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
-              <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Part of the Vharani Group</div>
+              <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Part of the Vharanani Group</div>
             </div>
-            <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>The David Mabilu Foundation works closely with the Vharani Group and its subsidiary companies to support social development initiatives. Through these relationships, the Foundation is able to leverage resources, expertise, and partnerships that enhance the reach and impact of its programmes.</div>
+            <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>The David Mabilu Foundation works closely with the Vharanani Group and its subsidiary companies to support social development initiatives. Through these relationships, the Foundation is able to leverage resources, expertise, and partnerships that enhance the reach and impact of its programmes.</div>
           </div>
           <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.04)' }}>
             <div className="font-inter typo-copy italic" style={{ color: 'var(--vharanani-charcoal)' }}>
@@ -640,7 +640,7 @@ function getSectionContent(divisionId: string, sectionId: string): ReactNode {
     _dmft_legacy: {
       _about_legacy: (
         <div>
-          <ContentBlock title="About DMFT Property Developers" text="DMFT Property Developers is a real estate development company dedicated to delivering high-quality property developments across South Africa. Working in collaboration with the Vharani Group, the company benefits from extensive construction and infrastructure expertise, enabling the successful delivery of complex property development projects from concept through to completion." />
+          <ContentBlock title="About DMFT Property Developers" text="DMFT Property Developers is a real estate development company dedicated to delivering high-quality property developments across South Africa. Working in collaboration with the Vharanani Group, the company benefits from extensive construction and infrastructure expertise, enabling the successful delivery of complex property development projects from concept through to completion." />
           <ContentBlock title="" text="Our developments are designed with long-term value in mind, combining strong architectural design, efficient infrastructure planning, and quality construction to create environments that enhance both lifestyle and economic opportunity." />
           <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.04)' }}>
             <div className="font-inter typo-copy italic" style={{ color: 'var(--vharanani-charcoal)' }}>
@@ -650,9 +650,9 @@ function getSectionContent(divisionId: string, sectionId: string): ReactNode {
           <div className="p-5 mt-6" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
             <div className="flex items-center gap-2 mb-3">
               <Layers size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
-              <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Part of the Vharani Group</div>
+              <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Part of the Vharanani Group</div>
             </div>
-            <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>DMFT Property Developers forms part of the Vharani Group, a diversified African holding company with interests across infrastructure, construction, property development, and investment sectors. This relationship provides DMFT with access to strong technical expertise, established infrastructure capabilities, and an experienced leadership team.</div>
+            <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>DMFT Property Developers forms part of the Vharanani Group, a diversified African holding company with interests across infrastructure, construction, property development, and investment sectors. This relationship provides DMFT with access to strong technical expertise, established infrastructure capabilities, and an experienced leadership team.</div>
           </div>
         </div>
       ),
@@ -686,7 +686,7 @@ function getSectionContent(divisionId: string, sectionId: string): ReactNode {
                 <HardHat size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
                 <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Construction & Project Management</div>
               </div>
-              <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>Leveraging the construction expertise of the Vharani Group to deliver projects efficiently and safely.</div>
+              <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>Leveraging the construction expertise of the Vharanani Group to deliver projects efficiently and safely.</div>
             </div>
           </div>
           <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
@@ -729,7 +729,7 @@ function getSectionContent(divisionId: string, sectionId: string): ReactNode {
       ),
       capabilities: (
         <div>
-          <ContentBlock title="Development Capabilities" text="Through its partnership with the Vharani Group, DMFT Property Developers has access to extensive development and infrastructure expertise. This integrated capability allows us to deliver developments from initial concept through to completed projects." />
+          <ContentBlock title="Development Capabilities" text="Through its partnership with the Vharanani Group, DMFT Property Developers has access to extensive development and infrastructure expertise. This integrated capability allows us to deliver developments from initial concept through to completed projects." />
           <ListBlock title="Core Capabilities" items={['Land development and township establishment', 'Property development planning', 'Project management', 'Infrastructure integration', 'Residential development construction', 'Mixed-use development delivery']} />
           <div className="font-bebas-neue text-lg mb-4 mt-8 uppercase tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Commitment to Quality</div>
           <ContentBlock title="" text="At DMFT Property Developers, quality is central to every development we undertake." />
@@ -813,7 +813,7 @@ export function VharananiEditorialHero() {
       // Pad to 6 faces if fewer than 6 sections
       while (sectionImages.length < 6) {
         sectionImages.push(selectedDivision.image);
-        sectionLabels.push({ title: selectedDivision.title.replace('Vharani ', ''), category: selectedDivision.type });
+        sectionLabels.push({ title: selectedDivision.title.replace('Vharanani ', ''), category: selectedDivision.type });
       }
       return { images: sectionImages.slice(0, 6), labels: sectionLabels.slice(0, 6) };
     }
@@ -821,7 +821,7 @@ export function VharananiEditorialHero() {
     return {
       images: [...divisions.map((d) => d.image), ...extraCubeImages],
       labels: [
-        ...divisions.map((d) => ({ title: d.title.replace('Vharani ', ''), category: d.type })),
+        ...divisions.map((d) => ({ title: d.title.replace('Vharanani ', ''), category: d.type })),
         { title: 'Community', category: 'IMPACT' },
         { title: 'Architecture', category: 'DESIGN' },
       ],
@@ -950,7 +950,7 @@ export function VharananiEditorialHero() {
                   ) : (
                     <img
                       src="https://ik.imagekit.io/qcvroy8xpd/Frame%202.png"
-                      alt="Vharani Group"
+                      alt="Vharanani Group"
                       className="h-8 sm:h-10 w-auto object-contain"
                     />
                   )}
@@ -971,7 +971,7 @@ export function VharananiEditorialHero() {
                         : 'var(--vharanani-charcoal)',
                     }}
                   >
-                    {div.title.replace('Vharani ', '')}
+                    {div.title.replace('Vharanani ', '')}
                   </button>
                 ))}
                 <button
@@ -992,7 +992,7 @@ export function VharananiEditorialHero() {
         </div>
       </header>
 
-      <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
+      <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} onNavigate={handleHeaderNavClick} />
 
       {/* ── HOME HERO BANNER — Level 0 only, above the cube ── */}
       {currentLevel === 0 && (
@@ -1370,7 +1370,7 @@ export function VharananiEditorialHero() {
               <div className="mb-5">
                 <img
                   src="https://ik.imagekit.io/qcvroy8xpd/Frame%202.png"
-                  alt="Vharani Group"
+                  alt="Vharanani Group"
                   className="h-10 w-auto object-contain"
                 />
               </div>
@@ -1384,7 +1384,7 @@ export function VharananiEditorialHero() {
               <ul className="space-y-3">
                 {divisions.map((div) => (
                   <li key={div.id}>
-                    <button onClick={() => handleHeaderNavClick(div.id)} className="font-inter typo-copy text-white/85 hover:text-[var(--vharanani-burgundy)] transition-colors">
+                    <button onClick={() => { handleHeaderNavClick(div.id); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="font-inter typo-copy text-white/85 hover:text-[var(--vharanani-burgundy)] transition-colors">
                       {div.title}
                     </button>
                   </li>
@@ -1396,14 +1396,30 @@ export function VharananiEditorialHero() {
               <h4 className="font-bebas-neue text-lg mb-5 uppercase tracking-wide">Quick Links</h4>
               <ul className="space-y-3">
                 {[
-                  { label: 'About the Group', href: '#about' },
-                  { label: 'Leadership', href: '#leadership' },
-                  { label: 'B-BBEE & Compliance', href: '#compliance' },
-                  { label: 'Projects Portfolio', href: '#projects' },
-                  { label: 'Careers', href: '#careers' },
+                  { label: 'About the Group', divId: 'group', secId: 'about' },
+                  { label: 'Leadership', divId: 'group', secId: 'leadership' },
+                  { label: 'B-BBEE & Compliance', divId: 'group', secId: 'governance' },
+                  { label: 'Projects Portfolio', divId: 'properties', secId: 'featured-projects' },
+                  { label: 'Our Impact', divId: 'group', secId: 'impact' },
                 ].map((item) => (
                   <li key={item.label}>
-                    <a href={item.href} className="font-inter typo-copy text-white/85 hover:text-[var(--vharanani-burgundy)] transition-colors">{item.label}</a>
+                    <button
+                      onClick={() => {
+                        const divIdx = divisions.findIndex((d) => d.id === item.divId);
+                        if (divIdx >= 0) {
+                          const div = divisions[divIdx];
+                          handleDivisionClick(div, divIdx);
+                          const sec = div.sections.find((s) => s.id === item.secId);
+                          if (sec) {
+                            setTimeout(() => handleSectionClick(div.id, sec), 300);
+                          }
+                        }
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
+                      className="font-inter typo-copy text-white/85 hover:text-[var(--vharanani-burgundy)] transition-colors"
+                    >
+                      {item.label}
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -1443,21 +1459,21 @@ export function VharananiEditorialHero() {
 
           <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="font-inter typo-copy-small text-white/70">
-              © 2026 Vharani Group. All rights reserved.
+              © 2026 Vharanani Group. All rights reserved.
             </div>
             <div className="flex items-center gap-6 font-inter typo-copy-small text-white/70">
-              <a href="#privacy" className="hover:text-[var(--vharanani-burgundy)] transition-colors">Privacy Policy</a>
+              <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-[var(--vharanani-burgundy)] transition-colors">Privacy Policy</button>
               <span className="w-px h-3 bg-white/20" />
-              <a href="#terms" className="hover:text-[var(--vharanani-burgundy)] transition-colors">Terms of Use</a>
+              <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-[var(--vharanani-burgundy)] transition-colors">Terms of Use</button>
               <span className="w-px h-3 bg-white/20" />
-              <a href="#paia" className="hover:text-[var(--vharanani-burgundy)] transition-colors">PAIA Manual</a>
+              <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-[var(--vharanani-burgundy)] transition-colors">PAIA Manual</button>
             </div>
           </div>
 
           <div className="mt-8 pt-6" style={{ borderTop: '1px solid var(--vharanani-charcoal-80)' }}>
             <div className="flex items-center justify-between">
-              <div className="font-inter typo-label tracking-[0.3em] uppercase text-white/30">VISION. STRUCTURE. IMPACT.</div>
-              <div className="font-inter typo-label tracking-[0.15em] uppercase text-white/30">© VHARANANI GROUP 2026</div>
+              <div className="font-inter typo-label tracking-[0.3em] uppercase text-white/50">VISION. STRUCTURE. IMPACT.</div>
+              <div className="font-inter typo-label tracking-[0.15em] uppercase text-white/50">© VHARANANI GROUP 2026</div>
             </div>
           </div>
         </div>

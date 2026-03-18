@@ -184,7 +184,7 @@ export function CSS3DCube({ images, activeIndex, size, labels }: CSS3DCubeProps)
             />
             {labels && labels[i] && (
               <div className="absolute bottom-0 left-0 right-0 p-3">
-                <div className="typo-meta tracking-[0.2em] uppercase mb-1" style={{ color: 'var(--vharanani-burgundy-40)' }}>
+                <div className="typo-meta tracking-[0.2em] uppercase mb-1" style={{ color: 'var(--vharanani-burgundy-60)' }}>
                   {labels[i].category}
                 </div>
                 <div className="font-bebas-neue typo-copy-small text-white" style={{ lineHeight: '1.1' }}>

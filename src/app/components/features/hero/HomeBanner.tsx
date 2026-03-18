@@ -17,7 +17,7 @@ const TICKER_ROW_1 = [
 ];
 
 const TICKER_ROW_2 = [
-  'VHARANI PROPERTIES', 'DMFT PROPERTY DEVELOPERS', 'DAVID MABILU FOUNDATION',
+  'VHARANANI PROPERTIES', 'DMFT PROPERTY DEVELOPERS', 'DAVID MABILU FOUNDATION',
   'CIVIL ENGINEERING', 'RESIDENTIAL ESTATES', 'MIXED-USE DEVELOPMENTS',
   'COMMUNITY UPLIFTMENT', 'STRATEGIC PARTNERSHIPS', 'SUSTAINABLE GROWTH',
   'GOVERNANCE & COMPLIANCE', 'SKILLS DEVELOPMENT', 'NATION BUILDING',
@@ -114,7 +114,7 @@ export function VharananiHomeBanner({
               className="font-inter typo-copy mb-10"
               style={{ color: 'rgba(255,255,255,0.7)' }}
             >
-              Vharani Group is a wholly Black-owned investment holding company
+              Vharanani Group is a wholly Black-owned investment holding company
               driving infrastructure, property development, innovation, and
               social impact across South Africa.
             </motion.p>

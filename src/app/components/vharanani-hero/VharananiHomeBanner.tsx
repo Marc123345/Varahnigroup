@@ -17,7 +17,7 @@ const TICKER_ROW_1 = [
 ];
 
 const TICKER_ROW_2 = [
-  'VHARANI PROPERTIES', 'DMFT PROPERTY DEVELOPERS', 'DAVID MABILU FOUNDATION',
+  'VHARANANI PROPERTIES', 'DMFT PROPERTY DEVELOPERS', 'DAVID MABILU FOUNDATION',
   'CIVIL ENGINEERING', 'RESIDENTIAL ESTATES', 'MIXED-USE DEVELOPMENTS',
   'COMMUNITY UPLIFTMENT', 'STRATEGIC PARTNERSHIPS', 'SUSTAINABLE GROWTH',
   'GOVERNANCE & COMPLIANCE', 'SKILLS DEVELOPMENT', 'NATION BUILDING',
@@ -137,7 +137,7 @@ export function VharananiHomeBanner({
                 color: 'rgba(255,255,255,0.7)',
               }}
             >
-              Vharani Group is a wholly Black-owned investment holding company
+              Vharanani Group is a wholly Black-owned investment holding company
               driving infrastructure, property development, innovation, and
               social impact across South Africa.
             </motion.p>
@@ -237,7 +237,7 @@ export function VharananiHomeBanner({
         <span
           className="font-inter typo-meta tracking-[0.2em] uppercase"
           style={{
-            color: 'rgba(255,255,255,0.4)',
+            color: 'rgba(255,255,255,0.6)',
           }}
         >
           SCROLL
@@ -269,7 +269,7 @@ export function VharananiHomeBanner({
                 <span
                   className="font-inter typo-meta tracking-[0.25em] uppercase whitespace-nowrap"
                   style={{
-                    color: 'rgba(255,255,255,0.45)',
+                    color: 'rgba(255,255,255,0.65)',
                   }}
                 >
                   {item}
@@ -290,7 +290,7 @@ export function VharananiHomeBanner({
                 <span
                   className="font-bebas-neue typo-label tracking-[0.15em] uppercase whitespace-nowrap"
                   style={{
-                    color: 'rgba(255,255,255,0.3)',
+                    color: 'rgba(255,255,255,0.55)',
                   }}
                 >
                   {item}
