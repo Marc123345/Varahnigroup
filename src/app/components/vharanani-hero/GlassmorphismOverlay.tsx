@@ -37,6 +37,11 @@ export function GlassmorphismOverlay({
   const [visibleSection, setVisibleSection] = useState(tabs[0]?.id || '');
   const isScrollingTo = useRef(false);
 
+  const handleClose = useCallback(() => {
+    safeVibrate(10);
+    onClose();
+  }, [onClose]);
+
   // ESC key to close
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -71,11 +76,6 @@ export function GlassmorphismOverlay({
     container.addEventListener('scroll', handleScroll, { passive: true });
     return () => container.removeEventListener('scroll', handleScroll);
   }, [scrollMode, tabs]);
-
-  const handleClose = useCallback(() => {
-    safeVibrate(10);
-    onClose();
-  }, [onClose]);
 
   const handleTabClick = (tabId: string) => {
     safeVibrate(5);
