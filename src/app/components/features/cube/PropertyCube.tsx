@@ -16,17 +16,29 @@ export function PropertyCube({ images, activeIndex, onRotate }: PropertyCubeProp
   // Create materials with textures
   const materials = useMemo(() => {
     const loader = new THREE.TextureLoader();
-    
-    return images.slice(0, 6).map((imageUrl) => {
-      const texture = loader.load(imageUrl);
+    const sourceImages = images.slice(0, 6);
+
+    const mats = sourceImages.map((imageUrl) => {
+      const texture = loader.load(
+        imageUrl,
+        undefined,
+        () => { texture.image = null; }
+      );
       texture.colorSpace = THREE.SRGBColorSpace;
-      
+
       return new THREE.MeshStandardMaterial({
         map: texture,
         roughness: 0.4,
         metalness: 0.2,
       });
     });
+
+    // BoxGeometry requires exactly 6 materials (one per face group)
+    while (mats.length < 6) {
+      mats.push(new THREE.MeshStandardMaterial({ roughness: 0.4, metalness: 0.2 }));
+    }
+
+    return mats;
   }, [images]);
 
   useFrame((state, delta) => {

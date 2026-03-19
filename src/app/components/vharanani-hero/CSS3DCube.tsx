@@ -128,8 +128,14 @@ export function CSS3DCube({ images, activeIndex, size, labels }: CSS3DCubeProps)
 
   // Ensure we have 6 images
   const faces = [...images];
-  while (faces.length < 6) {
-    faces.push(images[faces.length % images.length] || '');
+  if (images.length > 0) {
+    while (faces.length < 6) {
+      faces.push(images[faces.length % images.length]);
+    }
+  } else {
+    while (faces.length < 6) {
+      faces.push('');
+    }
   }
 
   const faceConfigs = [
@@ -167,7 +173,7 @@ export function CSS3DCube({ images, activeIndex, size, labels }: CSS3DCubeProps)
       >
         {faceConfigs.map((face, i) => (
           <div
-            key={i}
+            key={face.transform}
             className="absolute inset-0 overflow-hidden"
             style={{
               transform: face.transform,
