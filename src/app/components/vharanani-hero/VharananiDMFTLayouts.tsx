@@ -145,7 +145,7 @@ export function DMFTWireframe_HeroAbout({ onTabChange }: { onTabChange?: (tabId:
       {/* ── STATS BAR ── */}
       <div style={{ background: 'var(--vharanani-charcoal)' }}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-0" style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-0" style={{ borderBottom: '1px solid rgba(137,43,28,0.2)' }}>
             {[
               { target: 12, suffix: '+', label: 'Developments' },
               { target: 3, suffix: 'K+', label: 'Units Planned' },
@@ -155,7 +155,7 @@ export function DMFTWireframe_HeroAbout({ onTabChange }: { onTabChange?: (tabId:
               <div
                 key={stat.label}
                 className="py-8 md:py-10 text-center"
-                style={{ borderRight: i < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}
+                style={{ borderRight: i < 3 ? '1px solid rgba(137,43,28,0.2)' : 'none' }}
               >
                 <AnimatedCounter target={stat.target} suffix={stat.suffix} />
                 <div className="typo-meta tracking-[0.12em] uppercase font-inter text-white/60 mt-2">
@@ -608,6 +608,10 @@ export function DMFTWireframe_Portfolio(): ReactNode {
                   <div className="absolute inset-0" style={{
                     background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%)'
                   }} />
+                  {/* Hover detail overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: 'rgba(137,43,28,0.75)' }}>
+                    <span className="font-bebas-neue typo-headline-small tracking-wider uppercase text-white">View Details</span>
+                  </div>
                   {/* Ghost number */}
                   <div className="absolute top-2 left-4">
                     <span className="font-bebas-neue" style={{ fontSize: '80px', lineHeight: 1, color: 'rgba(255,255,255,0.06)' }}>
@@ -957,7 +961,7 @@ export function DMFTWireframe_HeritageContact(): ReactNode {
                 />
               </div>
               <button
-                className="w-full flex items-center justify-center gap-2 px-6 py-3.5 transition-all duration-300 hover:gap-3"
+                className="w-full flex items-center justify-center gap-2 px-8 py-4 transition-all duration-300 hover:gap-3 hover:opacity-90"
                 style={{ background: 'var(--vharanani-burgundy)' }}
               >
                 <span className="font-bebas-neue typo-headline-small tracking-wider uppercase text-white">Submit Enquiry</span>

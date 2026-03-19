@@ -811,6 +811,7 @@ export function GroupWireframe_Leadership(): ReactNode {
             SEC 04 — PEOPLE
           </span>
         </div>
+        <p className="typo-meta tracking-[0.25em] uppercase font-inter mb-2" style={{ color: 'var(--vharanani-burgundy)' }}>LEADERSHIP</p>
         <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-12" style={{ color: 'var(--vharanani-charcoal)' }}>
           Leadership
         </h2>
@@ -850,6 +851,7 @@ export function GroupWireframe_Leadership(): ReactNode {
               className="p-6 text-center"
               style={{
                 borderRight: i < 3 ? '1px solid var(--vharanani-charcoal-20)' : 'none',
+                borderLeft: '3px solid var(--vharanani-burgundy)',
               }}
             >
               <div
@@ -1167,6 +1169,7 @@ export function GroupWireframe_Companies(): ReactNode {
             SEC 08 — SUBSIDIARIES
           </span>
         </div>
+        <p className="typo-meta tracking-[0.25em] uppercase font-inter mb-2" style={{ color: 'var(--vharanani-burgundy)' }}>COMPANIES</p>
         <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-12 text-white">
           Our Companies
         </h2>
@@ -1175,7 +1178,7 @@ export function GroupWireframe_Companies(): ReactNode {
           {companies.map((company, i) => (
             <div
               key={company.title}
-              className="grid grid-cols-1 md:grid-cols-3 gap-0 overflow-hidden"
+              className="grid grid-cols-1 md:grid-cols-3 gap-0 overflow-hidden hover:shadow-lg transition-shadow duration-300"
               style={{ border: '1px solid rgba(255,255,255,0.1)' }}
             >
               {/* Image */}
@@ -1320,7 +1323,7 @@ export function GroupWireframe_NewsContact(): ReactNode {
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full typo-copy-small font-inter px-4 py-3 outline-none"
+                className="w-full typo-copy-small font-inter px-4 py-3 outline-none focus:outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
                 style={{ border: '1px solid var(--vharanani-charcoal-20)', background: '#fafafa', color: 'var(--vharanani-charcoal)' }}
               />
               <input
@@ -1328,7 +1331,7 @@ export function GroupWireframe_NewsContact(): ReactNode {
                 placeholder="Email Address"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full typo-copy-small font-inter px-4 py-3 outline-none"
+                className="w-full typo-copy-small font-inter px-4 py-3 outline-none focus:outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
                 style={{ border: '1px solid var(--vharanani-charcoal-20)', background: '#fafafa', color: 'var(--vharanani-charcoal)' }}
               />
               <textarea
@@ -1336,7 +1339,7 @@ export function GroupWireframe_NewsContact(): ReactNode {
                 rows={4}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full typo-copy-small font-inter px-4 py-3 outline-none resize-none"
+                className="w-full typo-copy-small font-inter px-4 py-3 outline-none focus:outline-none resize-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
                 style={{ border: '1px solid var(--vharanani-charcoal-20)', background: '#fafafa', color: 'var(--vharanani-charcoal)' }}
               />
               <button

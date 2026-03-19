@@ -121,6 +121,7 @@ export function PropertiesWireframe_AboutImpact(): ReactNode {
 
           {/* Right Column — Text Content */}
           <div className="p-6 md:p-10 flex flex-col justify-center" style={{ background: '#fafafa' }}>
+            <p className="typo-meta tracking-[0.25em] uppercase font-inter mb-2" style={{ color: 'var(--vharanani-burgundy)' }}>VHARANANI PROPERTIES</p>
             <div
               className="typo-caption tracking-[0.3em] uppercase font-inter mb-3"
               style={{ color: 'var(--vharanani-burgundy)' }}
@@ -139,7 +140,7 @@ export function PropertiesWireframe_AboutImpact(): ReactNode {
             </p>
 
             {/* Power Grid — Core Stats */}
-            <div className="grid grid-cols-3 gap-4 mb-6 pt-6" style={{ borderTop: '1px solid var(--vharanani-charcoal-20)' }}>
+            <div className="grid grid-cols-3 gap-6 mb-6 pt-6" style={{ borderTop: '1px solid var(--vharanani-charcoal-20)' }}>
               {[
                 { value: 20, suffix: '+', label: 'Years Experience' },
                 { value: 1, suffix: '', label: 'B-BBEE Level', prefix: 'Level ' },
@@ -374,12 +375,12 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
             <div className="inline-block self-start px-2 py-1 mb-3" style={{ background: 'var(--vharanani-burgundy)' }}>
               <span className="font-inter typo-meta text-white tracking-[0.2em] uppercase">{current.category}</span>
             </div>
-            <h3 className="font-bebas-neue typo-headline-big tracking-wide text-white uppercase mb-2">
+            <h3 className="font-bebas-neue typo-subline tracking-wide text-white uppercase mb-2">
               {current.title}
             </h3>
             <div className="flex items-center gap-2 mb-4">
               <MapPin size={12} style={{ color: 'rgba(255,255,255,0.5)' }} />
-              <span className="font-inter typo-label tracking-wider uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>
+              <span className="font-inter typo-copy-small tracking-wider uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>
                 {current.location}
               </span>
             </div>
@@ -524,7 +525,7 @@ export function PropertiesWireframe_Compliance(): ReactNode {
               key={i}
               whileHover={{ y: -4 }}
               transition={{ duration: 0.2 }}
-              className="flex flex-col items-center justify-center p-6 text-center"
+              className="flex flex-col items-center justify-center p-6 text-center hover:border-[var(--vharanani-burgundy)] transition-colors duration-200"
               style={{
                 background: cert.highlight ? 'rgba(137,43,28,0.04)' : 'white',
                 borderBottom: cert.highlight ? '3px solid var(--vharanani-burgundy)' : '3px solid transparent',
@@ -594,7 +595,7 @@ export function PropertiesWireframe_ValuesImpact(): ReactNode {
             <motion.div
               key={i}
               whileHover={{ y: -2 }}
-              className="group p-6 text-center"
+              className="group p-6 pb-8 text-center"
               style={{ background: 'white' }}
             >
               <div
@@ -692,7 +693,7 @@ export function PropertiesWireframe_ContactFootprint(): ReactNode {
             <ImageWithFallback
               src={IMAGES.map}
               alt="South Africa geographic coverage"
-              className="absolute inset-0 w-full h-full object-cover opacity-60"
+              className="absolute inset-0 w-full h-full object-cover opacity-75"
             />
             {/* Grid overlay */}
             <div
@@ -800,7 +801,7 @@ export function PropertiesWireframe_ContactFootprint(): ReactNode {
                   style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}
                 />
                 <select
-                  className="w-full px-4 py-3 font-inter typo-copy-small outline-none"
+                  className="w-full px-4 py-3 font-inter typo-copy-small outline-none focus:outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
                   style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)', color: 'var(--vharanani-charcoal-60)' }}
                   defaultValue=""
                 >

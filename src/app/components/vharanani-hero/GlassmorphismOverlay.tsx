@@ -133,10 +133,10 @@ export function GlassmorphismOverlay({
         {/* Back button */}
         <button
           onClick={handleClose}
-          className="flex items-center gap-2 group flex-shrink-0 mr-4 sm:mr-6"
+          className="flex items-center gap-2 group flex-shrink-0 mr-4 sm:mr-6 transition-all duration-200"
         >
           <div
-            className="w-8 h-8 flex items-center justify-center transition-colors group-hover:bg-[var(--vharanani-burgundy)]"
+            className="w-8 h-8 flex items-center justify-center transition-all duration-200 group-hover:bg-[var(--vharanani-burgundy)]"
             style={{ border: '1px solid var(--vharanani-burgundy)' }}
           >
             <ArrowLeft
@@ -215,7 +215,7 @@ export function GlassmorphismOverlay({
         {/* Close button */}
         <button
           onClick={handleClose}
-          className="w-8 h-8 flex items-center justify-center transition-colors hover:bg-[var(--vharanani-burgundy)] group flex-shrink-0 ml-4"
+          className="w-8 h-8 flex items-center justify-center transition-all duration-200 hover:bg-[var(--vharanani-burgundy)] group flex-shrink-0 ml-4"
           style={{ border: '1px solid var(--vharanani-charcoal-20)' }}
           aria-label="Close overlay"
         >

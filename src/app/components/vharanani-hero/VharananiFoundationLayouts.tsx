@@ -146,7 +146,7 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
       {/* ── IMPACT STATS BAR ── */}
       <div style={{ background: 'var(--vharanani-charcoal)' }}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-0" style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-0" style={{ borderBottom: '1px solid rgba(137,43,28,0.2)' }}>
             {[
               { target: 50, suffix: 'K+', label: 'Lives Impacted' },
               { target: 34, suffix: '', label: 'Full Scholarships' },
@@ -156,7 +156,7 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
               <div
                 key={stat.label}
                 className="py-8 md:py-10 text-center"
-                style={{ borderRight: i < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}
+                style={{ borderRight: i < 3 ? '1px solid rgba(137,43,28,0.2)' : 'none' }}
               >
                 <AnimatedCounter target={stat.target} suffix={stat.suffix} />
                 <div className="typo-meta tracking-[0.12em] uppercase font-inter text-white/60 mt-2">
@@ -309,7 +309,7 @@ export function FoundationWireframe_PartnerNetwork(): ReactNode {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="relative p-8 group"
+                className="relative p-8 group hover:bg-[var(--vharanani-burgundy-20)] transition-colors duration-200"
                 style={{
                   borderRight: (i % 3 !== 2) ? '1px solid var(--vharanani-charcoal-20)' : 'none',
                   borderBottom: i < 3 ? '1px solid var(--vharanani-charcoal-20)' : 'none',
@@ -470,7 +470,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
                   <div className={`lg:col-span-7 p-8 md:p-12 flex flex-col justify-center ${isEven ? '' : 'lg:order-1'}`} style={{ background: i % 2 === 0 ? '#ffffff' : '#fafafa' }}>
                     {/* Icon + tag */}
                     <div className="flex items-center gap-3 mb-5">
-                      <div className="w-10 h-10 flex items-center justify-center" style={{ border: '1.5px solid var(--vharanani-burgundy)', color: 'var(--vharanani-burgundy)' }}>
+                      <div className="w-10 h-10 flex items-center justify-center flex-shrink-0" style={{ border: '1.5px solid var(--vharanani-burgundy)', color: 'var(--vharanani-burgundy)' }}>
                         {prog.icon}
                       </div>
                       <span className="typo-caption tracking-[0.2em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
@@ -654,7 +654,7 @@ export function FoundationWireframe_ImpactStories(): ReactNode {
           <div className="overflow-hidden" style={{ border: '1px solid var(--vharanani-charcoal-20)', borderTop: 'none' }}>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
               {/* Left — Image + metric */}
-              <div className="lg:col-span-5 relative h-[320px] lg:h-auto lg:min-h-[440px]">
+              <div className="lg:col-span-5 relative h-[320px] lg:h-auto lg:min-h-[440px] overflow-hidden">
                 <ImageWithFallback
                   src={current.image}
                   alt={current.title}
@@ -867,7 +867,7 @@ export function FoundationWireframe_Contact(): ReactNode {
                   </div>
                   <div>
                     <div className="typo-meta tracking-[0.12em] uppercase font-inter text-white/60 mb-0.5">{item.label}</div>
-                    <div className="typo-copy-small font-inter text-white/80">{item.value}</div>
+                    <div className="typo-copy-small font-inter text-white/80 hover:text-[var(--vharanani-burgundy)] transition-colors cursor-pointer">{item.value}</div>
                   </div>
                 </div>
               ))}
@@ -926,7 +926,7 @@ export function FoundationWireframe_Contact(): ReactNode {
               <div>
                 <label className="typo-meta tracking-[0.12em] uppercase font-inter mb-2 block" style={{ color: 'var(--vharanani-charcoal-60)' }}>Inquiry Type</label>
                 <select
-                  className="w-full px-4 py-3 font-inter typo-copy-small outline-none"
+                  className="w-full px-4 py-3 font-inter typo-copy-small outline-none focus:outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
                   style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white', color: 'var(--vharanani-charcoal-60)' }}
                   defaultValue=""
                 >
