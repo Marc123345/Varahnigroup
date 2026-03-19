@@ -235,7 +235,7 @@ function ProjectCard({ title, location, status, type }: { title: string; locatio
 // OVERLAY SECTION CONTENT (what shows when a section is clicked)
 // ═══════════════════════════════════════════════════════════
 
-function getSectionContent(divisionId: string, sectionId: string): ReactNode {
+function getSectionContent(divisionId: string, sectionId: string, onTabChange?: (tabId: string) => void): ReactNode {
   const contentMap: Record<string, Record<string, ReactNode>> = {
     properties: {
       about: (<PropertiesWireframe_AboutImpact />),
@@ -429,7 +429,7 @@ function getSectionContent(divisionId: string, sectionId: string): ReactNode {
       ),
     },
     foundation: {
-      about: (<FoundationWireframe_Hero />),
+      about: (<FoundationWireframe_Hero onTabChange={onTabChange} />),
       education: (<FoundationWireframe_ImpactStories />),
       housing: (<FoundationWireframe_ImpactStories />),
       community: (<FoundationWireframe_ImpactStories />),
@@ -629,7 +629,7 @@ function getSectionContent(divisionId: string, sectionId: string): ReactNode {
       ),
     },
     dmft: {
-      about: (<DMFTWireframe_HeroAbout />),
+      about: (<DMFTWireframe_HeroAbout onTabChange={onTabChange} />),
       approach: (<DMFTWireframe_DevelopmentApproach />),
       'residential-estates': (<DMFTWireframe_Portfolio />),
       'apartments-townhouses': (<DMFTWireframe_Portfolio />),
@@ -907,11 +907,20 @@ export function VharananiEditorialHero() {
   }, [handleDivisionClick]);
 
   // Build overlay tabs from the selected division's sections (so user can switch sections inside the overlay)
+  const handleOverlayTabChange = useCallback((tabId: string) => {
+    if (!selectedDivision) return;
+    const sec = selectedDivision.sections.find((s) => s.id === tabId);
+    if (sec) {
+      setOverlaySection({ divisionId: selectedDivision.id, section: sec });
+      setActiveSectionIndex(selectedDivision.sections.indexOf(sec));
+    }
+  }, [selectedDivision]);
+
   const overlayTabs = selectedDivision
     ? selectedDivision.sections.map((sec) => ({
         id: sec.id,
         label: sec.title,
-        content: getSectionContent(selectedDivision.id, sec.id),
+        content: getSectionContent(selectedDivision.id, sec.id, handleOverlayTabChange),
       }))
     : [];
   const overlayActiveTab = overlaySection?.section.id || '';
@@ -1462,11 +1471,11 @@ export function VharananiEditorialHero() {
               © 2026 Vharanani Group. All rights reserved.
             </div>
             <div className="flex items-center gap-6 font-inter typo-copy-small text-white/70">
-              <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-[var(--vharanani-burgundy)] transition-colors">Privacy Policy</button>
+              <a href="mailto:info@vharanani.com?subject=Privacy%20Policy%20Enquiry" className="hover:text-[var(--vharanani-burgundy)] transition-colors">Privacy Policy</a>
               <span className="w-px h-3 bg-white/20" />
-              <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-[var(--vharanani-burgundy)] transition-colors">Terms of Use</button>
+              <a href="mailto:info@vharanani.com?subject=Terms%20of%20Use%20Enquiry" className="hover:text-[var(--vharanani-burgundy)] transition-colors">Terms of Use</a>
               <span className="w-px h-3 bg-white/20" />
-              <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-[var(--vharanani-burgundy)] transition-colors">PAIA Manual</button>
+              <a href="mailto:info@vharanani.com?subject=PAIA%20Manual%20Request" className="hover:text-[var(--vharanani-burgundy)] transition-colors">PAIA Manual</a>
             </div>
           </div>
 
@@ -1490,13 +1499,7 @@ export function VharananiEditorialHero() {
             tabs={overlayTabs}
             activeTab={overlayActiveTab}
             divisionLogo={DIVISION_LOGOS[selectedDivision.id]}
-            onTabChange={(tabId) => {
-              const sec = selectedDivision.sections.find((s) => s.id === tabId);
-              if (sec) {
-                setOverlaySection({ divisionId: selectedDivision.id, section: sec });
-                setActiveSectionIndex(selectedDivision.sections.indexOf(sec));
-              }
-            }}
+            onTabChange={handleOverlayTabChange}
           />
         )}
       </AnimatePresence>

@@ -819,6 +819,7 @@ export function PropertiesWireframe_ContactFootprint(): ReactNode {
                   style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}
                 />
                 <button
+                  onClick={() => { window.location.href = 'mailto:info@vharanani.com?subject=Project%20Enquiry'; }}
                   className="w-full flex items-center justify-center gap-2 px-6 py-3 transition-all duration-300 hover:gap-3"
                   style={{ background: 'var(--vharanani-burgundy)' }}
                 >

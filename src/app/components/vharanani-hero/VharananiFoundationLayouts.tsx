@@ -82,7 +82,7 @@ const IMAGES = {
 // SECTION 1: HERO — Cinematic Full-Screen + Vision Split
 // ═══════════════════════════════════════════════════════════
 
-export function FoundationWireframe_Hero(): ReactNode {
+export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId: string) => void } = {}): ReactNode {
   return (
     <div>
       {/* ── CINEMATIC HERO ── */}
@@ -129,11 +129,11 @@ export function FoundationWireframe_Hero(): ReactNode {
                   Empowering individuals and sustainably improving living standards across South Africa through education, housing, and community development.
                 </p>
                 <div className="flex items-center gap-3">
-                  <button className="flex items-center gap-2 px-5 py-3 transition-all duration-300 hover:gap-3" style={{ background: 'var(--vharanani-burgundy)' }}>
+                  <button onClick={() => onTabChange?.('impact')} className="flex items-center gap-2 px-5 py-3 transition-all duration-300 hover:gap-3" style={{ background: 'var(--vharanani-burgundy)' }}>
                     <span className="font-bebas-neue typo-headline-small tracking-wider uppercase text-white">See Our Impact</span>
                     <ArrowRight size={14} className="text-white" />
                   </button>
-                  <button className="flex items-center gap-2 px-5 py-3 transition-all duration-300 hover:bg-white/10" style={{ border: '1px solid rgba(255,255,255,0.3)' }}>
+                  <button onClick={() => onTabChange?.('get-involved')} className="flex items-center gap-2 px-5 py-3 transition-all duration-300 hover:bg-white/10" style={{ border: '1px solid rgba(255,255,255,0.3)' }}>
                     <span className="font-bebas-neue typo-headline-small tracking-wider uppercase text-white">Partner With Us</span>
                   </button>
                 </div>

@@ -83,7 +83,7 @@ const IMAGES = {
 // SECTION 1+2: CINEMATIC HERO + ABOUT DMFT
 // ═══════════════════════════════════════════════════════════
 
-export function DMFTWireframe_HeroAbout(): ReactNode {
+export function DMFTWireframe_HeroAbout({ onTabChange }: { onTabChange?: (tabId: string) => void } = {}): ReactNode {
   return (
     <div>
       {/* ── CINEMATIC HERO ── */}
@@ -128,11 +128,11 @@ export function DMFTWireframe_HeroAbout(): ReactNode {
                   High-quality residential, commercial, and mixed-use developments — delivered with the construction expertise and infrastructure backing of the Vharanani Group.
                 </p>
                 <div className="flex items-center gap-3">
-                  <button className="flex items-center gap-2 px-5 py-3 transition-all duration-300 hover:gap-3" style={{ background: 'var(--vharanani-burgundy)' }}>
+                  <button onClick={() => onTabChange?.('residential-estates')} className="flex items-center gap-2 px-5 py-3 transition-all duration-300 hover:gap-3" style={{ background: 'var(--vharanani-burgundy)' }}>
                     <span className="font-bebas-neue typo-headline-small tracking-wider uppercase text-white">View Developments</span>
                     <ArrowRight size={14} className="text-white" />
                   </button>
-                  <button className="flex items-center gap-2 px-5 py-3 transition-all duration-300 hover:bg-white/10" style={{ border: '1px solid rgba(255,255,255,0.3)' }}>
+                  <button onClick={() => onTabChange?.('approach')} className="flex items-center gap-2 px-5 py-3 transition-all duration-300 hover:bg-white/10" style={{ border: '1px solid rgba(255,255,255,0.3)' }}>
                     <span className="font-bebas-neue typo-headline-small tracking-wider uppercase text-white">Our Process</span>
                   </button>
                 </div>
