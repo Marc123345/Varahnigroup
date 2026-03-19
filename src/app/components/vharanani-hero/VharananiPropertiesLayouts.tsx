@@ -362,7 +362,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
       {/* Carousel Container */}
       <div className="relative overflow-hidden">
         {/* Active Slide */}
-        <div className="relative h-[420px] lg:h-[520px]">
+        <div className="relative h-[280px] sm:h-[380px] lg:h-[520px]">
           <ImageWithFallback
             src={current.image}
             alt={current.title}
@@ -371,7 +371,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
 
           {/* Slide Content */}
-          <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-10 max-w-[60%]">
+          <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 md:p-10 max-w-full sm:max-w-[75%] lg:max-w-[60%]">
             <div className="inline-block self-start px-2 py-1 mb-3" style={{ background: 'var(--vharanani-burgundy)' }}>
               <span className="font-inter typo-meta text-white tracking-[0.2em] uppercase">{current.category}</span>
             </div>
@@ -443,11 +443,11 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className="relative w-full max-w-2xl max-h-[80vh] overflow-y-auto"
+            className="relative w-[94vw] sm:w-full max-w-2xl max-h-[88vh] sm:max-h-[80vh] overflow-y-auto"
             style={{ background: 'white' }}
           >
             {/* Modal Header */}
-            <div className="relative h-[220px]">
+            <div className="relative h-[160px] sm:h-[220px]">
               <ImageWithFallback
                 src={current.image}
                 alt={current.title}
@@ -791,17 +791,17 @@ export function PropertiesWireframe_ContactFootprint(): ReactNode {
                 <input
                   type="text"
                   placeholder="Name"
-                  className="w-full px-4 py-3 font-inter typo-copy-small outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
+                  className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
                   style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}
                 />
                 <input
                   type="text"
                   placeholder="Company"
-                  className="w-full px-4 py-3 font-inter typo-copy-small outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
+                  className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
                   style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}
                 />
                 <select
-                  className="w-full px-4 py-3 font-inter typo-copy-small outline-none focus:outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
+                  className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none focus:outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
                   style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)', color: 'var(--vharanani-charcoal-60)' }}
                   defaultValue=""
                 >

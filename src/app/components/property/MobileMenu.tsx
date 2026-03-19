@@ -109,10 +109,10 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavig
     >
       <div
         ref={menuRef}
-        className="h-full w-full max-w-sm bg-white border-l-4 border-[var(--vharanani-burgundy)] shadow-2xl flex flex-col"
+        className="h-full w-full max-w-[85vw] sm:max-w-sm bg-white border-l-4 border-[var(--vharanani-burgundy)] shadow-2xl flex flex-col"
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b-2 border-[var(--vharanani-charcoal)]">
+        <div className="flex items-center justify-between p-4 sm:p-6 border-b-2 border-[var(--vharanani-charcoal)]">
           <h2 className="typo-subline font-bebas-neue text-[var(--vharanani-burgundy)] uppercase tracking-wide">
             Menu
           </h2>
@@ -126,26 +126,26 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavig
         </div>
 
         {/* Division Label */}
-        <div className="px-6 pt-5 pb-2">
+        <div className="px-4 sm:px-6 pt-4 sm:pt-5 pb-2">
           <span className="font-inter typo-caption tracking-[0.25em] uppercase" style={{ color: 'var(--vharanani-burgundy)' }}>
             EXPLORE DIVISIONS
           </span>
         </div>
 
         {/* Menu Items */}
-        <nav className="flex-1 overflow-y-auto px-6 pb-6">
+        <nav className="flex-1 overflow-y-auto px-3 sm:px-6 pb-4 sm:pb-6">
           <ul className="space-y-1">
             {items.map((item, index) => (
               <li key={item.id}>
                 <button
                   onClick={() => handleItemClick(item.id)}
-                  className="w-full text-left flex items-center justify-between py-4 px-4 border-l-4 border-transparent hover:border-[var(--vharanani-burgundy)] hover:bg-[var(--vharanani-burgundy-20)] transition-all duration-200 group"
+                  className="w-full text-left flex items-center justify-between py-3 sm:py-4 px-3 sm:px-4 border-l-4 border-transparent hover:border-[var(--vharanani-burgundy)] hover:bg-[var(--vharanani-burgundy-20)] transition-all duration-200 group min-h-[44px]"
                 >
                   <div>
                     <span className="font-inter typo-meta tracking-[0.15em] uppercase block mb-1" style={{ color: 'var(--vharanani-charcoal-60)' }}>
                       {String(index + 1).padStart(2, '0')}
                     </span>
-                    <span className="typo-headline-small font-bebas-neue text-[var(--vharanani-charcoal)] uppercase tracking-wide">
+                    <span className="typo-headline-small font-bebas-neue text-[var(--vharanani-charcoal)] uppercase tracking-wide truncate">
                       {item.label}
                     </span>
                   </div>
@@ -157,14 +157,14 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavig
         </nav>
 
         {/* Footer CTA */}
-        <div className="p-6 border-t-2 border-[var(--vharanani-charcoal)]">
+        <div className="p-4 sm:p-6 border-t-2 border-[var(--vharanani-charcoal)]">
           <button
             onClick={() => {
               const footer = document.querySelector('footer');
               if (footer) footer.scrollIntoView({ behavior: 'smooth' });
               handleClose();
             }}
-            className="w-full bg-[var(--vharanani-burgundy)] hover:bg-[var(--vharanani-burgundy-80)] text-white px-6 py-4 typo-headline-small font-bebas-neue uppercase tracking-wide transition-colors duration-300 flex items-center justify-center gap-2"
+            className="w-full bg-[var(--vharanani-burgundy)] hover:bg-[var(--vharanani-burgundy-80)] text-white px-6 py-4 typo-headline-small font-bebas-neue uppercase tracking-wide transition-colors duration-300 flex items-center justify-center gap-2 min-h-[48px]"
           >
             Get in Touch
             <ArrowRight size={14} />

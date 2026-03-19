@@ -127,13 +127,13 @@ export function GlassmorphismOverlay({
 
       {/* ── NAV BAR (tabs or scroll anchors) ── */}
       <div
-        className="relative flex items-center gap-0 px-6 sm:px-10 lg:px-16 border-b overflow-x-auto"
+        className="relative flex items-center gap-0 px-3 sm:px-6 lg:px-10 border-b overflow-x-auto"
         style={{ borderColor: 'var(--vharanani-charcoal-20)', scrollbarWidth: 'none' }}
       >
         {/* Back button */}
         <button
           onClick={handleClose}
-          className="flex items-center gap-2 group flex-shrink-0 mr-4 sm:mr-6 transition-all duration-200"
+          className="flex items-center gap-2 group flex-shrink-0 mr-2 sm:mr-4 transition-all duration-200"
         >
           <div
             className="w-8 h-8 flex items-center justify-center transition-all duration-200 group-hover:bg-[var(--vharanani-burgundy)]"
@@ -152,18 +152,18 @@ export function GlassmorphismOverlay({
           <img
             src={divisionLogo}
             alt=""
-            className="h-6 sm:h-7 w-auto object-contain flex-shrink-0 mr-4 sm:mr-6"
+            className="h-5 sm:h-7 w-auto object-contain flex-shrink-0 mr-2 sm:mr-4"
           />
         )}
 
         {/* Divider */}
-        <div className="w-[1px] h-6 mr-4 sm:mr-6 flex-shrink-0" style={{ backgroundColor: 'var(--vharanani-charcoal-20)' }} />
+        <div className="w-[1px] h-6 mr-2 sm:mr-4 flex-shrink-0" style={{ backgroundColor: 'var(--vharanani-charcoal-20)' }} />
 
         {tabs.map((tab, i) => (
           <button
             key={tab.id}
             onClick={() => handleTabClick(tab.id)}
-            className="relative px-3 sm:px-5 py-3 sm:py-4 transition-all duration-300 flex-shrink-0"
+            className="relative px-2 sm:px-4 py-3 sm:py-4 transition-all duration-300 flex-shrink-0"
           >
             <div className="flex items-center gap-2 sm:gap-3">
               <span
@@ -215,7 +215,7 @@ export function GlassmorphismOverlay({
         {/* Close button */}
         <button
           onClick={handleClose}
-          className="w-8 h-8 flex items-center justify-center transition-all duration-200 hover:bg-[var(--vharanani-burgundy)] group flex-shrink-0 ml-4"
+          className="w-8 h-8 flex items-center justify-center transition-all duration-200 hover:bg-[var(--vharanani-burgundy)] group flex-shrink-0 ml-2 sm:ml-4"
           style={{ border: '1px solid var(--vharanani-charcoal-20)' }}
           aria-label="Close overlay"
         >
@@ -226,7 +226,7 @@ export function GlassmorphismOverlay({
       {/* ── CONTENT AREA ── */}
       <div
         ref={scrollContainerRef}
-        className="relative overflow-y-auto px-6 sm:px-10 lg:px-16 py-8 sm:py-10"
+        className="relative overflow-y-auto px-4 sm:px-8 lg:px-12 py-6 sm:py-8 lg:py-10"
         style={{ height: 'calc(100dvh - 57px)' }}
       >
         <div className="max-w-5xl mx-auto">
@@ -293,12 +293,12 @@ export function GlassmorphismOverlay({
 
       {/* Bottom meta bar */}
       <div
-        className="absolute bottom-1 left-0 right-0 flex items-center justify-between px-6 sm:px-10 lg:px-16 py-2 bg-white"
+        className="absolute bottom-1 left-0 right-0 flex items-center justify-between px-4 sm:px-8 lg:px-12 py-2 bg-white"
       >
         <div className="font-inter typo-meta tracking-[0.3em] uppercase" style={{ color: 'var(--vharanani-charcoal-60)' }}>
           VISION. STRUCTURE. IMPACT.
         </div>
-        <div className="font-inter typo-meta tracking-[0.15em] uppercase" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+        <div className="font-inter typo-meta tracking-[0.15em] uppercase hidden sm:block" style={{ color: 'var(--vharanani-charcoal-60)' }}>
           ESC TO CLOSE
         </div>
       </div>

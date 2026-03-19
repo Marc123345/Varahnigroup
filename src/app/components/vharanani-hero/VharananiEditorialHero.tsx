@@ -1453,9 +1453,9 @@ export function VharananiEditorialHero() {
                 <div className="flex items-center gap-3">
                   <Phone size={16} className="flex-shrink-0" style={{ color: 'var(--vharanani-burgundy)' }} />
                   <div>
-                    <span>+27 11 656 1418</span>
+                    <a href="tel:+27116561418" className="hover:text-[var(--vharanani-burgundy)] transition-colors">+27 11 656 1418</a>
                     <span className="text-white/50 mx-2">|</span>
-                    <span className="text-white/70 typo-copy-small">+27 15 295 6085</span>
+                    <a href="tel:+27152956085" className="text-white/70 typo-copy-small hover:text-[var(--vharanani-burgundy)] transition-colors">+27 15 295 6085</a>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -1480,9 +1480,9 @@ export function VharananiEditorialHero() {
           </div>
 
           <div className="mt-8 pt-6" style={{ borderTop: '1px solid var(--vharanani-charcoal-80)' }}>
-            <div className="flex items-center justify-between">
-              <div className="font-inter typo-label tracking-[0.3em] uppercase text-white/50">VISION. STRUCTURE. IMPACT.</div>
-              <div className="font-inter typo-label tracking-[0.15em] uppercase text-white/50">© VHARANANI GROUP 2026</div>
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
+              <div className="font-inter typo-label tracking-[0.1em] sm:tracking-[0.3em] uppercase text-white/50">VISION. STRUCTURE. IMPACT.</div>
+              <div className="font-inter typo-label tracking-[0.1em] sm:tracking-[0.15em] uppercase text-white/50">© VHARANANI GROUP 2026</div>
             </div>
           </div>
         </div>

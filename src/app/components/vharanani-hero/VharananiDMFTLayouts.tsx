@@ -87,7 +87,7 @@ export function DMFTWireframe_HeroAbout({ onTabChange }: { onTabChange?: (tabId:
   return (
     <div>
       {/* ── CINEMATIC HERO ── */}
-      <div className="relative h-[55vh] min-h-[440px] overflow-hidden">
+      <div className="relative h-[45vh] sm:h-[55vh] min-h-[320px] sm:min-h-[440px] overflow-hidden">
         <ImageWithFallback
           src={IMAGES.aerialDev}
           alt="Aerial view of DMFT property development"
@@ -295,7 +295,7 @@ export function DMFTWireframe_DevelopmentApproach(): ReactNode {
   return (
     <SectionWrapper className="!py-0 !px-0">
       {/* ── HEADER BAND ── */}
-      <div className="relative h-[40vh] min-h-[320px] overflow-hidden">
+      <div className="relative h-[35vh] sm:h-[40vh] min-h-[260px] sm:min-h-[320px] overflow-hidden">
         <ImageWithFallback
           src={IMAGES.blueprint}
           alt="Property development planning"
@@ -927,7 +927,7 @@ export function DMFTWireframe_HeritageContact(): ReactNode {
                 <input
                   type="text"
                   placeholder="Your full name"
-                  className="w-full px-4 py-3 font-inter typo-copy-small outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
+                  className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)] min-h-[48px]"
                   style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white' }}
                 />
               </div>
@@ -937,7 +937,7 @@ export function DMFTWireframe_HeritageContact(): ReactNode {
                   <input
                     type="email"
                     placeholder="your@email.com"
-                    className="w-full px-4 py-3 font-inter typo-copy-small outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
+                    className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)] min-h-[48px]"
                     style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white' }}
                   />
                 </div>
@@ -946,7 +946,7 @@ export function DMFTWireframe_HeritageContact(): ReactNode {
                   <input
                     type="tel"
                     placeholder="+27..."
-                    className="w-full px-4 py-3 font-inter typo-copy-small outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
+                    className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)] min-h-[48px]"
                     style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white' }}
                   />
                 </div>

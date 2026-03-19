@@ -122,7 +122,7 @@ export function CSS3DCube({ images, activeIndex, size, labels }: CSS3DCubeProps)
     }
     const updateSize = () => {
       const w = window.innerWidth;
-      if (w < 640) setCubeSize(200);
+      if (w < 640) setCubeSize(Math.min(200, Math.floor(w * 0.55)));
       else if (w < 1024) setCubeSize(240);
       else setCubeSize(280);
     };
@@ -185,7 +185,7 @@ export function CSS3DCube({ images, activeIndex, size, labels }: CSS3DCubeProps)
             style={{
               transform: face.transform,
               backfaceVisibility: 'hidden',
-              border: '2px solid var(--vharanani-burgundy)',
+              border: '1px solid var(--vharanani-burgundy)',
             }}
           >
             {/* Background Image */}
@@ -208,7 +208,7 @@ export function CSS3DCube({ images, activeIndex, size, labels }: CSS3DCubeProps)
 
             {/* Face Label */}
             {labels && labels[i] && (
-              <div className="absolute bottom-0 left-0 right-0 p-3">
+              <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-3">
                 <div
                   className="typo-meta tracking-[0.2em] uppercase mb-1"
                   style={{ color: 'var(--vharanani-burgundy-60)' }}
