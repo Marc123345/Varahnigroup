@@ -77,6 +77,13 @@ export function CSS3DCube({ images, activeIndex, size, labels }: CSS3DCubeProps)
     }, 4000);
   }, []);
 
+  // Clear interaction timer on unmount
+  useEffect(() => {
+    return () => {
+      if (autoRotateTimer.current) clearTimeout(autoRotateTimer.current);
+    };
+  }, []);
+
   const handlePointerDown = useCallback((e: React.PointerEvent) => {
     setIsDragging(true);
     setIsUserInteracting(true);

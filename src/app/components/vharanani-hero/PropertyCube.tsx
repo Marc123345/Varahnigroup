@@ -1,4 +1,4 @@
-import { useRef, useState, useMemo } from 'react';
+import { useRef, useState, useMemo, useEffect } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
@@ -40,6 +40,16 @@ export function PropertyCube({ images, activeIndex, onRotate }: PropertyCubeProp
 
     return mats;
   }, [images]);
+
+  // Dispose GPU textures and materials when images change or component unmounts
+  useEffect(() => {
+    return () => {
+      materials.forEach((mat) => {
+        mat.map?.dispose();
+        mat.dispose();
+      });
+    };
+  }, [materials]);
 
   useFrame((state, delta) => {
     if (!groupRef.current) return;

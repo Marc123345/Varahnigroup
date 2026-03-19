@@ -78,6 +78,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onNavig
       if (timelineRef.current) {
         timelineRef.current.kill();
       }
+      document.body.style.overflow = '';
     };
   }, [isOpen]);
 

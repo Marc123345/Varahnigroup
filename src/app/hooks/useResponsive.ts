@@ -5,40 +5,33 @@ export const BREAKPOINTS = {
   tablet: 768,
   desktop: 1024,
   wide: 1280,
-  ultrawide: 1536
+  ultrawide: 1536,
 } as const;
 
 export type Breakpoint = keyof typeof BREAKPOINTS;
 
+function getBreakpoint(width: number): Breakpoint {
+  if (width < BREAKPOINTS.tablet) return 'mobile';
+  if (width < BREAKPOINTS.desktop) return 'tablet';
+  if (width < BREAKPOINTS.wide) return 'desktop';
+  if (width < BREAKPOINTS.ultrawide) return 'wide';
+  return 'ultrawide';
+}
+
+const getInitialWidth = () =>
+  typeof window !== 'undefined' ? window.innerWidth : 1024;
+
 export const useResponsive = () => {
-  const [breakpoint, setBreakpoint] = useState<Breakpoint>('desktop');
-  const [windowWidth, setWindowWidth] = useState<number>(
-    typeof window !== 'undefined' ? window.innerWidth : 1024
-  );
+  const [windowWidth, setWindowWidth] = useState<number>(getInitialWidth);
 
   useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth;
-      setWindowWidth(width);
-
-      if (width < BREAKPOINTS.tablet) {
-        setBreakpoint('mobile');
-      } else if (width < BREAKPOINTS.desktop) {
-        setBreakpoint('tablet');
-      } else if (width < BREAKPOINTS.wide) {
-        setBreakpoint('desktop');
-      } else if (width < BREAKPOINTS.ultrawide) {
-        setBreakpoint('wide');
-      } else {
-        setBreakpoint('ultrawide');
-      }
-    };
-
+    const handleResize = () => setWindowWidth(window.innerWidth);
     handleResize();
     window.addEventListener('resize', handleResize);
-
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  const breakpoint = getBreakpoint(windowWidth);
 
   return {
     breakpoint,
@@ -47,6 +40,6 @@ export const useResponsive = () => {
     isTablet: breakpoint === 'tablet',
     isDesktop: breakpoint === 'desktop' || breakpoint === 'wide' || breakpoint === 'ultrawide',
     isWide: breakpoint === 'wide' || breakpoint === 'ultrawide',
-    isUltrawide: breakpoint === 'ultrawide'
+    isUltrawide: breakpoint === 'ultrawide',
   };
 };

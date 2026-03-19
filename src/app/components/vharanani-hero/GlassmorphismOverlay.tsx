@@ -44,7 +44,7 @@ export function GlassmorphismOverlay({
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  }, [handleClose]);
 
   // Track which section is visible during scroll (scroll mode only)
   useEffect(() => {
@@ -72,10 +72,10 @@ export function GlassmorphismOverlay({
     return () => container.removeEventListener('scroll', handleScroll);
   }, [scrollMode, tabs]);
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     safeVibrate(10);
     onClose();
-  };
+  }, [onClose]);
 
   const handleTabClick = (tabId: string) => {
     safeVibrate(5);
