@@ -69,7 +69,7 @@ function SectionWrapper({ children, className = '', dark = false }: { children: 
 // ═══════════════════════════════════════════════════════════
 
 const IMAGES = {
-  ceoPortrait: 'https://images.unsplash.com/photo-1604783020105-a1c1a856a55d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwYnVzaW5lc3MlMjBleGVjdXRpdmUlMjBwb3J0cmFpdCUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3NzM2OTA0ODl8MA&ixlib=rb-4.1.0&q=80&w=1080',
+  ceoPortrait: 'https://ik.imagekit.io/qcvroy8xpd/image%202.png',
   roadsCivils: 'https://images.unsplash.com/photo-1766330301270-e4c652b1c538?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwY29uc3RydWN0aW9uJTIwaW5mcmFzdHJ1Y3R1cmUlMjByb2Fkc3xlbnwxfHx8fDE3NzM2OTA0ODd8MA&ixlib=rb-4.1.0&q=80&w=1080',
   waterSanitation: 'https://images.unsplash.com/photo-1582476999010-7b857b165b6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3YXRlciUyMHNhbml0YXRpb24lMjBwaXBlbGluZSUyMG11bmljaXBhbHxlbnwxfHx8fDE3NzM2OTA0ODd8MA&ixlib=rb-4.1.0&q=80&w=1080',
   buildingConstruction: 'https://images.unsplash.com/photo-1691147421207-d4274cfb482d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3NwaXRhbCUyMGJ1aWxkaW5nJTIwY29uc3RydWN0aW9uJTIwQWZyaWNhfGVufDF8fHx8MTc3MzY5MDQ4N3ww&ixlib=rb-4.1.0&q=80&w=1080',

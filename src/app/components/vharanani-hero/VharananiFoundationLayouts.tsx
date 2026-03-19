@@ -69,7 +69,7 @@ function SectionWrapper({ children, className = '', dark = false }: { children: 
 
 const IMAGES = {
   communityGathering: 'https://images.unsplash.com/photo-1655720359248-eeace8c709c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwY29tbXVuaXR5JTIwY2VsZWJyYXRpb24lMjB1bml0eSUyMGdhdGhlcmluZyUyMGhhbmRzfGVufDF8fHx8MTc3Mzg0OTM3NHww&ixlib=rb-4.1.0&q=80&w=1080',
-  founderPortrait: 'https://images.unsplash.com/photo-1770191954675-06f770e6cbd0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBBZnJpY2FuJTIwbWFuJTIwYnVzaW5lc3MlMjBzdWl0JTIwcG9ydHJhaXQlMjBjb25maWRlbnR8ZW58MXx8fHwxNzczODQ5Mzc2fDA&ixlib=rb-4.1.0&q=80&w=1080',
+  founderPortrait: 'https://ik.imagekit.io/qcvroy8xpd/image%202.png',
   education: 'https://images.unsplash.com/photo-1758270703250-80a6387439ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwdW5pdmVyc2l0eSUyMHN0dWRlbnRzJTIwZ3JhZHVhdGlvbiUyMGNlbGVicmF0aW9uJTIwY2FtcHVzfGVufDF8fHx8MTc3Mzg0OTM3NHww&ixlib=rb-4.1.0&q=80&w=1080',
   housing: 'https://images.unsplash.com/photo-1707410148802-fe08fe956398?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZmZvcmRhYmxlJTIwaG91c2luZyUyMGNvbnN0cnVjdGlvbiUyMHdvcmtlcnMlMjBTb3V0aCUyMEFmcmljYSUyMHRvd25zaGlwfGVufDF8fHx8MTc3Mzg0OTM3NHww&ixlib=rb-4.1.0&q=80&w=1080',
   youthCommunity: 'https://images.unsplash.com/photo-1506185386801-3d7bc0ddd2bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIweW91dGglMjBzcG9ydHMlMjBzb2NjZXIlMjBjb21tdW5pdHklMjBmaWVsZHxlbnwxfHx8fDE3NzM4NDkzNzV8MA&ixlib=rb-4.1.0&q=80&w=1080',
