@@ -13,7 +13,7 @@ import { ImageWithFallback } from '../figma/ImageWithFallback';
 // ANIMATED COUNTER
 // ═══════════════════════════════════════════════════════════
 
-function AnimatedCounter({ target, suffix = '', prefix = '', duration = 2000 }: { target: number; suffix?: string; prefix?: string; duration?: number }) {
+function AnimatedCounter({ target, suffix = '', prefix = '', duration = 2000, color = 'var(--vharanani-burgundy)' }: { target: number; suffix?: string; prefix?: string; duration?: number; color?: string }) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.5 });
@@ -35,7 +35,7 @@ function AnimatedCounter({ target, suffix = '', prefix = '', duration = 2000 }: 
   }, [inView, target, duration]);
 
   return (
-    <div ref={ref} className="typo-headline-big font-bebas-neue" style={{ color: 'var(--vharanani-burgundy)' }}>
+    <div ref={ref} className="typo-headline-big font-bebas-neue" style={{ color }}>
       {prefix}{count.toLocaleString()}{suffix}
     </div>
   );
@@ -186,7 +186,7 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
           </div>
 
           {/* ── STATS BAR ── */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-0" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-0" style={{ background: '#812921' }}>
             {[
               { value: 20, suffix: '+', label: 'Years of Impact' },
               { value: 4, suffix: '', label: 'Operating Divisions' },
@@ -197,12 +197,12 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
                 key={stat.label}
                 className="p-6 md:p-8 text-center"
                 style={{
-                  borderRight: i < 3 ? '1px solid var(--vharanani-charcoal-20)' : 'none',
-                  borderBottom: '1px solid var(--vharanani-charcoal-20)',
+                  borderRight: i < 3 ? '1px solid rgba(255,255,255,0.2)' : 'none',
+                  borderBottom: '1px solid rgba(255,255,255,0.2)',
                 }}
               >
-                <AnimatedCounter target={stat.value} suffix={stat.suffix} />
-                <div className="typo-caption tracking-[0.15em] uppercase font-inter mt-2" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+                <AnimatedCounter target={stat.value} suffix={stat.suffix} color="white" />
+                <div className="typo-caption tracking-[0.15em] uppercase font-inter mt-2" style={{ color: 'rgba(255,255,255,0.7)' }}>
                   {stat.label}
                 </div>
               </div>
@@ -342,7 +342,7 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0" style={{
-                background: 'linear-gradient(135deg, rgba(137,43,28,0.35) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.7) 100%)'
+                background: 'linear-gradient(135deg, rgba(129,41,33,0.35) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.7) 100%)'
               }} />
               {/* Floating number */}
               <div className="absolute top-6 left-6">
@@ -507,7 +507,7 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0" style={{
-                background: 'linear-gradient(90deg, rgba(137,43,28,0.9) 0%, rgba(0,0,0,0.95) 100%)'
+                background: 'linear-gradient(90deg, rgba(129,41,33,0.9) 0%, rgba(0,0,0,0.95) 100%)'
               }} />
             </div>
 
@@ -679,8 +679,8 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
                     />
                     <div className="absolute inset-0" style={{
                       background: isEven
-                        ? 'linear-gradient(135deg, rgba(137,43,28,0.4) 0%, rgba(0,0,0,0.5) 100%)'
-                        : 'linear-gradient(225deg, rgba(137,43,28,0.4) 0%, rgba(0,0,0,0.5) 100%)'
+                        ? 'linear-gradient(135deg, rgba(129,41,33,0.4) 0%, rgba(0,0,0,0.5) 100%)'
+                        : 'linear-gradient(225deg, rgba(129,41,33,0.4) 0%, rgba(0,0,0,0.5) 100%)'
                     }} />
                     {/* Large ghost step number */}
                     <div className="absolute top-4 left-6">
@@ -916,7 +916,7 @@ export function GroupWireframe_ImpactGovernance(): ReactNode {
                 alt="Community development impact"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0" style={{ background: 'rgba(137,43,28,0.4)' }} />
+              <div className="absolute inset-0" style={{ background: 'rgba(129,41,33,0.4)' }} />
             </div>
             <div className="grid grid-cols-2 gap-6">
               {impactStats.map((stat) => (
@@ -991,15 +991,15 @@ export function GroupWireframe_VisionMission(): ReactNode {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
           {/* Vision */}
-          <div className="p-8 md:p-12" style={{ background: 'var(--vharanani-charcoal)' }}>
-            <div className="typo-caption tracking-[0.2em] uppercase font-inter mb-6" style={{ color: 'var(--vharanani-burgundy-60)' }}>
+          <div className="p-8 md:p-12" style={{ background: '#812921' }}>
+            <div className="typo-caption tracking-[0.2em] uppercase font-inter mb-6" style={{ color: 'rgba(255,255,255,0.6)' }}>
               OUR VISION
             </div>
             <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide text-white mb-6">
               To be a leading African investment group creating sustainable value
             </h2>
-            <div className="w-12 h-[2px] mb-6" style={{ background: 'var(--vharanani-burgundy)' }} />
-            <p className="typo-copy font-inter text-white/70">
+            <div className="w-12 h-[2px] mb-6" style={{ background: 'rgba(255,255,255,0.4)' }} />
+            <p className="typo-copy font-inter" style={{ color: 'rgba(255,255,255,0.8)' }}>
               We envision a future where Black-owned enterprises lead the transformation of Africa's economy through strategic investment, principled governance, and an unwavering commitment to community upliftment.
             </p>
           </div>
@@ -1085,7 +1085,7 @@ export function GroupWireframe_Governance(): ReactNode {
               alt="Corporate governance"
               className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 20%, rgba(137,43,28,0.5) 100%)' }} />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 20%, rgba(129,41,33,0.5) 100%)' }} />
             <div className="absolute bottom-6 left-6">
               <div className="typo-headline-small font-bebas-neue uppercase tracking-wide text-white">
                 King IV Aligned

@@ -41,8 +41,8 @@
   --sidebar-ring: oklch(0.708 0 0);
 
   /* Vharanani Brand Colors */
-  --vharanani-primary: #892B1C;
-  --vharanani-burgundy: #892B1C;
+  --vharanani-primary: #812921;
+  --vharanani-burgundy: #812921;
   --vharanani-charcoal: #000000;
   --vharanani-text: #000000;
   --vharanani-text-muted: #9B9C9F;
@@ -57,11 +57,11 @@
   --vharanani-neutral-light: #48565B;
 
   /* Vharanani Color Tones - Burgundy */
-  --vharanani-burgundy-100: #892B1C;
-  --vharanani-burgundy-80: #a4564a;
-  --vharanani-burgundy-60: #c08178;
-  --vharanani-burgundy-40: #dcada7;
-  --vharanani-burgundy-20: #f7d8d5;
+  --vharanani-burgundy-100: #812921;
+  --vharanani-burgundy-80: #9a544d;
+  --vharanani-burgundy-60: #b37f7a;
+  --vharanani-burgundy-40: #cdaaa6;
+  --vharanani-burgundy-20: #e6d5d3;
 
   /* Vharanani Color Tones - Charcoal */
   --vharanani-charcoal-100: #000000;

@@ -13,7 +13,7 @@ import { ImageWithFallback } from '../figma/ImageWithFallback';
 // ANIMATED COUNTER
 // ═══════════════════════════════════════════════════════════
 
-function AnimatedCounter({ target, suffix = '', prefix = '', duration = 2000 }: { target: number; suffix?: string; prefix?: string; duration?: number }) {
+function AnimatedCounter({ target, suffix = '', prefix = '', duration = 2000, color = 'var(--vharanani-burgundy)' }: { target: number; suffix?: string; prefix?: string; duration?: number; color?: string }) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.5 });
@@ -35,7 +35,7 @@ function AnimatedCounter({ target, suffix = '', prefix = '', duration = 2000 }: 
   }, [inView, target, duration]);
 
   return (
-    <div ref={ref} className="typo-headline-big font-bebas-neue" style={{ color: 'var(--vharanani-burgundy)' }}>
+    <div ref={ref} className="typo-headline-big font-bebas-neue" style={{ color }}>
       {prefix}{count.toLocaleString()}{suffix}
     </div>
   );
@@ -93,7 +93,7 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0" style={{
-          background: 'linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(137,43,28,0.2) 40%, rgba(0,0,0,0.85) 100%)'
+          background: 'linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(129,41,33,0.2) 40%, rgba(0,0,0,0.85) 100%)'
         }} />
         <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'var(--vharanani-burgundy)' }} />
 
@@ -144,9 +144,9 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
       </div>
 
       {/* ── IMPACT STATS BAR ── */}
-      <div style={{ background: 'var(--vharanani-charcoal)' }}>
+      <div style={{ background: '#812921' }}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-0" style={{ borderBottom: '1px solid rgba(137,43,28,0.2)' }}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-0" style={{ borderBottom: '1px solid rgba(255,255,255,0.2)' }}>
             {[
               { target: 50, suffix: 'K+', label: 'Lives Impacted' },
               { target: 34, suffix: '', label: 'Full Scholarships' },
@@ -156,10 +156,10 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
               <div
                 key={stat.label}
                 className="py-8 md:py-10 text-center"
-                style={{ borderRight: i < 3 ? '1px solid rgba(137,43,28,0.2)' : 'none' }}
+                style={{ borderRight: i < 3 ? '1px solid rgba(255,255,255,0.2)' : 'none' }}
               >
-                <AnimatedCounter target={stat.target} suffix={stat.suffix} />
-                <div className="typo-meta tracking-[0.12em] uppercase font-inter text-white/60 mt-2">
+                <AnimatedCounter target={stat.target} suffix={stat.suffix} color="white" />
+                <div className="typo-meta tracking-[0.12em] uppercase font-inter mt-2" style={{ color: 'rgba(255,255,255,0.7)' }}>
                   {stat.label}
                 </div>
               </div>
@@ -270,7 +270,7 @@ export function FoundationWireframe_PartnerNetwork(): ReactNode {
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0" style={{
-          background: 'linear-gradient(180deg, rgba(137,43,28,0.5) 0%, rgba(0,0,0,0.85) 100%)'
+          background: 'linear-gradient(180deg, rgba(129,41,33,0.5) 0%, rgba(0,0,0,0.85) 100%)'
         }} />
         <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'var(--vharanani-burgundy)' }} />
 
@@ -444,8 +444,8 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
                     />
                     <div className="absolute inset-0" style={{
                       background: isEven
-                        ? 'linear-gradient(135deg, rgba(137,43,28,0.35) 0%, rgba(0,0,0,0.45) 100%)'
-                        : 'linear-gradient(225deg, rgba(137,43,28,0.35) 0%, rgba(0,0,0,0.45) 100%)'
+                        ? 'linear-gradient(135deg, rgba(129,41,33,0.35) 0%, rgba(0,0,0,0.45) 100%)'
+                        : 'linear-gradient(225deg, rgba(129,41,33,0.35) 0%, rgba(0,0,0,0.45) 100%)'
                     }} />
                     {/* Ghost number */}
                     <div className="absolute top-4 left-6">
@@ -634,7 +634,7 @@ export function FoundationWireframe_ImpactStories(): ReactNode {
                 onClick={() => setActiveTab(key)}
                 className="flex-1 py-5 text-center transition-all duration-200 relative"
                 style={{
-                  background: activeTab === key ? 'rgba(137,43,28,0.04)' : 'transparent',
+                  background: activeTab === key ? 'rgba(129,41,33,0.04)' : 'transparent',
                 }}
               >
                 <span
@@ -682,7 +682,7 @@ export function FoundationWireframe_ImpactStories(): ReactNode {
                 </h3>
 
                 {/* Highlight */}
-                <div className="p-5 mb-8" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.04)' }}>
+                <div className="p-5 mb-8" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(129,41,33,0.04)' }}>
                   <p className="typo-copy font-inter" style={{ color: 'var(--vharanani-charcoal-80)' }}>
                     {current.highlight}
                   </p>
@@ -793,10 +793,10 @@ export function FoundationWireframe_Heritage(): ReactNode {
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0" style={{
-              background: 'linear-gradient(180deg, rgba(137,43,28,0.2) 0%, rgba(0,0,0,0.5) 100%)'
+              background: 'linear-gradient(180deg, rgba(129,41,33,0.2) 0%, rgba(0,0,0,0.5) 100%)'
             }} />
             {/* Overlaid quote */}
-            <div className="absolute bottom-0 left-0 right-0 p-6" style={{ background: 'rgba(137,43,28,0.85)', backdropFilter: 'blur(4px)' }}>
+            <div className="absolute bottom-0 left-0 right-0 p-6" style={{ background: 'rgba(129,41,33,0.85)', backdropFilter: 'blur(4px)' }}>
               <p className="typo-copy-small font-inter italic text-white/80">
                 "We build not just infrastructure, but the foundations for a dignified future."
               </p>
@@ -825,7 +825,7 @@ export function FoundationWireframe_Contact(): ReactNode {
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0" style={{
-            background: 'linear-gradient(180deg, rgba(137,43,28,0.6) 0%, rgba(0,0,0,0.9) 100%)'
+            background: 'linear-gradient(180deg, rgba(129,41,33,0.6) 0%, rgba(0,0,0,0.9) 100%)'
           }} />
           <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 lg:px-20 pb-10">
             <div className="max-w-7xl mx-auto w-full">
@@ -845,13 +845,13 @@ export function FoundationWireframe_Contact(): ReactNode {
         {/* ── FORM SECTION ── */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
           {/* Left — Contact info */}
-          <div className="p-8 md:p-12 flex flex-col justify-center" style={{ background: 'var(--vharanani-charcoal)' }}>
-            <p className="typo-copy font-inter text-white/60 mb-8">
+          <div className="p-8 md:p-12 flex flex-col justify-center" style={{ background: '#812921' }}>
+            <p className="typo-copy font-inter mb-8" style={{ color: 'rgba(255,255,255,0.8)' }}>
               Reach out for partnership opportunities, community initiatives, or support enquiries. Together, we can build stronger communities.
             </p>
 
             {/* Contact details */}
-            <div className="space-y-0" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+            <div className="space-y-0" style={{ border: '1px solid rgba(255,255,255,0.2)' }}>
               {[
                 { icon: <Mail size={16} />, label: 'Email', value: 'info@vharanani.com' },
                 { icon: <Phone size={16} />, label: 'Phone', value: '+27 (0) 11 XXX XXXX' },
@@ -860,23 +860,23 @@ export function FoundationWireframe_Contact(): ReactNode {
                 <div
                   key={item.label}
                   className="flex items-center gap-4 p-5"
-                  style={{ borderBottom: i < 2 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}
+                  style={{ borderBottom: i < 2 ? '1px solid rgba(255,255,255,0.2)' : 'none' }}
                 >
-                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0" style={{ border: '1px solid var(--vharanani-burgundy)', color: 'var(--vharanani-burgundy)' }}>
+                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0" style={{ border: '1px solid rgba(255,255,255,0.4)', color: 'white' }}>
                     {item.icon}
                   </div>
                   <div>
-                    <div className="typo-meta tracking-[0.12em] uppercase font-inter text-white/60 mb-0.5">{item.label}</div>
-                    <div className="typo-copy-small font-inter text-white/80 hover:text-[var(--vharanani-burgundy)] transition-colors cursor-pointer">{item.value}</div>
+                    <div className="typo-meta tracking-[0.12em] uppercase font-inter mb-0.5" style={{ color: 'rgba(255,255,255,0.6)' }}>{item.label}</div>
+                    <div className="typo-copy-small font-inter text-white cursor-pointer hover:opacity-80 transition-opacity">{item.value}</div>
                   </div>
                 </div>
               ))}
             </div>
 
             {/* Foundation badge */}
-            <div className="flex items-center gap-3 mt-8 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-              <Layers size={14} style={{ color: 'var(--vharanani-burgundy)' }} />
-              <span className="typo-meta tracking-[0.15em] uppercase font-inter text-white/50">
+            <div className="flex items-center gap-3 mt-8 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.2)' }}>
+              <Layers size={14} style={{ color: 'rgba(255,255,255,0.6)' }} />
+              <span className="typo-meta tracking-[0.15em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.6)' }}>
                 A Vharanani Group Initiative
               </span>
             </div>

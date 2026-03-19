@@ -261,7 +261,7 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
           <ContentBlock title="About Vharanani Properties" text="Vharanani Properties was founded in 2001 by Chief Executive Officer David Mabilu. What began as a small operation has grown into one of South Africa's leading Black-owned and managed construction companies." />
           <ContentBlock title="Two Decades of Excellence" text="With more than two decades of experience, the company has developed strong technical expertise across a broad range of infrastructure sectors, delivering projects that meet the highest standards of quality, safety, and efficiency." />
           <ContentBlock title="" text="Today, Vharanani Properties operates nationally and has successfully completed numerous high-value construction projects valued at billions of rands. Our multidisciplinary capability enables us to deliver projects of varying scale and complexity while maintaining strict adherence to quality standards, safety protocols, and responsible project management." />
-          <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.04)' }}>
+          <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(129,41,33,0.04)' }}>
             <div className="font-inter typo-copy italic" style={{ color: 'var(--vharanani-charcoal)' }}>
               "Established in 2001, the company has built a national reputation for delivering high-quality infrastructure, property development, and civil engineering projects for both public and private sector clients."
             </div>
@@ -270,13 +270,13 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
       ),
       'vision-values': (
         <div>
-          <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.04)' }}>
+          <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(129,41,33,0.04)' }}>
             <div className="font-bebas-neue text-lg mb-2 uppercase tracking-wide" style={{ color: 'var(--vharanani-burgundy)' }}>Our Vision</div>
             <div className="font-inter typo-copy italic" style={{ color: 'var(--vharanani-charcoal)' }}>
               To be an infrastructure provider of distinction.
             </div>
           </div>
-          <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.04)' }}>
+          <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(129,41,33,0.04)' }}>
             <div className="font-bebas-neue text-lg mb-2 uppercase tracking-wide" style={{ color: 'var(--vharanani-burgundy)' }}>Our Mission</div>
             <div className="font-inter typo-copy italic" style={{ color: 'var(--vharanani-charcoal)' }}>
               To restore people's dignity through infrastructure development.
@@ -418,7 +418,7 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
           <ProjectCard title="Maphutha Malatjie Hospital" location="Limpopo, ZA" status="COMPLETED" type="Healthcare" />
           <ProjectCard title="Mogalakwena Civic Centre" location="Limpopo, ZA" status="COMPLETED" type="Civic" />
           <ProjectCard title="Capricorn FET College" location="Limpopo, ZA" status="COMPLETED" type="Education" />
-          <div className="my-8 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.04)' }}>
+          <div className="my-8 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(129,41,33,0.04)' }}>
             <div className="font-bebas-neue text-lg mb-2 uppercase tracking-wide" style={{ color: 'var(--vharanani-burgundy)' }}>Our Impact</div>
             <div className="font-inter typo-copy italic" style={{ color: 'var(--vharanani-charcoal)' }}>
               "To restore people's dignity through infrastructure development."
@@ -443,7 +443,7 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
         <div>
           <ContentBlock title="The David Mabilu Foundation" text="The David Mabilu Foundation (DMF) is a social development organisation committed to reducing poverty and sustainably improving the living standards of poor and marginalised communities across South Africa." />
           <ContentBlock title="" text="Through education support, housing initiatives, and community development programmes, the Foundation works to empower individuals and communities to become self-sustaining and independent. The Foundation was established by David Mabilu with a vision to give back meaningfully to the communities that continue to shape South Africa's future." />
-          <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.04)' }}>
+          <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(129,41,33,0.04)' }}>
             <div className="font-bebas-neue text-lg mb-2 uppercase tracking-wide" style={{ color: 'var(--vharanani-burgundy)' }}>Our Goal</div>
             <div className="font-inter typo-copy italic" style={{ color: 'var(--vharanani-charcoal)' }}>
               The primary goal of the David Mabilu Foundation is to reduce poverty and sustainably improve the living standards of disadvantaged and marginalised communities throughout South Africa.
@@ -523,7 +523,7 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
       housing: (
         <div>
           <ContentBlock title="Housing" text="The David Mabilu Foundation supports housing initiatives aimed at improving living conditions for disadvantaged families. Working in partnership with organisations such as Capricorn FM, the Foundation has helped provide housing for vulnerable households." />
-          <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.04)' }}>
+          <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(129,41,33,0.04)' }}>
             <div className="font-bebas-neue text-lg mb-2 uppercase tracking-wide" style={{ color: 'var(--vharanani-burgundy)' }}>Ga-Mphahlele Initiative</div>
             <div className="font-inter typo-copy" style={{ color: 'var(--vharanani-charcoal)' }}>
               One such initiative involved the donation of a home to a designated family in Ga-Mphahlele in Limpopo.
@@ -531,7 +531,7 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
           </div>
           <ContentBlock title="Nelson Mandela Day Housing Initiatives" text="The Foundation has supported Nelson Mandela Day initiatives focused on housing development, working with key government partners." />
           <ListBlock title="Government Partners" items={['The Department of Human Settlements in Mpumalanga', 'The Office of the Premier in Limpopo', 'The Office of the President']} />
-          <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.04)' }}>
+          <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(129,41,33,0.04)' }}>
             <div className="font-bebas-neue text-lg mb-2 uppercase tracking-wide" style={{ color: 'var(--vharanani-burgundy)' }}>Eenzaam, Limpopo</div>
             <div className="font-inter typo-copy" style={{ color: 'var(--vharanani-charcoal)' }}>
               Through these collaborations, the Foundation helped provide homes for vulnerable individuals, including the construction of a three-bedroom house for an elderly woman in the village of Eenzaam in Limpopo who had not received her social grant since 1985.
@@ -586,7 +586,7 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
             <StatCard label="Schools Supported" value="4+" icon={<Building2 size={18} />} />
             <StatCard label="Provinces Reached" value="5+" icon={<MapPin size={18} />} />
           </div>
-          <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.04)' }}>
+          <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(129,41,33,0.04)' }}>
             <div className="font-bebas-neue text-lg mb-2 uppercase tracking-wide" style={{ color: 'var(--vharanani-burgundy)' }}>Our Commitment</div>
             <div className="font-inter typo-copy italic" style={{ color: 'var(--vharanani-charcoal)' }}>
               "Building opportunity. Empowering communities."
@@ -607,7 +607,7 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
             </div>
             <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>The David Mabilu Foundation works closely with the Vharanani Group and its subsidiary companies to support social development initiatives. Through these relationships, the Foundation is able to leverage resources, expertise, and partnerships that enhance the reach and impact of its programmes.</div>
           </div>
-          <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.04)' }}>
+          <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(129,41,33,0.04)' }}>
             <div className="font-inter typo-copy italic" style={{ color: 'var(--vharanani-charcoal)' }}>
               "Together, these efforts contribute to building stronger, more resilient communities across South Africa."
             </div>
@@ -620,7 +620,7 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
             <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>For partnership opportunities, community initiatives, or support enquiries, please contact the David Mabilu Foundation.</div>
             <div className="font-inter typo-copy-small mt-2" style={{ color: 'var(--vharanani-burgundy)' }}>info@vharanani.com</div>
           </div>
-          <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.04)' }}>
+          <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(129,41,33,0.04)' }}>
             <div className="font-inter typo-copy italic" style={{ color: 'var(--vharanani-charcoal)' }}>
               "Building opportunity. Empowering communities."
             </div>
@@ -642,7 +642,7 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
         <div>
           <ContentBlock title="About DMFT Property Developers" text="DMFT Property Developers is a real estate development company dedicated to delivering high-quality property developments across South Africa. Working in collaboration with the Vharanani Group, the company benefits from extensive construction and infrastructure expertise, enabling the successful delivery of complex property development projects from concept through to completion." />
           <ContentBlock title="" text="Our developments are designed with long-term value in mind, combining strong architectural design, efficient infrastructure planning, and quality construction to create environments that enhance both lifestyle and economic opportunity." />
-          <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.04)' }}>
+          <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(129,41,33,0.04)' }}>
             <div className="font-inter typo-copy italic" style={{ color: 'var(--vharanani-charcoal)' }}>
               "Our developments combine thoughtful design, quality construction, and strategic location to create sustainable environments for living, working, and investment."
             </div>
@@ -701,7 +701,7 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
       'residential-estates': (
         <div>
           <ContentBlock title="Residential Estates" text="Secure residential estates designed to provide comfortable and modern living environments. Our estates are carefully planned communities that offer residents a superior quality of life with security, amenities, and thoughtful design." />
-          <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.04)' }}>
+          <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(129,41,33,0.04)' }}>
             <div className="font-inter typo-copy italic" style={{ color: 'var(--vharanani-charcoal)' }}>
               "Every development is approached with careful planning, professional execution, and a focus on creating lasting value."
             </div>
@@ -720,7 +720,7 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
         <div>
           <ContentBlock title="Mixed-Use Developments" text="Integrated developments that combine residential, commercial, and community spaces. Our mixed-use projects create self-sustaining environments where people can live, work, and engage with their communities in one well-planned precinct." />
           <ListBlock title="Mixed-Use Components" items={['Residential units — apartments, townhouses, and penthouses', 'Commercial spaces — offices and business suites', 'Retail precincts — shops, restaurants, and services', 'Community facilities — parks, recreation, and public spaces', 'Integrated infrastructure and parking', 'Sustainable design and planning']} />
-          <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.04)' }}>
+          <div className="my-6 p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(129,41,33,0.04)' }}>
             <div className="font-inter typo-copy italic" style={{ color: 'var(--vharanani-charcoal)' }}>
               "Our developments combine thoughtful design, quality construction, and strategic location to create sustainable environments for living, working, and investment."
             </div>
@@ -1029,7 +1029,7 @@ export function VharananiEditorialHero() {
         </div>
         {/* Grid Pattern */}
         <div className="absolute inset-0 opacity-[0.03]">
-          <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(rgba(137,43,28,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(137,43,28,0.3) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+          <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(rgba(129,41,33,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(129,41,33,0.3) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
         </div>
 
         {/* Main Content Grid */}

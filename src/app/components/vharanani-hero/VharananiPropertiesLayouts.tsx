@@ -14,7 +14,7 @@ import { ImageWithFallback } from '../figma/ImageWithFallback';
 // ANIMATED COUNTER
 // ═══════════════════════════════════════════════════════════
 
-function AnimatedCounter({ target, suffix = '', prefix = '', duration = 2000 }: { target: number; suffix?: string; prefix?: string; duration?: number }) {
+function AnimatedCounter({ target, suffix = '', prefix = '', duration = 2000, color = 'var(--vharanani-burgundy)' }: { target: number; suffix?: string; prefix?: string; duration?: number; color?: string }) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.5 });
@@ -36,7 +36,7 @@ function AnimatedCounter({ target, suffix = '', prefix = '', duration = 2000 }: 
   }, [inView, target, duration]);
 
   return (
-    <div ref={ref} className="typo-headline-big font-bebas-neue" style={{ color: 'var(--vharanani-burgundy)' }}>
+    <div ref={ref} className="typo-headline-big font-bebas-neue" style={{ color }}>
       {prefix}{count.toLocaleString()}{suffix}
     </div>
   );
@@ -156,7 +156,7 @@ export function PropertiesWireframe_AboutImpact(): ReactNode {
             </div>
 
             {/* Mission Blockquote */}
-            <div className="p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.04)' }}>
+            <div className="p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(129,41,33,0.04)' }}>
               <div className="font-inter typo-copy italic" style={{ color: 'var(--vharanani-charcoal)' }}>
                 "To restore people's dignity through infrastructure development."
               </div>
@@ -478,7 +478,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
               </div>
               <h4 className="font-bebas-neue typo-headline-small tracking-wide uppercase mb-2" style={{ color: 'var(--vharanani-charcoal)' }}>Project Specifications</h4>
               <p className="font-inter typo-copy mb-6" style={{ color: 'var(--vharanani-charcoal-80)' }}>{current.specs}</p>
-              <div className="p-4" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.04)' }}>
+              <div className="p-4" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(129,41,33,0.04)' }}>
                 <div className="font-inter typo-meta tracking-[0.2em] uppercase mb-1" style={{ color: 'var(--vharanani-burgundy)' }}>Community Impact</div>
                 <p className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-80)' }}>{current.impact}</p>
               </div>
@@ -527,7 +527,7 @@ export function PropertiesWireframe_Compliance(): ReactNode {
               transition={{ duration: 0.2 }}
               className="flex flex-col items-center justify-center p-6 text-center hover:border-[var(--vharanani-burgundy)] transition-colors duration-200"
               style={{
-                background: cert.highlight ? 'rgba(137,43,28,0.04)' : 'white',
+                background: cert.highlight ? 'rgba(129,41,33,0.04)' : 'white',
                 borderBottom: cert.highlight ? '3px solid var(--vharanani-burgundy)' : '3px solid transparent',
               }}
             >
@@ -617,7 +617,7 @@ export function PropertiesWireframe_ValuesImpact(): ReactNode {
 
         {/* Impact Infographic Strip */}
         <div className="overflow-hidden" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
-          <div className="relative p-6 text-center overflow-hidden" style={{ background: 'var(--vharanani-charcoal)', borderBottom: '3px solid var(--vharanani-burgundy)' }}>
+          <div className="relative p-6 text-center overflow-hidden" style={{ background: '#812921', borderBottom: '3px solid rgba(255,255,255,0.3)' }}>
             <ImageWithFallback
               src={IMAGES.values}
               alt="Vharanani Properties team and values"
@@ -630,7 +630,7 @@ export function PropertiesWireframe_ValuesImpact(): ReactNode {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-[1px]" style={{ background: 'var(--vharanani-charcoal-20)' }}>
             {impacts.map((item, i) => (
               <div key={i} className="p-6 text-center" style={{ background: '#fafafa' }}>
-                <div className="w-12 h-12 mx-auto flex items-center justify-center mb-3" style={{ color: 'var(--vharanani-burgundy)', background: 'rgba(137,43,28,0.06)' }}>
+                <div className="w-12 h-12 mx-auto flex items-center justify-center mb-3" style={{ color: 'var(--vharanani-burgundy)', background: 'rgba(129,41,33,0.06)' }}>
                   {item.icon}
                 </div>
                 <AnimatedCounter target={item.value} suffix={item.suffix} />
@@ -751,7 +751,7 @@ export function PropertiesWireframe_ContactFootprint(): ReactNode {
                   style={{
                     borderBottom: activeTab === tab ? '2px solid var(--vharanani-burgundy)' : '2px solid transparent',
                     marginBottom: '-2px',
-                    background: activeTab === tab ? 'rgba(137,43,28,0.04)' : 'transparent',
+                    background: activeTab === tab ? 'rgba(129,41,33,0.04)' : 'transparent',
                   }}
                 >
                   <span

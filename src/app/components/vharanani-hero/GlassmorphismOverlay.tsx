@@ -116,7 +116,7 @@ export function GlassmorphismOverlay({
           className="absolute inset-0"
           style={{
             backgroundImage:
-              'linear-gradient(rgba(137,43,28,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(137,43,28,0.3) 1px, transparent 1px)',
+              'linear-gradient(rgba(129,41,33,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(129,41,33,0.3) 1px, transparent 1px)',
             backgroundSize: '60px 60px',
           }}
         />
