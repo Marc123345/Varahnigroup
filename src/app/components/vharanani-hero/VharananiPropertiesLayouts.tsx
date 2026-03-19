@@ -247,7 +247,7 @@ export function PropertiesWireframe_IntegratedServices(): ReactNode {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-[2px]" style={{ background: 'var(--vharanani-charcoal-20)' }}>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-[1px]" style={{ background: 'var(--vharanani-charcoal-20)' }}>
           {services.map((svc, i) => (
             <div
               key={i}
@@ -269,7 +269,7 @@ export function PropertiesWireframe_IntegratedServices(): ReactNode {
                   </h4>
                 </div>
 
-                <div className="overflow-hidden max-h-0 group-hover:max-h-20 transition-all duration-500">
+                <div className="overflow-hidden max-h-0 group-hover:max-h-32 transition-all duration-500">
                   <p className="font-inter typo-copy-small" style={{ color: 'rgba(255,255,255,0.7)' }}>
                     {svc.subtitle}
                   </p>
@@ -361,7 +361,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
       {/* Carousel Container */}
       <div className="relative overflow-hidden">
         {/* Active Slide */}
-        <div className="relative h-[420px]">
+        <div className="relative h-[420px] lg:h-[520px]">
           <ImageWithFallback
             src={current.image}
             alt={current.title}

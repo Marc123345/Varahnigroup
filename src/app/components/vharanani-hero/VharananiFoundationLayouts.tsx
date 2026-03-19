@@ -176,7 +176,7 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 lg:grid-cols-12 gap-0 overflow-hidden"
+            className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-0 overflow-hidden"
             style={{ border: '1px solid var(--vharanani-charcoal-20)' }}
           >
             {/* Left — Vision text (7 cols) */}
@@ -263,7 +263,7 @@ export function FoundationWireframe_PartnerNetwork(): ReactNode {
   return (
     <SectionWrapper className="!py-0 !px-0">
       {/* ── HEADER BAND ── */}
-      <div className="relative h-[32vh] min-h-[260px] overflow-hidden">
+      <div className="relative h-[36vh] min-h-[290px] overflow-hidden">
         <ImageWithFallback
           src={IMAGES.blanketDrive}
           alt="Community partnership and collaboration"
@@ -449,7 +449,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
                     }} />
                     {/* Ghost number */}
                     <div className="absolute top-4 left-6">
-                      <span className="font-bebas-neue" style={{ fontSize: '120px', lineHeight: 1, color: 'rgba(255,255,255,0.07)' }}>
+                      <span className="font-bebas-neue" style={{ fontSize: 'clamp(72px, 10vw, 120px)', lineHeight: 1, color: 'rgba(255,255,255,0.07)' }}>
                         {prog.step}
                       </span>
                     </div>

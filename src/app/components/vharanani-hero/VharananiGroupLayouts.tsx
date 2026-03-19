@@ -537,7 +537,7 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
                   <div
                     key={metric.label}
                     className="p-6 md:p-8 text-center flex flex-col justify-center"
-                    style={{ borderRight: mi < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none', borderBottom: '1px solid rgba(255,255,255,0.08)' }}
+                    style={{ borderRight: mi < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none', borderBottom: '1px solid rgba(255,255,255,0.08)', borderTop: '1px solid rgba(255,255,255,0.08)' }}
                   >
                     <div className="typo-headline-big font-bebas-neue text-white">{metric.value}</div>
                     <div className="typo-meta tracking-[0.12em] uppercase font-inter text-white/60 mt-2">{metric.label}</div>
@@ -918,7 +918,7 @@ export function GroupWireframe_ImpactGovernance(): ReactNode {
             </div>
             <div className="grid grid-cols-2 gap-6">
               {impactStats.map((stat) => (
-                <div key={stat.label} className="p-4" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+                <div key={stat.label} className="p-6" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
                   <AnimatedCounter target={stat.value} suffix={stat.suffix} />
                   <div className="typo-caption tracking-[0.15em] uppercase font-inter mt-1" style={{ color: 'var(--vharanani-charcoal-40)' }}>
                     {stat.label}

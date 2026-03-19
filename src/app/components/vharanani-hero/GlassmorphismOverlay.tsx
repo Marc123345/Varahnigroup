@@ -227,7 +227,7 @@ export function GlassmorphismOverlay({
       <div
         ref={scrollContainerRef}
         className="relative overflow-y-auto px-6 sm:px-10 lg:px-16 py-8 sm:py-10"
-        style={{ height: 'calc(100vh - 60px)' }}
+        style={{ height: 'calc(100dvh - 57px)' }}
       >
         <div className="max-w-5xl mx-auto">
           {scrollMode ? (
@@ -241,7 +241,7 @@ export function GlassmorphismOverlay({
                 <div
                   key={tab.id}
                   ref={(el) => { sectionRefs.current[tab.id] = el; }}
-                  className={i > 0 ? 'mt-6 pt-8' : ''}
+                  className={i > 0 ? 'mt-8 pt-10' : ''}
                   style={i > 0 ? { borderTop: '1px solid var(--vharanani-charcoal-20)' } : {}}
                 >
                   {/* Section header */}
@@ -295,10 +295,10 @@ export function GlassmorphismOverlay({
       <div
         className="absolute bottom-1 left-0 right-0 flex items-center justify-between px-6 sm:px-10 lg:px-16 py-2 bg-white"
       >
-        <div className="font-inter typo-meta tracking-[0.3em] uppercase" style={{ color: 'var(--vharanani-charcoal-40)' }}>
+        <div className="font-inter typo-meta tracking-[0.3em] uppercase" style={{ color: 'var(--vharanani-charcoal-60)' }}>
           VISION. STRUCTURE. IMPACT.
         </div>
-        <div className="font-inter typo-meta tracking-[0.15em] uppercase" style={{ color: 'var(--vharanani-charcoal-40)' }}>
+        <div className="font-inter typo-meta tracking-[0.15em] uppercase" style={{ color: 'var(--vharanani-charcoal-60)' }}>
           ESC TO CLOSE
         </div>
       </div>
