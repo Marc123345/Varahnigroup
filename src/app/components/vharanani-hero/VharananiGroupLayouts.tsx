@@ -108,7 +108,7 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0" style={{
-          background: 'linear-gradient(180deg, rgba(44,45,45,0.2) 0%, rgba(44,45,45,0.55) 50%, rgba(44,45,45,0.95) 100%)'
+          background: 'linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.95) 100%)'
         }} />
         <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'var(--vharanani-burgundy)' }} />
 
@@ -165,7 +165,7 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
                     alt="Vharanani infrastructure projects"
                     className="absolute inset-0 w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 40%, rgba(44,45,45,0.6) 100%)' }} />
+                  <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.6) 100%)' }} />
                   <div className="absolute bottom-3 left-3">
                     <span className="typo-meta tracking-[0.15em] uppercase font-inter text-white/80">Infrastructure</span>
                   </div>
@@ -176,7 +176,7 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
                     alt="Vharanani corporate team"
                     className="absolute inset-0 w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 40%, rgba(44,45,45,0.6) 100%)' }} />
+                  <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.6) 100%)' }} />
                   <div className="absolute bottom-3 left-3">
                     <span className="typo-meta tracking-[0.15em] uppercase font-inter text-white/80">Our People</span>
                   </div>
@@ -342,7 +342,7 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0" style={{
-                background: 'linear-gradient(135deg, rgba(137,43,28,0.35) 0%, rgba(44,45,45,0.3) 50%, rgba(44,45,45,0.7) 100%)'
+                background: 'linear-gradient(135deg, rgba(137,43,28,0.35) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.7) 100%)'
               }} />
               {/* Floating number */}
               <div className="absolute top-6 left-6">
@@ -361,7 +361,7 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
                     key={cap}
                     className="flex-1 py-3 px-2 text-center"
                     style={{
-                      background: 'rgba(44,45,45,0.85)',
+                      background: 'rgba(0,0,0,0.85)',
                       backdropFilter: 'blur(8px)',
                       borderRight: ci < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none',
                     }}
@@ -432,7 +432,7 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                   <div className="absolute inset-0" style={{
-                    background: 'linear-gradient(180deg, rgba(44,45,45,0.15) 0%, rgba(44,45,45,0.75) 100%)'
+                    background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.75) 100%)'
                   }} />
                   {/* Number */}
                   <div className="absolute top-5 left-6">
@@ -507,7 +507,7 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0" style={{
-                background: 'linear-gradient(90deg, rgba(137,43,28,0.9) 0%, rgba(44,45,45,0.95) 100%)'
+                background: 'linear-gradient(90deg, rgba(137,43,28,0.9) 0%, rgba(0,0,0,0.95) 100%)'
               }} />
             </div>
 
@@ -620,7 +620,7 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0" style={{
-          background: 'linear-gradient(180deg, rgba(44,45,45,0.4) 0%, rgba(44,45,45,0.7) 50%, rgba(44,45,45,0.98) 100%)'
+          background: 'linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.98) 100%)'
         }} />
         <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'var(--vharanani-burgundy)' }} />
 
@@ -679,8 +679,8 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
                     />
                     <div className="absolute inset-0" style={{
                       background: isEven
-                        ? 'linear-gradient(135deg, rgba(137,43,28,0.4) 0%, rgba(44,45,45,0.5) 100%)'
-                        : 'linear-gradient(225deg, rgba(137,43,28,0.4) 0%, rgba(44,45,45,0.5) 100%)'
+                        ? 'linear-gradient(135deg, rgba(137,43,28,0.4) 0%, rgba(0,0,0,0.5) 100%)'
+                        : 'linear-gradient(225deg, rgba(137,43,28,0.4) 0%, rgba(0,0,0,0.5) 100%)'
                     }} />
                     {/* Large ghost step number */}
                     <div className="absolute top-4 left-6">
@@ -689,7 +689,7 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
                       </span>
                     </div>
                     {/* Bottom metric overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 px-6 py-4" style={{ background: 'rgba(44,45,45,0.85)', backdropFilter: 'blur(8px)' }}>
+                    <div className="absolute bottom-0 left-0 right-0 px-6 py-4" style={{ background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(8px)' }}>
                       <div className="flex items-center gap-4">
                         <div className="typo-headline-big font-bebas-neue" style={{ color: 'var(--vharanani-burgundy)' }}>
                           {pillar.metric.value}
@@ -823,7 +823,7 @@ export function GroupWireframe_Leadership(): ReactNode {
               alt="Executive Leadership"
               className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 40%, rgba(44,45,45,0.8) 100%)' }} />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.8) 100%)' }} />
           </div>
           <div className="lg:col-span-3 p-8 md:p-12 flex flex-col justify-center" style={{ background: '#fafafa' }}>
             <div className="typo-caption tracking-[0.2em] uppercase font-inter mb-4" style={{ color: 'var(--vharanani-burgundy)' }}>
@@ -1037,7 +1037,7 @@ export function GroupWireframe_VisionMission(): ReactNode {
             alt="Vision and mission"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0" style={{ background: 'rgba(44,45,45,0.6)' }} />
+          <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.6)' }} />
         </div>
       </div>
     </SectionWrapper>
@@ -1185,7 +1185,7 @@ export function GroupWireframe_Companies(): ReactNode {
                   alt={company.title}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="absolute inset-0" style={{ background: 'rgba(44,45,45,0.3)' }} />
+                <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.3)' }} />
                 <div className="absolute top-4 left-4 flex items-center gap-2">
                   <span style={{ color: 'var(--vharanani-burgundy-60)' }}>{company.icon}</span>
                   <span className="typo-caption tracking-[0.2em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
@@ -1289,7 +1289,7 @@ export function GroupWireframe_NewsContact(): ReactNode {
                 alt="Corporate news and updates"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0" style={{ background: 'rgba(44,45,45,0.5)' }} />
+              <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.5)' }} />
             </div>
           </div>
 

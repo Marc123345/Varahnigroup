@@ -43,8 +43,8 @@
   /* Vharanani Brand Colors */
   --vharanani-primary: #892B1C;
   --vharanani-burgundy: #892B1C;
-  --vharanani-charcoal: #2C2D2D;
-  --vharanani-text: #2C2E35;
+  --vharanani-charcoal: #000000;
+  --vharanani-text: #000000;
   --vharanani-text-muted: #9B9C9F;
   --vharanani-white: #FFFFFF;
 
@@ -64,11 +64,11 @@
   --vharanani-burgundy-20: #f7d8d5;
 
   /* Vharanani Color Tones - Charcoal */
-  --vharanani-charcoal-100: #2C2D2D;
-  --vharanani-charcoal-80: #565757;
-  --vharanani-charcoal-60: #818181;
-  --vharanani-charcoal-40: #ababab;
-  --vharanani-charcoal-20: #d5d5d5;
+  --vharanani-charcoal-100: #000000;
+  --vharanani-charcoal-80: #333333;
+  --vharanani-charcoal-60: #666666;
+  --vharanani-charcoal-40: #999999;
+  --vharanani-charcoal-20: #cccccc;
 
   /* Vharanani Typography System — Screen-optimised (px) */
   /* Meta Text - Inter Regular — tiny metadata, badges */

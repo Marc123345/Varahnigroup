@@ -94,7 +94,7 @@ export function DMFTWireframe_HeroAbout({ onTabChange }: { onTabChange?: (tabId:
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0" style={{
-          background: 'linear-gradient(180deg, rgba(44,45,45,0.3) 0%, rgba(44,45,45,0.2) 40%, rgba(44,45,45,0.85) 100%)'
+          background: 'linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.85) 100%)'
         }} />
         <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'var(--vharanani-burgundy)' }} />
 
@@ -228,10 +228,10 @@ export function DMFTWireframe_HeroAbout({ onTabChange }: { onTabChange?: (tabId:
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0" style={{
-                background: 'linear-gradient(180deg, rgba(44,45,45,0.05) 0%, rgba(44,45,45,0.3) 60%, rgba(44,45,45,0.8) 100%)'
+                background: 'linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.8) 100%)'
               }} />
               {/* Overlaid badge */}
-              <div className="absolute bottom-0 left-0 right-0 p-6" style={{ background: 'rgba(44,45,45,0.85)', backdropFilter: 'blur(8px)' }}>
+              <div className="absolute bottom-0 left-0 right-0 p-6" style={{ background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(8px)' }}>
                 <div className="flex items-center gap-3">
                   <Layers size={16} style={{ color: 'var(--vharanani-burgundy)' }} />
                   <span className="typo-meta tracking-[0.15em] uppercase font-inter text-white/50">
@@ -302,7 +302,7 @@ export function DMFTWireframe_DevelopmentApproach(): ReactNode {
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0" style={{
-          background: 'linear-gradient(180deg, rgba(44,45,45,0.5) 0%, rgba(44,45,45,0.7) 50%, rgba(44,45,45,0.98) 100%)'
+          background: 'linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.98) 100%)'
         }} />
         <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'var(--vharanani-burgundy)' }} />
 
@@ -361,8 +361,8 @@ export function DMFTWireframe_DevelopmentApproach(): ReactNode {
                     />
                     <div className="absolute inset-0" style={{
                       background: isEven
-                        ? 'linear-gradient(135deg, rgba(137,43,28,0.35) 0%, rgba(44,45,45,0.45) 100%)'
-                        : 'linear-gradient(225deg, rgba(137,43,28,0.35) 0%, rgba(44,45,45,0.45) 100%)'
+                        ? 'linear-gradient(135deg, rgba(137,43,28,0.35) 0%, rgba(0,0,0,0.45) 100%)'
+                        : 'linear-gradient(225deg, rgba(137,43,28,0.35) 0%, rgba(0,0,0,0.45) 100%)'
                     }} />
                     {/* Ghost step number */}
                     <div className="absolute top-4 left-6">
@@ -371,7 +371,7 @@ export function DMFTWireframe_DevelopmentApproach(): ReactNode {
                       </span>
                     </div>
                     {/* Bottom phase label */}
-                    <div className="absolute bottom-0 left-0 right-0 px-6 py-4" style={{ background: 'rgba(44,45,45,0.85)', backdropFilter: 'blur(8px)' }}>
+                    <div className="absolute bottom-0 left-0 right-0 px-6 py-4" style={{ background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(8px)' }}>
                       <div className="flex items-center gap-4">
                         <div className="typo-headline-small font-bebas-neue uppercase tracking-wide" style={{ color: 'var(--vharanani-burgundy)' }}>
                           Phase {phase.step}
@@ -522,7 +522,7 @@ export function DMFTWireframe_Portfolio(): ReactNode {
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0" style={{
-                background: 'linear-gradient(135deg, rgba(137,43,28,0.3) 0%, rgba(44,45,45,0.5) 100%)'
+                background: 'linear-gradient(135deg, rgba(137,43,28,0.3) 0%, rgba(0,0,0,0.5) 100%)'
               }} />
               {/* Ghost number */}
               <div className="absolute top-6 left-8">
@@ -533,7 +533,7 @@ export function DMFTWireframe_Portfolio(): ReactNode {
                 <span className="typo-meta tracking-[0.2em] uppercase font-inter text-white">Flagship</span>
               </div>
               {/* Bottom metric */}
-              <div className="absolute bottom-0 left-0 right-0 px-8 py-5" style={{ background: 'rgba(44,45,45,0.85)', backdropFilter: 'blur(8px)' }}>
+              <div className="absolute bottom-0 left-0 right-0 px-8 py-5" style={{ background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(8px)' }}>
                 <div className="flex items-center gap-4">
                   <div className="typo-headline-big font-bebas-neue" style={{ color: 'var(--vharanani-burgundy)' }}>
                     {developments[0].metric.value}
@@ -606,7 +606,7 @@ export function DMFTWireframe_Portfolio(): ReactNode {
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0" style={{
-                    background: 'linear-gradient(180deg, rgba(44,45,45,0.1) 0%, rgba(44,45,45,0.6) 100%)'
+                    background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%)'
                   }} />
                   {/* Ghost number */}
                   <div className="absolute top-2 left-4">
@@ -619,7 +619,7 @@ export function DMFTWireframe_Portfolio(): ReactNode {
                     <span className="typo-meta tracking-[0.15em] uppercase font-inter text-white">{dev.category}</span>
                   </div>
                   {/* Bottom metric */}
-                  <div className="absolute bottom-0 left-0 right-0 px-5 py-3" style={{ background: 'rgba(44,45,45,0.8)', backdropFilter: 'blur(4px)' }}>
+                  <div className="absolute bottom-0 left-0 right-0 px-5 py-3" style={{ background: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(4px)' }}>
                     <div className="flex items-center gap-3">
                       <span className="typo-headline-small font-bebas-neue" style={{ color: 'var(--vharanani-burgundy)' }}>{dev.metric.value}</span>
                       <span className="typo-meta tracking-[0.1em] uppercase font-inter text-white/60">{dev.metric.label}</span>
@@ -709,7 +709,7 @@ export function DMFTWireframe_CapabilitiesQuality(): ReactNode {
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0" style={{
-          background: 'linear-gradient(180deg, rgba(44,45,45,0.5) 0%, rgba(44,45,45,0.85) 100%)'
+          background: 'linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.85) 100%)'
         }} />
         <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'var(--vharanani-burgundy)' }} />
 
@@ -840,7 +840,7 @@ export function DMFTWireframe_HeritageContact(): ReactNode {
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0" style={{
-            background: 'linear-gradient(180deg, rgba(44,45,45,0.5) 0%, rgba(44,45,45,0.9) 100%)'
+            background: 'linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.9) 100%)'
           }} />
           <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 lg:px-20 pb-10">
             <div className="max-w-7xl mx-auto w-full">

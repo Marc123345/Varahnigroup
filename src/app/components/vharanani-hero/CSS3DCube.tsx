@@ -202,7 +202,7 @@ export function CSS3DCube({ images, activeIndex, size, labels }: CSS3DCubeProps)
             <div
               className="absolute inset-0"
               style={{
-                background: 'linear-gradient(180deg, rgba(137,43,28,0.05) 0%, rgba(44,45,45,0.6) 100%)',
+                background: 'linear-gradient(180deg, rgba(137,43,28,0.05) 0%, rgba(0,0,0,0.6) 100%)',
               }}
             />
 

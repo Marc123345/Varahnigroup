@@ -180,7 +180,7 @@ const DIVISION_LOGOS: Record<string, string> = {
 
 function StatCard({ label, value, icon }: { label: string; value: string; icon: ReactNode }) {
   return (
-    <div className="p-4" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.03)' }}>
+    <div className="p-4" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.03)' }}>
       <div className="flex items-center gap-3 mb-2">
         <div style={{ color: 'var(--vharanani-burgundy)' }}>{icon}</div>
         <div className="font-bebas-neue typo-subline" style={{ color: 'var(--vharanani-charcoal)' }}>{value}</div>
@@ -217,7 +217,7 @@ function ListBlock({ title, items }: { title: string; items: string[] }) {
 
 function ProjectCard({ title, location, status, type }: { title: string; location: string; status: string; type: string }) {
   return (
-    <div className="p-4 mb-3" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+    <div className="p-4 mb-3" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
       <div className="flex items-center justify-between mb-2">
         <h4 className="font-bebas-neue typo-headline-small tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>{title}</h4>
         <div className="typo-caption tracking-[0.15em] uppercase px-2 py-1" style={{ color: 'var(--vharanani-burgundy)', border: '1px solid var(--vharanani-burgundy)' }}>{status}</div>
@@ -284,28 +284,28 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
           </div>
           <div className="font-bebas-neue text-lg mb-4 uppercase tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Our Values</div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
               <div className="flex items-center gap-2 mb-3">
                 <Shield size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
                 <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Professionalism</div>
               </div>
               <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>Maintaining the highest standards in execution and project delivery.</div>
             </div>
-            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
               <div className="flex items-center gap-2 mb-3">
                 <Target size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
                 <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Accountability</div>
               </div>
               <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>Taking full responsibility for the quality, safety, and success of every project.</div>
             </div>
-            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
               <div className="flex items-center gap-2 mb-3">
                 <Eye size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
                 <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Transparency</div>
               </div>
               <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>Operating with openness and integrity in all engagements.</div>
             </div>
-            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
               <div className="flex items-center gap-2 mb-3">
                 <Heart size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
                 <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Honesty</div>
@@ -371,28 +371,28 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
         <div>
           <ContentBlock title="Accreditation & Compliance" text="Vharanani Properties maintains industry certifications and regulatory compliance to ensure quality, safety, and operational excellence." />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
               <div className="flex items-center gap-2 mb-3">
                 <Award size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
                 <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>ISO 9001:2015</div>
               </div>
               <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>Certified Construction Company — Quality Management Systems</div>
             </div>
-            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
               <div className="flex items-center gap-2 mb-3">
                 <Shield size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
                 <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>B-BBEE Level 1</div>
               </div>
               <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>Highest level Broad-Based Black Economic Empowerment contributor</div>
             </div>
-            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
               <div className="flex items-center gap-2 mb-3">
                 <Building2 size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
                 <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>CIDB Grade 9GB</div>
               </div>
               <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>General Building Works — highest grading designation</div>
             </div>
-            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
               <div className="flex items-center gap-2 mb-3">
                 <HardHat size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
                 <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>CIDB Grade 9CE</div>
@@ -455,21 +455,21 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
           <ContentBlock title="What We Do" text="The David Mabilu Foundation focuses on initiatives and projects that assist individuals and communities to become self-sustaining and independent. Through targeted programmes, partnerships, and direct support, the Foundation works to address real community challenges while promoting long-term empowerment." />
           <div className="font-bebas-neue text-lg mb-4 mt-6 uppercase tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Core Programme Areas</div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
               <div className="flex items-center gap-2 mb-3">
                 <GraduationCap size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
                 <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Education</div>
               </div>
               <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>Scholarships, school support programmes, and infrastructure development investing in the future of young South Africans.</div>
             </div>
-            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
               <div className="flex items-center gap-2 mb-3">
                 <Home size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
                 <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Housing</div>
               </div>
               <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>Supporting housing initiatives that provide safe and dignified homes for disadvantaged individuals and families.</div>
             </div>
-            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
               <div className="flex items-center gap-2 mb-3">
                 <Heart size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
                 <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Community Upliftment</div>
@@ -487,30 +487,30 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
           <div className="font-bebas-neue text-lg mb-3 mt-6 uppercase tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Beneficiary Schools</div>
           <ContentBlock title="" text="Beyond individual scholarships, the Foundation also supports schools by providing essential resources and infrastructure. These schools have received computers for learners as well as additional classrooms built to create improved learning environments." />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-            <div className="p-4" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.03)' }}>
+            <div className="p-4" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.03)' }}>
               <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Galananzhele Primary School</div>
             </div>
-            <div className="p-4" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.03)' }}>
+            <div className="p-4" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.03)' }}>
               <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Tshifhatani Primary School</div>
             </div>
-            <div className="p-4" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.03)' }}>
+            <div className="p-4" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.03)' }}>
               <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Tshidimbini Secondary School</div>
             </div>
-            <div className="p-4" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.03)' }}>
+            <div className="p-4" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.03)' }}>
               <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Tshiavha Primary School</div>
             </div>
           </div>
           <div className="font-bebas-neue text-lg mb-3 mt-6 uppercase tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Community Support Initiatives</div>
           <ContentBlock title="" text="The Foundation regularly supports schools, faith-based organisations, and community programmes that contribute to education and social wellbeing." />
           <div className="space-y-4 mb-6">
-            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
               <div className="flex items-center gap-2 mb-2">
                 <div className="typo-caption tracking-[0.15em] uppercase px-2 py-1" style={{ color: 'var(--vharanani-burgundy)', border: '1px solid var(--vharanani-burgundy)' }}>2012</div>
                 <div className="typo-caption tracking-[0.15em] uppercase" style={{ color: 'var(--vharanani-charcoal-60)' }}>Nelson Mandela Day</div>
               </div>
               <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal)' }}>Founder David Mabilu and Vharanani Properties staff spent their 67 minutes giving back at Mambo Primary School in Chiawelo, Soweto — a school Mr. Mabilu attended as a learner. The team painted classrooms, cleaned the school facilities, and donated cleaning and hygiene supplies.</div>
             </div>
-            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
               <div className="flex items-center gap-2 mb-2">
                 <div className="typo-caption tracking-[0.15em] uppercase px-2 py-1" style={{ color: 'var(--vharanani-burgundy)', border: '1px solid var(--vharanani-burgundy)' }}>2013</div>
                 <div className="typo-caption tracking-[0.15em] uppercase" style={{ color: 'var(--vharanani-charcoal-60)' }}>Faith-Based Support</div>
@@ -545,21 +545,21 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
           <ListBlock title="Key Initiatives" items={['Youth development programmes', 'Women\'s community initiatives', 'Local economic development projects', 'Sports and arts development programmes']} />
           <div className="font-bebas-neue text-lg mb-3 mt-6 uppercase tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Community Support Stories</div>
           <div className="space-y-4 mb-6">
-            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
               <div className="flex items-center gap-2 mb-2">
                 <div className="typo-caption tracking-[0.15em] uppercase px-2 py-1" style={{ color: 'var(--vharanani-burgundy)', border: '1px solid var(--vharanani-burgundy)' }}>2012</div>
                 <div className="typo-caption tracking-[0.15em] uppercase" style={{ color: 'var(--vharanani-charcoal-60)' }}>Nelson Mandela Day</div>
               </div>
               <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal)' }}>Founder David Mabilu and Vharanani Properties staff spent their 67 minutes giving back at Mambo Primary School in Chiawelo, Soweto — a school Mr. Mabilu attended as a learner. The team painted classrooms, cleaned the school facilities, and donated cleaning and hygiene supplies.</div>
             </div>
-            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
               <div className="flex items-center gap-2 mb-2">
                 <div className="typo-caption tracking-[0.15em] uppercase px-2 py-1" style={{ color: 'var(--vharanani-burgundy)', border: '1px solid var(--vharanani-burgundy)' }}>2013</div>
                 <div className="typo-caption tracking-[0.15em] uppercase" style={{ color: 'var(--vharanani-charcoal-60)' }}>Faith-Based Support</div>
               </div>
               <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal)' }}>The Foundation supported student financial assistance programmes run by faith-based organisations in Venda, including the United African Apostolic Church (UAAC) and Church of Christ.</div>
             </div>
-            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
               <div className="flex items-center gap-2 mb-2">
                 <div className="typo-caption tracking-[0.15em] uppercase px-2 py-1" style={{ color: 'var(--vharanani-burgundy)', border: '1px solid var(--vharanani-burgundy)' }}>2017</div>
                 <div className="typo-caption tracking-[0.15em] uppercase" style={{ color: 'var(--vharanani-charcoal-60)' }}>Women's Day</div>
@@ -569,7 +569,7 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
           </div>
           <ListBlock title="Sports & Youth Donations" items={['Sporting kits', 'Soccer balls', 'Boots and sports equipment', 'Donations to schools and community clubs']} />
           <ContentBlock title="" text="These initiatives encourage youth participation in sports, teamwork, and positive community engagement." />
-          <div className="p-5 mt-4" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+          <div className="p-5 mt-4" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
             <div className="flex items-center gap-2 mb-2">
               <div className="typo-caption tracking-[0.15em] uppercase px-2 py-1" style={{ color: 'var(--vharanani-burgundy)', border: '1px solid var(--vharanani-burgundy)' }}>2017</div>
               <div className="typo-caption tracking-[0.15em] uppercase" style={{ color: 'var(--vharanani-charcoal-60)' }}>Winter Support</div>
@@ -600,7 +600,7 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
         <div>
           <ContentBlock title="How We Work" text="The David Mabilu Foundation works collaboratively with a broad network of partners to deliver impactful programmes and initiatives. Through these partnerships, the Foundation is able to extend its reach and ensure that its initiatives deliver meaningful and sustainable impact." />
           <ListBlock title="Our Key Partners Include" items={['Local and national partners', 'Government institutions', 'Faith-based organisations', 'Traditional leaders', 'Private sector partners', 'Community organisations']} />
-          <div className="p-5 mt-6" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+          <div className="p-5 mt-6" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
             <div className="flex items-center gap-2 mb-3">
               <Layers size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
               <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Part of the Vharanani Group</div>
@@ -612,7 +612,7 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
               "Together, these efforts contribute to building stronger, more resilient communities across South Africa."
             </div>
           </div>
-          <div className="p-5 mt-6" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+          <div className="p-5 mt-6" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
             <div className="flex items-center gap-2 mb-3">
               <Mail size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
               <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Contact the Foundation</div>
@@ -647,7 +647,7 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
               "Our developments combine thoughtful design, quality construction, and strategic location to create sustainable environments for living, working, and investment."
             </div>
           </div>
-          <div className="p-5 mt-6" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+          <div className="p-5 mt-6" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
             <div className="flex items-center gap-2 mb-3">
               <Layers size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
               <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Part of the Vharanani Group</div>
@@ -660,28 +660,28 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
         <div>
           <ContentBlock title="Our Development Approach" text="At DMFT Property Developers, we manage the full lifecycle of property development. Our integrated approach ensures that every project is delivered efficiently, sustainably, and to the highest standards." />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
               <div className="flex items-center gap-2 mb-3">
                 <MapPin size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
                 <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Land Identification & Acquisition</div>
               </div>
               <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>Carefully identifying strategic locations with strong growth potential.</div>
             </div>
-            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
               <div className="flex items-center gap-2 mb-3">
                 <Target size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
                 <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Planning & Feasibility</div>
               </div>
               <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>Conducting detailed feasibility studies, zoning processes, and development planning.</div>
             </div>
-            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
               <div className="flex items-center gap-2 mb-3">
                 <Eye size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
                 <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Design & Architecture</div>
               </div>
               <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>Working with experienced professionals to design modern and functional developments.</div>
             </div>
-            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
               <div className="flex items-center gap-2 mb-3">
                 <HardHat size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
                 <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Construction & Project Management</div>
@@ -689,7 +689,7 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
               <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>Leveraging the construction expertise of the Vharanani Group to deliver projects efficiently and safely.</div>
             </div>
           </div>
-          <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+          <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
             <div className="flex items-center gap-2 mb-3">
               <Briefcase size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
               <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Sales & Delivery</div>
@@ -734,28 +734,28 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
           <div className="font-bebas-neue text-lg mb-4 mt-8 uppercase tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Commitment to Quality</div>
           <ContentBlock title="" text="At DMFT Property Developers, quality is central to every development we undertake." />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
               <div className="flex items-center gap-2 mb-3">
                 <Award size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
                 <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>High Construction Standards</div>
               </div>
               <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>Meeting and exceeding industry benchmarks for build quality and safety.</div>
             </div>
-            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
               <div className="flex items-center gap-2 mb-3">
                 <Landmark size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
                 <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Long-Term Value</div>
               </div>
               <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>Providing lasting value to residents and investors through quality and strategic positioning.</div>
             </div>
-            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
               <div className="flex items-center gap-2 mb-3">
                 <Heart size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
                 <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Community Contribution</div>
               </div>
               <div className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-60)' }}>Contributing positively to the communities in which we operate.</div>
             </div>
-            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}>
+            <div className="p-5" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
               <div className="flex items-center gap-2 mb-3">
                 <Globe size={18} style={{ color: 'var(--vharanani-burgundy)' }} />
                 <div className="font-bebas-neue tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Sustainable Growth</div>

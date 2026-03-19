@@ -421,7 +421,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
         </div>
 
         {/* Progress dots */}
-        <div className="flex items-center gap-2 p-3" style={{ background: 'rgba(44,45,45,0.04)' }}>
+        <div className="flex items-center gap-2 p-3" style={{ background: 'rgba(0,0,0,0.04)' }}>
           {projects.map((_, i) => (
             <button
               key={i}
@@ -791,17 +791,17 @@ export function PropertiesWireframe_ContactFootprint(): ReactNode {
                   type="text"
                   placeholder="Name"
                   className="w-full px-4 py-3 font-inter typo-copy-small outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
-                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}
+                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}
                 />
                 <input
                   type="text"
                   placeholder="Company"
                   className="w-full px-4 py-3 font-inter typo-copy-small outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
-                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}
+                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}
                 />
                 <select
                   className="w-full px-4 py-3 font-inter typo-copy-small outline-none"
-                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)', color: 'var(--vharanani-charcoal-60)' }}
+                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)', color: 'var(--vharanani-charcoal-60)' }}
                   defaultValue=""
                 >
                   <option value="" disabled>Service Required</option>
@@ -816,7 +816,7 @@ export function PropertiesWireframe_ContactFootprint(): ReactNode {
                   placeholder="Message"
                   rows={3}
                   className="w-full px-4 py-3 font-inter typo-copy-small outline-none resize-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
-                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(44,45,45,0.02)' }}
+                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}
                 />
                 <button
                   onClick={() => { window.location.href = 'mailto:info@vharanani.com?subject=Project%20Enquiry'; }}
