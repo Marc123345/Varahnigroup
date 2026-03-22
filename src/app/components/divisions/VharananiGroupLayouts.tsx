@@ -118,55 +118,6 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
 
   return (
     <SectionWrapper className="!py-0 !px-0">
-      {/* ── HERO IMAGE BAND ── */}
-      <div className="relative h-[55vh] min-h-[420px] overflow-hidden">
-        <ImageWithFallback
-          src={EXEC_IMAGES.hero}
-          alt="Vharanani Group"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0" style={{
-          background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.95) 100%)'
-        }} />
-        <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-
-        <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 lg:px-20 pb-12 max-w-7xl mx-auto w-full">
-          <motion.div
-            className="flex items-center gap-3 mb-6"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <div className="w-8 h-[2px]" style={{ background: 'rgba(255,255,255,0.5)' }} />
-            <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.7)' }}>
-              INTELLIGENCE
-            </span>
-          </motion.div>
-          <motion.h2
-            className="typo-header font-bebas-neue uppercase tracking-wide text-white mb-3"
-            style={{ lineHeight: 0.95 }}
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          >
-            Building Africa's<br />Future
-          </motion.h2>
-          <motion.div
-            className="flex items-center gap-4 mt-2"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <div className="typo-caption tracking-[0.2em] uppercase px-3 py-1 font-inter" style={{ background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.3)', color: 'white' }}>
-              EST. 2001
-            </div>
-            <span className="typo-caption tracking-[0.15em] uppercase font-inter text-white/85">
-              Polokwane, Limpopo — South Africa
-            </span>
-          </motion.div>
-        </div>
-      </div>
-
       {/* ── MAIN CONTENT GRID ── */}
       <div className="px-6 md:px-12 lg:px-20 py-10 md:py-14" style={{ background: '#ffffff' }}>
         <div className="max-w-7xl mx-auto">
