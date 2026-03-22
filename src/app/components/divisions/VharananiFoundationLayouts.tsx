@@ -85,6 +85,64 @@ const IMAGES = {
 export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId: string) => void } = {}): ReactNode {
   return (
     <div>
+      {/* ── CINEMATIC HERO ── */}
+      <div className="relative h-[45vh] sm:h-[55vh] min-h-[320px] sm:min-h-[440px] overflow-hidden">
+        <ImageWithFallback
+          src={IMAGES.communityGathering}
+          alt="Community gathering and empowerment"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0" style={{
+          background: 'linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.85) 100%)'
+        }} />
+        <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'var(--vharanani-burgundy)' }} />
+
+        {/* Nav placeholder */}
+        <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-6 md:px-12 lg:px-20 py-5">
+          <div className="font-bebas-neue typo-headline-small tracking-wider text-white uppercase opacity-80">
+            The David Mabilu Foundation
+          </div>
+          <div className="hidden md:flex items-center gap-6">
+            {['About', 'Programmes', 'Our Impact', 'Vharanani Group', 'Contact'].map((item) => (
+              <span key={item} className="font-inter typo-meta tracking-[0.12em] uppercase text-white opacity-50 hover:opacity-100 cursor-pointer transition-opacity">{item}</span>
+            ))}
+          </div>
+        </div>
+
+        {/* Hero content */}
+        <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 lg:px-20 pb-14">
+          <div className="max-w-7xl mx-auto w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+              <div className="lg:col-span-7">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
+                  <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
+                    THE DAVID MABILU FOUNDATION
+                  </span>
+                </div>
+                <h1 className="typo-header font-bebas-neue tracking-wide uppercase text-white" style={{ lineHeight: 0.95 }}>
+                  Building Stronger<br />Communities Through<br />Opportunity.
+                </h1>
+              </div>
+              <div className="lg:col-span-5 flex flex-col gap-6">
+                <p className="typo-copy font-inter text-white/60">
+                  The David Mabilu Foundation (DMF) is a social development organisation committed to reducing poverty and sustainably improving the living standards of poor and marginalised communities across South Africa.
+                </p>
+                <div className="flex items-center gap-3">
+                  <button onClick={() => onTabChange?.('impact')} className="flex items-center gap-2 px-5 py-3 transition-all duration-300 hover:gap-3" style={{ background: 'var(--vharanani-burgundy)' }}>
+                    <span className="font-bebas-neue typo-headline-small tracking-wider uppercase text-white">See Our Impact</span>
+                    <ArrowRight size={14} className="text-white" />
+                  </button>
+                  <button onClick={() => onTabChange?.('get-involved')} className="flex items-center gap-2 px-5 py-3 transition-all duration-300 hover:bg-white/10" style={{ border: '1px solid rgba(255,255,255,0.3)' }}>
+                    <span className="font-bebas-neue typo-headline-small tracking-wider uppercase text-white">Partner With Us</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* ── IMPACT STATS BAR ── */}
       <div style={{ background: '#812921' }}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
@@ -204,6 +262,42 @@ export function FoundationWireframe_PartnerNetwork(): ReactNode {
 
   return (
     <SectionWrapper className="!py-0 !px-0">
+      {/* ── HEADER BAND ── */}
+      <div className="relative h-[30vh] sm:h-[36vh] min-h-[240px] sm:min-h-[290px] overflow-hidden">
+        <ImageWithFallback
+          src={IMAGES.blanketDrive}
+          alt="Community partnership and collaboration"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0" style={{
+          background: 'linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.85) 100%)'
+        }} />
+        <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'var(--vharanani-burgundy)' }} />
+
+        <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 lg:px-20 pb-10">
+          <div className="max-w-7xl mx-auto w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+              <div className="lg:col-span-7">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
+                  <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
+                    HOW WE ACHIEVE OUR GOAL
+                  </span>
+                </div>
+                <h2 className="typo-header font-bebas-neue tracking-wide uppercase text-white" style={{ lineHeight: 0.95 }}>
+                  Collaborating for<br />Meaningful Impact.
+                </h2>
+              </div>
+              <div className="lg:col-span-5">
+                <p className="typo-copy font-inter text-white/60">
+                  The David Mabilu Foundation works collaboratively with a broad network of partners to deliver impactful programmes and initiatives.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* ── PARTNER GRID — 3x2 ── */}
       <div className="px-6 md:px-12 lg:px-20 py-10 md:py-16" style={{ background: '#ffffff' }}>
         <div className="max-w-7xl mx-auto">
@@ -727,6 +821,31 @@ export function FoundationWireframe_Contact(): ReactNode {
   return (
     <div>
       <div className="overflow-hidden">
+        {/* ── CONTACT HEADER BAND ── */}
+        <div className="relative h-[28vh] min-h-[220px] overflow-hidden">
+          <ImageWithFallback
+            src={IMAGES.blanketDrive}
+            alt="Community empowerment"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0" style={{
+            background: 'linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.9) 100%)'
+          }} />
+          <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 lg:px-20 pb-10">
+            <div className="max-w-7xl mx-auto w-full">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-[2px]" style={{ background: 'rgba(255,255,255,0.5)' }} />
+                <span className="typo-caption tracking-[0.25em] uppercase font-inter text-white/50">
+                  CONTACT THE FOUNDATION
+                </span>
+              </div>
+              <h2 className="typo-header font-bebas-neue tracking-wide uppercase text-white" style={{ lineHeight: 0.95 }}>
+                The David Mabilu<br />Foundation.
+              </h2>
+            </div>
+          </div>
+        </div>
+
         {/* ── FORM SECTION ── */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
           {/* Left — Contact info */}
