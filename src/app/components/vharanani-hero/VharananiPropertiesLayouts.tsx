@@ -70,16 +70,16 @@ function SectionWrapper({ children, className = '', dark = false }: { children: 
 
 const IMAGES = {
   ceoPortrait: 'https://ik.imagekit.io/qcvroy8xpd/image%202.png',
-  roadsCivils: 'https://images.unsplash.com/photo-1766330301270-e4c652b1c538?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwY29uc3RydWN0aW9uJTIwaW5mcmFzdHJ1Y3R1cmUlMjByb2Fkc3xlbnwxfHx8fDE3NzM2OTA0ODd8MA&ixlib=rb-4.1.0&q=80&w=1080',
-  waterSanitation: 'https://images.unsplash.com/photo-1582476999010-7b857b165b6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3YXRlciUyMHNhbml0YXRpb24lMjBwaXBlbGluZSUyMG11bmljaXBhbHxlbnwxfHx8fDE3NzM2OTA0ODd8MA&ixlib=rb-4.1.0&q=80&w=1080',
-  buildingConstruction: 'https://images.unsplash.com/photo-1691147421207-d4274cfb482d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3NwaXRhbCUyMGJ1aWxkaW5nJTIwY29uc3RydWN0aW9uJTIwQWZyaWNhfGVufDF8fHx8MTc3MzY5MDQ4N3ww&ixlib=rb-4.1.0&q=80&w=1080',
-  residential: 'https://images.unsplash.com/photo-1653505914751-93e8ac1123be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXNpZGVudGlhbCUyMGhvdXNpbmclMjBkZXZlbG9wbWVudCUyMFNvdXRoJTIwQWZyaWNhfGVufDF8fHx8MTc3MzY5MDQ4OHww&ixlib=rb-4.1.0&q=80&w=1080',
-  propertyDev: 'https://images.unsplash.com/photo-1769697507341-d868b055c6a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21tZXJjaWFsJTIwcHJvcGVydHklMjBkZXZlbG9wbWVudCUyMG1vZGVybnxlbnwxfHx8fDE3NzM2OTA0ODh8MA&ixlib=rb-4.1.0&q=80&w=1080',
-  facilitiesMgmt: 'https://images.unsplash.com/photo-1768796372362-05c256e61d8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYWNpbGl0aWVzJTIwbWFuYWdlbWVudCUyMGJ1aWxkaW5nJTIwb3BlcmF0aW9uc3xlbnwxfHx8fDE3NzM2OTA0ODh8MA&ixlib=rb-4.1.0&q=80&w=1080',
-  brt: 'https://images.unsplash.com/photo-1764778822237-f8bb3369aaad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwdWJsaWMlMjB0cmFuc3BvcnRhdGlvbiUyMGJ1cyUyMHN5c3RlbSUyMGNpdHl8ZW58MXx8fHwxNzczNjkwNDk4fDA&ixlib=rb-4.1.0&q=80&w=1080',
-  constructionWorker: 'https://images.unsplash.com/photo-1694521787162-5373b598945c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjB3b3JrZXIlMjBzYWZldHklMjBoZWxtZXQlMjBzaXRlfGVufDF8fHx8MTc3MzY5MDQ5NHww&ixlib=rb-4.1.0&q=80&w=1080',
-  values: 'https://images.unsplash.com/photo-1676276376140-a4030cc596a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjB2YWx1ZXMlMjB0ZWFtd29yayUyMHByb2Zlc3Npb25hbHN8ZW58MXx8fHwxNzczNjkwNDk5fDA&ixlib=rb-4.1.0&q=80&w=1080',
-  map: 'https://images.unsplash.com/photo-1744968777216-8d6d14ffa734?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXJrJTIwbWFwJTIwc291dGglMjBhZnJpY2ElMjBnZW9ncmFwaGljfGVufDF8fHx8MTc3MzY5MDQ5NHww&ixlib=rb-4.1.0&q=80&w=1080',
+  roadsCivils: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2021/06/Marulaneng-Road-2.jpg?w=1080&ssl=1',
+  waterSanitation: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2021/06/Polokwane-CBD-Pipeline.png?w=1080&ssl=1',
+  buildingConstruction: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2021/06/MAPHUTA-MALATJIE-HOSPITAL-2.jpg?w=1080&ssl=1',
+  residential: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2021/06/Mamelodi-Ext-5-4.jpg?w=1080&ssl=1',
+  propertyDev: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_faranani-estate-1-1.jpg?w=1080&ssl=1',
+  facilitiesMgmt: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2021/06/Facilities-1.jpg?w=1080&ssl=1',
+  brt: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/Tswane-BRT.jpg?w=1080&ssl=1',
+  constructionWorker: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/09/DJI_0247-scaled.jpg?w=1440&ssl=1',
+  values: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_untitled_panorama4-1.jpg?w=1080&ssl=1',
+  map: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0519.jpg?w=1080&ssl=1',
 };
 
 
