@@ -989,7 +989,7 @@ export function GroupWireframe_ImpactGovernance(): ReactNode {
             <div className="grid grid-cols-2 gap-6">
               {impactStats.map((stat) => (
                 <div key={stat.label} className="p-6" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
-                  <AnimatedCounter target={stat.value} suffix={stat.suffix} />
+                  <AnimatedCounter target={stat.value} suffix={stat.suffix} color="white" />
                   <div className="typo-caption tracking-[0.15em] uppercase font-inter mt-1" style={{ color: 'rgba(255,255,255,0.7)' }}>
                     {stat.label}
                   </div>
