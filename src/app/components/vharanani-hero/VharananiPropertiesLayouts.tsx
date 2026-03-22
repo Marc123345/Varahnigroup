@@ -57,7 +57,7 @@ function SectionWrapper({ children, className = '', dark = false }: { children: 
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
       transition={{ duration: 0.7, ease: 'easeOut' }}
       className={`py-10 md:py-16 px-6 md:px-12 lg:px-20 ${className}`}
-      style={{ background: dark ? 'var(--vharanani-charcoal)' : '#ffffff' }}
+      style={{ background: dark ? 'var(--vharanani-burgundy)' : '#ffffff' }}
     >
       {children}
     </motion.section>
@@ -101,16 +101,15 @@ export function PropertiesWireframe_AboutImpact(): ReactNode {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 overflow-hidden" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
           {/* Left Column — Image */}
-          <div className="relative h-[360px] md:h-auto md:min-h-[520px] overflow-hidden group">
+          <div className="relative h-[360px] md:h-auto md:min-h-[520px] overflow-hidden flex items-center justify-center" style={{ background: '#f5f0ef' }}>
             <ImageWithFallback
               src={IMAGES.ceoPortrait}
               alt="David Mabilu, Founder & CEO of Vharanani Properties"
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className="w-full h-full object-contain object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             {/* Name overlay */}
-            <div className="absolute bottom-0 left-0 right-0 p-6">
-              <div className="font-inter typo-meta tracking-[0.3em] uppercase mb-1" style={{ color: 'var(--vharanani-burgundy-60)' }}>
+            <div className="absolute bottom-0 left-0 right-0 p-6" style={{ background: 'linear-gradient(to top, rgba(129,41,33,0.9) 0%, rgba(129,41,33,0.4) 60%, transparent 100%)' }}>
+              <div className="font-inter typo-meta tracking-[0.3em] uppercase mb-1" style={{ color: 'rgba(255,255,255,0.8)' }}>
                 FOUNDER & CEO
               </div>
               <h3 className="font-bebas-neue typo-subline tracking-wide text-white uppercase">
@@ -362,7 +361,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
             alt={current.title}
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(129,41,33,0.92) 0%, rgba(129,41,33,0.55) 55%, rgba(129,41,33,0.1) 100%)' }} />
 
           {/* Slide Content */}
           <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 md:p-10 max-w-full sm:max-w-[75%] lg:max-w-[60%]">
@@ -373,8 +372,8 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
               {current.title}
             </h3>
             <div className="flex items-center gap-2 mb-4">
-              <MapPin size={12} style={{ color: 'rgba(255,255,255,0.5)' }} />
-              <span className="font-inter typo-copy-small tracking-wider uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>
+              <MapPin size={12} style={{ color: 'rgba(255,255,255,0.85)' }} />
+              <span className="font-inter typo-copy-small tracking-wider uppercase" style={{ color: 'rgba(255,255,255,0.85)' }}>
                 {current.location}
               </span>
             </div>
@@ -390,7 +389,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
           </div>
 
           {/* Slide counter */}
-          <div className="absolute top-4 right-4 px-3 py-1" style={{ background: 'rgba(129,41,33,0.6)' }}>
+          <div className="absolute top-4 right-4 px-3 py-1" style={{ background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.3)' }}>
             <span className="font-bebas-neue typo-headline-small tracking-wider text-white">
               {String(activeIdx + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}
             </span>
@@ -401,14 +400,14 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
             <button
               onClick={() => setActiveIdx(activeIdx === 0 ? projects.length - 1 : activeIdx - 1)}
               className="w-10 h-10 flex items-center justify-center transition-colors duration-200 hover:bg-white/10"
-              style={{ border: '1px solid rgba(255,255,255,0.3)', background: 'rgba(129,41,33,0.4)' }}
+              style={{ border: '1px solid rgba(255,255,255,0.5)', background: 'rgba(129,41,33,0.85)' }}
             >
               <ArrowLeft size={16} className="text-white" />
             </button>
             <button
               onClick={() => setActiveIdx(activeIdx === projects.length - 1 ? 0 : activeIdx + 1)}
               className="w-10 h-10 flex items-center justify-center transition-colors duration-200 hover:bg-white/10"
-              style={{ border: '1px solid rgba(255,255,255,0.3)', background: 'rgba(129,41,33,0.4)' }}
+              style={{ border: '1px solid rgba(255,255,255,0.5)', background: 'rgba(129,41,33,0.85)' }}
             >
               <ArrowRight size={16} className="text-white" />
             </button>
@@ -447,7 +446,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
                 alt={current.title}
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(129,41,33,0.85) 0%, transparent 60%)' }} />
               <button
                 onClick={() => setModalOpen(false)}
                 className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center hover:bg-white/20 transition-colors"
@@ -609,33 +608,34 @@ export function PropertiesWireframe_ValuesImpact(): ReactNode {
           ))}
         </div>
 
-        {/* Impact Infographic Strip */}
+        {/* Impact Strip */}
         <div className="overflow-hidden" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
-          <div className="relative p-6 text-center overflow-hidden" style={{ background: '#812921', borderBottom: '3px solid rgba(255,255,255,0.3)' }}>
+          <div className="relative overflow-hidden" style={{ background: 'var(--vharanani-burgundy)' }}>
             <ImageWithFallback
               src={IMAGES.values}
               alt="Vharanani Properties team and values"
-              className="absolute inset-0 w-full h-full object-cover opacity-20"
+              className="absolute inset-0 w-full h-full object-cover opacity-10"
             />
-            <div className="relative z-10">
-              <h3 className="font-bebas-neue typo-subline tracking-wide uppercase text-white">Our Impact</h3>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-[1px]" style={{ background: 'var(--vharanani-charcoal-20)' }}>
-            {impacts.map((item, i) => (
-              <div key={i} className="p-6 text-center" style={{ background: '#fafafa' }}>
-                <div className="w-12 h-12 mx-auto flex items-center justify-center mb-3" style={{ color: 'var(--vharanani-burgundy)', background: 'rgba(129,41,33,0.06)' }}>
-                  {item.icon}
+            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-3 gap-0">
+              {impacts.map((item, i) => (
+                <div
+                  key={i}
+                  className="p-8 text-center flex flex-col items-center"
+                  style={{ borderRight: i < 2 ? '1px solid rgba(255,255,255,0.15)' : 'none' }}
+                >
+                  <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ border: '1px solid rgba(255,255,255,0.35)', color: 'white' }}>
+                    {item.icon}
+                  </div>
+                  <AnimatedCounter target={item.value} suffix={item.suffix} color="white" />
+                  <h4 className="font-bebas-neue typo-headline-small tracking-wide uppercase mb-1 text-white">
+                    {item.label}
+                  </h4>
+                  <p className="font-inter typo-meta" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                    {item.description}
+                  </p>
                 </div>
-                <AnimatedCounter target={item.value} suffix={item.suffix} />
-                <h4 className="font-bebas-neue typo-headline-small tracking-wide uppercase mb-1" style={{ color: 'var(--vharanani-charcoal)' }}>
-                  {item.label}
-                </h4>
-                <p className="font-inter typo-meta" style={{ color: 'var(--vharanani-charcoal-60)' }}>
-                  {item.description}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -675,13 +675,13 @@ export function PropertiesWireframe_ContactFootprint(): ReactNode {
       <div className="max-w-7xl mx-auto">
         {/* Section label */}
         <div className="flex items-center gap-3 mb-10">
-          <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-          <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
+          <div className="w-8 h-[2px]" style={{ background: 'rgba(255,255,255,0.5)' }} />
+          <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.75)' }}>
             SEC 05 — CONNECT
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.2)' }}>
           {/* Left — Map */}
           <div className="relative h-[340px] md:h-auto md:min-h-[520px] overflow-hidden">
             <ImageWithFallback
@@ -703,9 +703,9 @@ export function PropertiesWireframe_ContactFootprint(): ReactNode {
               {/* Johannesburg pin */}
               <div className="absolute" style={{ top: '55%', left: '52%' }}>
                 <div className="relative">
-                  <div className="w-4 h-4 animate-ping absolute" style={{ background: 'var(--vharanani-burgundy)', opacity: 0.4 }} />
-                  <div className="w-4 h-4 relative z-10" style={{ background: 'var(--vharanani-burgundy)' }} />
-                  <div className="absolute top-5 left-5 whitespace-nowrap px-2 py-1" style={{ background: 'rgba(129,41,33,0.7)' }}>
+                  <div className="w-4 h-4 animate-ping absolute" style={{ background: 'white', opacity: 0.5 }} />
+                  <div className="w-4 h-4 relative z-10" style={{ background: 'white' }} />
+                  <div className="absolute top-5 left-5 whitespace-nowrap px-2 py-1" style={{ background: 'rgba(129,41,33,0.9)', border: '1px solid rgba(255,255,255,0.2)' }}>
                     <span className="font-inter typo-meta text-white tracking-wider uppercase">Johannesburg (HQ)</span>
                   </div>
                 </div>
@@ -713,9 +713,9 @@ export function PropertiesWireframe_ContactFootprint(): ReactNode {
               {/* Polokwane pin */}
               <div className="absolute" style={{ top: '38%', left: '56%' }}>
                 <div className="relative">
-                  <div className="w-3 h-3 animate-ping absolute" style={{ background: 'var(--vharanani-burgundy-60)', opacity: 0.3 }} />
-                  <div className="w-3 h-3 relative z-10" style={{ background: 'var(--vharanani-burgundy-60)' }} />
-                  <div className="absolute top-4 left-4 whitespace-nowrap px-2 py-1" style={{ background: 'rgba(129,41,33,0.7)' }}>
+                  <div className="w-3 h-3 animate-ping absolute" style={{ background: 'rgba(255,255,255,0.8)', opacity: 0.5 }} />
+                  <div className="w-3 h-3 relative z-10" style={{ background: 'rgba(255,255,255,0.85)' }} />
+                  <div className="absolute top-4 left-4 whitespace-nowrap px-2 py-1" style={{ background: 'rgba(129,41,33,0.9)', border: '1px solid rgba(255,255,255,0.2)' }}>
                     <span className="font-inter typo-meta text-white tracking-wider uppercase">Polokwane</span>
                   </div>
                 </div>
@@ -727,7 +727,7 @@ export function PropertiesWireframe_ContactFootprint(): ReactNode {
               <h3 className="font-bebas-neue typo-subline tracking-wide text-white uppercase">
                 National Footprint
               </h3>
-              <p className="font-inter typo-copy-small mt-1" style={{ color: 'rgba(255,255,255,0.5)' }}>
+              <p className="font-inter typo-copy-small mt-1" style={{ color: 'rgba(255,255,255,0.85)' }}>
                 Projects delivered across all nine provinces
               </p>
             </div>
