@@ -72,25 +72,18 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
           </span>
         </motion.div>
 
-        {/* Display headline */}
-        <div className="relative overflow-hidden mb-12 md:mb-16">
-          <motion.h2
-            className="font-bebas-neue uppercase"
-            style={{
-              fontSize: 'clamp(56px, 11vw, 130px)',
-              lineHeight: 0.92,
-              letterSpacing: '0.02em',
-              color: '#111111',
-            }}
-            variants={clipReveal} custom={0.05}
-            initial="hidden" whileInView="visible" viewport={{ once: true }}
-          >
-            Vharanani<br />
-            <span style={{ color: 'var(--vharanani-burgundy)', WebkitTextStroke: '0px' }}>
-              Group
-            </span>
-          </motion.h2>
-        </div>
+        {/* Logo */}
+        <motion.div
+          className="relative mb-12 md:mb-16"
+          variants={fadeUp} custom={0.05}
+          initial="hidden" whileInView="visible" viewport={{ once: true }}
+        >
+          <img
+            src="https://ik.imagekit.io/qcvroy8xpd/Frame%207%20(1).png"
+            alt="Vharanani Group"
+            style={{ height: 'clamp(52px, 8vw, 96px)', width: 'auto', objectFit: 'contain' }}
+          />
+        </motion.div>
       </div>
 
       {/* ══════════════════════════════════════════════
