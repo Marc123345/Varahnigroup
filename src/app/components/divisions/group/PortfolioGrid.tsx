@@ -82,8 +82,8 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
               {/* Ghost + solid headline layered */}
               <div className="relative overflow-hidden">
                 <motion.h2
-                  className="font-bebas-neue uppercase"
-                  style={{ fontSize: 'clamp(36px, 5vw, 64px)', lineHeight: 0.95, letterSpacing: '0.02em', color: '#111111' }}
+                  className="typo-headline-big font-bebas-neue uppercase tracking-wide"
+                  style={{ color: 'var(--vharanani-charcoal)' }}
                   {...clipReveal(0.06)}
                 >
                   Our Portfolio

@@ -69,8 +69,8 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
 
               <div className="overflow-hidden">
                 <motion.h2
-                  className="font-bebas-neue uppercase"
-                  style={{ fontSize: 'clamp(36px, 5vw, 64px)', lineHeight: 0.95, letterSpacing: '0.02em', color: '#111111' }}
+                  className="typo-headline-big font-bebas-neue uppercase tracking-wide"
+                  style={{ color: 'var(--vharanani-charcoal)' }}
                   initial={{ clipPath: 'inset(0 0 100% 0)' }}
                   whileInView={{ clipPath: 'inset(0 0 0% 0)' }}
                   viewport={{ once: true }}
