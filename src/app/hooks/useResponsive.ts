@@ -25,10 +25,16 @@ export const useResponsive = () => {
   const [windowWidth, setWindowWidth] = useState<number>(getInitialWidth);
 
   useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    let timer: ReturnType<typeof setTimeout>;
+    const handleResize = () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => setWindowWidth(window.innerWidth), 150);
+    };
+    window.addEventListener('resize', handleResize, { passive: true });
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const breakpoint = getBreakpoint(windowWidth);

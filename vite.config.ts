@@ -19,4 +19,17 @@ export default defineConfig({
 
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],
+
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react', 'react-dom'],
+          motion: ['motion'],
+          gsap: ['gsap'],
+          icons: ['lucide-react'],
+        },
+      },
+    },
+  },
 })

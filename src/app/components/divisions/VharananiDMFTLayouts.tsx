@@ -536,7 +536,7 @@ export function DMFTWireframe_Portfolio(): ReactNode {
               {/* Bottom metric */}
               <div className="absolute bottom-0 left-0 right-0 px-8 py-5" style={{ background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(8px)' }}>
                 <div className="flex items-center gap-4">
-                  <div className="typo-headline-big font-bebas-neue" style={{ color: 'var(--vharanani-burgundy)' }}>
+                  <div className="typo-headline-big font-bebas-neue text-white">
                     {developments[0].metric.value}
                   </div>
                   <div className="typo-caption tracking-[0.15em] uppercase font-inter text-white/50">
@@ -637,7 +637,7 @@ export function DMFTWireframe_Portfolio(): ReactNode {
                     {/* Bottom metric */}
                     <div className="absolute bottom-0 left-0 right-0 px-5 py-3" style={{ background: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(4px)' }}>
                       <div className="flex items-center gap-3">
-                        <span className="typo-headline-small font-bebas-neue" style={{ color: 'var(--vharanani-burgundy)' }}>{dev.metric.value}</span>
+                        <span className="typo-headline-small font-bebas-neue text-white">{dev.metric.value}</span>
                         <span className="typo-meta tracking-[0.1em] uppercase font-inter text-white/60">{dev.metric.label}</span>
                       </div>
                     </div>
