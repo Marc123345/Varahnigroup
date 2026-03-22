@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useCallback, type ReactNode } from 'react';
 import { motion, AnimatePresence, useSpring, useTransform } from 'motion/react';
-import { X, ArrowLeft } from 'lucide-react';
+import { X, ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
 import { safeVibrate } from '../../utils/vibration';
 
 interface Tab {
@@ -19,6 +19,7 @@ interface GlassmorphismOverlayProps {
   onTabChange: (tabId: string) => void;
   scrollMode?: boolean;
   divisionLogo?: string;
+  breadcrumb?: string; // e.g. "Vharanani Group"
 }
 
 export function GlassmorphismOverlay({
@@ -31,6 +32,7 @@ export function GlassmorphismOverlay({
   onTabChange,
   scrollMode = false,
   divisionLogo,
+  breadcrumb,
 }: GlassmorphismOverlayProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({});
@@ -40,27 +42,70 @@ export function GlassmorphismOverlay({
   const prevTabIndexRef = useRef(0);
   const [tabDirection, setTabDirection] = useState<1 | -1>(1);
 
+  const currentNavId = scrollMode ? visibleSection : activeTab;
+  const currentNavIndex = tabs.findIndex((tab) => tab.id === currentNavId);
+  const hasPrev = currentNavIndex > 0;
+  const hasNext = currentNavIndex < tabs.length - 1;
+
   const handleClose = useCallback(() => {
     safeVibrate(10);
     onClose();
   }, [onClose]);
 
-  // ESC key to close
+  const goToTab = useCallback(
+    (tabId: string) => {
+      const newIndex = tabs.findIndex((t) => t.id === tabId);
+      setTabDirection(newIndex >= prevTabIndexRef.current ? 1 : -1);
+      prevTabIndexRef.current = newIndex;
+      safeVibrate(5);
+
+      if (scrollMode) {
+        const el = sectionRefs.current[tabId];
+        const container = scrollContainerRef.current;
+        if (el && container) {
+          isScrollingTo.current = true;
+          setVisibleSection(tabId);
+          container.scrollTo({ top: el.offsetTop - 8, behavior: 'smooth' });
+          setTimeout(() => { isScrollingTo.current = false; }, 800);
+        }
+      } else {
+        onTabChange(tabId);
+        scrollContainerRef.current?.scrollTo({ top: 0, behavior: 'instant' });
+      }
+    },
+    [tabs, scrollMode, onTabChange]
+  );
+
+  const goPrev = useCallback(() => {
+    if (hasPrev) goToTab(tabs[currentNavIndex - 1].id);
+  }, [hasPrev, currentNavIndex, tabs, goToTab]);
+
+  const goNext = useCallback(() => {
+    if (hasNext) goToTab(tabs[currentNavIndex + 1].id);
+  }, [hasNext, currentNavIndex, tabs, goToTab]);
+
+  // ESC + Arrow key navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') handleClose();
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        goNext();
+      }
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        goPrev();
+      }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [handleClose]);
+  }, [handleClose, goNext, goPrev]);
 
-  // Scroll progress + section tracking (throttled to ~60fps)
+  // Scroll progress + section tracking
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (!container) return;
-
     let rafId: number | null = null;
-
     const handleScroll = () => {
       if (rafId !== null) return;
       rafId = requestAnimationFrame(() => {
@@ -68,20 +113,16 @@ export function GlassmorphismOverlay({
         const { scrollTop, scrollHeight, clientHeight } = container;
         const progress = scrollHeight <= clientHeight ? 0 : scrollTop / (scrollHeight - clientHeight);
         setScrollProgress(progress);
-
         if (!scrollMode || isScrollingTo.current) return;
         const containerTop = scrollTop + 120;
         let currentId = tabs[0]?.id || '';
         for (const tab of tabs) {
           const el = sectionRefs.current[tab.id];
-          if (el && containerTop >= el.offsetTop) {
-            currentId = tab.id;
-          }
+          if (el && containerTop >= el.offsetTop) currentId = tab.id;
         }
         setVisibleSection(currentId);
       });
     };
-
     container.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
       container.removeEventListener('scroll', handleScroll);
@@ -89,31 +130,7 @@ export function GlassmorphismOverlay({
     };
   }, [scrollMode, tabs]);
 
-  const handleTabClick = useCallback((tabId: string) => {
-    safeVibrate(5);
-    const newIndex = tabs.findIndex(t => t.id === tabId);
-    setTabDirection(newIndex >= prevTabIndexRef.current ? 1 : -1);
-    prevTabIndexRef.current = newIndex;
-
-    if (scrollMode) {
-      const el = sectionRefs.current[tabId];
-      const container = scrollContainerRef.current;
-      if (el && container) {
-        isScrollingTo.current = true;
-        setVisibleSection(tabId);
-        container.scrollTo({ top: el.offsetTop - 8, behavior: 'smooth' });
-        setTimeout(() => { isScrollingTo.current = false; }, 800);
-      }
-    } else {
-      onTabChange(tabId);
-    }
-  }, [tabs, scrollMode, onTabChange]);
-
-  const activeTabContent = tabs.find(tab => tab.id === activeTab)?.content;
-  const currentNavId = scrollMode ? visibleSection : activeTab;
-  const currentNavIndex = tabs.findIndex(tab => tab.id === currentNavId);
-
-  // Spring-animated scroll progress bar width
+  const activeTabContent = tabs.find((tab) => tab.id === activeTab)?.content;
   const springProgress = useSpring(scrollProgress, { stiffness: 200, damping: 40 });
   const progressWidth = useTransform(springProgress, [0, 1], ['0%', '100%']);
 
@@ -128,7 +145,7 @@ export function GlassmorphismOverlay({
       className="fixed inset-0 z-50 overflow-hidden"
       style={{ background: '#000000' }}
     >
-      {/* ── BACKGROUND TEXTURE ── */}
+      {/* Background texture */}
       <div className="absolute inset-0 pointer-events-none" style={{ opacity: 0.025 }}>
         <div
           className="absolute inset-0"
@@ -140,10 +157,10 @@ export function GlassmorphismOverlay({
         />
       </div>
 
-      {/* ── TOP BURGUNDY ACCENT ── */}
+      {/* Top burgundy accent */}
       <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: 'var(--vharanani-burgundy)', zIndex: 60 }} />
 
-      {/* ── SCROLL PROGRESS BAR ── */}
+      {/* Scroll progress bar */}
       <div className="absolute top-[3px] left-0 right-0 h-[2px] z-50" style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}>
         <motion.div
           className="absolute inset-y-0 left-0 origin-left"
@@ -162,7 +179,7 @@ export function GlassmorphismOverlay({
           WebkitBackdropFilter: 'blur(12px)',
         }}
       >
-        {/* Back button */}
+        {/* Back/close button */}
         <motion.button
           onClick={handleClose}
           className="flex items-center gap-2 group flex-shrink-0 mr-2 sm:mr-4"
@@ -174,50 +191,68 @@ export function GlassmorphismOverlay({
             className="w-8 h-8 flex items-center justify-center transition-colors duration-200 group-hover:bg-[var(--vharanani-burgundy)]"
             style={{ border: '1px solid var(--vharanani-burgundy)' }}
           >
-            <ArrowLeft
-              size={15}
-              className="transition-colors group-hover:text-white"
-              style={{ color: 'var(--vharanani-burgundy)' }}
-            />
+            <ArrowLeft size={15} className="transition-colors group-hover:text-white" style={{ color: 'var(--vharanani-burgundy)' }} />
           </div>
         </motion.button>
 
-        {/* Division logo */}
-        {divisionLogo && (
+        {/* Breadcrumb: Division logo / name */}
+        {divisionLogo ? (
           <motion.img
             src={divisionLogo}
             alt=""
-            className="h-5 sm:h-7 w-auto object-contain flex-shrink-0 mr-2 sm:mr-4"
+            className="h-5 sm:h-7 w-auto object-contain flex-shrink-0 mr-2 sm:mr-3"
             initial={{ opacity: 0, x: -8 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4, delay: 0.1 }}
           />
-        )}
+        ) : breadcrumb ? (
+          <span
+            className="font-bebas-neue uppercase flex-shrink-0 mr-2 sm:mr-3"
+            style={{ fontSize: 14, letterSpacing: '0.1em', color: 'rgba(255,255,255,0.4)' }}
+          >
+            {breadcrumb}
+          </span>
+        ) : null}
 
-        {/* Divider */}
-        <div className="w-[1px] h-6 mr-2 sm:mr-4 flex-shrink-0" style={{ backgroundColor: 'rgba(255,255,255,0.15)' }} />
+        {/* Breadcrumb separator + current section */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentNavId}
+            initial={{ opacity: 0, x: -6 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="flex items-center gap-2 flex-shrink-0 mr-3 sm:mr-5"
+          >
+            <span style={{ color: 'rgba(255,255,255,0.18)', fontSize: 12 }}>/</span>
+            <span
+              className="font-inter typo-meta tracking-[0.14em] uppercase hidden sm:block"
+              style={{ color: 'rgba(255,255,255,0.55)' }}
+            >
+              {tabs.find((t) => t.id === currentNavId)?.label}
+            </span>
+          </motion.div>
+        </AnimatePresence>
 
-        {/* Tabs */}
+        <div className="w-[1px] h-6 mr-2 sm:mr-4 flex-shrink-0" style={{ backgroundColor: 'rgba(255,255,255,0.12)' }} />
+
+        {/* Section tabs */}
         {tabs.map((tab, i) => {
           const isActive = currentNavId === tab.id;
           return (
             <button
               key={tab.id}
-              onClick={() => handleTabClick(tab.id)}
+              onClick={() => goToTab(tab.id)}
               className="relative px-2 sm:px-4 py-3 sm:py-4 transition-colors duration-200 flex-shrink-0 group"
             >
-              {/* Hover background */}
               <motion.div
                 className="absolute inset-x-0 inset-y-[4px] rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                 style={{ background: 'rgba(129,41,33,0.05)' }}
               />
-
               <div className="relative flex items-center gap-2 sm:gap-3">
                 <span
                   className="font-bebas-neue text-sm transition-colors duration-200"
-                  style={{
-                    color: isActive ? 'var(--vharanani-burgundy)' : 'rgba(255,255,255,0.3)',
-                  }}
+                  style={{ color: isActive ? 'var(--vharanani-burgundy)' : 'rgba(255,255,255,0.3)' }}
                 >
                   {String(i + 1).padStart(2, '0')}
                 </span>
@@ -231,8 +266,6 @@ export function GlassmorphismOverlay({
                   {tab.label}
                 </span>
               </div>
-
-              {/* Active underline */}
               {isActive && (
                 <motion.div
                   layoutId="overlayActiveTab"
@@ -275,21 +308,16 @@ export function GlassmorphismOverlay({
       <div
         ref={scrollContainerRef}
         className="relative overflow-y-auto"
-        style={{ height: 'calc(100dvh - 57px)' }}
+        style={{ height: 'calc(100dvh - 93px)' }}
       >
         {scrollMode ? (
-          /* ── SCROLL MODE: All sections stacked ── */
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           >
             {tabs.map((tab, i) => (
-              <div
-                key={tab.id}
-                ref={(el) => { sectionRefs.current[tab.id] = el; }}
-              >
-                {/* Editorial section divider */}
+              <div key={tab.id} ref={(el) => { sectionRefs.current[tab.id] = el; }}>
                 {i > 0 && (
                   <div
                     className="flex items-center gap-4 px-4 sm:px-8 lg:px-12 py-6"
@@ -325,8 +353,6 @@ export function GlassmorphismOverlay({
                     </motion.span>
                   </div>
                 )}
-
-                {/* Section content */}
                 <motion.div
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -340,7 +366,6 @@ export function GlassmorphismOverlay({
             <div className="h-20" />
           </motion.div>
         ) : (
-          /* ── TAB MODE: Direction-aware slide ── */
           <AnimatePresence mode="wait" custom={tabDirection}>
             <motion.div
               key={activeTab}
@@ -351,34 +376,88 @@ export function GlassmorphismOverlay({
               transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
             >
               {activeTabContent}
-              <div className="h-20" />
+              <div className="h-24" />
             </motion.div>
           </AnimatePresence>
         )}
       </div>
 
-      {/* ── BOTTOM META BAR ── */}
+      {/* ── BOTTOM NAV BAR — prev/next + keyboard hint ── */}
       <div
         className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-4 sm:px-8 lg:px-12"
         style={{
-          background: 'rgba(0,0,0,0.95)',
+          background: 'rgba(0,0,0,0.96)',
           backdropFilter: 'blur(8px)',
           WebkitBackdropFilter: 'blur(8px)',
-          borderTop: '1px solid rgba(255,255,255,0.1)',
-          height: '36px',
+          borderTop: '1px solid rgba(255,255,255,0.08)',
+          height: '56px',
         }}
       >
-        <span className="font-inter typo-meta tracking-[0.28em] uppercase" style={{ color: 'rgba(255,255,255,0.35)' }}>
-          VISION. STRUCTURE. IMPACT.
-        </span>
-        <div className="hidden sm:flex items-center gap-4">
-          <span className="font-inter typo-meta tracking-[0.15em] uppercase" style={{ color: 'rgba(255,255,255,0.35)' }}>
-            ESC TO CLOSE
+        {/* Left: prev button */}
+        <button
+          onClick={goPrev}
+          disabled={!hasPrev}
+          className="flex items-center gap-2 group transition-opacity"
+          style={{ opacity: hasPrev ? 1 : 0.2, cursor: hasPrev ? 'pointer' : 'default' }}
+        >
+          <div
+            className="w-7 h-7 flex items-center justify-center transition-colors duration-200"
+            style={{
+              border: `1px solid ${hasPrev ? 'var(--vharanani-burgundy)' : 'rgba(255,255,255,0.15)'}`,
+            }}
+          >
+            <ChevronLeft size={14} style={{ color: hasPrev ? 'var(--vharanani-burgundy)' : 'rgba(255,255,255,0.3)' }} />
+          </div>
+          {hasPrev && (
+            <span
+              className="hidden sm:block font-inter typo-meta tracking-[0.15em] uppercase group-hover:text-[var(--vharanani-burgundy)] transition-colors"
+              style={{ color: 'rgba(255,255,255,0.35)' }}
+            >
+              {tabs[currentNavIndex - 1]?.label}
+            </span>
+          )}
+        </button>
+
+        {/* Center: keyboard hint */}
+        <div className="hidden md:flex items-center gap-4">
+          <span className="font-inter typo-meta tracking-[0.28em] uppercase" style={{ color: 'rgba(255,255,255,0.2)' }}>
+            VISION. STRUCTURE. IMPACT.
+          </span>
+          <span
+            className="font-inter typo-meta tracking-[0.15em] uppercase"
+            style={{ color: 'rgba(255,255,255,0.18)', borderLeft: '1px solid rgba(255,255,255,0.08)', paddingLeft: 16 }}
+          >
+            ← → NAVIGATE · ESC CLOSE
           </span>
         </div>
+
+        {/* Right: next button */}
+        <button
+          onClick={goNext}
+          disabled={!hasNext}
+          className="flex items-center gap-2 group transition-opacity"
+          style={{ opacity: hasNext ? 1 : 0.2, cursor: hasNext ? 'pointer' : 'default' }}
+        >
+          {hasNext && (
+            <span
+              className="hidden sm:block font-inter typo-meta tracking-[0.15em] uppercase group-hover:text-[var(--vharanani-burgundy)] transition-colors"
+              style={{ color: 'rgba(255,255,255,0.35)' }}
+            >
+              {tabs[currentNavIndex + 1]?.label}
+            </span>
+          )}
+          <div
+            className="w-7 h-7 flex items-center justify-center transition-colors duration-200"
+            style={{
+              border: `1px solid ${hasNext ? 'var(--vharanani-burgundy)' : 'rgba(255,255,255,0.15)'}`,
+            }}
+          >
+            <ChevronRight size={14} style={{ color: hasNext ? 'var(--vharanani-burgundy)' : 'rgba(255,255,255,0.3)' }} />
+          </div>
+        </button>
       </div>
 
-      {/* ── BOTTOM BURGUNDY ACCENT ── */}
+      {/* Bottom burgundy accent */}
       <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ backgroundColor: 'var(--vharanani-burgundy)' }} />
     </motion.div>
   );
