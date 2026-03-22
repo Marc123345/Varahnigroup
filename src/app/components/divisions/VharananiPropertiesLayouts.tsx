@@ -108,7 +108,7 @@ export function PropertiesWireframe_AboutImpact(): ReactNode {
               className="w-full h-full object-contain object-center"
             />
             {/* Name overlay */}
-            <div className="absolute bottom-0 left-0 right-0 p-6" style={{ background: 'linear-gradient(to top, rgba(129,41,33,0.9) 0%, rgba(129,41,33,0.4) 60%, transparent 100%)' }}>
+            <div className="absolute bottom-0 left-0 right-0 p-6" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, transparent 100%)' }}>
               <div className="font-inter typo-meta tracking-[0.3em] uppercase mb-1" style={{ color: 'rgba(255,255,255,0.8)' }}>
                 FOUNDER & CEO
               </div>
@@ -161,7 +161,7 @@ export function PropertiesWireframe_AboutImpact(): ReactNode {
             </div>
 
             {/* Mission Blockquote */}
-            <div className="p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(129,41,33,0.04)' }}>
+            <div className="p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(0,0,0,0.04)' }}>
               <div className="font-inter typo-copy italic" style={{ color: 'var(--vharanani-charcoal)' }}>
                 "To restore people's dignity through infrastructure development."
               </div>
@@ -264,7 +264,7 @@ export function PropertiesWireframe_IntegratedServices(): ReactNode {
                 alt={svc.title}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-[rgba(129,41,33,0.5)] transition-all duration-500 group-hover:bg-[rgba(129,41,33,0.7)]" />
+              <div className="absolute inset-0 bg-[rgba(0,0,0,0.5)] transition-all duration-500 group-hover:bg-[rgba(0,0,0,0.7)]" />
 
               {/* Content */}
               <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-5">
@@ -425,7 +425,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
               alt={current.title}
               className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(129,41,33,0.6) 0%, rgba(129,41,33,0.2) 60%, transparent 100%)' }} />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 60%, transparent 100%)' }} />
           </motion.div>
 
           {/* Counter overlay */}
@@ -440,7 +440,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
             <button
               onClick={() => setActiveIdx(activeIdx === 0 ? projects.length - 1 : activeIdx - 1)}
               className="w-11 h-11 flex items-center justify-center transition-all duration-200"
-              style={{ border: '1px solid rgba(255,255,255,0.5)', background: 'rgba(129,41,33,0.8)' }}
+              style={{ border: '1px solid rgba(255,255,255,0.5)', background: 'rgba(0,0,0,0.8)' }}
               whileHover={{ background: 'var(--vharanani-burgundy)' }}
             >
               <ArrowLeft size={16} className="text-white" />
@@ -448,7 +448,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
             <button
               onClick={() => setActiveIdx(activeIdx === projects.length - 1 ? 0 : activeIdx + 1)}
               className="w-11 h-11 flex items-center justify-center transition-all duration-200"
-              style={{ border: '1px solid rgba(255,255,255,0.5)', background: 'rgba(129,41,33,0.8)' }}
+              style={{ border: '1px solid rgba(255,255,255,0.5)', background: 'rgba(0,0,0,0.8)' }}
             >
               <ArrowRight size={16} className="text-white" />
             </button>
@@ -496,7 +496,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
             <p className="font-inter typo-copy-small mb-6" style={{ color: 'var(--vharanani-charcoal-80)', lineHeight: 1.7 }}>
               {current.specs}
             </p>
-            <div className="p-4 mb-6" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(129,41,33,0.04)' }}>
+            <div className="p-4 mb-6" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(0,0,0,0.04)' }}>
               <div className="font-inter typo-meta tracking-[0.18em] uppercase mb-1" style={{ color: 'var(--vharanani-burgundy)' }}>Community Impact</div>
               <p className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-80)' }}>{current.impact}</p>
             </div>
@@ -526,7 +526,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
                 />
                 <div
                   className="absolute inset-0 transition-all duration-300"
-                  style={{ background: i === activeIdx ? 'rgba(129,41,33,0.75)' : 'rgba(129,41,33,0.4)' }}
+                  style={{ background: i === activeIdx ? 'rgba(0,0,0,0.75)' : 'rgba(0,0,0,0.4)' }}
                 />
                 {i === activeIdx && (
                   <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'white' }} />
@@ -539,7 +539,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
 
       {/* Quick View Modal */}
       {modalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(129,41,33,0.75)', backdropFilter: 'blur(8px)' }}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(8px)' }}>
           <motion.div
             initial={{ opacity: 0, scale: 0.96, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -549,7 +549,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
           >
             <div className="relative h-[200px] sm:h-[260px]">
               <ImageWithFallback src={current.image} alt={current.title} className="absolute inset-0 w-full h-full object-cover" />
-              <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(129,41,33,0.9) 0%, transparent 55%)' }} />
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 55%)' }} />
               <button
                 onClick={() => setModalOpen(false)}
                 className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center transition-colors"
@@ -571,7 +571,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
               </div>
               <h4 className="font-bebas-neue typo-headline-small tracking-wide uppercase mb-2" style={{ color: 'var(--vharanani-charcoal)' }}>Project Specifications</h4>
               <p className="font-inter typo-copy mb-6" style={{ color: 'var(--vharanani-charcoal-80)' }}>{current.specs}</p>
-              <div className="p-4" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(129,41,33,0.04)' }}>
+              <div className="p-4" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(0,0,0,0.04)' }}>
                 <div className="font-inter typo-meta tracking-[0.2em] uppercase mb-1" style={{ color: 'var(--vharanani-burgundy)' }}>Community Impact</div>
                 <p className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-80)' }}>{current.impact}</p>
               </div>
@@ -847,7 +847,7 @@ export function PropertiesWireframe_ContactFootprint(): ReactNode {
                 <div className="relative">
                   <div className="w-4 h-4 animate-ping absolute" style={{ background: 'white', opacity: 0.5 }} />
                   <div className="w-4 h-4 relative z-10" style={{ background: 'white' }} />
-                  <div className="absolute top-5 left-5 whitespace-nowrap px-2 py-1" style={{ background: 'rgba(129,41,33,0.9)', border: '1px solid rgba(255,255,255,0.2)' }}>
+                  <div className="absolute top-5 left-5 whitespace-nowrap px-2 py-1" style={{ background: 'rgba(0,0,0,0.9)', border: '1px solid rgba(255,255,255,0.2)' }}>
                     <span className="font-inter typo-meta text-white tracking-wider uppercase">Johannesburg (HQ)</span>
                   </div>
                 </div>
@@ -857,7 +857,7 @@ export function PropertiesWireframe_ContactFootprint(): ReactNode {
                 <div className="relative">
                   <div className="w-3 h-3 animate-ping absolute" style={{ background: 'rgba(255,255,255,0.8)', opacity: 0.5 }} />
                   <div className="w-3 h-3 relative z-10" style={{ background: 'rgba(255,255,255,0.85)' }} />
-                  <div className="absolute top-4 left-4 whitespace-nowrap px-2 py-1" style={{ background: 'rgba(129,41,33,0.9)', border: '1px solid rgba(255,255,255,0.2)' }}>
+                  <div className="absolute top-4 left-4 whitespace-nowrap px-2 py-1" style={{ background: 'rgba(0,0,0,0.9)', border: '1px solid rgba(255,255,255,0.2)' }}>
                     <span className="font-inter typo-meta text-white tracking-wider uppercase">Polokwane</span>
                   </div>
                 </div>
@@ -887,7 +887,7 @@ export function PropertiesWireframe_ContactFootprint(): ReactNode {
                   style={{
                     borderBottom: activeTab === tab ? '2px solid var(--vharanani-burgundy)' : '2px solid transparent',
                     marginBottom: '-2px',
-                    background: activeTab === tab ? 'rgba(129,41,33,0.04)' : 'transparent',
+                    background: activeTab === tab ? 'rgba(0,0,0,0.04)' : 'transparent',
                   }}
                 >
                   <span
@@ -928,17 +928,17 @@ export function PropertiesWireframe_ContactFootprint(): ReactNode {
                   type="text"
                   placeholder="Name"
                   className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
-                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(129,41,33,0.02)' }}
+                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}
                 />
                 <input
                   type="text"
                   placeholder="Company"
                   className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
-                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(129,41,33,0.02)' }}
+                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}
                 />
                 <select
                   className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none focus:outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
-                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(129,41,33,0.02)', color: 'var(--vharanani-charcoal-60)' }}
+                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)', color: 'var(--vharanani-charcoal-60)' }}
                   defaultValue=""
                 >
                   <option value="" disabled>Service Required</option>
@@ -953,7 +953,7 @@ export function PropertiesWireframe_ContactFootprint(): ReactNode {
                   placeholder="Message"
                   rows={3}
                   className="w-full px-4 py-3 font-inter typo-copy-small outline-none resize-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
-                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(129,41,33,0.02)' }}
+                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}
                 />
                 <button
                   onClick={() => { window.location.href = 'mailto:info@vharananiproperties.co.za?subject=Project%20Enquiry'; }}
