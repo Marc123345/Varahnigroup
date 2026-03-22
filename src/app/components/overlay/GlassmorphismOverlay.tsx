@@ -54,35 +54,42 @@ export function GlassmorphismOverlay({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [handleClose]);
 
-  // Scroll progress + section tracking
+  // Scroll progress + section tracking (throttled to ~60fps)
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (!container) return;
 
-    const handleScroll = () => {
-      // Progress bar
-      const { scrollTop, scrollHeight, clientHeight } = container;
-      const progress = scrollHeight <= clientHeight ? 0 : scrollTop / (scrollHeight - clientHeight);
-      setScrollProgress(progress);
+    let rafId: number | null = null;
 
-      // Section tracking (scroll mode only)
-      if (!scrollMode || isScrollingTo.current) return;
-      const containerTop = scrollTop + 120;
-      let currentId = tabs[0]?.id || '';
-      for (const tab of tabs) {
-        const el = sectionRefs.current[tab.id];
-        if (el && containerTop >= el.offsetTop) {
-          currentId = tab.id;
+    const handleScroll = () => {
+      if (rafId !== null) return;
+      rafId = requestAnimationFrame(() => {
+        rafId = null;
+        const { scrollTop, scrollHeight, clientHeight } = container;
+        const progress = scrollHeight <= clientHeight ? 0 : scrollTop / (scrollHeight - clientHeight);
+        setScrollProgress(progress);
+
+        if (!scrollMode || isScrollingTo.current) return;
+        const containerTop = scrollTop + 120;
+        let currentId = tabs[0]?.id || '';
+        for (const tab of tabs) {
+          const el = sectionRefs.current[tab.id];
+          if (el && containerTop >= el.offsetTop) {
+            currentId = tab.id;
+          }
         }
-      }
-      setVisibleSection(currentId);
+        setVisibleSection(currentId);
+      });
     };
 
     container.addEventListener('scroll', handleScroll, { passive: true });
-    return () => container.removeEventListener('scroll', handleScroll);
+    return () => {
+      container.removeEventListener('scroll', handleScroll);
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
   }, [scrollMode, tabs]);
 
-  const handleTabClick = (tabId: string) => {
+  const handleTabClick = useCallback((tabId: string) => {
     safeVibrate(5);
     const newIndex = tabs.findIndex(t => t.id === tabId);
     setTabDirection(newIndex >= prevTabIndexRef.current ? 1 : -1);
@@ -100,7 +107,7 @@ export function GlassmorphismOverlay({
     } else {
       onTabChange(tabId);
     }
-  };
+  }, [tabs, scrollMode, onTabChange]);
 
   const activeTabContent = tabs.find(tab => tab.id === activeTab)?.content;
   const currentNavId = scrollMode ? visibleSection : activeTab;

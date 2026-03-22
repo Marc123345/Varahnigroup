@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, ReactNode } from 'react';
+import { useState, useEffect, useCallback, useMemo, ReactNode } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   Menu, ArrowRight, ArrowLeft, Building2, MapPin, Phone, Mail,
@@ -805,19 +805,16 @@ export function VharananiEditorialHero() {
   const { isMobile, isTablet, isDesktop } = useResponsive();
 
   // Cube data — dynamically switches between division-level and section-level
-  const buildCubeData = () => {
+  const { images: cubeImages, labels: cubeLabels } = useMemo(() => {
     if (currentLevel === 1 && selectedDivision) {
-      // Level 1: cube shows section images for the selected division
       const sectionImages = selectedDivision.sections.map((s) => s.image);
       const sectionLabels = selectedDivision.sections.map((s) => ({ title: s.title, category: s.type }));
-      // Pad to 6 faces if fewer than 6 sections
       while (sectionImages.length < 6) {
         sectionImages.push(selectedDivision.image);
         sectionLabels.push({ title: selectedDivision.title.replace('Vharanani ', ''), category: selectedDivision.type });
       }
       return { images: sectionImages.slice(0, 6), labels: sectionLabels.slice(0, 6) };
     }
-    // Level 0: cube shows division images
     return {
       images: [...divisions.map((d) => d.image), ...extraCubeImages],
       labels: [
@@ -826,9 +823,7 @@ export function VharananiEditorialHero() {
         { title: 'Architecture', category: 'DESIGN' },
       ],
     };
-  };
-
-  const { images: cubeImages, labels: cubeLabels } = buildCubeData();
+  }, [currentLevel, selectedDivision]);
 
   // The activeIndex for the cube: at Level 0 it's the division index, at Level 1 it's the section index
   const cubeActiveIndex = currentLevel === 1 ? activeSectionIndex : activeDivisionIndex;
@@ -916,13 +911,15 @@ export function VharananiEditorialHero() {
     }
   }, [selectedDivision]);
 
-  const overlayTabs = selectedDivision
-    ? selectedDivision.sections.map((sec) => ({
-        id: sec.id,
-        label: sec.title,
-        content: getSectionContent(selectedDivision.id, sec.id, handleOverlayTabChange),
-      }))
-    : [];
+  const overlayTabs = useMemo(() =>
+    selectedDivision
+      ? selectedDivision.sections.map((sec) => ({
+          id: sec.id,
+          label: sec.title,
+          content: getSectionContent(selectedDivision.id, sec.id, handleOverlayTabChange),
+        }))
+      : [],
+  [selectedDivision, handleOverlayTabChange]);
   const overlayActiveTab = overlaySection?.section.id || '';
 
   // Left column meta adapts to level

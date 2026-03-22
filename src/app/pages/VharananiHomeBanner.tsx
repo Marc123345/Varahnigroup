@@ -41,19 +41,6 @@ export function VharananiHomeBanner({
     <section className="relative w-full overflow-hidden" style={{ height: '100vh', minHeight: '640px' }}>
       {/* ── BACKGROUND ── */}
       <div className="absolute inset-0 z-0" style={{ backgroundColor: '#111111' }}>
-        {/* Video background */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ opacity: 0.45 }}
-        >
-          <source src="https://ik.imagekit.io/qcvroy8xpd/african-american-business-people-having-meeting-at-2026-02-02-07-16-44-utc.mp4" type="video/mp4" />
-        </video>
-        {/* Dark overlay for legibility */}
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.65) 100%)' }} />
         {/* Grid pattern overlay */}
         <div
           className="absolute inset-0 opacity-[0.04]"
