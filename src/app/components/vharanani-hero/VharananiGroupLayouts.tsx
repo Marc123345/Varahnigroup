@@ -56,7 +56,7 @@ function SectionWrapper({ children, className = '', dark = false }: { children: 
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
       transition={{ duration: 0.7, ease: 'easeOut' }}
       className={`py-10 md:py-16 px-6 md:px-12 lg:px-20 ${className}`}
-      style={{ background: dark ? 'var(--vharanani-charcoal)' : '#ffffff' }}
+      style={{ background: dark ? 'var(--vharanani-burgundy)' : '#ffffff' }}
     >
       {children}
     </motion.section>
@@ -230,7 +230,7 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
           </div>
 
           {/* ── TIMELINE STRIP ── */}
-          <div className="mt-0" style={{ background: 'var(--vharanani-charcoal)' }}>
+          <div className="mt-0" style={{ background: 'var(--vharanani-burgundy)' }}>
             {/* Connecting line */}
             <div className="relative hidden md:block">
               <div className="absolute top-[52px] left-[12.5%] right-[12.5%] h-[1px]" style={{ background: 'rgba(255,255,255,0.08)' }}>
@@ -344,7 +344,7 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
   return (
     <SectionWrapper dark className="!py-0 !px-0">
       {/* ── SECTION HEADER ── */}
-      <div className="px-6 md:px-12 lg:px-20 pt-10 md:pt-14 pb-8" style={{ background: 'var(--vharanani-charcoal)' }}>
+      <div className="px-6 md:px-12 lg:px-20 pt-10 md:pt-14 pb-8" style={{ background: 'var(--vharanani-burgundy)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
             <div className="lg:col-span-7">
@@ -368,7 +368,7 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
       </div>
 
       {/* ── FLAGSHIP DIVISION — Full-width hero card ── */}
-      <div style={{ background: 'var(--vharanani-charcoal)' }}>
+      <div style={{ background: 'var(--vharanani-burgundy)' }}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -461,7 +461,7 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
       </div>
 
       {/* ── SECONDARY DIVISIONS — 2-column grid ── */}
-      <div className="px-6 md:px-12 lg:px-20 py-3" style={{ background: 'var(--vharanani-charcoal)' }}>
+      <div className="px-6 md:px-12 lg:px-20 py-3" style={{ background: 'var(--vharanani-burgundy)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {divisions.slice(1).map((div, i) => (
@@ -552,7 +552,7 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
       </div>
 
       {/* ── PORTFOLIO METRICS STRIP ── */}
-      <div className="px-6 md:px-12 lg:px-20 pb-10 md:pb-14 pt-3" style={{ background: 'var(--vharanani-charcoal)' }}>
+      <div className="px-6 md:px-12 lg:px-20 pb-10 md:pb-14 pt-3" style={{ background: 'var(--vharanani-burgundy)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="relative overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
             {/* Background image */}
@@ -816,7 +816,7 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
       </div>
 
       {/* ── CLOSING SUMMARY BAND ── */}
-      <div className="relative overflow-hidden" style={{ background: 'var(--vharanani-charcoal)' }}>
+      <div className="relative overflow-hidden" style={{ background: 'var(--vharanani-burgundy)' }}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-0 py-12" style={{ borderTop: '3px solid var(--vharanani-burgundy)' }}>
             {pillars.map((pillar, i) => (
@@ -923,7 +923,7 @@ export function GroupWireframe_Leadership(): ReactNode {
             >
               <motion.div
                 className="w-16 h-16 mx-auto mb-4 flex items-center justify-center typo-subline font-bebas-neue transition-colors duration-300"
-                style={{ background: 'var(--vharanani-charcoal)', color: 'white' }}
+                style={{ background: 'var(--vharanani-burgundy)', color: 'white' }}
                 whileHover={{ background: '#812921' }}
               >
                 {exec.initial}

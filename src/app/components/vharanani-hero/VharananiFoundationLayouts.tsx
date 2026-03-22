@@ -56,7 +56,7 @@ function SectionWrapper({ children, className = '', dark = false }: { children: 
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
       transition={{ duration: 0.7, ease: 'easeOut' }}
       className={`py-10 md:py-16 px-6 md:px-12 lg:px-20 ${className}`}
-      style={{ background: dark ? 'var(--vharanani-charcoal)' : '#ffffff' }}
+      style={{ background: dark ? 'var(--vharanani-burgundy)' : '#ffffff' }}
     >
       {children}
     </motion.section>
@@ -516,7 +516,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
       </div>
 
       {/* ── PROGRAMME SUMMARY BAND ── */}
-      <div className="relative overflow-hidden" style={{ background: 'var(--vharanani-charcoal)' }}>
+      <div className="relative overflow-hidden" style={{ background: 'var(--vharanani-burgundy)' }}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0 py-12" style={{ borderTop: '3px solid var(--vharanani-burgundy)' }}>
             {programmes.map((prog, i) => (
@@ -957,7 +957,7 @@ export function FoundationWireframe_Contact(): ReactNode {
         </div>
 
         {/* Footer bar */}
-        <div className="px-6 md:px-12 lg:px-20 py-5 flex flex-col sm:flex-row items-center justify-between gap-3" style={{ background: 'var(--vharanani-charcoal)', borderTop: '3px solid var(--vharanani-burgundy)' }}>
+        <div className="px-6 md:px-12 lg:px-20 py-5 flex flex-col sm:flex-row items-center justify-between gap-3" style={{ background: 'var(--vharanani-burgundy)', borderTop: '3px solid rgba(255,255,255,0.3)' }}>
           <div className="flex items-center gap-4">
             <span className="font-bebas-neue typo-headline-small tracking-wider text-white uppercase">The David Mabilu Foundation</span>
             <div className="w-[1px] h-4" style={{ background: 'rgba(255,255,255,0.15)' }} />

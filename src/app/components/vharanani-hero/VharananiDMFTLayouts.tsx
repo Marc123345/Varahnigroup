@@ -709,7 +709,7 @@ export function DMFTWireframe_Portfolio(): ReactNode {
       </div>
 
       {/* ── PORTFOLIO SUMMARY BAND ── */}
-      <div className="relative overflow-hidden" style={{ background: 'var(--vharanani-charcoal)' }}>
+      <div className="relative overflow-hidden" style={{ background: 'var(--vharanani-burgundy)' }}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-0 py-12" style={{ borderTop: '3px solid var(--vharanani-burgundy)' }}>
             {developments.map((dev, i) => (
@@ -787,7 +787,7 @@ export function DMFTWireframe_CapabilitiesQuality(): ReactNode {
       </div>
 
       {/* ── CONTENT SPLIT ── */}
-      <div className="px-6 md:px-12 lg:px-20 py-0" style={{ background: 'var(--vharanani-charcoal)' }}>
+      <div className="px-6 md:px-12 lg:px-20 py-0" style={{ background: 'var(--vharanani-burgundy)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
             {/* Left — Capability List (7 cols) */}
