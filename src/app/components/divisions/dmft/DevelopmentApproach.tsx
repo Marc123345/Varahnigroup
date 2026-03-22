@@ -174,7 +174,7 @@ function PhaseBlock({ phase, index }: { phase: Phase; index: number }) {
 
           {/* ── CONTENT ── */}
           <div
-            className="flex flex-col justify-center px-5 sm:px-10 md:px-16 py-10 sm:py-16 md:py-20"
+            className="flex flex-col justify-center px-6 md:px-12 lg:px-16 py-10 md:py-16 lg:py-20"
             style={{ order: isEven ? 1 : 2 }}
           >
             {/* Step indicator */}
@@ -195,7 +195,7 @@ function PhaseBlock({ phase, index }: { phase: Phase; index: number }) {
               />
               <div>
                 <div
-                  className="typo-caption font-inter tracking-[0.35em] uppercase mb-1"
+                  className="typo-caption font-inter tracking-[0.28em] uppercase mb-1"
                   style={{ color: 'var(--vharanani-burgundy-60)' }}
                 >
                   Development Phase
@@ -301,13 +301,13 @@ export function DMFTWireframe_DevelopmentApproach(): ReactNode {
         >
           <span
             className="font-bebas-neue"
-            style={{ fontSize: 'clamp(90px, 15vw, 220px)', color: 'rgba(255,255,255,0.016)' }}
+            style={{ fontSize: 'clamp(90px, 15vw, 220px)', color: 'rgba(255,255,255,0.05)' }}
           >
             PROCESS
           </span>
         </div>
 
-        <div className="relative max-w-screen-xl mx-auto px-5 sm:px-8 md:px-16 py-14 sm:py-20 md:py-36">
+        <div className="relative max-w-screen-xl mx-auto px-6 md:px-12 lg:px-20 py-14 md:py-20 lg:py-36">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
 
             {/* Left: heading */}
@@ -328,7 +328,7 @@ export function DMFTWireframe_DevelopmentApproach(): ReactNode {
                   }}
                 />
                 <span
-                  className="typo-caption font-inter tracking-[0.32em] uppercase"
+                  className="typo-caption font-inter tracking-[0.28em] uppercase"
                   style={{ color: 'var(--vharanani-burgundy)' }}
                 >
                   OUR PROCESS

@@ -24,7 +24,7 @@ export function FoundationWireframe_Contact(): ReactNode {
             <div className="max-w-7xl mx-auto w-full">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-[2px]" style={{ background: 'rgba(255,255,255,0.5)' }} />
-                <span className="typo-caption tracking-[0.25em] uppercase font-inter text-white/50">
+                <span className="typo-caption tracking-[0.28em] uppercase font-inter text-white/50">
                   CONTACT THE FOUNDATION
                 </span>
               </div>

@@ -1472,7 +1472,7 @@ export function VharananiEditorialHero() {
 
         {/* Scroll Indicator */}
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }} className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-          <div className="font-inter typo-caption tracking-[0.3em] uppercase" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+          <div className="font-inter typo-caption tracking-[0.28em] uppercase" style={{ color: 'var(--vharanani-charcoal-60)' }}>
             {currentLevel === 0 ? 'SELECT A DIVISION' : 'SELECT A SECTION'}
           </div>
           <motion.div animate={{ y: [0, 4, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>

@@ -20,7 +20,7 @@ export function GroupWireframe_Leadership(): ReactNode {
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-          <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
+          <span className="typo-caption tracking-[0.28em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
             PEOPLE
           </span>
         </div>
@@ -39,7 +39,7 @@ export function GroupWireframe_Leadership(): ReactNode {
             />
           </div>
           <div className="lg:col-span-3 p-8 md:p-12 flex flex-col justify-center" style={{ background: '#fafafa' }}>
-            <div className="typo-caption tracking-[0.2em] uppercase font-inter mb-4" style={{ color: 'var(--vharanani-burgundy)' }}>
+            <div className="typo-caption tracking-[0.28em] uppercase font-inter mb-4" style={{ color: 'var(--vharanani-burgundy)' }}>
               FOUNDER & GROUP EXECUTIVE CHAIRMAN
             </div>
             <h3 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-4" style={{ color: 'var(--vharanani-charcoal)' }}>

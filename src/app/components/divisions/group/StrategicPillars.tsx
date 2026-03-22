@@ -96,7 +96,7 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
               >
                 <div style={{ width: 32, height: 2, background: 'var(--vharanani-burgundy)', flexShrink: 0 }} />
                 <span
-                  className="typo-caption font-inter tracking-[0.32em] uppercase"
+                  className="typo-caption font-inter tracking-[0.28em] uppercase"
                   style={{ color: 'var(--vharanani-burgundy)' }}
                 >
                   Strategy

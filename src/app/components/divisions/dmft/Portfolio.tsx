@@ -57,7 +57,7 @@ export function DMFTWireframe_Portfolio(): ReactNode {
             <div className="lg:col-span-7">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-                <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
+                <span className="typo-caption tracking-[0.28em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
                   PORTFOLIO
                 </span>
               </div>

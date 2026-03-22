@@ -175,7 +175,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
           <div className="px-8 pt-10 pb-6" style={{ borderBottom: '1px solid var(--vharanani-charcoal-20)' }}>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-              <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
+              <span className="typo-caption tracking-[0.28em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
                 PROOF OF DELIVERY
               </span>
             </div>

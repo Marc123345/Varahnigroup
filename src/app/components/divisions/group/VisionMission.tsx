@@ -20,7 +20,7 @@ export function GroupWireframe_VisionMission(): ReactNode {
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-          <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
+          <span className="typo-caption tracking-[0.28em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
             MANDATE
           </span>
         </div>
@@ -28,7 +28,7 @@ export function GroupWireframe_VisionMission(): ReactNode {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
           {/* Vision */}
           <div className="p-8 md:p-12" style={{ background: '#812921' }}>
-            <div className="typo-caption tracking-[0.2em] uppercase font-inter mb-6" style={{ color: 'rgba(255,255,255,0.85)' }}>
+            <div className="typo-caption tracking-[0.28em] uppercase font-inter mb-6" style={{ color: 'rgba(255,255,255,0.85)' }}>
               OUR VISION
             </div>
             <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide text-white mb-6">
@@ -39,7 +39,7 @@ export function GroupWireframe_VisionMission(): ReactNode {
 
           {/* Mission */}
           <div className="p-8 md:p-12" style={{ background: '#fafafa' }}>
-            <div className="typo-caption tracking-[0.2em] uppercase font-inter mb-6" style={{ color: 'var(--vharanani-burgundy)' }}>
+            <div className="typo-caption tracking-[0.28em] uppercase font-inter mb-6" style={{ color: 'var(--vharanani-burgundy)' }}>
               OUR MISSION
             </div>
             <h3 className="typo-subline font-bebas-neue uppercase tracking-wide mb-6" style={{ color: 'var(--vharanani-charcoal)' }}>

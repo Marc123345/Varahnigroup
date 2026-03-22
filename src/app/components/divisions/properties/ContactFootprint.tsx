@@ -35,7 +35,7 @@ export function PropertiesWireframe_ContactFootprint(): ReactNode {
         {/* Section label */}
         <div className="flex items-center gap-3 mb-10">
           <div className="w-8 h-[2px]" style={{ background: 'rgba(255,255,255,0.5)' }} />
-          <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.75)' }}>
+          <span className="typo-caption tracking-[0.28em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.75)' }}>
             CONNECT
           </span>
         </div>

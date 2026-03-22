@@ -69,7 +69,7 @@ export function VharananiHomeBanner({
                 style={{ background: 'var(--vharanani-burgundy)' }}
               />
               <span
-                className="typo-caption tracking-[0.3em] uppercase"
+                className="typo-caption tracking-[0.28em] uppercase"
                 style={{
                   color: 'var(--vharanani-burgundy)',
                 }}

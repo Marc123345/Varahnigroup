@@ -13,7 +13,7 @@ export function PropertiesWireframe_AboutImpact(): ReactNode {
         {/* Section label */}
         <div className="flex items-center gap-3 mb-10">
           <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-          <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
+          <span className="typo-caption tracking-[0.28em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
             OUR STORY
           </span>
         </div>
@@ -41,7 +41,7 @@ export function PropertiesWireframe_AboutImpact(): ReactNode {
           <div className="p-6 md:p-10 flex flex-col justify-center" style={{ background: '#fafafa' }}>
             <p className="typo-meta tracking-[0.25em] uppercase font-inter mb-2" style={{ color: 'var(--vharanani-burgundy)' }}>VHARANANI PROPERTIES</p>
             <div
-              className="typo-caption tracking-[0.3em] uppercase font-inter mb-3"
+              className="typo-caption tracking-[0.28em] uppercase font-inter mb-3"
               style={{ color: 'var(--vharanani-burgundy)' }}
             >
               OUR STORY

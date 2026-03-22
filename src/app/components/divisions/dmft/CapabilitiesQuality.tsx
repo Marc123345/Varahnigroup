@@ -43,7 +43,7 @@ export function DMFTWireframe_CapabilitiesQuality(): ReactNode {
           <div className="max-w-7xl mx-auto w-full">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-              <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
+              <span className="typo-caption tracking-[0.28em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
                 EXPERTISE
               </span>
             </div>
@@ -72,7 +72,7 @@ export function DMFTWireframe_CapabilitiesQuality(): ReactNode {
               )}
 
               <div className="relative z-10">
-                <div className="typo-caption tracking-[0.3em] uppercase font-inter mb-8" style={{ color: 'var(--vharanani-burgundy)' }}>
+                <div className="typo-caption tracking-[0.28em] uppercase font-inter mb-8" style={{ color: 'var(--vharanani-burgundy)' }}>
                   CAPABILITIES
                 </div>
 
@@ -110,7 +110,7 @@ export function DMFTWireframe_CapabilitiesQuality(): ReactNode {
 
             {/* Right — Quality Manifesto (5 cols) */}
             <div className="lg:col-span-5 p-4 sm:p-8 md:p-10 flex flex-col justify-center" style={{ background: 'rgba(255,255,255,0.04)', borderLeft: '1px solid rgba(255,255,255,0.08)' }}>
-              <div className="typo-caption tracking-[0.3em] uppercase font-inter mb-6" style={{ color: 'var(--vharanani-burgundy)' }}>
+              <div className="typo-caption tracking-[0.28em] uppercase font-inter mb-6" style={{ color: 'var(--vharanani-burgundy)' }}>
                 COMMITMENT TO QUALITY
               </div>
 

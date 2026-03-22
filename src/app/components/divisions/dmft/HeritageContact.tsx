@@ -24,7 +24,7 @@ export function DMFTWireframe_HeritageContact(): ReactNode {
             <div className="max-w-7xl mx-auto w-full">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-                <span className="typo-caption tracking-[0.25em] uppercase font-inter text-white/50">
+                <span className="typo-caption tracking-[0.28em] uppercase font-inter text-white/50">
                   OUR HERITAGE & CONTACT
                 </span>
               </div>
@@ -49,7 +49,7 @@ export function DMFTWireframe_HeritageContact(): ReactNode {
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-[2px]" style={{ background: 'rgba(255,255,255,0.4)' }} />
-                <span className="typo-caption tracking-[0.25em] uppercase font-inter text-white/50">
+                <span className="typo-caption tracking-[0.28em] uppercase font-inter text-white/50">
                   OUR HERITAGE
                 </span>
               </div>
@@ -96,7 +96,7 @@ export function DMFTWireframe_HeritageContact(): ReactNode {
           <div className="p-8 md:p-12 flex flex-col justify-center" style={{ background: '#fafafa' }}>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-              <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
+              <span className="typo-caption tracking-[0.28em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
                 CONTACT
               </span>
             </div>
