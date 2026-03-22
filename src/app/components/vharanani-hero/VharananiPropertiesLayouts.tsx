@@ -70,14 +70,14 @@ function SectionWrapper({ children, className = '', dark = false }: { children: 
 
 const IMAGES = {
   ceoPortrait: 'https://ik.imagekit.io/qcvroy8xpd/image%202.png',
-  roadsCivils: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2021/06/Marulaneng-Road-2.jpg?w=1080&ssl=1',
-  waterSanitation: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2021/06/Polokwane-CBD-Pipeline.png?w=1080&ssl=1',
+  roadsCivils: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2021/07/DJI_0673-scaled.jpg?w=1440&ssl=1',
+  waterSanitation: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_5-nandoni-dam-1-1.jpg?w=1080&ssl=1',
   buildingConstruction: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2021/06/MAPHUTA-MALATJIE-HOSPITAL-2.jpg?w=1080&ssl=1',
-  residential: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2021/06/Mamelodi-Ext-5-4.jpg?w=1080&ssl=1',
-  propertyDev: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_faranani-estate-1-1.jpg?w=1080&ssl=1',
-  facilitiesMgmt: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2021/06/Facilities-1.jpg?w=1080&ssl=1',
+  residential: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2021/06/SOSHANGUVE-EXT.19-RDP-HOUSES-1.jpg?w=1080&ssl=1',
+  propertyDev: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/10/Property-development-scaled.jpg?w=1080&ssl=1',
+  facilitiesMgmt: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2021/06/Transnet-12.jpg?w=1080&ssl=1',
   brt: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/Tswane-BRT.jpg?w=1080&ssl=1',
-  constructionWorker: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/09/DJI_0247-scaled.jpg?w=1440&ssl=1',
+  constructionWorker: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dsc_0127.jpg?w=1080&ssl=1',
   values: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_untitled_panorama4-1.jpg?w=1080&ssl=1',
   map: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0519.jpg?w=1080&ssl=1',
 };

@@ -68,14 +68,14 @@ function SectionWrapper({ children, className = '', dark = false }: { children: 
 // ═══════════════════════════════════════════════════════════
 
 const IMAGES = {
-  aerialDev: 'https://images.unsplash.com/photo-1574968641537-9c0615d1ec0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZXJpYWwlMjBkcm9uZSUyMGx1eHVyeSUyMHJlc2lkZW50aWFsJTIwZXN0YXRlJTIwZGV2ZWxvcG1lbnQlMjBzdWJ1cmJ8ZW58MXx8fHwxNzczODQ5NzYwfDA&ixlib=rb-4.1.0&q=80&w=1080',
-  architectural: 'https://images.unsplash.com/photo-1768544582207-9238e7a3874b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmUlMjBmYWNhZGUlMjBnbGFzcyUyMGJ1aWxkaW5nJTIwZXh0ZXJpb3J8ZW58MXx8fHwxNzczODQ5NzYyfDA&ixlib=rb-4.1.0&q=80&w=1080',
-  residentialEstate: 'https://images.unsplash.com/photo-1722293862101-6511f044073b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjByZXNpZGVudGlhbCUyMGVzdGF0ZSUyMGdhdGVkJTIwY29tbXVuaXR5fGVufDF8fHx8MTc3MzY5MDQ5Mnww&ixlib=rb-4.1.0&q=80&w=1080',
-  apartment: 'https://images.unsplash.com/photo-1760611655987-d348d6d28174?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBhcGFydG1lbnQlMjBpbnRlcmlvciUyMGxpdmluZyUyMHNwYWNlJTIwcGVudGhvdXNlfGVufDF8fHx8MTc3Mzg0OTc2Mnww&ixlib=rb-4.1.0&q=80&w=1080',
-  townhouse: 'https://images.unsplash.com/photo-1758796629979-c967b99dec5e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB0b3duaG91c2UlMjByb3clMjBjb250ZW1wb3JhcnklMjByZXNpZGVudGlhbCUyMGV4dGVyaW9yfGVufDF8fHx8MTc3Mzg0OTc2M3ww&ixlib=rb-4.1.0&q=80&w=1080',
-  mixedUse: 'https://images.unsplash.com/photo-1761393535162-c795ede7b5c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaXhlZCUyMHVzZSUyMGRldmVsb3BtZW50JTIwcmV0YWlsJTIwZ3JvdW5kJTIwZmxvb3IlMjBhcGFydG1lbnRzfGVufDF8fHx8MTc3Mzg0OTc2OHww&ixlib=rb-4.1.0&q=80&w=1080',
-  propertyDev: 'https://images.unsplash.com/photo-1746364742672-c6383331b032?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1cmJhbiUyMGRldmVsb3BtZW50JTIwc2t5bGluZSUyMGNvbnN0cnVjdGlvbiUyMGNyYW5lcyUyMGNpdHl8ZW58MXx8fHwxNzczODQ5NzY4fDA&ixlib=rb-4.1.0&q=80&w=1080',
-  blueprint: 'https://images.unsplash.com/photo-1721132537184-5494c01ed87f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcmNoaXRlY3R1cmFsJTIwYmx1ZXByaW50JTIwcHJvcGVydHklMjBwbGFubmluZyUyMGRlc2lnbiUyMHRhYmxlfGVufDF8fHx8MTc3Mzg0OTc2NHww&ixlib=rb-4.1.0&q=80&w=1080',
+  aerialDev: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/09/DJI_0247-scaled.jpg?w=1440&ssl=1',
+  architectural: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dsc_0127.jpg?w=1080&ssl=1',
+  residentialEstate: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_faranani-estate-1-1.jpg?w=1080&ssl=1',
+  apartment: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2021/06/SOSHANGUVE-EXT.19-RDP-HOUSES-1.jpg?w=1080&ssl=1',
+  townhouse: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2021/06/Mamelodi-Ext-5-4.jpg?w=1080&ssl=1',
+  mixedUse: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_untitled_panorama4-1.jpg?w=1080&ssl=1',
+  propertyDev: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/10/Property-development-scaled.jpg?w=1080&ssl=1',
+  blueprint: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/Mogalakwena.jpg?w=1080&ssl=1',
 };
 
 
