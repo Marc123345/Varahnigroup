@@ -958,7 +958,7 @@ export function VharananiEditorialHero() {
                     />
                   ) : (
                     <img
-                      src="https://ik.imagekit.io/qcvroy8xpd/Frame%202.png"
+                      src="https://ik.imagekit.io/qcvroy8xpd/Frame%205.png"
                       alt="Vharanani Group"
                       className="h-8 sm:h-10 w-auto object-contain"
                     />
@@ -1378,7 +1378,7 @@ export function VharananiEditorialHero() {
             <div>
               <div className="mb-5">
                 <img
-                  src="https://ik.imagekit.io/qcvroy8xpd/Frame%202.png"
+                  src="https://ik.imagekit.io/qcvroy8xpd/Frame%205.png"
                   alt="Vharanani Group"
                   className="h-10 w-auto object-contain"
                 />
