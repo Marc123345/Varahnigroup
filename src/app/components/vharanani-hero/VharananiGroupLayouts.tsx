@@ -68,20 +68,20 @@ function SectionWrapper({ children, className = '', dark = false }: { children: 
 // ═══════════════════════════════════════════════════════════
 
 const IMAGES = {
-  headquarters: 'https://ik.imagekit.io/qcvroy8xpd/Frame%204.png',
-  headquartersSecondary: 'https://ik.imagekit.io/qcvroy8xpd/Frame%204.png',
-  headquartersTertiary: 'https://ik.imagekit.io/qcvroy8xpd/Frame%204.png',
-  portfolio: 'https://ik.imagekit.io/qcvroy8xpd/Frame%204.png',
-  pillars: 'https://ik.imagekit.io/qcvroy8xpd/Frame%204.png',
+  headquarters: 'https://images.unsplash.com/photo-1726056295062-bc43f12e11f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwY29ycG9yYXRlJTIwc2t5bGluZSUyMG1vZGVybiUyMGdsYXNzJTIwYnVpbGRpbmd8ZW58MXx8fHwxNzczNzQ3NDE4fDA&ixlib=rb-4.1.0&q=80&w=1080',
+  headquartersSecondary: 'https://images.unsplash.com/photo-1585484147302-3ab2f01f9f52?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxTb3V0aCUyMEFmcmljYSUyMGluZnJhc3RydWN0dXJlJTIwY29uc3RydWN0aW9uJTIwYWVyaWFsJTIwaGlnaHdheXxlbnwxfHx8fDE3NzM3NDc0MTh8MA&ixlib=rb-4.1.0&q=80&w=1080',
+  headquartersTertiary: 'https://images.unsplash.com/photo-1758691736975-9f7f643d178e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjB0ZWFtJTIwZGl2ZXJzZSUyMHByb2Zlc3Npb25hbCUyMG9mZmljZXxlbnwxfHx8fDE3NzM3NDc0MjJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+  portfolio: 'https://images.unsplash.com/photo-1653378972336-103e1ea62721?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwaW52ZXN0bWVudCUyMHBvcnRmb2xpbyUyMGJ1c2luZXNzJTIwc3RyYXRlZ3l8ZW58MXx8fHwxNzczMDU2MzM0fDA&ixlib=rb-4.1.0&q=80&w=1080',
+  pillars: 'https://images.unsplash.com/photo-1769738360873-3ba6cac0b308?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncm93dGglMjBwaWxsYXJzJTIwY29ycG9yYXRlJTIwcGxhbm5pbmclMjB3aGl0ZWJvYXJkfGVufDF8fHx8MTc3MzA1NjMzOHww&ixlib=rb-4.1.0&q=80&w=1080',
   leadership: 'https://ik.imagekit.io/qcvroy8xpd/image%202.png',
-  impact: 'https://ik.imagekit.io/qcvroy8xpd/Frame%204.png',
-  visionMission: 'https://ik.imagekit.io/qcvroy8xpd/Frame%204.png',
-  governance: 'https://ik.imagekit.io/qcvroy8xpd/Frame%204.png',
-  companies: 'https://ik.imagekit.io/qcvroy8xpd/Frame%204.png',
-  news: 'https://ik.imagekit.io/qcvroy8xpd/Frame%204.png',
-  construction: 'https://ik.imagekit.io/qcvroy8xpd/Frame%204.png',
-  foundation: 'https://ik.imagekit.io/qcvroy8xpd/Frame%204.png',
-  dmft: 'https://ik.imagekit.io/qcvroy8xpd/Frame%204.png',
+  impact: 'https://images.unsplash.com/photo-1658129850537-ea7517a9682f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2NpYWwlMjBpbXBhY3QlMjBjb21tdW5pdHklMjBkZXZlbG9wbWVudCUyMEFmcmljYXxlbnwxfHx8fDE3NzMwNTYzMzV8MA&ixlib=rb-4.1.0&q=80&w=1080',
+  visionMission: 'https://images.unsplash.com/photo-1656646424292-cf207f3f1749?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjB2aXNpb24lMjBtaXNzaW9uJTIwc3RhdGVtZW50JTIwYm9hcmRyb29tfGVufDF8fHx8MTc3MzA1NjMzNXww&ixlib=rb-4.1.0&q=80&w=1080',
+  governance: 'https://images.unsplash.com/photo-1556219845-95c1847629e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBnb3Zlcm5hbmNlJTIwYW5udWFsJTIwcmVwb3J0JTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc3MzA1NTkxM3ww&ixlib=rb-4.1.0&q=80&w=1080',
+  companies: 'https://images.unsplash.com/photo-1682924754699-dcf11b641343?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXN0YWluYWJsZSUyMGluZnJhc3RydWN0dXJlJTIwZGV2ZWxvcG1lbnQlMjBBZnJpY2ElMjByb2Fkc3xlbnwxfHx8fDE3NzMwNTYzMzZ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+  news: 'https://images.unsplash.com/photo-1766740606233-6573571caa6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZXdzJTIwbWVkaWElMjB1cGRhdGUlMjBjb3Jwb3JhdGUlMjBvZmZpY2V8ZW58MXx8fHwxNzczMDU2MzQyfDA&ixlib=rb-4.1.0&q=80&w=1080',
+  construction: 'https://images.unsplash.com/photo-1764222233275-87dc016c11dc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBwcm9wZXJ0eSUyMGRldmVsb3BtZW50JTIwYWVyaWFsfGVufDF8fHx8MTc3MjczNDk4N3ww&ixlib=rb-4.1.0&q=80&w=1080',
+  foundation: 'https://images.unsplash.com/photo-1694286068274-1058e6b04dcc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwY2hhcml0eSUyMGZvdW5kYXRpb24lMjBjb21tdW5pdHl8ZW58MXx8fHwxNzcyNzM0OTg2fDA&ixlib=rb-4.1.0&q=80&w=1080',
+  dmft: 'https://images.unsplash.com/photo-1707410148802-fe08fe956398?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBkZXZlbG9wbWVudCUyMGluZnJhc3RydWN0dXJlJTIwc291dGglMjBhZnJpY2F8ZW58MXx8fHwxNzcyNzM0OTg3fDA&ixlib=rb-4.1.0&q=80&w=1080',
 };
 
 
@@ -293,10 +293,10 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
 
 export function GroupWireframe_PortfolioGrid(): ReactNode {
   const PORTFOLIO_IMAGES = {
-    construction: 'https://ik.imagekit.io/qcvroy8xpd/Frame%204.png',
-    foundation: 'https://ik.imagekit.io/qcvroy8xpd/Frame%204.png',
-    dmft: 'https://ik.imagekit.io/qcvroy8xpd/Frame%204.png',
-    holdings: 'https://ik.imagekit.io/qcvroy8xpd/Frame%204.png',
+    construction: 'https://images.unsplash.com/photo-1768053823555-b75cd4ead6c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBzaXRlJTIwZXhjYXZhdG9yJTIwY2l2aWwlMjBlbmdpbmVlcmluZyUyMHJvYWR8ZW58MXx8fHwxNzczNzQ3NjY3fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    foundation: 'https://images.unsplash.com/photo-1632215861513-130b66fe97f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwY29tbXVuaXR5JTIwZWR1Y2F0aW9uJTIwY2hpbGRyZW4lMjBzY2hvb2wlMjBjbGFzc3Jvb218ZW58MXx8fHwxNzczNzQ3NjYzfDA&ixlib=rb-4.1.0&q=80&w=1080',
+    dmft: 'https://images.unsplash.com/photo-1505138074712-436c81be4f07?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjByZXNpZGVudGlhbCUyMGVzdGF0ZSUyMGRldmVsb3BtZW50JTIwc3VidXJiJTIwYWVyaWFsfGVufDF8fHx8MTc3Mzc0NzY2M3ww&ixlib=rb-4.1.0&q=80&w=1080',
+    holdings: 'https://images.unsplash.com/photo-1604926836687-bb58c880856a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjb3Jwb3JhdGUlMjBpbnZlc3RtZW50JTIwc3RyYXRlZ3klMjBncm93dGglMjBhYnN0cmFjdHxlbnwxfHx8fDE3NzM3NDc2NjR8MA&ixlib=rb-4.1.0&q=80&w=1080',
   };
 
   const divisions = [
@@ -616,11 +616,11 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
 
 export function GroupWireframe_StrategicPillars(): ReactNode {
   const PILLAR_IMAGES = {
-    infrastructure: 'https://ik.imagekit.io/qcvroy8xpd/Frame%204.png',
-    assets: 'https://ik.imagekit.io/qcvroy8xpd/Frame%204.png',
-    innovation: 'https://ik.imagekit.io/qcvroy8xpd/Frame%204.png',
-    social: 'https://ik.imagekit.io/qcvroy8xpd/Frame%204.png',
-    panorama: 'https://ik.imagekit.io/qcvroy8xpd/Frame%204.png',
+    infrastructure: 'https://images.unsplash.com/photo-1750580037263-1b012684fb44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoaWdod2F5JTIwYnJpZGdlJTIwY29uc3RydWN0aW9uJTIwU291dGglMjBBZnJpY2ElMjBpbmZyYXN0cnVjdHVyZXxlbnwxfHx8fDE3NzM3NDg3NTN8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    assets: 'https://images.unsplash.com/photo-1769697694222-016642c08125?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjb21tZXJjaWFsJTIwcHJvcGVydHklMjBpbnZlc3RtZW50JTIwcmVhbCUyMGVzdGF0ZXxlbnwxfHx8fDE3NzM3NDg3NTN8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    innovation: 'https://images.unsplash.com/photo-1759836096317-e746643cc277?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwaW5ub3ZhdGlvbiUyMGRpZ2l0YWwlMjB0cmFuc2Zvcm1hdGlvbiUyMHNlcnZlcnxlbnwxfHx8fDE3NzM3NDg3NTR8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    social: 'https://images.unsplash.com/photo-1761039808115-77b271985e47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwY29tbXVuaXR5JTIwZW1wb3dlcm1lbnQlMjBzb2NpYWwlMjB1cGxpZnRtZW50JTIweW91dGh8ZW58MXx8fHwxNzczNzQ4NzU0fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    panorama: 'https://images.unsplash.com/photo-1765475467677-579353b25ce0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZXJpYWwlMjB2aWV3JTIwQWZyaWNhbiUyMGNpdHklMjB1cmJhbiUyMHBsYW5uaW5nJTIwbGFuZHNjYXBlfGVufDF8fHx8MTc3Mzc0ODc1NXww&ixlib=rb-4.1.0&q=80&w=1080',
   };
 
   const pillars = [
