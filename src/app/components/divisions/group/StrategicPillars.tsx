@@ -109,8 +109,8 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
                   whileInView={{ y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-                  className="font-bebas-neue uppercase text-white"
-                  style={{ fontSize: 'clamp(56px, 9vw, 130px)', lineHeight: 0.9, letterSpacing: '-0.01em' }}
+                  className="font-bebas-neue uppercase text-white typo-headline-big"
+                  style={{ letterSpacing: '0.02em' }}
                 >
                   Our Strategic<br />
                   <span style={{ color: 'var(--vharanani-burgundy)' }}>Pillars</span>
