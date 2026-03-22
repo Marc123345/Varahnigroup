@@ -167,10 +167,10 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
             {/* Right — Narrative */}
             <div className="lg:col-span-7">
               <p className="typo-copy font-inter mb-6" style={{ color: 'var(--vharanani-charcoal-80)' }}>
-                Founded by David Mabilu, the Vharanani Group represents a vision of sustainable growth rooted in African excellence. From humble beginnings in Limpopo province, the Group has evolved into one of South Africa's most respected diversified investment holding companies.
+                Vharanani Group is an innovation-driven African conglomerate founded and led by David Mabilu. With a diversified portfolio spanning construction, property development, mining, technology, aviation, and philanthropy, the Group is committed to building sustainable enterprises that contribute to economic transformation and long-term infrastructure development.
               </p>
               <p className="typo-copy font-inter mb-8" style={{ color: 'var(--vharanani-charcoal-60)' }}>
-                Our portfolio spans construction and infrastructure development, property investment, social development through the David Mabilu Foundation, and strategic growth ventures — all unified by principled leadership and an unwavering commitment to uplifting communities.
+                We operate with a clear mandate: to build assets that strengthen communities, enable economic participation, and support Africa's growth trajectory.
               </p>
 
               {/* Two-image mosaic */}
@@ -305,7 +305,7 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
       tag: 'CONSTRUCTION & INFRASTRUCTURE',
       icon: <Building2 size={20} />,
       image: PORTFOLIO_IMAGES.construction,
-      description: 'A leading CIDB Grade 9-rated construction company delivering large-scale civil engineering, road infrastructure, and public works projects across South Africa.',
+      description: 'Delivering large-scale civil engineering and infrastructure projects that improve quality of life and restore dignity to communities.',
       stats: [
         { value: '200+', label: 'Projects' },
         { value: '800+', label: 'Employees' },
@@ -315,10 +315,10 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
     },
     {
       title: 'The David Mabilu Foundation',
-      tag: 'SOCIAL DEVELOPMENT',
+      tag: 'SOCIAL IMPACT',
       icon: <Landmark size={20} />,
       image: PORTFOLIO_IMAGES.foundation,
-      description: 'Committed to reducing poverty and sustainably improving the living standards of marginalised communities through education, housing, and entrepreneurship.',
+      description: 'Advancing education, housing access, entrepreneurship, and community upliftment initiatives.',
       stats: [
         { value: '50K+', label: 'Lives Impacted' },
         { value: '500+', label: 'Bursaries' },
@@ -328,10 +328,10 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
     },
     {
       title: 'DMFT Property Developers',
-      tag: 'PROPERTY DEVELOPMENT',
+      tag: 'PROPERTY DEVELOPMENT & INVESTMENTS',
       icon: <Heart size={20} />,
       image: PORTFOLIO_IMAGES.dmft,
-      description: 'Creating exceptional residential and mixed-use developments, with a focus on accessible, quality housing and premium estate living across Gauteng and Limpopo.',
+      description: 'Managing strategic real estate assets and long-term property investments across commercial and residential sectors.',
       stats: [
         { value: '15+', label: 'Developments' },
         { value: '2,000+', label: 'Units' },
@@ -630,7 +630,7 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
       step: '01',
       image: PILLAR_IMAGES.infrastructure,
       headline: 'Building the Backbone of Progress',
-      description: 'Roads, bridges, clinics, schools, and essential services supporting national growth and connecting communities across South Africa.',
+      description: 'Building roads, bridges, clinics, schools, and essential services that support national growth and community development.',
       capabilities: ['Roads & Highways', 'Bridges & Culverts', 'Public Facilities', 'Water Infrastructure'],
       metric: { value: '200+', label: 'Projects Delivered' },
     },
@@ -650,7 +650,7 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
       step: '03',
       image: PILLAR_IMAGES.innovation,
       headline: 'Pioneering New Frontiers',
-      description: 'Exploring growth in technology, aviation, and resource-driven industries that position the Group at the forefront of Africa\'s economic evolution.',
+      description: 'Exploring growth opportunities across technology, aviation, and resource-driven industries.',
       capabilities: ['Digital Solutions', 'Aviation Services', 'Resource Management', 'Smart Infrastructure'],
       metric: { value: '4', label: 'Emerging Sectors' },
     },
@@ -660,7 +660,7 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
       step: '04',
       image: PILLAR_IMAGES.social,
       headline: 'Empowering Communities',
-      description: 'Investing in education, entrepreneurship, and inclusive community development that transforms lives and builds resilient, self-sustaining communities.',
+      description: 'Investing in people, education, and entrepreneurial development to ensure inclusive and sustainable progress.',
       capabilities: ['Education Bursaries', 'Skills Training', 'Housing Programmes', 'Health Initiatives'],
       metric: { value: '50K+', label: 'Lives Impacted' },
     },
@@ -896,11 +896,11 @@ export function GroupWireframe_Leadership(): ReactNode {
             </h3>
             <div className="w-10 h-[2px] mb-6" style={{ background: 'var(--vharanani-burgundy)' }} />
             <p className="typo-copy font-inter mb-4" style={{ color: 'var(--vharanani-charcoal-80)' }}>
-              A visionary entrepreneur whose leadership has guided the Vharanani Group from a single construction company to a diversified investment holding group. His commitment to excellence, ethical business practice, and community upliftment defines the Group's identity.
+              David Mabilu founded Vharanani Group with a clear vision: to build a diversified African enterprise rooted in infrastructure, ownership, and impact. With over two decades of experience in construction and property development, he has led the Group's expansion across multiple sectors while maintaining a firm commitment to economic transformation and community advancement.
             </p>
-            <blockquote className="typo-copy-small font-inter italic pl-4 mt-4" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', color: 'var(--vharanani-charcoal-60)' }}>
-              "We build not just infrastructure, but the foundations for a dignified future."
-            </blockquote>
+            <p className="typo-copy-small font-inter mb-4" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+              Under his leadership, Vharanani Group continues to strengthen its national footprint and long-term investment strategy.
+            </p>
           </div>
         </div>
 
@@ -970,9 +970,12 @@ export function GroupWireframe_ImpactGovernance(): ReactNode {
             SEC 05 — IMPACT
           </span>
         </div>
-        <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-8 text-white">
+        <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-4 text-white">
           Impact & Responsibility
         </h2>
+        <p className="typo-copy font-inter mb-8 max-w-3xl" style={{ color: 'rgba(255,255,255,0.8)' }}>
+          Vharanani Group recognizes that infrastructure and investment must translate into tangible community benefit. Through responsible project delivery, employment creation, and the work of The David Mabilu Foundation, the Group actively contributes to social upliftment and economic participation in underserved communities. Our approach integrates disciplined business growth with measurable social responsibility.
+        </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Impact stats */}
@@ -1063,12 +1066,9 @@ export function GroupWireframe_VisionMission(): ReactNode {
               OUR VISION
             </div>
             <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide text-white mb-6">
-              To be a leading African investment group creating sustainable value
+              To build a diversified African enterprise that strengthens national infrastructure, drives innovation, and advances inclusive economic growth.
             </h2>
             <div className="w-12 h-[2px] mb-6" style={{ background: 'rgba(255,255,255,0.4)' }} />
-            <p className="typo-copy font-inter" style={{ color: 'rgba(255,255,255,0.8)' }}>
-              We envision a future where Black-owned enterprises lead the transformation of Africa's economy through strategic investment, principled governance, and an unwavering commitment to community upliftment.
-            </p>
           </div>
 
           {/* Mission */}
@@ -1206,15 +1206,15 @@ export function GroupWireframe_Companies(): ReactNode {
       tag: 'CONSTRUCTION',
       icon: <Building2 size={20} />,
       image: IMAGES.construction,
-      description: 'A leading Black-owned construction and infrastructure development company delivering large-scale projects.',
+      description: 'Construction, civil engineering, infrastructure development, and facilities management. Delivering large-scale public and private sector projects across South Africa.',
       highlights: ['CIDB Grade 9 CE & GB', 'B-BBEE Level 1', 'ISO 9001 Certified'],
     },
     {
       title: 'The David Mabilu Foundation',
-      tag: 'SOCIAL DEVELOPMENT',
+      tag: 'SOCIAL IMPACT',
       icon: <Landmark size={20} />,
       image: IMAGES.foundation,
-      description: 'Committed to reducing poverty and sustainably improving living standards of marginalised communities.',
+      description: 'Driving educational support, housing initiatives, entrepreneurship programs, and community upliftment.',
       highlights: ['Education Programmes', 'Housing Initiatives', 'Community Upliftment'],
     },
     {
@@ -1222,7 +1222,7 @@ export function GroupWireframe_Companies(): ReactNode {
       tag: 'PROPERTY DEVELOPMENT',
       icon: <Heart size={20} />,
       image: IMAGES.dmft,
-      description: 'Focused on creating exceptional residential and mixed-use developments across South Africa.',
+      description: 'Property development, investment management, and facilities oversight supported by a substantial unencumbered property portfolio.',
       highlights: ['Residential Estates', 'Mixed-Use Developments', 'Townhouse Complexes'],
     },
   ];
@@ -1318,9 +1318,12 @@ export function GroupWireframe_NewsContact(): ReactNode {
             SEC 09 — UPDATES
           </span>
         </div>
-        <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-8" style={{ color: 'var(--vharanani-charcoal)' }}>
-          Sustainable Impact & News
+        <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-4" style={{ color: 'var(--vharanani-charcoal)' }}>
+          News & Announcements
         </h2>
+        <p className="typo-copy font-inter mb-8 max-w-2xl" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+          Stay informed on Vharanani Group's latest developments, project milestones, partnerships, and corporate updates.
+        </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* News */}
@@ -1365,16 +1368,19 @@ export function GroupWireframe_NewsContact(): ReactNode {
 
           {/* Contact form */}
           <div>
-            <h3 className="typo-subline font-bebas-neue uppercase tracking-wide mb-6" style={{ color: 'var(--vharanani-charcoal)' }}>
-              Get in Touch
+            <h3 className="typo-subline font-bebas-neue uppercase tracking-wide mb-2" style={{ color: 'var(--vharanani-charcoal)' }}>
+              Contact Us
             </h3>
+            <p className="typo-copy-small font-inter mb-6" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+              For corporate, partnership, or media inquiries, please contact our head office.
+            </p>
 
             {/* Contact info */}
             <div className="space-y-3 mb-8">
               {[
-                { icon: <Mail size={16} />, text: 'info@vharanani.com' },
-                { icon: <Phone size={16} />, text: '+27 (0) 15 123 4567' },
-                { icon: <MapPin size={16} />, text: 'Polokwane, Limpopo, South Africa' },
+                { icon: <Mail size={16} />, text: 'info@vharananigroup.co.za' },
+                { icon: <Phone size={16} />, text: '+27 11 656 1418' },
+                { icon: <MapPin size={16} />, text: '18 Hume Road, Dunkeld West, Johannesburg' },
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-3">
                   <span style={{ color: 'var(--vharanani-burgundy)' }}>{item.icon}</span>
@@ -1417,8 +1423,14 @@ export function GroupWireframe_NewsContact(): ReactNode {
               </button>
             </div>
 
+            {/* Tagline */}
+            <div className="mt-6 mb-4 pt-4" style={{ borderTop: '1px solid var(--vharanani-charcoal-20)' }}>
+              <div className="typo-headline-small font-bebas-neue uppercase tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Vharanani Group</div>
+              <div className="typo-copy-small font-inter" style={{ color: 'var(--vharanani-charcoal-60)' }}>Building sustainable enterprises. Advancing African growth.</div>
+            </div>
+
             {/* Social links */}
-            <div className="flex items-center gap-4 mt-6">
+            <div className="flex items-center gap-4 mt-4">
               <span className="typo-caption tracking-[0.15em] uppercase font-inter" style={{ color: 'var(--vharanani-charcoal-60)' }}>
                 Follow Us
               </span>
