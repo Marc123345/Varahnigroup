@@ -83,7 +83,7 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
               <div className="relative overflow-hidden">
                 <motion.h2
                   className="font-bebas-neue uppercase"
-                  style={{ fontSize: 'clamp(52px, 10vw, 118px)', lineHeight: 0.92, letterSpacing: '0.02em', color: '#111111' }}
+                  style={{ fontSize: 'clamp(36px, 5vw, 64px)', lineHeight: 0.95, letterSpacing: '0.02em', color: '#111111' }}
                   {...clipReveal(0.06)}
                 >
                   Our Portfolio
