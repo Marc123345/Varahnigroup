@@ -129,13 +129,19 @@ export function PropertiesWireframe_AboutImpact(): ReactNode {
             </div>
 
             <h3 className="font-bebas-neue typo-headline-big tracking-wide uppercase mb-4" style={{ color: 'var(--vharanani-charcoal)' }}>
-              Two Decades of Building Africa
+              About Us
             </h3>
 
             <div className="w-12 h-[3px] mb-6" style={{ background: 'var(--vharanani-burgundy)' }} />
 
-            <p className="font-inter typo-copy mb-6" style={{ color: 'var(--vharanani-charcoal-80)' }}>
-              Founded in 2001 by David Mabilu, Vharanani Properties has grown from a small construction company into one of South Africa's leading Black-owned infrastructure and property development firms, delivering projects valued at billions of rands across all nine provinces.
+            <p className="font-inter typo-copy mb-4" style={{ color: 'var(--vharanani-charcoal-80)' }}>
+              Vharanani Properties was founded in 2001 by Chief Executive Officer David Mabilu. What began as a small operation has grown into one of South Africa's leading Black-owned and managed construction companies.
+            </p>
+            <p className="font-inter typo-copy mb-4" style={{ color: 'var(--vharanani-charcoal-80)' }}>
+              With more than two decades of experience, the company has developed strong technical expertise across a broad range of infrastructure sectors, delivering projects that meet the highest standards of quality, safety, and efficiency.
+            </p>
+            <p className="font-inter typo-copy mb-6" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+              Today, Vharanani Properties operates nationally and has successfully completed numerous high-value construction projects valued at billions of rands. Our multidisciplinary capability enables us to deliver projects of varying scale and complexity while maintaining strict adherence to quality standards, safety protocols, and responsible project management.
             </p>
 
             {/* Power Grid — Core Stats */}
@@ -179,7 +185,7 @@ export function PropertiesWireframe_IntegratedServices(): ReactNode {
   const services = [
     {
       title: 'Roads & Civils',
-      subtitle: 'Turnkey solutions for BRT & Highways',
+      subtitle: 'Turnkey civil construction — road construction, earthworks, water infrastructure, BRT systems, highways, and pipelines.',
       icon: <Wrench size={22} />,
       image: IMAGES.roadsCivils,
       span: 'md:col-span-2 md:row-span-2',
@@ -187,7 +193,7 @@ export function PropertiesWireframe_IntegratedServices(): ReactNode {
     },
     {
       title: 'Water & Sanitation',
-      subtitle: 'Large-scale municipal service delivery',
+      subtitle: 'Bulk water supply systems, pipeline installations, sewer reticulation, and grey water systems for sustainable municipal service delivery.',
       icon: <Droplets size={22} />,
       image: IMAGES.waterSanitation,
       span: '',
@@ -195,7 +201,7 @@ export function PropertiesWireframe_IntegratedServices(): ReactNode {
     },
     {
       title: 'Building Construction',
-      subtitle: 'Mining, Education & Healthcare facilities',
+      subtitle: 'Public and private sector buildings across mining, education, healthcare, retail, industrial, commercial, and residential sectors.',
       icon: <Building2 size={22} />,
       image: IMAGES.buildingConstruction,
       span: '',
@@ -203,7 +209,7 @@ export function PropertiesWireframe_IntegratedServices(): ReactNode {
     },
     {
       title: 'Residential',
-      subtitle: 'From RDP to Luxury Estates',
+      subtitle: 'RDP housing, walk-up developments, apartment complexes, townhouses, and residential estates supporting provincial and national housing initiatives.',
       icon: <Home size={22} />,
       image: IMAGES.residential,
       span: '',
@@ -211,7 +217,7 @@ export function PropertiesWireframe_IntegratedServices(): ReactNode {
     },
     {
       title: 'Property Development',
-      subtitle: 'Full lifecycle: Land to Construction',
+      subtitle: 'Turnkey solutions from land acquisition, zoning, and feasibility through to architectural design, project management, and construction.',
       icon: <Briefcase size={22} />,
       image: IMAGES.propertyDev,
       span: '',
@@ -219,7 +225,7 @@ export function PropertiesWireframe_IntegratedServices(): ReactNode {
     },
     {
       title: 'Facilities Management',
-      subtitle: 'Long-term operational excellence',
+      subtitle: 'Maintenance of office complexes, cleaning services, repairs, and management of institutional housing complexes for institutional and corporate clients.',
       icon: <Factory size={22} />,
       image: IMAGES.facilitiesMgmt,
       span: 'md:col-span-2',
@@ -310,12 +316,36 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
       impact: 'Connected thousands of daily commuters to affordable, efficient public transport across the Tshwane metropolitan area.',
     },
     {
-      title: 'Lepelle Water Revitalization',
+      title: 'Polokwane BRT System',
+      category: 'Roads & Civils',
+      location: 'Limpopo, South Africa',
+      image: IMAGES.roadsCivils,
+      specs: 'Bus Rapid Transit system delivering dedicated transit lanes, station infrastructure, and integrated traffic management.',
+      impact: 'Enhanced urban mobility and reduced commute times for residents across the Polokwane metropolitan area.',
+    },
+    {
+      title: 'Marulaneng–Sekhukhune Road Development',
+      category: 'Roads & Civils',
+      location: 'Limpopo, South Africa',
+      image: IMAGES.roadsCivils,
+      specs: 'Full road construction including earthworks, drainage, paving, and road markings across challenging terrain.',
+      impact: 'Improved rural accessibility, connecting remote communities to economic and social services.',
+    },
+    {
+      title: 'Lepelle Revitalization Programme Bulk Water Project',
       category: 'Water & Sanitation',
       location: 'Limpopo, South Africa',
       image: IMAGES.waterSanitation,
       specs: 'Bulk water supply programme including pipeline infrastructure and treatment facility upgrades.',
       impact: 'Restored reliable water supply to rural communities, improving health outcomes and quality of life.',
+    },
+    {
+      title: 'Rand Water Pipeline',
+      category: 'Water & Sanitation',
+      location: 'Gauteng, South Africa',
+      image: IMAGES.waterSanitation,
+      specs: 'Major bulk water pipeline installation supporting the Rand Water distribution network and municipal supply.',
+      impact: 'Strengthened water security and service delivery capacity for communities across Gauteng.',
     },
     {
       title: 'Maphutha Malatjie Hospital',
@@ -326,12 +356,52 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
       impact: 'Provided modern healthcare access to an underserved community, serving thousands of patients annually.',
     },
     {
-      title: 'Mamelodi X5 Housing',
+      title: 'Mogalakwena Civic Centre',
+      category: 'Building Construction',
+      location: 'Limpopo, South Africa',
+      image: IMAGES.buildingConstruction,
+      specs: 'Construction of a full civic centre facility to serve the Mogalakwena local municipality and surrounding communities.',
+      impact: 'Improved access to government services and created a modern public administration hub for the region.',
+    },
+    {
+      title: 'Capricorn FET College',
+      category: 'Building Construction',
+      location: 'Limpopo, South Africa',
+      image: IMAGES.buildingConstruction,
+      specs: 'Construction of educational infrastructure including lecture halls, workshops, and student support facilities.',
+      impact: 'Expanded technical and vocational education capacity, empowering youth with skills for the workforce.',
+    },
+    {
+      title: 'Mamelodi X5 Housing Development',
       category: 'Residential',
       location: 'Gauteng, South Africa',
       image: IMAGES.residential,
       specs: 'Large-scale residential housing development providing dignified homes for qualifying families.',
       impact: 'Delivered sustainable human settlements and created local employment during the construction phase.',
+    },
+    {
+      title: 'Nellmapius X22 Housing Development',
+      category: 'Residential',
+      location: 'Gauteng, South Africa',
+      image: IMAGES.residential,
+      specs: 'High-volume residential housing construction as part of a national human settlements programme.',
+      impact: 'Provided dignified housing to hundreds of families in the Nellmapius community.',
+    },
+    {
+      title: 'ST Maria Development',
+      category: 'Property Development',
+      location: 'South Africa',
+      image: IMAGES.propertyDev,
+      specs: 'Turnkey property development including land preparation, construction, and handover of residential units.',
+      impact: 'Delivered quality residential property in a strategically positioned development.',
+    },
+    {
+      title: 'Transnet Facilities Management Services',
+      category: 'Facilities Management',
+      location: 'South Africa',
+      image: IMAGES.facilitiesMgmt,
+      specs: 'Comprehensive facilities management services including maintenance, cleaning, and operational management of Transnet facilities.',
+      impact: 'Ensured the long-term functionality and operational integrity of critical national infrastructure facilities.',
     },
   ];
 
@@ -520,11 +590,12 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
 
 export function PropertiesWireframe_Compliance(): ReactNode {
   const certifications = [
-    { icon: <Award size={28} />, title: 'ISO 9001:2015', subtitle: 'Quality Management Systems', highlight: false },
+    { icon: <Award size={28} />, title: 'ISO 9001:2015', subtitle: 'Certified Construction Company', highlight: false },
     { icon: <Shield size={28} />, title: 'B-BBEE Level 1', subtitle: 'Highest Contributor Level', highlight: false },
-    { icon: <Building2 size={28} />, title: 'CIDB Grade 9GB', subtitle: 'General Building', highlight: true },
+    { icon: <Building2 size={28} />, title: 'CIDB Grade 9GB', subtitle: 'General Building Works', highlight: true },
     { icon: <HardHat size={28} />, title: 'CIDB Grade 9CE', subtitle: 'Civil Engineering', highlight: true },
-    { icon: <Home size={28} />, title: 'NHBRC', subtitle: 'National Home Builders Registration', highlight: false },
+    { icon: <Home size={28} />, title: 'NHBRC', subtitle: 'National Home Builders Registration Council', highlight: false },
+    { icon: <Users size={28} />, title: 'COIDA', subtitle: 'Registered with the Department of Labour', highlight: false },
   ];
 
   return (
@@ -630,20 +701,27 @@ export function PropertiesWireframe_ValuesImpact(): ReactNode {
   ];
 
   const impacts = [
-    { icon: <Users size={22} />, label: 'Employment', value: 1000, suffix: 's+', description: 'Jobs created across construction sites nationally' },
-    { icon: <GraduationCap size={22} />, label: 'Skills Development', value: 500, suffix: '+', description: 'Training and upskilling programmes delivered' },
-    { icon: <Home size={22} />, label: 'Settlements', value: 9, suffix: '', description: 'Provinces with dignified housing developments' },
+    { icon: <Home size={22} />, label: 'Sustainable Settlements', value: 9, suffix: '', description: 'Provinces with dignified housing developments' },
+    { icon: <Users size={22} />, label: 'Employment Created', value: 1000, suffix: 's+', description: 'Jobs and skills development across construction sites nationally' },
+    { icon: <GraduationCap size={22} />, label: 'Economic Participation', value: 500, suffix: '+', description: 'Local community and enterprise development initiatives' },
   ];
 
   return (
     <SectionWrapper>
       <div className="max-w-7xl mx-auto">
         {/* Section label */}
-        <div className="flex items-center gap-3 mb-10">
+        <div className="flex items-center gap-3 mb-6">
           <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
           <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
-            SEC 04 — VALUES & IMPACT
+            SEC 05 — VALUES & IMPACT
           </span>
+        </div>
+
+        <div className="mb-10">
+          <h2 className="font-bebas-neue typo-headline-big tracking-wide uppercase mb-3" style={{ color: 'var(--vharanani-charcoal)' }}>Our Values & Impact</h2>
+          <p className="font-inter typo-copy max-w-3xl" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+            Vharanani Properties is committed to contributing to South Africa's socioeconomic development through responsible infrastructure delivery. Our work reflects our mission to restore dignity through infrastructure development.
+          </p>
         </div>
 
         {/* Values Grid */}
@@ -719,16 +797,16 @@ export function PropertiesWireframe_ContactFootprint(): ReactNode {
     head: {
       name: 'Head Office',
       city: 'Johannesburg',
-      address: 'Johannesburg, Gauteng, South Africa',
-      phone: '+27 (0) 11 XXX XXXX',
-      email: 'info@vharanani.com',
+      address: '18 Hume Road, Dunkeld West, Johannesburg, 2196, South Africa',
+      phone: '+27 11 656 1418',
+      email: 'info@vharananiproperties.co.za',
     },
     polokwane: {
       name: 'Polokwane Office',
       city: 'Polokwane',
-      address: 'Polokwane, Limpopo, South Africa',
-      phone: '+27 (0) 15 XXX XXXX',
-      email: 'polokwane@vharanani.com',
+      address: '3A Schoeman Street, Polokwane, 0699, South Africa',
+      phone: '+27 15 295 6085',
+      email: 'info@vharananiproperties.co.za',
     },
   };
 
@@ -878,7 +956,7 @@ export function PropertiesWireframe_ContactFootprint(): ReactNode {
                   style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(129,41,33,0.02)' }}
                 />
                 <button
-                  onClick={() => { window.location.href = 'mailto:info@vharanani.com?subject=Project%20Enquiry'; }}
+                  onClick={() => { window.location.href = 'mailto:info@vharananiproperties.co.za?subject=Project%20Enquiry'; }}
                   className="w-full flex items-center justify-center gap-2 px-6 py-3 transition-all duration-300 hover:gap-3"
                   style={{ background: 'var(--vharanani-burgundy)' }}
                 >
