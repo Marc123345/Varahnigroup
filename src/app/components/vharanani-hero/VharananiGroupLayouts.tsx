@@ -119,8 +119,8 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-            <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
+            <div className="w-8 h-[2px]" style={{ background: 'rgba(255,255,255,0.5)' }} />
+            <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.7)' }}>
               SEC 01 — INTELLIGENCE
             </span>
           </motion.div>
@@ -139,10 +139,10 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="typo-caption tracking-[0.2em] uppercase px-3 py-1 font-inter" style={{ background: 'var(--vharanani-burgundy)', color: 'white' }}>
+            <div className="typo-caption tracking-[0.2em] uppercase px-3 py-1 font-inter" style={{ background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.3)', color: 'white' }}>
               EST. 2001
             </div>
-            <span className="typo-caption tracking-[0.15em] uppercase font-inter text-white/50">
+            <span className="typo-caption tracking-[0.15em] uppercase font-inter text-white/85">
               Polokwane, Limpopo — South Africa
             </span>
           </motion.div>
@@ -233,10 +233,10 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
           <div className="mt-0" style={{ background: 'var(--vharanani-burgundy)' }}>
             {/* Connecting line */}
             <div className="relative hidden md:block">
-              <div className="absolute top-[52px] left-[12.5%] right-[12.5%] h-[1px]" style={{ background: 'rgba(255,255,255,0.08)' }}>
+              <div className="absolute top-[52px] left-[12.5%] right-[12.5%] h-[1px]" style={{ background: 'rgba(255,255,255,0.25)' }}>
                 <motion.div
                   className="absolute inset-y-0 left-0 origin-left"
-                  style={{ background: 'var(--vharanani-burgundy)', opacity: 0.4 }}
+                  style={{ background: 'rgba(255,255,255,0.6)', opacity: 0.6 }}
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
@@ -265,14 +265,14 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: i * 0.12 + 0.2, type: 'spring', stiffness: 400 }}
                   >
-                    <div className="w-3 h-3 rounded-full" style={{ background: 'var(--vharanani-burgundy)' }} />
-                    <div className="absolute inset-0 rounded-full animate-ping" style={{ background: 'var(--vharanani-burgundy)', opacity: 0.3 }} />
+                    <div className="w-3 h-3 rounded-full" style={{ background: 'white' }} />
+                    <div className="absolute inset-0 rounded-full animate-ping" style={{ background: 'white', opacity: 0.3 }} />
                   </motion.div>
-                  <div className="typo-headline-big font-bebas-neue mb-2" style={{ color: 'var(--vharanani-burgundy)' }}>
+                  <div className="typo-headline-big font-bebas-neue mb-2" style={{ color: 'white' }}>
                     {m.year}
                   </div>
-                  <div className="w-6 h-[1px] mb-3" style={{ background: 'rgba(255,255,255,0.15)' }} />
-                  <p className="typo-copy-small font-inter" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                  <div className="w-6 h-[1px] mb-3" style={{ background: 'rgba(255,255,255,0.35)' }} />
+                  <p className="typo-copy-small font-inter" style={{ color: 'rgba(255,255,255,0.85)' }}>
                     {m.event}
                   </p>
                 </motion.div>
@@ -349,8 +349,8 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
             <div className="lg:col-span-7">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-                <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
+                <div className="w-8 h-[2px]" style={{ background: 'rgba(255,255,255,0.5)' }} />
+                <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.7)' }}>
                   SEC 02 — HOLDINGS
                 </span>
               </div>
@@ -359,7 +359,7 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
               </h2>
             </div>
             <div className="lg:col-span-5">
-              <p className="typo-copy font-inter" style={{ color: 'rgba(255,255,255,0.5)' }}>
+              <p className="typo-copy font-inter" style={{ color: 'rgba(255,255,255,0.85)' }}>
                 Three distinct divisions working in concert — construction, property development, and social impact — to deliver sustainable value across South Africa.
               </p>
             </div>
@@ -425,16 +425,16 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
             {/* Content — spans 5 cols */}
             <div className="lg:col-span-5 p-8 md:p-10 flex flex-col justify-center" style={{ background: 'rgba(255,255,255,0.03)' }}>
               <div className="flex items-center gap-2 mb-4">
-                <span style={{ color: 'var(--vharanani-burgundy)' }}>{divisions[0].icon}</span>
-                <span className="typo-caption tracking-[0.2em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
+                <span style={{ color: 'white' }}>{divisions[0].icon}</span>
+                <span className="typo-caption tracking-[0.2em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.7)' }}>
                   {divisions[0].tag}
                 </span>
               </div>
               <h3 className="typo-headline-big font-bebas-neue uppercase tracking-wide text-white mb-4">
                 {divisions[0].title}
               </h3>
-              <div className="w-10 h-[2px] mb-5" style={{ background: 'var(--vharanani-burgundy)' }} />
-              <p className="typo-copy font-inter text-white/60 mb-8">
+              <div className="w-10 h-[2px] mb-5" style={{ background: 'rgba(255,255,255,0.4)' }} />
+              <p className="typo-copy font-inter text-white/80 mb-8">
                 {divisions[0].description}
               </p>
 
@@ -446,10 +446,10 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
                     className="p-4 text-center"
                     style={{ borderRight: si < 2 ? '1px solid rgba(255,255,255,0.1)' : 'none' }}
                   >
-                    <div className="typo-headline-small font-bebas-neue" style={{ color: 'var(--vharanani-burgundy)' }}>
+                    <div className="typo-headline-small font-bebas-neue text-white">
                       {stat.value}
                     </div>
-                    <div className="typo-meta tracking-[0.1em] uppercase font-inter text-white/60 mt-1">
+                    <div className="typo-meta tracking-[0.1em] uppercase font-inter text-white/70 mt-1">
                       {stat.label}
                     </div>
                   </div>
@@ -498,8 +498,8 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
                   </div>
                   {/* Tag + icon bottom-left */}
                   <div className="absolute bottom-5 left-6 flex items-center gap-2">
-                    <span style={{ color: 'var(--vharanani-burgundy-60)' }}>{div.icon}</span>
-                    <span className="typo-caption tracking-[0.2em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
+                    <span style={{ color: 'rgba(255,255,255,0.9)' }}>{div.icon}</span>
+                    <span className="typo-caption tracking-[0.2em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.9)' }}>
                       {div.tag}
                     </span>
                   </div>
@@ -510,7 +510,7 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
                   <h3 className="typo-subline font-bebas-neue uppercase tracking-wide text-white mb-3">
                     {div.title}
                   </h3>
-                  <p className="typo-copy-small font-inter text-white/50 mb-6">
+                  <p className="typo-copy-small font-inter text-white/85 mb-6">
                     {div.description}
                   </p>
 
@@ -522,10 +522,10 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
                         className="py-3 px-3 text-center"
                         style={{ borderRight: si < 2 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}
                       >
-                        <div className="typo-headline-small font-bebas-neue" style={{ color: 'var(--vharanani-burgundy)' }}>
+                        <div className="typo-headline-small font-bebas-neue text-white">
                           {stat.value}
                         </div>
-                        <div className="typo-meta tracking-[0.1em] uppercase font-inter text-white/60 mt-1">
+                        <div className="typo-meta tracking-[0.1em] uppercase font-inter text-white/70 mt-1">
                           {stat.label}
                         </div>
                       </div>
@@ -570,14 +570,14 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
             <div className="relative grid grid-cols-1 md:grid-cols-12 gap-0">
               {/* Left text */}
               <div className="md:col-span-4 p-8 md:p-10 flex flex-col justify-center" style={{ borderRight: '1px solid rgba(255,255,255,0.1)' }}>
-                <div className="typo-caption tracking-[0.2em] uppercase font-inter mb-3" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                <div className="typo-caption tracking-[0.2em] uppercase font-inter mb-3" style={{ color: 'rgba(255,255,255,0.85)' }}>
                   COMBINED GROUP PORTFOLIO
                 </div>
                 <h3 className="typo-subline font-bebas-neue uppercase tracking-wide text-white mb-3">
                   Diversified Value Creation
                 </h3>
                 <div className="w-8 h-[2px] mb-4" style={{ background: 'rgba(255,255,255,0.3)' }} />
-                <p className="typo-copy-small font-inter text-white/50">
+                <p className="typo-copy-small font-inter text-white/85">
                   Across all divisions, the Vharanani Group has built a track record of delivery, impact, and sustainable growth.
                 </p>
               </div>
@@ -818,7 +818,7 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
       {/* ── CLOSING SUMMARY BAND ── */}
       <div className="relative overflow-hidden" style={{ background: 'var(--vharanani-burgundy)' }}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-0 py-12" style={{ borderTop: '3px solid var(--vharanani-burgundy)' }}>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-0 py-12" style={{ borderTop: '1px solid rgba(255,255,255,0.2)' }}>
             {pillars.map((pillar, i) => (
               <motion.div
                 key={pillar.step + '-summary'}
@@ -829,13 +829,13 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
                 className="p-6 text-center"
                 style={{ borderRight: i < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}
               >
-                <div className="w-10 h-10 mx-auto mb-3 flex items-center justify-center" style={{ border: '1px solid var(--vharanani-burgundy)', color: 'var(--vharanani-burgundy)' }}>
+                <div className="w-10 h-10 mx-auto mb-3 flex items-center justify-center" style={{ border: '1px solid rgba(255,255,255,0.4)', color: 'white' }}>
                   {pillar.icon}
                 </div>
                 <div className="typo-headline-small font-bebas-neue uppercase tracking-wide text-white mb-1">
                   {pillar.title}
                 </div>
-                <div className="typo-headline-big font-bebas-neue" style={{ color: 'var(--vharanani-burgundy)' }}>
+                <div className="typo-headline-big font-bebas-neue text-white">
                   {pillar.metric.value}
                 </div>
                 <div className="typo-meta tracking-[0.1em] uppercase font-inter text-white/60 mt-1">
@@ -966,8 +966,8 @@ export function GroupWireframe_ImpactGovernance(): ReactNode {
     <SectionWrapper dark>
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-          <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
+          <div className="w-8 h-[2px]" style={{ background: 'rgba(255,255,255,0.5)' }} />
+          <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.7)' }}>
             SEC 05 — IMPACT
           </span>
         </div>
@@ -990,7 +990,7 @@ export function GroupWireframe_ImpactGovernance(): ReactNode {
               {impactStats.map((stat) => (
                 <div key={stat.label} className="p-6" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
                   <AnimatedCounter target={stat.value} suffix={stat.suffix} />
-                  <div className="typo-caption tracking-[0.15em] uppercase font-inter mt-1" style={{ color: 'var(--vharanani-charcoal-40)' }}>
+                  <div className="typo-caption tracking-[0.15em] uppercase font-inter mt-1" style={{ color: 'rgba(255,255,255,0.7)' }}>
                     {stat.label}
                   </div>
                 </div>
@@ -1012,14 +1012,14 @@ export function GroupWireframe_ImpactGovernance(): ReactNode {
                     borderBottom: i < governancePrinciples.length - 1 ? '1px solid rgba(255,255,255,0.1)' : 'none',
                   }}
                 >
-                  <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center" style={{ border: '1px solid var(--vharanani-burgundy)', color: 'var(--vharanani-burgundy)' }}>
+                  <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center" style={{ border: '1px solid rgba(255,255,255,0.4)', color: 'white' }}>
                     {principle.icon}
                   </div>
                   <div>
                     <div className="typo-headline-small font-bebas-neue uppercase tracking-wide text-white">
                       {principle.label}
                     </div>
-                    <div className="typo-copy-small font-inter mt-1" style={{ color: 'var(--vharanani-charcoal-40)' }}>
+                    <div className="typo-copy-small font-inter mt-1" style={{ color: 'rgba(255,255,255,0.7)' }}>
                       {principle.description}
                     </div>
                   </div>
@@ -1060,7 +1060,7 @@ export function GroupWireframe_VisionMission(): ReactNode {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
           {/* Vision */}
           <div className="p-8 md:p-12" style={{ background: '#812921' }}>
-            <div className="typo-caption tracking-[0.2em] uppercase font-inter mb-6" style={{ color: 'rgba(255,255,255,0.6)' }}>
+            <div className="typo-caption tracking-[0.2em] uppercase font-inter mb-6" style={{ color: 'rgba(255,255,255,0.85)' }}>
               OUR VISION
             </div>
             <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide text-white mb-6">
@@ -1232,12 +1232,12 @@ export function GroupWireframe_Companies(): ReactNode {
     <SectionWrapper dark>
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-          <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
+          <div className="w-8 h-[2px]" style={{ background: 'rgba(255,255,255,0.5)' }} />
+          <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.7)' }}>
             SEC 08 — SUBSIDIARIES
           </span>
         </div>
-        <p className="typo-meta tracking-[0.25em] uppercase font-inter mb-2" style={{ color: 'var(--vharanani-burgundy)' }}>COMPANIES</p>
+        <p className="typo-meta tracking-[0.25em] uppercase font-inter mb-2" style={{ color: 'rgba(255,255,255,0.7)' }}>COMPANIES</p>
         <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-8 text-white">
           Our Companies
         </h2>
@@ -1258,8 +1258,8 @@ export function GroupWireframe_Companies(): ReactNode {
                 />
                 <div className="absolute inset-0" style={{ background: 'rgba(129,41,33,0.3)' }} />
                 <div className="absolute top-4 left-4 flex items-center gap-2">
-                  <span style={{ color: 'var(--vharanani-burgundy-60)' }}>{company.icon}</span>
-                  <span className="typo-caption tracking-[0.2em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
+                  <span style={{ color: 'white' }}>{company.icon}</span>
+                  <span className="typo-caption tracking-[0.2em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.9)' }}>
                     {company.tag}
                   </span>
                 </div>
@@ -1275,7 +1275,7 @@ export function GroupWireframe_Companies(): ReactNode {
                 </p>
                 <div className="flex flex-wrap gap-3">
                   {company.highlights.map((h) => (
-                    <span key={h} className="typo-caption tracking-[0.1em] uppercase font-inter px-3 py-1" style={{ border: '1px solid rgba(255,255,255,0.15)', color: 'var(--vharanani-charcoal-40)' }}>
+                    <span key={h} className="typo-caption tracking-[0.1em] uppercase font-inter px-3 py-1" style={{ border: '1px solid rgba(255,255,255,0.3)', color: 'rgba(255,255,255,0.8)' }}>
                       {h}
                     </span>
                   ))}
