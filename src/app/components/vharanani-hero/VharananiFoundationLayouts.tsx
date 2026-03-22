@@ -126,7 +126,7 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
               </div>
               <div className="lg:col-span-5 flex flex-col gap-6">
                 <p className="typo-copy font-inter text-white/60">
-                  Empowering individuals and sustainably improving living standards across South Africa through education, housing, and community development.
+                  The David Mabilu Foundation (DMF) is a social development organisation committed to reducing poverty and sustainably improving the living standards of poor and marginalised communities across South Africa.
                 </p>
                 <div className="flex items-center gap-3">
                   <button onClick={() => onTabChange?.('impact')} className="flex items-center gap-2 px-5 py-3 transition-all duration-300 hover:gap-3" style={{ background: 'var(--vharanani-burgundy)' }}>
@@ -195,7 +195,7 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
                 The primary goal of the David Mabilu Foundation is to reduce poverty and sustainably improve the living standards of disadvantaged and marginalised communities throughout South Africa.
               </p>
               <p className="typo-copy-small font-inter mb-8" style={{ color: 'var(--vharanani-charcoal-80)' }}>
-                We believe that lasting change is achieved when communities are empowered with access to education, housing, and opportunities for social and economic development. Through targeted programmes, partnerships, and direct support, the Foundation works to address real community challenges while promoting long-term empowerment.
+                We believe that lasting change is achieved when communities are empowered with access to education, housing, and opportunities for social and economic development.
               </p>
 
               {/* Key pillars */}
@@ -281,7 +281,7 @@ export function FoundationWireframe_PartnerNetwork(): ReactNode {
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
                   <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
-                    HOW WE WORK
+                    HOW WE ACHIEVE OUR GOAL
                   </span>
                 </div>
                 <h2 className="typo-header font-bebas-neue tracking-wide uppercase text-white" style={{ lineHeight: 0.95 }}>
@@ -290,7 +290,7 @@ export function FoundationWireframe_PartnerNetwork(): ReactNode {
               </div>
               <div className="lg:col-span-5">
                 <p className="typo-copy font-inter text-white/60">
-                  The Foundation works collaboratively with a broad network of partners to deliver impactful programmes and extend its reach across communities.
+                  The David Mabilu Foundation works collaboratively with a broad network of partners to deliver impactful programmes and initiatives.
                 </p>
               </div>
             </div>
@@ -361,7 +361,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
       icon: <GraduationCap size={22} />,
       image: IMAGES.education,
       headline: 'Breaking the Cycle of Poverty',
-      description: 'The Foundation invests in education as the most powerful tool for lasting change — providing full scholarships that cover tuition, stipends, school uniforms, educational trips, and monthly grocery support for families.',
+      description: 'Education is a powerful catalyst for breaking the cycle of poverty. Through scholarships, school support programmes, and infrastructure development, the Foundation invests in the future of young South Africans.',
       details: ['Full tuition & stipends', 'School uniforms & supplies', 'Computer labs & classrooms', 'Educational trips'],
       metric: { value: '34', label: 'Full Scholarships Since 2011' },
     },
@@ -371,7 +371,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
       icon: <Home size={22} />,
       image: IMAGES.housing,
       headline: 'Dignified Shelter for All',
-      description: 'Through collaborations with government and private partners, the Foundation provides safe, dignified homes for vulnerable individuals and families — including partnerships with the Dept. of Human Settlements and the Office of the Premier.',
+      description: 'Access to safe and dignified housing is essential for improving the quality of life of vulnerable families. The Foundation supports housing initiatives that provide homes for disadvantaged individuals and families.',
       details: ['Home construction', 'Community housing', 'Government partnerships', 'Nelson Mandela Day builds'],
       metric: { value: '3BR', label: 'Home Built for Elderly in Eenzaam' },
     },
@@ -381,7 +381,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
       icon: <Heart size={22} />,
       image: IMAGES.youthCommunity,
       headline: 'Strengthening Social Wellbeing',
-      description: 'From youth sports programmes and women\'s empowerment initiatives to winter blanket drives for the elderly, the Foundation invests in the social fabric of communities across South Africa.',
+      description: 'The Foundation supports community-driven initiatives that strengthen social wellbeing, encourage youth development, and promote economic participation.',
       details: ['Youth development', 'Sports equipment & kits', 'Women\'s empowerment', 'Winter blanket drives'],
       metric: { value: '5', label: 'Provinces Reached' },
     },
@@ -397,7 +397,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
                 <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
-                  WHAT WE DO
+                  OUR KEY PROGRAMME AREAS
                 </span>
               </div>
               <h2 className="typo-header font-bebas-neue tracking-wide uppercase" style={{ color: 'var(--vharanani-charcoal)', lineHeight: 0.95 }}>
@@ -406,7 +406,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
             </div>
             <div className="lg:col-span-5">
               <p className="typo-copy font-inter" style={{ color: 'var(--vharanani-charcoal-60)' }}>
-                Three interconnected programme areas that address the fundamental needs of South Africa's most vulnerable communities — education, housing, and social wellbeing.
+                The David Mabilu Foundation focuses on three core programme areas that directly address community needs and long-term development.
               </p>
             </div>
           </div>
@@ -612,16 +612,16 @@ export function FoundationWireframe_ImpactStories(): ReactNode {
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
                 <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
-                  OUR IMPACT
+                  WHAT WE DO
                 </span>
               </div>
               <h2 className="typo-header font-bebas-neue tracking-wide uppercase" style={{ color: 'var(--vharanani-charcoal)', lineHeight: 0.95 }}>
-                Stories of<br />Transformation
+                Our Impact<br />In Action
               </h2>
             </div>
             <div className="lg:col-span-5">
               <p className="typo-copy font-inter" style={{ color: 'var(--vharanani-charcoal-60)' }}>
-                Real stories from the communities we serve — demonstrating the tangible impact of every programme, partnership, and initiative.
+                The David Mabilu Foundation focuses on initiatives and projects that assist individuals and communities to become self-sustaining and independent.
               </p>
             </div>
           </div>
@@ -758,11 +758,15 @@ export function FoundationWireframe_Heritage(): ReactNode {
               <div className="w-10 h-[2px] mb-6" style={{ background: 'var(--vharanani-burgundy)' }} />
 
               <p className="typo-copy font-inter text-white/60 mb-4">
-                By leveraging the resources, expertise, and partnerships of our parent company, the Foundation scales its reach to build stronger, more resilient communities across South Africa.
+                The David Mabilu Foundation works closely with the Vharanani Group and its subsidiary companies to support social development initiatives.
+              </p>
+
+              <p className="typo-copy-small font-inter text-white/60 mb-4">
+                Through these relationships, the Foundation is able to leverage resources, expertise, and partnerships that enhance the reach and impact of its programmes.
               </p>
 
               <p className="typo-copy-small font-inter text-white/60 mb-8">
-                The David Mabilu Foundation works closely with the Vharanani Group and its subsidiary companies to support social development initiatives. Through these relationships, the Foundation is able to leverage resources, expertise, and partnerships that enhance the reach and impact of its programmes.
+                Together, these efforts contribute to building stronger, more resilient communities across South Africa.
               </p>
 
               {/* Group divisions */}
@@ -832,11 +836,11 @@ export function FoundationWireframe_Contact(): ReactNode {
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-[2px]" style={{ background: 'rgba(255,255,255,0.5)' }} />
                 <span className="typo-caption tracking-[0.25em] uppercase font-inter text-white/50">
-                  GET INVOLVED
+                  CONTACT THE FOUNDATION
                 </span>
               </div>
               <h2 className="typo-header font-bebas-neue tracking-wide uppercase text-white" style={{ lineHeight: 0.95 }}>
-                Join Us in Building<br />Opportunity.
+                The David Mabilu<br />Foundation.
               </h2>
             </div>
           </div>
@@ -847,15 +851,15 @@ export function FoundationWireframe_Contact(): ReactNode {
           {/* Left — Contact info */}
           <div className="p-8 md:p-12 flex flex-col justify-center" style={{ background: '#812921' }}>
             <p className="typo-copy font-inter mb-8" style={{ color: 'rgba(255,255,255,0.8)' }}>
-              Reach out for partnership opportunities, community initiatives, or support enquiries. Together, we can build stronger communities.
+              For partnership opportunities, community initiatives, or support enquiries, please contact the David Mabilu Foundation.
             </p>
 
             {/* Contact details */}
             <div className="space-y-0" style={{ border: '1px solid rgba(255,255,255,0.2)' }}>
               {[
-                { icon: <Mail size={16} />, label: 'Email', value: 'info@vharanani.com' },
-                { icon: <Phone size={16} />, label: 'Phone', value: '+27 (0) 11 XXX XXXX' },
-                { icon: <MapPin size={16} />, label: 'Location', value: 'Johannesburg, South Africa' },
+                { icon: <Mail size={16} />, label: 'Email', value: 'info@vharananiproperties.co.za' },
+                { icon: <Phone size={16} />, label: 'Phone', value: '+27 11 656 1418' },
+                { icon: <MapPin size={16} />, label: 'Location', value: '18 Hume Road, Dunkeld West, Johannesburg' },
               ].map((item, i) => (
                 <div
                   key={item.label}
@@ -966,8 +970,8 @@ export function FoundationWireframe_Contact(): ReactNode {
               <span className="typo-meta tracking-wider uppercase font-inter" style={{ color: 'rgba(255,255,255,0.6)' }}>Vharanani Group</span>
             </div>
           </div>
-          <p className="typo-meta font-inter italic" style={{ color: 'rgba(255,255,255,0.5)' }}>
-            "Building opportunity. Empowering communities."
+          <p className="typo-meta font-inter" style={{ color: 'rgba(255,255,255,0.5)' }}>
+            Building opportunity. Empowering communities.
           </p>
         </div>
       </div>
