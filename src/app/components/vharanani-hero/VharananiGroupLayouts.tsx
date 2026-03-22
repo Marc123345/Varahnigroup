@@ -113,23 +113,39 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
         <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'var(--vharanani-burgundy)' }} />
 
         <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 lg:px-20 pb-12 max-w-7xl mx-auto w-full">
-          <div className="flex items-center gap-3 mb-6">
+          <motion.div
+            className="flex items-center gap-3 mb-6"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          >
             <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
             <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
               SEC 01 — INTELLIGENCE
             </span>
-          </div>
-          <h2 className="typo-header font-bebas-neue uppercase tracking-wide text-white mb-3" style={{ lineHeight: 0.95 }}>
+          </motion.div>
+          <motion.h2
+            className="typo-header font-bebas-neue uppercase tracking-wide text-white mb-3"
+            style={{ lineHeight: 0.95 }}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          >
             Building Africa's<br />Future
-          </h2>
-          <div className="flex items-center gap-4 mt-2">
+          </motion.h2>
+          <motion.div
+            className="flex items-center gap-4 mt-2"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          >
             <div className="typo-caption tracking-[0.2em] uppercase px-3 py-1 font-inter" style={{ background: 'var(--vharanani-burgundy)', color: 'white' }}>
               EST. 2001
             </div>
             <span className="typo-caption tracking-[0.15em] uppercase font-inter text-white/50">
               Polokwane, Limpopo — South Africa
             </span>
-          </div>
+          </motion.div>
         </div>
       </div>
 
@@ -193,41 +209,69 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
               { value: 500, suffix: '+', label: 'Projects Delivered' },
               { value: 5, suffix: '', label: 'Provinces Reached' },
             ].map((stat, i) => (
-              <div
+              <motion.div
                 key={stat.label}
                 className="p-6 md:p-8 text-center"
                 style={{
                   borderRight: i < 3 ? '1px solid rgba(255,255,255,0.2)' : 'none',
                   borderBottom: '1px solid rgba(255,255,255,0.2)',
                 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
               >
                 <AnimatedCounter target={stat.value} suffix={stat.suffix} color="white" />
                 <div className="typo-caption tracking-[0.15em] uppercase font-inter mt-2" style={{ color: 'rgba(255,255,255,0.7)' }}>
                   {stat.label}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
           {/* ── TIMELINE STRIP ── */}
           <div className="mt-0" style={{ background: 'var(--vharanani-charcoal)' }}>
+            {/* Connecting line */}
+            <div className="relative hidden md:block">
+              <div className="absolute top-[52px] left-[12.5%] right-[12.5%] h-[1px]" style={{ background: 'rgba(255,255,255,0.08)' }}>
+                <motion.div
+                  className="absolute inset-y-0 left-0 origin-left"
+                  style={{ background: 'var(--vharanani-burgundy)', opacity: 0.4 }}
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                />
+              </div>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-0">
               {milestones.map((m, i) => (
                 <motion.div
                   key={m.year}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  transition={{ duration: 0.5, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
                   className="p-6 md:p-8 relative"
                   style={{
                     borderRight: i < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none',
                   }}
                 >
+                  {/* Timeline dot */}
+                  <motion.div
+                    className="hidden md:flex w-3 h-3 mb-4 relative"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: i * 0.12 + 0.2, type: 'spring', stiffness: 400 }}
+                  >
+                    <div className="w-3 h-3 rounded-full" style={{ background: 'var(--vharanani-burgundy)' }} />
+                    <div className="absolute inset-0 rounded-full animate-ping" style={{ background: 'var(--vharanani-burgundy)', opacity: 0.3 }} />
+                  </motion.div>
                   <div className="typo-headline-big font-bebas-neue mb-2" style={{ color: 'var(--vharanani-burgundy)' }}>
                     {m.year}
                   </div>
-                  <div className="w-6 h-[2px] mb-3" style={{ background: 'rgba(255,255,255,0.15)' }} />
+                  <div className="w-6 h-[1px] mb-3" style={{ background: 'rgba(255,255,255,0.15)' }} />
                   <p className="typo-copy-small font-inter" style={{ color: 'rgba(255,255,255,0.5)' }}>
                     {m.event}
                   </p>
@@ -335,12 +379,18 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
             style={{ border: '1px solid rgba(255,255,255,0.1)' }}
           >
             {/* Image — spans 7 cols */}
-            <div className="lg:col-span-7 relative h-[320px] lg:h-[480px] overflow-hidden">
+            <div className="lg:col-span-7 relative h-[320px] lg:h-[480px] overflow-hidden group/img">
+              <motion.div
+                className="absolute inset-0"
+                whileHover={{ scale: 1.04 }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              >
               <ImageWithFallback
                 src={divisions[0].image}
                 alt={divisions[0].title}
                 className="absolute inset-0 w-full h-full object-cover"
               />
+              </motion.div>
               <div className="absolute inset-0" style={{
                 background: 'linear-gradient(135deg, rgba(129,41,33,0.35) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.7) 100%)'
               }} />
@@ -420,17 +470,23 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.15 }}
+                transition={{ duration: 0.6, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
                 className="overflow-hidden"
                 style={{ border: '1px solid rgba(255,255,255,0.1)' }}
               >
                 {/* Image top */}
                 <div className="relative h-[260px] overflow-hidden">
+                  <motion.div
+                    className="absolute inset-0"
+                    whileHover={{ scale: 1.06 }}
+                    transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                  >
                   <ImageWithFallback
                     src={div.image}
                     alt={div.title}
                     className="absolute inset-0 w-full h-full object-cover"
                   />
+                  </motion.div>
                   <div className="absolute inset-0" style={{
                     background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.75) 100%)'
                   }} />
@@ -672,11 +728,17 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
                 >
                   {/* Image side */}
                   <div className={`lg:col-span-5 relative h-[280px] lg:h-auto lg:min-h-[380px] overflow-hidden ${isEven ? '' : 'lg:order-2'}`}>
+                    <motion.div
+                      className="absolute inset-0"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                    >
                     <ImageWithFallback
                       src={pillar.image}
                       alt={pillar.title}
                       className="absolute inset-0 w-full h-full object-cover"
                     />
+                    </motion.div>
                     <div className="absolute inset-0" style={{
                       background: isEven
                         ? 'linear-gradient(135deg, rgba(129,41,33,0.4) 0%, rgba(0,0,0,0.5) 100%)'
@@ -846,27 +908,33 @@ export function GroupWireframe_Leadership(): ReactNode {
         {/* Executive team */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-0" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
           {executives.map((exec, i) => (
-            <div
+            <motion.div
               key={exec.initial}
-              className="p-6 text-center"
+              className="p-6 text-center cursor-default group"
               style={{
                 borderRight: i < 3 ? '1px solid var(--vharanani-charcoal-20)' : 'none',
                 borderLeft: '3px solid var(--vharanani-burgundy)',
               }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -4 }}
             >
-              <div
-                className="w-16 h-16 mx-auto mb-4 flex items-center justify-center typo-subline font-bebas-neue"
+              <motion.div
+                className="w-16 h-16 mx-auto mb-4 flex items-center justify-center typo-subline font-bebas-neue transition-colors duration-300"
                 style={{ background: 'var(--vharanani-charcoal)', color: 'white' }}
+                whileHover={{ background: '#812921' }}
               >
                 {exec.initial}
-              </div>
+              </motion.div>
               <div className="typo-headline-small font-bebas-neue uppercase tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>
                 {exec.name}
               </div>
               <div className="typo-caption font-inter mt-1" style={{ color: 'var(--vharanani-charcoal-60)' }}>
                 {exec.role}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
