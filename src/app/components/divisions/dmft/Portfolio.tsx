@@ -5,10 +5,10 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const IMAGES = {
-  residentialEstate: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_faranani-estate-1-1.jpg?w=1080&ssl=1',
-  apartment: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2021/06/SOSHANGUVE-EXT.19-RDP-HOUSES-1.jpg?w=1080&ssl=1',
-  townhouse: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2021/06/Mamelodi-Ext-5-4.jpg?w=1080&ssl=1',
-  mixedUse: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_untitled_panorama4-1.jpg?w=1080&ssl=1',
+  residentialEstate: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80&fit=crop',
+  apartment: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80&fit=crop',
+  townhouse: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80&fit=crop',
+  mixedUse: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=80&fit=crop',
 };
 
 export function DMFTWireframe_Portfolio(): ReactNode {
@@ -117,7 +117,7 @@ export function DMFTWireframe_Portfolio(): ReactNode {
             </div>
 
             {/* Content — 5 cols */}
-            <div className="lg:col-span-5 p-8 md:p-10 flex flex-col justify-center" style={{ background: '#fafafa' }}>
+            <div className="lg:col-span-5 p-5 sm:p-8 md:p-10 flex flex-col justify-center" style={{ background: '#fafafa' }}>
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-10 h-10 flex items-center justify-center" style={{ border: '1.5px solid var(--vharanani-burgundy)', color: 'var(--vharanani-burgundy)' }}>
                   <Building2 size={22} />

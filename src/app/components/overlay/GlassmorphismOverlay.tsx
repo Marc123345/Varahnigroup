@@ -35,6 +35,8 @@ export function GlassmorphismOverlay({
   breadcrumb,
 }: GlassmorphismOverlayProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const tabBarRef = useRef<HTMLDivElement>(null);
+  const tabButtonRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const [visibleSection, setVisibleSection] = useState(tabs[0]?.id || '');
   const isScrollingTo = useRef(false);
@@ -58,6 +60,12 @@ export function GlassmorphismOverlay({
       setTabDirection(newIndex >= prevTabIndexRef.current ? 1 : -1);
       prevTabIndexRef.current = newIndex;
       safeVibrate(5);
+      // Scroll active tab button into view in the tab bar
+      requestAnimationFrame(() => {
+        const btn = tabButtonRefs.current[tabId];
+        const bar = tabBarRef.current;
+        if (btn && bar) btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+      });
 
       if (scrollMode) {
         const el = sectionRefs.current[tabId];
@@ -170,6 +178,7 @@ export function GlassmorphismOverlay({
 
       {/* ── NAV BAR ── */}
       <div
+        ref={tabBarRef}
         className="relative flex items-center gap-0 px-3 sm:px-6 lg:px-10 border-b overflow-x-auto"
         style={{
           borderColor: 'rgba(255,255,255,0.12)',
@@ -242,8 +251,9 @@ export function GlassmorphismOverlay({
           return (
             <button
               key={tab.id}
+              ref={(el) => { tabButtonRefs.current[tab.id] = el; }}
               onClick={() => goToTab(tab.id)}
-              className="relative px-2 sm:px-4 py-3 sm:py-4 transition-colors duration-200 flex-shrink-0 group"
+              className="relative px-2 sm:px-4 py-3 sm:py-4 transition-colors duration-200 flex-shrink-0 group min-h-[44px]"
             >
               <motion.div
                 className="absolute inset-x-0 inset-y-[4px] rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200"

@@ -5,12 +5,12 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const IMAGES = {
-  aerialDev: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/09/DJI_0247-scaled.jpg?w=1440&ssl=1',
-  blueprint: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/Mogalakwena.jpg?w=1080&ssl=1',
-  propertyDev: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/10/Property-development-scaled.jpg?w=1080&ssl=1',
-  residentialEstate: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_faranani-estate-1-1.jpg?w=1080&ssl=1',
-  mixedUse: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dsc_0127.jpg?w=1080&ssl=1',
-  townhouse: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/09/DJI_0247-scaled.jpg?w=1440&ssl=1',
+  aerialDev: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?w=1200&q=80&fit=crop',
+  blueprint: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80&fit=crop',
+  propertyDev: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80&fit=crop',
+  residentialEstate: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80&fit=crop',
+  mixedUse: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=80&fit=crop',
+  townhouse: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80&fit=crop',
 };
 
 export function DMFTWireframe_CapabilitiesQuality(): ReactNode {
@@ -59,7 +59,7 @@ export function DMFTWireframe_CapabilitiesQuality(): ReactNode {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
             {/* Left — Capability List (7 cols) */}
-            <div className="lg:col-span-7 relative p-8 md:p-10" style={{ background: 'rgba(255,255,255,0.02)' }}>
+            <div className="lg:col-span-7 relative p-4 sm:p-8 md:p-10" style={{ background: 'rgba(255,255,255,0.02)' }}>
               {/* Hover background image */}
               {hoveredIdx !== null && (
                 <div className="absolute inset-0 transition-opacity duration-500 opacity-10">
@@ -109,7 +109,7 @@ export function DMFTWireframe_CapabilitiesQuality(): ReactNode {
             </div>
 
             {/* Right — Quality Manifesto (5 cols) */}
-            <div className="lg:col-span-5 p-8 md:p-10 flex flex-col justify-center" style={{ background: 'rgba(255,255,255,0.04)', borderLeft: '1px solid rgba(255,255,255,0.08)' }}>
+            <div className="lg:col-span-5 p-4 sm:p-8 md:p-10 flex flex-col justify-center" style={{ background: 'rgba(255,255,255,0.04)', borderLeft: '1px solid rgba(255,255,255,0.08)' }}>
               <div className="typo-caption tracking-[0.3em] uppercase font-inter mb-6" style={{ color: 'var(--vharanani-burgundy)' }}>
                 COMMITMENT TO QUALITY
               </div>

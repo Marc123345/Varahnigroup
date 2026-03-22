@@ -94,7 +94,7 @@ function PhaseBlock({ phase, index }: { phase: Phase; index: number }) {
         <span
           className="font-bebas-neue"
           style={{
-            fontSize: 'clamp(200px, 30vw, 420px)',
+            fontSize: 'clamp(80px, 28vw, 420px)',
             lineHeight: 0.85,
             color: 'rgba(255,255,255,0.022)',
             paddingRight: isEven ? '4vw' : 0,
@@ -174,7 +174,7 @@ function PhaseBlock({ phase, index }: { phase: Phase; index: number }) {
 
           {/* ── CONTENT ── */}
           <div
-            className="flex flex-col justify-center px-10 md:px-16 py-20"
+            className="flex flex-col justify-center px-5 sm:px-10 md:px-16 py-10 sm:py-16 md:py-20"
             style={{ order: isEven ? 1 : 2 }}
           >
             {/* Step indicator */}
@@ -307,7 +307,7 @@ export function DMFTWireframe_DevelopmentApproach(): ReactNode {
           </span>
         </div>
 
-        <div className="relative max-w-screen-xl mx-auto px-8 md:px-16 py-24 md:py-36">
+        <div className="relative max-w-screen-xl mx-auto px-5 sm:px-8 md:px-16 py-14 sm:py-20 md:py-36">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
 
             {/* Left: heading */}

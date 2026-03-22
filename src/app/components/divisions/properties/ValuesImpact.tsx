@@ -5,7 +5,7 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { AnimatedCounter, SectionWrapper } from '../shared';
 
 const IMAGES = {
-  values: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_untitled_panorama4-1.jpg?w=1080&ssl=1',
+  values: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80&fit=crop',
 };
 
 export function PropertiesWireframe_ValuesImpact(): ReactNode {

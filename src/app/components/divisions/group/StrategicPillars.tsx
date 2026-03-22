@@ -83,7 +83,7 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
           </span>
         </div>
 
-        <div className="relative max-w-screen-xl mx-auto px-8 md:px-16 py-20 md:py-28">
+        <div className="relative max-w-screen-xl mx-auto px-4 sm:px-8 md:px-16 py-14 md:py-20 lg:py-28">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-end">
 
             <div>
@@ -405,7 +405,7 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
               {/* Header row */}
               <button
                 onClick={() => setActive(isActive ? '' : pillar.num)}
-                className="w-full flex items-center gap-4 px-6 py-5 text-left"
+                className="w-full flex items-center gap-4 px-4 sm:px-6 py-4 sm:py-5 text-left min-h-[56px]"
                 style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}
               >
                 <span
@@ -454,7 +454,7 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
                     </div>
 
                     {/* Content */}
-                    <div className="px-6 py-8" style={{ background: '#080808' }}>
+                    <div className="px-4 sm:px-6 py-7 sm:py-8" style={{ background: '#080808' }}>
                       <p
                         className="typo-copy-small font-inter mb-6"
                         style={{ color: 'rgba(255,255,255,0.48)', lineHeight: 1.72 }}
@@ -537,7 +537,7 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
               return (
                 <motion.div
                   key={p.num}
-                  className="py-10 px-8 flex flex-col items-center text-center"
+                  className="py-8 px-4 sm:px-6 md:px-8 flex flex-col items-center text-center"
                   style={{ borderRight: i < 3 ? '1px solid rgba(255,255,255,0.1)' : 'none' }}
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}

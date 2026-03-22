@@ -60,7 +60,7 @@ export function GroupWireframe_Leadership(): ReactNode {
           {executives.map((exec, i) => (
             <motion.div
               key={exec.initial}
-              className="p-6 text-center cursor-default group"
+              className="p-4 md:p-6 text-center cursor-default group"
               style={{
                 borderRight: i < 3 ? '1px solid var(--vharanani-charcoal-20)' : 'none',
                 borderLeft: '3px solid var(--vharanani-burgundy)',

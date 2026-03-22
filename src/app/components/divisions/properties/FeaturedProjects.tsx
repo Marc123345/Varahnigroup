@@ -5,13 +5,13 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const IMAGES = {
-  roadsCivils: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2021/07/DJI_0673-scaled.jpg?w=1440&ssl=1',
-  waterSanitation: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_5-nandoni-dam-1-1.jpg?w=1080&ssl=1',
-  buildingConstruction: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2021/06/MAPHUTA-MALATJIE-HOSPITAL-2.jpg?w=1080&ssl=1',
-  residential: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2021/06/SOSHANGUVE-EXT.19-RDP-HOUSES-1.jpg?w=1080&ssl=1',
-  propertyDev: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/10/Property-development-scaled.jpg?w=1080&ssl=1',
-  facilitiesMgmt: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2021/06/Transnet-12.jpg?w=1080&ssl=1',
-  brt: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/Tswane-BRT.jpg?w=1080&ssl=1',
+  roadsCivils: 'https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=1200&q=80&fit=crop',
+  waterSanitation: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80&fit=crop',
+  buildingConstruction: 'https://images.unsplash.com/photo-1587653915936-5e762e0fc0a0?w=1200&q=80&fit=crop',
+  residential: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80&fit=crop',
+  propertyDev: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=80&fit=crop',
+  facilitiesMgmt: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1200&q=80&fit=crop',
+  brt: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&q=80&fit=crop',
 };
 
 export function PropertiesWireframe_FeaturedProjects(): ReactNode {

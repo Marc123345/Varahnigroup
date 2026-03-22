@@ -183,7 +183,7 @@ export function GroupWireframe_Governance(): ReactNode {
             <div className="lg:col-span-7 flex flex-col">
 
               {/* Detail content */}
-              <div className="flex-1 p-8 md:p-10" style={{ minHeight: '200px' }}>
+              <div className="flex-1 p-5 sm:p-8 md:p-10" style={{ minHeight: '200px' }}>
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={active}

@@ -5,8 +5,8 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { AnimatedCounter } from '../shared';
 
 const IMAGES = {
-  aerialDev: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/09/DJI_0247-scaled.jpg?w=1440&ssl=1',
-  architectural: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dsc_0127.jpg?w=1080&ssl=1',
+  aerialDev: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?w=1400&q=85&fit=crop',
+  architectural: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=80&fit=crop',
 };
 
 export function DMFTWireframe_HeroAbout({ onTabChange }: { onTabChange?: (tabId: string) => void } = {}): ReactNode {

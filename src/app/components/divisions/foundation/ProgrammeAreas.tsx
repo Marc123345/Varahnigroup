@@ -320,16 +320,15 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-          <div className="grid grid-cols-3">
+          <div className="grid grid-cols-3 divide-x divide-white/10">
             {PROGRAMMES.map((p, i) => {
               const Icon = p.icon;
               return (
                 <motion.button
                   key={p.num}
                   onClick={() => setActive(p.num)}
-                  className="py-8 px-4 text-center"
+                  className="py-6 sm:py-8 px-2 sm:px-4 text-center"
                   style={{
-                    borderRight: i < 2 ? '1px solid rgba(255,255,255,0.12)' : 'none',
                     opacity: active === p.num ? 1 : 0.65,
                     transition: 'opacity 0.25s ease',
                   }}

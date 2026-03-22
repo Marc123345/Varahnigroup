@@ -129,7 +129,7 @@ export function FoundationWireframe_ImpactStories(): ReactNode {
               </div>
 
               {/* Right — Story + details */}
-              <div className="lg:col-span-7 p-8 md:p-10" style={{ background: '#fafafa' }}>
+              <div className="lg:col-span-7 p-5 sm:p-8 md:p-10" style={{ background: '#fafafa' }}>
                 <h3 className="typo-subline font-bebas-neue tracking-wide uppercase mb-5" style={{ color: 'var(--vharanani-charcoal)' }}>
                   {current.title}
                 </h3>
