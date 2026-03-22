@@ -86,62 +86,6 @@ const IMAGES = {
 export function DMFTWireframe_HeroAbout({ onTabChange }: { onTabChange?: (tabId: string) => void } = {}): ReactNode {
   return (
     <div>
-      {/* ── CINEMATIC HERO ── */}
-      <div className="relative h-[45vh] sm:h-[55vh] min-h-[320px] sm:min-h-[440px] overflow-hidden">
-        <ImageWithFallback
-          src={IMAGES.aerialDev}
-          alt="Aerial view of DMFT property development"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0" style={{
-          background: 'linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.85) 100%)'
-        }} />
-        <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-
-        {/* Nav bar */}
-        <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-6 md:px-12 lg:px-20 py-5">
-          <div className="font-bebas-neue typo-headline-small tracking-wider text-white uppercase opacity-80">DMFT Property Developers</div>
-          <div className="hidden md:flex items-center gap-6">
-            {['About', 'Developments', 'Approach', 'Vharanani Group', 'Contact'].map((item) => (
-              <span key={item} className="font-inter typo-meta tracking-[0.12em] uppercase text-white opacity-50 hover:opacity-100 cursor-pointer transition-opacity">{item}</span>
-            ))}
-          </div>
-        </div>
-
-        {/* Hero content */}
-        <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 lg:px-20 pb-14">
-          <div className="max-w-7xl mx-auto w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-              <div className="lg:col-span-7">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-                  <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
-                    DMFT PROPERTY DEVELOPERS
-                  </span>
-                </div>
-                <h1 className="typo-header font-bebas-neue tracking-wide uppercase text-white" style={{ lineHeight: 0.95 }}>
-                  Creating Exceptional<br />Property Developments.
-                </h1>
-              </div>
-              <div className="lg:col-span-5 flex flex-col gap-6">
-                <p className="typo-copy font-inter text-white/60">
-                  DMFT Property Developers is a property development company focused on the creation of high-quality residential and mixed-use developments across South Africa. As part of the Vharanani Group, DMFT leverages deep expertise in construction, infrastructure development, and project management to deliver well-planned developments that meet the needs of modern communities.
-                </p>
-                <div className="flex items-center gap-3">
-                  <button onClick={() => onTabChange?.('residential-estates')} className="flex items-center gap-2 px-5 py-3 transition-all duration-300 hover:gap-3" style={{ background: 'var(--vharanani-burgundy)' }}>
-                    <span className="font-bebas-neue typo-headline-small tracking-wider uppercase text-white">View Developments</span>
-                    <ArrowRight size={14} className="text-white" />
-                  </button>
-                  <button onClick={() => onTabChange?.('approach')} className="flex items-center gap-2 px-5 py-3 transition-all duration-300 hover:bg-white/10" style={{ border: '1px solid rgba(255,255,255,0.3)' }}>
-                    <span className="font-bebas-neue typo-headline-small tracking-wider uppercase text-white">Our Process</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* ── STATS BAR ── */}
       <div style={{ background: '#812921' }}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
@@ -294,42 +238,6 @@ export function DMFTWireframe_DevelopmentApproach(): ReactNode {
 
   return (
     <SectionWrapper className="!py-0 !px-0">
-      {/* ── HEADER BAND ── */}
-      <div className="relative h-[35vh] sm:h-[40vh] min-h-[260px] sm:min-h-[320px] overflow-hidden">
-        <ImageWithFallback
-          src={IMAGES.blueprint}
-          alt="Property development planning"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0" style={{
-          background: 'linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.98) 100%)'
-        }} />
-        <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-
-        <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 lg:px-20 pb-12">
-          <div className="max-w-7xl mx-auto w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-              <div className="lg:col-span-7">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-                  <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
-                    OUR PROCESS
-                  </span>
-                </div>
-                <h2 className="typo-header font-bebas-neue tracking-wide uppercase text-white" style={{ lineHeight: 0.95 }}>
-                  Development<br />Approach
-                </h2>
-              </div>
-              <div className="lg:col-span-5">
-                <p className="typo-copy font-inter text-white/50">
-                  We manage the full lifecycle of property development — from strategic land identification through to sales and handover, ensuring every project is delivered to the highest standards.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* ── ALTERNATING PHASE CARDS ── */}
       <div style={{ background: '#ffffff' }}>
         {phases.map((phase, i) => {
@@ -759,33 +667,6 @@ export function DMFTWireframe_CapabilitiesQuality(): ReactNode {
 
   return (
     <SectionWrapper className="!py-0 !px-0">
-      {/* ── HEADER BAND ── */}
-      <div className="relative h-[30vh] min-h-[240px] overflow-hidden">
-        <ImageWithFallback
-          src={IMAGES.propertyDev}
-          alt="DMFT development expertise"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0" style={{
-          background: 'linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.85) 100%)'
-        }} />
-        <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-
-        <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 lg:px-20 pb-10">
-          <div className="max-w-7xl mx-auto w-full">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-              <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
-                EXPERTISE
-              </span>
-            </div>
-            <h2 className="typo-header font-bebas-neue tracking-wide uppercase text-white" style={{ lineHeight: 0.95 }}>
-              Capabilities &<br />Quality
-            </h2>
-          </div>
-        </div>
-      </div>
-
       {/* ── CONTENT SPLIT ── */}
       <div className="px-6 md:px-12 lg:px-20 py-0" style={{ background: 'var(--vharanani-burgundy)' }}>
         <div className="max-w-7xl mx-auto">
@@ -891,31 +772,6 @@ export function DMFTWireframe_HeritageContact(): ReactNode {
   return (
     <div>
       <div className="overflow-hidden">
-        {/* ── CONTACT HEADER BAND ── */}
-        <div className="relative h-[28vh] min-h-[220px] overflow-hidden">
-          <ImageWithFallback
-            src={IMAGES.aerialDev}
-            alt="DMFT developments aerial"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0" style={{
-            background: 'linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.9) 100%)'
-          }} />
-          <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 lg:px-20 pb-10">
-            <div className="max-w-7xl mx-auto w-full">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-                <span className="typo-caption tracking-[0.25em] uppercase font-inter text-white/50">
-                  OUR HERITAGE & CONTACT
-                </span>
-              </div>
-              <h2 className="typo-header font-bebas-neue tracking-wide uppercase text-white" style={{ lineHeight: 0.95 }}>
-                Part of the<br />Vharanani Group.
-              </h2>
-            </div>
-          </div>
-        </div>
-
         {/* ── HERITAGE + CONTACT SPLIT ── */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
           {/* Left — Heritage */}

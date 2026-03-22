@@ -635,42 +635,6 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
 
   return (
     <SectionWrapper className="!py-0 !px-0">
-      {/* ── CINEMATIC HEADER BAND ── */}
-      <div className="relative h-[40vh] min-h-[340px] overflow-hidden">
-        <ImageWithFallback
-          src={PILLAR_IMAGES.panorama}
-          alt="Strategic growth across Africa"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0" style={{
-          background: 'linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.98) 100%)'
-        }} />
-        <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-
-        <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 lg:px-20 pb-12">
-          <div className="max-w-7xl mx-auto w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-              <div className="lg:col-span-7">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-                  <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
-                    STRATEGY
-                  </span>
-                </div>
-                <h2 className="typo-header font-bebas-neue uppercase tracking-wide text-white" style={{ lineHeight: 0.95 }}>
-                  Strategic<br />Pillars
-                </h2>
-              </div>
-              <div className="lg:col-span-5">
-                <p className="typo-copy font-inter text-white/50">
-                  Four interconnected pillars that define our growth trajectory — each reinforcing the others to create a resilient, diversified platform for sustainable value creation.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* ── PILLAR CARDS — Alternating layout ── */}
       <div style={{ background: '#ffffff' }}>
         {pillars.map((pillar, i) => {
