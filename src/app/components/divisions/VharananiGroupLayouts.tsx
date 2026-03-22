@@ -287,70 +287,70 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
 
 
 // ═══════════════════════════════════════════════════════════
-// SECTION 2: PORTFOLIO GRID — "Our Portfolio"
-// Hover-expand cards for each subsidiary
+// SECTION 2: PORTFOLIO GRID — Bento Layout
 // ═══════════════════════════════════════════════════════════
 
 export function GroupWireframe_PortfolioGrid(): ReactNode {
-  const PORTFOLIO_IMAGES = {
-    construction: 'https://images.unsplash.com/photo-1768053823555-b75cd4ead6c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBzaXRlJTIwZXhjYXZhdG9yJTIwY2l2aWwlMjBlbmdpbmVlcmluZyUyMHJvYWR8ZW58MXx8fHwxNzczNzQ3NjY3fDA&ixlib=rb-4.1.0&q=80&w=1080',
-    foundation: 'https://images.unsplash.com/photo-1632215861513-130b66fe97f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwY29tbXVuaXR5JTIwZWR1Y2F0aW9uJTIwY2hpbGRyZW4lMjBzY2hvb2wlMjBjbGFzc3Jvb218ZW58MXx8fHwxNzczNzQ3NjYzfDA&ixlib=rb-4.1.0&q=80&w=1080',
-    dmft: 'https://images.unsplash.com/photo-1505138074712-436c81be4f07?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjByZXNpZGVudGlhbCUyMGVzdGF0ZSUyMGRldmVsb3BtZW50JTIwc3VidXJiJTIwYWVyaWFsfGVufDF8fHx8MTc3Mzc0NzY2M3ww&ixlib=rb-4.1.0&q=80&w=1080',
-    holdings: 'https://images.unsplash.com/photo-1604926836687-bb58c880856a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjb3Jwb3JhdGUlMjBpbnZlc3RtZW50JTIwc3RyYXRlZ3klMjBncm93dGglMjBhYnN0cmFjdHxlbnwxfHx8fDE3NzM3NDc2NjR8MA&ixlib=rb-4.1.0&q=80&w=1080',
+  const IMAGES = {
+    construction: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2021/07/DJI_0673-scaled.jpg?w=1440&ssl=1',
+    foundation: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dsc_0127.jpg?w=1080&ssl=1',
+    dmft: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_faranani-estate-1-1.jpg?w=1080&ssl=1',
   };
 
-  const divisions = [
+  const bentoItems = [
     {
+      id: 'properties',
       title: 'Vharanani Properties',
       tag: 'CONSTRUCTION & INFRASTRUCTURE',
-      icon: <Building2 size={20} />,
-      image: PORTFOLIO_IMAGES.construction,
+      icon: <Building2 size={18} />,
+      image: IMAGES.construction,
       description: 'Delivering large-scale civil engineering and infrastructure projects that improve quality of life and restore dignity to communities.',
-      stats: [
-        { value: '200+', label: 'Projects' },
-        { value: '800+', label: 'Employees' },
-        { value: 'Grade 9', label: 'CIDB Rating' },
-      ],
-      capabilities: ['Roads & Highways', 'Bridges & Structures', 'Water & Sanitation', 'Public Buildings'],
+      stats: [{ value: '200+', label: 'Projects' }, { value: 'Grade 9', label: 'CIDB' }],
+      capabilities: ['Roads & Highways', 'Water & Sanitation', 'Public Buildings'],
+      size: 'large', // spans 2 cols, 2 rows
     },
     {
+      id: 'dmft',
+      title: 'DMFT Property Developers',
+      tag: 'PROPERTY DEVELOPMENT',
+      icon: <Home size={18} />,
+      image: IMAGES.dmft,
+      description: 'Delivering high-quality residential and mixed-use developments as part of the Vharanani Group.',
+      stats: [{ value: '15+', label: 'Developments' }, { value: 'R2B+', label: 'Portfolio' }],
+      capabilities: ['Residential Estates', 'Mixed-Use Precincts'],
+      size: 'medium',
+    },
+    {
+      id: 'foundation',
       title: 'The David Mabilu Foundation',
       tag: 'SOCIAL IMPACT',
-      icon: <Landmark size={20} />,
-      image: PORTFOLIO_IMAGES.foundation,
-      description: 'Advancing education, housing access, entrepreneurship, and community upliftment initiatives.',
-      stats: [
-        { value: '50K+', label: 'Lives Impacted' },
-        { value: '500+', label: 'Bursaries' },
-        { value: '5', label: 'Provinces' },
-      ],
-      capabilities: ['Education Bursaries', 'Housing Initiatives', 'Skills Development', 'Community Health'],
+      icon: <Landmark size={18} />,
+      image: IMAGES.foundation,
+      description: 'Advancing education, housing access, and community upliftment across South Africa.',
+      stats: [{ value: '34', label: 'Scholarships' }, { value: '5+', label: 'Provinces' }],
+      capabilities: ['Education', 'Housing', 'Community Upliftment'],
+      size: 'medium',
     },
-    {
-      title: 'DMFT Property Developers',
-      tag: 'PROPERTY DEVELOPMENT & INVESTMENTS',
-      icon: <Heart size={20} />,
-      image: PORTFOLIO_IMAGES.dmft,
-      description: 'Managing strategic real estate assets and long-term property investments across commercial and residential sectors.',
-      stats: [
-        { value: '15+', label: 'Developments' },
-        { value: '2,000+', label: 'Units' },
-        { value: 'R2B+', label: 'Portfolio Value' },
-      ],
-      capabilities: ['Residential Estates', 'Townhouse Complexes', 'Mixed-Use Precincts', 'Affordable Housing'],
-    },
+  ];
+
+  const metrics = [
+    { value: 'R5B+', label: 'Portfolio Value' },
+    { value: '20+', label: 'Years' },
+    { value: '3', label: 'Divisions' },
+    { value: '9', label: 'Provinces' },
   ];
 
   return (
     <SectionWrapper dark className="!py-0 !px-0">
-      {/* ── SECTION HEADER ── */}
-      <div className="px-6 md:px-12 lg:px-20 pt-10 md:pt-14 pb-8" style={{ background: 'var(--vharanani-burgundy)' }}>
+      <div className="px-6 md:px-12 lg:px-20 pt-10 md:pt-14 pb-10 md:pb-14" style={{ background: '#0a0a0a' }}>
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-            <div className="lg:col-span-7">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-[2px]" style={{ background: 'rgba(255,255,255,0.5)' }} />
-                <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.7)' }}>
+
+          {/* ── HEADER ── */}
+          <div className="flex items-end justify-between mb-8">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
+                <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
                   HOLDINGS
                 </span>
               </div>
@@ -358,249 +358,173 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
                 Our Portfolio
               </h2>
             </div>
-            <div className="lg:col-span-5">
-              <p className="typo-copy font-inter" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                Three distinct divisions working in concert — construction, property development, and social impact — to deliver sustainable value across South Africa.
-              </p>
-            </div>
+            <p className="hidden lg:block typo-copy-small font-inter max-w-xs text-right" style={{ color: 'rgba(255,255,255,0.5)' }}>
+              Three divisions working in concert to deliver infrastructure, property, and social impact across South Africa.
+            </p>
           </div>
-        </div>
-      </div>
 
-      {/* ── FLAGSHIP DIVISION — Full-width hero card ── */}
-      <div style={{ background: 'var(--vharanani-burgundy)' }}>
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 lg:grid-cols-12 gap-0 overflow-hidden"
-            style={{ border: '1px solid rgba(255,255,255,0.1)' }}
-          >
-            {/* Image — spans 7 cols */}
-            <div className="lg:col-span-7 relative h-[320px] lg:h-[480px] overflow-hidden group/img">
-              <motion.div
-                className="absolute inset-0"
-                whileHover={{ scale: 1.04 }}
-                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              >
+          {/* ── BENTO GRID ── */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-3">
+
+            {/* LARGE CELL — Vharanani Properties (spans 7 cols, 2 rows) */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="lg:col-span-7 lg:row-span-2 relative overflow-hidden group"
+              style={{ minHeight: '520px', border: '1px solid rgba(255,255,255,0.08)' }}
+            >
               <ImageWithFallback
-                src={divisions[0].image}
-                alt={divisions[0].title}
-                className="absolute inset-0 w-full h-full object-cover"
+                src={bentoItems[0].image}
+                alt={bentoItems[0].title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              </motion.div>
-              <div className="absolute inset-0" style={{
-                background: 'linear-gradient(135deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.7) 100%)'
-              }} />
-              {/* Floating number */}
-              <div className="absolute top-6 left-6">
-                <span className="typo-header font-bebas-neue" style={{ color: 'rgba(255,255,255,0.08)', lineHeight: 1 }}>01</span>
-              </div>
-              {/* Tag badge */}
-              <div className="absolute top-6 right-6">
-                <div className="px-3 py-1" style={{ background: 'var(--vharanani-burgundy)' }}>
-                  <span className="typo-meta tracking-[0.2em] uppercase font-inter text-white">Flagship</span>
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.88) 100%)' }} />
+
+              {/* Tag top-left */}
+              <div className="absolute top-6 left-6 flex items-center gap-2">
+                <div className="w-7 h-7 flex items-center justify-center" style={{ border: '1px solid rgba(255,255,255,0.3)', color: 'white' }}>
+                  {bentoItems[0].icon}
                 </div>
+                <span className="typo-meta tracking-[0.18em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.7)' }}>{bentoItems[0].tag}</span>
               </div>
-              {/* Bottom capabilities strip */}
-              <div className="absolute bottom-0 left-0 right-0 hidden md:flex">
-                {divisions[0].capabilities.map((cap, ci) => (
-                  <div
-                    key={cap}
-                    className="flex-1 py-3 px-2 text-center"
-                    style={{
-                      background: 'rgba(0,0,0,0.85)',
-                      backdropFilter: 'blur(8px)',
-                      borderRight: ci < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none',
-                    }}
-                  >
-                    <span className="typo-meta tracking-[0.1em] uppercase font-inter text-white/60">{cap}</span>
-                  </div>
-                ))}
+
+              {/* Ghost number */}
+              <div className="absolute top-4 right-6">
+                <span className="font-bebas-neue" style={{ fontSize: '120px', lineHeight: 1, color: 'rgba(255,255,255,0.04)' }}>01</span>
               </div>
-            </div>
 
-            {/* Content — spans 5 cols */}
-            <div className="lg:col-span-5 p-8 md:p-10 flex flex-col justify-center" style={{ background: 'rgba(255,255,255,0.03)' }}>
-              <div className="flex items-center gap-2 mb-4">
-                <span style={{ color: 'white' }}>{divisions[0].icon}</span>
-                <span className="typo-caption tracking-[0.2em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.7)' }}>
-                  {divisions[0].tag}
-                </span>
-              </div>
-              <h3 className="typo-headline-big font-bebas-neue uppercase tracking-wide text-white mb-4">
-                {divisions[0].title}
-              </h3>
-              <div className="w-10 h-[2px] mb-5" style={{ background: 'rgba(255,255,255,0.4)' }} />
-              <p className="typo-copy font-inter text-white/80 mb-8">
-                {divisions[0].description}
-              </p>
-
-              {/* Stats row */}
-              <div className="grid grid-cols-3 gap-0" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
-                {divisions[0].stats.map((stat, si) => (
-                  <div
-                    key={stat.label}
-                    className="p-4 text-center"
-                    style={{ borderRight: si < 2 ? '1px solid rgba(255,255,255,0.1)' : 'none' }}
-                  >
-                    <div className="typo-headline-small font-bebas-neue text-white">
-                      {stat.value}
-                    </div>
-                    <div className="typo-meta tracking-[0.1em] uppercase font-inter text-white/70 mt-1">
-                      {stat.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-
-      {/* ── SECONDARY DIVISIONS — 2-column grid ── */}
-      <div className="px-6 md:px-12 lg:px-20 py-3" style={{ background: 'var(--vharanani-burgundy)' }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {divisions.slice(1).map((div, i) => (
-              <motion.div
-                key={div.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
-                className="overflow-hidden"
-                style={{ border: '1px solid rgba(255,255,255,0.1)' }}
-              >
-                {/* Image top */}
-                <div className="relative h-[260px] overflow-hidden">
-                  <motion.div
-                    className="absolute inset-0"
-                    whileHover={{ scale: 1.06 }}
-                    transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                  >
-                  <ImageWithFallback
-                    src={div.image}
-                    alt={div.title}
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                  </motion.div>
-                  <div className="absolute inset-0" style={{
-                    background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.75) 100%)'
-                  }} />
-                  {/* Number */}
-                  <div className="absolute top-5 left-6">
-                    <span className="typo-header font-bebas-neue" style={{ color: 'rgba(255,255,255,0.08)', lineHeight: 1 }}>
-                      {String(i + 2).padStart(2, '0')}
-                    </span>
-                  </div>
-                  {/* Tag + icon bottom-left */}
-                  <div className="absolute bottom-5 left-6 flex items-center gap-2">
-                    <span style={{ color: 'rgba(255,255,255,0.9)' }}>{div.icon}</span>
-                    <span className="typo-caption tracking-[0.2em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.9)' }}>
-                      {div.tag}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6 md:p-8" style={{ background: 'rgba(255,255,255,0.03)' }}>
-                  <h3 className="typo-subline font-bebas-neue uppercase tracking-wide text-white mb-3">
-                    {div.title}
-                  </h3>
-                  <p className="typo-copy-small font-inter text-white/85 mb-6">
-                    {div.description}
-                  </p>
-
-                  {/* Stats inline */}
-                  <div className="grid grid-cols-3 gap-0" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
-                    {div.stats.map((stat, si) => (
-                      <div
-                        key={stat.label}
-                        className="py-3 px-3 text-center"
-                        style={{ borderRight: si < 2 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}
-                      >
-                        <div className="typo-headline-small font-bebas-neue text-white">
-                          {stat.value}
-                        </div>
-                        <div className="typo-meta tracking-[0.1em] uppercase font-inter text-white/70 mt-1">
-                          {stat.label}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Capabilities tags */}
-                  <div className="flex flex-wrap gap-2 mt-5">
-                    {div.capabilities.map((cap) => (
-                      <span
-                        key={cap}
-                        className="typo-meta tracking-[0.1em] uppercase font-inter px-2.5 py-1"
-                        style={{ border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.65)' }}
-                      >
-                        {cap}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* ── PORTFOLIO METRICS STRIP ── */}
-      <div className="px-6 md:px-12 lg:px-20 pb-10 md:pb-14 pt-3" style={{ background: 'var(--vharanani-burgundy)' }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="relative overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
-            {/* Background image */}
-            <div className="absolute inset-0">
-              <ImageWithFallback
-                src={PORTFOLIO_IMAGES.holdings}
-                alt="Vharanani Group Holdings"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0" style={{
-                background: 'linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.95) 100%)'
-              }} />
-            </div>
-
-            <div className="relative grid grid-cols-1 md:grid-cols-12 gap-0">
-              {/* Left text */}
-              <div className="md:col-span-4 p-8 md:p-10 flex flex-col justify-center" style={{ borderRight: '1px solid rgba(255,255,255,0.1)' }}>
-                <div className="typo-caption tracking-[0.2em] uppercase font-inter mb-3" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                  COMBINED GROUP PORTFOLIO
-                </div>
-                <h3 className="typo-subline font-bebas-neue uppercase tracking-wide text-white mb-3">
-                  Diversified Value Creation
+              {/* Bottom content */}
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <h3 className="typo-headline-big font-bebas-neue uppercase tracking-wide text-white mb-3">
+                  {bentoItems[0].title}
                 </h3>
-                <div className="w-8 h-[2px] mb-4" style={{ background: 'rgba(255,255,255,0.3)' }} />
-                <p className="typo-copy-small font-inter text-white/85">
-                  Across all divisions, the Vharanani Group has built a track record of delivery, impact, and sustainable growth.
+                <p className="typo-copy-small font-inter mb-6" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                  {bentoItems[0].description}
                 </p>
+                {/* Stats + capabilities */}
+                <div className="flex items-center gap-0" style={{ border: '1px solid rgba(255,255,255,0.12)' }}>
+                  {bentoItems[0].stats.map((s, i) => (
+                    <div key={s.label} className="flex-1 py-3 px-4 text-center" style={{ borderRight: i < bentoItems[0].stats.length - 1 ? '1px solid rgba(255,255,255,0.12)' : 'none' }}>
+                      <div className="font-bebas-neue typo-subline text-white">{s.value}</div>
+                      <div className="typo-meta tracking-[0.1em] uppercase font-inter mt-0.5" style={{ color: 'rgba(255,255,255,0.5)' }}>{s.label}</div>
+                    </div>
+                  ))}
+                  <div className="flex-1 py-3 px-4" style={{ borderLeft: '1px solid rgba(255,255,255,0.12)' }}>
+                    <div className="flex flex-wrap gap-1">
+                      {bentoItems[0].capabilities.map(cap => (
+                        <span key={cap} className="typo-meta font-inter px-1.5 py-0.5" style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.6)', fontSize: '10px' }}>{cap}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* MEDIUM CELL — DMFT (spans 5 cols) */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="lg:col-span-5 relative overflow-hidden group"
+              style={{ minHeight: '250px', border: '1px solid rgba(255,255,255,0.08)' }}
+            >
+              <ImageWithFallback
+                src={bentoItems[1].image}
+                alt={bentoItems[1].title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.75) 100%)' }} />
+
+              <div className="absolute top-5 left-5 flex items-center gap-2">
+                <div className="w-7 h-7 flex items-center justify-center" style={{ border: '1px solid rgba(255,255,255,0.3)', color: 'white' }}>
+                  {bentoItems[1].icon}
+                </div>
+                <span className="typo-meta tracking-[0.15em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.7)' }}>{bentoItems[1].tag}</span>
               </div>
 
-              {/* Right stats */}
-              <div className="md:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-0">
-                {[
-                  { value: 'R5B+', label: 'Combined Portfolio' },
-                  { value: '1,000+', label: 'Team Members' },
-                  { value: '3', label: 'Core Divisions' },
-                  { value: '20+', label: 'Years Operating' },
-                ].map((metric, mi) => (
-                  <div
-                    key={metric.label}
-                    className="p-6 md:p-8 text-center flex flex-col justify-center"
-                    style={{ borderRight: mi < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none', borderBottom: '1px solid rgba(255,255,255,0.08)', borderTop: '1px solid rgba(255,255,255,0.08)' }}
-                  >
-                    <div className="typo-headline-big font-bebas-neue text-white">{metric.value}</div>
-                    <div className="typo-meta tracking-[0.12em] uppercase font-inter text-white/60 mt-2">{metric.label}</div>
-                  </div>
-                ))}
+              <div className="absolute top-4 right-5">
+                <span className="font-bebas-neue" style={{ fontSize: '80px', lineHeight: 1, color: 'rgba(255,255,255,0.05)' }}>02</span>
               </div>
-            </div>
+
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="typo-subline font-bebas-neue uppercase tracking-wide text-white mb-2">{bentoItems[1].title}</h3>
+                <p className="typo-copy-small font-inter mb-4" style={{ color: 'rgba(255,255,255,0.65)' }}>{bentoItems[1].description}</p>
+                <div className="flex items-center gap-3">
+                  {bentoItems[1].stats.map((s) => (
+                    <div key={s.label} className="px-3 py-1.5 text-center" style={{ border: '1px solid rgba(255,255,255,0.15)' }}>
+                      <span className="font-bebas-neue typo-headline-small text-white">{s.value}</span>
+                      <span className="typo-meta font-inter ml-2" style={{ color: 'rgba(255,255,255,0.5)' }}>{s.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* MEDIUM CELL — Foundation (spans 5 cols) */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="lg:col-span-5 relative overflow-hidden group"
+              style={{ minHeight: '250px', border: '1px solid rgba(255,255,255,0.08)' }}
+            >
+              <ImageWithFallback
+                src={bentoItems[2].image}
+                alt={bentoItems[2].title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.75) 100%)' }} />
+
+              <div className="absolute top-5 left-5 flex items-center gap-2">
+                <div className="w-7 h-7 flex items-center justify-center" style={{ border: '1px solid rgba(255,255,255,0.3)', color: 'white' }}>
+                  {bentoItems[2].icon}
+                </div>
+                <span className="typo-meta tracking-[0.15em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.7)' }}>{bentoItems[2].tag}</span>
+              </div>
+
+              <div className="absolute top-4 right-5">
+                <span className="font-bebas-neue" style={{ fontSize: '80px', lineHeight: 1, color: 'rgba(255,255,255,0.05)' }}>03</span>
+              </div>
+
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="typo-subline font-bebas-neue uppercase tracking-wide text-white mb-2">{bentoItems[2].title}</h3>
+                <p className="typo-copy-small font-inter mb-4" style={{ color: 'rgba(255,255,255,0.65)' }}>{bentoItems[2].description}</p>
+                <div className="flex items-center gap-3">
+                  {bentoItems[2].stats.map((s) => (
+                    <div key={s.label} className="px-3 py-1.5 text-center" style={{ border: '1px solid rgba(255,255,255,0.15)' }}>
+                      <span className="font-bebas-neue typo-headline-small text-white">{s.value}</span>
+                      <span className="typo-meta font-inter ml-2" style={{ color: 'rgba(255,255,255,0.5)' }}>{s.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* METRICS STRIP — full width */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="lg:col-span-12 grid grid-cols-2 md:grid-cols-4 gap-0"
+              style={{ border: '1px solid rgba(255,255,255,0.08)' }}
+            >
+              {metrics.map((m, i) => (
+                <div
+                  key={m.label}
+                  className="py-6 px-8 text-center"
+                  style={{ borderRight: i < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none', background: 'rgba(255,255,255,0.02)' }}
+                >
+                  <div className="typo-headline-big font-bebas-neue" style={{ color: 'var(--vharanani-burgundy)' }}>{m.value}</div>
+                  <div className="typo-meta tracking-[0.15em] uppercase font-inter mt-1" style={{ color: 'rgba(255,255,255,0.45)' }}>{m.label}</div>
+                </div>
+              ))}
+            </motion.div>
+
           </div>
         </div>
       </div>
