@@ -121,7 +121,7 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
           >
             <div className="w-8 h-[2px]" style={{ background: 'rgba(255,255,255,0.5)' }} />
             <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.7)' }}>
-              SEC 01 — INTELLIGENCE
+              INTELLIGENCE
             </span>
           </motion.div>
           <motion.h2
@@ -351,7 +351,7 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-[2px]" style={{ background: 'rgba(255,255,255,0.5)' }} />
                 <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.7)' }}>
-                  SEC 02 — HOLDINGS
+                  HOLDINGS
                 </span>
               </div>
               <h2 className="typo-header font-bebas-neue uppercase tracking-wide text-white" style={{ lineHeight: 0.95 }}>
@@ -687,7 +687,7 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
                   <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
-                    SEC 03 — STRATEGY
+                    STRATEGY
                   </span>
                 </div>
                 <h2 className="typo-header font-bebas-neue uppercase tracking-wide text-white" style={{ lineHeight: 0.95 }}>
@@ -870,7 +870,7 @@ export function GroupWireframe_Leadership(): ReactNode {
         <div className="flex items-center gap-3 mb-4">
           <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
           <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
-            SEC 04 — PEOPLE
+            PEOPLE
           </span>
         </div>
         <p className="typo-meta tracking-[0.25em] uppercase font-inter mb-2" style={{ color: 'var(--vharanani-burgundy)' }}>LEADERSHIP</p>
@@ -967,7 +967,7 @@ export function GroupWireframe_ImpactGovernance(): ReactNode {
         <div className="flex items-center gap-3 mb-4">
           <div className="w-8 h-[2px]" style={{ background: 'rgba(255,255,255,0.5)' }} />
           <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.7)' }}>
-            SEC 05 — IMPACT
+            IMPACT
           </span>
         </div>
         <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-4 text-white">
@@ -1055,7 +1055,7 @@ export function GroupWireframe_VisionMission(): ReactNode {
         <div className="flex items-center gap-3 mb-4">
           <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
           <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
-            SEC 06 — MANDATE
+            MANDATE
           </span>
         </div>
 
@@ -1134,7 +1134,7 @@ export function GroupWireframe_Governance(): ReactNode {
         <div className="flex items-center gap-3 mb-4">
           <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
           <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
-            SEC 07 — COMPLIANCE
+            COMPLIANCE
           </span>
         </div>
         <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-2" style={{ color: 'var(--vharanani-charcoal)' }}>
@@ -1233,7 +1233,7 @@ export function GroupWireframe_Companies(): ReactNode {
         <div className="flex items-center gap-3 mb-4">
           <div className="w-8 h-[2px]" style={{ background: 'rgba(255,255,255,0.5)' }} />
           <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.7)' }}>
-            SEC 08 — SUBSIDIARIES
+            SUBSIDIARIES
           </span>
         </div>
         <p className="typo-meta tracking-[0.25em] uppercase font-inter mb-2" style={{ color: 'rgba(255,255,255,0.7)' }}>COMPANIES</p>
@@ -1315,7 +1315,7 @@ export function GroupWireframe_NewsContact(): ReactNode {
         <div className="flex items-center gap-3 mb-4">
           <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
           <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
-            SEC 09 — UPDATES
+            UPDATES
           </span>
         </div>
         <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-4" style={{ color: 'var(--vharanani-charcoal)' }}>

@@ -95,7 +95,7 @@ export function PropertiesWireframe_AboutImpact(): ReactNode {
         <div className="flex items-center gap-3 mb-10">
           <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
           <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
-            SEC 01 — OUR STORY
+            OUR STORY
           </span>
         </div>
 
@@ -240,7 +240,7 @@ export function PropertiesWireframe_IntegratedServices(): ReactNode {
         <div className="flex items-center gap-3 mb-6">
           <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
           <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
-            SEC 02 — CAPABILITIES
+            CAPABILITIES
           </span>
         </div>
 
@@ -465,7 +465,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
               <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
-                SEC 03 — PROOF OF DELIVERY
+                PROOF OF DELIVERY
               </span>
             </div>
             <h2 className="font-bebas-neue typo-subline tracking-wide uppercase" style={{ color: 'var(--vharanani-charcoal)' }}>
@@ -608,7 +608,7 @@ export function PropertiesWireframe_Compliance(): ReactNode {
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-8 h-[2px]" style={{ background: 'rgba(255,255,255,0.5)' }} />
                 <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.75)' }}>
-                  SEC 04 — ACCREDITATION
+                  ACCREDITATION
                 </span>
               </div>
               <h2 className="font-bebas-neue typo-header uppercase tracking-wide text-white" style={{ lineHeight: 0.95 }}>
@@ -713,7 +713,7 @@ export function PropertiesWireframe_ValuesImpact(): ReactNode {
         <div className="flex items-center gap-3 mb-6">
           <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
           <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
-            SEC 05 — VALUES & IMPACT
+            VALUES & IMPACT
           </span>
         </div>
 
@@ -819,7 +819,7 @@ export function PropertiesWireframe_ContactFootprint(): ReactNode {
         <div className="flex items-center gap-3 mb-10">
           <div className="w-8 h-[2px]" style={{ background: 'rgba(255,255,255,0.5)' }} />
           <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.75)' }}>
-            SEC 05 — CONNECT
+            CONNECT
           </span>
         </div>
 
