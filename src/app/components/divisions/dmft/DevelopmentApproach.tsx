@@ -29,7 +29,7 @@ const PHASES: Phase[] = [
       'Carefully identifying strategic locations with strong growth potential, development viability, and alignment with market demand — ensuring every project starts from a position of strength.',
     capabilities: ['Market Analysis', 'Growth Corridors', 'Zoning Assessment', 'Feasibility Studies'],
     image:
-      'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/09/DJI_0247-scaled.jpg?w=1440&ssl=1',
+      'https://images.unsplash.com/photo-1524813686514-a57563d77965?w=1400&q=85&fit=crop',
   },
   {
     step: '02',
@@ -40,7 +40,7 @@ const PHASES: Phase[] = [
       'Conducting detailed feasibility studies, zoning processes, and development planning, working with experienced professionals to design modern and functional developments.',
     capabilities: ['Town Planning', 'Architectural Design', 'Zoning Processes', 'Municipal Approvals'],
     image:
-      'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/Mogalakwena.jpg?w=1080&ssl=1',
+      'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1400&q=85&fit=crop',
   },
   {
     step: '03',
@@ -51,7 +51,7 @@ const PHASES: Phase[] = [
       'Leveraging the construction expertise of the Vharanani Group to deliver projects efficiently and safely, from groundbreaking through to handover.',
     capabilities: ['Quality Construction', 'Project Management', 'Safety Compliance', 'Timeline Delivery'],
     image:
-      'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/10/Property-development-scaled.jpg?w=1080&ssl=1',
+      'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&q=85&fit=crop',
   },
   {
     step: '04',
@@ -62,7 +62,7 @@ const PHASES: Phase[] = [
       'Delivering completed developments that provide value for homeowners, investors, and communities.',
     capabilities: ['Sales Management', 'Title Transfers', 'Homeowner Support', 'Community Integration'],
     image:
-      'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_faranani-estate-1-1.jpg?w=1080&ssl=1',
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=85&fit=crop',
   },
 ];
 
