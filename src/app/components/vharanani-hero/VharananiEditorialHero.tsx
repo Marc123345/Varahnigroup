@@ -168,7 +168,7 @@ const extraCubeImages = [
 // ═══════════════════════════════════════════════════════════
 
 const DIVISION_LOGOS: Record<string, string> = {
-  group: 'https://ik.imagekit.io/qcvroy8xpd/Frame%202.png',
+  group: 'https://ik.imagekit.io/qcvroy8xpd/Frame%207%20(1).png',
   properties: 'https://ik.imagekit.io/qcvroy8xpd/Frame%203.png',
   foundation: 'https://ik.imagekit.io/qcvroy8xpd/DMLogo1-02%201.png',
   dmft: 'https://ik.imagekit.io/qcvroy8xpd/David%20Mabilu%20FT%20Property%20Developers%20logo%201.png',
