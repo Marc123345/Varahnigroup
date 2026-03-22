@@ -55,7 +55,7 @@ function SectionWrapper({ children, className = '', dark = false }: { children: 
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
       transition={{ duration: 0.7, ease: 'easeOut' }}
-      className={`py-16 md:py-24 px-6 md:px-12 lg:px-20 ${className}`}
+      className={`py-10 md:py-16 px-6 md:px-12 lg:px-20 ${className}`}
       style={{ background: dark ? 'var(--vharanani-charcoal)' : '#ffffff' }}
     >
       {children}
@@ -170,7 +170,7 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
 
       {/* ── VISION & FOUNDER SPLIT ── */}
       <div style={{ background: '#ffffff' }}>
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-10 md:py-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -299,7 +299,7 @@ export function FoundationWireframe_PartnerNetwork(): ReactNode {
       </div>
 
       {/* ── PARTNER GRID — 3x2 ── */}
-      <div className="px-6 md:px-12 lg:px-20 py-16 md:py-24" style={{ background: '#ffffff' }}>
+      <div className="px-6 md:px-12 lg:px-20 py-10 md:py-16" style={{ background: '#ffffff' }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
             {partners.map((partner, i) => (
@@ -390,7 +390,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
   return (
     <SectionWrapper className="!py-0 !px-0">
       {/* ── SECTION HEADER ── */}
-      <div className="px-6 md:px-12 lg:px-20 pt-16 md:pt-24 pb-12" style={{ background: '#ffffff' }}>
+      <div className="px-6 md:px-12 lg:px-20 pt-10 md:pt-14 pb-8" style={{ background: '#ffffff' }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
             <div className="lg:col-span-7">
@@ -607,7 +607,7 @@ export function FoundationWireframe_ImpactStories(): ReactNode {
       <div className="px-6 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto">
           {/* Section header */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-8">
             <div className="lg:col-span-7">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
@@ -725,7 +725,7 @@ export function FoundationWireframe_ImpactStories(): ReactNode {
 export function FoundationWireframe_Heritage(): ReactNode {
   return (
     <SectionWrapper dark className="!py-0 !px-0">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-24">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-10 md:py-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

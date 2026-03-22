@@ -55,7 +55,7 @@ function SectionWrapper({ children, className = '', dark = false }: { children: 
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
       transition={{ duration: 0.7, ease: 'easeOut' }}
-      className={`py-16 md:py-24 px-6 md:px-12 lg:px-20 ${className}`}
+      className={`py-10 md:py-16 px-6 md:px-12 lg:px-20 ${className}`}
       style={{ background: dark ? 'var(--vharanani-charcoal)' : '#ffffff' }}
     >
       {children}
@@ -169,7 +169,7 @@ export function DMFTWireframe_HeroAbout({ onTabChange }: { onTabChange?: (tabId:
 
       {/* ── ABOUT SPLIT ── */}
       <div style={{ background: '#ffffff' }}>
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-10 md:py-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -442,6 +442,7 @@ export function DMFTWireframe_DevelopmentApproach(): ReactNode {
 // ═══════════════════════════════════════════════════════════
 
 export function DMFTWireframe_Portfolio(): ReactNode {
+  const [expandedCard, setExpandedCard] = useState<number | null>(null);
   const developments = [
     {
       title: 'Residential Estates',
@@ -480,7 +481,7 @@ export function DMFTWireframe_Portfolio(): ReactNode {
   return (
     <SectionWrapper className="!py-0 !px-0">
       {/* ── SECTION HEADER ── */}
-      <div className="px-6 md:px-12 lg:px-20 pt-16 md:pt-24 pb-12" style={{ background: '#ffffff' }}>
+      <div className="px-6 md:px-12 lg:px-20 pt-10 md:pt-14 pb-8" style={{ background: '#ffffff' }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
             <div className="lg:col-span-7">
@@ -588,68 +589,121 @@ export function DMFTWireframe_Portfolio(): ReactNode {
       <div className="px-6 md:px-12 lg:px-20 pb-0" style={{ background: '#ffffff' }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0" style={{ borderLeft: '1px solid var(--vharanani-charcoal-20)', borderRight: '1px solid var(--vharanani-charcoal-20)', borderBottom: '1px solid var(--vharanani-charcoal-20)' }}>
-            {developments.slice(1).map((dev, i) => (
-              <motion.div
-                key={dev.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group"
-                style={{ borderRight: i < 2 ? '1px solid var(--vharanani-charcoal-20)' : 'none' }}
-              >
-                {/* Image header */}
-                <div className="relative h-[220px] overflow-hidden">
-                  <ImageWithFallback
-                    src={dev.image}
-                    alt={dev.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0" style={{
-                    background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%)'
-                  }} />
-                  {/* Hover detail overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: 'rgba(129,41,33,0.75)' }}>
-                    <span className="font-bebas-neue typo-headline-small tracking-wider uppercase text-white">View Details</span>
-                  </div>
-                  {/* Ghost number */}
-                  <div className="absolute top-2 left-4">
-                    <span className="font-bebas-neue" style={{ fontSize: '80px', lineHeight: 1, color: 'rgba(255,255,255,0.06)' }}>
-                      {String(i + 2).padStart(2, '0')}
-                    </span>
-                  </div>
-                  {/* Category badge */}
-                  <div className="absolute top-4 right-4 px-2 py-1" style={{ background: 'rgba(129,41,33,0.85)' }}>
-                    <span className="typo-meta tracking-[0.15em] uppercase font-inter text-white">{dev.category}</span>
-                  </div>
-                  {/* Bottom metric */}
-                  <div className="absolute bottom-0 left-0 right-0 px-5 py-3" style={{ background: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(4px)' }}>
-                    <div className="flex items-center gap-3">
-                      <span className="typo-headline-small font-bebas-neue" style={{ color: 'var(--vharanani-burgundy)' }}>{dev.metric.value}</span>
-                      <span className="typo-meta tracking-[0.1em] uppercase font-inter text-white/60">{dev.metric.label}</span>
+            {developments.slice(1).map((dev, i) => {
+              const isExpanded = expandedCard === i;
+              return (
+                <motion.div
+                  key={dev.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="group cursor-pointer"
+                  style={{ borderRight: i < 2 ? '1px solid var(--vharanani-charcoal-20)' : 'none' }}
+                  onClick={() => setExpandedCard(isExpanded ? null : i)}
+                >
+                  {/* Image header */}
+                  <div className="relative h-[220px] overflow-hidden">
+                    <ImageWithFallback
+                      src={dev.image}
+                      alt={dev.title}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0" style={{
+                      background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%)'
+                    }} />
+                    {/* Hover overlay */}
+                    <div
+                      className="absolute inset-0 flex items-center justify-center transition-opacity duration-300"
+                      style={{ background: 'rgba(129,41,33,0.75)', opacity: isExpanded ? 1 : 0 }}
+                    >
+                      <span className="font-bebas-neue typo-headline-small tracking-wider uppercase text-white">
+                        {isExpanded ? 'Close' : 'View Details'}
+                      </span>
+                    </div>
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ pointerEvents: 'none' }}>
+                      {!isExpanded && <span className="font-bebas-neue typo-headline-small tracking-wider uppercase text-white">View Details</span>}
+                    </div>
+                    {/* Ghost number */}
+                    <div className="absolute top-2 left-4">
+                      <span className="font-bebas-neue" style={{ fontSize: '80px', lineHeight: 1, color: 'rgba(255,255,255,0.06)' }}>
+                        {String(i + 2).padStart(2, '0')}
+                      </span>
+                    </div>
+                    {/* Category badge */}
+                    <div className="absolute top-4 right-4 px-2 py-1" style={{ background: 'rgba(129,41,33,0.85)' }}>
+                      <span className="typo-meta tracking-[0.15em] uppercase font-inter text-white">{dev.category}</span>
+                    </div>
+                    {/* Bottom metric */}
+                    <div className="absolute bottom-0 left-0 right-0 px-5 py-3" style={{ background: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(4px)' }}>
+                      <div className="flex items-center gap-3">
+                        <span className="typo-headline-small font-bebas-neue" style={{ color: 'var(--vharanani-burgundy)' }}>{dev.metric.value}</span>
+                        <span className="typo-meta tracking-[0.1em] uppercase font-inter text-white/60">{dev.metric.label}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Content */}
-                <div className="p-6" style={{ background: i % 2 === 0 ? '#ffffff' : '#fafafa' }}>
-                  <h4 className="typo-headline-small font-bebas-neue uppercase tracking-wide mb-2" style={{ color: 'var(--vharanani-charcoal)' }}>
-                    {dev.title}
-                  </h4>
-                  <p className="typo-copy-small font-inter mb-4" style={{ color: 'var(--vharanani-charcoal-60)' }}>
-                    {dev.description}
-                  </p>
-                  <div className="grid grid-cols-2 gap-1">
-                    {dev.features.map((f) => (
-                      <div key={f} className="flex items-center gap-2">
-                        <div className="w-1 h-1 flex-shrink-0" style={{ background: 'var(--vharanani-burgundy)' }} />
-                        <span className="typo-meta font-inter" style={{ color: 'var(--vharanani-charcoal-60)' }}>{f}</span>
+                  {/* Content */}
+                  <div className="p-6" style={{ background: i % 2 === 0 ? '#ffffff' : '#fafafa' }}>
+                    <div className="flex items-center justify-between mb-2">
+                      <h4 className="typo-headline-small font-bebas-neue uppercase tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>
+                        {dev.title}
+                      </h4>
+                      <div
+                        className="w-6 h-6 flex items-center justify-center transition-transform duration-300 flex-shrink-0"
+                        style={{ border: '1px solid var(--vharanani-charcoal-20)', transform: isExpanded ? 'rotate(45deg)' : 'none' }}
+                      >
+                        <span className="font-bebas-neue text-sm leading-none" style={{ color: 'var(--vharanani-burgundy)' }}>+</span>
                       </div>
-                    ))}
+                    </div>
+                    <p className="typo-copy-small font-inter mb-4" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+                      {dev.description}
+                    </p>
+
+                    {/* Expandable features */}
+                    <motion.div
+                      initial={false}
+                      animate={{ height: isExpanded ? 'auto' : 0, opacity: isExpanded ? 1 : 0 }}
+                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                      style={{ overflow: 'hidden' }}
+                    >
+                      <div className="grid grid-cols-2 gap-0 mt-2" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
+                        {dev.features.map((f, fi) => (
+                          <div
+                            key={f}
+                            className="flex items-center gap-2 px-3 py-2"
+                            style={{
+                              borderRight: fi % 2 === 0 ? '1px solid var(--vharanani-charcoal-20)' : 'none',
+                              borderBottom: fi < dev.features.length - 2 ? '1px solid var(--vharanani-charcoal-20)' : 'none',
+                            }}
+                          >
+                            <div className="w-1.5 h-1.5 flex-shrink-0" style={{ background: 'var(--vharanani-burgundy)' }} />
+                            <span className="typo-meta font-inter" style={{ color: 'var(--vharanani-charcoal-80)' }}>{f}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="mt-3 flex items-center gap-2">
+                        <div className="h-[1px] flex-1" style={{ background: 'var(--vharanani-charcoal-20)' }} />
+                        <span className="typo-meta tracking-[0.12em] uppercase font-inter" style={{ color: 'var(--vharanani-charcoal-40)' }}>
+                          {dev.metric.value} {dev.metric.label}
+                        </span>
+                      </div>
+                    </motion.div>
+
+                    {!isExpanded && (
+                      <div className="grid grid-cols-2 gap-1">
+                        {dev.features.slice(0, 2).map((f) => (
+                          <div key={f} className="flex items-center gap-2">
+                            <div className="w-1 h-1 flex-shrink-0" style={{ background: 'var(--vharanani-burgundy)' }} />
+                            <span className="typo-meta font-inter" style={{ color: 'var(--vharanani-charcoal-60)' }}>{f}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

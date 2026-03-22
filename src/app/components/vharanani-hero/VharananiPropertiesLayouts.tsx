@@ -56,7 +56,7 @@ function SectionWrapper({ children, className = '', dark = false }: { children: 
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
       transition={{ duration: 0.7, ease: 'easeOut' }}
-      className={`py-16 md:py-24 px-6 md:px-12 lg:px-20 ${className}`}
+      className={`py-10 md:py-16 px-6 md:px-12 lg:px-20 ${className}`}
       style={{ background: dark ? 'var(--vharanani-charcoal)' : '#ffffff' }}
     >
       {children}
@@ -271,15 +271,9 @@ export function PropertiesWireframe_IntegratedServices(): ReactNode {
                 </div>
 
                 <div className="overflow-hidden max-h-0 group-hover:max-h-32 transition-all duration-500">
-                  <p className="font-inter typo-copy-small" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                  <p className="font-inter typo-copy-small mt-1" style={{ color: 'rgba(255,255,255,0.7)' }}>
                     {svc.subtitle}
                   </p>
-                  <div className="flex items-center gap-1 mt-2">
-                    <span className="font-inter typo-meta tracking-[0.15em] uppercase" style={{ color: 'var(--vharanani-burgundy-60)' }}>
-                      View Projects
-                    </span>
-                    <ArrowRight size={10} style={{ color: 'var(--vharanani-burgundy-60)' }} />
-                  </div>
                 </div>
               </div>
 
@@ -508,7 +502,7 @@ export function PropertiesWireframe_Compliance(): ReactNode {
     <SectionWrapper>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <div className="typo-caption tracking-[0.3em] uppercase font-inter mb-3" style={{ color: 'var(--vharanani-burgundy)' }}>
             ACCREDITATION & COMPLIANCE
           </div>
@@ -590,7 +584,7 @@ export function PropertiesWireframe_ValuesImpact(): ReactNode {
         </div>
 
         {/* Values Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[1px] mb-12" style={{ background: 'var(--vharanani-charcoal-20)', border: '1px solid var(--vharanani-charcoal-20)' }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[1px] mb-8" style={{ background: 'var(--vharanani-charcoal-20)', border: '1px solid var(--vharanani-charcoal-20)' }}>
           {values.map((val, i) => (
             <motion.div
               key={i}

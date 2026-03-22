@@ -55,7 +55,7 @@ function SectionWrapper({ children, className = '', dark = false }: { children: 
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
       transition={{ duration: 0.7, ease: 'easeOut' }}
-      className={`py-16 md:py-24 px-6 md:px-12 lg:px-20 ${className}`}
+      className={`py-10 md:py-16 px-6 md:px-12 lg:px-20 ${className}`}
       style={{ background: dark ? 'var(--vharanani-charcoal)' : '#ffffff' }}
     >
       {children}
@@ -150,7 +150,7 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
       </div>
 
       {/* ── MAIN CONTENT GRID ── */}
-      <div className="px-6 md:px-12 lg:px-20 py-16 md:py-20" style={{ background: '#ffffff' }}>
+      <div className="px-6 md:px-12 lg:px-20 py-10 md:py-14" style={{ background: '#ffffff' }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-16">
             {/* Left — Large statement */}
@@ -344,7 +344,7 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
   return (
     <SectionWrapper dark className="!py-0 !px-0">
       {/* ── SECTION HEADER ── */}
-      <div className="px-6 md:px-12 lg:px-20 pt-16 md:pt-24 pb-12" style={{ background: 'var(--vharanani-charcoal)' }}>
+      <div className="px-6 md:px-12 lg:px-20 pt-10 md:pt-14 pb-8" style={{ background: 'var(--vharanani-charcoal)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
             <div className="lg:col-span-7">
@@ -552,7 +552,7 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
       </div>
 
       {/* ── PORTFOLIO METRICS STRIP ── */}
-      <div className="px-6 md:px-12 lg:px-20 pb-16 md:pb-24 pt-3" style={{ background: 'var(--vharanani-charcoal)' }}>
+      <div className="px-6 md:px-12 lg:px-20 pb-10 md:pb-14 pt-3" style={{ background: 'var(--vharanani-charcoal)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="relative overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
             {/* Background image */}
@@ -874,12 +874,12 @@ export function GroupWireframe_Leadership(): ReactNode {
           </span>
         </div>
         <p className="typo-meta tracking-[0.25em] uppercase font-inter mb-2" style={{ color: 'var(--vharanani-burgundy)' }}>LEADERSHIP</p>
-        <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-12" style={{ color: 'var(--vharanani-charcoal)' }}>
+        <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-8" style={{ color: 'var(--vharanani-charcoal)' }}>
           Leadership
         </h2>
 
         {/* Founder spotlight */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 mb-12" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 mb-8" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
           <div className="lg:col-span-2 relative h-[360px] lg:h-auto overflow-hidden">
             <ImageWithFallback
               src={IMAGES.leadership}
@@ -971,7 +971,7 @@ export function GroupWireframe_ImpactGovernance(): ReactNode {
             SEC 05 — IMPACT
           </span>
         </div>
-        <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-12 text-white">
+        <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-8 text-white">
           Impact & Responsibility
         </h2>
 
@@ -1141,7 +1141,7 @@ export function GroupWireframe_Governance(): ReactNode {
         <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-2" style={{ color: 'var(--vharanani-charcoal)' }}>
           Governance & Compliance
         </h2>
-        <p className="typo-copy font-inter mb-12 max-w-2xl" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+        <p className="typo-copy font-inter mb-8 max-w-2xl" style={{ color: 'var(--vharanani-charcoal-60)' }}>
           Ethics, risk management, and transparent reporting define our operational framework.
         </p>
 
@@ -1238,7 +1238,7 @@ export function GroupWireframe_Companies(): ReactNode {
           </span>
         </div>
         <p className="typo-meta tracking-[0.25em] uppercase font-inter mb-2" style={{ color: 'var(--vharanani-burgundy)' }}>COMPANIES</p>
-        <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-12 text-white">
+        <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-8 text-white">
           Our Companies
         </h2>
 
@@ -1319,7 +1319,7 @@ export function GroupWireframe_NewsContact(): ReactNode {
             SEC 09 — UPDATES
           </span>
         </div>
-        <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-12" style={{ color: 'var(--vharanani-charcoal)' }}>
+        <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-8" style={{ color: 'var(--vharanani-charcoal)' }}>
           Sustainable Impact & News
         </h2>
 
