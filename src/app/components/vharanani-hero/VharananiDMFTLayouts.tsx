@@ -125,7 +125,7 @@ export function DMFTWireframe_HeroAbout({ onTabChange }: { onTabChange?: (tabId:
               </div>
               <div className="lg:col-span-5 flex flex-col gap-6">
                 <p className="typo-copy font-inter text-white/60">
-                  High-quality residential, commercial, and mixed-use developments — delivered with the construction expertise and infrastructure backing of the Vharanani Group.
+                  DMFT Property Developers is a property development company focused on the creation of high-quality residential and mixed-use developments across South Africa. As part of the Vharanani Group, DMFT leverages deep expertise in construction, infrastructure development, and project management to deliver well-planned developments that meet the needs of modern communities.
                 </p>
                 <div className="flex items-center gap-3">
                   <button onClick={() => onTabChange?.('residential-estates')} className="flex items-center gap-2 px-5 py-3 transition-all duration-300 hover:gap-3" style={{ background: 'var(--vharanani-burgundy)' }}>
@@ -256,7 +256,7 @@ export function DMFTWireframe_DevelopmentApproach(): ReactNode {
   const phases = [
     {
       step: '01',
-      title: 'Land Identification',
+      title: 'Land Identification & Acquisition',
       icon: <Search size={22} />,
       headline: 'Strategic Location Selection',
       description: 'Carefully identifying strategic locations with strong growth potential, development viability, and alignment with market demand — ensuring every project starts from a position of strength.',
@@ -265,28 +265,28 @@ export function DMFTWireframe_DevelopmentApproach(): ReactNode {
     },
     {
       step: '02',
-      title: 'Planning & Design',
+      title: 'Planning & Feasibility',
       icon: <Target size={22} />,
       headline: 'From Concept to Blueprint',
-      description: 'Conducting detailed feasibility studies, comprehensive development planning, and working with experienced architects to create modern, functional, and aesthetically compelling development designs.',
-      capabilities: ['Town Planning', 'Architectural Design', 'Environmental Studies', 'Municipal Approvals'],
+      description: 'Conducting detailed feasibility studies, zoning processes, and development planning, working with experienced professionals to design modern and functional developments.',
+      capabilities: ['Town Planning', 'Architectural Design', 'Zoning Processes', 'Municipal Approvals'],
       image: IMAGES.blueprint,
     },
     {
       step: '03',
-      title: 'Construction & Delivery',
+      title: 'Construction & Project Management',
       icon: <HardHat size={22} />,
       headline: 'Built With Vharanani Expertise',
-      description: 'Leveraging Vharanani Group\'s extensive construction infrastructure to deliver projects efficiently, safely, and to the highest quality standards — from groundbreaking through to handover.',
+      description: 'Leveraging the construction expertise of the Vharanani Group to deliver projects efficiently and safely, from groundbreaking through to handover.',
       capabilities: ['Quality Construction', 'Project Management', 'Safety Compliance', 'Timeline Delivery'],
       image: IMAGES.propertyDev,
     },
     {
       step: '04',
-      title: 'Sales & Handover',
+      title: 'Sales & Delivery',
       icon: <Briefcase size={22} />,
       headline: 'Lasting Value for All',
-      description: 'Delivering completed developments that provide lasting value for homeowners, investors, and the communities where we build — backed by quality guarantees and ongoing support.',
+      description: 'Delivering completed developments that provide value for homeowners, investors, and communities.',
       capabilities: ['Sales Management', 'Title Transfers', 'Homeowner Support', 'Community Integration'],
       image: IMAGES.residentialEstate,
     },
@@ -448,32 +448,32 @@ export function DMFTWireframe_Portfolio(): ReactNode {
       title: 'Residential Estates',
       category: 'FLAGSHIP',
       image: IMAGES.residentialEstate,
-      description: 'Secure gated communities designed for modern living with 24/7 access control, premium amenities, and a focus on community and lifestyle.',
-      features: ['Gated Security', '24/7 Access Control', 'Premium Amenities', 'Landscaped Gardens'],
+      description: 'Secure residential estates designed to provide comfortable and modern living environments.',
+      features: ['Gated Security', 'Modern Amenities', 'Landscaped Gardens', 'Community Living'],
       metric: { value: '1,200+', label: 'Units Across Estates' },
     },
     {
-      title: 'Apartments',
+      title: 'Apartment Developments',
       category: 'URBAN LIVING',
       image: IMAGES.apartment,
-      description: 'Well-designed apartment developments offering efficient living spaces in growing urban areas with contemporary finishes.',
+      description: 'Well-designed apartment developments offering efficient living spaces within growing urban areas.',
       features: ['Modern Finishes', 'Open-Plan Living', 'Parking Included', 'Security'],
       metric: { value: '800+', label: 'Units Planned' },
     },
     {
-      title: 'Townhouses',
+      title: 'Townhouse Complexes',
       category: 'RESIDENTIAL',
       image: IMAGES.townhouse,
-      description: 'Modern townhouse developments for families and young professionals with contemporary finishes and private gardens.',
-      features: ['Private Gardens', 'Double Garages', 'Family Living', 'Pet-Friendly'],
+      description: 'Modern townhouse developments designed to meet the needs of families and young professionals.',
+      features: ['Private Gardens', 'Double Garages', 'Family Living', 'Contemporary Finishes'],
       metric: { value: '500+', label: 'Homes Delivered' },
     },
     {
-      title: 'Mixed-Use Precincts',
+      title: 'Mixed-Use Developments',
       category: 'INTEGRATED',
       image: IMAGES.mixedUse,
-      description: 'Self-sustaining environments where people live, work, and engage within one well-planned precinct.',
-      features: ['Retail Ground Floor', 'Office Spaces', 'Residential Above', 'Public Spaces'],
+      description: 'Integrated developments that combine residential, commercial, and community spaces.',
+      features: ['Retail Ground Floor', 'Office Spaces', 'Residential Above', 'Community Spaces'],
       metric: { value: '3', label: 'Precincts In Development' },
     },
   ];
@@ -497,7 +497,7 @@ export function DMFTWireframe_Portfolio(): ReactNode {
             </div>
             <div className="lg:col-span-5">
               <p className="typo-copy font-inter" style={{ color: 'var(--vharanani-charcoal-60)' }}>
-                A portfolio spanning residential estates, modern apartments, townhouse communities, and integrated mixed-use precincts — all built with Vharanani Group quality.
+                DMFT Property Developers focuses on the development of well-planned residential and mixed-use developments across South Africa.
               </p>
             </div>
           </div>
@@ -749,12 +749,12 @@ export function DMFTWireframe_CapabilitiesQuality(): ReactNode {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
 
   const capabilities = [
-    { title: 'Land Development', image: IMAGES.aerialDev },
-    { title: 'Property Planning', image: IMAGES.blueprint },
+    { title: 'Land Development & Township Establishment', image: IMAGES.aerialDev },
+    { title: 'Property Development Planning', image: IMAGES.blueprint },
     { title: 'Project Management', image: IMAGES.propertyDev },
     { title: 'Infrastructure Integration', image: IMAGES.mixedUse },
-    { title: 'Residential Construction', image: IMAGES.residentialEstate },
-    { title: 'Mixed-Use Delivery', image: IMAGES.townhouse },
+    { title: 'Residential Development Construction', image: IMAGES.residentialEstate },
+    { title: 'Mixed-Use Development Delivery', image: IMAGES.townhouse },
   ];
 
   return (
@@ -854,14 +854,15 @@ export function DMFTWireframe_CapabilitiesQuality(): ReactNode {
 
               <div className="grid grid-cols-1 gap-0" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
                 {[
-                  { icon: <Globe size={18} />, label: 'Sustainable Growth', text: 'Supporting sustainable urban growth through responsible development.' },
-                  { icon: <Landmark size={18} />, label: 'Long-Term Value', text: 'Providing lasting value to residents and investors.' },
-                  { icon: <Heart size={18} />, label: 'Community Contribution', text: 'Contributing positively to the communities we operate in.' },
+                  { icon: <HardHat size={18} />, label: 'High Construction Standards', text: 'Meeting high construction standards on every development we undertake.' },
+                  { icon: <Landmark size={18} />, label: 'Long-Term Value', text: 'Providing long-term value to residents and investors.' },
+                  { icon: <Heart size={18} />, label: 'Community Contribution', text: 'Contributing positively to the communities in which we operate.' },
+                  { icon: <Globe size={18} />, label: 'Sustainable Urban Growth', text: 'Supporting sustainable urban growth through responsible development.' },
                 ].map((item, i) => (
                   <div
                     key={item.label}
                     className="flex items-start gap-4 p-5"
-                    style={{ borderBottom: i < 2 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}
+                    style={{ borderBottom: i < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}
                   >
                     <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center" style={{ border: '1px solid var(--vharanani-burgundy)', color: 'var(--vharanani-burgundy)' }}>
                       {item.icon}
@@ -977,13 +978,17 @@ export function DMFTWireframe_HeritageContact(): ReactNode {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
               <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
-                GET IN TOUCH
+                CONTACT
               </span>
             </div>
 
-            <h3 className="typo-headline-big font-bebas-neue tracking-wide uppercase mb-6" style={{ color: 'var(--vharanani-charcoal)' }}>
-              Ready to Partner?
+            <h3 className="typo-headline-big font-bebas-neue tracking-wide uppercase mb-4" style={{ color: 'var(--vharanani-charcoal)' }}>
+              DMFT Property Developers
             </h3>
+
+            <p className="typo-copy-small font-inter mb-6" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+              For development inquiries, partnerships, or property opportunities, please contact DMFT Property Developers.
+            </p>
 
             {/* Form */}
             <div className="space-y-4 mb-8">
@@ -1037,9 +1042,9 @@ export function DMFTWireframe_HeritageContact(): ReactNode {
             {/* Contact details */}
             <div className="grid grid-cols-1 gap-0" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
               {[
-                { icon: <Mail size={14} />, label: 'info@vharanani.com' },
-                { icon: <Phone size={14} />, label: '+27 (0) 11 XXX XXXX' },
-                { icon: <MapPin size={14} />, label: 'Johannesburg, South Africa' },
+                { icon: <Mail size={14} />, label: 'info@vharananiproperties.co.za' },
+                { icon: <Phone size={14} />, label: '+27 11 656 1418' },
+                { icon: <MapPin size={14} />, label: '18 Hume Road, Dunkeld West, Johannesburg' },
               ].map((item, i) => (
                 <div
                   key={item.label}
