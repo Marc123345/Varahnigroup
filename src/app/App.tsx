@@ -1,4 +1,4 @@
-import { VharananiEditorialHero } from './components/vharanani-hero/VharananiEditorialHero';
+import { VharananiEditorialHero } from './pages/VharananiEditorialHero';
 
 // Force clean rebuild
 function App() {

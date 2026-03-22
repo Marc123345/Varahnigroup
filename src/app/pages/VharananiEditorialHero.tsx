@@ -6,13 +6,13 @@ import {
   Shield, Landmark, TreePine, Globe, Target, Eye, Layers,
   Droplets, Wrench, Award, Home, Factory,
 } from 'lucide-react';
-import { MobileMenu } from '../property/MobileMenu';
-import { CSS3DCube } from './CSS3DCube';
-import { GlassmorphismOverlay } from './GlassmorphismOverlay';
+import { MobileMenu } from '../components/layout/MobileMenu';
+import { CSS3DCube } from '../components/ui/CSS3DCube';
+import { GlassmorphismOverlay } from '../components/overlay/GlassmorphismOverlay';
 import { VharananiHomeBanner } from './VharananiHomeBanner';
-import { useResponsive } from '../../hooks/useResponsive';
-import { safeVibrate } from '../../utils/vibration';
-import vectorBg from '../../../imports/Vector.svg';
+import { useResponsive } from '../hooks/useResponsive';
+import { safeVibrate } from '../utils/vibration';
+import vectorBg from '../../assets/Vector.svg';
 import {
   GroupWireframe_ExecutiveSummary,
   GroupWireframe_PortfolioGrid,
@@ -23,7 +23,7 @@ import {
   GroupWireframe_VisionMission,
   GroupWireframe_Governance,
   GroupWireframe_Companies,
-} from './VharananiGroupLayouts';
+} from '../components/divisions/VharananiGroupLayouts';
 import {
   PropertiesWireframe_AboutImpact,
   PropertiesWireframe_IntegratedServices,
@@ -31,14 +31,14 @@ import {
   PropertiesWireframe_Compliance,
   PropertiesWireframe_ValuesImpact,
   PropertiesWireframe_ContactFootprint,
-} from './VharananiPropertiesLayouts';
+} from '../components/divisions/VharananiPropertiesLayouts';
 import {
   DMFTWireframe_HeroAbout,
   DMFTWireframe_DevelopmentApproach,
   DMFTWireframe_Portfolio,
   DMFTWireframe_CapabilitiesQuality,
   DMFTWireframe_HeritageContact,
-} from './VharananiDMFTLayouts';
+} from '../components/divisions/VharananiDMFTLayouts';
 import {
   FoundationWireframe_Hero,
   FoundationWireframe_PartnerNetwork,
@@ -46,7 +46,7 @@ import {
   FoundationWireframe_ImpactStories,
   FoundationWireframe_Heritage,
   FoundationWireframe_Contact,
-} from './VharananiFoundationLayouts';
+} from '../components/divisions/VharananiFoundationLayouts';
 
 // ═══════════════════════════════════════════════════════════
 // DATA STRUCTURES

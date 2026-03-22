@@ -6,7 +6,7 @@ import {
   Building2, MapPin, Mail, Phone, ArrowRight, Layers,
   BookOpen, Shield,
 } from 'lucide-react';
-import { ImageWithFallback } from '../figma/ImageWithFallback';
+import { ImageWithFallback } from '../ui/ImageWithFallback';
 
 
 // ═══════════════════════════════════════════════════════════

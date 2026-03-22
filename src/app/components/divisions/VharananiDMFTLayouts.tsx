@@ -6,7 +6,7 @@ import {
   Eye, Target, Briefcase, Home, Building2, Landmark,
   Heart, Globe, Mail, Phone, ChevronRight,
 } from 'lucide-react';
-import { ImageWithFallback } from '../figma/ImageWithFallback';
+import { ImageWithFallback } from '../ui/ImageWithFallback';
 
 
 // ═══════════════════════════════════════════════════════════

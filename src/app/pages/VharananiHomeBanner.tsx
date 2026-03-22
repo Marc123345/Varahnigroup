@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
-import { VharananiTextScramble } from './VharananiTextScramble';
+import { VharananiTextScramble } from '../components/ui/VharananiTextScramble';
 
 const SCRAMBLE_PHRASES = [
   'Infrastructure',

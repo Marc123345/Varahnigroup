@@ -6,7 +6,7 @@ import {
   Sprout, Route, TrendingUp, Users, Gavel, FileCheck, Scale, Eye,
   Linkedin, Twitter, Facebook, MapPin, Phone, Mail,
 } from 'lucide-react';
-import { ImageWithFallback } from '../figma/ImageWithFallback';
+import { ImageWithFallback } from '../ui/ImageWithFallback';
 
 
 // ═══════════════════════════════════════════════════════════

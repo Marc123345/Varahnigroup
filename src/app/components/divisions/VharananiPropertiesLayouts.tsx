@@ -7,7 +7,7 @@ import {
   ArrowRight, ArrowLeft, Users, Briefcase,
   GraduationCap, X,
 } from 'lucide-react';
-import { ImageWithFallback } from '../figma/ImageWithFallback';
+import { ImageWithFallback } from '../ui/ImageWithFallback';
 
 
 // ═══════════════════════════════════════════════════════════
