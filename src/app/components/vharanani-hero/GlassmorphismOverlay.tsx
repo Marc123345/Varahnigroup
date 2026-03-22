@@ -119,7 +119,7 @@ export function GlassmorphismOverlay({
       exit={{ opacity: 0, y: 12, scale: 0.99 }}
       transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
       className="fixed inset-0 z-50 overflow-hidden"
-      style={{ background: '#fafafa' }}
+      style={{ background: '#000000' }}
     >
       {/* ── BACKGROUND TEXTURE ── */}
       <div className="absolute inset-0 pointer-events-none" style={{ opacity: 0.025 }}>
@@ -137,7 +137,7 @@ export function GlassmorphismOverlay({
       <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: 'var(--vharanani-burgundy)', zIndex: 60 }} />
 
       {/* ── SCROLL PROGRESS BAR ── */}
-      <div className="absolute top-[3px] left-0 right-0 h-[2px] z-50" style={{ backgroundColor: 'var(--vharanani-charcoal-20)' }}>
+      <div className="absolute top-[3px] left-0 right-0 h-[2px] z-50" style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}>
         <motion.div
           className="absolute inset-y-0 left-0 origin-left"
           style={{ width: progressWidth, backgroundColor: 'var(--vharanani-burgundy)', opacity: 0.5 }}
@@ -148,9 +148,9 @@ export function GlassmorphismOverlay({
       <div
         className="relative flex items-center gap-0 px-3 sm:px-6 lg:px-10 border-b overflow-x-auto"
         style={{
-          borderColor: 'var(--vharanani-charcoal-20)',
+          borderColor: 'rgba(255,255,255,0.12)',
           scrollbarWidth: 'none',
-          background: 'rgba(255,255,255,0.96)',
+          background: 'rgba(0,0,0,0.96)',
           backdropFilter: 'blur(12px)',
           WebkitBackdropFilter: 'blur(12px)',
         }}
@@ -188,7 +188,7 @@ export function GlassmorphismOverlay({
         )}
 
         {/* Divider */}
-        <div className="w-[1px] h-6 mr-2 sm:mr-4 flex-shrink-0" style={{ backgroundColor: 'var(--vharanani-charcoal-20)' }} />
+        <div className="w-[1px] h-6 mr-2 sm:mr-4 flex-shrink-0" style={{ backgroundColor: 'rgba(255,255,255,0.15)' }} />
 
         {/* Tabs */}
         {tabs.map((tab, i) => {
@@ -209,7 +209,7 @@ export function GlassmorphismOverlay({
                 <span
                   className="font-bebas-neue text-sm transition-colors duration-200"
                   style={{
-                    color: isActive ? 'var(--vharanani-burgundy)' : 'var(--vharanani-charcoal-40)',
+                    color: isActive ? 'var(--vharanani-burgundy)' : 'rgba(255,255,255,0.3)',
                   }}
                 >
                   {String(i + 1).padStart(2, '0')}
@@ -217,7 +217,7 @@ export function GlassmorphismOverlay({
                 <span
                   className="typo-meta tracking-[0.12em] sm:tracking-[0.15em] uppercase font-inter transition-colors duration-200 whitespace-nowrap"
                   style={{
-                    color: isActive ? 'var(--vharanani-charcoal)' : 'var(--vharanani-charcoal-40)',
+                    color: isActive ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.4)',
                     fontWeight: isActive ? 500 : 400,
                   }}
                 >
@@ -354,18 +354,18 @@ export function GlassmorphismOverlay({
       <div
         className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-4 sm:px-8 lg:px-12"
         style={{
-          background: 'rgba(255,255,255,0.95)',
+          background: 'rgba(0,0,0,0.95)',
           backdropFilter: 'blur(8px)',
           WebkitBackdropFilter: 'blur(8px)',
-          borderTop: '1px solid var(--vharanani-charcoal-20)',
+          borderTop: '1px solid rgba(255,255,255,0.1)',
           height: '36px',
         }}
       >
-        <span className="font-inter typo-meta tracking-[0.28em] uppercase" style={{ color: 'var(--vharanani-charcoal-40)' }}>
+        <span className="font-inter typo-meta tracking-[0.28em] uppercase" style={{ color: 'rgba(255,255,255,0.35)' }}>
           VISION. STRUCTURE. IMPACT.
         </span>
         <div className="hidden sm:flex items-center gap-4">
-          <span className="font-inter typo-meta tracking-[0.15em] uppercase" style={{ color: 'var(--vharanani-charcoal-40)' }}>
+          <span className="font-inter typo-meta tracking-[0.15em] uppercase" style={{ color: 'rgba(255,255,255,0.35)' }}>
             ESC TO CLOSE
           </span>
         </div>
