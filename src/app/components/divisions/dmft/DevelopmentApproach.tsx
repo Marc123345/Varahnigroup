@@ -1,196 +1,448 @@
-import { type ReactNode } from 'react';
-import { motion } from 'motion/react';
+import { type ReactNode, useRef } from 'react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { Search, Target, HardHat, Briefcase } from 'lucide-react';
 import { ImageWithFallback } from '../../ui/ImageWithFallback';
-import { SectionWrapper } from '../shared';
 
-const IMAGES = {
-  aerialDev: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/09/DJI_0247-scaled.jpg?w=1440&ssl=1',
-  blueprint: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/Mogalakwena.jpg?w=1080&ssl=1',
-  propertyDev: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/10/Property-development-scaled.jpg?w=1080&ssl=1',
-  residentialEstate: 'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_faranani-estate-1-1.jpg?w=1080&ssl=1',
-};
+const TICKER_ITEMS = [
+  'Land Acquisition', 'Planning & Feasibility', 'Construction Management',
+  'Project Delivery', 'Sales & Handover', 'Land Acquisition',
+  'Planning & Feasibility', 'Construction Management', 'Project Delivery', 'Sales & Handover',
+];
 
-export function DMFTWireframe_DevelopmentApproach(): ReactNode {
-  const phases = [
-    {
-      step: '01',
-      title: 'Land Identification & Acquisition',
-      icon: <Search size={22} />,
-      headline: 'Strategic Location Selection',
-      description: 'Carefully identifying strategic locations with strong growth potential, development viability, and alignment with market demand — ensuring every project starts from a position of strength.',
-      capabilities: ['Market Analysis', 'Growth Corridors', 'Zoning Assessment', 'Feasibility Studies'],
-      image: IMAGES.aerialDev,
-    },
-    {
-      step: '02',
-      title: 'Planning & Feasibility',
-      icon: <Target size={22} />,
-      headline: 'From Concept to Blueprint',
-      description: 'Conducting detailed feasibility studies, zoning processes, and development planning, working with experienced professionals to design modern and functional developments.',
-      capabilities: ['Town Planning', 'Architectural Design', 'Zoning Processes', 'Municipal Approvals'],
-      image: IMAGES.blueprint,
-    },
-    {
-      step: '03',
-      title: 'Construction & Project Management',
-      icon: <HardHat size={22} />,
-      headline: 'Built With Vharanani Expertise',
-      description: 'Leveraging the construction expertise of the Vharanani Group to deliver projects efficiently and safely, from groundbreaking through to handover.',
-      capabilities: ['Quality Construction', 'Project Management', 'Safety Compliance', 'Timeline Delivery'],
-      image: IMAGES.propertyDev,
-    },
-    {
-      step: '04',
-      title: 'Sales & Delivery',
-      icon: <Briefcase size={22} />,
-      headline: 'Lasting Value for All',
-      description: 'Delivering completed developments that provide value for homeowners, investors, and communities.',
-      capabilities: ['Sales Management', 'Title Transfers', 'Homeowner Support', 'Community Integration'],
-      image: IMAGES.residentialEstate,
-    },
-  ];
+interface Phase {
+  step: string;
+  title: string;
+  icon: ReactNode;
+  headline: string;
+  description: string;
+  capabilities: string[];
+  image: string;
+}
+
+const PHASES: Phase[] = [
+  {
+    step: '01',
+    title: 'Land Identification\n& Acquisition',
+    icon: <Search size={13} style={{ color: 'rgba(255,255,255,0.25)' }} />,
+    headline: 'Strategic Location Selection',
+    description:
+      'Carefully identifying strategic locations with strong growth potential, development viability, and alignment with market demand — ensuring every project starts from a position of strength.',
+    capabilities: ['Market Analysis', 'Growth Corridors', 'Zoning Assessment', 'Feasibility Studies'],
+    image:
+      'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/09/DJI_0247-scaled.jpg?w=1440&ssl=1',
+  },
+  {
+    step: '02',
+    title: 'Planning &\nFeasibility',
+    icon: <Target size={13} style={{ color: 'rgba(255,255,255,0.25)' }} />,
+    headline: 'From Concept to Blueprint',
+    description:
+      'Conducting detailed feasibility studies, zoning processes, and development planning, working with experienced professionals to design modern and functional developments.',
+    capabilities: ['Town Planning', 'Architectural Design', 'Zoning Processes', 'Municipal Approvals'],
+    image:
+      'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/Mogalakwena.jpg?w=1080&ssl=1',
+  },
+  {
+    step: '03',
+    title: 'Construction &\nProject Management',
+    icon: <HardHat size={13} style={{ color: 'rgba(255,255,255,0.25)' }} />,
+    headline: 'Built With Vharanani Expertise',
+    description:
+      'Leveraging the construction expertise of the Vharanani Group to deliver projects efficiently and safely, from groundbreaking through to handover.',
+    capabilities: ['Quality Construction', 'Project Management', 'Safety Compliance', 'Timeline Delivery'],
+    image:
+      'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/10/Property-development-scaled.jpg?w=1080&ssl=1',
+  },
+  {
+    step: '04',
+    title: 'Sales &\nDelivery',
+    icon: <Briefcase size={13} style={{ color: 'rgba(255,255,255,0.25)' }} />,
+    headline: 'Lasting Value for All',
+    description:
+      'Delivering completed developments that provide value for homeowners, investors, and communities.',
+    capabilities: ['Sales Management', 'Title Transfers', 'Homeowner Support', 'Community Integration'],
+    image:
+      'https://i0.wp.com/vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_faranani-estate-1-1.jpg?w=1080&ssl=1',
+  },
+];
+
+/* ─────────────────────────────────────────────────── */
+/* Phase block                                         */
+/* ─────────────────────────────────────────────────── */
+function PhaseBlock({ phase, index }: { phase: Phase; index: number }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isEven = index % 2 === 0;
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start end', 'end start'],
+  });
+  const imageY = useTransform(scrollYProgress, [0, 1], ['-8%', '8%']);
 
   return (
-    <SectionWrapper className="!py-0 !px-0">
-      {/* ── HEADER BAND ── */}
-      <div className="relative h-[35vh] sm:h-[40vh] min-h-[260px] sm:min-h-[320px] overflow-hidden">
-        <ImageWithFallback
-          src={IMAGES.blueprint}
-          alt="Property development planning"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0" style={{
-          background: 'linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.98) 100%)'
-        }} />
-        <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'var(--vharanani-burgundy)' }} />
+    <div
+      ref={containerRef}
+      className="relative overflow-hidden"
+      style={{ background: isEven ? '#060606' : '#0c0c0c' }}
+    >
+      {/* Ghost step number */}
+      <div
+        className="absolute inset-0 pointer-events-none select-none overflow-hidden flex items-center"
+        style={{ justifyContent: isEven ? 'flex-end' : 'flex-start' }}
+        aria-hidden="true"
+      >
+        <span
+          className="font-bebas-neue"
+          style={{
+            fontSize: 'clamp(200px, 30vw, 420px)',
+            lineHeight: 0.85,
+            color: 'rgba(255,255,255,0.022)',
+            paddingRight: isEven ? '4vw' : 0,
+            paddingLeft: isEven ? 0 : '4vw',
+          }}
+        >
+          {phase.step}
+        </span>
+      </div>
 
-        <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 lg:px-20 pb-12">
-          <div className="max-w-7xl mx-auto w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-              <div className="lg:col-span-7">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-                  <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy-60)' }}>
-                    OUR PROCESS
-                  </span>
+      <div className="relative max-w-screen-xl mx-auto">
+        <div
+          className="grid grid-cols-1 lg:grid-cols-2"
+          style={{ minHeight: '580px' }}
+        >
+          {/* ── IMAGE ── */}
+          <div
+            className="relative overflow-hidden"
+            style={{
+              order: isEven ? 2 : 1,
+              minHeight: '320px',
+            }}
+          >
+            {/* Clip-path reveal */}
+            <motion.div
+              className="absolute inset-0"
+              initial={{ clipPath: isEven ? 'inset(0 0 0 100%)' : 'inset(0 100% 0 0)' }}
+              whileInView={{ clipPath: 'inset(0 0% 0 0%)' }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            >
+              {/* Parallax image */}
+              <motion.div
+                style={{
+                  y: imageY,
+                  position: 'absolute',
+                  top: '-12%',
+                  left: 0,
+                  right: 0,
+                  bottom: '-12%',
+                }}
+              >
+                <ImageWithFallback
+                  src={phase.image}
+                  alt={phase.title.replace('\n', ' ')}
+                  className="w-full h-full object-cover"
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{ background: 'rgba(0,0,0,0.28)' }}
+                />
+              </motion.div>
+            </motion.div>
+
+            {/* Phase label bar */}
+            <div
+              className="absolute bottom-0 left-0 right-0 flex items-center gap-4 px-8 py-4"
+              style={{
+                background: 'rgba(4,4,4,0.9)',
+                backdropFilter: 'blur(16px)',
+                borderTop: '1px solid rgba(129,41,33,0.22)',
+              }}
+            >
+              <span
+                className="font-bebas-neue tracking-[0.3em] uppercase"
+                style={{ fontSize: 13, color: 'var(--vharanani-burgundy)' }}
+              >
+                Phase {phase.step}
+              </span>
+              <div
+                className="flex-1"
+                style={{ height: 1, background: 'rgba(255,255,255,0.06)' }}
+              />
+              {phase.icon}
+            </div>
+          </div>
+
+          {/* ── CONTENT ── */}
+          <div
+            className="flex flex-col justify-center px-10 md:px-16 py-20"
+            style={{ order: isEven ? 1 : 2 }}
+          >
+            {/* Step indicator */}
+            <motion.div
+              initial={{ opacity: 0, x: isEven ? -24 : 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+              className="flex items-center gap-5 mb-10"
+            >
+              <div
+                style={{
+                  width: 2,
+                  height: 60,
+                  background: 'var(--vharanani-burgundy)',
+                  flexShrink: 0,
+                }}
+              />
+              <div>
+                <div
+                  className="typo-caption font-inter tracking-[0.35em] uppercase mb-1"
+                  style={{ color: 'var(--vharanani-burgundy-60)' }}
+                >
+                  Development Phase
                 </div>
-                <h2 className="typo-header font-bebas-neue tracking-wide uppercase text-white" style={{ lineHeight: 0.95 }}>
-                  Development<br />Approach
-                </h2>
+                <div
+                  className="font-bebas-neue text-white"
+                  style={{ fontSize: 56, lineHeight: 1 }}
+                >
+                  {phase.step}{' '}
+                  <span style={{ color: 'rgba(255,255,255,0.14)' }}>/ 04</span>
+                </div>
               </div>
-              <div className="lg:col-span-5">
-                <p className="typo-copy font-inter text-white/50">
-                  We manage the full lifecycle of property development — from strategic land identification through to sales and handover, ensuring every project is delivered to the highest standards.
-                </p>
-              </div>
+            </motion.div>
+
+            {/* Title — clip reveal */}
+            <div className="overflow-hidden mb-4">
+              <motion.h3
+                initial={{ y: '108%' }}
+                whileInView={{ y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.12 }}
+                className="font-bebas-neue uppercase text-white"
+                style={{
+                  fontSize: 'clamp(38px, 5vw, 68px)',
+                  lineHeight: 0.95,
+                  whiteSpace: 'pre-line',
+                }}
+              >
+                {phase.title}
+              </motion.h3>
+            </div>
+
+            {/* Headline */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="font-bebas-neue uppercase tracking-wide mb-7"
+              style={{ fontSize: 22, color: 'var(--vharanani-burgundy)', letterSpacing: '0.04em' }}
+            >
+              — {phase.headline}
+            </motion.p>
+
+            {/* Description */}
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.42, duration: 0.7 }}
+              className="typo-copy font-inter mb-10"
+              style={{ color: 'rgba(255,255,255,0.4)', maxWidth: 460, lineHeight: 1.78 }}
+            >
+              {phase.description}
+            </motion.p>
+
+            {/* Capability tags */}
+            <div className="flex flex-wrap gap-2">
+              {phase.capabilities.map((cap, ci) => (
+                <motion.span
+                  key={cap}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.54 + ci * 0.09, duration: 0.45 }}
+                  className="typo-label font-inter tracking-[0.14em] uppercase px-4 py-2"
+                  style={{
+                    border: '1px solid rgba(129,41,33,0.28)',
+                    color: 'rgba(255,255,255,0.48)',
+                    background: 'rgba(129,41,33,0.05)',
+                  }}
+                >
+                  {cap}
+                </motion.span>
+              ))}
             </div>
           </div>
         </div>
       </div>
 
-      {/* ── ALTERNATING PHASE CARDS ── */}
-      <div style={{ background: '#ffffff' }}>
-        {phases.map((phase, i) => {
-          const isEven = i % 2 === 0;
-          return (
-            <motion.div
-              key={phase.step}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+      {/* Phase divider */}
+      <div style={{ height: 1, background: 'rgba(129,41,33,0.14)' }} />
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────────── */
+/* Main export                                         */
+/* ─────────────────────────────────────────────────── */
+export function DMFTWireframe_DevelopmentApproach(): ReactNode {
+  return (
+    <div style={{ background: '#060606' }}>
+
+      {/* ── HEADER ── */}
+      <div
+        className="relative overflow-hidden"
+        style={{ background: '#040404', borderBottom: '1px solid rgba(129,41,33,0.18)' }}
+      >
+        {/* Background ghost */}
+        <div
+          className="absolute right-0 bottom-0 pointer-events-none select-none overflow-hidden leading-none"
+          aria-hidden="true"
+        >
+          <span
+            className="font-bebas-neue"
+            style={{ fontSize: 'clamp(90px, 15vw, 220px)', color: 'rgba(255,255,255,0.016)' }}
+          >
+            PROCESS
+          </span>
+        </div>
+
+        <div className="relative max-w-screen-xl mx-auto px-8 md:px-16 py-24 md:py-36">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
+
+            {/* Left: heading */}
+            <div>
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="flex items-center gap-4 mb-8"
+              >
                 <div
-                  className="grid grid-cols-1 lg:grid-cols-12 gap-0 overflow-hidden"
                   style={{
-                    borderLeft: '1px solid var(--vharanani-charcoal-20)',
-                    borderRight: '1px solid var(--vharanani-charcoal-20)',
-                    borderBottom: '1px solid var(--vharanani-charcoal-20)',
-                    borderTop: i === 0 ? '1px solid var(--vharanani-charcoal-20)' : 'none',
+                    width: 32,
+                    height: 2,
+                    background: 'var(--vharanani-burgundy)',
+                    flexShrink: 0,
+                  }}
+                />
+                <span
+                  className="typo-caption font-inter tracking-[0.32em] uppercase"
+                  style={{ color: 'var(--vharanani-burgundy)' }}
+                >
+                  OUR PROCESS
+                </span>
+              </motion.div>
+
+              <div className="overflow-hidden">
+                <motion.h2
+                  initial={{ y: '100%' }}
+                  whileInView={{ y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+                  className="font-bebas-neue uppercase text-white"
+                  style={{
+                    fontSize: 'clamp(62px, 10vw, 144px)',
+                    lineHeight: 0.88,
+                    letterSpacing: '-0.01em',
                   }}
                 >
-                  {/* Image side */}
-                  <div className={`lg:col-span-5 relative h-[280px] lg:h-auto lg:min-h-[380px] overflow-hidden ${isEven ? '' : 'lg:order-2'}`}>
-                    <ImageWithFallback
-                      src={phase.image}
-                      alt={phase.title}
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0" style={{
-                      background: isEven
-                        ? 'linear-gradient(135deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.45) 100%)'
-                        : 'linear-gradient(225deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.45) 100%)'
-                    }} />
-                    {/* Ghost step number */}
-                    <div className="absolute top-4 left-6">
-                      <span className="font-bebas-neue" style={{ fontSize: 'clamp(72px, 10vw, 120px)', lineHeight: 1, color: 'rgba(255,255,255,0.07)' }}>
-                        {phase.step}
-                      </span>
-                    </div>
-                    {/* Bottom phase label */}
-                    <div className="absolute bottom-0 left-0 right-0 px-6 py-4" style={{ background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(8px)' }}>
-                      <div className="flex items-center gap-4">
-                        <div className="typo-headline-small font-bebas-neue uppercase tracking-wide" style={{ color: 'var(--vharanani-burgundy)' }}>
-                          Phase {phase.step}
-                        </div>
-                        <div className="flex-1 h-[1px]" style={{ background: 'rgba(255,255,255,0.1)' }} />
-                        <div className="typo-caption tracking-[0.15em] uppercase font-inter text-white/60">
-                          {phase.title}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Content side */}
-                  <div className={`lg:col-span-7 p-8 md:p-12 flex flex-col justify-center ${isEven ? '' : 'lg:order-1'}`} style={{ background: i % 2 === 0 ? '#ffffff' : '#fafafa' }}>
-                    {/* Icon + tag */}
-                    <div className="flex items-center gap-3 mb-5">
-                      <div className="w-10 h-10 flex items-center justify-center" style={{ border: '1.5px solid var(--vharanani-burgundy)', color: 'var(--vharanani-burgundy)' }}>
-                        {phase.icon}
-                      </div>
-                      <span className="typo-caption tracking-[0.2em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
-                        STEP {phase.step}
-                      </span>
-                      <div className="flex-1 h-[1px] ml-2" style={{ background: 'var(--vharanani-charcoal-20)' }} />
-                    </div>
-
-                    <h3 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-2" style={{ color: 'var(--vharanani-charcoal)' }}>
-                      {phase.title}
-                    </h3>
-                    <p className="typo-subline font-bebas-neue uppercase tracking-wide mb-5" style={{ color: 'var(--vharanani-burgundy)', lineHeight: 1.2 }}>
-                      {phase.headline}
-                    </p>
-                    <p className="typo-copy font-inter mb-8" style={{ color: 'var(--vharanani-charcoal-60)' }}>
-                      {phase.description}
-                    </p>
-
-                    {/* Capabilities grid */}
-                    <div className="grid grid-cols-2 gap-0" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
-                      {phase.capabilities.map((cap, ci) => (
-                        <div
-                          key={cap}
-                          className="flex items-center gap-3 p-4"
-                          style={{
-                            borderRight: ci % 2 === 0 ? '1px solid var(--vharanani-charcoal-20)' : 'none',
-                            borderBottom: ci < 2 ? '1px solid var(--vharanani-charcoal-20)' : 'none',
-                          }}
-                        >
-                          <div className="w-1.5 h-1.5 flex-shrink-0" style={{ background: 'var(--vharanani-burgundy)' }} />
-                          <span className="typo-copy-small font-inter" style={{ color: 'var(--vharanani-charcoal-80)' }}>
-                            {cap}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                  Development<br />Approach
+                </motion.h2>
               </div>
-            </motion.div>
-          );
-        })}
+            </div>
+
+            {/* Right: body + stats */}
+            <div className="flex flex-col justify-end gap-8">
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.7 }}
+                className="typo-copy font-inter"
+                style={{ color: 'rgba(255,255,255,0.36)', maxWidth: 420, lineHeight: 1.78 }}
+              >
+                We manage the full lifecycle of property development — from strategic land
+                identification through to sales and handover, ensuring every project is
+                delivered to the highest standards.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.65 }}
+                className="flex items-center gap-8 pt-6"
+                style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}
+              >
+                {[
+                  { value: '04', label: 'Development Phases' },
+                  { value: '100%', label: 'Lifecycle Managed' },
+                ].map((stat, i) => (
+                  <div key={stat.label} className="flex items-center gap-8">
+                    {i > 0 && (
+                      <div
+                        style={{
+                          width: 1,
+                          height: 44,
+                          background: 'rgba(255,255,255,0.07)',
+                        }}
+                      />
+                    )}
+                    <div>
+                      <div
+                        className="font-bebas-neue text-white"
+                        style={{ fontSize: 46, lineHeight: 1 }}
+                      >
+                        {stat.value}
+                      </div>
+                      <div
+                        className="typo-caption font-inter tracking-[0.2em] uppercase"
+                        style={{ color: 'rgba(255,255,255,0.24)' }}
+                      >
+                        {stat.label}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+          </div>
+        </div>
       </div>
-    </SectionWrapper>
+
+      {/* ── TICKER ── */}
+      <div
+        className="overflow-hidden"
+        style={{
+          background: 'var(--vharanani-burgundy)',
+          borderBottom: '1px solid rgba(0,0,0,0.3)',
+          padding: '10px 0',
+        }}
+      >
+        <div
+          className="animate-ticker-left whitespace-nowrap"
+          style={{ display: 'inline-flex', width: 'max-content' }}
+        >
+          {[...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (
+            <span
+              key={i}
+              className="font-bebas-neue tracking-[0.22em] uppercase"
+              style={{ fontSize: 13, color: 'rgba(255,255,255,0.88)', padding: '0 28px' }}
+            >
+              {item}
+              <span style={{ marginLeft: 28, color: 'rgba(255,255,255,0.22)' }}>·</span>
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* ── PHASES ── */}
+      {PHASES.map((phase, i) => (
+        <PhaseBlock key={phase.step} phase={phase} index={i} />
+      ))}
+
+    </div>
   );
 }
