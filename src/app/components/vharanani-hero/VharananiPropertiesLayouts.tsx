@@ -338,136 +338,166 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
   const current = projects[activeIdx];
 
   return (
-    <SectionWrapper className="!px-0">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-        {/* Section label */}
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-          <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
-            SEC 03 — PROOF OF DELIVERY
-          </span>
-        </div>
-        <h2 className="font-bebas-neue typo-headline-big tracking-wide uppercase mb-10" style={{ color: 'var(--vharanani-charcoal)' }}>
-          Featured Projects
-        </h2>
-      </div>
+    <SectionWrapper className="!py-0 !px-0">
+      <div className="grid grid-cols-1 lg:grid-cols-12" style={{ minHeight: '560px' }}>
 
-      {/* Carousel Container */}
-      <div className="relative overflow-hidden">
-        {/* Active Slide */}
-        <div className="relative h-[280px] sm:h-[380px] lg:h-[520px]">
-          <ImageWithFallback
-            src={current.image}
-            alt={current.title}
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(129,41,33,0.92) 0%, rgba(129,41,33,0.55) 55%, rgba(129,41,33,0.1) 100%)' }} />
+        {/* ── LEFT: Full image ── */}
+        <div className="lg:col-span-7 relative overflow-hidden" style={{ minHeight: '360px' }}>
+          <motion.div
+            key={activeIdx}
+            className="absolute inset-0"
+            initial={{ opacity: 0, scale: 1.04 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <ImageWithFallback
+              src={current.image}
+              alt={current.title}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(129,41,33,0.6) 0%, rgba(129,41,33,0.2) 60%, transparent 100%)' }} />
+          </motion.div>
 
-          {/* Slide Content */}
-          <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 md:p-10 max-w-full sm:max-w-[75%] lg:max-w-[60%]">
-            <div className="inline-block self-start px-2 py-1 mb-3" style={{ background: 'var(--vharanani-burgundy)' }}>
-              <span className="font-inter typo-meta text-white tracking-[0.2em] uppercase">{current.category}</span>
-            </div>
-            <h3 className="font-bebas-neue typo-subline tracking-wide text-white uppercase mb-2">
-              {current.title}
-            </h3>
-            <div className="flex items-center gap-2 mb-4">
-              <MapPin size={12} style={{ color: 'rgba(255,255,255,0.85)' }} />
-              <span className="font-inter typo-copy-small tracking-wider uppercase" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                {current.location}
-              </span>
-            </div>
-            {/* Quick View CTA */}
-            <button
-              onClick={() => setModalOpen(true)}
-              className="inline-flex items-center gap-2 self-start px-5 py-3 transition-all duration-300 hover:gap-3"
-              style={{ background: 'var(--vharanani-burgundy)' }}
-            >
-              <span className="font-bebas-neue typo-headline-small tracking-wider uppercase text-white">Quick View</span>
-              <ArrowRight size={14} className="text-white" />
-            </button>
-          </div>
-
-          {/* Slide counter */}
-          <div className="absolute top-4 right-4 px-3 py-1" style={{ background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.3)' }}>
-            <span className="font-bebas-neue typo-headline-small tracking-wider text-white">
-              {String(activeIdx + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}
+          {/* Counter overlay */}
+          <div className="absolute top-6 left-6 z-10">
+            <span className="font-bebas-neue" style={{ fontSize: '80px', lineHeight: 1, color: 'rgba(255,255,255,0.12)' }}>
+              {String(activeIdx + 1).padStart(2, '0')}
             </span>
           </div>
 
-          {/* Navigation Arrows */}
-          <div className="absolute bottom-6 right-6 flex items-center gap-2">
+          {/* Nav arrows */}
+          <div className="absolute bottom-6 left-6 z-10 flex items-center gap-2">
             <button
               onClick={() => setActiveIdx(activeIdx === 0 ? projects.length - 1 : activeIdx - 1)}
-              className="w-10 h-10 flex items-center justify-center transition-colors duration-200 hover:bg-white/10"
-              style={{ border: '1px solid rgba(255,255,255,0.5)', background: 'rgba(129,41,33,0.85)' }}
+              className="w-11 h-11 flex items-center justify-center transition-all duration-200"
+              style={{ border: '1px solid rgba(255,255,255,0.5)', background: 'rgba(129,41,33,0.8)' }}
+              whileHover={{ background: 'var(--vharanani-burgundy)' }}
             >
               <ArrowLeft size={16} className="text-white" />
             </button>
             <button
               onClick={() => setActiveIdx(activeIdx === projects.length - 1 ? 0 : activeIdx + 1)}
-              className="w-10 h-10 flex items-center justify-center transition-colors duration-200 hover:bg-white/10"
-              style={{ border: '1px solid rgba(255,255,255,0.5)', background: 'rgba(129,41,33,0.85)' }}
+              className="w-11 h-11 flex items-center justify-center transition-all duration-200"
+              style={{ border: '1px solid rgba(255,255,255,0.5)', background: 'rgba(129,41,33,0.8)' }}
             >
               <ArrowRight size={16} className="text-white" />
             </button>
+            <span className="font-bebas-neue typo-headline-small text-white ml-3" style={{ letterSpacing: '0.15em' }}>
+              {String(activeIdx + 1).padStart(2, '0')} <span style={{ opacity: 0.4 }}>/</span> {String(projects.length).padStart(2, '0')}
+            </span>
           </div>
         </div>
 
-        {/* Progress dots */}
-        <div className="flex items-center gap-2 p-3" style={{ background: 'rgba(129,41,33,0.04)' }}>
-          {projects.map((_, i) => (
+        {/* ── RIGHT: Content panel ── */}
+        <div className="lg:col-span-5 flex flex-col" style={{ borderLeft: '1px solid var(--vharanani-charcoal-20)' }}>
+          {/* Section header */}
+          <div className="px-8 pt-10 pb-6" style={{ borderBottom: '1px solid var(--vharanani-charcoal-20)' }}>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
+              <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
+                SEC 03 — PROOF OF DELIVERY
+              </span>
+            </div>
+            <h2 className="font-bebas-neue typo-subline tracking-wide uppercase" style={{ color: 'var(--vharanani-charcoal)' }}>
+              Featured Projects
+            </h2>
+          </div>
+
+          {/* Active project detail */}
+          <motion.div
+            key={activeIdx}
+            className="px-8 py-8 flex-1 flex flex-col"
+            initial={{ opacity: 0, x: 16 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <div className="inline-block self-start px-2 py-0.5 mb-4" style={{ background: 'var(--vharanani-burgundy)' }}>
+              <span className="font-inter typo-meta text-white tracking-[0.2em] uppercase">{current.category}</span>
+            </div>
+            <h3 className="font-bebas-neue typo-subline tracking-wide uppercase mb-3" style={{ color: 'var(--vharanani-charcoal)', lineHeight: 1.1 }}>
+              {current.title}
+            </h3>
+            <div className="flex items-center gap-2 mb-5">
+              <MapPin size={13} style={{ color: 'var(--vharanani-burgundy)' }} />
+              <span className="font-inter typo-copy-small tracking-wider uppercase" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+                {current.location}
+              </span>
+            </div>
+            <p className="font-inter typo-copy-small mb-6" style={{ color: 'var(--vharanani-charcoal-80)', lineHeight: 1.7 }}>
+              {current.specs}
+            </p>
+            <div className="p-4 mb-6" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(129,41,33,0.04)' }}>
+              <div className="font-inter typo-meta tracking-[0.18em] uppercase mb-1" style={{ color: 'var(--vharanani-burgundy)' }}>Community Impact</div>
+              <p className="font-inter typo-copy-small" style={{ color: 'var(--vharanani-charcoal-80)' }}>{current.impact}</p>
+            </div>
             <button
-              key={i}
-              onClick={() => setActiveIdx(i)}
-              className="h-[3px] flex-1 transition-all duration-300"
-              style={{
-                background: i === activeIdx ? 'var(--vharanani-burgundy)' : 'var(--vharanani-charcoal-20)',
-              }}
-            />
-          ))}
+              onClick={() => setModalOpen(true)}
+              className="inline-flex items-center gap-2 self-start px-6 py-3 transition-all duration-300 hover:gap-3 mt-auto"
+              style={{ background: 'var(--vharanani-burgundy)' }}
+            >
+              <span className="font-bebas-neue typo-headline-small tracking-wider uppercase text-white">View Full Details</span>
+              <ArrowRight size={14} className="text-white" />
+            </button>
+          </motion.div>
+
+          {/* Thumbnail strip */}
+          <div className="grid grid-cols-4 gap-[1px]" style={{ background: 'var(--vharanani-charcoal-20)', borderTop: '1px solid var(--vharanani-charcoal-20)' }}>
+            {projects.map((p, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveIdx(i)}
+                className="relative h-16 overflow-hidden group"
+                style={{ outline: 'none' }}
+              >
+                <ImageWithFallback
+                  src={p.image}
+                  alt={p.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div
+                  className="absolute inset-0 transition-all duration-300"
+                  style={{ background: i === activeIdx ? 'rgba(129,41,33,0.75)' : 'rgba(129,41,33,0.4)' }}
+                />
+                {i === activeIdx && (
+                  <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'white' }} />
+                )}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Quick View Modal */}
       {modalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(129,41,33,0.7)', backdropFilter: 'blur(8px)' }}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(129,41,33,0.75)', backdropFilter: 'blur(8px)' }}>
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            initial={{ opacity: 0, scale: 0.96, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className="relative w-[94vw] sm:w-full max-w-2xl max-h-[88vh] sm:max-h-[80vh] overflow-y-auto"
+            className="relative w-full max-w-2xl max-h-[88vh] overflow-y-auto"
             style={{ background: 'white' }}
           >
-            {/* Modal Header */}
-            <div className="relative h-[160px] sm:h-[220px]">
-              <ImageWithFallback
-                src={current.image}
-                alt={current.title}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(129,41,33,0.85) 0%, transparent 60%)' }} />
+            <div className="relative h-[200px] sm:h-[260px]">
+              <ImageWithFallback src={current.image} alt={current.title} className="absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(129,41,33,0.9) 0%, transparent 55%)' }} />
               <button
                 onClick={() => setModalOpen(false)}
-                className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center hover:bg-white/20 transition-colors"
-                style={{ background: 'rgba(129,41,33,0.5)' }}
+                className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center transition-colors"
+                style={{ background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.3)' }}
               >
                 <X size={16} className="text-white" />
               </button>
-              <div className="absolute bottom-4 left-4">
-                <div className="inline-block px-2 py-1 mb-2" style={{ background: 'var(--vharanani-burgundy)' }}>
+              <div className="absolute bottom-5 left-6">
+                <div className="inline-block px-2 py-0.5 mb-2" style={{ background: 'var(--vharanani-burgundy)' }}>
                   <span className="font-inter typo-meta text-white tracking-[0.2em] uppercase">{current.category}</span>
                 </div>
                 <h3 className="font-bebas-neue typo-subline tracking-wide text-white uppercase">{current.title}</h3>
               </div>
             </div>
-            {/* Modal Body */}
-            <div className="p-6">
-              <div className="flex items-center gap-2 mb-4">
+            <div className="p-6 md:p-8">
+              <div className="flex items-center gap-2 mb-5">
                 <MapPin size={14} style={{ color: 'var(--vharanani-burgundy)' }} />
-                <span className="font-inter typo-label tracking-wider uppercase" style={{ color: 'var(--vharanani-charcoal-60)' }}>
-                  {current.location}
-                </span>
+                <span className="font-inter typo-copy-small tracking-wider uppercase" style={{ color: 'var(--vharanani-charcoal-60)' }}>{current.location}</span>
               </div>
               <h4 className="font-bebas-neue typo-headline-small tracking-wide uppercase mb-2" style={{ color: 'var(--vharanani-charcoal)' }}>Project Specifications</h4>
               <p className="font-inter typo-copy mb-6" style={{ color: 'var(--vharanani-charcoal-80)' }}>{current.specs}</p>
@@ -498,54 +528,88 @@ export function PropertiesWireframe_Compliance(): ReactNode {
   ];
 
   return (
-    <SectionWrapper>
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <div className="typo-caption tracking-[0.3em] uppercase font-inter mb-3" style={{ color: 'var(--vharanani-burgundy)' }}>
-            ACCREDITATION & COMPLIANCE
+    <SectionWrapper className="!py-0 !px-0">
+      {/* ── BURGUNDY HEADER BAND ── */}
+      <div className="px-6 md:px-12 lg:px-20 py-10 md:py-14" style={{ background: 'var(--vharanani-burgundy)' }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
+            <div className="lg:col-span-7">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-8 h-[2px]" style={{ background: 'rgba(255,255,255,0.5)' }} />
+                <span className="typo-caption tracking-[0.25em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                  SEC 04 — ACCREDITATION
+                </span>
+              </div>
+              <h2 className="font-bebas-neue typo-header uppercase tracking-wide text-white" style={{ lineHeight: 0.95 }}>
+                Certified Excellence.
+              </h2>
+            </div>
+            <div className="lg:col-span-5">
+              <p className="font-inter typo-copy" style={{ color: 'rgba(255,255,255,0.8)' }}>
+                Holding South Africa's highest contractor grades, affirming our commitment to quality and compliance on every project.
+              </p>
+            </div>
           </div>
-          <h2 className="font-bebas-neue typo-headline-big uppercase tracking-wide mb-4" style={{ color: 'var(--vharanani-charcoal)' }}>
-            Certified Excellence.
-          </h2>
-          <div className="w-12 h-[3px] mx-auto" style={{ background: 'var(--vharanani-burgundy)' }} />
         </div>
+      </div>
 
-        {/* Certification Seals Row */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-[1px]" style={{ background: 'var(--vharanani-charcoal-20)' }}>
-          {certifications.map((cert, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ y: -4 }}
-              transition={{ duration: 0.2 }}
-              className="flex flex-col items-center justify-center p-6 text-center hover:border-[var(--vharanani-burgundy)] transition-colors duration-200"
-              style={{
-                background: cert.highlight ? 'rgba(129,41,33,0.04)' : 'white',
-                borderBottom: cert.highlight ? '3px solid var(--vharanani-burgundy)' : '3px solid transparent',
-              }}
-            >
-              <div
-                className="w-16 h-16 flex items-center justify-center mb-3"
-                style={{
-                  border: cert.highlight ? '2px solid var(--vharanani-burgundy)' : '2px solid var(--vharanani-charcoal-20)',
-                  color: cert.highlight ? 'var(--vharanani-burgundy)' : 'var(--vharanani-charcoal-60)',
-                }}
+      {/* ── HIGHLIGHTED CERTS — CIDB top tier ── */}
+      <div className="px-6 md:px-12 lg:px-20 py-0" style={{ background: '#ffffff' }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[1px] mt-0" style={{ background: 'var(--vharanani-charcoal-20)', borderBottom: '1px solid var(--vharanani-charcoal-20)' }}>
+            {certifications.filter(c => c.highlight).map((cert, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="flex items-center gap-6 p-8 md:p-10"
+                style={{ background: 'white', borderTop: '3px solid var(--vharanani-burgundy)' }}
               >
-                {cert.icon}
-              </div>
-              <h4 className="font-bebas-neue typo-headline-small tracking-wide uppercase" style={{ color: 'var(--vharanani-charcoal)' }}>
-                {cert.title}
-              </h4>
-              <div className="font-inter typo-meta tracking-wider uppercase mt-1" style={{ color: 'var(--vharanani-charcoal-60)' }}>
-                {cert.subtitle}
-              </div>
-              {cert.highlight && (
-                <div className="mt-2 px-2 py-0.5" style={{ background: 'var(--vharanani-burgundy)' }}>
-                  <span className="font-inter typo-meta text-white tracking-[0.15em] uppercase">Highest Grade</span>
+                <div className="w-16 h-16 flex-shrink-0 flex items-center justify-center" style={{ background: 'var(--vharanani-burgundy)', color: 'white' }}>
+                  {cert.icon}
                 </div>
-              )}
-            </motion.div>
-          ))}
+                <div>
+                  <div className="inline-block px-2 py-0.5 mb-2" style={{ background: 'var(--vharanani-burgundy)' }}>
+                    <span className="font-inter typo-meta text-white tracking-[0.15em] uppercase">Highest Grade</span>
+                  </div>
+                  <h4 className="font-bebas-neue typo-subline tracking-wide uppercase" style={{ color: 'var(--vharanani-charcoal)' }}>
+                    {cert.title}
+                  </h4>
+                  <div className="font-inter typo-copy-small mt-1" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+                    {cert.subtitle}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* ── STANDARD CERTS ── */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-[1px]" style={{ background: 'var(--vharanani-charcoal-20)', borderBottom: '1px solid var(--vharanani-charcoal-20)' }}>
+            {certifications.filter(c => !c.highlight).map((cert, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: i * 0.08 }}
+                whileHover={{ y: -2 }}
+                className="flex flex-col items-center justify-center p-8 text-center"
+                style={{ background: '#fafafa' }}
+              >
+                <div className="w-14 h-14 flex items-center justify-center mb-4" style={{ border: '1.5px solid var(--vharanani-burgundy)', color: 'var(--vharanani-burgundy)' }}>
+                  {cert.icon}
+                </div>
+                <h4 className="font-bebas-neue typo-headline-small tracking-wide uppercase mb-1" style={{ color: 'var(--vharanani-charcoal)' }}>
+                  {cert.title}
+                </h4>
+                <div className="font-inter typo-meta tracking-wider uppercase" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+                  {cert.subtitle}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </SectionWrapper>
