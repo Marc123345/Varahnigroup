@@ -5,7 +5,7 @@ import {
   Building2, Shield, Target, Eye, Heart, Award, HardHat,
   Droplets, Wrench, Home, Factory, MapPin, Mail, Phone,
   ArrowRight, ArrowLeft, Users, Briefcase,
-  GraduationCap, X,
+  GraduationCap, X, ChevronRight,
 } from 'lucide-react';
 import { ImageWithFallback } from '../ui/ImageWithFallback';
 
@@ -510,26 +510,38 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
             </button>
           </motion.div>
 
-          {/* Thumbnail strip */}
-          <div className="grid grid-cols-4 gap-[1px]" style={{ background: 'var(--vharanani-charcoal-20)', borderTop: '1px solid var(--vharanani-charcoal-20)' }}>
+          {/* Project index list */}
+          <div className="overflow-y-auto" style={{ borderTop: '1px solid var(--vharanani-charcoal-20)', maxHeight: '240px' }}>
             {projects.map((p, i) => (
               <button
                 key={i}
                 onClick={() => setActiveIdx(i)}
-                className="relative h-16 overflow-hidden group"
-                style={{ outline: 'none' }}
+                className="w-full flex items-center gap-4 px-6 py-3 text-left transition-colors duration-200 group"
+                style={{
+                  background: i === activeIdx ? 'rgba(129,41,33,0.05)' : 'transparent',
+                  borderBottom: '1px solid var(--vharanani-charcoal-10)',
+                  borderLeft: i === activeIdx ? '3px solid var(--vharanani-burgundy)' : '3px solid transparent',
+                }}
               >
-                <ImageWithFallback
-                  src={p.image}
-                  alt={p.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div
-                  className="absolute inset-0 transition-all duration-300"
-                  style={{ background: i === activeIdx ? 'rgba(0,0,0,0.75)' : 'rgba(0,0,0,0.4)' }}
-                />
+                <span
+                  className="font-bebas-neue flex-shrink-0"
+                  style={{ fontSize: '13px', color: i === activeIdx ? 'var(--vharanani-burgundy)' : 'var(--vharanani-charcoal-40)' }}
+                >
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <div className="min-w-0">
+                  <div
+                    className="font-inter typo-copy-small truncate"
+                    style={{ color: i === activeIdx ? 'var(--vharanani-charcoal)' : 'var(--vharanani-charcoal-60)', fontWeight: i === activeIdx ? 500 : 400 }}
+                  >
+                    {p.title}
+                  </div>
+                  <div className="font-inter typo-meta tracking-[0.1em] uppercase" style={{ color: 'var(--vharanani-charcoal-40)' }}>
+                    {p.category}
+                  </div>
+                </div>
                 {i === activeIdx && (
-                  <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'white' }} />
+                  <ChevronRight size={14} className="ml-auto flex-shrink-0" style={{ color: 'var(--vharanani-burgundy)' }} />
                 )}
               </button>
             ))}
