@@ -93,7 +93,7 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0" style={{
-          background: 'linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(129,41,33,0.2) 40%, rgba(0,0,0,0.85) 100%)'
+          background: 'linear-gradient(180deg, rgba(129,41,33,0.3) 0%, rgba(129,41,33,0.2) 40%, rgba(129,41,33,0.85) 100%)'
         }} />
         <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'var(--vharanani-burgundy)' }} />
 
@@ -225,10 +225,10 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0" style={{
-                background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.85) 100%)'
+                background: 'linear-gradient(180deg, rgba(129,41,33,0.1) 0%, rgba(129,41,33,0.3) 50%, rgba(129,41,33,0.85) 100%)'
               }} />
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                <div className="p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(8px)' }}>
+                <div className="p-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(129,41,33,0.4)', backdropFilter: 'blur(8px)' }}>
                   <p className="typo-copy font-inter italic text-white mb-3">
                     "The Foundation was established with a vision to give back meaningfully to the communities that continue to shape South Africa's future."
                   </p>
@@ -270,7 +270,7 @@ export function FoundationWireframe_PartnerNetwork(): ReactNode {
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0" style={{
-          background: 'linear-gradient(180deg, rgba(129,41,33,0.5) 0%, rgba(0,0,0,0.85) 100%)'
+          background: 'linear-gradient(180deg, rgba(129,41,33,0.5) 0%, rgba(129,41,33,0.85) 100%)'
         }} />
         <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'var(--vharanani-burgundy)' }} />
 
@@ -444,8 +444,8 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
                     />
                     <div className="absolute inset-0" style={{
                       background: isEven
-                        ? 'linear-gradient(135deg, rgba(129,41,33,0.35) 0%, rgba(0,0,0,0.45) 100%)'
-                        : 'linear-gradient(225deg, rgba(129,41,33,0.35) 0%, rgba(0,0,0,0.45) 100%)'
+                        ? 'linear-gradient(135deg, rgba(129,41,33,0.35) 0%, rgba(129,41,33,0.45) 100%)'
+                        : 'linear-gradient(225deg, rgba(129,41,33,0.35) 0%, rgba(129,41,33,0.45) 100%)'
                     }} />
                     {/* Ghost number */}
                     <div className="absolute top-4 left-6">
@@ -454,7 +454,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
                       </span>
                     </div>
                     {/* Bottom metric overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 px-6 py-4" style={{ background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(8px)' }}>
+                    <div className="absolute bottom-0 left-0 right-0 px-6 py-4" style={{ background: 'rgba(129,41,33,0.85)', backdropFilter: 'blur(8px)' }}>
                       <div className="flex items-center gap-4">
                         <div className="typo-headline-big font-bebas-neue" style={{ color: 'var(--vharanani-burgundy)' }}>
                           {prog.metric.value}
@@ -661,7 +661,7 @@ export function FoundationWireframe_ImpactStories(): ReactNode {
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0" style={{
-                  background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.9) 100%)'
+                  background: 'linear-gradient(180deg, rgba(129,41,33,0.1) 0%, rgba(129,41,33,0.4) 50%, rgba(129,41,33,0.9) 100%)'
                 }} />
 
                 {/* Big metric */}
@@ -793,7 +793,7 @@ export function FoundationWireframe_Heritage(): ReactNode {
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0" style={{
-              background: 'linear-gradient(180deg, rgba(129,41,33,0.2) 0%, rgba(0,0,0,0.5) 100%)'
+              background: 'linear-gradient(180deg, rgba(129,41,33,0.2) 0%, rgba(129,41,33,0.5) 100%)'
             }} />
             {/* Overlaid quote */}
             <div className="absolute bottom-0 left-0 right-0 p-6" style={{ background: 'rgba(129,41,33,0.85)', backdropFilter: 'blur(4px)' }}>
@@ -825,7 +825,7 @@ export function FoundationWireframe_Contact(): ReactNode {
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0" style={{
-            background: 'linear-gradient(180deg, rgba(129,41,33,0.6) 0%, rgba(0,0,0,0.9) 100%)'
+            background: 'linear-gradient(180deg, rgba(129,41,33,0.6) 0%, rgba(129,41,33,0.9) 100%)'
           }} />
           <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 lg:px-20 pb-10">
             <div className="max-w-7xl mx-auto w-full">

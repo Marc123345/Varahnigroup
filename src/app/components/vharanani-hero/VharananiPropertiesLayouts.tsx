@@ -259,7 +259,7 @@ export function PropertiesWireframe_IntegratedServices(): ReactNode {
                 alt={svc.title}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-black/50 transition-all duration-500 group-hover:bg-black/70" />
+              <div className="absolute inset-0 bg-[rgba(129,41,33,0.5)] transition-all duration-500 group-hover:bg-[rgba(129,41,33,0.7)]" />
 
               {/* Content */}
               <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-5">
@@ -390,7 +390,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
           </div>
 
           {/* Slide counter */}
-          <div className="absolute top-4 right-4 px-3 py-1" style={{ background: 'rgba(0,0,0,0.6)' }}>
+          <div className="absolute top-4 right-4 px-3 py-1" style={{ background: 'rgba(129,41,33,0.6)' }}>
             <span className="font-bebas-neue typo-headline-small tracking-wider text-white">
               {String(activeIdx + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}
             </span>
@@ -401,14 +401,14 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
             <button
               onClick={() => setActiveIdx(activeIdx === 0 ? projects.length - 1 : activeIdx - 1)}
               className="w-10 h-10 flex items-center justify-center transition-colors duration-200 hover:bg-white/10"
-              style={{ border: '1px solid rgba(255,255,255,0.3)', background: 'rgba(0,0,0,0.4)' }}
+              style={{ border: '1px solid rgba(255,255,255,0.3)', background: 'rgba(129,41,33,0.4)' }}
             >
               <ArrowLeft size={16} className="text-white" />
             </button>
             <button
               onClick={() => setActiveIdx(activeIdx === projects.length - 1 ? 0 : activeIdx + 1)}
               className="w-10 h-10 flex items-center justify-center transition-colors duration-200 hover:bg-white/10"
-              style={{ border: '1px solid rgba(255,255,255,0.3)', background: 'rgba(0,0,0,0.4)' }}
+              style={{ border: '1px solid rgba(255,255,255,0.3)', background: 'rgba(129,41,33,0.4)' }}
             >
               <ArrowRight size={16} className="text-white" />
             </button>
@@ -416,7 +416,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
         </div>
 
         {/* Progress dots */}
-        <div className="flex items-center gap-2 p-3" style={{ background: 'rgba(0,0,0,0.04)' }}>
+        <div className="flex items-center gap-2 p-3" style={{ background: 'rgba(129,41,33,0.04)' }}>
           {projects.map((_, i) => (
             <button
               key={i}
@@ -432,7 +432,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
 
       {/* Quick View Modal */}
       {modalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(8px)' }}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(129,41,33,0.7)', backdropFilter: 'blur(8px)' }}>
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -451,7 +451,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
               <button
                 onClick={() => setModalOpen(false)}
                 className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center hover:bg-white/20 transition-colors"
-                style={{ background: 'rgba(0,0,0,0.5)' }}
+                style={{ background: 'rgba(129,41,33,0.5)' }}
               >
                 <X size={16} className="text-white" />
               </button>
@@ -705,7 +705,7 @@ export function PropertiesWireframe_ContactFootprint(): ReactNode {
                 <div className="relative">
                   <div className="w-4 h-4 animate-ping absolute" style={{ background: 'var(--vharanani-burgundy)', opacity: 0.4 }} />
                   <div className="w-4 h-4 relative z-10" style={{ background: 'var(--vharanani-burgundy)' }} />
-                  <div className="absolute top-5 left-5 whitespace-nowrap px-2 py-1" style={{ background: 'rgba(0,0,0,0.7)' }}>
+                  <div className="absolute top-5 left-5 whitespace-nowrap px-2 py-1" style={{ background: 'rgba(129,41,33,0.7)' }}>
                     <span className="font-inter typo-meta text-white tracking-wider uppercase">Johannesburg (HQ)</span>
                   </div>
                 </div>
@@ -715,7 +715,7 @@ export function PropertiesWireframe_ContactFootprint(): ReactNode {
                 <div className="relative">
                   <div className="w-3 h-3 animate-ping absolute" style={{ background: 'var(--vharanani-burgundy-60)', opacity: 0.3 }} />
                   <div className="w-3 h-3 relative z-10" style={{ background: 'var(--vharanani-burgundy-60)' }} />
-                  <div className="absolute top-4 left-4 whitespace-nowrap px-2 py-1" style={{ background: 'rgba(0,0,0,0.7)' }}>
+                  <div className="absolute top-4 left-4 whitespace-nowrap px-2 py-1" style={{ background: 'rgba(129,41,33,0.7)' }}>
                     <span className="font-inter typo-meta text-white tracking-wider uppercase">Polokwane</span>
                   </div>
                 </div>
@@ -786,17 +786,17 @@ export function PropertiesWireframe_ContactFootprint(): ReactNode {
                   type="text"
                   placeholder="Name"
                   className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
-                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}
+                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(129,41,33,0.02)' }}
                 />
                 <input
                   type="text"
                   placeholder="Company"
                   className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
-                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}
+                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(129,41,33,0.02)' }}
                 />
                 <select
                   className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none focus:outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
-                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)', color: 'var(--vharanani-charcoal-60)' }}
+                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(129,41,33,0.02)', color: 'var(--vharanani-charcoal-60)' }}
                   defaultValue=""
                 >
                   <option value="" disabled>Service Required</option>
@@ -811,7 +811,7 @@ export function PropertiesWireframe_ContactFootprint(): ReactNode {
                   placeholder="Message"
                   rows={3}
                   className="w-full px-4 py-3 font-inter typo-copy-small outline-none resize-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
-                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}
+                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(129,41,33,0.02)' }}
                 />
                 <button
                   onClick={() => { window.location.href = 'mailto:info@vharanani.com?subject=Project%20Enquiry'; }}
