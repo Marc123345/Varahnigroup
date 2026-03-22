@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 import {
   Building2, Landmark, Heart, HardHat, Cpu, Shield, Layers, Globe,
   Sprout, Route, TrendingUp, Users, Gavel, FileCheck, Scale, Eye,
-  Linkedin, Twitter, Facebook, MapPin, Phone, Mail,
+  Linkedin, Twitter, Facebook, MapPin, Phone, Mail, Home,
 } from 'lucide-react';
 import { ImageWithFallback } from '../ui/ImageWithFallback';
 
