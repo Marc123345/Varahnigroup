@@ -918,7 +918,7 @@ export function DMFTWireframe_HeritageContact(): ReactNode {
         {/* ── HERITAGE + CONTACT SPLIT ── */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
           {/* Left — Heritage */}
-          <div className="relative p-8 md:p-12 flex flex-col justify-center" style={{ background: '#812921' }}>
+          <div className="relative p-8 md:p-12 flex flex-col justify-start" style={{ background: '#812921' }}>
             {/* Subtle watermark */}
             <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 opacity-[0.02] pointer-events-none">
               <div className="font-bebas-neue uppercase tracking-wider" style={{ fontSize: '120px', lineHeight: '1', color: 'white' }}>
@@ -927,7 +927,18 @@ export function DMFTWireframe_HeritageContact(): ReactNode {
             </div>
 
             <div className="relative z-10">
-              <p className="typo-copy font-inter text-white/60 mb-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-[2px]" style={{ background: 'rgba(255,255,255,0.4)' }} />
+                <span className="typo-caption tracking-[0.25em] uppercase font-inter text-white/50">
+                  OUR HERITAGE
+                </span>
+              </div>
+
+              <h3 className="typo-headline-big font-bebas-neue tracking-wide uppercase text-white mb-5" style={{ lineHeight: 1 }}>
+                Part of the<br />Vharanani Group.
+              </h3>
+
+              <p className="typo-copy font-inter text-white/70 mb-4">
                 DMFT Property Developers forms part of the Vharanani Group, a diversified African holding company with interests across infrastructure, construction, property development, and investment sectors.
               </p>
 
