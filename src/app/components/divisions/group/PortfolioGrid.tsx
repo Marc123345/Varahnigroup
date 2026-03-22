@@ -96,8 +96,8 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
               style={{ fontSize: 'clamp(13px, 1.1vw, 15px)', color: 'rgba(0,0,0,0.5)' }}
               {...fadeUp(0.2)}
             >
-              Three divisions working in concert to deliver infrastructure,
-              property development, and social impact across South Africa.
+              Vharanani Group operates through a focused portfolio of subsidiary
+              companies, each delivering specialized expertise within its sector.
             </motion.p>
 
           </div>
