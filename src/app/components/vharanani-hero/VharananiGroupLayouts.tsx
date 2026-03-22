@@ -880,13 +880,12 @@ export function GroupWireframe_Leadership(): ReactNode {
 
         {/* Founder spotlight */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 mb-8" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
-          <div className="lg:col-span-2 relative h-[360px] lg:h-auto overflow-hidden">
+          <div className="lg:col-span-2 relative h-[360px] lg:h-auto overflow-hidden flex items-center justify-center" style={{ background: '#f5f0ef' }}>
             <ImageWithFallback
               src={IMAGES.leadership}
               alt="Executive Leadership"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="w-full h-full object-contain object-center"
             />
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 40%, rgba(129,41,33,0.8) 100%)' }} />
           </div>
           <div className="lg:col-span-3 p-8 md:p-12 flex flex-col justify-center" style={{ background: '#fafafa' }}>
             <div className="typo-caption tracking-[0.2em] uppercase font-inter mb-4" style={{ color: 'var(--vharanani-burgundy)' }}>
