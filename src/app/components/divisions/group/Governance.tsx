@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Gavel, FileCheck, Scale, Shield, Eye, ArrowRight } from 'lucide-react';
+import { Gavel, FileCheck, Scale, Shield, Eye, Plus } from 'lucide-react';
 import { ImageWithFallback } from '../../ui/ImageWithFallback';
 
 const PRINCIPLES = [
@@ -8,70 +8,99 @@ const PRINCIPLES = [
     num: '01',
     icon: Gavel,
     label: 'Ethical Leadership',
-    description: 'Principled decision-making at every level of the organisation, guided by the King IV framework and a commitment to integrity.',
+    description:
+      'Principled decision-making at every level of the organisation, guided by the King IV framework and a commitment to integrity.',
     tag: 'King IV Aligned',
+    attributes: ['King IV', 'Board Oversight', 'Integrity', 'Ethics Policy'],
   },
   {
     num: '02',
     icon: FileCheck,
     label: 'Regulatory Compliance',
-    description: 'Full adherence to all statutory, industry, and sector-specific requirements across every division and province of operation.',
+    description:
+      'Full adherence to all statutory, industry, and sector-specific requirements across every division and province of operation.',
     tag: 'Statutory',
+    attributes: ['Multi-Province', 'Industry Standards', 'Statutory', 'Legal Adherence'],
   },
   {
     num: '03',
     icon: Scale,
     label: 'Financial Discipline',
-    description: 'Rigorous fiscal management, independent oversight, and transparent financial reporting to all stakeholders.',
+    description:
+      'Rigorous fiscal management, independent oversight, and transparent financial reporting to all stakeholders.',
     tag: 'Oversight',
+    attributes: ['IFRS Aligned', 'Independent Audit', 'Fiscal Control', 'Oversight'],
   },
   {
     num: '04',
     icon: Shield,
     label: 'Risk Management',
-    description: 'Proactive identification, assessment, and mitigation of operational, financial, and reputational risks.',
+    description:
+      'Proactive identification, assessment, and mitigation of operational, financial, and reputational risks.',
     tag: 'Proactive',
+    attributes: ['ERM Framework', 'Operational Risk', 'Reputational', 'Proactive'],
   },
   {
     num: '05',
     icon: Eye,
     label: 'Transparent Reporting',
-    description: 'Open, consistent stakeholder communication underpinned by accurate and timely disclosures.',
+    description:
+      'Open, consistent stakeholder communication underpinned by accurate and timely disclosures.',
     tag: 'Disclosure',
+    attributes: ['ESG Reporting', 'Stakeholder Comms', 'Timely Disclosure', 'Audit Trail'],
   },
 ];
 
-const IMAGE = 'https://images.unsplash.com/photo-1556219845-95c1847629e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBnb3Zlcm5hbmNlJTIwYW5udWFsJTIwcmVwb3J0JTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc3MzA1NTkxM3ww&ixlib=rb-4.1.0&q=80&w=1080';
+const IMAGE = 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=80&fit=crop';
+
+const CREDENTIALS = ['King IV Aligned', 'B-BBEE Level 1', 'ISO Compliant', 'CIDB Registered'];
 
 export function GroupWireframe_Governance(): ReactNode {
-  const [active, setActive] = useState<string>('01');
-  const activePrinciple = PRINCIPLES.find(p => p.num === active)!;
+  const [active, setActive] = useState<string | null>('01');
 
   return (
-    <div style={{ background: '#ffffff', overflow: 'hidden' }}>
+    <div style={{ background: '#040404', overflow: 'hidden' }}>
 
-      {/* ══════ HEADER ══════ */}
-      <div className="px-6 md:px-12 lg:px-20 pt-14 pb-10 md:pt-20 md:pb-14">
-        <div className="max-w-7xl mx-auto">
+      {/* ── HEADER ── */}
+      <div className="relative overflow-hidden px-6 md:px-12 lg:px-20 pt-10 md:pt-16 pb-10 md:pb-14">
 
+        {/* Ghost "KING IV" watermark */}
+        <div
+          className="absolute inset-0 pointer-events-none select-none overflow-hidden flex items-end justify-end"
+          aria-hidden="true"
+        >
+          <span
+            className="font-bebas-neue text-white"
+            style={{
+              fontSize: 'clamp(100px, 20vw, 280px)',
+              lineHeight: 0.88,
+              opacity: 0.025,
+              letterSpacing: '-0.02em',
+              paddingRight: '1vw',
+            }}
+          >
+            KING IV
+          </span>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto">
           <motion.div
             className="flex items-center gap-3 mb-6"
             initial={{ opacity: 0, x: -16 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.6 }}
           >
-            <div className="h-[2px] w-8" style={{ background: 'var(--vharanani-burgundy)' }} />
-            <span className="font-inter typo-caption tracking-[0.28em] uppercase" style={{ color: 'var(--vharanani-burgundy)' }}>
-              Compliance
+            <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
+            <span className="typo-caption tracking-[0.28em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
+              COMPLIANCE
             </span>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
-            <div className="lg:col-span-8 overflow-hidden">
+            <div className="lg:col-span-7 overflow-hidden">
               <motion.h2
-                className="typo-headline-big font-bebas-neue uppercase tracking-wide"
-                style={{ color: 'var(--vharanani-charcoal)' }}
+                className="typo-headline-big font-bebas-neue uppercase tracking-wide text-white"
                 initial={{ clipPath: 'inset(0 0 100% 0)' }}
                 whileInView={{ clipPath: 'inset(0 0 0% 0)' }}
                 viewport={{ once: true }}
@@ -82,233 +111,277 @@ export function GroupWireframe_Governance(): ReactNode {
               </motion.h2>
             </div>
             <motion.p
-              className="lg:col-span-4 font-inter leading-relaxed"
-              style={{ fontSize: 'clamp(13px, 1.1vw, 15px)', color: 'rgba(0,0,0,0.5)' }}
-              initial={{ opacity: 0, y: 16 }}
+              className="lg:col-span-5 font-inter typo-copy"
+              style={{ color: 'rgba(255,255,255,0.4)' }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.65, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.7, delay: 0.14 }}
             >
-              Ethics, risk management, and transparent reporting define our operational framework across all divisions.
+              Ethics, risk management, and transparent reporting define our operational
+              framework across all divisions.
             </motion.p>
           </div>
         </div>
       </div>
 
-      {/* ══════ MAIN PANEL ══════ */}
-      <div className="px-6 md:px-12 lg:px-20 pb-0">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-0" style={{ border: '1px solid rgba(0,0,0,0.09)' }}>
+      {/* ── PRINCIPLES ACCORDION ── */}
+      <div
+        className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20"
+        style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}
+      >
+        {PRINCIPLES.map((p, i) => {
+          const Icon = p.icon;
+          const isOpen = active === p.num;
 
-            {/* LEFT — selector list */}
-            <div className="lg:col-span-5 flex flex-col" style={{ borderRight: '1px solid rgba(0,0,0,0.09)' }}>
-              {PRINCIPLES.map((p, i) => {
-                const Icon = p.icon;
-                const isActive = active === p.num;
-                return (
-                  <motion.button
-                    key={p.num}
-                    className="relative text-left w-full flex items-center gap-4 px-6 py-5 group"
-                    style={{
-                      borderBottom: i < PRINCIPLES.length - 1 ? '1px solid rgba(0,0,0,0.07)' : 'none',
-                      background: isActive ? 'rgba(129,41,33,0.04)' : 'transparent',
-                      transition: 'background 0.25s ease',
-                    }}
-                    onClick={() => setActive(p.num)}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.55, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
-                  >
-                    {/* Active left bar */}
-                    <motion.div
-                      className="absolute left-0 top-0 bottom-0 w-[3px]"
-                      style={{ background: 'var(--vharanani-burgundy)', transformOrigin: 'top' }}
-                      animate={{ scaleY: isActive ? 1 : 0 }}
-                      transition={{ duration: 0.3, ease: [0.76, 0, 0.24, 1] }}
-                    />
+          return (
+            <motion.div
+              key={p.num}
+              className="relative"
+              style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: i * 0.07 }}
+            >
 
-                    {/* Number */}
-                    <span
-                      className="font-bebas-neue flex-shrink-0"
-                      style={{
-                        fontSize: '13px',
-                        letterSpacing: '0.1em',
-                        color: isActive ? 'var(--vharanani-burgundy)' : 'rgba(0,0,0,0.25)',
-                        transition: 'color 0.25s ease',
-                        minWidth: '22px',
-                      }}
-                    >
-                      {p.num}
-                    </span>
+              {/* ── HEADER BUTTON ── */}
+              <button
+                className="relative w-full flex items-center gap-4 md:gap-6 py-5 md:py-7 text-left overflow-hidden"
+                style={{ minHeight: 64 }}
+                onClick={() => setActive(isOpen ? null : p.num)}
+              >
 
-                    {/* Icon box */}
-                    <div
-                      className="w-8 h-8 flex items-center justify-center flex-shrink-0 transition-all duration-250"
-                      style={{
-                        background: isActive ? 'var(--vharanani-burgundy)' : 'transparent',
-                        border: `1.5px solid ${isActive ? 'var(--vharanani-burgundy)' : 'rgba(0,0,0,0.2)'}`,
-                        color: isActive ? 'white' : 'rgba(0,0,0,0.4)',
-                      }}
-                    >
-                      <Icon size={14} />
-                    </div>
-
-                    {/* Label */}
-                    <span
-                      className="font-bebas-neue uppercase tracking-wide flex-1 text-left"
-                      style={{
-                        fontSize: 'clamp(15px, 1.4vw, 18px)',
-                        color: isActive ? '#111111' : 'rgba(0,0,0,0.5)',
-                        transition: 'color 0.25s ease',
-                      }}
-                    >
-                      {p.label}
-                    </span>
-
-                    {/* Arrow */}
-                    <motion.div
-                      animate={{ x: isActive ? 0 : -6, opacity: isActive ? 1 : 0 }}
-                      transition={{ duration: 0.2 }}
-                      style={{ color: 'var(--vharanani-burgundy)' }}
-                    >
-                      <ArrowRight size={15} />
-                    </motion.div>
-                  </motion.button>
-                );
-              })}
-            </div>
-
-            {/* RIGHT — detail panel + image */}
-            <div className="lg:col-span-7 flex flex-col">
-
-              {/* Detail content */}
-              <div className="flex-1 p-5 sm:p-8 md:p-10" style={{ minHeight: '200px' }}>
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={active}
-                    initial={{ opacity: 0, y: 16 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                  >
-                    {/* Tag */}
-                    <div className="flex items-center gap-2 mb-5">
-                      <span
-                        className="font-inter typo-meta tracking-[0.18em] uppercase px-3 py-1"
-                        style={{ background: 'var(--vharanani-burgundy)', color: 'white', fontSize: '10px' }}
-                      >
-                        {activePrinciple.tag}
-                      </span>
-                      <span
-                        className="font-inter typo-meta tracking-[0.14em] uppercase"
-                        style={{ color: 'rgba(0,0,0,0.3)' }}
-                      >
-                        Principle {activePrinciple.num}
-                      </span>
-                    </div>
-
-                    <h3
-                      className="font-bebas-neue uppercase tracking-wide mb-4"
-                      style={{ fontSize: 'clamp(26px, 3vw, 38px)', lineHeight: 1.05, color: '#111111', letterSpacing: '0.02em' }}
-                    >
-                      {activePrinciple.label}
-                    </h3>
-
-                    <p
-                      className="font-inter leading-relaxed"
-                      style={{ fontSize: 'clamp(14px, 1.2vw, 16px)', color: 'rgba(0,0,0,0.6)', maxWidth: '480px' }}
-                    >
-                      {activePrinciple.description}
-                    </p>
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-
-              {/* Image */}
-              <div className="relative overflow-hidden flex-shrink-0" style={{ height: 'clamp(180px, 24vh, 280px)', borderTop: '1px solid rgba(0,0,0,0.09)' }}>
+                {/* Left accent bar (inside button, clipped to row height) */}
                 <motion.div
-                  key={`img-${active}`}
-                  className="absolute inset-0"
-                  initial={{ scale: 1.08, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
-                >
-                  <ImageWithFallback
-                    src={IMAGE}
-                    alt="Corporate governance"
-                    className="w-full h-full object-cover"
-                  />
-                </motion.div>
-                <div
-                  className="absolute inset-0"
-                  style={{ background: 'linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.15) 60%, transparent 100%)' }}
+                  className="absolute left-0 inset-y-0 w-[3px]"
+                  style={{ background: 'var(--vharanani-burgundy)', transformOrigin: 'bottom' }}
+                  animate={{ scaleY: isOpen ? 1 : 0 }}
+                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                 />
-                <div className="absolute bottom-5 left-6">
-                  <div className="h-[1px] w-6 mb-2" style={{ background: 'var(--vharanani-burgundy)' }} />
-                  <span className="font-inter typo-meta tracking-[0.2em] uppercase text-white/70">
-                    King IV Aligned Governance
+
+                {/* Ghost numeral (clipped by button overflow:hidden) */}
+                <div
+                  className="absolute right-0 top-0 bottom-0 flex items-center pointer-events-none select-none"
+                  aria-hidden="true"
+                >
+                  <span
+                    className="font-bebas-neue text-white transition-opacity duration-300"
+                    style={{
+                      fontSize: 'clamp(70px, 14vw, 190px)',
+                      lineHeight: 1,
+                      letterSpacing: '-0.02em',
+                      opacity: isOpen ? 0.07 : 0.033,
+                    }}
+                  >
+                    {p.num}
                   </span>
                 </div>
 
-                {/* Ghost principle number */}
+                {/* Icon box */}
                 <div
-                  className="absolute top-3 right-5 font-bebas-neue pointer-events-none select-none"
-                  style={{ fontSize: '80px', lineHeight: 1, color: 'rgba(255,255,255,0.1)' }}
+                  className="relative z-10 w-10 h-10 md:w-11 md:h-11 flex items-center justify-center shrink-0 transition-all duration-300"
+                  style={{
+                    border: `1px solid ${isOpen ? 'rgba(129,41,33,0.7)' : 'rgba(255,255,255,0.12)'}`,
+                    color: isOpen ? 'var(--vharanani-burgundy)' : 'rgba(255,255,255,0.35)',
+                    background: isOpen ? 'rgba(129,41,33,0.1)' : 'transparent',
+                  }}
                 >
-                  {active}
+                  <Icon size={18} />
                 </div>
-              </div>
 
-            </div>
-          </div>
-        </div>
+                {/* Title */}
+                <h3
+                  className="relative z-10 font-bebas-neue uppercase leading-none flex-1 transition-all duration-300"
+                  style={{
+                    fontSize: 'clamp(22px, 3.2vw, 40px)',
+                    letterSpacing: '0.02em',
+                    color: isOpen ? 'white' : 'rgba(255,255,255,0.45)',
+                  }}
+                >
+                  {p.label}
+                </h3>
+
+                {/* Tag pill */}
+                <span
+                  className="relative z-10 font-inter tracking-[0.16em] uppercase shrink-0 hidden sm:inline transition-all duration-300"
+                  style={{
+                    border: `1px solid ${isOpen ? 'rgba(129,41,33,0.55)' : 'rgba(255,255,255,0.1)'}`,
+                    color: isOpen ? 'var(--vharanani-burgundy)' : 'rgba(255,255,255,0.25)',
+                    padding: '4px 12px',
+                    fontSize: '10px',
+                  }}
+                >
+                  {p.tag}
+                </span>
+
+                {/* +/× toggle */}
+                <div
+                  className="relative z-10 w-8 h-8 shrink-0 flex items-center justify-center transition-all duration-300"
+                  style={{
+                    border: `1px solid ${isOpen ? 'rgba(129,41,33,0.4)' : 'rgba(255,255,255,0.1)'}`,
+                  }}
+                >
+                  <motion.div animate={{ rotate: isOpen ? 45 : 0 }} transition={{ duration: 0.3 }}>
+                    <Plus size={12} style={{ color: isOpen ? 'var(--vharanani-burgundy)' : 'rgba(255,255,255,0.4)' }} />
+                  </motion.div>
+                </div>
+              </button>
+
+              {/* ── EXPANDED DETAIL ── */}
+              <AnimatePresence initial={false}>
+                {isOpen && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                    style={{ overflow: 'hidden' }}
+                  >
+                    <div className="pb-8 md:pb-10 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
+
+                      {/* Left: description + attribute tags */}
+                      <div className="md:col-span-7 flex flex-col gap-5">
+                        <p className="font-inter typo-copy" style={{ color: 'rgba(255,255,255,0.5)', maxWidth: 520 }}>
+                          {p.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {p.attributes.map((attr) => (
+                            <span
+                              key={attr}
+                              className="font-inter tracking-[0.14em] uppercase"
+                              style={{
+                                border: '1px solid rgba(255,255,255,0.1)',
+                                color: 'rgba(255,255,255,0.35)',
+                                padding: '4px 12px',
+                                fontSize: '10px',
+                              }}
+                            >
+                              {attr}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Right: cinematic image panel */}
+                      <div
+                        className="md:col-span-5 relative overflow-hidden hidden md:block"
+                        style={{ height: 168 }}
+                      >
+                        <ImageWithFallback
+                          src={IMAGE}
+                          alt={p.label}
+                          className="absolute inset-0 w-full h-full object-cover"
+                        />
+                        <div
+                          className="absolute inset-0"
+                          style={{
+                            background:
+                              'linear-gradient(135deg, rgba(129,41,33,0.9) 0%, rgba(18,3,2,0.95) 100%)',
+                          }}
+                        />
+                        <div className="absolute inset-0 flex flex-col items-start justify-between p-5">
+                          <span
+                            className="font-inter typo-meta tracking-[0.2em] uppercase"
+                            style={{ color: 'rgba(255,255,255,0.4)' }}
+                          >
+                            Principle {p.num}
+                          </span>
+                          <div>
+                            <div
+                              className="font-bebas-neue text-white/[0.15] leading-none"
+                              style={{ fontSize: 76 }}
+                            >
+                              {p.num}
+                            </div>
+                            <div className="w-6 h-[1px] mb-2" style={{ background: 'rgba(255,255,255,0.3)' }} />
+                            <span
+                              className="font-bebas-neue uppercase tracking-wide"
+                              style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)' }}
+                            >
+                              {p.tag}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          );
+        })}
       </div>
 
-      {/* ══════ BURGUNDY SUMMARY BAND ══════ */}
-      <motion.div
+      {/* ── CREDENTIALS STRIP ── */}
+      <div
         className="relative mt-10 overflow-hidden"
-        style={{ background: 'var(--vharanani-burgundy)' }}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+        style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}
       >
         {/* Ghost watermark */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden" aria-hidden>
+        <div
+          className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden"
+          aria-hidden="true"
+        >
           <span
-            className="font-bebas-neue uppercase whitespace-nowrap"
-            style={{ fontSize: 'clamp(60px, 13vw, 160px)', color: 'rgba(255,255,255,0.05)', letterSpacing: '0.06em', lineHeight: 1 }}
+            className="font-bebas-neue uppercase whitespace-nowrap text-white"
+            style={{
+              fontSize: 'clamp(60px, 13vw, 160px)',
+              opacity: 0.025,
+              letterSpacing: '0.06em',
+              lineHeight: 1,
+            }}
           >
             GOVERNANCE
           </span>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+        <div className="relative max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-10 md:py-14">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 
-            <div className="md:col-span-2">
-              <div className="h-[1px] w-8 mb-4" style={{ background: 'rgba(255,255,255,0.35)' }} />
+            {/* Statement */}
+            <div className="lg:col-span-5">
+              <div className="w-8 h-[1px] mb-4" style={{ background: 'rgba(255,255,255,0.3)' }} />
               <p
-                className="font-bebas-neue uppercase"
-                style={{ fontSize: 'clamp(20px, 2.5vw, 32px)', color: 'white', lineHeight: 1.15, letterSpacing: '0.02em' }}
+                className="font-bebas-neue uppercase text-white"
+                style={{
+                  fontSize: 'clamp(20px, 2.5vw, 30px)',
+                  lineHeight: 1.2,
+                  letterSpacing: '0.02em',
+                  opacity: 0.85,
+                }}
               >
                 Transparent, ethical, and accountable — aligned to King IV and best-practice standards.
               </p>
             </div>
 
-            <div className="flex flex-col gap-3">
-              {['King IV Aligned', 'B-BBEE Level 1', 'ISO Compliant', 'CIDB Registered'].map((badge, i) => (
+            {/* Credential stamps */}
+            <div
+              className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-0"
+              style={{ border: '1px solid rgba(255,255,255,0.08)' }}
+            >
+              {CREDENTIALS.map((badge, i) => (
                 <motion.div
                   key={badge}
-                  className="flex items-center gap-3"
-                  initial={{ opacity: 0, x: 16 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  className="flex flex-col items-center justify-center py-7 px-4 text-center"
+                  style={{
+                    borderRight: i < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none',
+                    borderBottom: i < 2 ? '1px solid rgba(255,255,255,0.05)' : 'none',
+                  }}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.45, delay: i * 0.08 }}
+                  transition={{ duration: 0.5, delay: i * 0.08 }}
                 >
-                  <div className="w-1.5 h-1.5 flex-shrink-0" style={{ background: 'rgba(255,255,255,0.5)' }} />
-                  <span className="font-inter typo-meta tracking-[0.15em] uppercase" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                  <div
+                    className="w-2 h-2 mb-3"
+                    style={{ background: 'var(--vharanani-burgundy)' }}
+                  />
+                  <span
+                    className="font-bebas-neue uppercase tracking-wide text-white"
+                    style={{ fontSize: 'clamp(12px, 1.3vw, 14px)', opacity: 0.75 }}
+                  >
                     {badge}
                   </span>
                 </motion.div>
@@ -317,7 +390,7 @@ export function GroupWireframe_Governance(): ReactNode {
 
           </div>
         </div>
-      </motion.div>
+      </div>
 
     </div>
   );
