@@ -14,7 +14,7 @@ const PILLARS = [
     capabilities: ['Roads & Highways', 'Bridges & Culverts', 'Public Facilities', 'Water Infrastructure'],
     metric: { value: '200+', label: 'Projects Delivered' },
     image:
-      'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Roads%20%26%20Civil%202/Rectangle.png',
+      'https://ik.imagekit.io/qcvroy8xpd/rsz_dji_0519.jpg.png?updatedAt=1774868025373',
   },
   {
     num: '02',
