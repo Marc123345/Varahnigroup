@@ -103,7 +103,7 @@ const divisions: Division[] = [
     type: 'CONSTRUCTION',
     ref: 'Est. 2001',
     description: 'A leading Black-owned construction and infrastructure development company delivering large-scale projects across South Africa for both public and private sector clients',
-    image: 'https://images.unsplash.com/photo-1764222233275-87dc016c11dc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBwcm9wZXJ0eSUyMGRldmVsb3BtZW50JTIwYWVyaWFsfGVufDF8fHx8MTc3MjczNDk4N3ww&ixlib=rb-4.1.0&q=80&w=1080',
+    image: 'https://ik.imagekit.io/qcvroy8xpd/Rectangle.png',
     sections: [
       { id: 'about', index: 'Sec 1', title: 'About Us', type: 'INTELLIGENCE', description: 'Company history, leadership, and national reputation', image: 'https://images.unsplash.com/photo-1549280192-a63c556a0e26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBjb21wYW55JTIwZm91bmRlciUyMENFTyUyMHBvcnRyYWl0fGVufDF8fHx8MTc3MzA1NzE0OXww&ixlib=rb-4.1.0&q=80&w=1080' },
       { id: 'vision-values', index: 'Sec 2', title: 'Vision, Mission & Values', type: 'MANDATE', description: 'Our guiding principles and purpose', image: 'https://images.unsplash.com/photo-1656646424292-cf207f3f1749?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjB2aXNpb24lMjBtaXNzaW9uJTIwdmFsdWVzJTIwYm9hcmRyb29tfGVufDF8fHx8MTc3MzA1NzE0OHww&ixlib=rb-4.1.0&q=80&w=1080' },
