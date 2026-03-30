@@ -49,6 +49,14 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
       impact: 'Improved rural accessibility, connecting remote communities to economic and social services.',
     },
     {
+      title: 'Marulaneng–Mphahlele Road Project',
+      category: 'Roads & Civils',
+      location: 'Limpopo, South Africa',
+      image: ROADS_IMAGES[3],
+      specs: 'Full road construction including earthworks, drainage, and paving connecting rural communities.',
+      impact: 'Improved rural connectivity and access to economic opportunities for surrounding communities.',
+    },
+    {
       title: 'Lepelle Revitalization Programme Bulk Water Project',
       category: 'Water & Sanitation',
       location: 'Limpopo, South Africa',
@@ -111,6 +119,14 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
       image: IMAGES.propertyDev,
       specs: 'Turnkey property development including land preparation, construction, and handover of residential units.',
       impact: 'Delivered quality residential property in a strategically positioned development.',
+    },
+    {
+      title: 'The Mbilu Development',
+      category: 'Property Development',
+      location: 'South Africa',
+      image: IMAGES.propertyDev,
+      specs: 'Mixed-use property development including residential and commercial components.',
+      impact: 'Created a strategically positioned development contributing to local economic growth.',
     },
     {
       title: 'Transnet Facilities Management Services',
