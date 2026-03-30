@@ -46,10 +46,10 @@ export function PropertiesWireframe_ValuesImpact(): ReactNode {
           </span>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-10 md:pt-16 pb-0">
+        <div className="relative max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-14 md:pt-20 lg:pt-24 pb-0">
 
           {/* Header */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 mb-12 md:mb-14">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-14 md:mb-16">
             <div className="lg:col-span-7">
               <motion.div
                 className="flex items-center gap-3 mb-6"
@@ -119,7 +119,7 @@ export function PropertiesWireframe_ValuesImpact(): ReactNode {
                 </div>
 
                 {/* Row */}
-                <div className="relative flex items-center gap-4 md:gap-7 py-5 md:py-7">
+                <div className="relative flex items-center gap-4 md:gap-7 py-6 md:py-8 lg:py-9">
 
                   {/* Ordinal */}
                   <span
@@ -163,7 +163,7 @@ export function PropertiesWireframe_ValuesImpact(): ReactNode {
 
                 {/* Description — mobile only */}
                 <p
-                  className="font-inter typo-copy-small pb-5 sm:hidden pl-10"
+                  className="font-inter typo-copy-small pb-6 sm:hidden pl-10"
                   style={{ color: 'rgba(255,255,255,0.38)' }}
                 >
                   {val.description}
@@ -219,7 +219,7 @@ export function PropertiesWireframe_ValuesImpact(): ReactNode {
           </span>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-10 md:py-16">
+        <div className="relative max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-14 md:py-20 lg:py-24">
 
           {/* Eyebrow + headline */}
           <motion.div
