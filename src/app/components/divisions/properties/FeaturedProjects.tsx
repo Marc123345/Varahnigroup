@@ -5,10 +5,10 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const ROADS_IMAGES = [
-  'https://ik.imagekit.io/qcvroy8xpd/Roads%20and%20civil%20new%202.jpeg',
-  'https://ik.imagekit.io/qcvroy8xpd/Roads%20%26%20Civils%20new%203.jpeg',
-  'https://ik.imagekit.io/qcvroy8xpd/Roads%20%26%20civils%20new%204.jpeg',
-  'https://ik.imagekit.io/qcvroy8xpd/Gemini_Generated_Image_yj2y4jyj2y4jyj2y.png?updatedAt=1774872636619',
+  'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0002.jpg',
+  'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0025.jpg',
+  'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0560.jpg',
+  'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0032.jpg',
 ];
 
 const IMAGES = {

@@ -14,7 +14,7 @@ const PILLARS = [
     capabilities: ['Roads & Highways', 'Bridges & Culverts', 'Public Facilities', 'Water Infrastructure'],
     metric: { value: '200+', label: 'Projects Delivered' },
     image:
-      'https://ik.imagekit.io/qcvroy8xpd/Roads%20%26%20Civils%20new%203.jpeg',
+      'https://vharananiproperties.co.za/wp-content/uploads/2020/08/Tswane-BRT.jpg',
   },
   {
     num: '02',

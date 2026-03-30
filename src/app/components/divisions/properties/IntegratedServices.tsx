@@ -4,7 +4,7 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const IMAGES = {
-  roadsCivils: 'https://ik.imagekit.io/qcvroy8xpd/Roads%20and%20civil%20new%202.jpeg',
+  roadsCivils: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0011.jpg',
   waterSanitation: 'https://ik.imagekit.io/qcvroy8xpd/Water.png',
   buildingConstruction: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Building%201/Clip%20path%20frame-1.png?updatedAt=1774870591546',
   residential: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Mamelodi-Ext-5-4.jpg',
