@@ -170,7 +170,7 @@ const extraCubeImages = [
 const DIVISION_LOGOS: Record<string, string> = {
   group: 'https://ik.imagekit.io/qcvroy8xpd/Frame%207%20(1).png',
   properties: 'https://ik.imagekit.io/qcvroy8xpd/Frame%203.png',
-  foundation: 'https://scontent.ftlv19-3.fna.fbcdn.net/v/t39.30808-6/307124543_1035071653876386_5610287523756278216_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=QB-ZZq8SIS8Q7kNvwGPK0-N&_nc_oc=AdpuJc1437ohUXjWZmGdnJWOBWDcCkRCTSArttvEkQ4ivqaEeDLKKvkalvcObABkT819UQkQ26U6WH-l2_-Y28AG&_nc_zt=23&_nc_ht=scontent.ftlv19-3.fna&_nc_gid=wEWvJYU88IcAPAivk2VQSg&_nc_ss=7a32e&oh=00_AfznV8l-txtVkYU_EBkQDKoPfMpdyd7D1geoYGVe11F9fw&oe=69C5982B',
+  foundation: 'https://ik.imagekit.io/qcvroy8xpd/Frame%205.png',
   dmft: 'https://ik.imagekit.io/qcvroy8xpd/David%20Mabilu%20FT%20Property%20Developers%20logo%201.png',
 };
 
