@@ -7,9 +7,9 @@ const IMAGES = {
   roadsCivils: 'https://ik.imagekit.io/qcvroy8xpd/Roads%20and%20civil%20new%202.jpeg',
   waterSanitation: 'https://ik.imagekit.io/qcvroy8xpd/Water.png',
   buildingConstruction: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Building%201/Clip%20path%20frame-1.png?updatedAt=1774870591546',
-  residential: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/SOSHANGUVE-EXT.19-RDP-HOUSES-1.jpg',
-  propertyDev: 'https://vharananiproperties.co.za/wp-content/uploads/2020/10/Property-development-scaled.jpg',
-  facilitiesMgmt: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Facilities-1.jpg',
+  residential: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Mamelodi-Ext-5-4.jpg',
+  propertyDev: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_1-the-mbilu-1.jpg',
+  facilitiesMgmt: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Transnet-5.jpg',
 };
 
 export function PropertiesWireframe_IntegratedServices(): ReactNode {

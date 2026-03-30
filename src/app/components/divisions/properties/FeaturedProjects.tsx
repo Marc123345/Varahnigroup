@@ -14,9 +14,9 @@ const ROADS_IMAGES = [
 const IMAGES = {
   waterSanitation: 'https://ik.imagekit.io/qcvroy8xpd/Water.png',
   buildingConstruction: 'https://ik.imagekit.io/qcvroy8xpd/Building%207%26.jpeg',
-  residential: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/SOSHANGUVE-EXT.19-RDP-HOUSES-1.jpg',
-  propertyDev: 'https://vharananiproperties.co.za/wp-content/uploads/2020/10/Property-development-scaled.jpg',
-  facilitiesMgmt: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Facilities-1.jpg',
+  residential: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0519.jpg',
+  propertyDev: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_1-the-mbilu-1.jpg',
+  facilitiesMgmt: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Transnet-12.jpg',
 };
 
 export function PropertiesWireframe_FeaturedProjects(): ReactNode {
@@ -108,7 +108,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
       title: 'Nellmapius X22 Housing Development',
       category: 'Residential',
       location: 'Gauteng, South Africa',
-      image: IMAGES.residential,
+      image: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Mamelodi-Ext-5-4.jpg',
       specs: 'High-volume residential housing construction as part of a national human settlements programme.',
       impact: 'Provided dignified housing to hundreds of families in the Nellmapius community.',
     },
@@ -124,7 +124,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
       title: 'The Mbilu Development',
       category: 'Property Development',
       location: 'South Africa',
-      image: IMAGES.propertyDev,
+      image: 'https://vharananiproperties.co.za/wp-content/uploads/2021/07/thumbnail.jpg',
       specs: 'Mixed-use property development including residential and commercial components.',
       impact: 'Created a strategically positioned development contributing to local economic growth.',
     },
@@ -132,7 +132,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
       title: 'Transnet Facilities Management Services',
       category: 'Facilities Management',
       location: 'South Africa',
-      image: IMAGES.facilitiesMgmt,
+      image: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Transnet-9.jpg',
       specs: 'Comprehensive facilities management services including maintenance, cleaning, and operational management of Transnet facilities.',
       impact: 'Ensured the long-term functionality and operational integrity of critical national infrastructure facilities.',
     },

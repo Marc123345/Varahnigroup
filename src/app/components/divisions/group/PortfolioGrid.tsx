@@ -35,7 +35,7 @@ const ITEMS = [
     description: 'Advancing education, housing access, entrepreneurship, and community upliftment initiatives.',
     stats: [{ value: '34', label: 'Scholarships' }, { value: '5+', label: 'Provinces' }],
     capabilities: ['Education', 'Housing', 'Entrepreneurship', 'Community Upliftment'],
-    image: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/SOSHANGUVE-EXT.19-RDP-HOUSES-1.jpg',
+    image: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Mamelodi-Ext-5-4.jpg',
   },
 ];
 

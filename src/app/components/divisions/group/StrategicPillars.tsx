@@ -50,7 +50,7 @@ const PILLARS = [
     capabilities: ['Education Bursaries', 'Skills Training', 'Housing Programmes', 'Health Initiatives'],
     metric: { value: '50K+', label: 'Lives Impacted' },
     image:
-      'https://vharananiproperties.co.za/wp-content/uploads/2021/06/SOSHANGUVE-EXT.19-RDP-HOUSES-1.jpg',
+      'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Mamelodi-Ext-5-4.jpg',
   },
 ];
 

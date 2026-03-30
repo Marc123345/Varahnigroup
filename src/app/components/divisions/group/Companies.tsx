@@ -5,7 +5,7 @@ import { SectionWrapper } from '../shared';
 
 const IMAGES = {
   construction: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0519.jpg',
-  foundation: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/SOSHANGUVE-EXT.19-RDP-HOUSES-1.jpg',
+  foundation: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Mamelodi-Ext-5-4.jpg',
   dmft: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Mamelodi-Ext-5-4.jpg',
 };
 
