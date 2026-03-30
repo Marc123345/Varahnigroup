@@ -51,7 +51,7 @@ const PRINCIPLES = [
   },
 ];
 
-const IMAGE = 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=80&fit=crop';
+const IMAGE = 'https://vharananiproperties.co.za/wp-content/uploads/2021/07/H2-895x500.png';
 
 const CREDENTIALS = ['King IV Aligned', 'B-BBEE Level 1', 'ISO Compliant', 'CIDB Registered'];
 

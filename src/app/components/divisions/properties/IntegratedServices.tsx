@@ -4,12 +4,12 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const IMAGES = {
-  roadsCivils: 'https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=1200&q=80&fit=crop',
-  waterSanitation: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80&fit=crop',
-  buildingConstruction: 'https://images.unsplash.com/photo-1587653915936-5e762e0fc0a0?w=1200&q=80&fit=crop',
-  residential: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80&fit=crop',
-  propertyDev: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=80&fit=crop',
-  facilitiesMgmt: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1200&q=80&fit=crop',
+  roadsCivils: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Marulaneng-Road-2.jpg',
+  waterSanitation: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Polokwane-CBD-Pipeline.png',
+  buildingConstruction: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/MAPHUTA-MALATJIE-HOSPITAL-2.jpg',
+  residential: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/SOSHANGUVE-EXT.19-RDP-HOUSES-1.jpg',
+  propertyDev: 'https://vharananiproperties.co.za/wp-content/uploads/2020/10/Property-development-scaled.jpg',
+  facilitiesMgmt: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Facilities-1.jpg',
 };
 
 export function PropertiesWireframe_IntegratedServices(): ReactNode {

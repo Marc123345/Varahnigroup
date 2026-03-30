@@ -22,7 +22,7 @@ const PROGRAMMES = [
     description: 'Access to safe and dignified housing is essential for improving the quality of life of vulnerable families. The Foundation supports housing initiatives that provide homes for disadvantaged individuals and families.',
     details: ['Home construction', 'Community housing', 'Government partnerships', 'Nelson Mandela Day builds'],
     metric: { value: '3BR', label: 'Home Built for Elderly in Eenzaam' },
-    image: 'https://images.unsplash.com/photo-1707410148802-fe08fe956398?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZmZvcmRhYmxlJTIwaG91c2luZyUyMGNvbnN0cnVjdGlvbiUyMHdvcmtlcnMlMjBTb3V0aCUyMEFmcmljYSUyMHRvd25zaGlwfGVufDF8fHx8MTc3Mzg0OTM3NHww&ixlib=rb-4.1.0&q=80&w=1080',
+    image: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Mamelodi-Ext-5-4.jpg',
   },
   {
     num: '03',

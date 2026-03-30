@@ -14,7 +14,7 @@ const PILLARS = [
     capabilities: ['Roads & Highways', 'Bridges & Culverts', 'Public Facilities', 'Water Infrastructure'],
     metric: { value: '200+', label: 'Projects Delivered' },
     image:
-      'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1400&q=85&fit=crop',
+      'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Marulaneng-Road-2.jpg',
   },
   {
     num: '02',
@@ -26,7 +26,7 @@ const PILLARS = [
     capabilities: ['Commercial Property', 'Residential Estates', 'Industrial Assets', 'Land Banking'],
     metric: { value: 'R5B+', label: 'Asset Portfolio' },
     image:
-      'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1400&q=85&fit=crop',
+      'https://vharananiproperties.co.za/wp-content/uploads/2020/10/Property-development-scaled.jpg',
   },
   {
     num: '03',
@@ -38,7 +38,7 @@ const PILLARS = [
     capabilities: ['Digital Solutions', 'Aviation Services', 'Resource Management', 'Smart Infrastructure'],
     metric: { value: '4', label: 'Emerging Sectors' },
     image:
-      'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=85&fit=crop',
+      'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Facilities-1.jpg',
   },
   {
     num: '04',
@@ -50,7 +50,7 @@ const PILLARS = [
     capabilities: ['Education Bursaries', 'Skills Training', 'Housing Programmes', 'Health Initiatives'],
     metric: { value: '50K+', label: 'Lives Impacted' },
     image:
-      'https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=1400&q=85&fit=crop',
+      'https://vharananiproperties.co.za/wp-content/uploads/2021/06/SOSHANGUVE-EXT.19-RDP-HOUSES-1.jpg',
   },
 ];
 

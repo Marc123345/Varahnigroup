@@ -5,7 +5,7 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { AnimatedCounter } from '../shared';
 
 const IMAGES = {
-  impact: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1400&q=85&fit=crop',
+  impact: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/Mogalakwena.jpg',
 };
 
 const TICKER_ITEMS = [

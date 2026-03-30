@@ -5,12 +5,12 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const IMAGES = {
-  aerialDev: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?w=1200&q=80&fit=crop',
-  blueprint: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80&fit=crop',
-  propertyDev: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80&fit=crop',
-  residentialEstate: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80&fit=crop',
-  mixedUse: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=80&fit=crop',
-  townhouse: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80&fit=crop',
+  aerialDev: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0519.jpg',
+  blueprint: 'https://vharananiproperties.co.za/wp-content/uploads/2020/10/Property-development-scaled.jpg',
+  propertyDev: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Mamelodi-Ext-5-4.jpg',
+  residentialEstate: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/SOSHANGUVE-EXT.19-RDP-HOUSES-1.jpg',
+  mixedUse: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/Mogalakwena.jpg',
+  townhouse: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_2-anglo-platinum-1.jpg',
 };
 
 export function DMFTWireframe_CapabilitiesQuality(): ReactNode {

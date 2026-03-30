@@ -3,7 +3,7 @@ import { Building2, Home, Heart, Layers, Mail, Phone, MapPin, ArrowRight } from 
 import { ImageWithFallback } from '../../ui/ImageWithFallback';
 
 const IMAGES = {
-  aerialDev: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?w=1400&q=85&fit=crop',
+  aerialDev: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0519.jpg',
 };
 
 export function DMFTWireframe_HeritageContact(): ReactNode {
