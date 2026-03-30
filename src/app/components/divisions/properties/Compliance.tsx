@@ -1,17 +1,27 @@
 import { type ReactNode } from 'react';
 import { motion } from 'motion/react';
-import { Award, Shield, Building2, HardHat, Home, Users } from 'lucide-react';
+import { Home, Users } from 'lucide-react';
+import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
+
+const LOGO_IMAGES = {
+  cidb: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/CIDB-9GB_9CE.png',
+  iso: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/ISO-Certified-Construction-Company.png',
+  bbbee: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/B-BBEE-LEVEL-1.png',
+  nhbrc: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/NHRBC-members.png',
+};
 
 export function PropertiesWireframe_Compliance(): ReactNode {
   const certifications = [
-    { icon: <Award size={28} />, title: 'ISO 9001:2015', subtitle: 'Certified Construction Company', highlight: false },
-    { icon: <Shield size={28} />, title: 'B-BBEE Level 1', subtitle: 'Highest Contributor Level', highlight: false },
-    { icon: <Building2 size={28} />, title: 'CIDB Grade 9GB', subtitle: 'General Building Works', highlight: true },
-    { icon: <HardHat size={28} />, title: 'CIDB Grade 9CE', subtitle: 'Civil Engineering', highlight: true },
-    { icon: <Home size={28} />, title: 'NHBRC', subtitle: 'National Home Builders Registration Council', highlight: false },
-    { icon: <Users size={28} />, title: 'COIDA', subtitle: 'Registered with the Department of Labour', highlight: false },
+    { image: LOGO_IMAGES.iso, title: 'ISO 9001:2015', subtitle: 'Certified Construction Company — Quality Management Systems', highlight: false },
+    { image: LOGO_IMAGES.bbbee, title: 'B-BBEE Level 1', subtitle: 'Highest Contributor Level', highlight: false },
+    { image: LOGO_IMAGES.cidb, title: 'CIDB Grade 9GB & 9CE', subtitle: 'General Building Works & Civil Engineering — Highest Grade', highlight: true },
+    { image: LOGO_IMAGES.nhbrc, title: 'NHBRC', subtitle: 'National Home Builders Registration Council', highlight: false },
+    { icon: <Home size={28} />, title: 'COIDA', subtitle: 'Registered with the Department of Labour', highlight: false },
   ];
+
+  const highlighted = certifications.filter(c => c.highlight);
+  const standard = certifications.filter(c => !c.highlight);
 
   return (
     <SectionWrapper className="!py-0 !px-0">
@@ -39,41 +49,45 @@ export function PropertiesWireframe_Compliance(): ReactNode {
         </div>
       </div>
 
-      {/* ── HIGHLIGHTED CERTS — CIDB top tier ── */}
+      {/* ── HIGHLIGHTED CERT — CIDB ── */}
       <div className="px-6 md:px-12 lg:px-20 py-0" style={{ background: '#ffffff' }}>
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-[1px] mt-0" style={{ background: 'var(--vharanani-charcoal-20)', borderBottom: '1px solid var(--vharanani-charcoal-20)' }}>
-            {certifications.filter(c => c.highlight).map((cert, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="flex items-center gap-6 p-8 md:p-10"
-                style={{ background: 'white', borderTop: '3px solid var(--vharanani-burgundy)' }}
-              >
-                <div className="w-16 h-16 flex-shrink-0 flex items-center justify-center" style={{ background: 'var(--vharanani-burgundy)', color: 'white' }}>
-                  {cert.icon}
+          {highlighted.map((cert, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="flex flex-col md:flex-row items-center gap-8 p-8 md:p-12"
+              style={{ borderTop: '4px solid var(--vharanani-burgundy)', borderBottom: '1px solid rgba(0,0,0,0.08)' }}
+            >
+              {cert.image && (
+                <div className="w-full md:w-64 h-24 flex items-center justify-center flex-shrink-0">
+                  <ImageWithFallback
+                    src={cert.image}
+                    alt={cert.title}
+                    className="max-h-20 w-auto object-contain"
+                  />
                 </div>
-                <div>
-                  <div className="inline-block px-2 py-0.5 mb-2" style={{ background: 'var(--vharanani-burgundy)' }}>
-                    <span className="font-inter typo-meta text-white tracking-[0.15em] uppercase">Highest Grade</span>
-                  </div>
-                  <h4 className="font-bebas-neue typo-subline tracking-wide uppercase" style={{ color: 'var(--vharanani-charcoal)' }}>
-                    {cert.title}
-                  </h4>
-                  <div className="font-inter typo-copy-small mt-1" style={{ color: 'var(--vharanani-charcoal-60)' }}>
-                    {cert.subtitle}
-                  </div>
+              )}
+              <div className="text-center md:text-left">
+                <div className="inline-block px-3 py-1 mb-3" style={{ background: 'var(--vharanani-burgundy)' }}>
+                  <span className="font-inter typo-meta text-white tracking-[0.15em] uppercase">Highest Grade</span>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+                <h4 className="font-bebas-neue typo-subline tracking-wide uppercase" style={{ color: 'var(--vharanani-charcoal)' }}>
+                  {cert.title}
+                </h4>
+                <div className="font-inter typo-copy-small mt-1" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+                  {cert.subtitle}
+                </div>
+              </div>
+            </motion.div>
+          ))}
 
-          {/* ── STANDARD CERTS ── */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-[1px]" style={{ background: 'var(--vharanani-charcoal-20)', borderBottom: '1px solid var(--vharanani-charcoal-20)' }}>
-            {certifications.filter(c => !c.highlight).map((cert, i) => (
+          {/* ── CERTIFICATION LOGO GRID ── */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-[1px]" style={{ background: 'rgba(0,0,0,0.06)' }}>
+            {standard.map((cert, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 16 }}
@@ -81,12 +95,22 @@ export function PropertiesWireframe_Compliance(): ReactNode {
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: i * 0.08 }}
                 whileHover={{ y: -2 }}
-                className="flex flex-col items-center justify-center p-8 text-center"
+                className="flex flex-col items-center justify-center p-6 md:p-8 text-center"
                 style={{ background: '#fafafa' }}
               >
-                <div className="w-14 h-14 flex items-center justify-center mb-4" style={{ border: '1.5px solid var(--vharanani-burgundy)', color: 'var(--vharanani-burgundy)' }}>
-                  {cert.icon}
-                </div>
+                {cert.image ? (
+                  <div className="w-full h-16 flex items-center justify-center mb-4">
+                    <ImageWithFallback
+                      src={cert.image}
+                      alt={cert.title}
+                      className="max-h-14 w-auto object-contain"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-14 h-14 flex items-center justify-center mb-4" style={{ border: '1.5px solid var(--vharanani-burgundy)', color: 'var(--vharanani-burgundy)' }}>
+                    {cert.icon}
+                  </div>
+                )}
                 <h4 className="font-bebas-neue typo-headline-small tracking-wide uppercase mb-1" style={{ color: 'var(--vharanani-charcoal)' }}>
                   {cert.title}
                 </h4>
