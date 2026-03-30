@@ -4,7 +4,7 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const IMAGES = {
-  roadsCivils: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Marulaneng-Road-2.jpg',
+  roadsCivils: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Roads%20&%20Civil/Rectangle.png',
   waterSanitation: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Polokwane-CBD-Pipeline.png',
   buildingConstruction: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/MAPHUTA-MALATJIE-HOSPITAL-2.jpg',
   residential: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/SOSHANGUVE-EXT.19-RDP-HOUSES-1.jpg',

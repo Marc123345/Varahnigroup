@@ -14,7 +14,7 @@ const PILLARS = [
     capabilities: ['Roads & Highways', 'Bridges & Culverts', 'Public Facilities', 'Water Infrastructure'],
     metric: { value: '200+', label: 'Projects Delivered' },
     image:
-      'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Marulaneng-Road-2.jpg',
+      'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Roads%20%26%20Civil%202/Rectangle.png',
   },
   {
     num: '02',
