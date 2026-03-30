@@ -4,7 +4,7 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const IMAGES = {
-  roadsCivils: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Roads%20&%20Civil/Rectangle.png?tr=q-100:e-upscale',
+  roadsCivils: 'https://ik.imagekit.io/qcvroy8xpd/Roads%20and%20civil%20new%202.jpeg',
   waterSanitation: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Polokwane-CBD-Pipeline.png',
   buildingConstruction: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/MAPHUTA-MALATJIE-HOSPITAL-2.jpg',
   residential: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/SOSHANGUVE-EXT.19-RDP-HOUSES-1.jpg',

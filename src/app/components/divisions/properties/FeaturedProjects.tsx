@@ -5,10 +5,10 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const ROADS_IMAGES = [
-  'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Roads%20&%20Civil/Clip%20path%20frame-1.png?tr=q-100:e-upscale',
-  'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Roads%20&%20Civil/Rectangle.png?tr=q-100:e-upscale',
-  'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Roads%20&%20Civil/Clip%20path%20frame-2.png?tr=q-100:e-upscale',
-  'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Roads%20&%20Civil/Clip%20path%20frame-3.png?tr=q-100:e-upscale',
+  'https://ik.imagekit.io/qcvroy8xpd/Roads%20and%20civil%20new%202.jpeg',
+  'https://ik.imagekit.io/qcvroy8xpd/Roads%20%26%20Civils%20new%203.jpeg',
+  'https://ik.imagekit.io/qcvroy8xpd/Roads%20%26%20civils%20new%204.jpeg',
+  'https://ik.imagekit.io/qcvroy8xpd/Gemini_Generated_Image_yj2y4jyj2y4jyj2y.png?updatedAt=1774872636619',
 ];
 
 const IMAGES = {
