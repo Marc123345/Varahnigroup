@@ -4,7 +4,7 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { AnimatedCounter, SectionWrapper } from '../shared';
 
 const IMAGES = {
-  impact: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/MAPHUTA-MALATJIE-HOSPITAL-2.jpg',
+  impact: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Building%201/120f060e-6bd8-42ff-984e-ea9c6984b42f.jpeg',
 };
 
 export function GroupWireframe_ImpactGovernance(): ReactNode {
