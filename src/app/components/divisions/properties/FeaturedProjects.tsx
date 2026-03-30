@@ -4,23 +4,14 @@ import { MapPin, ArrowRight, ArrowLeft, ChevronRight, X } from 'lucide-react';
 import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
+const ROADS_IMAGES = [
+  'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Roads%20&%20Civil/Clip%20path%20frame-1.png?tr=q-100:e-upscale',
+  'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Roads%20&%20Civil/Rectangle.png?tr=q-100:e-upscale',
+  'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Roads%20&%20Civil/Clip%20path%20frame-2.png?tr=q-100:e-upscale',
+  'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Roads%20&%20Civil/Clip%20path%20frame-3.png?tr=q-100:e-upscale',
+];
+
 const IMAGES = {
-  // Roads & Civils — ImageKit project photos
-  roadsCivils1: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Roads%20&%20Civil/Rectangle.png',
-  roadsCivils2: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Roads%20&%20Civil/Clip%20path%20frame.png',
-  roadsCivils3: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Roads%20&%20Civil%202/Rectangle.png',
-  roadsCivils4: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Roads%20&%20Civil%202/Clip%20path%20frame.png',
-  roadsCivils5: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Roads%20&%20Civil%202/Clip%20path%20frame-1.png',
-  roadsCivils6: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Roads%20&%20Civil%202/Clip%20path%20frame-2.png',
-  roadsCivils7: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Roads%20&%20Civil%203/Clip%20path%20frame.png',
-  roadsCivils8: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Roads%20&%20Civil%203/Clip%20path%20frame-2.png',
-  roadsCivils9: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Roads%20&%20Civil%203/Clip%20path%20frame-3.png',
-  brt: 'https://ik.imagekit.io/qcvroy8xpd/Rectangle.png',
-  clipFrame: 'https://ik.imagekit.io/qcvroy8xpd/Clip%20path%20frame.png',
-  clipFrame1: 'https://ik.imagekit.io/qcvroy8xpd/Clip%20path%20frame-1.png',
-  clipFrame2: 'https://ik.imagekit.io/qcvroy8xpd/Clip%20path%20frame-2.png',
-  clipFrame3: 'https://ik.imagekit.io/qcvroy8xpd/Clip%20path%20frame-3.png',
-  // Other categories
   waterSanitation: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Polokwane-CBD-Pipeline.png',
   buildingConstruction: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/MAPHUTA-MALATJIE-HOSPITAL-2.jpg',
   residential: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/SOSHANGUVE-EXT.19-RDP-HOUSES-1.jpg',
@@ -37,7 +28,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
       title: 'Tshwane BRT System',
       category: 'Roads & Civils',
       location: 'Gauteng, South Africa',
-      image: IMAGES.brt,
+      image: ROADS_IMAGES[0],
       specs: 'Bus Rapid Transit infrastructure including dedicated lanes, stations, and traffic management systems.',
       impact: 'Connected thousands of daily commuters to affordable, efficient public transport across the Tshwane metropolitan area.',
     },
@@ -45,7 +36,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
       title: 'Polokwane BRT System',
       category: 'Roads & Civils',
       location: 'Limpopo, South Africa',
-      image: IMAGES.roadsCivils1,
+      image: ROADS_IMAGES[1],
       specs: 'Bus Rapid Transit system delivering dedicated transit lanes, station infrastructure, and integrated traffic management.',
       impact: 'Enhanced urban mobility and reduced commute times for residents across the Polokwane metropolitan area.',
     },
@@ -53,7 +44,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
       title: 'Marulaneng–Sekhukhune Road Development',
       category: 'Roads & Civils',
       location: 'Limpopo, South Africa',
-      image: IMAGES.roadsCivils3,
+      image: ROADS_IMAGES[2],
       specs: 'Full road construction including earthworks, drainage, paving, and road markings across challenging terrain.',
       impact: 'Improved rural accessibility, connecting remote communities to economic and social services.',
     },
