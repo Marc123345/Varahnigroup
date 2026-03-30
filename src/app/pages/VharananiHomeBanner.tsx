@@ -110,8 +110,8 @@ export function VharananiHomeBanner({
       </div>
 
       {/* ── CONTENT — LEFT SIDE ── */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 h-full flex flex-col justify-center pb-16">
-        <div className="max-w-xl lg:max-w-lg xl:max-w-xl pt-20 sm:pt-24 lg:pt-28 pb-8">
+      <div className="relative z-10 h-full flex flex-col justify-center pb-16 px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28">
+        <div className="max-w-xl lg:max-w-[520px] xl:max-w-xl pt-20 sm:pt-24 lg:pt-28 pb-8">
 
           {/* Eyebrow */}
           <motion.div
