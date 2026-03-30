@@ -13,7 +13,7 @@ const ITEMS = [
     description: 'Delivering large-scale civil engineering and infrastructure projects that improve quality of life and restore dignity to communities.',
     stats: [{ value: '200+', label: 'Projects' }, { value: 'Grade 9', label: 'CIDB' }],
     capabilities: ['Roads & Highways', 'Water & Sanitation', 'Public Buildings'],
-    image: 'https://ik.imagekit.io/qcvroy8xpd/Clip%20path%20frame.png',
+    image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/Tswane-BRT.jpg',
   },
   {
     id: 'dmft',
@@ -24,7 +24,7 @@ const ITEMS = [
     description: 'Managing strategic real estate assets and long-term property investments across commercial and residential sectors.',
     stats: [{ value: '15+', label: 'Developments' }, { value: 'R2B+', label: 'Portfolio' }],
     capabilities: ['Residential Estates', 'Mixed-Use Precincts'],
-    image: 'https://ik.imagekit.io/qcvroy8xpd/rsz_dji_0519.jpg.png',
+    image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0519.jpg',
   },
   {
     id: 'foundation',
@@ -35,7 +35,7 @@ const ITEMS = [
     description: 'Advancing education, housing access, entrepreneurship, and community upliftment initiatives.',
     stats: [{ value: '34', label: 'Scholarships' }, { value: '5+', label: 'Provinces' }],
     capabilities: ['Education', 'Housing', 'Entrepreneurship', 'Community Upliftment'],
-    image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200&q=80&fit=crop',
+    image: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/SOSHANGUVE-EXT.19-RDP-HOUSES-1.jpg',
   },
 ];
 
