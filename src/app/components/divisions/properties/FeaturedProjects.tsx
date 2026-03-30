@@ -12,7 +12,7 @@ const ROADS_IMAGES = [
 ];
 
 const IMAGES = {
-  waterSanitation: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Polokwane-CBD-Pipeline.png',
+  waterSanitation: 'https://ik.imagekit.io/qcvroy8xpd/Water.png',
   buildingConstruction: 'https://ik.imagekit.io/qcvroy8xpd/Building%207%26.jpeg',
   residential: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/SOSHANGUVE-EXT.19-RDP-HOUSES-1.jpg',
   propertyDev: 'https://vharananiproperties.co.za/wp-content/uploads/2020/10/Property-development-scaled.jpg',
@@ -68,7 +68,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
       title: 'Rand Water Pipeline',
       category: 'Water & Sanitation',
       location: 'Gauteng, South Africa',
-      image: IMAGES.waterSanitation,
+      image: 'https://ik.imagekit.io/qcvroy8xpd/71ec9083-b2b1-4b7d-9ddb-2c847420aff8.jpeg',
       specs: 'Major bulk water pipeline installation supporting the Rand Water distribution network and municipal supply.',
       impact: 'Strengthened water security and service delivery capacity for communities across Gauteng.',
     },
