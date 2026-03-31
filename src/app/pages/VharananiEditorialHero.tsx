@@ -959,68 +959,96 @@ export function VharananiEditorialHero() {
   return (
     <div className="min-h-screen relative bg-white">
       {/* ── HEADER ── */}
-      <header className="sticky top-0 z-30 bg-white/90 backdrop-blur-sm border-b-4 border-[var(--vharanani-burgundy)] shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 sm:h-20">
-            <button className="flex items-center gap-3" onClick={handleBackToHome}>
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentLevel === 1 && selectedDivision ? selectedDivision.id : 'home'}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.25 }}
-                  className="flex items-center gap-3"
-                >
-                  {currentLevel === 1 && selectedDivision && DIVISION_LOGOS[selectedDivision.id] ? (
-                    <img
-                      src={DIVISION_LOGOS[selectedDivision.id]}
-                      alt={selectedDivision.title}
-                      className="h-8 sm:h-10 w-auto object-contain"
-                    />
-                  ) : (
-                    <img
-                      src="https://ik.imagekit.io/qcvroy8xpd/Frame%205.png"
-                      alt="Vharanani Group"
-                      className="h-8 sm:h-10 w-auto object-contain"
-                    />
-                  )}
-                </motion.div>
-              </AnimatePresence>
-            </button>
+      <header className="sticky top-0 z-30 bg-white" style={{ height: 96 }}>
+        {/* Logo area with burgundy background shape */}
+        <div className="absolute top-0 left-0 h-full" style={{ width: 'clamp(200px, 22vw, 386px)', background: 'var(--vharanani-burgundy)', clipPath: 'polygon(0 0, 85% 0, 100% 100%, 0% 100%)' }} />
 
-            {isDesktop && (
-              <nav className="hidden lg:flex items-center gap-6">
-                {divisions.map((div) => (
-                  <button
-                    key={div.id}
-                    onClick={() => handleHeaderNavClick(div.id)}
-                    className="typo-headline-small font-bebas-neue uppercase tracking-wide transition-colors"
-                    style={{
-                      color: currentLevel === 1 && selectedDivision?.id === div.id
-                        ? 'var(--vharanani-burgundy)'
-                        : 'var(--vharanani-charcoal)',
-                    }}
-                  >
-                    {div.title.replace('Vharanani ', '')}
-                  </button>
-                ))}
+        <div className="relative h-full flex items-center px-6 sm:px-8 lg:px-16 xl:px-24">
+          {/* Logo */}
+          <button className="relative z-10 flex items-center gap-3 mr-auto" onClick={handleBackToHome}>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentLevel === 1 && selectedDivision ? selectedDivision.id : 'home'}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.25 }}
+                className="flex items-center gap-3"
+              >
+                {currentLevel === 1 && selectedDivision && DIVISION_LOGOS[selectedDivision.id] ? (
+                  <img
+                    src={DIVISION_LOGOS[selectedDivision.id]}
+                    alt={selectedDivision.title}
+                    className="h-8 sm:h-10 w-auto object-contain brightness-0 invert"
+                  />
+                ) : (
+                  <img
+                    src="https://ik.imagekit.io/qcvroy8xpd/Frame%205.png"
+                    alt="Vharanani Group"
+                    className="h-8 sm:h-10 w-auto object-contain brightness-0 invert"
+                  />
+                )}
+              </motion.div>
+            </AnimatePresence>
+          </button>
+
+          {/* Centered navigation */}
+          {isDesktop && (
+            <nav className="absolute left-1/2 -translate-x-1/2 hidden lg:flex items-center gap-12">
+              {divisions.map((div) => (
                 <button
-                  onClick={() => document.querySelector('footer')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="bg-[var(--vharanani-burgundy)] hover:bg-[var(--vharanani-burgundy-80)] text-white px-6 py-3 typo-headline-small font-bebas-neue uppercase tracking-wide transition-colors duration-300"
+                  key={div.id}
+                  onClick={() => handleHeaderNavClick(div.id)}
+                  className="relative transition-colors duration-200"
+                  style={{
+                    fontFamily: 'var(--font-inter)',
+                    fontSize: 15,
+                    fontWeight: 600,
+                    letterSpacing: '0.5px',
+                    lineHeight: '24px',
+                    color: currentLevel === 1 && selectedDivision?.id === div.id
+                      ? 'var(--vharanani-burgundy)'
+                      : 'var(--vharanani-charcoal)',
+                  }}
                 >
-                  Inquire
+                  {div.title.replace('Vharanani ', '').replace('The ', '')}
                 </button>
-              </nav>
-            )}
+              ))}
+            </nav>
+          )}
 
-            {(isMobile || isTablet) && (
-              <button onClick={handleMenuToggle} className="lg:hidden p-2 hover:bg-[var(--vharanani-burgundy-20)] transition-colors" aria-label="Open menu">
-                <Menu className="w-6 h-6 text-[var(--vharanani-charcoal)]" />
-              </button>
-            )}
-          </div>
+          {/* Right side — CTA button */}
+          {isDesktop && (
+            <button
+              onClick={() => document.querySelector('footer')?.scrollIntoView({ behavior: 'smooth' })}
+              className="hidden lg:flex items-center justify-center gap-2 transition-colors duration-300 hover:brightness-110"
+              style={{
+                background: 'var(--vharanani-burgundy)',
+                height: 56,
+                padding: '16px 32px',
+                fontFamily: 'var(--font-inter)',
+                fontSize: 15,
+                fontWeight: 600,
+                letterSpacing: '0.5px',
+                lineHeight: '24px',
+                color: 'white',
+              }}
+            >
+              Inquire
+              <ArrowRight size={16} />
+            </button>
+          )}
+
+          {/* Mobile menu button */}
+          {(isMobile || isTablet) && (
+            <button onClick={handleMenuToggle} className="lg:hidden p-2 hover:bg-[var(--vharanani-burgundy-20)] transition-colors" aria-label="Open menu">
+              <Menu className="w-6 h-6 text-[var(--vharanani-charcoal)]" />
+            </button>
+          )}
         </div>
+
+        {/* Bottom border accent */}
+        <div className="absolute bottom-0 left-0 right-0 h-[2px]" style={{ background: 'linear-gradient(90deg, var(--vharanani-burgundy) 0%, var(--vharanani-burgundy) 20%, var(--vharanani-charcoal-20) 20%)' }} />
       </header>
 
       <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} onNavigate={handleHeaderNavClick} />
