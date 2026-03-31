@@ -125,7 +125,7 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
                 viewport={{ once: true }}
                 transition={{ delay: 0.38, duration: 0.7 }}
                 className="typo-copy font-inter"
-                style={{ color: 'rgba(255,255,255,0.36)', maxWidth: 400, lineHeight: 1.78 }}
+                style={{ color: 'rgba(255,255,255,0.7)', maxWidth: 400, lineHeight: 1.78 }}
               >
                 Four interconnected pillars defining our growth trajectory — each reinforcing
                 the others to build a resilient, diversified platform.
@@ -327,7 +327,7 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.5, duration: 0.5 }}
                       className="typo-copy-small font-inter mb-7"
-                      style={{ color: 'rgba(255,255,255,0.5)', maxWidth: 380, lineHeight: 1.72 }}
+                      style={{ color: 'rgba(255,255,255,0.75)', maxWidth: 380, lineHeight: 1.72 }}
                     >
                       {pillar.description}
                     </motion.p>
@@ -457,7 +457,7 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
                     <div className="px-4 sm:px-6 py-7 sm:py-8" style={{ background: '#080808' }}>
                       <p
                         className="typo-copy-small font-inter mb-6"
-                        style={{ color: 'rgba(255,255,255,0.48)', lineHeight: 1.72 }}
+                        style={{ color: 'rgba(255,255,255,0.75)', lineHeight: 1.72 }}
                       >
                         {pillar.description}
                       </p>
