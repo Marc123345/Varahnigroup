@@ -108,14 +108,14 @@ function PhaseBlock({ phase, index }: { phase: Phase; index: number }) {
       <div className="relative max-w-screen-xl mx-auto">
         <div
           className="grid grid-cols-1 lg:grid-cols-2"
-          style={{ minHeight: '580px' }}
+          style={{ minHeight: 'min(580px, 85vh)' }}
         >
           {/* ── IMAGE ── */}
           <div
             className="relative overflow-hidden"
             style={{
               order: isEven ? 2 : 1,
-              minHeight: '320px',
+              minHeight: '360px',
             }}
           >
             {/* Clip-path reveal */}
@@ -202,7 +202,7 @@ function PhaseBlock({ phase, index }: { phase: Phase; index: number }) {
                 </div>
                 <div
                   className="font-bebas-neue text-white"
-                  style={{ fontSize: 56, lineHeight: 1 }}
+                  style={{ fontSize: 'clamp(36px, 5vw, 56px)', lineHeight: 1 }}
                 >
                   {phase.step}{' '}
                   <span style={{ color: 'rgba(255,255,255,0.14)' }}>/ 04</span>
@@ -211,7 +211,7 @@ function PhaseBlock({ phase, index }: { phase: Phase; index: number }) {
             </motion.div>
 
             {/* Title — clip reveal */}
-            <div className="overflow-hidden mb-4">
+            <div className="overflow-hidden mb-4 pb-1">
               <motion.h3
                 initial={{ y: '108%' }}
                 whileInView={{ y: 0 }}
@@ -219,8 +219,8 @@ function PhaseBlock({ phase, index }: { phase: Phase; index: number }) {
                 transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.12 }}
                 className="font-bebas-neue uppercase text-white"
                 style={{
-                  fontSize: 'clamp(38px, 5vw, 68px)',
-                  lineHeight: 0.95,
+                  fontSize: 'clamp(32px, 4.5vw, 58px)',
+                  lineHeight: 1.05,
                   whiteSpace: 'pre-line',
                 }}
               >
@@ -247,7 +247,7 @@ function PhaseBlock({ phase, index }: { phase: Phase; index: number }) {
               viewport={{ once: true }}
               transition={{ delay: 0.42, duration: 0.7 }}
               className="typo-copy font-inter mb-10"
-              style={{ color: 'rgba(255,255,255,0.4)', maxWidth: 460, lineHeight: 1.78 }}
+              style={{ color: 'rgba(255,255,255,0.75)', maxWidth: 460, lineHeight: 1.78 }}
             >
               {phase.description}
             </motion.p>
@@ -263,9 +263,9 @@ function PhaseBlock({ phase, index }: { phase: Phase; index: number }) {
                   transition={{ delay: 0.54 + ci * 0.09, duration: 0.45 }}
                   className="typo-label font-inter tracking-[0.14em] uppercase px-4 py-2"
                   style={{
-                    border: '1px solid rgba(129,41,33,0.28)',
-                    color: 'rgba(255,255,255,0.48)',
-                    background: 'rgba(129,41,33,0.05)',
+                    border: '1px solid rgba(129,41,33,0.35)',
+                    color: 'rgba(255,255,255,0.7)',
+                    background: 'rgba(129,41,33,0.08)',
                   }}
                 >
                   {cap}
@@ -343,8 +343,8 @@ export function DMFTWireframe_DevelopmentApproach(): ReactNode {
                   transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
                   className="font-bebas-neue uppercase text-white"
                   style={{
-                    fontSize: 'clamp(62px, 10vw, 144px)',
-                    lineHeight: 0.88,
+                    fontSize: 'clamp(48px, 8vw, 120px)',
+                    lineHeight: 0.92,
                     letterSpacing: '-0.01em',
                   }}
                 >
@@ -361,7 +361,7 @@ export function DMFTWireframe_DevelopmentApproach(): ReactNode {
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.7 }}
                 className="typo-copy font-inter"
-                style={{ color: 'rgba(255,255,255,0.36)', maxWidth: 420, lineHeight: 1.78 }}
+                style={{ color: 'rgba(255,255,255,0.7)', maxWidth: 420, lineHeight: 1.78 }}
               >
                 We manage the full lifecycle of property development — from strategic land
                 identification through to sales and handover, ensuring every project is
