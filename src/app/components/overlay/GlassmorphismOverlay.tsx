@@ -317,7 +317,7 @@ export function GlassmorphismOverlay({
       <div
         ref={scrollContainerRef}
         className="relative overflow-y-auto"
-        style={{ height: 'calc(100dvh - 93px)' }}
+        style={{ height: 'calc(100dvh - 48px)' }}
       >
         {scrollMode ? (
           <motion.div
@@ -391,82 +391,8 @@ export function GlassmorphismOverlay({
         )}
       </div>
 
-      {/* ── BOTTOM NAV BAR — prev/next + keyboard hint ── */}
-      <div
-        className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-4 sm:px-8 lg:px-12"
-        style={{
-          background: '#ffffff',
-          borderTop: '1px solid var(--vharanani-charcoal-20)',
-          height: '56px',
-          zIndex: 10,
-        }}
-      >
-        {/* Left: prev button */}
-        <button
-          onClick={goPrev}
-          disabled={!hasPrev}
-          className="flex items-center gap-2 group transition-opacity"
-          style={{ opacity: hasPrev ? 1 : 0.2, cursor: hasPrev ? 'pointer' : 'default' }}
-        >
-          <div
-            className="w-7 h-7 flex items-center justify-center transition-colors duration-200"
-            style={{
-              border: `1px solid ${hasPrev ? 'var(--vharanani-burgundy)' : 'var(--vharanani-charcoal-20)'}`,
-            }}
-          >
-            <ChevronLeft size={14} style={{ color: hasPrev ? 'var(--vharanani-burgundy)' : 'var(--vharanani-charcoal-40)' }} />
-          </div>
-          {hasPrev && (
-            <span
-              className="hidden sm:block font-inter typo-meta tracking-[0.15em] uppercase group-hover:text-[var(--vharanani-burgundy)] transition-colors"
-              style={{ color: 'var(--vharanani-charcoal-40)' }}
-            >
-              {tabs[currentNavIndex - 1]?.label}
-            </span>
-          )}
-        </button>
-
-        {/* Center: keyboard hint */}
-        <div className="hidden md:flex items-center gap-4">
-          <span className="font-inter typo-meta tracking-[0.28em] uppercase" style={{ color: 'var(--vharanani-charcoal-40)' }}>
-            VISION. STRUCTURE. IMPACT.
-          </span>
-          <span
-            className="font-inter typo-meta tracking-[0.15em] uppercase"
-            style={{ color: 'var(--vharanani-charcoal-40)', borderLeft: '1px solid var(--vharanani-charcoal-20)', paddingLeft: 16 }}
-          >
-            ← → NAVIGATE · ESC CLOSE
-          </span>
-        </div>
-
-        {/* Right: next button */}
-        <button
-          onClick={goNext}
-          disabled={!hasNext}
-          className="flex items-center gap-2 group transition-opacity"
-          style={{ opacity: hasNext ? 1 : 0.2, cursor: hasNext ? 'pointer' : 'default' }}
-        >
-          {hasNext && (
-            <span
-              className="hidden sm:block font-inter typo-meta tracking-[0.15em] uppercase group-hover:text-[var(--vharanani-burgundy)] transition-colors"
-              style={{ color: 'var(--vharanani-charcoal-40)' }}
-            >
-              {tabs[currentNavIndex + 1]?.label}
-            </span>
-          )}
-          <div
-            className="w-7 h-7 flex items-center justify-center transition-colors duration-200"
-            style={{
-              border: `1px solid ${hasNext ? 'var(--vharanani-burgundy)' : 'var(--vharanani-charcoal-20)'}`,
-            }}
-          >
-            <ChevronRight size={14} style={{ color: hasNext ? 'var(--vharanani-burgundy)' : 'var(--vharanani-charcoal-40)' }} />
-          </div>
-        </button>
-      </div>
-
       {/* Bottom burgundy accent */}
-      <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ backgroundColor: 'var(--vharanani-burgundy)' }} />
+      <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ backgroundColor: 'var(--vharanani-burgundy)', zIndex: 10 }} />
     </motion.div>
   );
 }
