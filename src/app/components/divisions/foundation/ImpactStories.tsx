@@ -3,9 +3,9 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const IMAGES = {
-  housing: 'https://images.unsplash.com/photo-1460317442991-0ec209397118?w=1080&q=80',
-  youthCommunity: 'https://images.unsplash.com/photo-1526976668912-1a811878dd37?w=1080&q=80',
-  classroom: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1080&q=80',
+  housing: 'https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=1080&q=80',
+  youthCommunity: 'https://images.unsplash.com/photo-1602052793312-b99c2a9ee797?w=1080&q=80',
+  classroom: 'https://images.unsplash.com/photo-1613899476277-76db78460235?w=1080&q=80',
 };
 
 export function FoundationWireframe_ImpactStories(): ReactNode {

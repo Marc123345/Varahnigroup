@@ -10,7 +10,7 @@ import { useInView } from '../../../hooks/useInView';
 /* ─────────────────────────── data ─────────────────────────── */
 
 const IMAGES = {
-  impact: 'https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=1080&q=80',
+  impact: 'https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=1080&q=80',
 };
 
 const impactStats = [
