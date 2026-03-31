@@ -3,7 +3,7 @@ import { Layers, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 import { ImageWithFallback } from '../../ui/ImageWithFallback';
 
 const IMAGES = {
-  blanketDrive: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/65_white_office_building_facade_parking_accessibility_ramp.jpg?updatedAt=1774955145537',
+  blanketDrive: 'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1080&q=80',
 };
 
 export function FoundationWireframe_Contact(): ReactNode {

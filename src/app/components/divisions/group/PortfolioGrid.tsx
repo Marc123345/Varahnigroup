@@ -35,7 +35,7 @@ const ITEMS = [
     description: 'Advancing education, housing access, entrepreneurship, and community upliftment initiatives.',
     stats: [{ value: '34', label: 'Scholarships' }, { value: '5+', label: 'Provinces' }],
     capabilities: ['Education', 'Housing', 'Entrepreneurship', 'Community Upliftment'],
-    image: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/39_aerial_view_excavator_gravel_trench_drainage.jpg?updatedAt=1774955146211',
+    image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?w=1080&q=80',
   },
 ];
 

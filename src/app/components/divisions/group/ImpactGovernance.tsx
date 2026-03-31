@@ -10,7 +10,7 @@ import { useInView } from '../../../hooks/useInView';
 /* ─────────────────────────── data ─────────────────────────── */
 
 const IMAGES = {
-  impact: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/49_blue_yellow_social_housing_apartment_blocks.jpg?updatedAt=1774955145448',
+  impact: 'https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=1080&q=80',
 };
 
 const impactStats = [

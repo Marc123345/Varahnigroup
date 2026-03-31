@@ -5,7 +5,7 @@ import { SectionWrapper } from '../shared';
 
 const IMAGES = {
   construction: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/36_aerial_view_highway_interchange_earthworks_construction.jpg?updatedAt=1774955146327',
-  foundation: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/67_hospital_ward_corridor_handrails_under_construction.jpg?updatedAt=1774955145332',
+  foundation: 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=1080&q=80',
   dmft: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/73_aerial_view_brick_apartment_complex_main_road.jpg?updatedAt=1774955145546',
 };
 

@@ -3,9 +3,9 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const IMAGES = {
-  housing: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/83_aerial_view_colourful_social_housing_blocks_township.jpg?updatedAt=1774955148467',
-  youthCommunity: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/82_colourful_social_housing_blocks_under_construction_township.jpg?updatedAt=1774955147460',
-  classroom: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/66_aerial_view_clinic_hospital_construction_red_roof.jpg?updatedAt=1774955145718',
+  housing: 'https://images.unsplash.com/photo-1460317442991-0ec209397118?w=1080&q=80',
+  youthCommunity: 'https://images.unsplash.com/photo-1526976668912-1a811878dd37?w=1080&q=80',
+  classroom: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1080&q=80',
 };
 
 export function FoundationWireframe_ImpactStories(): ReactNode {

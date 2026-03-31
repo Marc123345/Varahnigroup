@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { Building2, Home, Heart } from 'lucide-react';
 import { ImageWithFallback } from '../../ui/ImageWithFallback';
 
-const IMAGE = 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/81_civic_centre_building_water_storage_tanks_louvre_facade.jpg?updatedAt=1774955148440';
+const IMAGE = 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1080&q=80';
 
 const PARTNERS = [
   { icon: Building2, label: 'Vharanani Properties', desc: 'Infrastructure & Construction' },

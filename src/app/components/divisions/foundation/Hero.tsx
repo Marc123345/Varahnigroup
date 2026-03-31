@@ -5,8 +5,8 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { AnimatedCounter } from '../shared';
 
 const IMAGES = {
-  communityGathering: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/48_aerial_view_colourful_social_housing_development.jpg?updatedAt=1774955145821',
-  founderPortrait: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/10_municipal_council_chamber_boardroom.jpg?updatedAt=1774955148251',
+  communityGathering: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1080&q=80',
+  founderPortrait: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1080&q=80',
 };
 
 export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId: string) => void } = {}): ReactNode {
