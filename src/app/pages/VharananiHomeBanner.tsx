@@ -201,41 +201,6 @@ export function VharananiHomeBanner({
         </button>
       </motion.div>
 
-      {/* ── STATS STRIP — bottom ── */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.8 }}
-        className="absolute z-10 left-6 sm:left-10 md:left-16 lg:left-20 xl:left-28"
-        style={{ bottom: 'clamp(80px, 12vh, 140px)' }}
-      >
-        <div className="flex items-center" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
-          {[
-            { value: '20+', label: 'Years' },
-            { value: '100%', label: 'Black-Owned' },
-            { value: '4', label: 'Divisions' },
-            { value: '9', label: 'Provinces' },
-          ].map((stat, i) => (
-            <div
-              key={stat.label}
-              className="text-center py-3 px-4 sm:px-6"
-              style={{
-                borderRight: i < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none',
-                background: 'rgba(0,0,0,0.4)',
-                backdropFilter: 'blur(8px)',
-              }}
-            >
-              <div className="font-bebas-neue typo-subline" style={{ color: 'var(--vharanani-burgundy)' }}>
-                {stat.value}
-              </div>
-              <div className="font-inter typo-meta tracking-[0.15em] uppercase" style={{ color: 'rgba(255,255,255,0.45)' }}>
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </motion.div>
-
       {/* ── SCROLL INDICATOR ── */}
       <motion.button
         initial={{ opacity: 0 }}
