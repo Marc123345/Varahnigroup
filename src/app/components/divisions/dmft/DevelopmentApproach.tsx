@@ -118,13 +118,12 @@ function PhaseBlock({ phase, index }: { phase: Phase; index: number }) {
               minHeight: '360px',
             }}
           >
-            {/* Clip-path reveal */}
+            {/* Image reveal */}
             <motion.div
               className="absolute inset-0"
-              initial={{ clipPath: isEven ? 'inset(0 0 0 100%)' : 'inset(0 100% 0 0)' }}
-              whileInView={{ clipPath: 'inset(0 0% 0 0%)' }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
               {/* Parallax image */}
               <motion.div
@@ -180,8 +179,8 @@ function PhaseBlock({ phase, index }: { phase: Phase; index: number }) {
             {/* Step indicator */}
             <motion.div
               initial={{ opacity: 0, x: isEven ? -24 : 24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              animate={{ opacity: 1, x: 0 }}
+
               transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
               className="flex items-center gap-5 mb-10"
             >
@@ -214,8 +213,8 @@ function PhaseBlock({ phase, index }: { phase: Phase; index: number }) {
             <div className="overflow-hidden mb-4 pb-1">
               <motion.h3
                 initial={{ y: '108%' }}
-                whileInView={{ y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
+                animate={{ y: 0 }}
+  
                 transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.12 }}
                 className="font-bebas-neue uppercase text-white"
                 style={{
@@ -231,8 +230,8 @@ function PhaseBlock({ phase, index }: { phase: Phase; index: number }) {
             {/* Headline */}
             <motion.p
               initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1 }}
+
               transition={{ delay: 0.3, duration: 0.6 }}
               className="font-bebas-neue uppercase tracking-wide mb-7"
               style={{ fontSize: 22, color: 'var(--vharanani-burgundy)', letterSpacing: '0.04em' }}
@@ -243,8 +242,8 @@ function PhaseBlock({ phase, index }: { phase: Phase; index: number }) {
             {/* Description */}
             <motion.p
               initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
+
               transition={{ delay: 0.42, duration: 0.7 }}
               className="typo-copy font-inter mb-10"
               style={{ color: 'rgba(255,255,255,0.75)', maxWidth: 460, lineHeight: 1.78 }}
@@ -258,8 +257,8 @@ function PhaseBlock({ phase, index }: { phase: Phase; index: number }) {
                 <motion.span
                   key={cap}
                   initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  animate={{ opacity: 1, y: 0 }}
+    
                   transition={{ delay: 0.54 + ci * 0.09, duration: 0.45 }}
                   className="typo-label font-inter tracking-[0.14em] uppercase px-4 py-2"
                   style={{
@@ -314,8 +313,8 @@ export function DMFTWireframe_DevelopmentApproach(): ReactNode {
             <div>
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, x: 0 }}
+  
                 transition={{ duration: 0.6 }}
                 className="flex items-center gap-4 mb-8"
               >
@@ -338,8 +337,8 @@ export function DMFTWireframe_DevelopmentApproach(): ReactNode {
               <div className="overflow-hidden">
                 <motion.h2
                   initial={{ y: '100%' }}
-                  whileInView={{ y: 0 }}
-                  viewport={{ once: true }}
+                  animate={{ y: 0 }}
+    
                   transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
                   className="font-bebas-neue uppercase text-white"
                   style={{
@@ -357,8 +356,8 @@ export function DMFTWireframe_DevelopmentApproach(): ReactNode {
             <div className="flex flex-col justify-end gap-8">
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, y: 0 }}
+  
                 transition={{ delay: 0.4, duration: 0.7 }}
                 className="typo-copy font-inter"
                 style={{ color: 'rgba(255,255,255,0.7)', maxWidth: 420, lineHeight: 1.78 }}
@@ -370,8 +369,8 @@ export function DMFTWireframe_DevelopmentApproach(): ReactNode {
 
               <motion.div
                 initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1 }}
+  
                 transition={{ delay: 0.65 }}
                 className="flex items-center gap-8 pt-6"
                 style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}
