@@ -183,9 +183,8 @@ export function GlassmorphismOverlay({
         style={{
           borderColor: 'var(--vharanani-charcoal-20)',
           scrollbarWidth: 'none',
-          background: 'rgba(255,255,255,0.96)',
-          backdropFilter: 'blur(12px)',
-          WebkitBackdropFilter: 'blur(12px)',
+          background: '#ffffff',
+          zIndex: 10,
         }}
       >
         {/* Back/close button */}
@@ -396,11 +395,10 @@ export function GlassmorphismOverlay({
       <div
         className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-4 sm:px-8 lg:px-12"
         style={{
-          background: 'rgba(255,255,255,0.96)',
-          backdropFilter: 'blur(8px)',
-          WebkitBackdropFilter: 'blur(8px)',
+          background: '#ffffff',
           borderTop: '1px solid var(--vharanani-charcoal-20)',
           height: '56px',
+          zIndex: 10,
         }}
       >
         {/* Left: prev button */}
