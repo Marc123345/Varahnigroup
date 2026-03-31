@@ -10,7 +10,9 @@ import { useInView } from '../../../hooks/useInView';
 /* ─────────────────────────── data ─────────────────────────── */
 
 const IMAGES = {
-  impact: 'https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=1080&q=80',
+  impact: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1080&q=80',
+  governance: 'https://images.unsplash.com/photo-1613899476277-76db78460235?w=1080&q=80',
+  founder: 'https://ik.imagekit.io/qcvroy8xpd/image%202.png',
 };
 
 const impactStats = [
@@ -135,10 +137,31 @@ export function GroupWireframe_ImpactGovernance(): ReactNode {
               communities.
             </motion.p>
 
+            {/* Founder portrait */}
+            <motion.div
+              className="flex items-center gap-4 mb-10 pb-8"
+              style={{ borderBottom: '1px solid rgba(255,255,255,0.12)' }}
+              variants={fadeUp(0.22)}
+              initial="hidden"
+              animate={impactInView ? 'visible' : 'hidden'}
+            >
+              <div className="w-16 h-16 flex-shrink-0 overflow-hidden" style={{ border: '2px solid rgba(255,255,255,0.2)' }}>
+                <ImageWithFallback
+                  src={IMAGES.founder}
+                  alt="David Mabilu"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <div className="font-bebas-neue text-white uppercase tracking-wide" style={{ fontSize: 16 }}>David Mabilu</div>
+                <div className="font-inter typo-meta text-white/50 tracking-[0.1em] uppercase">Founder & Group Executive Chairman</div>
+              </div>
+            </motion.div>
+
             {/* stats grid */}
             <motion.div
               className="grid grid-cols-2 gap-x-6 gap-y-8"
-              variants={fadeUp(0.24)}
+              variants={fadeUp(0.28)}
               initial="hidden"
               animate={impactInView ? 'visible' : 'hidden'}
             >
@@ -237,7 +260,7 @@ export function GroupWireframe_ImpactGovernance(): ReactNode {
             animate={govInView ? 'visible' : 'hidden'}
           >
             <ImageWithFallback
-              src={IMAGES.impact}
+              src={IMAGES.governance}
               alt="Vharanani governance and leadership"
               className="w-full h-full object-cover absolute inset-0"
               style={{ minHeight: '100%', filter: 'brightness(0.85) contrast(1.05)' }}
