@@ -958,9 +958,9 @@ export function VharananiEditorialHero() {
     : { label: 'UNIFIED ECOSYSTEM', title: 'VHARANANI\nGROUP', sub: 'Properties / Foundation / DMFT', ref: 'Vision. Structure. Impact.' };
 
   return (
-    <div className="min-h-screen relative bg-white">
+    <div className="min-h-screen relative" style={{ background: '#f3f3f5' }}>
       {/* ── HEADER ── */}
-      <header className="sticky top-0 z-30 bg-white" style={{ height: 96 }}>
+      <header className="sticky top-0 z-30" style={{ height: 96, background: '#f3f3f5' }}>
         {/* Logo area with burgundy background shape */}
         <div className="absolute top-0 left-0 h-full" style={{ width: 'clamp(200px, 22vw, 386px)', background: 'var(--vharanani-burgundy)', clipPath: 'polygon(0 0, 85% 0, 100% 100%, 0% 100%)' }} />
 
@@ -1073,7 +1073,7 @@ export function VharananiEditorialHero() {
       )}
 
       {/* ── HERO SECTION — same layout for Level 0 and Level 1 ── */}
-      <div id="vharanani-cube-section" className="relative z-[1] w-full min-h-[calc(100vh-80px)] overflow-hidden bg-white/80" style={{ fontFamily: 'var(--font-inter)' }}>
+      <div id="vharanani-cube-section" className="relative z-[1] w-full min-h-[calc(100vh-80px)] overflow-hidden" style={{ fontFamily: 'var(--font-inter)', background: 'rgba(243,243,245,0.8)' }}>
         {/* Vector Background */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-[0.35]">
           <img src={vectorBg} alt="" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-auto max-w-none select-none" />
