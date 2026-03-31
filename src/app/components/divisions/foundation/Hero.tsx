@@ -5,7 +5,7 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { AnimatedCounter } from '../shared';
 
 const IMAGES = {
-  communityGathering: 'https://images.unsplash.com/photo-1655720359248-eeace8c709c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwY29tbXVuaXR5JTIwY2VsZWJyYXRpb24lMjB1bml0eSUyMGdhdGhlcmluZyUyMGhhbmRzfGVufDF8fHx8MTc3Mzg0OTM3NHww&ixlib=rb-4.1.0&q=80&w=1080',
+  communityGathering: 'https://ik.imagekit.io/qcvroy8xpd/DMF.png',
   founderPortrait: 'https://ik.imagekit.io/qcvroy8xpd/image%202.png',
 };
 

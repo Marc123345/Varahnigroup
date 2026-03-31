@@ -3,9 +3,9 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const IMAGES = {
-  housing: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Mamelodi-Ext-5-4.jpg',
-  youthCommunity: 'https://images.unsplash.com/photo-1506185386801-3d7bc0ddd2bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIweW91dGglMjBzcG9ydHMlMjBzb2NjZXIlMjBjb21tdW5pdHklMjBmaWVsZHxlbnwxfHx8fDE3NzM4NDkzNzV8MA&ixlib=rb-4.1.0&q=80&w=1080',
-  classroom: 'https://images.unsplash.com/photo-1521493959102-bdd6677fdd81?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwY2hpbGRyZW4lMjBjbGFzc3Jvb20lMjBsZWFybmluZyUyMHNjaG9vbCUyMGhhcHB5fGVufDF8fHx8MTc3Mzg0OTM4MHww&ixlib=rb-4.1.0&q=80&w=1080',
+  housing: 'https://ik.imagekit.io/qcvroy8xpd/DMF.png',
+  youthCommunity: 'https://ik.imagekit.io/qcvroy8xpd/DMF.png',
+  classroom: 'https://ik.imagekit.io/qcvroy8xpd/DMF.png',
 };
 
 export function FoundationWireframe_ImpactStories(): ReactNode {

@@ -4,7 +4,7 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { AnimatedCounter, SectionWrapper } from '../shared';
 
 const IMAGES = {
-  impact: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Building%201/120f060e-6bd8-42ff-984e-ea9c6984b42f.jpeg',
+  impact: 'https://ik.imagekit.io/qcvroy8xpd/DMF.png',
 };
 
 export function GroupWireframe_ImpactGovernance(): ReactNode {
