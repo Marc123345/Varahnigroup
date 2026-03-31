@@ -5,7 +5,7 @@ import { SectionWrapper } from '../shared';
 
 const IMAGES = {
   construction: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_untitled_panorama4-1.jpg',
-  foundation: 'https://ik.imagekit.io/qcvroy8xpd/A%20community%20health%20worker%20conducts%20a%20health%20education%20session%20outdoors%20in%20a%20rural%20village.png?updatedAt=1764674101441',
+  foundation: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_1-vharanani-properties-construction-1.jpg',
   dmft: 'https://vharananiproperties.co.za/wp-content/uploads/2020/10/Property-development-scaled.jpg',
 };
 

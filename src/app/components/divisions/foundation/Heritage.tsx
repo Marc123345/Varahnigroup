@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { Building2, Home, Heart } from 'lucide-react';
 import { ImageWithFallback } from '../../ui/ImageWithFallback';
 
-const IMAGE = 'https://ik.imagekit.io/qcvroy8xpd/A%20community%20health%20worker%20conducts%20a%20health%20education%20session%20outdoors%20in%20a%20rural%20village.png?updatedAt=1764674101441';
+const IMAGE = 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/Belle-Ombre.jpg';
 
 const PARTNERS = [
   { icon: Building2, label: 'Vharanani Properties', desc: 'Infrastructure & Construction' },

@@ -3,9 +3,9 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const IMAGES = {
-  housing: 'https://ik.imagekit.io/qcvroy8xpd/A%20community%20health%20worker%20conducts%20a%20health%20education%20session%20outdoors%20in%20a%20rural%20village.png?updatedAt=1764674101441',
-  youthCommunity: 'https://ik.imagekit.io/qcvroy8xpd/A%20community%20health%20worker%20conducts%20a%20health%20education%20session%20outdoors%20in%20a%20rural%20village.png?updatedAt=1764674101441',
-  classroom: 'https://ik.imagekit.io/qcvroy8xpd/A%20community%20health%20worker%20conducts%20a%20health%20education%20session%20outdoors%20in%20a%20rural%20village.png?updatedAt=1764674101441',
+  housing: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_2-nellmapius-1.jpg',
+  youthCommunity: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_5-nellmapius-1.jpg',
+  classroom: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_6-nellmapius-1.jpg',
 };
 
 export function FoundationWireframe_ImpactStories(): ReactNode {
