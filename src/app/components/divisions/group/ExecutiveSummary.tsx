@@ -9,136 +9,134 @@ const IMAGES = [
   { src: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0002.jpg',      alt: 'Vharanani people' },
 ];
 
-// Clip-path reveal (bottom up — cinematic curtain lift)
-const clipReveal = {
-  hidden: { clipPath: 'inset(0 0 100% 0)', opacity: 1 },
-  visible: (delay = 0) => ({
-    clipPath: 'inset(0 0 0% 0)',
+/* ── animation variants (using `animate` — no whileInView) ── */
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 40 },
+  animate: {
     opacity: 1,
-    transition: { duration: 0.9, delay, ease: [0.76, 0, 0.24, 1] },
-  }),
-};
+    y: 0,
+    transition: { duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] },
+  },
+});
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 36 },
-  visible: (delay = 0) => ({
-    opacity: 1, y: 0,
-    transition: { duration: 0.72, delay, ease: [0.22, 1, 0.36, 1] },
-  }),
-};
+const fadeIn = (delay = 0) => ({
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: { duration: 0.9, delay, ease: [0.22, 1, 0.36, 1] },
+  },
+});
+
+const clipReveal = (delay = 0) => ({
+  initial: { clipPath: 'inset(0 0 100% 0)' },
+  animate: {
+    clipPath: 'inset(0 0 0% 0)',
+    transition: { duration: 1, delay, ease: [0.76, 0, 0.24, 1] },
+  },
+});
+
+const slideFromLeft = (delay = 0) => ({
+  initial: { opacity: 0, x: -60 },
+  animate: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.85, delay, ease: [0.22, 1, 0.36, 1] },
+  },
+});
+
+const slideFromRight = (delay = 0) => ({
+  initial: { opacity: 0, x: 60 },
+  animate: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.85, delay, ease: [0.22, 1, 0.36, 1] },
+  },
+});
+
+/* ── key stats ── */
+const STATS = [
+  { value: '24+', label: 'Years' },
+  { value: '8', label: 'Divisions' },
+  { value: '1000+', label: 'Projects' },
+];
 
 export function GroupWireframe_ExecutiveSummary(): ReactNode {
   return (
-    <div style={{ background: '#ffffff', overflow: 'hidden' }}>
+    <div style={{ overflow: 'hidden' }}>
 
-      {/* ══════════════════════════════════════════════
-          TOP BAND — eyebrow + ghost headline
-      ══════════════════════════════════════════════ */}
-      <div
-        className="relative px-6 md:px-12 lg:px-20 pt-14 pb-0 overflow-hidden"
-        style={{ background: '#ffffff' }}
-      >
-        {/* Ghost background text */}
+      {/* ══════════════════════════════════════════════════════════
+          SECTION 1 — BLACK LEFT / IMAGE RIGHT
+      ══════════════════════════════════════════════════════════ */}
+      <div className="grid grid-cols-1 lg:grid-cols-2" style={{ minHeight: '85vh' }}>
+
+        {/* ── LEFT: Solid black panel ── */}
         <div
-          className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden"
-          aria-hidden
+          className="relative flex flex-col justify-center px-8 sm:px-12 md:px-16 lg:px-20 xl:px-28 py-20 lg:py-24"
+          style={{ background: '#0e121d' }}
         >
-          <span
-            className="font-bebas-neue uppercase whitespace-nowrap"
-            style={{
-              fontSize: 'clamp(80px, 18vw, 220px)',
-              letterSpacing: '0.06em',
-              color: 'rgba(129,41,33,0.045)',
-              lineHeight: 1,
-              marginTop: '0.1em',
-            }}
+          {/* Ghost watermark */}
+          <div
+            className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden"
+            aria-hidden
           >
-            WHO WE ARE
-          </span>
-        </div>
-
-        {/* Eyebrow */}
-        <motion.div
-          className="relative flex items-center gap-3 mb-8"
-          variants={fadeUp} custom={0}
-          initial="hidden" whileInView="visible" viewport={{ once: true }}
-        >
-          <div className="h-[2px] w-8" style={{ background: 'var(--vharanani-burgundy)' }} />
-          <span
-            className="font-inter typo-caption tracking-[0.28em] uppercase"
-            style={{ color: 'var(--vharanani-burgundy)' }}
-          >
-            Who We Are
-          </span>
-        </motion.div>
-
-        {/* Logo */}
-        <motion.div
-          className="relative mb-12 md:mb-16"
-          variants={fadeUp} custom={0.05}
-          initial="hidden" whileInView="visible" viewport={{ once: true }}
-        >
-          <img
-            src="https://ik.imagekit.io/qcvroy8xpd/Frame%207%20(1).png"
-            alt="Vharanani Group"
-            style={{ height: 'clamp(52px, 8vw, 96px)', width: 'auto', objectFit: 'contain' }}
-          />
-        </motion.div>
-      </div>
-
-      {/* ══════════════════════════════════════════════
-          MAIN GRID — hero image left, text + images right
-      ══════════════════════════════════════════════ */}
-      <div className="px-6 md:px-12 lg:px-20 pb-0">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
-
-          {/* ── LEFT: Hero image ── */}
-          <motion.div
-            className="lg:col-span-6 relative overflow-hidden"
-            style={{ aspectRatio: '3/4', maxHeight: 560 }}
-            variants={clipReveal} custom={0.1}
-            initial="hidden" whileInView="visible" viewport={{ once: true }}
-          >
-            <motion.div
-              className="absolute inset-0"
-              whileHover={{ scale: 1.04 }}
-              transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
-            >
-              <ImageWithFallback
-                src={IMAGES[0].src}
-                alt={IMAGES[0].alt}
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
-            {/* Burgundy corner accent */}
-            <div
-              className="absolute top-0 left-0 w-12 h-12 pointer-events-none"
+            <span
+              className="font-bebas-neue uppercase whitespace-nowrap"
               style={{
-                background: 'linear-gradient(135deg, var(--vharanani-burgundy) 50%, transparent 50%)',
+                fontSize: 'clamp(100px, 20vw, 280px)',
+                letterSpacing: '0.06em',
+                color: 'rgba(255,255,255,0.025)',
+                lineHeight: 1,
               }}
-            />
-            {/* Label */}
-            <div
-              className="absolute bottom-0 left-0 right-0 px-5 py-4"
-              style={{ background: 'linear-gradient(0deg, rgba(0,0,0,0.55) 0%, transparent 100%)' }}
             >
+              VHARANANI
+            </span>
+          </div>
+
+          <div className="relative z-10 max-w-xl">
+            {/* Overline */}
+            <motion.div
+              className="flex items-center gap-3 mb-8"
+              {...fadeUp(0.1)}
+            >
+              <div className="h-[2px] w-10" style={{ background: 'var(--vharanani-burgundy)' }} />
               <span
-                className="font-inter typo-meta tracking-[0.18em] uppercase text-white/70"
+                className="font-inter typo-caption tracking-[0.3em] uppercase"
+                style={{ color: 'rgba(255,255,255,0.5)' }}
               >
-                Est. 2001 — South Africa
+                Executive Summary
               </span>
-            </div>
-          </motion.div>
+            </motion.div>
 
-          {/* ── RIGHT: Text + two images ── */}
-          <div className="lg:col-span-6 flex flex-col gap-6">
+            {/* Big headline */}
+            <motion.h2
+              className="font-bebas-neue uppercase mb-8"
+              style={{
+                fontSize: 'clamp(48px, 6vw, 96px)',
+                lineHeight: 0.95,
+                letterSpacing: '0.02em',
+                color: '#ffffff',
+              }}
+              {...fadeUp(0.2)}
+            >
+              Who We<br />Are
+            </motion.h2>
 
-            {/* Paragraph 1 */}
+            {/* Thin burgundy rule */}
+            <motion.div
+              className="mb-8"
+              style={{ width: 64, height: 3, background: 'var(--vharanani-burgundy)' }}
+              {...fadeIn(0.35)}
+            />
+
+            {/* Description */}
             <motion.p
-              className="font-inter leading-relaxed"
-              style={{ fontSize: 'clamp(15px, 1.3vw, 18px)', color: '#1a1a1a' }}
-              variants={fadeUp} custom={0.22}
-              initial="hidden" whileInView="visible" viewport={{ once: true }}
+              className="font-inter leading-relaxed mb-10"
+              style={{
+                fontSize: 'clamp(15px, 1.2vw, 18px)',
+                color: 'rgba(255,255,255,0.72)',
+                maxWidth: 480,
+              }}
+              {...fadeUp(0.4)}
             >
               Vharanani Group is an innovation-driven African conglomerate founded
               and led by David Mabilu. With a diversified portfolio spanning
@@ -148,147 +146,274 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
               development.
             </motion.p>
 
-            {/* Paragraph 2 */}
-            <motion.p
-              className="font-inter leading-relaxed"
-              style={{ fontSize: 'clamp(14px, 1.15vw, 16px)', color: 'rgba(0,0,0,0.52)' }}
-              variants={fadeUp} custom={0.32}
-              initial="hidden" whileInView="visible" viewport={{ once: true }}
+            {/* Stats row */}
+            <motion.div
+              className="flex gap-10 md:gap-14 pt-2"
+              {...fadeUp(0.55)}
             >
-              We operate with a clear mandate: to build assets that strengthen
-              communities, enable economic participation, and support Africa's growth
-              trajectory.
-            </motion.p>
-
-            {/* Two stacked images */}
-            <div className="grid grid-cols-2 gap-3 mt-2">
-              {[IMAGES[1], IMAGES[2]].map((img, i) => (
-                <motion.div
-                  key={img.src}
-                  className="relative overflow-hidden"
-                  style={{ aspectRatio: '4/3' }}
-                  variants={clipReveal} custom={0.36 + i * 0.1}
-                  initial="hidden" whileInView="visible" viewport={{ once: true }}
-                >
-                  <motion.div
-                    className="absolute inset-0"
-                    whileHover={{ scale: 1.06 }}
-                    transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
+              {STATS.map((stat) => (
+                <div key={stat.label} className="flex flex-col">
+                  <span
+                    className="font-bebas-neue"
+                    style={{
+                      fontSize: 'clamp(36px, 4vw, 56px)',
+                      lineHeight: 1,
+                      color: '#ffffff',
+                      letterSpacing: '0.02em',
+                    }}
                   >
-                    <ImageWithFallback
-                      src={img.src}
-                      alt={img.alt}
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
-                  {/* Thin burgundy bottom line on hover */}
-                  <div
-                    className="absolute bottom-0 left-0 right-0 h-[3px]"
-                    style={{ background: 'var(--vharanani-burgundy)' }}
-                  />
-                </motion.div>
+                    {stat.value}
+                  </span>
+                  <span
+                    className="font-inter typo-caption tracking-[0.2em] uppercase mt-1"
+                    style={{ color: 'rgba(255,255,255,0.35)' }}
+                  >
+                    {stat.label}
+                  </span>
+                </div>
               ))}
-            </div>
-
+            </motion.div>
           </div>
-        </div>
-      </div>
 
-      {/* ══════════════════════════════════════════════
-          MANDATE BAND — full-width burgundy
-      ══════════════════════════════════════════════ */}
-      <motion.div
-        className="relative mt-10 px-6 md:px-12 lg:px-20 py-12 md:py-16 overflow-hidden"
-        style={{ background: 'var(--vharanani-burgundy)' }}
-        variants={fadeUp} custom={0.1}
-        initial="hidden" whileInView="visible" viewport={{ once: true }}
-      >
-        {/* Ghost "MANDATE" watermark */}
-        <div
-          className="absolute inset-0 flex items-center justify-end pr-8 pointer-events-none select-none overflow-hidden"
-          aria-hidden
-        >
-          <span
-            className="font-bebas-neue uppercase"
+          {/* Corner accent — bottom-left */}
+          <div
+            className="absolute bottom-0 left-0 w-20 h-20 pointer-events-none"
             style={{
-              fontSize: 'clamp(60px, 12vw, 160px)',
-              color: 'rgba(255,255,255,0.06)',
-              letterSpacing: '0.05em',
-              lineHeight: 1,
+              borderLeft: '3px solid var(--vharanani-burgundy)',
+              borderBottom: '3px solid var(--vharanani-burgundy)',
             }}
-          >
-            MANDATE
-          </span>
+          />
         </div>
 
-        <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-3">
-            <div className="h-[2px] w-8 mb-4" style={{ background: 'rgba(255,255,255,0.4)' }} />
+        {/* ── RIGHT: Full-bleed image ── */}
+        <motion.div
+          className="relative overflow-hidden"
+          style={{ minHeight: 'clamp(360px, 50vh, 600px)' }}
+          {...clipReveal(0.15)}
+        >
+          <ImageWithFallback
+            src={IMAGES[0].src}
+            alt={IMAGES[0].alt}
+            className="w-full h-full object-cover absolute inset-0"
+          />
+          {/* Dark vignette on left edge for blending */}
+          <div
+            className="absolute inset-0 pointer-events-none hidden lg:block"
+            style={{
+              background: 'linear-gradient(90deg, rgba(14,18,29,0.3) 0%, transparent 30%)',
+            }}
+          />
+          {/* Bottom label */}
+          <div
+            className="absolute bottom-0 left-0 right-0 px-6 py-5"
+            style={{ background: 'linear-gradient(0deg, rgba(0,0,0,0.6) 0%, transparent 100%)' }}
+          >
             <span
-              className="font-inter typo-caption tracking-[0.28em] uppercase"
+              className="font-inter typo-meta tracking-[0.22em] uppercase"
               style={{ color: 'rgba(255,255,255,0.6)' }}
             >
-              Our Mandate
+              Est. 2001 — South Africa
             </span>
           </div>
-          <div className="lg:col-span-9">
+        </motion.div>
+      </div>
+
+      {/* ══════════════════════════════════════════════════════════
+          SECTION 2 — IMAGE LEFT / BURGUNDY RIGHT
+      ══════════════════════════════════════════════════════════ */}
+      <div className="grid grid-cols-1 lg:grid-cols-2" style={{ minHeight: '70vh' }}>
+
+        {/* ── LEFT: White panel with image ── */}
+        <div
+          className="relative flex items-center justify-center overflow-hidden"
+          style={{ background: '#ffffff' }}
+        >
+          {/* Secondary image — infrastructure */}
+          <motion.div
+            className="relative w-full h-full overflow-hidden"
+            style={{ minHeight: 'clamp(320px, 45vh, 560px)' }}
+            {...clipReveal(0.1)}
+          >
+            <ImageWithFallback
+              src={IMAGES[1].src}
+              alt={IMAGES[1].alt}
+              className="w-full h-full object-cover absolute inset-0"
+            />
+            {/* White vignette on right edge */}
+            <div
+              className="absolute inset-0 pointer-events-none hidden lg:block"
+              style={{
+                background: 'linear-gradient(270deg, rgba(255,255,255,0.15) 0%, transparent 40%)',
+              }}
+            />
+          </motion.div>
+
+          {/* Floating stat overlay — bottom left */}
+          <motion.div
+            className="absolute bottom-8 left-8 sm:left-12 z-10"
+            {...slideFromLeft(0.4)}
+          >
+            <div
+              className="px-6 py-5 backdrop-blur-md"
+              style={{ background: 'rgba(14,18,29,0.85)' }}
+            >
+              <span
+                className="font-bebas-neue block"
+                style={{ fontSize: 'clamp(28px, 3vw, 42px)', color: '#fff', lineHeight: 1, letterSpacing: '0.02em' }}
+              >
+                Building Africa
+              </span>
+              <span
+                className="font-inter typo-caption tracking-[0.2em] uppercase mt-1 block"
+                style={{ color: 'rgba(255,255,255,0.5)' }}
+              >
+                Infrastructure &middot; Growth &middot; Legacy
+              </span>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* ── RIGHT: Burgundy panel ── */}
+        <div
+          className="relative flex flex-col justify-center px-8 sm:px-12 md:px-16 lg:px-20 xl:px-28 py-20 lg:py-24"
+          style={{ background: '#812921' }}
+        >
+          {/* Ghost watermark */}
+          <div
+            className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden"
+            aria-hidden
+          >
+            <span
+              className="font-bebas-neue uppercase whitespace-nowrap"
+              style={{
+                fontSize: 'clamp(80px, 16vw, 200px)',
+                letterSpacing: '0.06em',
+                color: 'rgba(255,255,255,0.04)',
+                lineHeight: 1,
+              }}
+            >
+              MANDATE
+            </span>
+          </div>
+
+          <div className="relative z-10 max-w-xl">
+            {/* Overline */}
+            <motion.div
+              className="flex items-center gap-3 mb-8"
+              {...fadeUp(0.15)}
+            >
+              <div className="h-[2px] w-10" style={{ background: 'rgba(255,255,255,0.35)' }} />
+              <span
+                className="font-inter typo-caption tracking-[0.3em] uppercase"
+                style={{ color: 'rgba(255,255,255,0.5)' }}
+              >
+                Our Mission
+              </span>
+            </motion.div>
+
+            {/* Mission statement */}
             <motion.p
+              className="font-inter leading-relaxed mb-10"
+              style={{
+                fontSize: 'clamp(15px, 1.2vw, 18px)',
+                color: 'rgba(255,255,255,0.78)',
+                maxWidth: 480,
+              }}
+              {...fadeUp(0.25)}
+            >
+              We operate with a clear mandate: to build assets that strengthen
+              communities, enable economic participation, and support Africa's
+              growth trajectory.
+            </motion.p>
+
+            {/* Decorative thin line */}
+            <motion.div
+              className="mb-10"
+              style={{ width: 48, height: 2, background: 'rgba(255,255,255,0.2)' }}
+              {...fadeIn(0.35)}
+            />
+
+            {/* Big mandate quote */}
+            <motion.blockquote
               className="font-bebas-neue uppercase"
               style={{
-                fontSize: 'clamp(24px, 3.2vw, 44px)',
-                lineHeight: 1.12,
+                fontSize: 'clamp(28px, 3.6vw, 52px)',
+                lineHeight: 1.08,
                 letterSpacing: '0.02em',
                 color: '#ffffff',
               }}
-              variants={clipReveal} custom={0.18}
-              initial="hidden" whileInView="visible" viewport={{ once: true }}
+              {...slideFromRight(0.4)}
             >
-              To build assets that strengthen communities, enable economic
-              participation, and support Africa's growth trajectory.
-            </motion.p>
-          </div>
-        </div>
-      </motion.div>
+              &ldquo;To build assets that strengthen communities, enable economic
+              participation, and support Africa&rsquo;s growth trajectory.&rdquo;
+            </motion.blockquote>
 
-      {/* ══════════════════════════════════════════════
-          BOTTOM IMAGE STRIP — 4th image full bleed
-      ══════════════════════════════════════════════ */}
-      <motion.div
-        className="relative overflow-hidden"
-        style={{ height: 'clamp(200px, 28vh, 340px)' }}
-        variants={clipReveal} custom={0.08}
-        initial="hidden" whileInView="visible" viewport={{ once: true }}
-      >
-        <motion.div
-          className="absolute inset-0"
-          whileHover={{ scale: 1.03 }}
-          transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-        >
-          <ImageWithFallback
-            src={IMAGES[3].src}
-            alt={IMAGES[3].alt}
-            className="w-full h-full object-cover"
+            {/* Attribution */}
+            <motion.div className="mt-8 flex items-center gap-3" {...fadeUp(0.55)}>
+              <div
+                className="h-[2px] w-6"
+                style={{ background: 'rgba(255,255,255,0.3)' }}
+              />
+              <span
+                className="font-inter typo-meta tracking-[0.2em] uppercase"
+                style={{ color: 'rgba(255,255,255,0.45)' }}
+              >
+                David Mabilu — Founder &amp; Chairman
+              </span>
+            </motion.div>
+          </div>
+
+          {/* Corner accent — top-right */}
+          <div
+            className="absolute top-0 right-0 w-20 h-20 pointer-events-none"
+            style={{
+              borderRight: '3px solid rgba(255,255,255,0.15)',
+              borderTop: '3px solid rgba(255,255,255,0.15)',
+            }}
           />
-        </motion.div>
-        {/* Dark overlay with label */}
-        <div
-          className="absolute inset-0 flex items-end px-6 md:px-12 lg:px-20 pb-8"
-          style={{ background: 'linear-gradient(90deg, rgba(0,0,0,0.55) 0%, transparent 60%)' }}
-        >
-          <motion.div
-            variants={fadeUp} custom={0.25}
-            initial="hidden" whileInView="visible" viewport={{ once: true }}
-          >
-            <div className="h-[2px] w-8 mb-3" style={{ background: 'var(--vharanani-burgundy)' }} />
-            <p
-              className="font-inter typo-caption tracking-[0.22em] uppercase"
-              style={{ color: 'rgba(255,255,255,0.7)' }}
-            >
-              Building Africa's Future
-            </p>
-          </motion.div>
         </div>
-      </motion.div>
+      </div>
+
+      {/* ══════════════════════════════════════════════════════════
+          BOTTOM STRIP — remaining images as cinematic band
+      ══════════════════════════════════════════════════════════ */}
+      <div className="grid grid-cols-1 md:grid-cols-2" style={{ height: 'clamp(220px, 30vh, 340px)' }}>
+        {[IMAGES[2], IMAGES[3]].map((img, i) => (
+          <motion.div
+            key={img.src}
+            className="relative overflow-hidden h-full"
+            {...clipReveal(0.1 + i * 0.12)}
+          >
+            <ImageWithFallback
+              src={img.src}
+              alt={img.alt}
+              className="w-full h-full object-cover absolute inset-0"
+            />
+            <div
+              className="absolute inset-0"
+              style={{
+                background: i === 0
+                  ? 'linear-gradient(0deg, rgba(14,18,29,0.55) 0%, rgba(14,18,29,0.1) 50%)'
+                  : 'linear-gradient(0deg, rgba(129,41,33,0.5) 0%, rgba(129,41,33,0.05) 50%)',
+              }}
+            />
+            <div className="absolute bottom-0 left-0 px-6 md:px-10 pb-6">
+              <motion.div {...fadeUp(0.3 + i * 0.1)}>
+                <div
+                  className="h-[2px] w-8 mb-3"
+                  style={{ background: i === 0 ? 'var(--vharanani-burgundy)' : 'rgba(255,255,255,0.5)' }}
+                />
+                <span
+                  className="font-inter typo-caption tracking-[0.22em] uppercase"
+                  style={{ color: 'rgba(255,255,255,0.7)' }}
+                >
+                  {i === 0 ? 'Community Development' : 'Building Africa\u2019s Future'}
+                </span>
+              </motion.div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
 
     </div>
   );
