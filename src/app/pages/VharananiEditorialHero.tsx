@@ -631,9 +631,9 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
     dmft: {
       about: (<DMFTWireframe_HeroAbout onTabChange={onTabChange} />),
       approach: (<DMFTWireframe_DevelopmentApproach />),
-      'residential-estates': (<DMFTWireframe_Portfolio />),
-      'apartments-townhouses': (<DMFTWireframe_Portfolio />),
-      'mixed-use': (<DMFTWireframe_Portfolio />),
+      'residential-estates': (<DMFTWireframe_Portfolio activeDevelopment="residential-estates" />),
+      'apartments-townhouses': (<DMFTWireframe_Portfolio activeDevelopment="apartments-townhouses" />),
+      'mixed-use': (<DMFTWireframe_Portfolio activeDevelopment="mixed-use" />),
       capabilities: (<DMFTWireframe_CapabilitiesQuality />),
       'heritage-contact': (<DMFTWireframe_HeritageContact />),
     },

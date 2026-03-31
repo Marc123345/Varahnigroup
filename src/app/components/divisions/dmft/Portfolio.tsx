@@ -11,45 +11,146 @@ const IMAGES = {
   mixedUse: 'https://vharananiproperties.co.za/wp-content/uploads/2018/01/Interior3.jpg',
 };
 
-export function DMFTWireframe_Portfolio(): ReactNode {
+const DEVELOPMENTS = [
+  {
+    id: 'residential-estates',
+    title: 'Residential Estates',
+    category: 'FLAGSHIP',
+    image: IMAGES.residentialEstate,
+    description: 'Secure residential estates designed to provide comfortable and modern living environments.',
+    detail: 'DMFT develops secure residential estates across South Africa, designed to provide comfortable, modern living environments with shared amenities, landscaped gardens, and 24-hour security.',
+    features: ['Gated Security', 'Modern Amenities', 'Landscaped Gardens', 'Community Living'],
+    projects: [
+      { name: 'Belle Ombre Estate', location: 'South Africa', status: 'Completed' },
+      { name: 'Sterpark Residential', location: 'Limpopo', status: 'Completed' },
+    ],
+    metric: { value: '1,200+', label: 'Units Across Estates' },
+  },
+  {
+    id: 'apartments-townhouses',
+    title: 'Apartment Developments',
+    category: 'URBAN LIVING',
+    image: IMAGES.apartment,
+    description: 'Well-designed apartment developments offering efficient living spaces within growing urban areas.',
+    detail: 'Our apartment developments are designed for modern urban living — efficient, well-finished units in strategically located complexes with parking, security, and communal facilities.',
+    features: ['Modern Finishes', 'Open-Plan Living', 'Parking Included', 'Security'],
+    projects: [
+      { name: 'Nellmapius X22 Apartments', location: 'Gauteng', status: 'Completed' },
+      { name: 'Soshanguve Ext 19', location: 'Gauteng', status: 'Completed' },
+    ],
+    metric: { value: '800+', label: 'Units Planned' },
+  },
+  {
+    id: 'mixed-use',
+    title: 'Mixed-Use Developments',
+    category: 'INTEGRATED',
+    image: IMAGES.mixedUse,
+    description: 'Integrated developments that combine residential, commercial, and community spaces.',
+    detail: 'Our mixed-use projects create self-sustaining environments where people can live, work, and engage with their communities in one well-planned precinct with retail, office, and residential components.',
+    features: ['Retail Ground Floor', 'Office Spaces', 'Residential Above', 'Community Spaces'],
+    projects: [
+      { name: 'Faranani Place', location: 'Limpopo', status: 'Completed' },
+      { name: 'ST Maria Development', location: 'South Africa', status: 'Completed' },
+    ],
+    metric: { value: '3', label: 'Precincts In Development' },
+  },
+];
+
+interface Props {
+  activeDevelopment?: string;
+}
+
+export function DMFTWireframe_Portfolio({ activeDevelopment }: Props = {}): ReactNode {
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
-  const developments = [
-    {
-      title: 'Residential Estates',
-      category: 'FLAGSHIP',
-      image: IMAGES.residentialEstate,
-      description: 'Secure residential estates designed to provide comfortable and modern living environments.',
-      features: ['Gated Security', 'Modern Amenities', 'Landscaped Gardens', 'Community Living'],
-      metric: { value: '1,200+', label: 'Units Across Estates' },
-    },
-    {
-      title: 'Apartment Developments',
-      category: 'URBAN LIVING',
-      image: IMAGES.apartment,
-      description: 'Well-designed apartment developments offering efficient living spaces within growing urban areas.',
-      features: ['Modern Finishes', 'Open-Plan Living', 'Parking Included', 'Security'],
-      metric: { value: '800+', label: 'Units Planned' },
-    },
-    {
-      title: 'Townhouse Complexes',
-      category: 'RESIDENTIAL',
-      image: IMAGES.townhouse,
-      description: 'Modern townhouse developments designed to meet the needs of families and young professionals.',
-      features: ['Private Gardens', 'Double Garages', 'Family Living', 'Contemporary Finishes'],
-      metric: { value: '500+', label: 'Homes Delivered' },
-    },
-    {
-      title: 'Mixed-Use Developments',
-      category: 'INTEGRATED',
-      image: IMAGES.mixedUse,
-      description: 'Integrated developments that combine residential, commercial, and community spaces.',
-      features: ['Retail Ground Floor', 'Office Spaces', 'Residential Above', 'Community Spaces'],
-      metric: { value: '3', label: 'Precincts In Development' },
-    },
-  ];
+  const active = DEVELOPMENTS.find((d) => d.id === activeDevelopment) || null;
 
   return (
     <SectionWrapper className="!py-0 !px-0">
+      {/* ── FOCUSED DEVELOPMENT HERO (when a specific development is active) ── */}
+      {active && (
+        <div className="px-6 md:px-12 lg:px-20 pt-10 md:pt-14 pb-8" style={{ background: '#ffffff' }}>
+          <div className="max-w-7xl mx-auto">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
+              <span className="typo-caption tracking-[0.28em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
+                {active.category}
+              </span>
+            </div>
+
+            {/* Hero image */}
+            <div className="relative overflow-hidden mb-8" style={{ height: 'clamp(240px, 35vh, 380px)' }}>
+              <ImageWithFallback
+                src={active.image}
+                alt={active.title}
+                className="absolute inset-0 w-full h-full object-cover"
+                style={{ filter: 'brightness(0.6)' }}
+              />
+              <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-10">
+                <div className="flex items-center gap-3 mb-2">
+                  <Building2 size={22} className="text-white opacity-80" />
+                  <h2 className="font-bebas-neue uppercase text-white" style={{ fontSize: 'clamp(28px, 4vw, 48px)', lineHeight: 1.05 }}>
+                    {active.title}
+                  </h2>
+                </div>
+                <p className="font-inter typo-copy text-white/80 max-w-xl">
+                  {active.detail}
+                </p>
+              </div>
+              <div className="absolute top-6 right-6 px-3 py-1.5" style={{ background: 'var(--vharanani-burgundy)' }}>
+                <span className="typo-meta tracking-[0.2em] uppercase font-inter text-white">{active.category}</span>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'var(--vharanani-burgundy)' }} />
+            </div>
+
+            {/* Features + Projects */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              <div>
+                <h3 className="font-bebas-neue typo-headline-small uppercase tracking-wide mb-4" style={{ color: 'var(--vharanani-charcoal)' }}>
+                  Features
+                </h3>
+                <div className="grid grid-cols-2 gap-0" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
+                  {active.features.map((f, fi) => (
+                    <div
+                      key={f}
+                      className="flex items-center gap-3 p-4"
+                      style={{
+                        borderRight: fi % 2 === 0 ? '1px solid var(--vharanani-charcoal-20)' : 'none',
+                        borderBottom: fi < 2 ? '1px solid var(--vharanani-charcoal-20)' : 'none',
+                      }}
+                    >
+                      <div className="w-1.5 h-1.5 flex-shrink-0" style={{ background: 'var(--vharanani-burgundy)' }} />
+                      <span className="typo-copy-small font-inter" style={{ color: 'var(--vharanani-charcoal-80)' }}>{f}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 flex items-baseline gap-3">
+                  <span className="font-bebas-neue" style={{ fontSize: 40, lineHeight: 1, color: 'var(--vharanani-burgundy)' }}>{active.metric.value}</span>
+                  <span className="typo-caption tracking-[0.15em] uppercase font-inter" style={{ color: 'var(--vharanani-charcoal-60)' }}>{active.metric.label}</span>
+                </div>
+              </div>
+              <div>
+                <h3 className="font-bebas-neue typo-headline-small uppercase tracking-wide mb-4" style={{ color: 'var(--vharanani-charcoal)' }}>
+                  Key Projects
+                </h3>
+                <div className="space-y-3">
+                  {active.projects.map((proj) => (
+                    <div key={proj.name} className="p-4" style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'rgba(0,0,0,0.02)' }}>
+                      <div className="flex items-center justify-between mb-1">
+                        <h4 className="font-bebas-neue typo-headline-small tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>{proj.name}</h4>
+                        <span className="typo-caption tracking-[0.15em] uppercase px-2 py-1" style={{ color: 'var(--vharanani-burgundy)', border: '1px solid var(--vharanani-burgundy)' }}>{proj.status}</span>
+                      </div>
+                      <span className="tracking-[0.1em] uppercase font-inter typo-label" style={{ color: 'var(--vharanani-charcoal-60)' }}>{proj.location}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div style={{ borderBottom: '1px solid var(--vharanani-charcoal-20)' }} />
+          </div>
+        </div>
+      )}
+
       {/* ── SECTION HEADER ── */}
       <div className="px-6 md:px-12 lg:px-20 pt-10 md:pt-14 pb-8" style={{ background: '#ffffff' }}>
         <div className="max-w-7xl mx-auto">
@@ -58,18 +159,22 @@ export function DMFTWireframe_Portfolio(): ReactNode {
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
                 <span className="typo-caption tracking-[0.28em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
-                  PORTFOLIO
+                  {active ? 'ALL DEVELOPMENTS' : 'PORTFOLIO'}
                 </span>
               </div>
-              <h2 className="typo-header font-bebas-neue tracking-wide uppercase" style={{ color: 'var(--vharanani-charcoal)', lineHeight: 0.95 }}>
-                Our<br />Developments
-              </h2>
+              {!active && (
+                <h2 className="typo-header font-bebas-neue tracking-wide uppercase" style={{ color: 'var(--vharanani-charcoal)', lineHeight: 0.95 }}>
+                  Our<br />Developments
+                </h2>
+              )}
             </div>
-            <div className="lg:col-span-5">
-              <p className="typo-copy font-inter" style={{ color: 'var(--vharanani-charcoal-60)' }}>
-                DMFT Property Developers focuses on the development of well-planned residential and mixed-use developments across South Africa.
-              </p>
-            </div>
+            {!active && (
+              <div className="lg:col-span-5">
+                <p className="typo-copy font-inter" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+                  DMFT Property Developers focuses on the development of well-planned residential and mixed-use developments across South Africa.
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -88,8 +193,8 @@ export function DMFTWireframe_Portfolio(): ReactNode {
             {/* Image — 7 cols */}
             <div className="lg:col-span-7 relative h-[320px] lg:h-auto lg:min-h-[440px] overflow-hidden group">
               <ImageWithFallback
-                src={developments[0].image}
-                alt={developments[0].title}
+                src={DEVELOPMENTS[0].image}
+                alt={DEVELOPMENTS[0].title}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0" style={{
@@ -107,10 +212,10 @@ export function DMFTWireframe_Portfolio(): ReactNode {
               <div className="absolute bottom-0 left-0 right-0 px-8 py-5" style={{ background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(8px)' }}>
                 <div className="flex items-center gap-4">
                   <div className="typo-headline-big font-bebas-neue text-white">
-                    {developments[0].metric.value}
+                    {DEVELOPMENTS[0].metric.value}
                   </div>
                   <div className="typo-caption tracking-[0.15em] uppercase font-inter text-white/50">
-                    {developments[0].metric.label}
+                    {DEVELOPMENTS[0].metric.label}
                   </div>
                 </div>
               </div>
@@ -123,20 +228,20 @@ export function DMFTWireframe_Portfolio(): ReactNode {
                   <Building2 size={22} />
                 </div>
                 <span className="typo-caption tracking-[0.2em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
-                  {developments[0].category}
+                  {DEVELOPMENTS[0].category}
                 </span>
                 <div className="flex-1 h-[1px] ml-2" style={{ background: 'var(--vharanani-charcoal-20)' }} />
               </div>
 
               <h3 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-5" style={{ color: 'var(--vharanani-charcoal)' }}>
-                {developments[0].title}
+                {DEVELOPMENTS[0].title}
               </h3>
               <p className="typo-copy font-inter mb-8" style={{ color: 'var(--vharanani-charcoal-60)' }}>
-                {developments[0].description}
+                {DEVELOPMENTS[0].description}
               </p>
 
               <div className="grid grid-cols-2 gap-0" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
-                {developments[0].features.map((f, fi) => (
+                {DEVELOPMENTS[0].features.map((f, fi) => (
                   <div
                     key={f}
                     className="flex items-center gap-3 p-4"
@@ -159,7 +264,7 @@ export function DMFTWireframe_Portfolio(): ReactNode {
       <div className="px-6 md:px-12 lg:px-20 pb-0" style={{ background: '#ffffff' }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0" style={{ borderLeft: '1px solid var(--vharanani-charcoal-20)', borderRight: '1px solid var(--vharanani-charcoal-20)', borderBottom: '1px solid var(--vharanani-charcoal-20)' }}>
-            {developments.slice(1).map((dev, i) => {
+            {DEVELOPMENTS.slice(1).map((dev, i) => {
               const isExpanded = expandedCard === i;
               return (
                 <motion.div
@@ -282,7 +387,7 @@ export function DMFTWireframe_Portfolio(): ReactNode {
       <div className="relative overflow-hidden" style={{ background: 'var(--vharanani-burgundy)' }}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-0 py-12" style={{ borderTop: '3px solid var(--vharanani-burgundy)' }}>
-            {developments.map((dev, i) => (
+            {DEVELOPMENTS.map((dev, i) => (
               <motion.div
                 key={dev.title + '-summary'}
                 initial={{ opacity: 0, y: 20 }}
