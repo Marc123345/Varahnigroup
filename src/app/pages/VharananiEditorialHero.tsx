@@ -1047,8 +1047,8 @@ export function VharananiEditorialHero() {
           )}
         </div>
 
-        {/* Bottom border accent */}
-        <div className="absolute bottom-0 left-0 right-0 h-[2px]" style={{ background: 'linear-gradient(90deg, var(--vharanani-burgundy) 0%, var(--vharanani-burgundy) 20%, var(--vharanani-charcoal-20) 20%)' }} />
+        {/* Bottom border */}
+        <div className="absolute bottom-0 left-0 right-0 h-[1px]" style={{ background: 'var(--vharanani-charcoal-20)' }} />
       </header>
 
       <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} onNavigate={handleHeaderNavClick} />
