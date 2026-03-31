@@ -13,6 +13,7 @@ import { VharananiHomeBanner } from './VharananiHomeBanner';
 import { useResponsive } from '../hooks/useResponsive';
 import { safeVibrate } from '../utils/vibration';
 import vectorBg from '../../assets/Vector.svg';
+import { VharananiGroupFAQ } from '../components/sections/FAQ';
 import {
   GroupWireframe_ExecutiveSummary,
   GroupWireframe_PortfolioGrid,
@@ -1452,6 +1453,9 @@ export function VharananiEditorialHero() {
       </div>
 
       {/* ── FOOTER ── */}
+      {/* ── FAQ SECTION ── */}
+      <VharananiGroupFAQ />
+
       <footer className="relative z-[1] text-white py-12 sm:py-16 lg:py-20" style={{ backgroundColor: '#000000' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-12 border-b-2 border-[var(--vharanani-burgundy)]">
