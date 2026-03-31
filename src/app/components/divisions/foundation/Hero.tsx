@@ -13,7 +13,7 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
   return (
     <div>
       {/* ── CONTACT-US STYLE HERO — dark bg, image right, content left ── */}
-      <div className="relative overflow-hidden" style={{ background: '#0e121d', minHeight: 'clamp(500px, 70vh, 757px)' }}>
+      <div className="relative overflow-hidden" style={{ background: '#111111', minHeight: 'clamp(500px, 70vh, 757px)' }}>
 
         {/* Background texture (subtle grid) */}
         <div className="absolute inset-0 opacity-[0.04]" style={{
@@ -169,7 +169,7 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
             alt="Community gathering"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, #0e121d 0%, transparent 30%)' }} />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, #111111 0%, transparent 30%)' }} />
         </div>
       </div>
 
@@ -199,7 +199,7 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
       </div>
 
       {/* ── FOUNDER QUOTE SECTION ── */}
-      <div style={{ background: '#0e121d' }}>
+      <div style={{ background: '#111111' }}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Portrait */}

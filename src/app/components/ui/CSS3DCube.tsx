@@ -122,9 +122,9 @@ export function CSS3DCube({ images, activeIndex, size, labels }: CSS3DCubeProps)
     }
     const updateSize = () => {
       const w = window.innerWidth;
-      if (w < 640) setCubeSize(Math.min(200, Math.floor(w * 0.55)));
-      else if (w < 1024) setCubeSize(240);
-      else setCubeSize(280);
+      if (w < 640) setCubeSize(Math.min(260, Math.floor(w * 0.65)));
+      else if (w < 1024) setCubeSize(280);
+      else setCubeSize(300);
     };
     updateSize();
     window.addEventListener('resize', updateSize);

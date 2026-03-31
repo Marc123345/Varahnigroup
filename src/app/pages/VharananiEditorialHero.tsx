@@ -1084,10 +1084,10 @@ export function VharananiEditorialHero() {
         </div>
 
         {/* Main Content Grid */}
-        <div className="relative grid grid-cols-12 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-8 py-8 sm:py-12 lg:px-16 lg:py-16 max-w-7xl mx-auto">
+        <div className="relative grid grid-cols-12 gap-3 sm:gap-6 lg:gap-8 px-4 sm:px-8 py-4 sm:py-12 lg:px-16 lg:py-16 max-w-7xl mx-auto">
 
-          {/* ── LEFT COLUMN — adapts to level ── */}
-          <div className="col-span-12 lg:col-span-3 flex flex-col justify-between z-10">
+          {/* ── LEFT COLUMN — adapts to level (hidden on mobile at Level 0) ── */}
+          <div className={`col-span-12 lg:col-span-3 flex flex-col justify-between z-10 ${currentLevel === 0 ? 'hidden lg:flex' : ''}`}>
             <div className="space-y-6 sm:space-y-8">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -1183,13 +1183,13 @@ export function VharananiEditorialHero() {
           </div>
 
           {/* ── CENTER COLUMN — 3D CUBE (always visible) ── */}
-          <div className="col-span-12 lg:col-span-6 flex flex-col items-center justify-start z-10 py-8 lg:py-0">
+          <div className={`col-span-12 ${currentLevel === 0 ? 'lg:col-span-9' : 'lg:col-span-6'} flex flex-col items-center justify-start z-10 py-4 sm:py-8 lg:py-0`}>
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.3 }}
               className="relative w-full"
-              style={{ height: isMobile ? '410px' : '550px' }}
+              style={{ height: isMobile ? '340px' : isTablet ? '440px' : '550px' }}
             >
               <CSS3DCube images={cubeImages} activeIndex={cubeActiveIndex} labels={cubeLabels} />
             </motion.div>

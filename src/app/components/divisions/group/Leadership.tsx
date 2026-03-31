@@ -182,7 +182,7 @@ export function GroupWireframe_Leadership(): ReactNode {
         {/* RIGHT: Dark panel with executive grid */}
         <motion.div
           className="flex flex-col justify-center px-8 md:px-16 lg:px-14 xl:px-20 py-16 lg:py-20 relative"
-          style={{ background: '#0e121d' }}
+          style={{ background: '#111111' }}
           initial={{ opacity: 0, x: 40 }}
           animate={teamInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
           transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}

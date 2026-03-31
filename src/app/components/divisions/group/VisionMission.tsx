@@ -29,7 +29,7 @@ export function GroupWireframe_VisionMission(): ReactNode {
           {/* ── LEFT HALF: SOLID BLACK ── */}
           <motion.div
             className="relative p-10 md:p-14 lg:p-16 xl:p-20 flex flex-col justify-center"
-            style={{ background: '#0e121d' }}
+            style={{ background: '#111111' }}
             initial={{ opacity: 0, x: -60 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -60 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -143,8 +143,8 @@ export function GroupWireframe_VisionMission(): ReactNode {
                   <div
                     className="w-14 h-14 flex-shrink-0 flex items-center justify-center transition-colors duration-300"
                     style={{
-                      border: '2px solid #0e121d',
-                      color: '#0e121d',
+                      border: '2px solid #111111',
+                      color: '#111111',
                     }}
                   >
                     {obj.icon}
@@ -154,7 +154,7 @@ export function GroupWireframe_VisionMission(): ReactNode {
                   <div className="pt-1">
                     <div
                       className="typo-caption tracking-[0.2em] uppercase font-inter font-bold mb-1"
-                      style={{ color: '#0e121d' }}
+                      style={{ color: '#111111' }}
                     >
                       {obj.label}
                     </div>

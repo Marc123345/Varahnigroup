@@ -25,7 +25,7 @@ export function DMFTWireframe_HeroAbout({ onTabChange }: { onTabChange?: (tabId:
           <div
             ref={heroRef}
             className="relative flex flex-col justify-center px-8 md:px-14 lg:px-16 xl:px-20 py-20 lg:py-24 order-2 lg:order-1"
-            style={{ background: '#0e121d' }}
+            style={{ background: '#111111' }}
           >
             {/* Subtle corner accent */}
             <div

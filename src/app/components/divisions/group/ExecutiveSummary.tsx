@@ -72,7 +72,7 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
         {/* ── LEFT: Solid black panel ── */}
         <div
           className="relative flex flex-col justify-center px-8 sm:px-12 md:px-16 lg:px-20 xl:px-28 py-20 lg:py-24"
-          style={{ background: '#0e121d' }}
+          style={{ background: '#111111' }}
         >
           {/* Ghost watermark */}
           <div

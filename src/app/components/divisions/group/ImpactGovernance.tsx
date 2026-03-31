@@ -272,7 +272,7 @@ export function GroupWireframe_ImpactGovernance(): ReactNode {
           {/* ── RIGHT: dark panel with governance principles ── */}
           <motion.div
             className="relative flex flex-col justify-center px-8 md:px-14 lg:px-16 xl:px-20 py-16 lg:py-20 order-1 lg:order-2"
-            style={{ background: '#0e121d' }}
+            style={{ background: '#111111' }}
             initial="hidden"
             animate={govInView ? 'visible' : 'hidden'}
           >
