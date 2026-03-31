@@ -435,40 +435,7 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
       community: (<FoundationWireframe_ImpactStories />),
       impact: (<FoundationWireframe_ProgrammeAreas />),
       partnerships: (<FoundationWireframe_PartnerNetwork />),
-      heritage: (
-        <>
-          <FoundationWireframe_Heritage />
-          {onCrossNavigate && (
-            <div className="px-6 md:px-12 py-10" style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
-              <div className="flex items-center gap-3 mb-5">
-                <div style={{ width: 24, height: 1, background: 'var(--vharanani-burgundy)' }} />
-                <span className="font-inter typo-caption tracking-[0.28em] uppercase" style={{ color: 'var(--vharanani-burgundy)' }}>Also Explore</span>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {[
-                  { id: 'group', label: 'Vharanani Group', desc: 'The parent holding company', secId: 'impact' },
-                  { id: 'properties', label: 'Vharanani Properties', desc: 'Infrastructure & construction', secId: undefined },
-                ].map((div) => (
-                  <button
-                    key={div.id}
-                    onClick={() => onCrossNavigate(div.id, div.secId)}
-                    className="group text-left p-5 transition-all duration-200"
-                    style={{ border: '1px solid rgba(129,41,33,0.22)', background: 'rgba(129,41,33,0.04)', cursor: 'pointer' }}
-                  >
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="font-bebas-neue uppercase text-white group-hover:text-[var(--vharanani-burgundy)] transition-colors" style={{ fontSize: 17, letterSpacing: '0.04em' }}>
-                        {div.label}
-                      </span>
-                      <ArrowRight size={13} style={{ color: 'var(--vharanani-burgundy)', flexShrink: 0 }} className="group-hover:translate-x-1 transition-transform" />
-                    </div>
-                    <div className="font-inter typo-meta tracking-[0.12em] uppercase" style={{ color: 'rgba(255,255,255,0.35)' }}>{div.desc}</div>
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-        </>
-      ),
+      heritage: (<FoundationWireframe_Heritage />),
       'get-involved': (<FoundationWireframe_Contact />),
     },
     _foundation_legacy: {
@@ -807,44 +774,7 @@ function getSectionContent(divisionId: string, sectionId: string, onTabChange?: 
       impact: (<GroupWireframe_ImpactGovernance />),
       'vision-mission': (<GroupWireframe_VisionMission />),
       governance: (<GroupWireframe_Governance />),
-      companies: (
-        <>
-          <GroupWireframe_Companies />
-          {onCrossNavigate && (
-            <div className="px-6 md:px-12 py-10" style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
-              <div className="flex items-center gap-3 mb-6">
-                <div style={{ width: 24, height: 1, background: 'var(--vharanani-burgundy)' }} />
-                <span className="font-inter typo-caption tracking-[0.28em] uppercase" style={{ color: 'var(--vharanani-burgundy)' }}>
-                  Explore Our Divisions
-                </span>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {[
-                  { id: 'properties', label: 'Vharanani Properties', desc: 'Construction & Infrastructure', ref: 'Est. 2001' },
-                  { id: 'foundation', label: 'David Mabilu Foundation', desc: 'Social Development', ref: 'Est. 2011' },
-                  { id: 'dmft', label: 'DMFT Developers', desc: 'Property Development', ref: 'Part of the Group' },
-                ].map((div) => (
-                  <button
-                    key={div.id}
-                    onClick={() => onCrossNavigate(div.id)}
-                    className="group text-left p-5 transition-all duration-200"
-                    style={{ border: '1px solid rgba(129,41,33,0.22)', background: 'rgba(129,41,33,0.04)', cursor: 'pointer' }}
-                  >
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="font-bebas-neue uppercase text-white group-hover:text-[var(--vharanani-burgundy)] transition-colors" style={{ fontSize: 17, letterSpacing: '0.04em' }}>
-                        {div.label}
-                      </span>
-                      <ArrowRight size={13} style={{ color: 'var(--vharanani-burgundy)', flexShrink: 0 }} className="group-hover:translate-x-1 transition-transform" />
-                    </div>
-                    <div className="font-inter typo-meta tracking-[0.12em] uppercase" style={{ color: 'rgba(255,255,255,0.35)' }}>{div.desc}</div>
-                    <div className="font-inter typo-meta mt-1" style={{ color: 'rgba(255,255,255,0.2)' }}>{div.ref}</div>
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-        </>
-      ),
+      companies: (<GroupWireframe_Companies />),
       'sustainable-impact': (<GroupWireframe_NewsContact />),
     },
   };

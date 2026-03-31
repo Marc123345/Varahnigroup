@@ -53,7 +53,12 @@ const PRINCIPLES = [
 
 const IMAGE = 'https://vharananiproperties.co.za/wp-content/uploads/2021/07/H2-895x500.png';
 
-const CREDENTIALS = ['King IV Aligned', 'B-BBEE Level 1', 'ISO Compliant', 'CIDB Registered'];
+const CREDENTIALS = [
+  { label: 'King IV Aligned', logo: 'https://www.iodsa.co.za/resource/collection/684B68A7-B768-465C-8214-E3A007F15A5A/IoDSA_Logo.jpg' },
+  { label: 'B-BBEE Level 1', logo: 'https://baboraconsulting.co.za/wp-content/uploads/2024/08/b-bbee-logo.webp' },
+  { label: 'ISO Compliant', logo: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/ISO-Certified-Construction-Company.png' },
+  { label: 'CIDB Registered', logo: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/CIDB-9GB_9CE.png' },
+];
 
 export function GroupWireframe_Governance(): ReactNode {
   const [active, setActive] = useState<string | null>('01');
@@ -363,7 +368,7 @@ export function GroupWireframe_Governance(): ReactNode {
             >
               {CREDENTIALS.map((badge, i) => (
                 <motion.div
-                  key={badge}
+                  key={badge.label}
                   className="flex flex-col items-center justify-center py-7 px-4 text-center"
                   style={{
                     borderRight: i < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none',
@@ -374,15 +379,17 @@ export function GroupWireframe_Governance(): ReactNode {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.08 }}
                 >
-                  <div
-                    className="w-2 h-2 mb-3"
-                    style={{ background: 'var(--vharanani-burgundy)' }}
+                  <img
+                    src={badge.logo}
+                    alt={badge.label}
+                    className="h-10 w-auto object-contain mb-3"
+                    style={{ filter: 'brightness(0) invert(1)', opacity: 0.85 }}
                   />
                   <span
                     className="font-bebas-neue uppercase tracking-wide text-white"
                     style={{ fontSize: 'clamp(12px, 1.3vw, 14px)', opacity: 0.75 }}
                   >
-                    {badge}
+                    {badge.label}
                   </span>
                 </motion.div>
               ))}
