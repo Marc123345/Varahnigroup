@@ -5,10 +5,10 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const IMAGES = {
-  residentialEstate: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/SOSHANGUVE-EXT.19-RDP-HOUSES-1.jpg',
-  apartment: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/Mogalakwena.jpg',
-  townhouse: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_2-anglo-platinum-1.jpg',
-  mixedUse: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/Mogalakwena.jpg',
+  residentialEstate: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_1-the-mbilu-1.jpg',
+  apartment: 'https://ik.imagekit.io/qcvroy8xpd/Gemini_Generated_Image_6199jv6199jv6199.png',
+  townhouse: 'https://ik.imagekit.io/qcvroy8xpd/Gemini_Generated_Image_pqwh1pqwh1pqwh1p.png',
+  mixedUse: 'https://ik.imagekit.io/qcvroy8xpd/Photo%201.png',
 };
 
 export function DMFTWireframe_Portfolio(): ReactNode {

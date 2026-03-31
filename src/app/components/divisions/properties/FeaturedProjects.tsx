@@ -14,8 +14,8 @@ const ROADS_IMAGES = [
 const IMAGES = {
   waterSanitation: 'https://ik.imagekit.io/qcvroy8xpd/Water.png',
   buildingConstruction: 'https://ik.imagekit.io/qcvroy8xpd/Building%207%26.jpeg',
-  residential: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0519.jpg',
-  propertyDev: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_1-the-mbilu-1.jpg',
+  residential: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Mamelodi-Ext-5-4.jpg',
+  propertyDev: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/st-maria.jpg',
   facilitiesMgmt: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Transnet-12.jpg',
 };
 

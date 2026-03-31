@@ -4,7 +4,7 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const IMAGES = {
-  visionMission: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/hq.png',
+  visionMission: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0032.jpg',
 };
 
 export function GroupWireframe_VisionMission(): ReactNode {

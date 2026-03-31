@@ -5,7 +5,7 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const IMAGES = {
-  news: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/faranani-1.jpg',
+  news: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0560.jpg',
 };
 
 export function GroupWireframe_NewsContact(): ReactNode {

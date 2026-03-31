@@ -13,7 +13,7 @@ const ITEMS = [
     description: 'Delivering large-scale civil engineering and infrastructure projects that improve quality of life and restore dignity to communities.',
     stats: [{ value: '200+', label: 'Projects' }, { value: 'Grade 9', label: 'CIDB' }],
     capabilities: ['Roads & Highways', 'Water & Sanitation', 'Public Buildings'],
-    image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/Tswane-BRT.jpg',
+    image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0020.jpg',
   },
   {
     id: 'dmft',
@@ -24,7 +24,7 @@ const ITEMS = [
     description: 'Managing strategic real estate assets and long-term property investments across commercial and residential sectors.',
     stats: [{ value: '15+', label: 'Developments' }, { value: 'R2B+', label: 'Portfolio' }],
     capabilities: ['Residential Estates', 'Mixed-Use Precincts'],
-    image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0519.jpg',
+    image: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Mamelodi-Ext-5-4.jpg',
   },
   {
     id: 'foundation',

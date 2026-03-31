@@ -51,7 +51,7 @@ const PRINCIPLES = [
   },
 ];
 
-const IMAGE = 'https://vharananiproperties.co.za/wp-content/uploads/2021/07/H2-895x500.png';
+const IMAGE = 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Marulaneng-Road-2.jpg';
 
 const CREDENTIALS = [
   { label: 'King IV Aligned', logo: 'https://www.iodsa.co.za/resource/collection/684B68A7-B768-465C-8214-E3A007F15A5A/IoDSA_Logo.jpg' },

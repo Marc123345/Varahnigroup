@@ -40,7 +40,7 @@ const PHASES: Phase[] = [
       'Conducting detailed feasibility studies, zoning processes, and development planning, working with experienced professionals to design modern and functional developments.',
     capabilities: ['Town Planning', 'Architectural Design', 'Zoning Processes', 'Municipal Approvals'],
     image:
-      'https://vharananiproperties.co.za/wp-content/uploads/2020/10/Property-development-scaled.jpg',
+      'https://ik.imagekit.io/qcvroy8xpd/the%20.png',
   },
   {
     step: '03',
@@ -51,7 +51,7 @@ const PHASES: Phase[] = [
       'Leveraging the construction expertise of the Vharanani Group to deliver projects efficiently and safely, from groundbreaking through to handover.',
     capabilities: ['Quality Construction', 'Project Management', 'Safety Compliance', 'Timeline Delivery'],
     image:
-      'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Mamelodi-Ext-5-4.jpg',
+      'https://ik.imagekit.io/qcvroy8xpd/Building%207%26.jpeg',
   },
   {
     step: '04',
