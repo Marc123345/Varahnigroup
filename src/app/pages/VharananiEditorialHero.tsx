@@ -1086,8 +1086,8 @@ export function VharananiEditorialHero() {
         {/* Main Content Grid */}
         <div className="relative grid grid-cols-12 gap-3 sm:gap-6 lg:gap-8 px-4 sm:px-8 py-4 sm:py-12 lg:px-16 lg:py-16 max-w-7xl mx-auto">
 
-          {/* ── LEFT COLUMN — adapts to level (hidden on mobile at Level 0) ── */}
-          <div className={`col-span-12 lg:col-span-3 flex flex-col justify-between z-10 ${currentLevel === 0 ? 'hidden lg:flex' : ''}`}>
+          {/* ── LEFT COLUMN — adapts to level (hidden at Level 0) ── */}
+          <div className={`col-span-12 lg:col-span-3 flex flex-col justify-between z-10 ${currentLevel === 0 ? 'hidden' : ''}`}>
             <div className="space-y-6 sm:space-y-8">
               <AnimatePresence mode="wait">
                 <motion.div
