@@ -805,15 +805,28 @@ export function VharananiEditorialHero() {
   const { isMobile, isTablet, isDesktop } = useResponsive();
 
   // Cube data — dynamically switches between division-level and section-level
-  const { images: cubeImages, labels: cubeLabels } = useMemo(() => {
+  const { images: cubeImages, labels: cubeLabels, cubeActiveIdx } = useMemo(() => {
     if (currentLevel === 1 && selectedDivision) {
-      const sectionImages = selectedDivision.sections.map((s) => s.image);
-      const sectionLabels = selectedDivision.sections.map((s) => ({ title: s.title, category: s.type }));
-      while (sectionImages.length < 6) {
-        sectionImages.push(selectedDivision.image);
-        sectionLabels.push({ title: selectedDivision.title.replace('Vharanani ', ''), category: selectedDivision.type });
+      const allImages = selectedDivision.sections.map((s) => s.image);
+      const allLabels = selectedDivision.sections.map((s) => ({ title: s.title, category: s.type }));
+
+      // If more than 6 sections, build a sliding window of 6 that always includes the active section
+      if (allImages.length > 6) {
+        // Pick a window of 6 that centers on the active section
+        let start = Math.max(0, activeSectionIndex - 2);
+        if (start + 6 > allImages.length) start = allImages.length - 6;
+        const windowImages = allImages.slice(start, start + 6);
+        const windowLabels = allLabels.slice(start, start + 6);
+        const activeInWindow = activeSectionIndex - start;
+        return { images: windowImages, labels: windowLabels, cubeActiveIdx: activeInWindow };
       }
-      return { images: sectionImages.slice(0, 6), labels: sectionLabels.slice(0, 6) };
+
+      // 6 or fewer — pad with division image if needed
+      while (allImages.length < 6) {
+        allImages.push(selectedDivision.image);
+        allLabels.push({ title: selectedDivision.title.replace('Vharanani ', ''), category: selectedDivision.type });
+      }
+      return { images: allImages.slice(0, 6), labels: allLabels.slice(0, 6), cubeActiveIdx: activeSectionIndex };
     }
     return {
       images: [...divisions.map((d) => d.image), ...extraCubeImages],
@@ -822,11 +835,12 @@ export function VharananiEditorialHero() {
         { title: 'Community', category: 'IMPACT' },
         { title: 'Architecture', category: 'DESIGN' },
       ],
+      cubeActiveIdx: activeDivisionIndex,
     };
-  }, [currentLevel, selectedDivision]);
+  }, [currentLevel, selectedDivision, activeSectionIndex, activeDivisionIndex]);
 
-  // The activeIndex for the cube: at Level 0 it's the division index, at Level 1 it's the section index
-  const cubeActiveIndex = currentLevel === 1 ? activeSectionIndex : activeDivisionIndex;
+  // The activeIndex for the cube
+  const cubeActiveIndex = currentLevel === 1 ? cubeActiveIdx : activeDivisionIndex;
 
   const handleMenuToggle = () => {
     safeVibrate(20);
