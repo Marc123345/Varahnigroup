@@ -32,7 +32,7 @@ export function VharananiGroupFAQ(): ReactNode {
   const [openIndex, setOpenIndex] = useState<number>(1);
 
   return (
-    <section className="relative overflow-hidden" style={{ background: '#0e121d' }}>
+    <section className="relative overflow-hidden" style={{ background: '#f3f3f5' }}>
 
       {/* Ghost text — decorative */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
@@ -44,7 +44,7 @@ export function VharananiGroupFAQ(): ReactNode {
             fontSize: 100,
             letterSpacing: '0.5px',
             lineHeight: '108px',
-            WebkitTextStroke: '1px rgba(200,201,204,0.08)',
+            WebkitTextStroke: '1px rgba(0,0,0,0.06)',
             color: 'transparent',
             transform: 'rotate(33.9deg)',
             transformOrigin: '0 0',
@@ -60,7 +60,7 @@ export function VharananiGroupFAQ(): ReactNode {
             fontSize: 100,
             letterSpacing: '0.5px',
             lineHeight: '108px',
-            WebkitTextStroke: '1px rgba(200,201,204,0.08)',
+            WebkitTextStroke: '1px rgba(0,0,0,0.06)',
             color: 'transparent',
             transform: 'rotate(-35.2deg)',
             transformOrigin: '0 0',
@@ -71,8 +71,8 @@ export function VharananiGroupFAQ(): ReactNode {
       </div>
 
       {/* Subtle background texture */}
-      <div className="absolute inset-0 opacity-[0.04]" style={{
-        backgroundImage: 'linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)',
+      <div className="absolute inset-0 opacity-[0.5]" style={{
+        backgroundImage: 'linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)',
         backgroundSize: '60px 60px',
       }} />
 
@@ -114,7 +114,7 @@ export function VharananiGroupFAQ(): ReactNode {
                   background: 'var(--vharanani-burgundy)',
                 }}
               >
-                <span className="font-inter typo-meta tracking-[0.2em] uppercase" style={{ color: 'rgba(255,255,255,0.7)' }}>Since</span>
+                <span className="font-inter typo-meta tracking-[0.2em] uppercase" style={{ color: 'rgba(255,255,255,0.8)' }}>Since</span>
                 <span className="font-bebas-neue text-white" style={{ fontSize: 48, lineHeight: 1 }}>2001</span>
               </div>
             </div>
@@ -139,11 +139,11 @@ export function VharananiGroupFAQ(): ReactNode {
               </div>
               <h2
                 className="font-bebas-neue uppercase mb-4"
-                style={{ fontSize: 'clamp(32px, 4vw, 48px)', letterSpacing: '0.5px', lineHeight: '56px', color: 'white' }}
+                style={{ fontSize: 'clamp(32px, 4vw, 48px)', letterSpacing: '0.5px', lineHeight: '56px', color: 'var(--vharanani-charcoal)' }}
               >
                 Your Questions About Vharanani, Answered
               </h2>
-              <p className="font-inter" style={{ fontSize: 16, lineHeight: '24px', color: 'rgba(255,255,255,0.7)', maxWidth: 600 }}>
+              <p className="font-inter" style={{ fontSize: 16, lineHeight: '24px', color: 'var(--vharanani-charcoal-60)', maxWidth: 600 }}>
                 We provide expert construction, property development, and social impact services — here are answers to the questions we hear most often.
               </p>
             </div>
@@ -163,14 +163,13 @@ export function VharananiGroupFAQ(): ReactNode {
                       onClick={() => setOpenIndex(isOpen ? -1 : i)}
                       className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left transition-colors duration-200"
                       style={{
-                        backdropFilter: 'blur(48px)',
-                        background: isOpen ? 'rgba(129,41,33,0.15)' : 'rgba(255,255,255,0.08)',
-                        border: isOpen ? '1px solid rgba(129,41,33,0.3)' : '1px solid transparent',
+                        background: isOpen ? 'rgba(129,41,33,0.08)' : 'white',
+                        border: isOpen ? '1px solid rgba(129,41,33,0.25)' : '1px solid var(--vharanani-charcoal-20)',
                       }}
                     >
                       <span
                         className="font-inter"
-                        style={{ fontSize: 18, fontWeight: 600, letterSpacing: '0.5px', lineHeight: '28px', color: 'white' }}
+                        style={{ fontSize: 18, fontWeight: 600, letterSpacing: '0.5px', lineHeight: '28px', color: 'var(--vharanani-charcoal)' }}
                       >
                         {faq.question}
                       </span>
@@ -179,7 +178,7 @@ export function VharananiGroupFAQ(): ReactNode {
                         transition={{ duration: 0.3 }}
                         className="flex-shrink-0"
                       >
-                        <ChevronDown size={20} style={{ color: isOpen ? 'var(--vharanani-burgundy)' : 'rgba(255,255,255,0.5)' }} />
+                        <ChevronDown size={20} style={{ color: isOpen ? 'var(--vharanani-burgundy)' : 'var(--vharanani-charcoal-40)' }} />
                       </motion.div>
                     </button>
 
@@ -193,7 +192,7 @@ export function VharananiGroupFAQ(): ReactNode {
                           className="overflow-hidden"
                         >
                           <div className="px-5 pt-3 pb-1">
-                            <p className="font-inter" style={{ fontSize: 16, lineHeight: '24px', color: 'rgba(255,255,255,0.55)' }}>
+                            <p className="font-inter" style={{ fontSize: 16, lineHeight: '24px', color: 'var(--vharanani-charcoal-60)' }}>
                               {faq.answer}
                             </p>
                           </div>
