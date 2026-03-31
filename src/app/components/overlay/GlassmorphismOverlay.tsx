@@ -151,15 +151,15 @@ export function GlassmorphismOverlay({
       exit={{ opacity: 0, y: 12, scale: 0.99 }}
       transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
       className="fixed inset-0 z-50 overflow-hidden"
-      style={{ background: '#000000' }}
+      style={{ background: '#ffffff' }}
     >
       {/* Background texture */}
-      <div className="absolute inset-0 pointer-events-none" style={{ opacity: 0.025 }}>
+      <div className="absolute inset-0 pointer-events-none" style={{ opacity: 0.5 }}>
         <div
           className="absolute inset-0"
           style={{
             backgroundImage:
-              'linear-gradient(rgba(129,41,33,1) 1px, transparent 1px), linear-gradient(90deg, rgba(129,41,33,1) 1px, transparent 1px)',
+              'linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px)',
             backgroundSize: '48px 48px',
           }}
         />
@@ -169,7 +169,7 @@ export function GlassmorphismOverlay({
       <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: 'var(--vharanani-burgundy)', zIndex: 60 }} />
 
       {/* Scroll progress bar */}
-      <div className="absolute top-[3px] left-0 right-0 h-[2px] z-50" style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}>
+      <div className="absolute top-[3px] left-0 right-0 h-[2px] z-50" style={{ backgroundColor: 'rgba(0,0,0,0.05)' }}>
         <motion.div
           className="absolute inset-y-0 left-0 origin-left"
           style={{ width: progressWidth, backgroundColor: 'var(--vharanani-burgundy)', opacity: 0.5 }}
@@ -181,9 +181,9 @@ export function GlassmorphismOverlay({
         ref={tabBarRef}
         className="relative flex items-center gap-0 px-3 sm:px-6 lg:px-10 border-b overflow-x-auto"
         style={{
-          borderColor: 'rgba(255,255,255,0.12)',
+          borderColor: 'var(--vharanani-charcoal-20)',
           scrollbarWidth: 'none',
-          background: 'rgba(0,0,0,0.96)',
+          background: 'rgba(255,255,255,0.96)',
           backdropFilter: 'blur(12px)',
           WebkitBackdropFilter: 'blur(12px)',
         }}
@@ -217,7 +217,7 @@ export function GlassmorphismOverlay({
         ) : breadcrumb ? (
           <span
             className="font-bebas-neue uppercase flex-shrink-0 mr-2 sm:mr-3"
-            style={{ fontSize: 14, letterSpacing: '0.1em', color: 'rgba(255,255,255,0.4)' }}
+            style={{ fontSize: 14, letterSpacing: '0.1em', color: 'var(--vharanani-charcoal-40)' }}
           >
             {breadcrumb}
           </span>
@@ -233,17 +233,17 @@ export function GlassmorphismOverlay({
             transition={{ duration: 0.2 }}
             className="flex items-center gap-2 flex-shrink-0 mr-3 sm:mr-5"
           >
-            <span style={{ color: 'rgba(255,255,255,0.18)', fontSize: 12 }}>/</span>
+            <span style={{ color: 'var(--vharanani-charcoal-20)', fontSize: 12 }}>/</span>
             <span
               className="font-inter typo-meta tracking-[0.14em] uppercase hidden sm:block"
-              style={{ color: 'rgba(255,255,255,0.55)' }}
+              style={{ color: 'var(--vharanani-charcoal-60)' }}
             >
               {tabs.find((t) => t.id === currentNavId)?.label}
             </span>
           </motion.div>
         </AnimatePresence>
 
-        <div className="w-[1px] h-6 mr-2 sm:mr-4 flex-shrink-0" style={{ backgroundColor: 'rgba(255,255,255,0.12)' }} />
+        <div className="w-[1px] h-6 mr-2 sm:mr-4 flex-shrink-0" style={{ backgroundColor: 'var(--vharanani-charcoal-20)' }} />
 
         {/* Section tabs */}
         {tabs.map((tab, i) => {
@@ -262,14 +262,14 @@ export function GlassmorphismOverlay({
               <div className="relative flex items-center gap-2 sm:gap-3">
                 <span
                   className="font-bebas-neue text-sm transition-colors duration-200"
-                  style={{ color: isActive ? 'var(--vharanani-burgundy)' : 'rgba(255,255,255,0.3)' }}
+                  style={{ color: isActive ? 'var(--vharanani-burgundy)' : 'var(--vharanani-charcoal-40)' }}
                 >
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <span
                   className="typo-meta tracking-[0.12em] sm:tracking-[0.15em] uppercase font-inter transition-colors duration-200 whitespace-nowrap"
                   style={{
-                    color: isActive ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.4)',
+                    color: isActive ? 'var(--vharanani-charcoal)' : 'var(--vharanani-charcoal-40)',
                     fontWeight: isActive ? 500 : 400,
                   }}
                 >
@@ -396,10 +396,10 @@ export function GlassmorphismOverlay({
       <div
         className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-4 sm:px-8 lg:px-12"
         style={{
-          background: 'rgba(0,0,0,0.96)',
+          background: 'rgba(255,255,255,0.96)',
           backdropFilter: 'blur(8px)',
           WebkitBackdropFilter: 'blur(8px)',
-          borderTop: '1px solid rgba(255,255,255,0.08)',
+          borderTop: '1px solid var(--vharanani-charcoal-20)',
           height: '56px',
         }}
       >
@@ -413,15 +413,15 @@ export function GlassmorphismOverlay({
           <div
             className="w-7 h-7 flex items-center justify-center transition-colors duration-200"
             style={{
-              border: `1px solid ${hasPrev ? 'var(--vharanani-burgundy)' : 'rgba(255,255,255,0.15)'}`,
+              border: `1px solid ${hasPrev ? 'var(--vharanani-burgundy)' : 'var(--vharanani-charcoal-20)'}`,
             }}
           >
-            <ChevronLeft size={14} style={{ color: hasPrev ? 'var(--vharanani-burgundy)' : 'rgba(255,255,255,0.3)' }} />
+            <ChevronLeft size={14} style={{ color: hasPrev ? 'var(--vharanani-burgundy)' : 'var(--vharanani-charcoal-40)' }} />
           </div>
           {hasPrev && (
             <span
               className="hidden sm:block font-inter typo-meta tracking-[0.15em] uppercase group-hover:text-[var(--vharanani-burgundy)] transition-colors"
-              style={{ color: 'rgba(255,255,255,0.35)' }}
+              style={{ color: 'var(--vharanani-charcoal-40)' }}
             >
               {tabs[currentNavIndex - 1]?.label}
             </span>
@@ -430,12 +430,12 @@ export function GlassmorphismOverlay({
 
         {/* Center: keyboard hint */}
         <div className="hidden md:flex items-center gap-4">
-          <span className="font-inter typo-meta tracking-[0.28em] uppercase" style={{ color: 'rgba(255,255,255,0.2)' }}>
+          <span className="font-inter typo-meta tracking-[0.28em] uppercase" style={{ color: 'var(--vharanani-charcoal-40)' }}>
             VISION. STRUCTURE. IMPACT.
           </span>
           <span
             className="font-inter typo-meta tracking-[0.15em] uppercase"
-            style={{ color: 'rgba(255,255,255,0.18)', borderLeft: '1px solid rgba(255,255,255,0.08)', paddingLeft: 16 }}
+            style={{ color: 'var(--vharanani-charcoal-40)', borderLeft: '1px solid var(--vharanani-charcoal-20)', paddingLeft: 16 }}
           >
             ← → NAVIGATE · ESC CLOSE
           </span>
@@ -451,7 +451,7 @@ export function GlassmorphismOverlay({
           {hasNext && (
             <span
               className="hidden sm:block font-inter typo-meta tracking-[0.15em] uppercase group-hover:text-[var(--vharanani-burgundy)] transition-colors"
-              style={{ color: 'rgba(255,255,255,0.35)' }}
+              style={{ color: 'var(--vharanani-charcoal-40)' }}
             >
               {tabs[currentNavIndex + 1]?.label}
             </span>
@@ -459,10 +459,10 @@ export function GlassmorphismOverlay({
           <div
             className="w-7 h-7 flex items-center justify-center transition-colors duration-200"
             style={{
-              border: `1px solid ${hasNext ? 'var(--vharanani-burgundy)' : 'rgba(255,255,255,0.15)'}`,
+              border: `1px solid ${hasNext ? 'var(--vharanani-burgundy)' : 'var(--vharanani-charcoal-20)'}`,
             }}
           >
-            <ChevronRight size={14} style={{ color: hasNext ? 'var(--vharanani-burgundy)' : 'rgba(255,255,255,0.3)' }} />
+            <ChevronRight size={14} style={{ color: hasNext ? 'var(--vharanani-burgundy)' : 'var(--vharanani-charcoal-40)' }} />
           </div>
         </button>
       </div>
