@@ -4,7 +4,7 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { useInView } from '../../../hooks/useInView';
 
 const IMAGES = {
-  leadership: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/57_municipal_council_chamber_horseshoe_table_microphones.jpg?updatedAt=1774955145888',
+  leadership: 'https://ik.imagekit.io/qcvroy8xpd/image%202.png',
 };
 
 export function GroupWireframe_Leadership(): ReactNode {

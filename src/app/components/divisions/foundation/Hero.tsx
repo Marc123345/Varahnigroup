@@ -6,7 +6,7 @@ import { AnimatedCounter } from '../shared';
 
 const IMAGES = {
   communityGathering: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1080&q=80',
-  founderPortrait: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1080&q=80',
+  founderPortrait: 'https://ik.imagekit.io/qcvroy8xpd/image%202.png',
 };
 
 export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId: string) => void } = {}): ReactNode {
