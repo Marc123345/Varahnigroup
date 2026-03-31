@@ -1456,127 +1456,131 @@ export function VharananiEditorialHero() {
       {/* ── FAQ SECTION ── */}
       <VharananiGroupFAQ />
 
-      <footer className="relative z-[1] text-white py-12 sm:py-16 lg:py-20" style={{ backgroundColor: '#000000' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-12 border-b-2 border-[var(--vharanani-burgundy)]">
-            <div>
-              <div className="mb-5">
-                <img
-                  src="https://ik.imagekit.io/qcvroy8xpd/Frame%205.png"
-                  alt="Vharanani Group"
-                  className="h-10 w-auto object-contain"
-                />
+      <footer className="relative z-[1]">
+        {/* ── TOP SPLIT: BURGUNDY LEFT / WHITE RIGHT ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          {/* Left — Burgundy panel */}
+          <div className="relative px-6 sm:px-10 md:px-16 lg:px-20 py-14 sm:py-16 lg:py-20" style={{ background: 'var(--vharanani-burgundy)' }}>
+            <div className="mb-8">
+              <img
+                src="https://ik.imagekit.io/qcvroy8xpd/Frame%205.png"
+                alt="Vharanani Group"
+                className="h-10 w-auto object-contain brightness-0 invert"
+              />
+            </div>
+            <p className="font-inter typo-copy leading-[1.75] text-white/90 max-w-md mb-10">
+              A wholly Black-owned holding company spanning construction, property development, community impact, and infrastructure — founded and led by David Mabilu.
+            </p>
+
+            <h4 className="font-bebas-neue text-lg mb-5 uppercase tracking-wide text-white">Divisions</h4>
+            <ul className="space-y-4 mb-10">
+              {divisions.map((div) => (
+                <li key={div.id}>
+                  <button onClick={() => { handleHeaderNavClick(div.id); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-center gap-3 group">
+                    {DIVISION_LOGOS[div.id] && (
+                      <img
+                        src={DIVISION_LOGOS[div.id]}
+                        alt={div.title}
+                        className="h-5 w-auto object-contain brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity"
+                      />
+                    )}
+                    <span className="font-inter typo-copy text-white/85 group-hover:text-white transition-colors">
+                      {div.title}
+                    </span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+
+            {/* Contact info */}
+            <div className="space-y-4 font-inter typo-copy text-white/90">
+              <div className="flex items-start gap-3">
+                <MapPin size={16} className="flex-shrink-0 mt-0.5 text-white/60" />
+                <div>
+                  <span>18 Hume Road, Dunkeld West<br />Johannesburg, 2196</span>
+                  <a href="https://maps.app.goo.gl/3w3g7J9pE1mH4CMr8" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 mt-1 typo-label tracking-[0.1em] uppercase text-white/60 hover:text-white transition-colors">
+                    View on Map <ArrowRight size={10} />
+                  </a>
+                </div>
               </div>
-              <p className="font-inter typo-copy leading-[1.75] text-white/90">
-                A wholly Black-owned holding company spanning construction, property development, community impact, and infrastructure — founded and led by David Mabilu.
-              </p>
+              <div className="flex items-center gap-3">
+                <Phone size={16} className="flex-shrink-0 text-white/60" />
+                <a href="tel:+27116561418" className="hover:text-white transition-colors">+27 11 656 1418</a>
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail size={16} className="flex-shrink-0 text-white/60" />
+                <a href="mailto:info@vharanani.com" className="hover:text-white transition-colors">info@vharanani.com</a>
+              </div>
             </div>
+          </div>
 
-            <div>
-              <h4 className="font-bebas-neue text-lg mb-5 uppercase tracking-wide">Divisions</h4>
-              <ul className="space-y-4">
-                {divisions.map((div) => (
-                  <li key={div.id}>
-                    <button onClick={() => { handleHeaderNavClick(div.id); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-center gap-3 group">
-                      {DIVISION_LOGOS[div.id] && (
-                        <img
-                          src={DIVISION_LOGOS[div.id]}
-                          alt={div.title}
-                          className="h-5 w-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity"
-                        />
-                      )}
-                      <span className="font-inter typo-copy text-white/85 group-hover:text-[var(--vharanani-burgundy)] transition-colors">
-                        {div.title}
-                      </span>
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bebas-neue text-lg mb-5 uppercase tracking-wide">Quick Links</h4>
-              <ul className="space-y-3">
-                {[
-                  { label: 'About the Group', divId: 'group', secId: 'about' },
-                  { label: 'Leadership', divId: 'group', secId: 'leadership' },
-                  { label: 'B-BBEE & Compliance', divId: 'group', secId: 'governance' },
-                  { label: 'Projects Portfolio', divId: 'properties', secId: 'featured-projects' },
-                  { label: 'Our Impact', divId: 'group', secId: 'impact' },
-                ].map((item) => (
-                  <li key={item.label}>
-                    <button
-                      onClick={() => {
-                        const divIdx = divisions.findIndex((d) => d.id === item.divId);
-                        if (divIdx >= 0) {
-                          const div = divisions[divIdx];
-                          handleDivisionClick(div, divIdx);
-                          const sec = div.sections.find((s) => s.id === item.secId);
-                          if (sec) {
-                            setTimeout(() => handleSectionClick(div.id, sec), 300);
-                          }
+          {/* Right — White panel */}
+          <div className="relative px-6 sm:px-10 md:px-16 lg:px-20 py-14 sm:py-16 lg:py-20 bg-white">
+            <h4 className="font-bebas-neue text-lg mb-5 uppercase tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Quick Links</h4>
+            <ul className="space-y-3 mb-10">
+              {[
+                { label: 'About the Group', divId: 'group', secId: 'about' },
+                { label: 'Leadership', divId: 'group', secId: 'leadership' },
+                { label: 'B-BBEE & Compliance', divId: 'group', secId: 'governance' },
+                { label: 'Projects Portfolio', divId: 'properties', secId: 'featured-projects' },
+                { label: 'Our Impact', divId: 'group', secId: 'impact' },
+              ].map((item) => (
+                <li key={item.label}>
+                  <button
+                    onClick={() => {
+                      const divIdx = divisions.findIndex((d) => d.id === item.divId);
+                      if (divIdx >= 0) {
+                        const div = divisions[divIdx];
+                        handleDivisionClick(div, divIdx);
+                        const sec = div.sections.find((s) => s.id === item.secId);
+                        if (sec) {
+                          setTimeout(() => handleSectionClick(div.id, sec), 300);
                         }
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                      }}
-                      className="font-inter typo-copy text-white/85 hover:text-[var(--vharanani-burgundy)] transition-colors"
-                    >
-                      {item.label}
-                    </button>
-                  </li>
-                ))}
-              </ul>
+                      }
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="font-inter typo-copy hover:text-[var(--vharanani-burgundy)] transition-colors"
+                    style={{ color: 'var(--vharanani-charcoal-60)' }}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+
+            <h4 className="font-bebas-neue text-lg mb-5 uppercase tracking-wide" style={{ color: 'var(--vharanani-charcoal)' }}>Regional Office</h4>
+            <div className="font-inter typo-copy mb-10" style={{ color: 'var(--vharanani-charcoal-60)' }}>
+              <div className="flex items-start gap-3">
+                <MapPin size={16} className="flex-shrink-0 mt-0.5" style={{ color: 'var(--vharanani-burgundy)' }} />
+                <span>3a Schoeman Street<br />Polokwane, 0699</span>
+              </div>
+              <div className="flex items-center gap-3 mt-3">
+                <Phone size={16} className="flex-shrink-0" style={{ color: 'var(--vharanani-burgundy)' }} />
+                <a href="tel:+27152956085" className="hover:text-[var(--vharanani-burgundy)] transition-colors">+27 15 295 6085</a>
+              </div>
             </div>
 
-            <div>
-              <h4 className="font-bebas-neue text-lg mb-5 uppercase tracking-wide">Head Office</h4>
-              <div className="space-y-4 font-inter typo-copy text-white/90">
-                <div className="flex items-start gap-3">
-                  <MapPin size={16} className="flex-shrink-0 mt-0.5" style={{ color: 'var(--vharanani-burgundy)' }} />
-                  <div>
-                    <span>18 Hume Road, Dunkeld West<br />Johannesburg, 2196</span>
-                    <a href="https://maps.app.goo.gl/3w3g7J9pE1mH4CMr8" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 mt-1 typo-label tracking-[0.1em] uppercase text-[var(--vharanani-burgundy)] hover:text-white transition-colors">
-                      View on Map <ArrowRight size={10} />
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <MapPin size={16} className="flex-shrink-0 mt-0.5" style={{ color: 'var(--vharanani-burgundy)' }} />
-                  <span className="text-white/70 typo-copy-small">3a Schoeman Street<br />Polokwane, 0699</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Phone size={16} className="flex-shrink-0" style={{ color: 'var(--vharanani-burgundy)' }} />
-                  <div>
-                    <a href="tel:+27116561418" className="hover:text-[var(--vharanani-burgundy)] transition-colors">+27 11 656 1418</a>
-                    <span className="text-white/50 mx-2">|</span>
-                    <a href="tel:+27152956085" className="text-white/70 typo-copy-small hover:text-[var(--vharanani-burgundy)] transition-colors">+27 15 295 6085</a>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Mail size={16} className="flex-shrink-0" style={{ color: 'var(--vharanani-burgundy)' }} />
-                  <a href="mailto:info@vharanani.com" className="hover:text-[var(--vharanani-burgundy)] transition-colors">info@vharanani.com</a>
-                </div>
+            {/* Tagline */}
+            <div className="mt-auto pt-10" style={{ borderTop: '1px solid var(--vharanani-charcoal-20)' }}>
+              <div className="font-bebas-neue uppercase tracking-wide" style={{ fontSize: 'clamp(28px, 3vw, 40px)', lineHeight: 1.1, color: 'var(--vharanani-charcoal)' }}>
+                Vision. Structure.<br />
+                <span style={{ color: 'var(--vharanani-burgundy)' }}>Impact.</span>
               </div>
             </div>
           </div>
+        </div>
 
-          <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="font-inter typo-copy-small text-white/70">
-              © 2026 Vharanani Group. All rights reserved.
-            </div>
-            <div className="flex items-center gap-6 font-inter typo-copy-small text-white/70">
-              <a href="mailto:info@vharanani.com?subject=Privacy%20Policy%20Enquiry" className="hover:text-[var(--vharanani-burgundy)] transition-colors">Privacy Policy</a>
-              <span className="w-px h-3 bg-white/20" />
-              <a href="mailto:info@vharanani.com?subject=Terms%20of%20Use%20Enquiry" className="hover:text-[var(--vharanani-burgundy)] transition-colors">Terms of Use</a>
-              <span className="w-px h-3 bg-white/20" />
-              <a href="mailto:info@vharanani.com?subject=PAIA%20Manual%20Request" className="hover:text-[var(--vharanani-burgundy)] transition-colors">PAIA Manual</a>
-            </div>
+        {/* ── BOTTOM BAR ── */}
+        <div className="px-6 sm:px-10 md:px-16 lg:px-20 py-5 flex flex-col sm:flex-row justify-between items-center gap-3" style={{ background: 'var(--vharanani-burgundy)', borderTop: '1px solid rgba(255,255,255,0.15)' }}>
+          <div className="font-inter typo-copy-small text-white/70">
+            © 2026 Vharanani Group. All rights reserved.
           </div>
-
-          <div className="mt-8 pt-6" style={{ borderTop: '1px solid var(--vharanani-charcoal-80)' }}>
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
-              <div className="font-inter typo-label tracking-[0.1em] sm:tracking-[0.3em] uppercase text-white/50">VISION. STRUCTURE. IMPACT.</div>
-              <div className="font-inter typo-label tracking-[0.1em] sm:tracking-[0.15em] uppercase text-white/50">© VHARANANI GROUP 2026</div>
-            </div>
+          <div className="flex items-center gap-6 font-inter typo-copy-small text-white/70">
+            <a href="mailto:info@vharanani.com?subject=Privacy%20Policy%20Enquiry" className="hover:text-white transition-colors">Privacy Policy</a>
+            <span className="w-px h-3 bg-white/20" />
+            <a href="mailto:info@vharanani.com?subject=Terms%20of%20Use%20Enquiry" className="hover:text-white transition-colors">Terms of Use</a>
+            <span className="w-px h-3 bg-white/20" />
+            <a href="mailto:info@vharanani.com?subject=PAIA%20Manual%20Request" className="hover:text-white transition-colors">PAIA Manual</a>
           </div>
         </div>
       </footer>
