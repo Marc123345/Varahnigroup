@@ -35,7 +35,7 @@ const ITEMS = [
     description: 'Advancing education, housing access, entrepreneurship, and community upliftment initiatives.',
     stats: [{ value: '34', label: 'Scholarships' }, { value: '5+', label: 'Provinces' }],
     capabilities: ['Education', 'Housing', 'Entrepreneurship', 'Community Upliftment'],
-    image: 'https://ik.imagekit.io/qcvroy8xpd/DMF.png',
+    image: 'https://ik.imagekit.io/qcvroy8xpd/A%20community%20health%20worker%20conducts%20a%20health%20education%20session%20outdoors%20in%20a%20rural%20village.png?updatedAt=1764674101441',
   },
 ];
 
