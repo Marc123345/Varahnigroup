@@ -4,7 +4,7 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const IMAGES = {
-  leadership: 'https://ik.imagekit.io/qcvroy8xpd/image%202.png',
+  leadership: 'https://vharananiproperties.co.za/wp-content/uploads/2020/09/DSC_0920B-1.jpg',
 };
 
 export function GroupWireframe_Leadership(): ReactNode {

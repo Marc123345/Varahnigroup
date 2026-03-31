@@ -6,7 +6,7 @@ import { SectionWrapper } from '../shared';
 const IMAGES = {
   construction: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_untitled_panorama4-1.jpg',
   foundation: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_1-vharanani-properties-construction-1.jpg',
-  dmft: 'https://vharananiproperties.co.za/wp-content/uploads/2020/10/Property-development-scaled.jpg',
+  dmft: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_2-anglo-platinum.jpg',
 };
 
 export function GroupWireframe_Companies(): ReactNode {

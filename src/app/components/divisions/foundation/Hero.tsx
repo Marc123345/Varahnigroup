@@ -6,7 +6,7 @@ import { AnimatedCounter } from '../shared';
 
 const IMAGES = {
   communityGathering: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/free-state-02.jpg',
-  founderPortrait: 'https://ik.imagekit.io/qcvroy8xpd/image%202.png',
+  founderPortrait: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_12-tshwane-brt-road-construction.jpg',
 };
 
 export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId: string) => void } = {}): ReactNode {

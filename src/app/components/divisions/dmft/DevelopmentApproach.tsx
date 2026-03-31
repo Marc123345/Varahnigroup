@@ -40,7 +40,7 @@ const PHASES: Phase[] = [
       'Conducting detailed feasibility studies, zoning processes, and development planning, working with experienced professionals to design modern and functional developments.',
     capabilities: ['Town Planning', 'Architectural Design', 'Zoning Processes', 'Municipal Approvals'],
     image:
-      'https://ik.imagekit.io/qcvroy8xpd/the%20.png',
+      'https://vharananiproperties.co.za/wp-content/uploads/2018/01/Interior2.jpg',
   },
   {
     step: '03',
@@ -51,7 +51,7 @@ const PHASES: Phase[] = [
       'Leveraging the construction expertise of the Vharanani Group to deliver projects efficiently and safely, from groundbreaking through to handover.',
     capabilities: ['Quality Construction', 'Project Management', 'Safety Compliance', 'Timeline Delivery'],
     image:
-      'https://ik.imagekit.io/qcvroy8xpd/Building%207%26.jpeg',
+      'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Marulaneng-4.jpg',
   },
   {
     step: '04',
@@ -62,7 +62,7 @@ const PHASES: Phase[] = [
       'Delivering completed developments that provide value for homeowners, investors, and communities.',
     capabilities: ['Sales Management', 'Title Transfers', 'Homeowner Support', 'Community Integration'],
     image:
-      'https://vharananiproperties.co.za/wp-content/uploads/2021/06/SOSHANGUVE-EXT.19-RDP-HOUSES-1.jpg',
+      'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_9-tshwane-brt-road-construction.jpg',
   },
 ];
 

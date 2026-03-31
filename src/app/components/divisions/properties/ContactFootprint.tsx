@@ -4,7 +4,7 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const IMAGES = {
-  map: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_untitled_panorama4-1.jpg',
+  map: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Marulaneng-5.jpg',
 };
 
 export function PropertiesWireframe_ContactFootprint(): ReactNode {

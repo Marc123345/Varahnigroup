@@ -14,7 +14,7 @@ const PILLARS = [
     capabilities: ['Roads & Highways', 'Bridges & Culverts', 'Public Facilities', 'Water Infrastructure'],
     metric: { value: '200+', label: 'Projects Delivered' },
     image:
-      'https://vharananiproperties.co.za/wp-content/uploads/2020/08/Tswane-BRT.jpg',
+      'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_7-tshwane-brt-road-construction.jpg',
   },
   {
     num: '02',
@@ -26,7 +26,7 @@ const PILLARS = [
     capabilities: ['Commercial Property', 'Residential Estates', 'Industrial Assets', 'Land Banking'],
     metric: { value: 'R5B+', label: 'Asset Portfolio' },
     image:
-      'https://vharananiproperties.co.za/wp-content/uploads/2020/10/Property-development-scaled.jpg',
+      'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_3-the-mbilu.jpg',
   },
   {
     num: '03',
@@ -38,7 +38,7 @@ const PILLARS = [
     capabilities: ['Digital Solutions', 'Aviation Services', 'Resource Management', 'Smart Infrastructure'],
     metric: { value: '4', label: 'Emerging Sectors' },
     image:
-      'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Facilities-1.jpg',
+      'https://vharananiproperties.co.za/wp-content/uploads/2018/01/Interior4.jpg',
   },
   {
     num: '04',
@@ -50,7 +50,7 @@ const PILLARS = [
     capabilities: ['Education Bursaries', 'Skills Training', 'Housing Programmes', 'Health Initiatives'],
     metric: { value: '50K+', label: 'Lives Impacted' },
     image:
-      'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Mamelodi-Ext-5-4.jpg',
+      'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_1-belle-ombre-1.jpg',
   },
 ];
 

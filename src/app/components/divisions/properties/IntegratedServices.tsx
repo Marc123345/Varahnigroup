@@ -4,12 +4,12 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const IMAGES = {
-  roadsCivils: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0011.jpg',
+  roadsCivils: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_6-tshwane-brt-road-construction.jpg',
   waterSanitation: 'https://ik.imagekit.io/qcvroy8xpd/Water.png',
-  buildingConstruction: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Building%201/Clip%20path%20frame-1.png?updatedAt=1774870591546',
-  residential: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/SOSHANGUVE-EXT.19-RDP-HOUSES-1.jpg',
-  propertyDev: 'https://vharananiproperties.co.za/wp-content/uploads/2021/07/thumbnail.jpg',
-  facilitiesMgmt: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Transnet-5.jpg',
+  buildingConstruction: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_3-mogalakwena-4.jpg',
+  residential: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_1-the-mbilu-1-1.jpg',
+  propertyDev: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_faranani-estate-1-1.jpg',
+  facilitiesMgmt: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Transnet-11.jpg',
 };
 
 export function PropertiesWireframe_IntegratedServices(): ReactNode {

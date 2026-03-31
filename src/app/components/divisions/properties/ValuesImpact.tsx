@@ -5,7 +5,7 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { AnimatedCounter } from '../shared';
 
 const IMAGES = {
-  impact: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/faranani-1.jpg',
+  impact: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0560.jpg',
 };
 
 const TICKER_ITEMS = [

@@ -5,18 +5,18 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const ROADS_IMAGES = [
-  'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0002.jpg',
-  'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0025.jpg',
-  'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0560.jpg',
-  'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0032.jpg',
+  'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_3-tshwane-brt-road-construction-1.jpg',
+  'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_4-tshwane-brt-road-construction.jpg',
+  'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_5-tshwane-brt-road-construction.jpg',
+  'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Marulaneng-1.jpg',
 ];
 
 const IMAGES = {
-  waterSanitation: 'https://ik.imagekit.io/qcvroy8xpd/Water.png',
-  buildingConstruction: 'https://ik.imagekit.io/qcvroy8xpd/Building%207%26.jpeg',
-  residential: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Mamelodi-Ext-5-4.jpg',
-  propertyDev: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/st-maria.jpg',
-  facilitiesMgmt: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Transnet-12.jpg',
+  waterSanitation: 'https://ik.imagekit.io/qcvroy8xpd/71ec9083-b2b1-4b7d-9ddb-2c847420aff8.jpeg',
+  buildingConstruction: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_1-mogalakwena-civic-3.jpg',
+  residential: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_2-sterpark-residential-1.jpg',
+  propertyDev: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_4-sterpark-residential.jpg',
+  facilitiesMgmt: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_13-sterpark-residential.jpg',
 };
 
 export function PropertiesWireframe_FeaturedProjects(): ReactNode {
@@ -76,7 +76,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
       title: 'Maphutha Malatjie Hospital',
       category: 'Building Construction',
       location: 'Limpopo, South Africa',
-      image: 'https://ik.imagekit.io/qcvroy8xpd/Building%207%26.jpeg',
+      image: 'https://vharananiproperties.co.za/wp-content/uploads/2017/03/maph.jpg',
       specs: 'Full construction of a public healthcare facility, including surgical theatres, wards, and support infrastructure.',
       impact: 'Provided modern healthcare access to an underserved community, serving thousands of patients annually.',
     },
@@ -84,7 +84,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
       title: 'Mogalakwena Civic Centre',
       category: 'Building Construction',
       location: 'Limpopo, South Africa',
-      image: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20Group/Building%201/Clip%20path%20frame-3.png?updatedAt=1774870591805',
+      image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_2-mogalakwena-3.jpg',
       specs: 'Construction of a full civic centre facility to serve the Mogalakwena local municipality and surrounding communities.',
       impact: 'Improved access to government services and created a modern public administration hub for the region.',
     },
@@ -108,7 +108,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
       title: 'Nellmapius X22 Housing Development',
       category: 'Residential',
       location: 'Gauteng, South Africa',
-      image: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Mamelodi-Ext-5-4.jpg',
+      image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_3-nellmapius-2-1.jpg',
       specs: 'High-volume residential housing construction as part of a national human settlements programme.',
       impact: 'Provided dignified housing to hundreds of families in the Nellmapius community.',
     },
@@ -124,7 +124,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
       title: 'The Mbilu Development',
       category: 'Property Development',
       location: 'South Africa',
-      image: 'https://vharananiproperties.co.za/wp-content/uploads/2021/07/thumbnail.jpg',
+      image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_2-the-mbilu.jpg',
       specs: 'Mixed-use property development including residential and commercial components.',
       impact: 'Created a strategically positioned development contributing to local economic growth.',
     },
@@ -132,7 +132,7 @@ export function PropertiesWireframe_FeaturedProjects(): ReactNode {
       title: 'Transnet Facilities Management Services',
       category: 'Facilities Management',
       location: 'South Africa',
-      image: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Transnet-9.jpg',
+      image: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Transnet-8.jpg',
       specs: 'Comprehensive facilities management services including maintenance, cleaning, and operational management of Transnet facilities.',
       impact: 'Ensured the long-term functionality and operational integrity of critical national infrastructure facilities.',
     },

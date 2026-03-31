@@ -5,8 +5,8 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 const IMAGES = [
   { src: 'https://ik.imagekit.io/qcvroy8xpd/Photo%201.png',                                    alt: 'Vharanani leadership' },
   { src: 'https://ik.imagekit.io/qcvroy8xpd/the%20.png',                                       alt: 'Vharanani infrastructure' },
-  { src: 'https://ik.imagekit.io/qcvroy8xpd/Gemini_Generated_Image_6199jv6199jv6199.png',      alt: 'Vharanani community' },
-  { src: 'https://ik.imagekit.io/qcvroy8xpd/Gemini_Generated_Image_pqwh1pqwh1pqwh1p.png',     alt: 'Vharanani people' },
+  { src: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Polokwane-CBD-Pipeline.png', alt: 'Vharanani community' },
+  { src: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0002.jpg',      alt: 'Vharanani people' },
 ];
 
 // Clip-path reveal (bottom up — cinematic curtain lift)

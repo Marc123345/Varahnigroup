@@ -22,7 +22,7 @@ const PROGRAMMES = [
     description: 'Access to safe and dignified housing is essential for improving the quality of life of vulnerable families. The Foundation supports housing initiatives that provide homes for disadvantaged individuals and families.',
     details: ['Home construction', 'Community housing', 'Government partnerships', 'Nelson Mandela Day builds'],
     metric: { value: '3BR', label: 'Home Built for Elderly in Eenzaam' },
-    image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/Mogalakwena.jpg',
+    image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/Nellmapius.jpg',
   },
   {
     num: '03',
