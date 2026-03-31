@@ -295,7 +295,7 @@ export function DMFTWireframe_Portfolio(): ReactNode {
                 <div className="typo-headline-small font-bebas-neue uppercase tracking-wide text-white mb-1">
                   {dev.title}
                 </div>
-                <div className="typo-headline-big font-bebas-neue" style={{ color: 'var(--vharanani-burgundy)' }}>
+                <div className="typo-headline-big font-bebas-neue text-white">
                   {dev.metric.value}
                 </div>
                 <div className="typo-meta tracking-[0.1em] uppercase font-inter text-white/60 mt-1">
