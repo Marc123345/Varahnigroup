@@ -6,7 +6,7 @@ import { SectionWrapper } from '../shared';
 import { useInView } from '../../../hooks/useInView';
 
 const IMAGES = {
-  visionMission: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Marulaneng-3.jpg',
+  visionMission: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/25_two_storey_commercial_building_air_conditioning_units.jpg?updatedAt=1774955146029',
 };
 
 export function GroupWireframe_VisionMission(): ReactNode {

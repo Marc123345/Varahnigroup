@@ -5,10 +5,10 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const LOGO_IMAGES = {
-  cidb: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/CIDB-9GB_9CE.png',
-  iso: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/ISO-Certified-Construction-Company.png',
-  bbbee: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/B-BBEE-LEVEL-1.png',
-  nhbrc: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/NHRBC-members.png',
+  cidb: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/09_CIDB_construction_industry_development_board_logo.jpg?updatedAt=1774955145144',
+  iso: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/05_ISO_9001_2015_certified_badge.jpg?updatedAt=1774955144716',
+  bbbee: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/06_BBBEE_level_1_contributor_certificate.jpg?updatedAt=1774955144760',
+  nhbrc: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/08_NHBRC_national_home_builders_registration_council_logo.jpg?updatedAt=1774955145131',
 };
 
 const fadeUp = (delay = 0) => ({

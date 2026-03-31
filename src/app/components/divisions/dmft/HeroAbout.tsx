@@ -5,8 +5,8 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { AnimatedCounter } from '../shared';
 
 const IMAGES = {
-  aerialDev: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_3-anglo-platinum.jpg',
-  architectural: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/Belle-Ombre-02.jpg',
+  aerialDev: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/74_aerial_view_brick_apartment_complex_suburban_backdrop.jpg?updatedAt=1774955145529',
+  architectural: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/69_modern_brick_apartment_complex_street_view.jpg?updatedAt=1774955145953',
 };
 
 export function DMFTWireframe_HeroAbout({ onTabChange }: { onTabChange?: (tabId: string) => void } = {}): ReactNode {

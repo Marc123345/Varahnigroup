@@ -13,7 +13,7 @@ const ITEMS = [
     description: 'Delivering large-scale civil engineering and infrastructure projects that improve quality of life and restore dignity to communities.',
     stats: [{ value: '200+', label: 'Projects' }, { value: 'Grade 9', label: 'CIDB' }],
     capabilities: ['Roads & Highways', 'Water & Sanitation', 'Public Buildings'],
-    image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_8-tshwane-brt-road-construction.jpg',
+    image: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/38_road_compactor_asphalt_paving_construction.jpg?updatedAt=1774955145346',
   },
   {
     id: 'dmft',
@@ -24,7 +24,7 @@ const ITEMS = [
     description: 'Managing strategic real estate assets and long-term property investments across commercial and residential sectors.',
     stats: [{ value: '15+', label: 'Developments' }, { value: 'R2B+', label: 'Portfolio' }],
     capabilities: ['Residential Estates', 'Mixed-Use Precincts'],
-    image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_4-the-mbilu.jpg',
+    image: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/41_aerial_view_road_construction_township_sports_field.jpg?updatedAt=1774955147482',
   },
   {
     id: 'foundation',
@@ -35,7 +35,7 @@ const ITEMS = [
     description: 'Advancing education, housing access, entrepreneurship, and community upliftment initiatives.',
     stats: [{ value: '34', label: 'Scholarships' }, { value: '5+', label: 'Provinces' }],
     capabilities: ['Education', 'Housing', 'Entrepreneurship', 'Community Upliftment'],
-    image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_3-nellmapius-2.jpg',
+    image: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/39_aerial_view_excavator_gravel_trench_drainage.jpg?updatedAt=1774955146211',
   },
 ];
 

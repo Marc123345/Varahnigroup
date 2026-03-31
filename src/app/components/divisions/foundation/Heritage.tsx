@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { Building2, Home, Heart } from 'lucide-react';
 import { ImageWithFallback } from '../../ui/ImageWithFallback';
 
-const IMAGE = 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/Belle-Ombre.jpg';
+const IMAGE = 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/81_civic_centre_building_water_storage_tanks_louvre_facade.jpg?updatedAt=1774955148440';
 
 const PARTNERS = [
   { icon: Building2, label: 'Vharanani Properties', desc: 'Infrastructure & Construction' },

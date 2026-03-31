@@ -29,7 +29,7 @@ const PHASES: Phase[] = [
       'Carefully identifying strategic locations with strong growth potential, development viability, and alignment with market demand — ensuring every project starts from a position of strength.',
     capabilities: ['Market Analysis', 'Growth Corridors', 'Zoning Assessment', 'Feasibility Studies'],
     image:
-      'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0519.jpg',
+      'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/43_aerial_view_water_truck_excavator_pipeline_trench.jpg?updatedAt=1774955145795',
   },
   {
     step: '02',
@@ -40,7 +40,7 @@ const PHASES: Phase[] = [
       'Conducting detailed feasibility studies, zoning processes, and development planning, working with experienced professionals to design modern and functional developments.',
     capabilities: ['Town Planning', 'Architectural Design', 'Zoning Processes', 'Municipal Approvals'],
     image:
-      'https://vharananiproperties.co.za/wp-content/uploads/2018/01/Interior2.jpg',
+      'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/42_dual_concrete_stormwater_pipes_trench_installation.jpg?updatedAt=1774955145967',
   },
   {
     step: '03',
@@ -51,7 +51,7 @@ const PHASES: Phase[] = [
       'Leveraging the construction expertise of the Vharanani Group to deliver projects efficiently and safely, from groundbreaking through to handover.',
     capabilities: ['Quality Construction', 'Project Management', 'Safety Compliance', 'Timeline Delivery'],
     image:
-      'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Marulaneng-4.jpg',
+      'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/45_large_diameter_pipe_lowering_into_excavation.jpg?updatedAt=1774955145537',
   },
   {
     step: '04',
@@ -62,7 +62,7 @@ const PHASES: Phase[] = [
       'Delivering completed developments that provide value for homeowners, investors, and communities.',
     capabilities: ['Sales Management', 'Title Transfers', 'Homeowner Support', 'Community Integration'],
     image:
-      'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_9-tshwane-brt-road-construction.jpg',
+      'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/72_aerial_view_brick_apartment_blocks_parking_area.jpg?updatedAt=1774955145408',
   },
 ];
 

@@ -5,7 +5,7 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const IMAGES = {
-  news: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Marulaneng-2.jpg',
+  news: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/40_aerial_view_new_road_intersection_asphalt_laying.jpg?updatedAt=1774955145799',
 };
 
 export function GroupWireframe_NewsContact(): ReactNode {

@@ -4,9 +4,9 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const IMAGES = {
-  construction: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_untitled_panorama4-1.jpg',
-  foundation: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_1-vharanani-properties-construction-1.jpg',
-  dmft: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_2-anglo-platinum.jpg',
+  construction: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/36_aerial_view_highway_interchange_earthworks_construction.jpg?updatedAt=1774955146327',
+  foundation: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/67_hospital_ward_corridor_handrails_under_construction.jpg?updatedAt=1774955145332',
+  dmft: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/73_aerial_view_brick_apartment_complex_main_road.jpg?updatedAt=1774955145546',
 };
 
 export function GroupWireframe_Companies(): ReactNode {

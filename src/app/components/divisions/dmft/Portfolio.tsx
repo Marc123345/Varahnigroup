@@ -5,10 +5,10 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const IMAGES = {
-  residentialEstate: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_2-belle-ombre.jpg',
-  apartment: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_3-belle-ombre.jpg',
-  townhouse: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/Belle-Ombre-01-1.jpg',
-  mixedUse: 'https://vharananiproperties.co.za/wp-content/uploads/2018/01/Interior3.jpg',
+  residentialEstate: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/18_aerial_view_townhouse_complex_terracotta_roofs.jpg?updatedAt=1774955148592',
+  apartment: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/19_aerial_view_brick_apartment_complex_urban.jpg?updatedAt=1774955147753',
+  townhouse: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/51_aerial_view_three_storey_social_housing_blocks.jpg?updatedAt=1774955145829',
+  mixedUse: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/02_aerial_view_residential_apartment_complex.jpg?updatedAt=1774955147816',
 };
 
 const DEVELOPMENTS = [

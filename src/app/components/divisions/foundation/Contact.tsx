@@ -3,7 +3,7 @@ import { Layers, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 import { ImageWithFallback } from '../../ui/ImageWithFallback';
 
 const IMAGES = {
-  blanketDrive: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_14-nellmapius-1.jpg',
+  blanketDrive: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/65_white_office_building_facade_parking_accessibility_ramp.jpg?updatedAt=1774955145537',
 };
 
 export function FoundationWireframe_Contact(): ReactNode {

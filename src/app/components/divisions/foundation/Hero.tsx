@@ -5,8 +5,8 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { AnimatedCounter } from '../shared';
 
 const IMAGES = {
-  communityGathering: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/free-state-02.jpg',
-  founderPortrait: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_12-tshwane-brt-road-construction.jpg',
+  communityGathering: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/48_aerial_view_colourful_social_housing_development.jpg?updatedAt=1774955145821',
+  founderPortrait: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/10_municipal_council_chamber_boardroom.jpg?updatedAt=1774955148251',
 };
 
 export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId: string) => void } = {}): ReactNode {

@@ -5,8 +5,8 @@ import { AnimatedCounter } from '../shared';
 import { useInView } from '../../../hooks/useInView';
 
 const IMAGES = {
-  ceoPortrait: 'https://ik.imagekit.io/qcvroy8xpd/image%202.png',
-  founded: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0560.jpg',
+  ceoPortrait: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/29_aerial_view_road_base_layer_preparation_workers.jpg?updatedAt=1774955145493',
+  founded: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/13_modern_office_tower_facade.jpg?updatedAt=1774955144811',
 };
 
 /* ─── Stagger helper ─── */

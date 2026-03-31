@@ -5,7 +5,7 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { AnimatedCounter } from '../shared';
 
 const IMAGES = {
-  impact: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0560.jpg',
+  impact: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/32_aerial_view_bus_taxi_rank_transport_interchange_construction.jpg?updatedAt=1774955147856',
 };
 
 const TICKER_ITEMS = [

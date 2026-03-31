@@ -14,7 +14,7 @@ const PILLARS = [
     capabilities: ['Roads & Highways', 'Bridges & Culverts', 'Public Facilities', 'Water Infrastructure'],
     metric: { value: '200+', label: 'Projects Delivered' },
     image:
-      'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_7-tshwane-brt-road-construction.jpg',
+      'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/34_aerial_view_road_paving_interchange_construction.jpg?updatedAt=1774955145516',
   },
   {
     num: '02',
@@ -26,7 +26,7 @@ const PILLARS = [
     capabilities: ['Commercial Property', 'Residential Estates', 'Industrial Assets', 'Land Banking'],
     metric: { value: 'R5B+', label: 'Asset Portfolio' },
     image:
-      'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_3-the-mbilu.jpg',
+      'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/74_aerial_view_brick_apartment_complex_suburban_backdrop.jpg?updatedAt=1774955145529',
   },
   {
     num: '03',
@@ -38,7 +38,7 @@ const PILLARS = [
     capabilities: ['Digital Solutions', 'Aviation Services', 'Resource Management', 'Smart Infrastructure'],
     metric: { value: '4', label: 'Emerging Sectors' },
     image:
-      'https://vharananiproperties.co.za/wp-content/uploads/2018/01/Interior4.jpg',
+      'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/64_renovated_white_office_building_air_conditioning_units.jpg?updatedAt=1774955145869',
   },
   {
     num: '04',
@@ -50,7 +50,7 @@ const PILLARS = [
     capabilities: ['Education Bursaries', 'Skills Training', 'Housing Programmes', 'Health Initiatives'],
     metric: { value: '50K+', label: 'Lives Impacted' },
     image:
-      'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_1-belle-ombre-1.jpg',
+      'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/51_aerial_view_three_storey_social_housing_blocks.jpg?updatedAt=1774955145829',
   },
 ];
 

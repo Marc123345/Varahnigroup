@@ -5,12 +5,12 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const IMAGES = {
-  aerialDev: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0011.jpg',
-  blueprint: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Transnet-5.jpg',
-  propertyDev: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Transnet-12.jpg',
-  residentialEstate: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Transnet-9.jpg',
-  mixedUse: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0002.jpg',
-  townhouse: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0025.jpg',
+  aerialDev: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/76_commercial_kitchen_staff_food_preparation.jpg?updatedAt=1774955145540',
+  blueprint: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/78_technicians_servicing_rooftop_hvac_chiller_unit.jpg?updatedAt=1774955145170',
+  propertyDev: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/20_haranani_properties_maintenance_worker_kitchen.jpg?updatedAt=1774955145502',
+  residentialEstate: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/79_haranani_properties_commercial_kitchen_gas_appliance_repair.jpg?updatedAt=1774955145304',
+  mixedUse: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/77_haranani_properties_landscaping_team_garden_maintenance.jpg?updatedAt=1774955148286',
+  townhouse: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/75_haranani_properties_generator_servicing_close_up.jpg?updatedAt=1774955145509',
 };
 
 export function DMFTWireframe_CapabilitiesQuality(): ReactNode {

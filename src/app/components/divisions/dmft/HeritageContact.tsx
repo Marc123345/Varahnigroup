@@ -3,7 +3,7 @@ import { Building2, Home, Heart, Layers, Mail, Phone, MapPin, ArrowRight } from 
 import { ImageWithFallback } from '../../ui/ImageWithFallback';
 
 const IMAGES = {
-  aerialDev: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_11-tshwane-brt-road-construction.jpg',
+  aerialDev: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/52_aerial_view_completed_low_cost_housing_development.jpg?updatedAt=1774955147629',
 };
 
 export function DMFTWireframe_HeritageContact(): ReactNode {

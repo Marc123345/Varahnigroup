@@ -10,7 +10,7 @@ const SERVICES = [
     shortTitle: 'Roads & Civils',
     subtitle: 'Turnkey civil construction — road construction, earthworks, water infrastructure, BRT systems, highways, and pipelines.',
     icon: <Wrench size={22} />,
-    image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_6-tshwane-brt-road-construction.jpg',
+    image: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/31_road_construction_compacted_gravel_surface_rural.jpg?updatedAt=1774955145267',
     capabilities: ['Road construction & earthworks', 'Bus Rapid Transit (BRT) systems', 'Highway construction', 'Civil structures', 'Pipeline infrastructure', 'Water reticulation projects'],
     projects: [
       { name: 'Polokwane BRT System', location: 'Limpopo', status: 'Completed' },
@@ -24,7 +24,7 @@ const SERVICES = [
     shortTitle: 'Water & Sanitation',
     subtitle: 'Bulk water supply systems, pipeline installations, sewer reticulation, and grey water systems for sustainable municipal service delivery.',
     icon: <Droplets size={22} />,
-    image: 'https://ik.imagekit.io/qcvroy8xpd/Water.png',
+    image: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/46_large_steel_pipes_stockpiled_on_site.jpg?updatedAt=1774955145222',
     capabilities: ['Bulk water supply systems', 'Pipeline installations', 'Sewer reticulation', 'Grey water systems', 'Municipal water infrastructure', 'Sustainable service delivery'],
     projects: [
       { name: 'Lepelle Revitalization Programme', location: 'Limpopo', status: 'Completed' },
@@ -38,7 +38,7 @@ const SERVICES = [
     shortTitle: 'Building Construction',
     subtitle: 'Public and private sector buildings across mining, education, healthcare, retail, industrial, commercial, and residential sectors.',
     icon: <Building2 size={22} />,
-    image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_3-mogalakwena-4.jpg',
+    image: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/67_hospital_ward_corridor_handrails_under_construction.jpg?updatedAt=1774955145332',
     capabilities: ['Mining infrastructure', 'Education facilities', 'Healthcare buildings', 'Retail developments', 'Industrial facilities', 'Commercial offices'],
     projects: [
       { name: 'Maphutha Malatjie Hospital', location: 'Limpopo', status: 'Completed' },
@@ -52,7 +52,7 @@ const SERVICES = [
     shortTitle: 'Residential',
     subtitle: 'RDP housing, walk-up developments, apartment complexes, townhouses, and residential estates supporting provincial and national housing initiatives.',
     icon: <Home size={22} />,
-    image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_1-the-mbilu-1-1.jpg',
+    image: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/73_aerial_view_brick_apartment_complex_main_road.jpg?updatedAt=1774955145546',
     capabilities: ['RDP housing projects', 'Walk-up housing developments', 'Apartment complexes', 'Townhouse developments', 'Residential estates'],
     projects: [
       { name: 'Mamelodi X5 Housing', location: 'Gauteng', status: 'Completed' },
@@ -66,7 +66,7 @@ const SERVICES = [
     shortTitle: 'Property Development',
     subtitle: 'Turnkey solutions from land acquisition, zoning, and feasibility through to architectural design, project management, and construction.',
     icon: <Briefcase size={22} />,
-    image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_faranani-estate-1-1.jpg',
+    image: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/26_residential_townhouse_terracotta_roof_garage.jpg?updatedAt=1774955146174',
     capabilities: ['Land acquisition', 'Property zoning', 'Feasibility studies', 'Architectural design', 'Full project management', 'Construction and delivery'],
     projects: [
       { name: 'ST Maria Development', location: 'South Africa', status: 'Completed' },
@@ -80,7 +80,7 @@ const SERVICES = [
     shortTitle: 'Facilities Mgmt',
     subtitle: 'Maintenance of office complexes, cleaning services, repairs, and management of institutional housing complexes for institutional and corporate clients.',
     icon: <Factory size={22} />,
-    image: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Transnet-11.jpg',
+    image: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/21_cleaning_crew_mopping_commercial_lobby.jpg?updatedAt=1774955145962',
     capabilities: ['Office complex maintenance', 'Cleaning and hygiene services', 'Repairs and operational management', 'Institutional housing management'],
     projects: [
       { name: 'Transnet Facilities', location: 'National', status: 'Active' },

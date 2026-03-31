@@ -4,7 +4,7 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { SectionWrapper } from '../shared';
 
 const IMAGES = {
-  map: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Marulaneng-5.jpg',
+  map: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/47_large_pipe_being_craned_into_flooded_trench.jpg?updatedAt=1774955145526',
 };
 
 export function PropertiesWireframe_ContactFootprint(): ReactNode {

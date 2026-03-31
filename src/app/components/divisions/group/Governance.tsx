@@ -51,13 +51,13 @@ const PRINCIPLES = [
   },
 ];
 
-const IMAGE = 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Marulaneng-Road-2.jpg';
+const IMAGE = 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/63_lepelle_northern_water_office_building_exterior.jpg?updatedAt=1774955146803';
 
 const CREDENTIALS = [
-  { label: 'King IV Aligned', logo: 'https://www.iodsa.co.za/resource/collection/684B68A7-B768-465C-8214-E3A007F15A5A/IoDSA_Logo.jpg' },
-  { label: 'B-BBEE Level 1', logo: 'https://baboraconsulting.co.za/wp-content/uploads/2024/08/b-bbee-logo.webp' },
-  { label: 'ISO Compliant', logo: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/ISO-Certified-Construction-Company.png' },
-  { label: 'CIDB Registered', logo: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/CIDB-9GB_9CE.png' },
+  { label: 'King IV Aligned', logo: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/07_department_of_labour_south_africa_logo.jpg?updatedAt=1774955144781' },
+  { label: 'B-BBEE Level 1', logo: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/06_BBBEE_level_1_contributor_certificate.jpg?updatedAt=1774955144760' },
+  { label: 'ISO Compliant', logo: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/05_ISO_9001_2015_certified_badge.jpg?updatedAt=1774955144716' },
+  { label: 'CIDB Registered', logo: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/09_CIDB_construction_industry_development_board_logo.jpg?updatedAt=1774955145144' },
 ];
 
 export function GroupWireframe_Governance(): ReactNode {

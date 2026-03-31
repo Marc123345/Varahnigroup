@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 import { ImageWithFallback } from '../ui/ImageWithFallback';
 
-const FAQ_IMAGE = 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/hq.png';
+const FAQ_IMAGE = 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/56_upward_angle_office_tower_brick_louvre_facade.jpg?updatedAt=1774955145324';
 
 const FAQS = [
   {

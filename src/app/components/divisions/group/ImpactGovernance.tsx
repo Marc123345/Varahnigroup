@@ -10,7 +10,7 @@ import { useInView } from '../../../hooks/useInView';
 /* ─────────────────────────── data ─────────────────────────── */
 
 const IMAGES = {
-  impact: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/free-state-01.jpg',
+  impact: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/49_blue_yellow_social_housing_apartment_blocks.jpg?updatedAt=1774955145448',
 };
 
 const impactStats = [

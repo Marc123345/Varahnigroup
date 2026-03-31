@@ -3,10 +3,10 @@ import { motion } from 'motion/react';
 import { ImageWithFallback } from '../../ui/ImageWithFallback';
 
 const IMAGES = [
-  { src: 'https://ik.imagekit.io/qcvroy8xpd/Photo%201.png',                                    alt: 'Vharanani leadership' },
-  { src: 'https://ik.imagekit.io/qcvroy8xpd/the%20.png',                                       alt: 'Vharanani infrastructure' },
-  { src: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Polokwane-CBD-Pipeline.png', alt: 'Vharanani community' },
-  { src: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0002.jpg',      alt: 'Vharanani people' },
+  { src: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/58_office_building_lobby_lift_lobby_red_feature_wall.jpg?updatedAt=1774955144946',                                    alt: 'Vharanani leadership' },
+  { src: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/55_modern_office_corridor_red_ceiling_accents.jpg?updatedAt=1774955145201',                                       alt: 'Vharanani infrastructure' },
+  { src: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/54_conference_room_red_chairs_projector_screen.jpg?updatedAt=1774955145156', alt: 'Vharanani community' },
+  { src: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/62_overhead_view_internal_stairwell_blue_railings.jpg?updatedAt=1774955145602',      alt: 'Vharanani people' },
 ];
 
 /* ── animation variants (using `animate` — no whileInView) ── */
