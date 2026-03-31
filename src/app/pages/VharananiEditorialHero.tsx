@@ -6,6 +6,7 @@ import {
   Shield, Landmark, TreePine, Globe, Target, Eye, Layers,
   Droplets, Wrench, Award, Home, Factory,
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { MobileMenu } from '../components/layout/MobileMenu';
 import { CSS3DCube } from '../components/ui/CSS3DCube';
 import { GlassmorphismOverlay } from '../components/overlay/GlassmorphismOverlay';
@@ -1576,11 +1577,11 @@ export function VharananiEditorialHero() {
             © 2026 Vharanani Group. All rights reserved.
           </div>
           <div className="flex items-center gap-6 font-inter typo-copy-small text-white/70">
-            <a href="mailto:info@vharanani.com?subject=Privacy%20Policy%20Enquiry" className="hover:text-white transition-colors">Privacy Policy</a>
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <span className="w-px h-3 bg-white/20" />
-            <a href="mailto:info@vharanani.com?subject=Terms%20of%20Use%20Enquiry" className="hover:text-white transition-colors">Terms of Use</a>
+            <Link to="/terms-of-use" className="hover:text-white transition-colors">Terms of Use</Link>
             <span className="w-px h-3 bg-white/20" />
-            <a href="mailto:info@vharanani.com?subject=PAIA%20Manual%20Request" className="hover:text-white transition-colors">PAIA Manual</a>
+            <Link to="/paia-manual" className="hover:text-white transition-colors">PAIA Manual</Link>
           </div>
         </div>
       </footer>
