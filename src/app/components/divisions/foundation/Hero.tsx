@@ -26,7 +26,7 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
           className="absolute top-0 right-0 bottom-0 hidden lg:block"
           style={{
             width: '48%',
-            background: 'var(--vharanani-burgundy)',
+            background: 'var(--dmf-primary)',
             clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0% 100%)',
             opacity: 0.12,
           }}
@@ -53,10 +53,10 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
               transition={{ duration: 0.6 }}
               className="flex items-center gap-3 mb-4"
             >
-              <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
+              <div className="w-8 h-[2px]" style={{ background: 'var(--dmf-primary)' }} />
               <span
                 className="font-inter tracking-[0.5px]"
-                style={{ fontSize: 18, fontWeight: 600, lineHeight: '26px', color: 'var(--vharanani-burgundy)' }}
+                style={{ fontSize: 18, fontWeight: 600, lineHeight: '26px', color: 'var(--dmf-primary)' }}
               >
                 The David Mabilu Foundation
               </span>
@@ -76,7 +76,7 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
               }}
             >
               Building Stronger Communities Through Opportunity
-              <span style={{ color: 'var(--vharanani-burgundy)' }}> !</span>
+              <span style={{ color: 'var(--dmf-primary)' }}> !</span>
             </motion.h1>
 
             {/* Description */}
@@ -101,7 +101,7 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
                 onClick={() => onTabChange?.('impact')}
                 className="flex items-center justify-center gap-2 transition-all duration-300 hover:brightness-110"
                 style={{
-                  background: 'var(--vharanani-burgundy)',
+                  background: 'var(--dmf-primary)',
                   height: 56,
                   padding: '16px 25px',
                   fontSize: 16,
@@ -154,7 +154,7 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
                     background: 'rgba(255,255,255,0.03)',
                   }}
                 >
-                  <div style={{ color: 'var(--vharanani-burgundy)' }}>{item.icon}</div>
+                  <div style={{ color: 'var(--dmf-primary)' }}>{item.icon}</div>
                   <span className="typo-label tracking-[0.12em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.7)' }}>{item.label}</span>
                 </div>
               ))}
@@ -174,7 +174,7 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
       </div>
 
       {/* ── IMPACT STATS BAR ── */}
-      <div style={{ background: 'var(--vharanani-burgundy)' }}>
+      <div style={{ background: 'var(--dmf-primary)' }}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
             {[
@@ -215,12 +215,12 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
             {/* Quote */}
             <div className="lg:col-span-8 lg:pl-8">
               <div className="flex items-center gap-3 mb-5">
-                <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-                <span className="font-inter typo-caption tracking-[0.28em] uppercase" style={{ color: 'var(--vharanani-burgundy)' }}>
+                <div className="w-8 h-[2px]" style={{ background: 'var(--dmf-primary)' }} />
+                <span className="font-inter typo-caption tracking-[0.28em] uppercase" style={{ color: 'var(--dmf-primary)' }}>
                   OUR FOUNDER
                 </span>
               </div>
-              <blockquote className="mb-5" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', paddingLeft: 24 }}>
+              <blockquote className="mb-5" style={{ borderLeft: '3px solid var(--dmf-primary)', paddingLeft: 24 }}>
                 <p className="font-inter italic" style={{ fontSize: 20, lineHeight: '34px', color: 'rgba(255,255,255,0.85)' }}>
                   "The Foundation was established with a vision to give back meaningfully to the communities that continue to shape South Africa's future. Lasting change is achieved when communities are empowered with access to education, housing, and opportunities for social and economic development."
                 </p>

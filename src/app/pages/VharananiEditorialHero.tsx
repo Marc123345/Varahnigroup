@@ -172,7 +172,7 @@ const extraCubeImages = [
 const DIVISION_LOGOS: Record<string, string> = {
   group: 'https://ik.imagekit.io/qcvroy8xpd/Frame%207%20(1).png',
   properties: 'https://ik.imagekit.io/qcvroy8xpd/Frame%203.png',
-  foundation: 'https://ik.imagekit.io/qcvroy8xpd/Frame%205.png',
+  foundation: 'https://ik.imagekit.io/qcvroy8xpd/Frame%201.png',
   dmft: 'https://ik.imagekit.io/qcvroy8xpd/David%20Mabilu%20FT%20Property%20Developers%20logo%201.png',
 };
 
@@ -953,6 +953,10 @@ export function VharananiEditorialHero() {
   [selectedDivision, handleOverlayTabChange, handleCrossNavigate]);
   const overlayActiveTab = overlaySection?.section.id || '';
 
+  // Foundation theme — swap accent color when Foundation is active
+  const isFoundation = currentLevel === 1 && selectedDivision?.id === 'foundation';
+  const accent = isFoundation ? 'var(--dmf-primary)' : 'var(--vharanani-burgundy)';
+
   // Left column meta adapts to level
   const leftMeta = currentLevel === 1 && selectedDivision
     ? { label: selectedDivision.type, title: selectedDivision.title, sub: selectedDivision.subtitle, ref: selectedDivision.ref }
@@ -962,8 +966,8 @@ export function VharananiEditorialHero() {
     <div className="min-h-screen relative bg-white">
       {/* ── HEADER ── */}
       <header className="sticky top-0 z-30 bg-white" style={{ height: 96 }}>
-        {/* Logo area with burgundy background shape */}
-        <div className="absolute top-0 left-0 h-full" style={{ width: 'clamp(200px, 22vw, 386px)', background: 'var(--vharanani-burgundy)', clipPath: 'polygon(0 0, 85% 0, 100% 100%, 0% 100%)' }} />
+        {/* Logo area with accent background shape */}
+        <div className="absolute top-0 left-0 h-full transition-colors duration-500" style={{ width: 'clamp(200px, 22vw, 386px)', background: accent, clipPath: 'polygon(0 0, 85% 0, 100% 100%, 0% 100%)' }} />
 
         <div className="relative h-full flex items-center px-6 sm:px-8 lg:px-16 xl:px-24">
           {/* Logo */}
@@ -1009,7 +1013,7 @@ export function VharananiEditorialHero() {
                     letterSpacing: '0.5px',
                     lineHeight: '24px',
                     color: currentLevel === 1 && selectedDivision?.id === div.id
-                      ? 'var(--vharanani-burgundy)'
+                      ? accent
                       : 'var(--vharanani-charcoal)',
                   }}
                 >
@@ -1025,7 +1029,7 @@ export function VharananiEditorialHero() {
               onClick={() => document.querySelector('footer')?.scrollIntoView({ behavior: 'smooth' })}
               className="hidden lg:flex items-center justify-center gap-2 transition-colors duration-300 hover:brightness-110"
               style={{
-                background: 'var(--vharanani-burgundy)',
+                background: accent,
                 height: 56,
                 padding: '16px 32px',
                 fontFamily: 'var(--font-inter)',
@@ -1104,8 +1108,8 @@ export function VharananiEditorialHero() {
                       onClick={handleBackToHome}
                       className="flex items-center gap-2 mb-4 group"
                     >
-                      <ArrowLeft size={14} style={{ color: 'var(--vharanani-burgundy)' }} className="group-hover:-translate-x-1 transition-transform" />
-                      <span className="font-inter typo-meta tracking-[0.2em] uppercase" style={{ color: 'var(--vharanani-burgundy)' }}>
+                      <ArrowLeft size={14} style={{ color: accent }} className="group-hover:-translate-x-1 transition-transform" />
+                      <span className="font-inter typo-meta tracking-[0.2em] uppercase" style={{ color: accent }}>
                         BACK TO DIVISIONS
                       </span>
                     </button>
@@ -1221,7 +1225,7 @@ export function VharananiEditorialHero() {
                         </h3>
                       )}
                       <div className="flex items-center justify-center gap-3 mt-1">
-                        <span className="font-inter typo-meta tracking-[0.2em] uppercase" style={{ color: 'var(--vharanani-burgundy)' }}>{divisions[activeDivisionIndex].type}</span>
+                        <span className="font-inter typo-meta tracking-[0.2em] uppercase" style={{ color: accent }}>{divisions[activeDivisionIndex].type}</span>
                         <span className="w-1 h-1" style={{ backgroundColor: 'var(--vharanani-charcoal-40)' }} />
                         <span className="font-inter typo-meta tracking-[0.15em] uppercase" style={{ color: 'var(--vharanani-charcoal-60)' }}>{divisions[activeDivisionIndex].ref}</span>
                       </div>
@@ -1232,7 +1236,7 @@ export function VharananiEditorialHero() {
                         {selectedDivision.sections[activeSectionIndex]?.title}
                       </h3>
                       <div className="flex items-center justify-center gap-3 mt-1">
-                        <span className="font-inter typo-meta tracking-[0.2em] uppercase" style={{ color: 'var(--vharanani-burgundy)' }}>{selectedDivision.sections[activeSectionIndex]?.type}</span>
+                        <span className="font-inter typo-meta tracking-[0.2em] uppercase" style={{ color: accent }}>{selectedDivision.sections[activeSectionIndex]?.type}</span>
                         <span className="w-1 h-1" style={{ backgroundColor: 'var(--vharanani-charcoal-40)' }} />
                         <span className="font-inter typo-meta tracking-[0.15em] uppercase" style={{ color: 'var(--vharanani-charcoal-60)' }}>{selectedDivision.title}</span>
                       </div>
@@ -1257,7 +1261,7 @@ export function VharananiEditorialHero() {
                   className="flex flex-col"
                   style={{ maxHeight: 'calc(100vh - 180px)' }}
                 >
-                  <div className="typo-caption tracking-[0.2em] mb-4 uppercase pb-3 flex-shrink-0 font-inter" style={{ color: 'var(--vharanani-burgundy)', borderBottom: '2px solid var(--vharanani-burgundy)' }}>
+                  <div className="typo-caption tracking-[0.2em] mb-4 uppercase pb-3 flex-shrink-0 font-inter" style={{ color: accent, borderBottom: `2px solid ${accent}` }}>
                     EXPLORE DIVISIONS
                   </div>
 
@@ -1268,15 +1272,15 @@ export function VharananiEditorialHero() {
                         onHoverStart={() => handleDivisionHover(index)}
                         onClick={() => handleDivisionClick(division, index)}
                         className="group cursor-pointer py-4 sm:py-5 border-b transition-all duration-300 w-full text-left block"
-                        style={{ borderColor: activeDivisionIndex === index ? 'var(--vharanani-burgundy)' : 'var(--vharanani-charcoal-20)' }}
+                        style={{ borderColor: activeDivisionIndex === index ? accent : 'var(--vharanani-charcoal-20)' }}
                         whileHover={{ x: 8 }}
                       >
                         <div className="flex items-center gap-3 mb-1">
-                          <div className="font-bebas-neue text-lg transition-colors" style={{ color: activeDivisionIndex === index ? 'var(--vharanani-burgundy)' : 'var(--vharanani-charcoal-60)' }}>
+                          <div className="font-bebas-neue text-lg transition-colors" style={{ color: activeDivisionIndex === index ? accent : 'var(--vharanani-charcoal-60)' }}>
                             {division.index}
                           </div>
-                          <div className="w-4 h-px transition-all" style={{ backgroundColor: activeDivisionIndex === index ? 'var(--vharanani-burgundy)' : 'var(--vharanani-charcoal-40)' }} />
-                          <div className="font-inter typo-meta tracking-[0.2em] uppercase transition-colors" style={{ color: activeDivisionIndex === index ? 'var(--vharanani-burgundy)' : 'var(--vharanani-text-muted)' }}>
+                          <div className="w-4 h-px transition-all" style={{ backgroundColor: activeDivisionIndex === index ? accent : 'var(--vharanani-charcoal-40)' }} />
+                          <div className="font-inter typo-meta tracking-[0.2em] uppercase transition-colors" style={{ color: activeDivisionIndex === index ? accent : 'var(--vharanani-text-muted)' }}>
                             {division.type}
                           </div>
                         </div>
@@ -1297,7 +1301,7 @@ export function VharananiEditorialHero() {
                         </div>
 
                         <div className="flex items-center justify-between">
-                          <div className="font-inter typo-meta tracking-[0.15em] uppercase transition-colors" style={{ color: activeDivisionIndex === index ? 'var(--vharanani-burgundy)' : 'var(--vharanani-text-muted)' }}>
+                          <div className="font-inter typo-meta tracking-[0.15em] uppercase transition-colors" style={{ color: activeDivisionIndex === index ? accent : 'var(--vharanani-text-muted)' }}>
                             {division.subtitle}
                           </div>
                           {activeDivisionIndex === index && (
@@ -1334,7 +1338,7 @@ export function VharananiEditorialHero() {
                   style={{ maxHeight: 'calc(100vh - 180px)' }}
                 >
                   {/* Section header with logo + back */}
-                  <div className="mb-4 pb-3 flex-shrink-0" style={{ borderBottom: '2px solid var(--vharanani-burgundy)' }}>
+                  <div className="mb-4 pb-3 flex-shrink-0" style={{ borderBottom: `2px solid ${accent}` }}>
                     {DIVISION_LOGOS[selectedDivision.id] ? (
                       <div className="mb-3">
                         <img
@@ -1364,18 +1368,18 @@ export function VharananiEditorialHero() {
                         onHoverStart={() => handleSectionHover(index)}
                         onClick={() => handleSectionClick(selectedDivision.id, section)}
                         className="group cursor-pointer py-4 sm:py-5 border-b transition-all duration-300 w-full text-left block"
-                        style={{ borderColor: activeSectionIndex === index ? 'var(--vharanani-burgundy)' : 'var(--vharanani-charcoal-20)' }}
+                        style={{ borderColor: activeSectionIndex === index ? accent : 'var(--vharanani-charcoal-20)' }}
                         whileHover={{ x: 8 }}
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: index * 0.08 }}
                       >
                         <div className="flex items-center gap-3 mb-1">
-                          <div className="font-bebas-neue text-lg transition-colors" style={{ color: activeSectionIndex === index ? 'var(--vharanani-burgundy)' : 'var(--vharanani-charcoal-60)' }}>
+                          <div className="font-bebas-neue text-lg transition-colors" style={{ color: activeSectionIndex === index ? accent : 'var(--vharanani-charcoal-60)' }}>
                             {String(index + 1).padStart(2, '0')}
                           </div>
-                          <div className="w-4 h-px transition-all" style={{ backgroundColor: activeSectionIndex === index ? 'var(--vharanani-burgundy)' : 'var(--vharanani-charcoal-40)' }} />
-                          <div className="font-inter typo-meta tracking-[0.2em] uppercase transition-colors" style={{ color: activeSectionIndex === index ? 'var(--vharanani-burgundy)' : 'var(--vharanani-text-muted)' }}>
+                          <div className="w-4 h-px transition-all" style={{ backgroundColor: activeSectionIndex === index ? accent : 'var(--vharanani-charcoal-40)' }} />
+                          <div className="font-inter typo-meta tracking-[0.2em] uppercase transition-colors" style={{ color: activeSectionIndex === index ? accent : 'var(--vharanani-text-muted)' }}>
                             {section.type}
                           </div>
                         </div>
@@ -1385,7 +1389,7 @@ export function VharananiEditorialHero() {
                         </h4>
 
                         <div className="flex items-center justify-between">
-                          <div className="font-inter typo-meta tracking-[0.15em] uppercase transition-colors" style={{ color: activeSectionIndex === index ? 'var(--vharanani-burgundy)' : 'var(--vharanani-text-muted)' }}>
+                          <div className="font-inter typo-meta tracking-[0.15em] uppercase transition-colors" style={{ color: activeSectionIndex === index ? accent : 'var(--vharanani-text-muted)' }}>
                             {section.description}
                           </div>
                           {activeSectionIndex === index && (
@@ -1450,7 +1454,7 @@ export function VharananiEditorialHero() {
           </motion.div>
         </motion.div>
 
-        <div className="absolute bottom-0 left-0 right-0 h-1" style={{ backgroundColor: 'var(--vharanani-burgundy)' }} />
+        <div className="absolute bottom-0 left-0 right-0 h-1 transition-colors duration-500" style={{ backgroundColor: accent }} />
       </div>
 
       {/* ── FOOTER ── */}

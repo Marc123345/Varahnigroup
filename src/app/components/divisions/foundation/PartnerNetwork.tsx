@@ -58,8 +58,8 @@ export function FoundationWireframe_PartnerNetwork(): ReactNode {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="h-[2px] w-8" style={{ background: 'var(--vharanani-burgundy)' }} />
-            <span className="font-inter typo-caption tracking-[0.28em] uppercase" style={{ color: 'var(--vharanani-burgundy)' }}>
+            <div className="h-[2px] w-8" style={{ background: 'var(--dmf-primary)' }} />
+            <span className="font-inter typo-caption tracking-[0.28em] uppercase" style={{ color: 'var(--dmf-primary)' }}>
               How We Achieve Our Goal
             </span>
           </motion.div>
@@ -75,7 +75,7 @@ export function FoundationWireframe_PartnerNetwork(): ReactNode {
                 transition={{ duration: 0.85, delay: 0.06, ease: [0.76, 0, 0.24, 1] }}
               >
                 Collaborating for<br />
-                <span style={{ color: 'var(--vharanani-burgundy)' }}>Meaningful Impact.</span>
+                <span style={{ color: 'var(--dmf-primary)' }}>Meaningful Impact.</span>
               </motion.h2>
             </div>
             <motion.p
@@ -116,14 +116,14 @@ export function FoundationWireframe_PartnerNetwork(): ReactNode {
               {/* Background fill on hover */}
               <motion.div
                 className="absolute inset-0 pointer-events-none"
-                animate={{ backgroundColor: isHovered ? 'rgba(129,41,33,0.03)' : 'rgba(0,0,0,0)' }}
+                animate={{ backgroundColor: isHovered ? 'rgba(245,122,20,0.03)' : 'rgba(0,0,0,0)' }}
                 transition={{ duration: 0.28 }}
               />
 
               {/* Left bar */}
               <motion.div
                 className="absolute left-0 top-0 bottom-0 w-[3px]"
-                style={{ background: 'var(--vharanani-burgundy)', transformOrigin: 'top' }}
+                style={{ background: 'var(--dmf-primary)', transformOrigin: 'top' }}
                 animate={{ scaleY: isHovered ? 1 : 0 }}
                 transition={{ duration: 0.32, ease: [0.76, 0, 0.24, 1] }}
               />
@@ -135,7 +135,7 @@ export function FoundationWireframe_PartnerNetwork(): ReactNode {
                   <motion.span
                     className="font-bebas-neue"
                     style={{ fontSize: 'clamp(24px, 2.5vw, 36px)', lineHeight: 1, letterSpacing: '0.04em' }}
-                    animate={{ color: isHovered ? 'var(--vharanani-burgundy)' : 'rgba(0,0,0,0.15)' }}
+                    animate={{ color: isHovered ? 'var(--dmf-primary)' : 'rgba(0,0,0,0.15)' }}
                     transition={{ duration: 0.22 }}
                   >
                     {p.num}
@@ -147,8 +147,8 @@ export function FoundationWireframe_PartnerNetwork(): ReactNode {
                   <motion.div
                     className="w-9 h-9 flex items-center justify-center flex-shrink-0"
                     animate={{
-                      backgroundColor: isHovered ? 'var(--vharanani-burgundy)' : 'transparent',
-                      borderColor: isHovered ? 'var(--vharanani-burgundy)' : 'rgba(0,0,0,0.18)',
+                      backgroundColor: isHovered ? 'var(--dmf-primary)' : 'transparent',
+                      borderColor: isHovered ? 'var(--dmf-primary)' : 'rgba(0,0,0,0.18)',
                     }}
                     transition={{ duration: 0.22 }}
                     style={{ border: '1.5px solid rgba(0,0,0,0.18)' }}
@@ -209,7 +209,7 @@ export function FoundationWireframe_PartnerNetwork(): ReactNode {
       {/* ══════ BURGUNDY BAND ══════ */}
       <motion.div
         className="relative mt-10 overflow-hidden"
-        style={{ background: 'var(--vharanani-burgundy)' }}
+        style={{ background: 'var(--dmf-primary)' }}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

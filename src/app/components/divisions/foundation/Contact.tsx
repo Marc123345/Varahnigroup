@@ -38,7 +38,7 @@ export function FoundationWireframe_Contact(): ReactNode {
         {/* ── FORM SECTION ── */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
           {/* Left — Contact info */}
-          <div className="p-8 md:p-12 flex flex-col justify-center" style={{ background: '#812921' }}>
+          <div className="p-8 md:p-12 flex flex-col justify-center" style={{ background: 'var(--dmf-primary)' }}>
             <p className="typo-copy font-inter mb-8" style={{ color: 'rgba(255,255,255,0.8)' }}>
               For partnership opportunities, community initiatives, or support enquiries, please contact the David Mabilu Foundation.
             </p>
@@ -83,7 +83,7 @@ export function FoundationWireframe_Contact(): ReactNode {
                 <input
                   type="text"
                   placeholder="Your full name"
-                  className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)] min-h-[48px]"
+                  className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none transition-colors duration-200 focus:border-[var(--dmf-primary)] min-h-[48px]"
                   style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white' }}
                 />
               </div>
@@ -92,7 +92,7 @@ export function FoundationWireframe_Contact(): ReactNode {
                 <input
                   type="text"
                   placeholder="Your organisation"
-                  className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)] min-h-[48px]"
+                  className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none transition-colors duration-200 focus:border-[var(--dmf-primary)] min-h-[48px]"
                   style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white' }}
                 />
               </div>
@@ -102,7 +102,7 @@ export function FoundationWireframe_Contact(): ReactNode {
                   <input
                     type="email"
                     placeholder="your@email.com"
-                    className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)] min-h-[48px]"
+                    className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none transition-colors duration-200 focus:border-[var(--dmf-primary)] min-h-[48px]"
                     style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white' }}
                   />
                 </div>
@@ -111,7 +111,7 @@ export function FoundationWireframe_Contact(): ReactNode {
                   <input
                     type="tel"
                     placeholder="+27..."
-                    className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)] min-h-[48px]"
+                    className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none transition-colors duration-200 focus:border-[var(--dmf-primary)] min-h-[48px]"
                     style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white' }}
                   />
                 </div>
@@ -119,7 +119,7 @@ export function FoundationWireframe_Contact(): ReactNode {
               <div>
                 <label className="typo-meta tracking-[0.12em] uppercase font-inter mb-2 block" style={{ color: 'var(--vharanani-charcoal-60)' }}>Inquiry Type</label>
                 <select
-                  className="w-full px-4 py-3 font-inter typo-copy-small outline-none focus:outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
+                  className="w-full px-4 py-3 font-inter typo-copy-small outline-none focus:outline-none transition-colors duration-200 focus:border-[var(--dmf-primary)]"
                   style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white', color: 'var(--vharanani-charcoal-60)' }}
                   defaultValue=""
                 >
@@ -134,13 +134,13 @@ export function FoundationWireframe_Contact(): ReactNode {
                 <textarea
                   placeholder="How can we work together?"
                   rows={4}
-                  className="w-full px-4 py-3 font-inter typo-copy-small outline-none resize-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
+                  className="w-full px-4 py-3 font-inter typo-copy-small outline-none resize-none transition-colors duration-200 focus:border-[var(--dmf-primary)]"
                   style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white' }}
                 />
               </div>
               <button
                 className="w-full flex items-center justify-center gap-2 px-6 py-3.5 transition-all duration-300 hover:gap-3"
-                style={{ background: 'var(--vharanani-burgundy)' }}
+                style={{ background: 'var(--dmf-primary)' }}
               >
                 <span className="font-bebas-neue typo-headline-small tracking-wider uppercase text-white">Send Message</span>
                 <ArrowRight size={14} className="text-white" />
@@ -150,12 +150,12 @@ export function FoundationWireframe_Contact(): ReactNode {
         </div>
 
         {/* Footer bar */}
-        <div className="px-6 md:px-12 lg:px-20 py-5 flex flex-col sm:flex-row items-center justify-between gap-3" style={{ background: 'var(--vharanani-burgundy)', borderTop: '3px solid rgba(255,255,255,0.3)' }}>
+        <div className="px-6 md:px-12 lg:px-20 py-5 flex flex-col sm:flex-row items-center justify-between gap-3" style={{ background: 'var(--dmf-primary)', borderTop: '3px solid rgba(255,255,255,0.3)' }}>
           <div className="flex items-center gap-4">
             <span className="font-bebas-neue typo-headline-small tracking-wider text-white uppercase">The David Mabilu Foundation</span>
             <div className="w-[1px] h-4" style={{ background: 'rgba(255,255,255,0.15)' }} />
             <div className="flex items-center gap-1.5">
-              <Layers size={12} style={{ color: 'var(--vharanani-burgundy)' }} />
+              <Layers size={12} style={{ color: 'var(--dmf-primary)' }} />
               <span className="typo-meta tracking-wider uppercase font-inter" style={{ color: 'rgba(255,255,255,0.6)' }}>Vharanani Group</span>
             </div>
           </div>

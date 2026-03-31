@@ -47,10 +47,10 @@ export function FoundationWireframe_Heritage(): ReactNode {
           style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.65) 100%)' }}
         />
         {/* Burgundy bottom line */}
-        <div className="absolute bottom-0 left-0 right-0 h-[4px]" style={{ background: 'var(--vharanani-burgundy)' }} />
+        <div className="absolute bottom-0 left-0 right-0 h-[4px]" style={{ background: 'var(--dmf-primary)' }} />
         {/* Image label */}
         <div className="absolute bottom-8 left-6 md:left-12 lg:left-20 flex items-center gap-3">
-          <div className="h-[1px] w-6" style={{ background: 'var(--vharanani-burgundy)' }} />
+          <div className="h-[1px] w-6" style={{ background: 'var(--dmf-primary)' }} />
           <span className="font-inter typo-meta tracking-[0.2em] uppercase text-white/70">
             Community Partnership
           </span>
@@ -74,8 +74,8 @@ export function FoundationWireframe_Heritage(): ReactNode {
             {/* Left — narrative */}
             <div className="lg:col-span-7">
               <motion.div className="flex items-center gap-3 mb-6" {...fadeUp(0)}>
-                <div className="h-[2px] w-8" style={{ background: 'var(--vharanani-burgundy)' }} />
-                <span className="font-inter typo-caption tracking-[0.28em] uppercase" style={{ color: 'var(--vharanani-burgundy)' }}>
+                <div className="h-[2px] w-8" style={{ background: 'var(--dmf-primary)' }} />
+                <span className="font-inter typo-caption tracking-[0.28em] uppercase" style={{ color: 'var(--dmf-primary)' }}>
                   Our Heritage
                 </span>
               </motion.div>
@@ -90,7 +90,7 @@ export function FoundationWireframe_Heritage(): ReactNode {
                   transition={{ duration: 0.85, delay: 0.08, ease: [0.76, 0, 0.24, 1] }}
                 >
                   Supported by the<br />
-                  <span style={{ color: 'var(--vharanani-burgundy)' }}>Vharanani Group.</span>
+                  <span style={{ color: 'var(--dmf-primary)' }}>Vharanani Group.</span>
                 </motion.h2>
               </div>
 
@@ -128,7 +128,7 @@ export function FoundationWireframe_Heritage(): ReactNode {
               {/* Group hub node */}
               <motion.div
                 className="relative p-6 text-center"
-                style={{ background: 'var(--vharanani-burgundy)' }}
+                style={{ background: 'var(--dmf-primary)' }}
                 {...fadeUp(0.1)}
               >
                 <div className="h-[1px] w-8 mx-auto mb-3" style={{ background: 'rgba(255,255,255,0.35)' }} />
@@ -142,11 +142,11 @@ export function FoundationWireframe_Heritage(): ReactNode {
                   Parent Organisation
                 </p>
                 {/* Connector line */}
-                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-[1px] h-4" style={{ background: 'var(--vharanani-burgundy)' }} />
+                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-[1px] h-4" style={{ background: 'var(--dmf-primary)' }} />
               </motion.div>
 
               {/* Division nodes */}
-              <div className="flex flex-col gap-3 pt-4 pl-4" style={{ borderLeft: '2px solid rgba(129,41,33,0.15)' }}>
+              <div className="flex flex-col gap-3 pt-4 pl-4" style={{ borderLeft: '2px solid rgba(245,122,20,0.15)' }}>
                 {PARTNERS.map((p, i) => {
                   const Icon = p.icon;
                   return (
@@ -159,11 +159,11 @@ export function FoundationWireframe_Heritage(): ReactNode {
                       {/* Connector tick */}
                       <div
                         className="absolute -left-[18px] top-1/2 -translate-y-1/2 w-4 h-[1px]"
-                        style={{ background: 'rgba(129,41,33,0.4)' }}
+                        style={{ background: 'rgba(245,122,20,0.4)' }}
                       />
                       <div
                         className="w-8 h-8 flex items-center justify-center flex-shrink-0"
-                        style={{ background: 'var(--vharanani-burgundy)' }}
+                        style={{ background: 'var(--dmf-primary)' }}
                       >
                         <Icon size={15} color="white" />
                       </div>
@@ -191,7 +191,7 @@ export function FoundationWireframe_Heritage(): ReactNode {
       {/* ══════ QUOTE BAND ══════ */}
       <motion.div
         className="relative overflow-hidden"
-        style={{ background: 'var(--vharanani-burgundy)' }}
+        style={{ background: 'var(--dmf-primary)' }}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

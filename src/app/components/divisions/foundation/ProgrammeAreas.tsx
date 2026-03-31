@@ -54,8 +54,8 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="h-[2px] w-8" style={{ background: 'var(--vharanani-burgundy)' }} />
-            <span className="font-inter typo-caption tracking-[0.28em] uppercase" style={{ color: 'var(--vharanani-burgundy)' }}>
+            <div className="h-[2px] w-8" style={{ background: 'var(--dmf-primary)' }} />
+            <span className="font-inter typo-caption tracking-[0.28em] uppercase" style={{ color: 'var(--dmf-primary)' }}>
               Our Key Programme Areas
             </span>
           </motion.div>
@@ -71,7 +71,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
                 transition={{ duration: 0.85, delay: 0.06, ease: [0.76, 0, 0.24, 1] }}
               >
                 Core Programme<br />
-                <span style={{ color: 'var(--vharanani-burgundy)' }}>Areas</span>
+                <span style={{ color: 'var(--dmf-primary)' }}>Areas</span>
               </motion.h2>
             </div>
             <motion.p
@@ -105,7 +105,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
                     className="relative text-left flex items-center gap-4 px-6 py-6 w-full"
                     style={{
                       borderBottom: i < PROGRAMMES.length - 1 ? '1px solid rgba(0,0,0,0.07)' : 'none',
-                      background: isActive ? 'rgba(129,41,33,0.04)' : 'transparent',
+                      background: isActive ? 'rgba(245,122,20,0.04)' : 'transparent',
                       transition: 'background 0.25s ease',
                     }}
                     initial={{ opacity: 0, x: -20 }}
@@ -116,7 +116,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
                     {/* Active bar */}
                     <motion.div
                       className="absolute left-0 top-0 bottom-0 w-[3px]"
-                      style={{ background: 'var(--vharanani-burgundy)', transformOrigin: 'top' }}
+                      style={{ background: 'var(--dmf-primary)', transformOrigin: 'top' }}
                       animate={{ scaleY: isActive ? 1 : 0 }}
                       transition={{ duration: 0.3, ease: [0.76, 0, 0.24, 1] }}
                     />
@@ -126,7 +126,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
                       className="font-bebas-neue flex-shrink-0"
                       style={{
                         fontSize: '13px', letterSpacing: '0.1em',
-                        color: isActive ? 'var(--vharanani-burgundy)' : 'rgba(0,0,0,0.25)',
+                        color: isActive ? 'var(--dmf-primary)' : 'rgba(0,0,0,0.25)',
                         transition: 'color 0.25s', minWidth: '22px',
                       }}
                     >
@@ -137,8 +137,8 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
                     <div
                       className="w-9 h-9 flex items-center justify-center flex-shrink-0"
                       style={{
-                        background: isActive ? 'var(--vharanani-burgundy)' : 'transparent',
-                        border: `1.5px solid ${isActive ? 'var(--vharanani-burgundy)' : 'rgba(0,0,0,0.18)'}`,
+                        background: isActive ? 'var(--dmf-primary)' : 'transparent',
+                        border: `1.5px solid ${isActive ? 'var(--dmf-primary)' : 'rgba(0,0,0,0.18)'}`,
                         color: isActive ? 'white' : 'rgba(0,0,0,0.38)',
                         transition: 'all 0.25s ease',
                       }}
@@ -160,7 +160,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
                       </div>
                       <motion.div
                         className="font-inter typo-meta mt-0.5"
-                        style={{ fontSize: '11px', color: 'var(--vharanani-burgundy)' }}
+                        style={{ fontSize: '11px', color: 'var(--dmf-primary)' }}
                         animate={{ opacity: isActive ? 1 : 0 }}
                         transition={{ duration: 0.2 }}
                       >
@@ -171,7 +171,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
                     <motion.div
                       animate={{ x: isActive ? 0 : -6, opacity: isActive ? 1 : 0 }}
                       transition={{ duration: 0.2 }}
-                      style={{ color: 'var(--vharanani-burgundy)', flexShrink: 0 }}
+                      style={{ color: 'var(--dmf-primary)', flexShrink: 0 }}
                     >
                       <ArrowRight size={15} />
                     </motion.div>
@@ -232,7 +232,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
                   {active}
                 </div>
                 {/* Burgundy top accent */}
-                <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'var(--vharanani-burgundy)' }} />
+                <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: 'var(--dmf-primary)' }} />
               </div>
 
               {/* Content */}
@@ -249,7 +249,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
                     <div className="flex items-center gap-2 mb-4">
                       <span
                         className="font-inter typo-meta tracking-[0.18em] uppercase px-3 py-1"
-                        style={{ background: 'var(--vharanani-burgundy)', color: 'white', fontSize: '10px' }}
+                        style={{ background: 'var(--dmf-primary)', color: 'white', fontSize: '10px' }}
                       >
                         Programme {prog.num}
                       </span>
@@ -263,7 +263,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
                     </h3>
                     <p
                       className="font-bebas-neue uppercase mb-4"
-                      style={{ fontSize: 'clamp(14px, 1.5vw, 18px)', color: 'var(--vharanani-burgundy)', lineHeight: 1.2, letterSpacing: '0.02em' }}
+                      style={{ fontSize: 'clamp(14px, 1.5vw, 18px)', color: 'var(--dmf-primary)', lineHeight: 1.2, letterSpacing: '0.02em' }}
                     >
                       {prog.headline}
                     </p>
@@ -285,7 +285,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ duration: 0.3, delay: i * 0.06 }}
                         >
-                          <div className="w-1.5 h-1.5 flex-shrink-0" style={{ background: 'var(--vharanani-burgundy)' }} />
+                          <div className="w-1.5 h-1.5 flex-shrink-0" style={{ background: 'var(--dmf-primary)' }} />
                           <span className="font-inter" style={{ fontSize: 'clamp(12px, 1vw, 14px)', color: 'rgba(0,0,0,0.65)' }}>
                             {d}
                           </span>
@@ -304,7 +304,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
       {/* ══════ SUMMARY BAND ══════ */}
       <motion.div
         className="relative mt-10 overflow-hidden"
-        style={{ background: 'var(--vharanani-burgundy)' }}
+        style={{ background: 'var(--dmf-primary)' }}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

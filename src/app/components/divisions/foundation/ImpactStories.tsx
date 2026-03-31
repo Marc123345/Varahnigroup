@@ -63,8 +63,8 @@ export function FoundationWireframe_ImpactStories(): ReactNode {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-8">
             <div className="lg:col-span-7">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-                <span className="typo-caption tracking-[0.28em] uppercase font-inter" style={{ color: 'var(--vharanani-burgundy)' }}>
+                <div className="w-8 h-[2px]" style={{ background: 'var(--dmf-primary)' }} />
+                <span className="typo-caption tracking-[0.28em] uppercase font-inter" style={{ color: 'var(--dmf-primary)' }}>
                   WHAT WE DO
                 </span>
               </div>
@@ -92,12 +92,12 @@ export function FoundationWireframe_ImpactStories(): ReactNode {
               >
                 <span
                   className="typo-headline-small font-bebas-neue tracking-wider uppercase"
-                  style={{ color: activeTab === key ? 'var(--vharanani-burgundy)' : 'var(--vharanani-charcoal-60)' }}
+                  style={{ color: activeTab === key ? 'var(--dmf-primary)' : 'var(--vharanani-charcoal-60)' }}
                 >
                   {label}
                 </span>
                 {activeTab === key && (
-                  <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'var(--vharanani-burgundy)', marginBottom: '-2px' }} />
+                  <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'var(--dmf-primary)', marginBottom: '-2px' }} />
                 )}
               </button>
             ))}
@@ -135,7 +135,7 @@ export function FoundationWireframe_ImpactStories(): ReactNode {
                 </h3>
 
                 {/* Highlight */}
-                <div className="p-5 mb-8" style={{ borderLeft: '3px solid var(--vharanani-burgundy)', background: 'rgba(0,0,0,0.04)' }}>
+                <div className="p-5 mb-8" style={{ borderLeft: '3px solid var(--dmf-primary)', background: 'rgba(0,0,0,0.04)' }}>
                   <p className="typo-copy font-inter" style={{ color: 'var(--vharanani-charcoal-80)' }}>
                     {current.highlight}
                   </p>
@@ -149,7 +149,7 @@ export function FoundationWireframe_ImpactStories(): ReactNode {
                       className="flex items-start gap-4 p-4"
                       style={{ borderBottom: i < 3 ? '1px solid var(--vharanani-charcoal-20)' : 'none' }}
                     >
-                      <div className="w-1.5 h-1.5 flex-shrink-0 mt-2" style={{ background: 'var(--vharanani-burgundy)' }} />
+                      <div className="w-1.5 h-1.5 flex-shrink-0 mt-2" style={{ background: 'var(--dmf-primary)' }} />
                       <div>
                         <div className="typo-headline-small font-bebas-neue tracking-wide uppercase" style={{ color: 'var(--vharanani-charcoal)' }}>
                           {item.label}
