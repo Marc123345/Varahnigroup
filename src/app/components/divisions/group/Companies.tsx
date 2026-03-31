@@ -13,6 +13,7 @@ export function GroupWireframe_Companies(): ReactNode {
   const companies = [
     {
       title: 'Vharanani Properties',
+      logo: 'https://ik.imagekit.io/qcvroy8xpd/Frame%203.png',
       tag: 'CONSTRUCTION',
       icon: <Building2 size={20} />,
       image: IMAGES.construction,
@@ -21,6 +22,7 @@ export function GroupWireframe_Companies(): ReactNode {
     },
     {
       title: 'The David Mabilu Foundation',
+      logo: 'https://ik.imagekit.io/qcvroy8xpd/Frame%201.png',
       tag: 'SOCIAL IMPACT',
       icon: <Landmark size={20} />,
       image: IMAGES.foundation,
@@ -29,6 +31,7 @@ export function GroupWireframe_Companies(): ReactNode {
     },
     {
       title: 'DMFT Property Developers',
+      logo: 'https://ik.imagekit.io/qcvroy8xpd/David%20Mabilu%20FT%20Property%20Developers%20logo%201.png',
       tag: 'PROPERTY DEVELOPMENT',
       icon: <Heart size={20} />,
       image: IMAGES.dmft,
@@ -76,9 +79,9 @@ export function GroupWireframe_Companies(): ReactNode {
 
               {/* Content */}
               <div className="md:col-span-2 p-6 md:p-8 flex flex-col justify-center" style={{ background: 'rgba(255,255,255,0.03)' }}>
-                <h3 className="typo-subline font-bebas-neue uppercase tracking-wide text-white mb-3">
-                  {company.title}
-                </h3>
+                <div className="mb-3">
+                  <img src={company.logo} alt={company.title} className="h-7 sm:h-8 w-auto object-contain brightness-0 invert" />
+                </div>
                 <p className="typo-copy-small font-inter text-white/60 mb-4">
                   {company.description}
                 </p>

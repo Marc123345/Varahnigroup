@@ -6,9 +6,9 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 const IMAGE = 'https://images.unsplash.com/photo-1526976668912-1a811878dd37?w=1080&q=80';
 
 const PARTNERS = [
-  { icon: Building2, label: 'Vharanani Properties', desc: 'Infrastructure & Construction' },
-  { icon: Home,      label: 'DMFT',                 desc: 'Property Development'         },
-  { icon: Heart,     label: 'Foundation',            desc: 'Social Impact'                },
+  { icon: Building2, label: 'Vharanani Properties', desc: 'Infrastructure & Construction', logo: 'https://ik.imagekit.io/qcvroy8xpd/Frame%203.png' },
+  { icon: Home,      label: 'DMFT',                 desc: 'Property Development',         logo: 'https://ik.imagekit.io/qcvroy8xpd/David%20Mabilu%20FT%20Property%20Developers%20logo%201.png' },
+  { icon: Heart,     label: 'Foundation',            desc: 'Social Impact',                logo: 'https://ik.imagekit.io/qcvroy8xpd/Frame%201.png' },
 ];
 
 const fadeUp = (delay = 0) => ({
@@ -90,7 +90,7 @@ export function FoundationWireframe_Heritage(): ReactNode {
                   transition={{ duration: 0.85, delay: 0.08, ease: [0.76, 0, 0.24, 1] }}
                 >
                   Supported by the<br />
-                  <span style={{ color: 'var(--dmf-primary)' }}>Vharanani Group.</span>
+                  <img src="https://ik.imagekit.io/qcvroy8xpd/Frame%207%20(1).png" alt="Vharanani Group" className="h-6 sm:h-8 w-auto object-contain inline-block ml-1" style={{ verticalAlign: 'baseline' }} />
                 </motion.h2>
               </div>
 
@@ -168,12 +168,7 @@ export function FoundationWireframe_Heritage(): ReactNode {
                         <Icon size={15} color="white" />
                       </div>
                       <div>
-                        <div
-                          className="font-bebas-neue uppercase tracking-wide"
-                          style={{ fontSize: 'clamp(14px, 1.3vw, 17px)', color: '#111111', letterSpacing: '0.04em' }}
-                        >
-                          {p.label}
-                        </div>
+                        <img src={p.logo} alt={p.label} className="h-5 w-auto object-contain mb-1" />
                         <div className="font-inter typo-meta mt-0.5" style={{ color: 'rgba(0,0,0,0.45)', fontSize: '11px' }}>
                           {p.desc}
                         </div>

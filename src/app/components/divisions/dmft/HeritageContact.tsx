@@ -181,7 +181,7 @@ export function DMFTWireframe_HeritageContact(): ReactNode {
         {/* Footer bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between px-6 md:px-12 lg:px-20 py-5" style={{ background: '#111111', borderTop: '3px solid var(--vharanani-burgundy)' }}>
           <div className="flex items-center gap-4">
-            <span className="font-bebas-neue typo-headline-small tracking-wider text-white uppercase">DMFT Property Developers</span>
+            <img src="https://ik.imagekit.io/qcvroy8xpd/David%20Mabilu%20FT%20Property%20Developers%20logo%201.png" alt="DMFT Property Developers" className="h-6 w-auto object-contain brightness-0 invert" />
             <div className="w-[1px] h-4" style={{ background: 'rgba(255,255,255,0.15)' }} />
             <div className="flex items-center gap-1.5">
               <Layers size={12} style={{ color: 'var(--vharanani-burgundy)' }} />

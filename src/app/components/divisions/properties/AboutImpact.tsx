@@ -118,7 +118,8 @@ export function PropertiesWireframe_AboutImpact(): ReactNode {
             animate={s1InView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
             transition={{ duration: 0.6, ...stagger(2) }}
           >
-            About Vharanani Properties
+            <img src="https://ik.imagekit.io/qcvroy8xpd/Frame%203.png" alt="Vharanani Properties" className="h-8 sm:h-10 w-auto object-contain mb-3" />
+            About Us
           </motion.h2>
 
           <motion.div

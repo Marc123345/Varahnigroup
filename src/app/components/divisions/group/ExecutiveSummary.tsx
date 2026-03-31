@@ -93,18 +93,19 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
           </div>
 
           <div className="relative z-10 max-w-xl">
-            {/* Overline */}
-            <motion.div
-              className="flex items-center gap-3 mb-8"
-              {...fadeUp(0.1)}
-            >
-              <div className="h-[2px] w-10" style={{ background: 'var(--vharanani-burgundy)' }} />
-              <span
-                className="font-inter typo-caption tracking-[0.3em] uppercase"
-                style={{ color: 'rgba(255,255,255,0.5)' }}
-              >
-                Executive Summary
-              </span>
+            {/* Logo + Overline */}
+            <motion.div className="mb-8" {...fadeUp(0.1)}>
+              <img
+                src="https://ik.imagekit.io/qcvroy8xpd/Frame%207%20(1).png"
+                alt="Vharanani Group"
+                className="h-8 sm:h-10 w-auto object-contain brightness-0 invert mb-4"
+              />
+              <div className="flex items-center gap-3">
+                <div className="h-[2px] w-10" style={{ background: 'var(--vharanani-burgundy)' }} />
+                <span className="font-inter typo-caption tracking-[0.3em] uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                  Executive Summary
+                </span>
+              </div>
             </motion.div>
 
             {/* Big headline */}

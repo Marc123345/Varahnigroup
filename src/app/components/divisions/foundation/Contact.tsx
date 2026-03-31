@@ -152,7 +152,7 @@ export function FoundationWireframe_Contact(): ReactNode {
         {/* Footer bar */}
         <div className="px-6 md:px-12 lg:px-20 py-5 flex flex-col sm:flex-row items-center justify-between gap-3" style={{ background: 'var(--dmf-primary)', borderTop: '3px solid rgba(255,255,255,0.3)' }}>
           <div className="flex items-center gap-4">
-            <span className="font-bebas-neue typo-headline-small tracking-wider text-white uppercase">The David Mabilu Foundation</span>
+            <img src="https://ik.imagekit.io/qcvroy8xpd/Frame%201.png" alt="The David Mabilu Foundation" className="h-6 w-auto object-contain brightness-0 invert" />
             <div className="w-[1px] h-4" style={{ background: 'rgba(255,255,255,0.15)' }} />
             <div className="flex items-center gap-1.5">
               <Layers size={12} style={{ color: 'var(--dmf-primary)' }} />

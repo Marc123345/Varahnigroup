@@ -41,14 +41,12 @@ export function DMFTWireframe_HeroAbout({ onTabChange }: { onTabChange?: (tabId:
               transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
             >
               {/* Overline */}
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-10 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-                <span
-                  className="typo-caption tracking-[0.3em] uppercase font-inter"
-                  style={{ color: 'rgba(255,255,255,0.45)' }}
-                >
-                  DMFT Property Developers
-                </span>
+              <div className="mb-8">
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/David%20Mabilu%20FT%20Property%20Developers%20logo%201.png"
+                  alt="DMFT Property Developers"
+                  className="h-8 sm:h-10 w-auto object-contain brightness-0 invert"
+                />
               </div>
 
               {/* Big headline */}

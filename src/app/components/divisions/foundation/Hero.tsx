@@ -26,17 +26,18 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
           {/* Corner accent */}
           <div className="absolute top-0 left-0 w-20 h-20 pointer-events-none" style={{ borderTop: '3px solid rgba(255,255,255,0.2)', borderLeft: '3px solid rgba(255,255,255,0.2)' }} />
 
-          {/* Overline */}
+          {/* Logo */}
           <motion.div
-            className="flex items-center gap-3 mb-6"
+            className="mb-6"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className="w-10 h-[2px] bg-white/40" />
-            <span className="typo-caption tracking-[0.3em] uppercase font-inter text-white/60">
-              THE DAVID MABILU FOUNDATION
-            </span>
+            <img
+              src="https://ik.imagekit.io/qcvroy8xpd/Frame%201.png"
+              alt="The David Mabilu Foundation"
+              className="h-10 sm:h-12 w-auto object-contain brightness-0 invert"
+            />
           </motion.div>
 
           {/* Headline */}
