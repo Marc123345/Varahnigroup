@@ -87,12 +87,12 @@ const divisions: Division[] = [
       { id: 'about', index: 'Sec 1', title: 'Who We Are', type: 'INTELLIGENCE', description: 'Our story, mandate, and founding vision', image: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/hq.png' },
       { id: 'portfolio', index: 'Sec 2', title: 'Our Portfolio', type: 'HOLDINGS', description: 'Subsidiary companies and sector expertise', image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/faranani-1.jpg' },
       { id: 'pillars', index: 'Sec 3', title: 'Strategic Pillars', type: 'STRATEGY', description: 'Infrastructure, assets, innovation, and social impact', image: 'https://vharananiproperties.co.za/wp-content/uploads/2021/07/H2-895x500.png' },
-      { id: 'leadership', index: 'Sec 4', title: 'Leadership', type: 'PEOPLE', description: 'Founder & Group Executive Chairman', image: 'https://images.unsplash.com/photo-1758518727707-b023e285b709?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBncm91cCUyMGxlYWRlcnNoaXAlMjBib2FyZHJvb20lMjBleGVjdXRpdmV8ZW58MXx8fHwxNzczMDU1OTEyfDA&ixlib=rb-4.1.0&q=80&w=1080' },
-      { id: 'impact', index: 'Sec 5', title: 'Impact & Responsibility', type: 'IMPACT', description: 'Community benefit and social upliftment', image: 'https://images.unsplash.com/photo-1658129850537-ea7517a9682f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2NpYWwlMjBpbXBhY3QlMjBjb21tdW5pdHklMjBkZXZlbG9wbWVudCUyMEFmcmljYXxlbnwxfHx8fDE3NzMwNTYzMzV8MA&ixlib=rb-4.1.0&q=80&w=1080' },
-      { id: 'vision-mission', index: 'Sec 6', title: 'Vision & Mission', type: 'MANDATE', description: 'Our vision, mission, and corporate overview', image: 'https://images.unsplash.com/photo-1656646424292-cf207f3f1749?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjB2aXNpb24lMjBtaXNzaW9uJTIwc3RhdGVtZW50JTIwYm9hcmRyb29tfGVufDF8fHx8MTc3MzA1NjMzNXww&ixlib=rb-4.1.0&q=80&w=1080' },
-      { id: 'governance', index: 'Sec 7', title: 'Governance & Compliance', type: 'COMPLIANCE', description: 'Ethics, risk management, and transparent reporting', image: 'https://images.unsplash.com/photo-1556219845-95c1847629e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBnb3Zlcm5hbmNlJTIwYW5udWFsJTIwcmVwb3J0JTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc3MzA1NTkxM3ww&ixlib=rb-4.1.0&q=80&w=1080' },
+      { id: 'leadership', index: 'Sec 4', title: 'Leadership', type: 'PEOPLE', description: 'Founder & Group Executive Chairman', image: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/hq.png' },
+      { id: 'impact', index: 'Sec 5', title: 'Impact & Responsibility', type: 'IMPACT', description: 'Community benefit and social upliftment', image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/Mogalakwena.jpg' },
+      { id: 'vision-mission', index: 'Sec 6', title: 'Vision & Mission', type: 'MANDATE', description: 'Our vision, mission, and corporate overview', image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/faranani-1.jpg' },
+      { id: 'governance', index: 'Sec 7', title: 'Governance & Compliance', type: 'COMPLIANCE', description: 'Ethics, risk management, and transparent reporting', image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/CIDB-9GB_9CE.png' },
       { id: 'companies', index: 'Sec 8', title: 'Our Companies', type: 'SUBSIDIARIES', description: 'Vharanani Properties, DMFT, David Mabilu Foundation', image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/Tswane-BRT.jpg' },
-      { id: 'sustainable-impact', index: 'Sec 9', title: 'Sustainable Impact & News', type: 'UPDATES', description: 'Driving impact, news, and contact information', image: 'https://images.unsplash.com/photo-1766740606233-6573571caa6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZXdzJTIwbWVkaWElMjB1cGRhdGUlMjBjb3Jwb3JhdGUlMjBvZmZpY2V8ZW58MXx8fHwxNzczMDU2MzQyfDA&ixlib=rb-4.1.0&q=80&w=1080' },
+      { id: 'sustainable-impact', index: 'Sec 9', title: 'Sustainable Impact & News', type: 'UPDATES', description: 'Driving impact, news, and contact information', image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0519-1.jpg' },
     ],
   },
   {
@@ -103,9 +103,9 @@ const divisions: Division[] = [
     type: 'CONSTRUCTION',
     ref: 'Est. 2001',
     description: 'A leading Black-owned construction and infrastructure development company delivering large-scale projects across South Africa for both public and private sector clients',
-    image: 'https://ik.imagekit.io/qcvroy8xpd/Rectangle.png',
+    image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0020.jpg',
     sections: [
-      { id: 'about', index: 'Sec 1', title: 'About Us', type: 'INTELLIGENCE', description: 'Company history, leadership, and national reputation', image: 'https://ik.imagekit.io/qcvroy8xpd/image%202.png' },
+      { id: 'about', index: 'Sec 1', title: 'About Us', type: 'INTELLIGENCE', description: 'Company history, leadership, and national reputation', image: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/hq.png' },
       { id: 'vision-values', index: 'Sec 2', title: 'Vision, Mission & Values', type: 'MANDATE', description: 'Our guiding principles and purpose', image: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/hq.png' },
       { id: 'roads-civils', index: 'Sec 3', title: 'Roads & Civil Engineering', type: 'SERVICES', description: 'Turnkey civil construction, BRT systems, highways', image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0020.jpg' },
       { id: 'water-sanitation', index: 'Sec 4', title: 'Water & Sanitation', type: 'SERVICES', description: 'Bulk water supply, pipelines, sewer reticulation', image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/Nandoni-02.jpg' },
@@ -114,7 +114,7 @@ const divisions: Division[] = [
       { id: 'property-dev', index: 'Sec 7', title: 'Property Development', type: 'SERVICES', description: 'Turnkey development from land acquisition to construction', image: 'https://vharananiproperties.co.za/wp-content/uploads/2021/07/thumbnail.jpg' },
       { id: 'accreditation', index: 'Sec 8', title: 'Accreditation & Compliance', type: 'COMPLIANCE', description: 'ISO 9001, B-BBEE Level 1, CIDB Grade 9', image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/CIDB-9GB_9CE.png' },
       { id: 'featured-projects', index: 'Sec 9', title: 'Featured Projects & Impact', type: 'PROJECTS', description: 'Major infrastructure projects and socioeconomic impact', image: 'https://ik.imagekit.io/qcvroy8xpd/Building%207%26.jpeg' },
-      { id: 'contact-footprint', index: 'Sec 10', title: 'Contact & Footprint', type: 'CONTACT', description: 'Office locations, enquiry form, and national reach', image: 'https://images.unsplash.com/photo-1619428602382-a370e5b73fd9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxTb3V0aCUyMEFmcmljYSUyMG1hcCUyMGRhcmslMjB0aGVtZSUyMGdlb2dyYXBoaWN8ZW58MXx8fHwxNzczMTgyMjYwfDA&ixlib=rb-4.1.0&q=80&w=1080' },
+      { id: 'contact-footprint', index: 'Sec 10', title: 'Contact & Footprint', type: 'CONTACT', description: 'Office locations, enquiry form, and national reach', image: 'https://vharananiproperties.co.za/wp-content/uploads/2021/07/thumbnail.jpg' },
     ],
   },
   {
@@ -125,16 +125,16 @@ const divisions: Division[] = [
     type: 'SOCIAL DEVELOPMENT',
     ref: 'Est. 2011',
     description: 'A social development organisation committed to reducing poverty and sustainably improving the living standards of marginalised communities across South Africa',
-    image: 'https://images.unsplash.com/photo-1694286068274-1058e6b04dcc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwY2hhcml0eSUyMGZvdW5kYXRpb24lMjBjb21tdW5pdHl8ZW58MXx8fHwxNzcyNzM0OTg2fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    image: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Mamelodi-Ext-5-4.jpg',
     sections: [
-      { id: 'about', index: 'Sec 1', title: 'About the Foundation', type: 'INTELLIGENCE', description: 'Our goal, approach, and founding vision', image: 'https://images.unsplash.com/photo-1694286068274-1058e6b04dcc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwY2hhcml0eSUyMGZvdW5kYXRpb24lMjBjb21tdW5pdHl8ZW58MXx8fHwxNzcyNzM0OTg2fDA&ixlib=rb-4.1.0&q=80&w=1080' },
-      { id: 'education', index: 'Sec 2', title: 'Education', type: 'PROGRAMMES', description: 'Scholarships, school support, and infrastructure', image: 'https://images.unsplash.com/photo-1770843093640-c44ae557928b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwY2hpbGRyZW4lMjBlZHVjYXRpb24lMjBjbGFzc3Jvb20lMjBsZWFybmluZ3xlbnwxfHx8fDE3NzMwNTc2OTB8MA&ixlib=rb-4.1.0&q=80&w=1080' },
+      { id: 'about', index: 'Sec 1', title: 'About the Foundation', type: 'INTELLIGENCE', description: 'Our goal, approach, and founding vision', image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/Mogalakwena.jpg' },
+      { id: 'education', index: 'Sec 2', title: 'Education', type: 'PROGRAMMES', description: 'Scholarships, school support, and infrastructure', image: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Facilities-1.jpg' },
       { id: 'housing', index: 'Sec 3', title: 'Housing', type: 'PROGRAMMES', description: 'Housing initiatives for disadvantaged families', image: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/Mamelodi-Ext-5-4.jpg' },
-      { id: 'community', index: 'Sec 4', title: 'Community Upliftment', type: 'PROGRAMMES', description: 'Youth, women, sports, and community support', image: 'https://images.unsplash.com/photo-1761039808597-5639866bab8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3V0aCUyMHNwb3J0cyUyMGNvbW11bml0eSUyMGRldmVsb3BtZW50JTIwQWZyaWNhfGVufDF8fHx8MTc3MzA1NzY5MXww&ixlib=rb-4.1.0&q=80&w=1080' },
+      { id: 'community', index: 'Sec 4', title: 'Community Upliftment', type: 'PROGRAMMES', description: 'Youth, women, sports, and community support', image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/faranani-1.jpg' },
       { id: 'impact', index: 'Sec 5', title: 'Our Impact', type: 'RESULTS', description: 'Meaningful contributions and lasting change', image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/Mogalakwena.jpg' },
-      { id: 'partnerships', index: 'Sec 6', title: 'Partnerships', type: 'NETWORK', description: 'Collaborative partnerships and the Vharanani Group', image: 'https://images.unsplash.com/photo-1697665387559-253e7a645e96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxub25wcm9maXQlMjBwYXJ0bmVyc2hpcCUyMGhhbmRzaGFrZSUyMGNvbW11bml0eXxlbnwxfHx8fDE3NzMwNTc2OTN8MA&ixlib=rb-4.1.0&q=80&w=1080' },
-      { id: 'heritage', index: 'Sec 7', title: 'Vharanani Group Heritage', type: 'HERITAGE', description: 'The backbone — supported by the Vharanani Group', image: 'https://images.unsplash.com/photo-1517598024396-46c53fb391a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwZm91bmRlciUyMHBoaWxhbnRocm9waXN0JTIwcG9ydHJhaXQlMjBjYW5kaWR8ZW58MXx8fHwxNzczMTg2MTAwfDA&ixlib=rb-4.1.0&q=80&w=1080' },
-      { id: 'get-involved', index: 'Sec 8', title: 'Contact & Get Involved', type: 'CONTACT', description: 'Join us in building opportunity', image: 'https://images.unsplash.com/photo-1665848170858-359b25d5eb81?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwc3R1ZGVudHMlMjBzbWlsaW5nJTIwY29tbXVuaXR5JTIwZ2F0aGVyaW5nJTIwd2FybXxlbnwxfHx8fDE3NzMxODYwOTh8MA&ixlib=rb-4.1.0&q=80&w=1080' },
+      { id: 'partnerships', index: 'Sec 6', title: 'Partnerships', type: 'NETWORK', description: 'Collaborative partnerships and the Vharanani Group', image: 'https://vharananiproperties.co.za/wp-content/uploads/2021/06/hq.png' },
+      { id: 'heritage', index: 'Sec 7', title: 'Vharanani Group Heritage', type: 'HERITAGE', description: 'The backbone — supported by the Vharanani Group', image: 'https://vharananiproperties.co.za/wp-content/uploads/2021/07/H2-895x500.png' },
+      { id: 'get-involved', index: 'Sec 8', title: 'Contact & Get Involved', type: 'CONTACT', description: 'Join us in building opportunity', image: 'https://vharananiproperties.co.za/wp-content/uploads/2020/08/rsz_dji_0519-1.jpg' },
     ],
   },
   {
@@ -159,7 +159,7 @@ const divisions: Division[] = [
 ];
 
 const extraCubeImages = [
-  'https://images.unsplash.com/photo-1694286068561-3233c946e9be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21tdW5pdHklMjBlbXBvd2VybWVudCUyMGVkdWNhdGlvbiUyMEFmcmljYXxlbnwxfHx8fDE3NzI3MzQ5OTB8MA&ixlib=rb-4.1.0&q=80&w=1080',
+  'https://vharananiproperties.co.za/wp-content/uploads/2020/08/Mogalakwena.jpg',
   'https://vharananiproperties.co.za/wp-content/uploads/2021/06/hq.png',
 ];
 
@@ -1013,11 +1013,7 @@ export function VharananiEditorialHero() {
     : { label: 'UNIFIED ECOSYSTEM', title: 'VHARANANI\nGROUP', sub: 'Properties / Foundation / DMFT', ref: 'Vision. Structure. Impact.' };
 
   return (
-    <div className="min-h-screen relative" style={{
-      backgroundImage: `url('https://ik.imagekit.io/qcvroy8xpd/Rectangle.png')`,
-      backgroundRepeat: 'repeat',
-      backgroundSize: '600px',
-    }}>
+    <div className="min-h-screen relative bg-white">
       {/* ── HEADER ── */}
       <header className="sticky top-0 z-30 bg-white/90 backdrop-blur-sm border-b-4 border-[var(--vharanani-burgundy)] shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1220,7 +1216,7 @@ export function VharananiEditorialHero() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.3 }}
               className="relative w-full"
-              style={{ height: isMobile ? '380px' : '520px' }}
+              style={{ height: isMobile ? '410px' : '550px' }}
             >
               <CSS3DCube images={cubeImages} activeIndex={cubeActiveIndex} labels={cubeLabels} />
             </motion.div>
@@ -1502,11 +1498,20 @@ export function VharananiEditorialHero() {
 
             <div>
               <h4 className="font-bebas-neue text-lg mb-5 uppercase tracking-wide">Divisions</h4>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {divisions.map((div) => (
                   <li key={div.id}>
-                    <button onClick={() => { handleHeaderNavClick(div.id); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="font-inter typo-copy text-white/85 hover:text-[var(--vharanani-burgundy)] transition-colors">
-                      {div.title}
+                    <button onClick={() => { handleHeaderNavClick(div.id); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-center gap-3 group">
+                      {DIVISION_LOGOS[div.id] && (
+                        <img
+                          src={DIVISION_LOGOS[div.id]}
+                          alt={div.title}
+                          className="h-5 w-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity"
+                        />
+                      )}
+                      <span className="font-inter typo-copy text-white/85 group-hover:text-[var(--vharanani-burgundy)] transition-colors">
+                        {div.title}
+                      </span>
                     </button>
                   </li>
                 ))}
