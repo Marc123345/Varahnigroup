@@ -5,8 +5,8 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 const IMAGES = [
   { src: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/58_office_building_lobby_lift_lobby_red_feature_wall.jpg?updatedAt=1774955144946',                                    alt: 'Vharanani leadership' },
   { src: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/55_modern_office_corridor_red_ceiling_accents.jpg?updatedAt=1774955145201',                                       alt: 'Vharanani infrastructure' },
-  { src: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/54_conference_room_red_chairs_projector_screen.jpg?updatedAt=1774955145156', alt: 'Vharanani community' },
-  { src: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/62_overhead_view_internal_stairwell_blue_railings.jpg?updatedAt=1774955145602',      alt: 'Vharanani people' },
+  { src: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/53_modern_government_office_building_brick_facade_dusk.jpg?updatedAt=1774955146060', alt: 'Vharanani community' },
+  { src: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/43_aerial_view_water_truck_excavator_pipeline_trench.jpg?updatedAt=1774955145795', alt: 'Vharanani people' },
 ];
 
 /* ── animation variants (using `animate` — no whileInView) ── */
