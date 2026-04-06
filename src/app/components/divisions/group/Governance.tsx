@@ -369,7 +369,7 @@ export function GroupWireframe_Governance(): ReactNode {
               {CREDENTIALS.map((badge, i) => (
                 <motion.div
                   key={badge.label}
-                  className="flex flex-col items-center justify-center py-7 px-4 text-center"
+                  className="flex flex-col items-center justify-center py-6 px-4 text-center gap-3"
                   style={{
                     borderRight: i < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none',
                     borderBottom: i < 2 ? '1px solid rgba(255,255,255,0.05)' : 'none',
@@ -379,12 +379,24 @@ export function GroupWireframe_Governance(): ReactNode {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.08 }}
                 >
-                  <img
-                    src={badge.logo}
-                    alt={badge.label}
-                    className="h-10 w-auto object-contain mb-3"
-                    style={{ filter: 'brightness(0) invert(1)', opacity: 0.85 }}
-                  />
+                  {/* Certificate / badge image — shown in full colour on a light card */}
+                  <div
+                    className="w-full flex items-center justify-center rounded overflow-hidden"
+                    style={{
+                      background: 'rgba(255,255,255,0.95)',
+                      padding: '12px 8px',
+                      maxWidth: 140,
+                      aspectRatio: '4 / 3',
+                    }}
+                  >
+                    <img
+                      src={badge.logo}
+                      alt={badge.label}
+                      className="max-h-[72px] w-auto object-contain"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
                   <span
                     className="font-bebas-neue uppercase tracking-wide text-white"
                     style={{ fontSize: 'clamp(12px, 1.3vw, 14px)', opacity: 0.75 }}
