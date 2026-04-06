@@ -13,7 +13,7 @@ const ITEMS = [
     description: 'Delivering large-scale civil engineering and infrastructure projects that improve quality of life and restore dignity to communities.',
     stats: [{ value: '200+', label: 'Projects' }, { value: 'Grade 9', label: 'CIDB' }],
     capabilities: ['Roads & Highways', 'Water & Sanitation', 'Public Buildings'],
-    image: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/38_road_compactor_asphalt_paving_construction.jpg?updatedAt=1774955145346',
+    image: 'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/50_aerial_view_large_scale_subsidised_housing_estate.jpg?updatedAt=1774955146221',
   },
   {
     id: 'dmft',
@@ -35,7 +35,7 @@ const ITEMS = [
     description: 'Advancing education, housing access, entrepreneurship, and community upliftment initiatives.',
     stats: [{ value: '34', label: 'Scholarships' }, { value: '5+', label: 'Provinces' }],
     capabilities: ['Education', 'Housing', 'Entrepreneurship', 'Community Upliftment'],
-    image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?w=1080&q=80',
+    image: 'https://ik.imagekit.io/qcvroy8xpd/4b946d69-3df8-4140-baa5-6078bdad4f53.jpeg?updatedAt=1775463950052',
   },
 ];
 
