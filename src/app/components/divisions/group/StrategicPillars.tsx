@@ -38,7 +38,7 @@ const PILLARS = [
     capabilities: ['Digital Solutions', 'Aviation Services', 'Resource Management', 'Smart Infrastructure'],
     metric: { value: '4', label: 'Emerging Sectors' },
     image:
-      'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/64_renovated_white_office_building_air_conditioning_units.jpg?updatedAt=1774955145869',
+      'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/15_aerial_view_pipeline_trench_excavation.jpg?updatedAt=1774955145146',
   },
   {
     num: '04',
@@ -50,7 +50,7 @@ const PILLARS = [
     capabilities: ['Education Bursaries', 'Skills Training', 'Housing Programmes', 'Health Initiatives'],
     metric: { value: '50K+', label: 'Lives Impacted' },
     image:
-      'https://ik.imagekit.io/qcvroy8xpd/Vharnani%20final/51_aerial_view_three_storey_social_housing_blocks.jpg?updatedAt=1774955145829',
+      'https://ik.imagekit.io/qcvroy8xpd/downloads/envato-labs-ai-b0d51ad4-4f21-443b-8825-9e1bbbd4ac96_ko7pkz.jpg?updatedAt=1754396307784',
   },
 ];
 
