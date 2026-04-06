@@ -139,7 +139,7 @@ export function VharananiGroupFAQ(): ReactNode {
               </div>
               <h2
                 className="font-bebas-neue uppercase mb-4"
-                style={{ fontSize: 'clamp(32px, 4vw, 48px)', letterSpacing: '0.5px', lineHeight: '56px', color: 'var(--vharanani-charcoal)' }}
+                style={{ fontSize: 'clamp(28px, 4vw, 48px)', letterSpacing: '0.5px', lineHeight: 1.2, color: 'var(--vharanani-charcoal)', overflowWrap: 'break-word' }}
               >
                 Your Questions About Vharanani, Answered
               </h2>

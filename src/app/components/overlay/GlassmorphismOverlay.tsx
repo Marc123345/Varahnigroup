@@ -323,7 +323,7 @@ export function GlassmorphismOverlay({
       <div
         ref={scrollContainerRef}
         className="relative overflow-y-auto"
-        style={{ height: 'calc(100dvh - 48px)' }}
+        style={{ height: 'calc(100dvh - 48px - env(safe-area-inset-bottom, 0px))' }}
       >
         {scrollMode ? (
           <motion.div

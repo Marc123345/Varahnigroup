@@ -89,18 +89,20 @@ export function GroupWireframe_NewsContact(): ReactNode {
               For corporate, partnership, or media inquiries, please contact our head office.
             </p>
 
-            {/* Contact info */}
+            {/* Contact info — tappable links for mobile */}
             <div className="space-y-3 mb-8">
-              {[
-                { icon: <Mail size={16} />, text: 'info@vharananigroup.co.za' },
-                { icon: <Phone size={16} />, text: '+27 11 656 1418' },
-                { icon: <MapPin size={16} />, text: '18 Hume Road, Dunkeld West, Johannesburg' },
-              ].map((item) => (
-                <div key={item.text} className="flex items-center gap-3">
-                  <span style={{ color: 'var(--vharanani-burgundy)' }}>{item.icon}</span>
-                  <span className="typo-copy-small font-inter" style={{ color: 'var(--vharanani-charcoal-80)' }}>{item.text}</span>
-                </div>
-              ))}
+              <a href="mailto:info@vharananigroup.co.za" className="flex items-center gap-3 min-h-[44px]">
+                <span style={{ color: 'var(--vharanani-burgundy)' }}><Mail size={16} /></span>
+                <span className="typo-copy-small font-inter" style={{ color: 'var(--vharanani-charcoal-80)' }}>info@vharananigroup.co.za</span>
+              </a>
+              <a href="tel:+27116561418" className="flex items-center gap-3 min-h-[44px]">
+                <span style={{ color: 'var(--vharanani-burgundy)' }}><Phone size={16} /></span>
+                <span className="typo-copy-small font-inter" style={{ color: 'var(--vharanani-charcoal-80)' }}>+27 11 656 1418</span>
+              </a>
+              <a href="https://maps.google.com/?q=18+Hume+Road+Dunkeld+West+Johannesburg" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 min-h-[44px]">
+                <span style={{ color: 'var(--vharanani-burgundy)' }}><MapPin size={16} /></span>
+                <span className="typo-copy-small font-inter" style={{ color: 'var(--vharanani-charcoal-80)' }}>18 Hume Road, Dunkeld West, Johannesburg</span>
+              </a>
             </div>
 
             {/* Form */}
@@ -108,18 +110,21 @@ export function GroupWireframe_NewsContact(): ReactNode {
               <input
                 type="text"
                 placeholder="Your Name"
+                autoComplete="name"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="w-full typo-copy-small text-base font-inter px-4 py-3 outline-none focus:outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)] min-h-[48px]"
-                style={{ border: '1px solid var(--vharanani-charcoal-20)', background: '#fafafa', color: 'var(--vharanani-charcoal)' }}
+                style={{ border: '1px solid var(--vharanani-charcoal-20)', background: '#fafafa', color: 'var(--vharanani-charcoal)', fontSize: 16 }}
               />
               <input
                 type="email"
+                inputMode="email"
                 placeholder="Email Address"
+                autoComplete="email"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="w-full typo-copy-small text-base font-inter px-4 py-3 outline-none focus:outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)] min-h-[48px]"
-                style={{ border: '1px solid var(--vharanani-charcoal-20)', background: '#fafafa', color: 'var(--vharanani-charcoal)' }}
+                style={{ border: '1px solid var(--vharanani-charcoal-20)', background: '#fafafa', color: 'var(--vharanani-charcoal)', fontSize: 16 }}
               />
               <textarea
                 placeholder="Your Message"
