@@ -10,8 +10,8 @@ import { useInView } from '../../../hooks/useInView';
 /* ─────────────────────────── data ─────────────────────────── */
 
 const IMAGES = {
-  impact: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1080&q=80',
-  governance: 'https://images.unsplash.com/photo-1613899476277-76db78460235?w=1080&q=80',
+  impact: 'https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=1080&q=80',
+  governance: 'https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=1080&q=80',
   founder: 'https://ik.imagekit.io/qcvroy8xpd/image%202.png',
 };
 

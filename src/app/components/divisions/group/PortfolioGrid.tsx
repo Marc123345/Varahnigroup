@@ -35,7 +35,7 @@ const ITEMS = [
     description: 'Advancing education, housing access, entrepreneurship, and community upliftment initiatives.',
     stats: [{ value: '34', label: 'Scholarships' }, { value: '5+', label: 'Provinces' }],
     capabilities: ['Education', 'Housing', 'Entrepreneurship', 'Community Upliftment'],
-    image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1080&q=80',
+    image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?w=1080&q=80',
   },
 ];
 
