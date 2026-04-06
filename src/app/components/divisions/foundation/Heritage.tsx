@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { Building2, Home, Heart } from 'lucide-react';
 import { ImageWithFallback } from '../../ui/ImageWithFallback';
 
-const IMAGE = 'https://images.unsplash.com/photo-1526976668912-1a811878dd37?w=1080&q=80';
+const IMAGE = 'https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=1080&q=80';
 
 const PARTNERS = [
   { icon: Building2, label: 'Vharanani Properties', desc: 'Infrastructure & Construction', logo: 'https://ik.imagekit.io/qcvroy8xpd/Frame%203.png' },

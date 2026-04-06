@@ -12,7 +12,7 @@ const PROGRAMMES = [
     description: 'Education is a powerful catalyst for breaking the cycle of poverty. Through scholarships, school support programmes, and infrastructure development, the Foundation invests in the future of young South Africans.',
     details: ['Full tuition & stipends', 'School uniforms & supplies', 'Computer labs & classrooms', 'Educational trips'],
     metric: { value: '34', label: 'Full Scholarships Since 2011' },
-    image: 'https://images.unsplash.com/photo-1758270703250-80a6387439ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwdW5pdmVyc2l0eSUyMHN0dWRlbnRzJTIwZ3JhZHVhdGlvbiUyMGNlbGVicmF0aW9uJTIwY2FtcHVzfGVufDF8fHx8MTc3Mzg0OTM3NHww&ixlib=rb-4.1.0&q=80&w=1080',
+    image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?w=1080&q=80',
   },
   {
     num: '02',
@@ -22,7 +22,7 @@ const PROGRAMMES = [
     description: 'Access to safe and dignified housing is essential for improving the quality of life of vulnerable families. The Foundation supports housing initiatives that provide homes for disadvantaged individuals and families.',
     details: ['Home construction', 'Community housing', 'Government partnerships', 'Nelson Mandela Day builds'],
     metric: { value: '3BR', label: 'Home Built for Elderly in Eenzaam' },
-    image: 'https://images.unsplash.com/photo-1504159506876-f8338247a14a?w=1080&q=80',
+    image: 'https://images.unsplash.com/photo-1560252829-804f1aedf1be?w=1080&q=80',
   },
   {
     num: '03',
@@ -32,7 +32,7 @@ const PROGRAMMES = [
     description: 'The Foundation supports community-driven initiatives that strengthen social wellbeing, encourage youth development, and promote economic participation.',
     details: ['Youth development', 'Sports equipment & kits', "Women's empowerment", 'Winter blanket drives'],
     metric: { value: '5', label: 'Provinces Reached' },
-    image: 'https://images.unsplash.com/photo-1506185386801-3d7bc0ddd2bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIweW91dGglMjBzcG9ydHMlMjBzb2NjZXIlMjBjb21tdW5pdHklMjBmaWVsZHxlbnwxfHx8fDE3NzM4NDkzNzV8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1080&q=80',
   },
 ];
 

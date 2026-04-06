@@ -5,7 +5,7 @@ import { ImageWithFallback } from '../../ui/ImageWithFallback';
 import { AnimatedCounter } from '../shared';
 
 const IMAGES = {
-  communityGathering: 'https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=1080&q=80',
+  communityGathering: 'https://ik.imagekit.io/qcvroy8xpd/4b946d69-3df8-4140-baa5-6078bdad4f53.jpeg?tr=f-auto,q-80',
   founderPortrait: 'https://ik.imagekit.io/qcvroy8xpd/image%202.png',
 };
 
