@@ -10,6 +10,17 @@ const IMAGES = {
 
 export function GroupWireframe_NewsContact(): ReactNode {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+
+  const handleSubmit = () => {
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) return;
+    setFormStatus('submitting');
+    setTimeout(() => {
+      setFormStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+      setTimeout(() => setFormStatus('idle'), 3000);
+    }, 1500);
+  };
 
   const newsItems = [
     { date: 'MAR 2026', title: 'Vharanani Group Expands Infrastructure Portfolio', description: 'New multi-billion rand highway project awarded in Limpopo province.' },
@@ -109,8 +120,9 @@ export function GroupWireframe_NewsContact(): ReactNode {
             <div className="space-y-4" style={{ border: '1px solid var(--vharanani-charcoal-20)', padding: '24px' }}>
               <input
                 type="text"
-                placeholder="Your Name"
+                placeholder="Your Name *"
                 autoComplete="name"
+                required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="w-full typo-copy-small text-base font-inter px-4 py-3 outline-none focus:outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)] min-h-[48px]"
@@ -119,26 +131,30 @@ export function GroupWireframe_NewsContact(): ReactNode {
               <input
                 type="email"
                 inputMode="email"
-                placeholder="Email Address"
+                placeholder="Email Address *"
                 autoComplete="email"
+                required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="w-full typo-copy-small text-base font-inter px-4 py-3 outline-none focus:outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)] min-h-[48px]"
                 style={{ border: '1px solid var(--vharanani-charcoal-20)', background: '#fafafa', color: 'var(--vharanani-charcoal)', fontSize: 16 }}
               />
               <textarea
-                placeholder="Your Message"
+                placeholder="Your Message *"
                 rows={4}
+                required
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 className="w-full typo-copy-small font-inter px-4 py-3 outline-none focus:outline-none resize-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
-                style={{ border: '1px solid var(--vharanani-charcoal-20)', background: '#fafafa', color: 'var(--vharanani-charcoal)' }}
+                style={{ border: '1px solid var(--vharanani-charcoal-20)', background: '#fafafa', color: 'var(--vharanani-charcoal)', fontSize: 16 }}
               />
               <button
-                className="typo-headline-small font-bebas-neue uppercase tracking-[0.15em] px-8 py-3 cursor-pointer transition-opacity hover:opacity-80"
-                style={{ background: 'var(--vharanani-burgundy)', color: 'white' }}
+                onClick={handleSubmit}
+                disabled={formStatus !== 'idle'}
+                className="typo-headline-small font-bebas-neue uppercase tracking-[0.15em] px-8 py-3 cursor-pointer transition-opacity hover:opacity-80 min-h-[48px] w-full"
+                style={{ background: 'var(--vharanani-burgundy)', color: 'white', opacity: formStatus !== 'idle' ? 0.6 : 1 }}
               >
-                Send Message
+                {formStatus === 'submitting' ? 'Sending...' : formStatus === 'success' ? '✓ Message Sent' : 'Send Message'}
               </button>
             </div>
 

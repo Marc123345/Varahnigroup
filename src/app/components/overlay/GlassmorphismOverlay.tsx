@@ -222,7 +222,7 @@ export function GlassmorphismOverlay({
         ) : breadcrumb ? (
           <span
             className="font-bebas-neue uppercase flex-shrink-0 mr-2 sm:mr-3"
-            style={{ fontSize: 14, letterSpacing: '0.1em', color: 'var(--vharanani-charcoal-40)' }}
+            style={{ fontSize: 14, letterSpacing: '0.1em', color: 'var(--vharanani-charcoal-60)' }}
           >
             {breadcrumb}
           </span>
@@ -267,14 +267,14 @@ export function GlassmorphismOverlay({
               <div className="relative flex items-center gap-2 sm:gap-3">
                 <span
                   className="font-bebas-neue text-sm transition-colors duration-200"
-                  style={{ color: isActive ? 'var(--vharanani-burgundy)' : 'var(--vharanani-charcoal-40)' }}
+                  style={{ color: isActive ? 'var(--vharanani-burgundy)' : 'var(--vharanani-charcoal-60)' }}
                 >
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <span
                   className="typo-meta tracking-[0.12em] sm:tracking-[0.15em] uppercase font-inter transition-colors duration-200 whitespace-nowrap"
                   style={{
-                    color: isActive ? 'var(--vharanani-charcoal)' : 'var(--vharanani-charcoal-40)',
+                    color: isActive ? 'var(--vharanani-charcoal)' : 'var(--vharanani-charcoal-60)',
                     fontWeight: isActive ? 500 : 400,
                   }}
                 >
@@ -297,7 +297,7 @@ export function GlassmorphismOverlay({
         <div className="ml-auto flex-shrink-0 hidden sm:flex items-center gap-3 pl-4">
           <span
             className="font-inter typo-meta tracking-[0.2em] uppercase tabular-nums"
-            style={{ color: 'var(--vharanani-charcoal-40)' }}
+            style={{ color: 'var(--vharanani-charcoal-60)' }}
           >
             {String((currentNavIndex >= 0 ? currentNavIndex : 0) + 1).padStart(2, '0')}
             <span style={{ color: 'var(--vharanani-charcoal-20)', margin: '0 4px' }}>/</span>
@@ -358,7 +358,7 @@ export function GlassmorphismOverlay({
                     />
                     <motion.span
                       className="typo-caption tracking-[0.22em] uppercase font-inter"
-                      style={{ color: 'var(--vharanani-charcoal-40)' }}
+                      style={{ color: 'var(--vharanani-charcoal-60)' }}
                       initial={{ opacity: 0, x: 10 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
