@@ -116,8 +116,10 @@ export function DMFTWireframe_HeritageContact(): ReactNode {
                 <input
                   type="text"
                   placeholder="Your full name"
+                  autoComplete="name"
+                  required
                   className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)] min-h-[48px]"
-                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white' }}
+                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white', fontSize: 16 }}
                 />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -125,18 +127,23 @@ export function DMFTWireframe_HeritageContact(): ReactNode {
                   <label className="typo-meta tracking-[0.12em] uppercase font-inter mb-2 block" style={{ color: 'var(--vharanani-charcoal-60)' }}>Email *</label>
                   <input
                     type="email"
+                    inputMode="email"
                     placeholder="your@email.com"
+                    autoComplete="email"
+                    required
                     className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)] min-h-[48px]"
-                    style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white' }}
+                    style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white', fontSize: 16 }}
                   />
                 </div>
                 <div>
                   <label className="typo-meta tracking-[0.12em] uppercase font-inter mb-2 block" style={{ color: 'var(--vharanani-charcoal-60)' }}>Phone</label>
                   <input
                     type="tel"
+                    inputMode="tel"
                     placeholder="+27..."
+                    autoComplete="tel"
                     className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)] min-h-[48px]"
-                    style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white' }}
+                    style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white', fontSize: 16 }}
                   />
                 </div>
               </div>
@@ -145,8 +152,9 @@ export function DMFTWireframe_HeritageContact(): ReactNode {
                 <textarea
                   placeholder="Tell us about your project or partnership interest"
                   rows={3}
+                  required
                   className="w-full px-4 py-3 font-inter typo-copy-small outline-none resize-none transition-colors duration-200 focus:border-[var(--vharanani-burgundy)]"
-                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white' }}
+                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white', fontSize: 16 }}
                 />
               </div>
               <button
@@ -158,22 +166,20 @@ export function DMFTWireframe_HeritageContact(): ReactNode {
               </button>
             </div>
 
-            {/* Contact details */}
+            {/* Contact details — tappable links */}
             <div className="grid grid-cols-1 gap-0" style={{ border: '1px solid var(--vharanani-charcoal-20)' }}>
-              {[
-                { icon: <Mail size={14} />, label: 'info@vharananiproperties.co.za' },
-                { icon: <Phone size={14} />, label: '+27 11 656 1418' },
-                { icon: <MapPin size={14} />, label: '18 Hume Road, Dunkeld West, Johannesburg' },
-              ].map((item, i) => (
-                <div
-                  key={item.label}
-                  className="flex items-center gap-3 p-4"
-                  style={{ borderBottom: i < 2 ? '1px solid var(--vharanani-charcoal-20)' : 'none' }}
-                >
-                  <div style={{ color: 'var(--vharanani-burgundy)' }}>{item.icon}</div>
-                  <span className="typo-copy-small font-inter" style={{ color: 'var(--vharanani-charcoal-60)' }}>{item.label}</span>
-                </div>
-              ))}
+              <a href="mailto:info@vharananiproperties.co.za" className="flex items-center gap-3 p-4 min-h-[48px]" style={{ borderBottom: '1px solid var(--vharanani-charcoal-20)' }}>
+                <div style={{ color: 'var(--vharanani-burgundy)' }}><Mail size={14} /></div>
+                <span className="typo-copy-small font-inter" style={{ color: 'var(--vharanani-charcoal-60)' }}>info@vharananiproperties.co.za</span>
+              </a>
+              <a href="tel:+27116561418" className="flex items-center gap-3 p-4 min-h-[48px]" style={{ borderBottom: '1px solid var(--vharanani-charcoal-20)' }}>
+                <div style={{ color: 'var(--vharanani-burgundy)' }}><Phone size={14} /></div>
+                <span className="typo-copy-small font-inter" style={{ color: 'var(--vharanani-charcoal-60)' }}>+27 11 656 1418</span>
+              </a>
+              <a href="https://maps.google.com/?q=18+Hume+Road+Dunkeld+West+Johannesburg" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 min-h-[48px]">
+                <div style={{ color: 'var(--vharanani-burgundy)' }}><MapPin size={14} /></div>
+                <span className="typo-copy-small font-inter" style={{ color: 'var(--vharanani-charcoal-60)' }}>18 Hume Road, Dunkeld West, Johannesburg</span>
+              </a>
             </div>
           </div>
         </div>

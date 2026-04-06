@@ -43,26 +43,29 @@ export function FoundationWireframe_Contact(): ReactNode {
               For partnership opportunities, community initiatives, or support enquiries, please contact the David Mabilu Foundation.
             </p>
 
-            {/* Contact details */}
+            {/* Contact details — tappable links */}
             <div className="space-y-0" style={{ border: '1px solid rgba(255,255,255,0.2)' }}>
               {[
-                { icon: <Mail size={16} />, label: 'Email', value: 'info@vharananiproperties.co.za' },
-                { icon: <Phone size={16} />, label: 'Phone', value: '+27 11 656 1418' },
-                { icon: <MapPin size={16} />, label: 'Location', value: '18 Hume Road, Dunkeld West, Johannesburg' },
+                { icon: <Mail size={16} />, label: 'Email', value: 'info@vharananiproperties.co.za', href: 'mailto:info@vharananiproperties.co.za' },
+                { icon: <Phone size={16} />, label: 'Phone', value: '+27 11 656 1418', href: 'tel:+27116561418' },
+                { icon: <MapPin size={16} />, label: 'Location', value: '18 Hume Road, Dunkeld West, Johannesburg', href: 'https://maps.google.com/?q=18+Hume+Road+Dunkeld+West+Johannesburg' },
               ].map((item, i) => (
-                <div
+                <a
                   key={item.label}
-                  className="flex items-center gap-4 p-5"
+                  href={item.href}
+                  target={item.label === 'Location' ? '_blank' : undefined}
+                  rel={item.label === 'Location' ? 'noopener noreferrer' : undefined}
+                  className="flex items-center gap-4 p-5 min-h-[56px] hover:bg-white/5 transition-colors"
                   style={{ borderBottom: i < 2 ? '1px solid rgba(255,255,255,0.2)' : 'none' }}
                 >
                   <div className="w-10 h-10 flex items-center justify-center flex-shrink-0" style={{ border: '1px solid rgba(255,255,255,0.4)', color: 'white' }}>
                     {item.icon}
                   </div>
                   <div>
-                    <div className="typo-meta tracking-[0.12em] uppercase font-inter mb-0.5" style={{ color: 'rgba(255,255,255,0.6)' }}>{item.label}</div>
-                    <div className="typo-copy-small font-inter text-white cursor-pointer hover:opacity-80 transition-opacity">{item.value}</div>
+                    <div className="typo-meta tracking-[0.12em] uppercase font-inter mb-0.5" style={{ color: 'rgba(255,255,255,0.7)' }}>{item.label}</div>
+                    <div className="typo-copy-small font-inter text-white">{item.value}</div>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
 
@@ -83,8 +86,10 @@ export function FoundationWireframe_Contact(): ReactNode {
                 <input
                   type="text"
                   placeholder="Your full name"
+                  autoComplete="name"
+                  required
                   className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none transition-colors duration-200 focus:border-[var(--dmf-primary)] min-h-[48px]"
-                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white' }}
+                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white', fontSize: 16 }}
                 />
               </div>
               <div>
@@ -92,8 +97,9 @@ export function FoundationWireframe_Contact(): ReactNode {
                 <input
                   type="text"
                   placeholder="Your organisation"
+                  autoComplete="organization"
                   className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none transition-colors duration-200 focus:border-[var(--dmf-primary)] min-h-[48px]"
-                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white' }}
+                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white', fontSize: 16 }}
                 />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -101,18 +107,23 @@ export function FoundationWireframe_Contact(): ReactNode {
                   <label className="typo-meta tracking-[0.12em] uppercase font-inter mb-2 block" style={{ color: 'var(--vharanani-charcoal-60)' }}>Email *</label>
                   <input
                     type="email"
+                    inputMode="email"
                     placeholder="your@email.com"
+                    autoComplete="email"
+                    required
                     className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none transition-colors duration-200 focus:border-[var(--dmf-primary)] min-h-[48px]"
-                    style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white' }}
+                    style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white', fontSize: 16 }}
                   />
                 </div>
                 <div>
                   <label className="typo-meta tracking-[0.12em] uppercase font-inter mb-2 block" style={{ color: 'var(--vharanani-charcoal-60)' }}>Phone</label>
                   <input
                     type="tel"
+                    inputMode="tel"
                     placeholder="+27..."
+                    autoComplete="tel"
                     className="w-full px-4 py-3 font-inter typo-copy-small text-base outline-none transition-colors duration-200 focus:border-[var(--dmf-primary)] min-h-[48px]"
-                    style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white' }}
+                    style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white', fontSize: 16 }}
                   />
                 </div>
               </div>
@@ -134,8 +145,9 @@ export function FoundationWireframe_Contact(): ReactNode {
                 <textarea
                   placeholder="How can we work together?"
                   rows={4}
+                  required
                   className="w-full px-4 py-3 font-inter typo-copy-small outline-none resize-none transition-colors duration-200 focus:border-[var(--dmf-primary)]"
-                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white' }}
+                  style={{ border: '1px solid var(--vharanani-charcoal-20)', background: 'white', fontSize: 16 }}
                 />
               </div>
               <button
