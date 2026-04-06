@@ -18,9 +18,9 @@ export function GroupWireframe_NewsContact(): ReactNode {
   ];
 
   const socialLinks = [
-    { icon: <Linkedin size={14} />, label: 'LinkedIn' },
-    { icon: <Twitter size={14} />, label: 'Twitter' },
-    { icon: <Facebook size={14} />, label: 'Facebook' },
+    { icon: <Linkedin size={16} />, label: 'LinkedIn' },
+    { icon: <Twitter size={16} />, label: 'Twitter' },
+    { icon: <Facebook size={16} />, label: 'Facebook' },
   ];
 
   return (
@@ -149,14 +149,16 @@ export function GroupWireframe_NewsContact(): ReactNode {
                 Follow Us
               </span>
               {socialLinks.map((link) => (
-                <motion.div
+                <motion.a
                   key={link.label}
-                  className="w-8 h-8 flex items-center justify-center cursor-pointer"
+                  href="#"
+                  aria-label={link.label}
+                  className="min-w-[44px] min-h-[44px] w-10 h-10 flex items-center justify-center cursor-pointer"
                   style={{ border: '1px solid var(--vharanani-charcoal-20)', color: 'var(--vharanani-charcoal-60)' }}
                   whileHover={{ borderColor: 'var(--vharanani-burgundy)', color: 'var(--vharanani-burgundy)' }}
                 >
                   {link.icon}
-                </motion.div>
+                </motion.a>
               ))}
             </div>
           </div>

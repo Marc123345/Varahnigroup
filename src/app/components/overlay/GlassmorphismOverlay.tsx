@@ -114,13 +114,19 @@ export function GlassmorphismOverlay({
     const container = scrollContainerRef.current;
     if (!container) return;
     let rafId: number | null = null;
+    let lastProgress = -1;
     const handleScroll = () => {
       if (rafId !== null) return;
       rafId = requestAnimationFrame(() => {
         rafId = null;
         const { scrollTop, scrollHeight, clientHeight } = container;
         const progress = scrollHeight <= clientHeight ? 0 : scrollTop / (scrollHeight - clientHeight);
-        setScrollProgress(progress);
+        // Only update React state when progress changes by >2% — cuts ~90%
+        // of the state updates that were firing at 60/sec during scroll.
+        if (Math.abs(progress - lastProgress) > 0.02) {
+          lastProgress = progress;
+          setScrollProgress(progress);
+        }
         if (!scrollMode || isScrollingTo.current) return;
         const containerTop = scrollTop + 120;
         let currentId = tabs[0]?.id || '';
@@ -252,7 +258,7 @@ export function GlassmorphismOverlay({
               key={tab.id}
               ref={(el) => { tabButtonRefs.current[tab.id] = el; }}
               onClick={() => goToTab(tab.id)}
-              className="relative px-2 sm:px-4 py-3 sm:py-4 transition-colors duration-200 flex-shrink-0 group min-h-[44px]"
+              className="relative px-3 sm:px-4 py-3 sm:py-4 transition-colors duration-200 flex-shrink-0 group min-h-[44px] min-w-[44px]"
             >
               <motion.div
                 className="absolute inset-x-0 inset-y-[4px] rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200"
@@ -302,14 +308,14 @@ export function GlassmorphismOverlay({
         {/* Close button */}
         <motion.button
           onClick={handleClose}
-          className="w-8 h-8 flex items-center justify-center transition-colors duration-200 group flex-shrink-0 ml-2 sm:ml-4"
+          className="min-w-[48px] min-h-[48px] w-10 h-10 flex items-center justify-center transition-colors duration-200 group flex-shrink-0 ml-2 sm:ml-4"
           style={{ border: '1px solid var(--vharanani-charcoal-20)' }}
           aria-label="Close overlay"
           whileHover={{ backgroundColor: 'var(--vharanani-burgundy)' }}
           whileTap={{ scale: 0.9 }}
           transition={{ duration: 0.15 }}
         >
-          <X size={15} className="transition-colors group-hover:text-white" style={{ color: 'var(--vharanani-charcoal)' }} />
+          <X size={18} className="transition-colors group-hover:text-white" style={{ color: 'var(--vharanani-charcoal)' }} />
         </motion.button>
       </div>
 

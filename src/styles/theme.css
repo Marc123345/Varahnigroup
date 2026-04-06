@@ -344,7 +344,19 @@
 }
 .animate-ticker-left {
   animation: ticker-left 45s linear infinite;
+  will-change: transform;
 }
 .animate-ticker-right {
   animation: ticker-right 50s linear infinite;
+  will-change: transform;
+}
+
+/* Accessibility: respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

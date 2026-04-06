@@ -32,7 +32,7 @@ export function VharananiGroupFAQ(): ReactNode {
   const [openIndex, setOpenIndex] = useState<number>(1);
 
   return (
-    <section className="relative overflow-hidden" style={{ background: '#f3f3f5' }}>
+    <section className="relative overflow-hidden" style={{ background: '#f3f3f5', contain: 'layout style paint' }}>
 
       {/* Ghost text — decorative */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
@@ -161,7 +161,7 @@ export function VharananiGroupFAQ(): ReactNode {
                   >
                     <button
                       onClick={() => setOpenIndex(isOpen ? -1 : i)}
-                      className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left transition-colors duration-200"
+                      className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left transition-colors duration-200 min-h-[48px]"
                       style={{
                         background: isOpen ? 'rgba(129,41,33,0.08)' : 'white',
                         border: isOpen ? '1px solid rgba(129,41,33,0.25)' : '1px solid var(--vharanani-charcoal-20)',
