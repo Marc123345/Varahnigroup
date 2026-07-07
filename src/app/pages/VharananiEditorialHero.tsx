@@ -1388,16 +1388,13 @@ export function VharananiEditorialHero() {
                           {section.title}
                         </h4>
 
-                        <div className="flex items-center justify-between">
-                          <div className="font-inter typo-meta tracking-[0.15em] uppercase transition-colors" style={{ color: activeSectionIndex === index ? accent : 'var(--vharanani-text-muted)' }}>
-                            {section.description}
-                          </div>
-                          {activeSectionIndex === index && (
-                            <motion.div initial={{ opacity: 0, x: -8 }} animate={{ opacity: 1, x: 0 }} className="flex-shrink-0 ml-2">
+                        {activeSectionIndex === index && (
+                          <div className="flex items-center justify-end">
+                            <motion.div initial={{ opacity: 0, x: -8 }} animate={{ opacity: 1, x: 0 }} className="flex-shrink-0">
                               <ArrowRight size={14} style={{ color: 'var(--vharanani-burgundy)' }} />
                             </motion.div>
-                          )}
-                        </div>
+                          </div>
+                        )}
                       </motion.button>
                     ))}
                   </div>
