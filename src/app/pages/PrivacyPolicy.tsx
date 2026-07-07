@@ -7,14 +7,14 @@ export function PrivacyPolicy() {
       {/* Header band */}
       <div style={{ background: 'var(--vharanani-burgundy)' }} className="py-16 px-6 md:px-16 lg:px-24">
         <div className="max-w-4xl mx-auto">
-          <Link to="/" className="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors mb-8">
+          <Link to="/" className="inline-flex items-center gap-2 text-white/75 hover:text-white transition-colors mb-8">
             <ArrowLeft size={16} />
             <span className="font-inter typo-meta tracking-[0.15em] uppercase">Back to Home</span>
           </Link>
           <h1 className="font-bebas-neue uppercase text-white" style={{ fontSize: 'clamp(36px, 5vw, 64px)', lineHeight: 1 }}>
             Privacy Policy
           </h1>
-          <p className="font-inter typo-copy text-white/80 mt-4">Last updated: 31 March 2026</p>
+          <p className="font-inter typo-copy text-white/85 mt-4">Last updated: 31 March 2026</p>
         </div>
       </div>
 

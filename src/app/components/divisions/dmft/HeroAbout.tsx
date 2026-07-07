@@ -68,7 +68,7 @@ export function DMFTWireframe_HeroAbout({ onTabChange }: { onTabChange?: (tabId:
               {/* Description */}
               <p
                 className="typo-copy font-inter mb-10"
-                style={{ color: 'rgba(255,255,255,0.5)', maxWidth: '460px', lineHeight: 1.7 }}
+                style={{ color: 'rgba(255,255,255,0.85)', maxWidth: '460px', lineHeight: 1.7 }}
               >
                 DMFT Property Developers is a property development company focused on the creation of high-quality residential and mixed-use developments across South Africa. As part of the Vharanani Group, DMFT leverages deep expertise in construction, infrastructure development, and project management to deliver well-planned developments that meet the needs of modern communities.
               </p>
@@ -168,7 +168,7 @@ export function DMFTWireframe_HeroAbout({ onTabChange }: { onTabChange?: (tabId:
                 <AnimatedCounter target={stat.target} suffix={stat.suffix} color="white" />
                 <div
                   className="typo-meta tracking-[0.14em] uppercase font-inter mt-2"
-                  style={{ color: 'rgba(255,255,255,0.6)' }}
+                  style={{ color: 'rgba(255,255,255,0.72)' }}
                 >
                   {stat.label}
                 </div>
@@ -208,7 +208,7 @@ export function DMFTWireframe_HeroAbout({ onTabChange }: { onTabChange?: (tabId:
           >
             <div className="flex items-center gap-3">
               <Layers size={16} style={{ color: 'var(--vharanani-burgundy)' }} />
-              <span className="typo-meta tracking-[0.15em] uppercase font-inter text-white/50">
+              <span className="typo-meta tracking-[0.15em] uppercase font-inter text-white/75">
                 Part of the Vharanani Group
               </span>
             </div>

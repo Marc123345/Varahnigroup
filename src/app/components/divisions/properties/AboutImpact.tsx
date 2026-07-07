@@ -210,7 +210,7 @@ export function PropertiesWireframe_AboutImpact(): ReactNode {
 
           <motion.p
             className="font-inter typo-meta tracking-[0.2em] uppercase mb-12"
-            style={{ color: 'rgba(255,255,255,0.55)' }}
+            style={{ color: 'rgba(255,255,255,0.72)' }}
             initial={{ opacity: 0 }}
             animate={s2InView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.5, delay: 0.45 }}
@@ -242,7 +242,7 @@ export function PropertiesWireframe_AboutImpact(): ReactNode {
                   className="w-6 h-[2px] mx-auto my-2"
                   style={{ background: 'rgba(255,255,255,0.25)' }}
                 />
-                <div className="font-inter typo-meta tracking-wider uppercase" style={{ color: 'rgba(255,255,255,0.65)' }}>
+                <div className="font-inter typo-meta tracking-wider uppercase" style={{ color: 'rgba(255,255,255,0.72)' }}>
                   {stat.label}
                 </div>
               </motion.div>

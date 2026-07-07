@@ -24,7 +24,7 @@ export function DMFTWireframe_HeritageContact(): ReactNode {
             <div className="max-w-7xl mx-auto w-full">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-[2px]" style={{ background: 'var(--vharanani-burgundy)' }} />
-                <span className="typo-caption tracking-[0.28em] uppercase font-inter text-white/50">
+                <span className="typo-caption tracking-[0.28em] uppercase font-inter text-white/75">
                   OUR HERITAGE & CONTACT
                 </span>
               </div>
@@ -49,7 +49,7 @@ export function DMFTWireframe_HeritageContact(): ReactNode {
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-[2px]" style={{ background: 'rgba(255,255,255,0.4)' }} />
-                <span className="typo-caption tracking-[0.28em] uppercase font-inter text-white/50">
+                <span className="typo-caption tracking-[0.28em] uppercase font-inter text-white/75">
                   OUR HERITAGE
                 </span>
               </div>
@@ -58,11 +58,11 @@ export function DMFTWireframe_HeritageContact(): ReactNode {
                 Part of the<br />Vharanani Group.
               </h3>
 
-              <p className="typo-copy font-inter text-white/80 mb-4">
+              <p className="typo-copy font-inter text-white/85 mb-4">
                 DMFT Property Developers forms part of the Vharanani Group, a diversified African holding company with interests across infrastructure, construction, property development, and investment sectors.
               </p>
 
-              <p className="typo-copy-small font-inter text-white/80 mb-8">
+              <p className="typo-copy-small font-inter text-white/85 mb-8">
                 This relationship provides DMFT with access to strong technical expertise, established infrastructure capabilities, and an experienced leadership team with over 20 years of industry experience.
               </p>
 
@@ -85,7 +85,7 @@ export function DMFTWireframe_HeritageContact(): ReactNode {
                       {company.icon}
                     </div>
                     <div className="typo-headline-small font-bebas-neue tracking-wide text-white uppercase">{company.name}</div>
-                    <div className="typo-meta tracking-wider uppercase font-inter mt-1 text-white/50">{company.type}</div>
+                    <div className="typo-meta tracking-wider uppercase font-inter mt-1 text-white/75">{company.type}</div>
                   </div>
                 ))}
               </div>
@@ -191,10 +191,10 @@ export function DMFTWireframe_HeritageContact(): ReactNode {
             <div className="w-[1px] h-4" style={{ background: 'rgba(255,255,255,0.15)' }} />
             <div className="flex items-center gap-1.5">
               <Layers size={12} style={{ color: 'var(--vharanani-burgundy)' }} />
-              <span className="typo-meta tracking-wider uppercase font-inter" style={{ color: 'rgba(255,255,255,0.6)' }}>Vharanani Group</span>
+              <span className="typo-meta tracking-wider uppercase font-inter" style={{ color: 'rgba(255,255,255,0.72)' }}>Vharanani Group</span>
             </div>
           </div>
-          <p className="typo-meta font-inter" style={{ color: 'rgba(255,255,255,0.5)' }}>
+          <p className="typo-meta font-inter" style={{ color: 'rgba(255,255,255,0.72)' }}>
             &copy; 2026 DMFT Property Developers. All rights reserved.
           </p>
         </div>

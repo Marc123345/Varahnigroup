@@ -76,7 +76,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
             </div>
             <motion.p
               className="lg:col-span-4 font-inter leading-relaxed"
-              style={{ fontSize: 'clamp(13px, 1.1vw, 15px)', color: 'rgba(0,0,0,0.5)' }}
+              style={{ fontSize: 'clamp(13px, 1.1vw, 15px)', color: 'rgba(0,0,0,0.7)' }}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -152,7 +152,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
                         className="font-bebas-neue uppercase tracking-wide"
                         style={{
                           fontSize: 'clamp(15px, 1.4vw, 19px)',
-                          color: isActive ? '#111111' : 'rgba(0,0,0,0.5)',
+                          color: isActive ? '#111111' : 'rgba(0,0,0,0.55)',
                           transition: 'color 0.25s',
                         }}
                       >
@@ -218,7 +218,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
                       <div className="font-bebas-neue text-white" style={{ fontSize: 'clamp(28px, 4vw, 48px)', lineHeight: 1 }}>
                         {prog.metric.value}
                       </div>
-                      <div className="font-inter typo-meta tracking-[0.15em] uppercase mt-1" style={{ color: 'rgba(255,255,255,0.65)' }}>
+                      <div className="font-inter typo-meta tracking-[0.15em] uppercase mt-1" style={{ color: 'rgba(255,255,255,0.72)' }}>
                         {prog.metric.label}
                       </div>
                     </motion.div>
@@ -270,7 +270,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
 
                     <p
                       className="font-inter leading-relaxed mb-6"
-                      style={{ fontSize: 'clamp(13px, 1.1vw, 15px)', color: 'rgba(0,0,0,0.6)' }}
+                      style={{ fontSize: 'clamp(13px, 1.1vw, 15px)', color: 'rgba(0,0,0,0.7)' }}
                     >
                       {prog.description}
                     </p>
@@ -349,7 +349,7 @@ export function FoundationWireframe_ProgrammeAreas(): ReactNode {
                     style={{ fontSize: 'clamp(12px, 1.2vw, 15px)', letterSpacing: '0.04em', opacity: 0.85 }}>
                     {p.title}
                   </div>
-                  <div className="font-inter typo-meta mt-1" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '10px' }}>
+                  <div className="font-inter typo-meta mt-1" style={{ color: 'rgba(255,255,255,0.72)', fontSize: '10px' }}>
                     {p.metric.label}
                   </div>
                 </motion.button>

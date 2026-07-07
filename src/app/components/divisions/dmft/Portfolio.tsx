@@ -92,7 +92,7 @@ export function DMFTWireframe_Portfolio({ activeDevelopment }: Props = {}): Reac
                     {active.title}
                   </h2>
                 </div>
-                <p className="font-inter typo-copy text-white/80 max-w-xl">
+                <p className="font-inter typo-copy text-white/85 max-w-xl">
                   {active.detail}
                 </p>
               </div>
@@ -214,7 +214,7 @@ export function DMFTWireframe_Portfolio({ activeDevelopment }: Props = {}): Reac
                   <div className="typo-headline-big font-bebas-neue text-white">
                     {DEVELOPMENTS[0].metric.value}
                   </div>
-                  <div className="typo-caption tracking-[0.15em] uppercase font-inter text-white/50">
+                  <div className="typo-caption tracking-[0.15em] uppercase font-inter text-white/75">
                     {DEVELOPMENTS[0].metric.label}
                   </div>
                 </div>
@@ -313,7 +313,7 @@ export function DMFTWireframe_Portfolio({ activeDevelopment }: Props = {}): Reac
                     <div className="absolute bottom-0 left-0 right-0 px-5 py-3" style={{ background: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(4px)' }}>
                       <div className="flex items-center gap-3">
                         <span className="typo-headline-small font-bebas-neue text-white">{dev.metric.value}</span>
-                        <span className="typo-meta tracking-[0.1em] uppercase font-inter text-white/60">{dev.metric.label}</span>
+                        <span className="typo-meta tracking-[0.1em] uppercase font-inter text-white/75">{dev.metric.label}</span>
                       </div>
                     </div>
                   </div>
@@ -403,7 +403,7 @@ export function DMFTWireframe_Portfolio({ activeDevelopment }: Props = {}): Reac
                 <div className="typo-headline-big font-bebas-neue text-white">
                   {dev.metric.value}
                 </div>
-                <div className="typo-meta tracking-[0.1em] uppercase font-inter text-white/60 mt-1">
+                <div className="typo-meta tracking-[0.1em] uppercase font-inter text-white/75 mt-1">
                   {dev.metric.label}
                 </div>
               </motion.div>

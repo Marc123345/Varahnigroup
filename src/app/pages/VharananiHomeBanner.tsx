@@ -86,7 +86,7 @@ export function VharananiHomeBanner({
         </div>
         <p
           className="font-inter typo-copy max-w-lg"
-          style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.8 }}
+          style={{ color: 'rgba(255,255,255,0.85)', lineHeight: 1.8 }}
         >
           Vharanani Group is a wholly Black-owned investment holding company
           driving infrastructure, property development, innovation, and
@@ -144,7 +144,7 @@ export function VharananiHomeBanner({
         >
           Our Divisions
         </h3>
-        <p className="font-inter typo-copy mb-6" style={{ color: 'rgba(255,255,255,0.55)', lineHeight: 1.7 }}>
+        <p className="font-inter typo-copy mb-6" style={{ color: 'rgba(255,255,255,0.85)', lineHeight: 1.7 }}>
           Properties, Foundation, DMFT — four interconnected divisions delivering infrastructure, development, and social impact nationwide.
         </p>
 
@@ -210,7 +210,7 @@ export function VharananiHomeBanner({
         className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 group"
         aria-label="Scroll to portfolio"
       >
-        <span className="font-inter typo-meta tracking-[0.2em] uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>
+        <span className="font-inter typo-meta tracking-[0.2em] uppercase" style={{ color: 'rgba(255,255,255,0.72)' }}>
           SCROLL
         </span>
         <div className="w-[1px] h-4" style={{ background: 'rgba(255,255,255,0.15)' }} />
@@ -245,7 +245,7 @@ export function VharananiHomeBanner({
           <div className="animate-ticker-left flex whitespace-nowrap py-[6px]">
             {[...TICKER_ROW_1, ...TICKER_ROW_1].map((item, i) => (
               <span key={`t1-${i}`} className="flex items-center gap-5 px-5 flex-shrink-0">
-                <span className="font-inter typo-meta tracking-[0.25em] uppercase whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                <span className="font-inter typo-meta tracking-[0.25em] uppercase whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.72)' }}>
                   {item}
                 </span>
                 <span className="w-[3px] h-[3px] flex-shrink-0" style={{ backgroundColor: 'var(--vharanani-burgundy)' }} />
@@ -257,7 +257,7 @@ export function VharananiHomeBanner({
           <div className="animate-ticker-right flex whitespace-nowrap py-[6px]">
             {[...TICKER_ROW_2, ...TICKER_ROW_2].map((item, i) => (
               <span key={`t2-${i}`} className="flex items-center gap-5 px-5 flex-shrink-0">
-                <span className="font-bebas-neue typo-label tracking-[0.15em] uppercase whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                <span className="font-bebas-neue typo-label tracking-[0.15em] uppercase whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.72)' }}>
                   {item}
                 </span>
                 <span className="w-[3px] h-[3px] flex-shrink-0 opacity-40" style={{ backgroundColor: 'var(--vharanani-burgundy)' }} />

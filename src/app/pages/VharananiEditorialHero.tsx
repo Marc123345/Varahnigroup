@@ -1500,7 +1500,7 @@ export function VharananiEditorialHero() {
                 <MapPin size={16} className="flex-shrink-0 mt-0.5 text-white/60" />
                 <div>
                   <span>18 Hume Road, Dunkeld West<br />Johannesburg, 2196</span>
-                  <a href="https://maps.app.goo.gl/3w3g7J9pE1mH4CMr8" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 mt-1 typo-label tracking-[0.1em] uppercase text-white/60 hover:text-white transition-colors">
+                  <a href="https://maps.app.goo.gl/3w3g7J9pE1mH4CMr8" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 mt-1 typo-label tracking-[0.1em] uppercase text-white/75 hover:text-white transition-colors">
                     View on Map <ArrowRight size={10} />
                   </a>
                 </div>
@@ -1574,10 +1574,10 @@ export function VharananiEditorialHero() {
 
         {/* ── BOTTOM BAR ── */}
         <div className="px-6 sm:px-10 md:px-16 lg:px-20 py-5 flex flex-col sm:flex-row justify-between items-center gap-3" style={{ background: 'var(--vharanani-burgundy)', borderTop: '1px solid rgba(255,255,255,0.15)' }}>
-          <div className="font-inter typo-copy-small text-white/80">
+          <div className="font-inter typo-copy-small text-white/85">
             © 2026 Vharanani Group. All rights reserved.
           </div>
-          <div className="flex items-center gap-6 font-inter typo-copy-small text-white/80">
+          <div className="flex items-center gap-6 font-inter typo-copy-small text-white/85">
             <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <span className="w-px h-3 bg-white/20" />
             <Link to="/terms-of-use" className="hover:text-white transition-colors">Terms of Use</Link>

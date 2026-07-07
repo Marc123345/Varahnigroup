@@ -108,7 +108,7 @@ export function GroupWireframe_ImpactGovernance(): ReactNode {
               animate={impactInView ? 'visible' : 'hidden'}
             >
               <div className="w-10 h-[2px] bg-white/50" />
-              <span className="typo-caption tracking-[0.28em] uppercase font-inter text-white/70">
+              <span className="typo-caption tracking-[0.28em] uppercase font-inter text-white/75">
                 Impact
               </span>
             </motion.div>
@@ -125,7 +125,7 @@ export function GroupWireframe_ImpactGovernance(): ReactNode {
 
             {/* description */}
             <motion.p
-              className="typo-copy font-inter text-white/80 mb-10 max-w-lg leading-relaxed"
+              className="typo-copy font-inter text-white/85 mb-10 max-w-lg leading-relaxed"
               variants={fadeUp(0.16)}
               initial="hidden"
               animate={impactInView ? 'visible' : 'hidden'}
@@ -154,7 +154,7 @@ export function GroupWireframe_ImpactGovernance(): ReactNode {
               </div>
               <div>
                 <div className="font-bebas-neue text-white uppercase tracking-wide" style={{ fontSize: 16 }}>David Mabilu</div>
-                <div className="font-inter typo-meta text-white/50 tracking-[0.1em] uppercase">Founder & Group Executive Chairman</div>
+                <div className="font-inter typo-meta text-white/75 tracking-[0.1em] uppercase">Founder & Group Executive Chairman</div>
               </div>
             </motion.div>
 
@@ -178,7 +178,7 @@ export function GroupWireframe_ImpactGovernance(): ReactNode {
                     color="#ffffff"
                     duration={2200}
                   />
-                  <div className="typo-caption tracking-[0.18em] uppercase font-inter text-white/60 mt-1">
+                  <div className="typo-caption tracking-[0.18em] uppercase font-inter text-white/75 mt-1">
                     {stat.label}
                   </div>
                 </div>
@@ -317,7 +317,7 @@ export function GroupWireframe_ImpactGovernance(): ReactNode {
               <div className="w-10 h-[2px]" style={{ background: '#812921' }} />
               <span
                 className="typo-caption tracking-[0.28em] uppercase font-inter"
-                style={{ color: 'rgba(255,255,255,0.5)' }}
+                style={{ color: 'rgba(255,255,255,0.72)' }}
               >
                 Governance
               </span>
@@ -376,7 +376,7 @@ export function GroupWireframe_ImpactGovernance(): ReactNode {
                     </h3>
                     <p
                       className="typo-copy-small font-inter leading-relaxed"
-                      style={{ color: 'rgba(255,255,255,0.55)' }}
+                      style={{ color: 'rgba(255,255,255,0.85)' }}
                     >
                       {principle.description}
                     </p>

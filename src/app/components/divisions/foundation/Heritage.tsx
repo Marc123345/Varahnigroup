@@ -51,7 +51,7 @@ export function FoundationWireframe_Heritage(): ReactNode {
         {/* Image label */}
         <div className="absolute bottom-8 left-6 md:left-12 lg:left-20 flex items-center gap-3">
           <div className="h-[1px] w-6" style={{ background: 'var(--dmf-primary)' }} />
-          <span className="font-inter typo-meta tracking-[0.2em] uppercase text-white/70">
+          <span className="font-inter typo-meta tracking-[0.2em] uppercase text-white/75">
             Community Partnership
           </span>
         </div>
@@ -105,7 +105,7 @@ export function FoundationWireframe_Heritage(): ReactNode {
 
               <motion.p
                 className="font-inter leading-relaxed mb-5"
-                style={{ fontSize: 'clamp(14px, 1.15vw, 15px)', color: 'rgba(0,0,0,0.55)' }}
+                style={{ fontSize: 'clamp(14px, 1.15vw, 15px)', color: 'rgba(0,0,0,0.7)' }}
                 {...fadeUp(0.26)}
               >
                 Through these relationships, the Foundation is able to leverage resources, expertise,
@@ -114,7 +114,7 @@ export function FoundationWireframe_Heritage(): ReactNode {
 
               <motion.p
                 className="font-inter leading-relaxed"
-                style={{ fontSize: 'clamp(14px, 1.15vw, 15px)', color: 'rgba(0,0,0,0.55)' }}
+                style={{ fontSize: 'clamp(14px, 1.15vw, 15px)', color: 'rgba(0,0,0,0.7)' }}
                 {...fadeUp(0.32)}
               >
                 Together, these efforts contribute to building stronger, more resilient communities
@@ -138,7 +138,7 @@ export function FoundationWireframe_Heritage(): ReactNode {
                 >
                   Vharanani Group
                 </div>
-                <p className="font-inter typo-meta tracking-[0.15em] uppercase mt-1" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                <p className="font-inter typo-meta tracking-[0.15em] uppercase mt-1" style={{ color: 'rgba(255,255,255,0.72)' }}>
                   Parent Organisation
                 </p>
                 {/* Connector line */}
@@ -169,7 +169,7 @@ export function FoundationWireframe_Heritage(): ReactNode {
                       </div>
                       <div>
                         <img src={p.logo} alt={p.label} className="h-5 w-auto object-contain mb-1" />
-                        <div className="font-inter typo-meta mt-0.5" style={{ color: 'rgba(0,0,0,0.45)', fontSize: '11px' }}>
+                        <div className="font-inter typo-meta mt-0.5" style={{ color: 'rgba(0,0,0,0.62)', fontSize: '11px' }}>
                           {p.desc}
                         </div>
                       </div>
@@ -218,7 +218,7 @@ export function FoundationWireframe_Heritage(): ReactNode {
               </p>
               <div className="flex items-center gap-3 mt-5">
                 <div className="h-[1px] w-6" style={{ background: 'rgba(255,255,255,0.35)' }} />
-                <span className="font-inter typo-meta tracking-[0.2em] uppercase" style={{ color: 'rgba(255,255,255,0.55)' }}>
+                <span className="font-inter typo-meta tracking-[0.2em] uppercase" style={{ color: 'rgba(255,255,255,0.72)' }}>
                   David Mabilu — Founder
                 </span>
               </div>

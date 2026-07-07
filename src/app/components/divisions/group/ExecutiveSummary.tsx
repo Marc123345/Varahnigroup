@@ -102,7 +102,7 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
               />
               <div className="flex items-center gap-3">
                 <div className="h-[2px] w-10" style={{ background: 'var(--vharanani-burgundy)' }} />
-                <span className="font-inter typo-caption tracking-[0.3em] uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                <span className="font-inter typo-caption tracking-[0.3em] uppercase" style={{ color: 'rgba(255,255,255,0.72)' }}>
                   Executive Summary
                 </span>
               </div>
@@ -134,7 +134,7 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
               className="font-inter leading-relaxed mb-10"
               style={{
                 fontSize: 'clamp(15px, 1.2vw, 18px)',
-                color: 'rgba(255,255,255,0.72)',
+                color: 'rgba(255,255,255,0.85)',
                 maxWidth: 480,
               }}
               {...fadeUp(0.4)}
@@ -167,7 +167,7 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
                   </span>
                   <span
                     className="font-inter typo-caption tracking-[0.2em] uppercase mt-1"
-                    style={{ color: 'rgba(255,255,255,0.35)' }}
+                    style={{ color: 'rgba(255,255,255,0.72)' }}
                   >
                     {stat.label}
                   </span>
@@ -211,7 +211,7 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
           >
             <span
               className="font-inter typo-meta tracking-[0.22em] uppercase"
-              style={{ color: 'rgba(255,255,255,0.6)' }}
+              style={{ color: 'rgba(255,255,255,0.72)' }}
             >
               Est. 2001 — South Africa
             </span>
@@ -266,7 +266,7 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
               </span>
               <span
                 className="font-inter typo-caption tracking-[0.2em] uppercase mt-1 block"
-                style={{ color: 'rgba(255,255,255,0.5)' }}
+                style={{ color: 'rgba(255,255,255,0.72)' }}
               >
                 Infrastructure &middot; Growth &middot; Legacy
               </span>
@@ -306,7 +306,7 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
               <div className="h-[2px] w-10" style={{ background: 'rgba(255,255,255,0.35)' }} />
               <span
                 className="font-inter typo-caption tracking-[0.3em] uppercase"
-                style={{ color: 'rgba(255,255,255,0.5)' }}
+                style={{ color: 'rgba(255,255,255,0.72)' }}
               >
                 Our Mission
               </span>
@@ -317,7 +317,7 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
               className="font-inter leading-relaxed mb-10"
               style={{
                 fontSize: 'clamp(15px, 1.2vw, 18px)',
-                color: 'rgba(255,255,255,0.78)',
+                color: 'rgba(255,255,255,0.85)',
                 maxWidth: 480,
               }}
               {...fadeUp(0.25)}
@@ -357,7 +357,7 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
               />
               <span
                 className="font-inter typo-meta tracking-[0.2em] uppercase"
-                style={{ color: 'rgba(255,255,255,0.45)' }}
+                style={{ color: 'rgba(255,255,255,0.72)' }}
               >
                 David Mabilu — Founder &amp; Chairman
               </span>
@@ -406,7 +406,7 @@ export function GroupWireframe_ExecutiveSummary(): ReactNode {
                 />
                 <span
                   className="font-inter typo-caption tracking-[0.22em] uppercase"
-                  style={{ color: 'rgba(255,255,255,0.7)' }}
+                  style={{ color: 'rgba(255,255,255,0.72)' }}
                 >
                   {i === 0 ? 'Community Development' : 'Building Africa\u2019s Future'}
                 </span>

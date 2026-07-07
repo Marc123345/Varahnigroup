@@ -47,7 +47,7 @@ export function GroupWireframe_Leadership(): ReactNode {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <div className="w-10 h-[2px] bg-white/40" />
-            <span className="typo-caption tracking-[0.3em] uppercase font-inter text-white/60">
+            <span className="typo-caption tracking-[0.3em] uppercase font-inter text-white/75">
               PEOPLE
             </span>
           </motion.div>
@@ -81,7 +81,7 @@ export function GroupWireframe_Leadership(): ReactNode {
             <h3 className="font-bebas-neue uppercase tracking-wide text-white text-3xl md:text-4xl mb-2">
               David Mabilu
             </h3>
-            <p className="typo-caption tracking-[0.25em] uppercase font-inter text-white/50">
+            <p className="typo-caption tracking-[0.25em] uppercase font-inter text-white/75">
               Founder & Group Executive Chairman
             </p>
           </motion.div>
@@ -190,7 +190,7 @@ export function GroupWireframe_Leadership(): ReactNode {
           {/* Section label */}
           <div className="flex items-center gap-3 mb-8">
             <div className="w-8 h-[2px]" style={{ background: '#812921' }} />
-            <span className="typo-caption tracking-[0.3em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.45)' }}>
+            <span className="typo-caption tracking-[0.3em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.72)' }}>
               Executive Team
             </span>
           </div>
@@ -240,7 +240,7 @@ export function GroupWireframe_Leadership(): ReactNode {
                 <div className="font-bebas-neue uppercase tracking-wide text-white text-base md:text-lg">
                   {exec.name}
                 </div>
-                <div className="typo-caption font-inter mt-1" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                <div className="typo-caption font-inter mt-1" style={{ color: 'rgba(255,255,255,0.72)' }}>
                   {exec.role}
                 </div>
               </motion.div>

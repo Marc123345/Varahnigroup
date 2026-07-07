@@ -94,7 +94,7 @@ export function GroupWireframe_VisionMission(): ReactNode {
 
               <motion.p
                 className="typo-copy font-inter leading-relaxed"
-                style={{ color: 'rgba(255,255,255,0.7)' }}
+                style={{ color: 'rgba(255,255,255,0.85)' }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.6, delay: 0.65 }}

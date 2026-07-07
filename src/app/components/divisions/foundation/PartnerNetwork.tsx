@@ -80,7 +80,7 @@ export function FoundationWireframe_PartnerNetwork(): ReactNode {
             </div>
             <motion.p
               className="lg:col-span-4 font-inter leading-relaxed"
-              style={{ fontSize: 'clamp(13px, 1.1vw, 15px)', color: 'rgba(0,0,0,0.5)' }}
+              style={{ fontSize: 'clamp(13px, 1.1vw, 15px)', color: 'rgba(0,0,0,0.7)' }}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -180,7 +180,7 @@ export function FoundationWireframe_PartnerNetwork(): ReactNode {
                     {isHovered && (
                       <motion.p
                         className="font-inter leading-relaxed"
-                        style={{ fontSize: 'clamp(13px, 1.05vw, 14px)', color: 'rgba(0,0,0,0.55)' }}
+                        style={{ fontSize: 'clamp(13px, 1.05vw, 14px)', color: 'rgba(0,0,0,0.7)' }}
                         initial={{ opacity: 0, x: 16 }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: 10 }}
@@ -195,7 +195,7 @@ export function FoundationWireframe_PartnerNetwork(): ReactNode {
                 {/* Mobile description — always visible */}
                 <p
                   className="col-span-10 md:col-span-5 lg:hidden font-inter leading-relaxed"
-                  style={{ fontSize: '13px', color: 'rgba(0,0,0,0.5)', marginTop: '-4px' }}
+                  style={{ fontSize: '13px', color: 'rgba(0,0,0,0.7)', marginTop: '-4px' }}
                 >
                   {p.description}
                 </p>
@@ -264,7 +264,7 @@ export function FoundationWireframe_PartnerNetwork(): ReactNode {
                     {stat.value}
                   </div>
                   <div className="h-[1px] w-4 flex-shrink-0" style={{ background: 'rgba(255,255,255,0.3)' }} />
-                  <div className="font-inter typo-meta tracking-[0.14em] uppercase" style={{ color: 'rgba(255,255,255,0.65)' }}>
+                  <div className="font-inter typo-meta tracking-[0.14em] uppercase" style={{ color: 'rgba(255,255,255,0.72)' }}>
                     {stat.label}
                   </div>
                 </motion.div>

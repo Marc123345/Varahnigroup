@@ -62,7 +62,7 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
 
           {/* Description */}
           <motion.p
-            className="font-inter typo-copy text-white/80 mb-10 max-w-md leading-relaxed"
+            className="font-inter typo-copy text-white/85 mb-10 max-w-md leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
@@ -116,7 +116,7 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
                 style={{ borderRight: i < 2 ? '1px solid rgba(255,255,255,0.15)' : 'none' }}
               >
                 <div className="text-white/70">{item.icon}</div>
-                <span className="typo-meta tracking-[0.12em] uppercase font-inter text-white/60">{item.label}</span>
+                <span className="typo-meta tracking-[0.12em] uppercase font-inter text-white/75">{item.label}</span>
               </div>
             ))}
           </motion.div>
@@ -160,7 +160,7 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
                 style={{ borderRight: i < 3 ? '1px solid rgba(255,255,255,0.15)' : 'none' }}
               >
                 <AnimatedCounter target={stat.target} suffix={stat.suffix} color="white" />
-                <div className="typo-meta tracking-[0.12em] uppercase font-inter mt-2 text-white/60">
+                <div className="typo-meta tracking-[0.12em] uppercase font-inter mt-2 text-white/75">
                   {stat.label}
                 </div>
               </div>
@@ -222,7 +222,7 @@ export function FoundationWireframe_Hero({ onTabChange }: { onTabChange?: (tabId
           <div className="font-inter" style={{ fontSize: 15, fontWeight: 600, color: 'white', letterSpacing: '0.5px' }}>
             David Mabilu
           </div>
-          <div className="font-inter typo-meta tracking-[0.15em] uppercase mt-1 text-white/45">
+          <div className="font-inter typo-meta tracking-[0.15em] uppercase mt-1 text-white/75">
             Founder & Group Executive Chairman
           </div>
 

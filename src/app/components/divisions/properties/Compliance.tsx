@@ -42,7 +42,7 @@ export function PropertiesWireframe_Compliance(): ReactNode {
               </motion.h2>
             </div>
             <motion.div className="lg:col-span-5" {...fadeUp(0.1)}>
-              <p className="font-inter typo-copy" style={{ color: 'rgba(255,255,255,0.75)' }}>
+              <p className="font-inter typo-copy" style={{ color: 'rgba(255,255,255,0.85)' }}>
                 Holding South Africa&apos;s highest contractor grades, affirming our commitment to quality and compliance on every project.
               </p>
             </motion.div>

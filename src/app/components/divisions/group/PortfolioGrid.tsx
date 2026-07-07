@@ -93,7 +93,7 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
 
             <motion.p
               className="lg:col-span-4 font-inter leading-relaxed"
-              style={{ fontSize: 'clamp(13px, 1.1vw, 15px)', color: 'rgba(0,0,0,0.5)' }}
+              style={{ fontSize: 'clamp(13px, 1.1vw, 15px)', color: 'rgba(0,0,0,0.7)' }}
               {...fadeUp(0.2)}
             >
               Vharanani Group operates through a focused portfolio of subsidiary
@@ -178,7 +178,7 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
                   </motion.h3>
 
                   <motion.p className="font-inter leading-relaxed mb-6"
-                    style={{ fontSize: 'clamp(13px, 1.1vw, 15px)', color: 'rgba(0,0,0,0.6)' }}
+                    style={{ fontSize: 'clamp(13px, 1.1vw, 15px)', color: 'rgba(0,0,0,0.7)' }}
                     {...fadeUp(0.28)}>
                     {ITEMS[0].description}
                   </motion.p>
@@ -203,7 +203,7 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
                       <div className="font-bebas-neue" style={{ fontSize: 'clamp(24px, 2.5vw, 34px)', color: 'var(--vharanani-burgundy)', lineHeight: 1 }}>
                         {s.value}
                       </div>
-                      <div className="font-inter typo-meta tracking-[0.12em] uppercase mt-1" style={{ color: 'rgba(0,0,0,0.45)' }}>
+                      <div className="font-inter typo-meta tracking-[0.12em] uppercase mt-1" style={{ color: 'rgba(0,0,0,0.62)' }}>
                         {s.label}
                       </div>
                     </div>
@@ -288,7 +288,7 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
                   </h3>
 
                   <p className="font-inter leading-relaxed mb-5 flex-1"
-                    style={{ fontSize: 'clamp(13px, 1.05vw, 14px)', color: 'rgba(0,0,0,0.58)' }}>
+                    style={{ fontSize: 'clamp(13px, 1.05vw, 14px)', color: 'rgba(0,0,0,0.7)' }}>
                     {item.description}
                   </p>
 
@@ -310,7 +310,7 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
                         <div className="font-bebas-neue" style={{ fontSize: 'clamp(20px, 2vw, 28px)', color: 'var(--vharanani-burgundy)', lineHeight: 1 }}>
                           {s.value}
                         </div>
-                        <div className="font-inter typo-meta tracking-[0.1em] uppercase mt-0.5" style={{ color: 'rgba(0,0,0,0.4)', fontSize: '10px' }}>
+                        <div className="font-inter typo-meta tracking-[0.1em] uppercase mt-0.5" style={{ color: 'rgba(0,0,0,0.62)', fontSize: '10px' }}>
                           {s.label}
                         </div>
                       </div>
@@ -355,7 +355,7 @@ export function GroupWireframe_PortfolioGrid(): ReactNode {
                 <div className="font-bebas-neue" style={{ fontSize: 'clamp(36px, 5vw, 60px)', color: '#ffffff', lineHeight: 1 }}>
                   {m.value}
                 </div>
-                <div className="font-inter typo-meta tracking-[0.18em] uppercase mt-2" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                <div className="font-inter typo-meta tracking-[0.18em] uppercase mt-2" style={{ color: 'rgba(255,255,255,0.72)' }}>
                   {m.label}
                 </div>
               </motion.div>

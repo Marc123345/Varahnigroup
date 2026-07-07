@@ -124,7 +124,7 @@ export function PropertiesWireframe_IntegratedServices({ activeService }: Props 
                     {active.title}
                   </h2>
                 </div>
-                <p className="font-inter typo-copy text-white/80 max-w-xl">
+                <p className="font-inter typo-copy text-white/85 max-w-xl">
                   {active.subtitle}
                 </p>
               </div>
@@ -221,7 +221,7 @@ export function PropertiesWireframe_IntegratedServices({ activeService }: Props 
                         {svc.shortTitle}
                       </h4>
                     </div>
-                    <p className="font-inter typo-meta mt-1" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                    <p className="font-inter typo-meta mt-1" style={{ color: 'rgba(255,255,255,0.72)' }}>
                       {svc.subtitle.split('.')[0]}.
                     </p>
                   </div>

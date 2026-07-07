@@ -246,7 +246,7 @@ function PhaseBlock({ phase, index }: { phase: Phase; index: number }) {
 
               transition={{ delay: 0.42, duration: 0.7 }}
               className="typo-copy font-inter mb-10"
-              style={{ color: 'rgba(255,255,255,0.75)', maxWidth: 460, lineHeight: 1.78 }}
+              style={{ color: 'rgba(255,255,255,0.85)', maxWidth: 460, lineHeight: 1.78 }}
             >
               {phase.description}
             </motion.p>
@@ -263,7 +263,7 @@ function PhaseBlock({ phase, index }: { phase: Phase; index: number }) {
                   className="typo-label font-inter tracking-[0.14em] uppercase px-4 py-2"
                   style={{
                     border: '1px solid rgba(129,41,33,0.35)',
-                    color: 'rgba(255,255,255,0.7)',
+                    color: 'rgba(255,255,255,0.72)',
                     background: 'rgba(129,41,33,0.08)',
                   }}
                 >
@@ -360,7 +360,7 @@ export function DMFTWireframe_DevelopmentApproach(): ReactNode {
   
                 transition={{ delay: 0.4, duration: 0.7 }}
                 className="typo-copy font-inter"
-                style={{ color: 'rgba(255,255,255,0.7)', maxWidth: 420, lineHeight: 1.78 }}
+                style={{ color: 'rgba(255,255,255,0.85)', maxWidth: 420, lineHeight: 1.78 }}
               >
                 We manage the full lifecycle of property development — from strategic land
                 identification through to sales and handover, ensuring every project is
@@ -398,7 +398,7 @@ export function DMFTWireframe_DevelopmentApproach(): ReactNode {
                       </div>
                       <div
                         className="typo-caption font-inter tracking-[0.2em] uppercase"
-                        style={{ color: 'rgba(255,255,255,0.24)' }}
+                        style={{ color: 'rgba(255,255,255,0.72)' }}
                       >
                         {stat.label}
                       </div>

@@ -74,7 +74,7 @@ export function PropertiesWireframe_ValuesImpact(): ReactNode {
               </motion.h2>
               <motion.p
                 className="typo-copy font-inter max-w-lg"
-                style={{ color: 'rgba(255,255,255,0.4)' }}
+                style={{ color: 'rgba(255,255,255,0.85)' }}
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -149,7 +149,7 @@ export function PropertiesWireframe_ValuesImpact(): ReactNode {
                   </h4>
 
                   {/* Description — desktop only */}
-                  <p className="font-inter typo-copy-small flex-1 hidden sm:block" style={{ color: 'rgba(255,255,255,0.38)' }}>
+                  <p className="font-inter typo-copy-small flex-1 hidden sm:block" style={{ color: 'rgba(255,255,255,0.85)' }}>
                     {val.description}
                   </p>
 
@@ -164,7 +164,7 @@ export function PropertiesWireframe_ValuesImpact(): ReactNode {
                 {/* Description — mobile only */}
                 <p
                   className="font-inter typo-copy-small pb-6 sm:hidden pl-10"
-                  style={{ color: 'rgba(255,255,255,0.38)' }}
+                  style={{ color: 'rgba(255,255,255,0.85)' }}
                 >
                   {val.description}
                 </p>
@@ -231,7 +231,7 @@ export function PropertiesWireframe_ValuesImpact(): ReactNode {
           >
             <div className="flex items-center gap-3 mb-5">
               <div className="w-8 h-[2px]" style={{ background: 'rgba(255,255,255,0.4)' }} />
-              <span className="typo-caption tracking-[0.28em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.55)' }}>
+              <span className="typo-caption tracking-[0.28em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.72)' }}>
                 OUR IMPACT
               </span>
             </div>
@@ -283,7 +283,7 @@ export function PropertiesWireframe_ValuesImpact(): ReactNode {
                 </h4>
 
                 {/* Description */}
-                <p className="font-inter typo-meta" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                <p className="font-inter typo-meta" style={{ color: 'rgba(255,255,255,0.72)' }}>
                   {item.description}
                 </p>
               </motion.div>
@@ -299,11 +299,11 @@ export function PropertiesWireframe_ValuesImpact(): ReactNode {
             viewport={{ once: true }}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
-            <p className="font-inter typo-copy-small max-w-xl" style={{ color: 'rgba(255,255,255,0.38)' }}>
+            <p className="font-inter typo-copy-small max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
               Committed to South Africa's socioeconomic development through responsible infrastructure delivery — restoring dignity through construction.
             </p>
             <div className="flex items-center gap-2 shrink-0">
-              <span className="font-bebas-neue typo-headline-small tracking-wider uppercase" style={{ color: 'rgba(255,255,255,0.35)' }}>
+              <span className="font-bebas-neue typo-headline-small tracking-wider uppercase" style={{ color: 'rgba(255,255,255,0.72)' }}>
                 9 Provinces
               </span>
               <ArrowRight size={14} style={{ color: 'rgba(255,255,255,0.25)' }} />

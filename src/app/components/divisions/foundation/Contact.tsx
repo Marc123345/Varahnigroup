@@ -24,7 +24,7 @@ export function FoundationWireframe_Contact(): ReactNode {
             <div className="max-w-7xl mx-auto w-full">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-[2px]" style={{ background: 'rgba(255,255,255,0.5)' }} />
-                <span className="typo-caption tracking-[0.28em] uppercase font-inter text-white/50">
+                <span className="typo-caption tracking-[0.28em] uppercase font-inter text-white/75">
                   CONTACT THE FOUNDATION
                 </span>
               </div>
@@ -39,7 +39,7 @@ export function FoundationWireframe_Contact(): ReactNode {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
           {/* Left — Contact info */}
           <div className="p-8 md:p-12 flex flex-col justify-center" style={{ background: 'var(--dmf-primary)' }}>
-            <p className="typo-copy font-inter mb-8" style={{ color: 'rgba(255,255,255,0.8)' }}>
+            <p className="typo-copy font-inter mb-8" style={{ color: 'rgba(255,255,255,0.85)' }}>
               For partnership opportunities, community initiatives, or support enquiries, please contact the David Mabilu Foundation.
             </p>
 
@@ -62,7 +62,7 @@ export function FoundationWireframe_Contact(): ReactNode {
                     {item.icon}
                   </div>
                   <div>
-                    <div className="typo-meta tracking-[0.12em] uppercase font-inter mb-0.5" style={{ color: 'rgba(255,255,255,0.7)' }}>{item.label}</div>
+                    <div className="typo-meta tracking-[0.12em] uppercase font-inter mb-0.5" style={{ color: 'rgba(255,255,255,0.72)' }}>{item.label}</div>
                     <div className="typo-copy-small font-inter text-white">{item.value}</div>
                   </div>
                 </a>
@@ -72,7 +72,7 @@ export function FoundationWireframe_Contact(): ReactNode {
             {/* Foundation badge */}
             <div className="flex items-center gap-3 mt-8 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.2)' }}>
               <Layers size={14} style={{ color: 'rgba(255,255,255,0.6)' }} />
-              <span className="typo-meta tracking-[0.15em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.6)' }}>
+              <span className="typo-meta tracking-[0.15em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.72)' }}>
                 A Vharanani Group Initiative
               </span>
             </div>
@@ -168,10 +168,10 @@ export function FoundationWireframe_Contact(): ReactNode {
             <div className="w-[1px] h-4" style={{ background: 'rgba(255,255,255,0.15)' }} />
             <div className="flex items-center gap-1.5">
               <Layers size={12} style={{ color: 'var(--dmf-primary)' }} />
-              <span className="typo-meta tracking-wider uppercase font-inter" style={{ color: 'rgba(255,255,255,0.6)' }}>Vharanani Group</span>
+              <span className="typo-meta tracking-wider uppercase font-inter" style={{ color: 'rgba(255,255,255,0.72)' }}>Vharanani Group</span>
             </div>
           </div>
-          <p className="typo-meta font-inter" style={{ color: 'rgba(255,255,255,0.5)' }}>
+          <p className="typo-meta font-inter" style={{ color: 'rgba(255,255,255,0.72)' }}>
             Building opportunity. Empowering communities.
           </p>
         </div>

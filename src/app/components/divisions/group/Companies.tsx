@@ -45,11 +45,11 @@ export function GroupWireframe_Companies(): ReactNode {
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-8 h-[2px]" style={{ background: 'rgba(255,255,255,0.5)' }} />
-          <span className="typo-caption tracking-[0.28em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.7)' }}>
+          <span className="typo-caption tracking-[0.28em] uppercase font-inter" style={{ color: 'rgba(255,255,255,0.72)' }}>
             SUBSIDIARIES
           </span>
         </div>
-        <p className="typo-meta tracking-[0.25em] uppercase font-inter mb-2" style={{ color: 'rgba(255,255,255,0.7)' }}>COMPANIES</p>
+        <p className="typo-meta tracking-[0.25em] uppercase font-inter mb-2" style={{ color: 'rgba(255,255,255,0.72)' }}>COMPANIES</p>
         <h2 className="typo-headline-big font-bebas-neue uppercase tracking-wide mb-8 text-white">
           Our Companies
         </h2>
@@ -82,7 +82,7 @@ export function GroupWireframe_Companies(): ReactNode {
                 <div className="mb-3">
                   <img src={company.logo} alt={company.title} className="h-7 sm:h-8 w-auto object-contain brightness-0 invert" />
                 </div>
-                <p className="typo-copy-small font-inter text-white/80 mb-4">
+                <p className="typo-copy-small font-inter text-white/85 mb-4">
                   {company.description}
                 </p>
                 <div className="flex flex-wrap gap-3">

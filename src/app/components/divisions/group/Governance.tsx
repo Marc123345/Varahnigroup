@@ -117,7 +117,7 @@ export function GroupWireframe_Governance(): ReactNode {
             </div>
             <motion.p
               className="lg:col-span-5 font-inter typo-copy"
-              style={{ color: 'rgba(255,255,255,0.7)' }}
+              style={{ color: 'rgba(255,255,255,0.85)' }}
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -212,7 +212,7 @@ export function GroupWireframe_Governance(): ReactNode {
                   className="relative z-10 font-inter tracking-[0.16em] uppercase shrink-0 hidden sm:inline transition-all duration-300"
                   style={{
                     border: `1px solid ${isOpen ? 'rgba(129,41,33,0.55)' : 'rgba(255,255,255,0.1)'}`,
-                    color: isOpen ? 'var(--vharanani-burgundy)' : 'rgba(255,255,255,0.65)',
+                    color: isOpen ? 'var(--vharanani-burgundy)' : 'rgba(255,255,255,0.72)',
                     padding: '4px 12px',
                     fontSize: '10px',
                   }}
@@ -247,7 +247,7 @@ export function GroupWireframe_Governance(): ReactNode {
 
                       {/* Left: description + attribute tags */}
                       <div className="md:col-span-7 flex flex-col gap-5">
-                        <p className="font-inter typo-copy" style={{ color: 'rgba(255,255,255,0.72)', maxWidth: 520 }}>
+                        <p className="font-inter typo-copy" style={{ color: 'rgba(255,255,255,0.85)', maxWidth: 520 }}>
                           {p.description}
                         </p>
                         <div className="flex flex-wrap gap-2">
@@ -257,7 +257,7 @@ export function GroupWireframe_Governance(): ReactNode {
                               className="font-inter tracking-[0.14em] uppercase"
                               style={{
                                 border: '1px solid rgba(255,255,255,0.1)',
-                                color: 'rgba(255,255,255,0.35)',
+                                color: 'rgba(255,255,255,0.72)',
                                 padding: '4px 12px',
                                 fontSize: '10px',
                               }}
@@ -288,7 +288,7 @@ export function GroupWireframe_Governance(): ReactNode {
                         <div className="absolute inset-0 flex flex-col items-start justify-between p-5">
                           <span
                             className="font-inter typo-meta tracking-[0.2em] uppercase"
-                            style={{ color: 'rgba(255,255,255,0.7)' }}
+                            style={{ color: 'rgba(255,255,255,0.72)' }}
                           >
                             Principle {p.num}
                           </span>
@@ -302,7 +302,7 @@ export function GroupWireframe_Governance(): ReactNode {
                             <div className="w-6 h-[1px] mb-2" style={{ background: 'rgba(255,255,255,0.3)' }} />
                             <span
                               className="font-bebas-neue uppercase tracking-wide"
-                              style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)' }}
+                              style={{ fontSize: 13, color: 'rgba(255,255,255,0.72)' }}
                             >
                               {p.tag}
                             </span>

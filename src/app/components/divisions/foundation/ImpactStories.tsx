@@ -122,7 +122,7 @@ export function FoundationWireframe_ImpactStories(): ReactNode {
                   <div className="font-bebas-neue tracking-wider text-white mb-1" style={{ fontSize: 'clamp(48px, 6vw, 80px)', lineHeight: '1' }}>
                     {current.metric}
                   </div>
-                  <div className="typo-copy-small font-inter text-white/80">
+                  <div className="typo-copy-small font-inter text-white/85">
                     {current.metricLabel}
                   </div>
                 </div>

@@ -125,7 +125,7 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
                 viewport={{ once: true }}
                 transition={{ delay: 0.38, duration: 0.7 }}
                 className="typo-copy font-inter"
-                style={{ color: 'rgba(255,255,255,0.7)', maxWidth: 400, lineHeight: 1.78 }}
+                style={{ color: 'rgba(255,255,255,0.85)', maxWidth: 400, lineHeight: 1.78 }}
               >
                 Four interconnected pillars defining our growth trajectory — each reinforcing
                 the others to build a resilient, diversified platform.
@@ -266,7 +266,7 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
                         transform: 'rotate(180deg)',
                         fontSize: 15,
                         letterSpacing: '0.18em',
-                        color: 'rgba(255,255,255,0.55)',
+                        color: 'rgba(255,255,255,0.6)',
                         lineHeight: 1,
                         whiteSpace: 'nowrap',
                       }}
@@ -327,7 +327,7 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.5, duration: 0.5 }}
                       className="typo-copy-small font-inter mb-7"
-                      style={{ color: 'rgba(255,255,255,0.75)', maxWidth: 380, lineHeight: 1.72 }}
+                      style={{ color: 'rgba(255,255,255,0.85)', maxWidth: 380, lineHeight: 1.72 }}
                     >
                       {pillar.description}
                     </motion.p>
@@ -348,7 +348,7 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
                           className="typo-label font-inter tracking-[0.12em] uppercase px-3 py-1.5"
                           style={{
                             border: '1px solid rgba(129,41,33,0.35)',
-                            color: 'rgba(255,255,255,0.45)',
+                            color: 'rgba(255,255,255,0.72)',
                             background: 'rgba(129,41,33,0.07)',
                           }}
                         >
@@ -378,7 +378,7 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
                       </span>
                       <span
                         className="typo-caption font-inter tracking-[0.2em] uppercase"
-                        style={{ color: 'rgba(255,255,255,0.3)' }}
+                        style={{ color: 'rgba(255,255,255,0.72)' }}
                       >
                         {pillar.metric.label}
                       </span>
@@ -457,7 +457,7 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
                     <div className="px-4 sm:px-6 py-7 sm:py-8" style={{ background: '#080808' }}>
                       <p
                         className="typo-copy-small font-inter mb-6"
-                        style={{ color: 'rgba(255,255,255,0.75)', lineHeight: 1.72 }}
+                        style={{ color: 'rgba(255,255,255,0.85)', lineHeight: 1.72 }}
                       >
                         {pillar.description}
                       </p>
@@ -469,7 +469,7 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
                             className="typo-label font-inter tracking-[0.12em] uppercase px-3 py-1.5"
                             style={{
                               border: '1px solid rgba(129,41,33,0.3)',
-                              color: 'rgba(255,255,255,0.4)',
+                              color: 'rgba(255,255,255,0.72)',
                             }}
                           >
                             {cap}
@@ -494,7 +494,7 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
                         </span>
                         <span
                           className="typo-caption font-inter tracking-[0.18em] uppercase"
-                          style={{ color: 'rgba(255,255,255,0.28)' }}
+                          style={{ color: 'rgba(255,255,255,0.72)' }}
                         >
                           {pillar.metric.label}
                         </span>
@@ -564,7 +564,7 @@ export function GroupWireframe_StrategicPillars(): ReactNode {
                   </div>
                   <div
                     className="font-inter typo-meta tracking-[0.14em] uppercase mt-1"
-                    style={{ color: 'rgba(255,255,255,0.5)', fontSize: '10px' }}
+                    style={{ color: 'rgba(255,255,255,0.72)', fontSize: '10px' }}
                   >
                     {p.metric.label}
                   </div>
