@@ -14,7 +14,7 @@ export function PrivacyPolicy() {
           <h1 className="font-bebas-neue uppercase text-white" style={{ fontSize: 'clamp(36px, 5vw, 64px)', lineHeight: 1 }}>
             Privacy Policy
           </h1>
-          <p className="font-inter typo-copy text-white/70 mt-4">Last updated: 31 March 2026</p>
+          <p className="font-inter typo-copy text-white/80 mt-4">Last updated: 31 March 2026</p>
         </div>
       </div>
 

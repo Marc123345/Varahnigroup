@@ -14,10 +14,10 @@ export function PAIAManual() {
           <h1 className="font-bebas-neue uppercase text-white" style={{ fontSize: 'clamp(36px, 5vw, 64px)', lineHeight: 1 }}>
             PAIA Manual
           </h1>
-          <p className="font-inter typo-copy text-white/70 mt-4">
+          <p className="font-inter typo-copy text-white/80 mt-4">
             Promotion of Access to Information Act, 2000 (Act No. 2 of 2000) — Section 51 Manual
           </p>
-          <p className="font-inter typo-copy text-white/50 mt-2">Last updated: 31 March 2026</p>
+          <p className="font-inter typo-copy text-white/70 mt-2">Last updated: 31 March 2026</p>
         </div>
       </div>
 

@@ -82,7 +82,7 @@ export function GroupWireframe_Companies(): ReactNode {
                 <div className="mb-3">
                   <img src={company.logo} alt={company.title} className="h-7 sm:h-8 w-auto object-contain brightness-0 invert" />
                 </div>
-                <p className="typo-copy-small font-inter text-white/60 mb-4">
+                <p className="typo-copy-small font-inter text-white/80 mb-4">
                   {company.description}
                 </p>
                 <div className="flex flex-wrap gap-3">

@@ -137,7 +137,7 @@ export function DMFTWireframe_CapabilitiesQuality(): ReactNode {
                     </div>
                     <div>
                       <div className="typo-headline-small font-bebas-neue tracking-wide uppercase text-white mb-1">{item.label}</div>
-                      <p className="typo-copy-small font-inter text-white/60">{item.text}</p>
+                      <p className="typo-copy-small font-inter text-white/80">{item.text}</p>
                     </div>
                   </div>
                 ))}

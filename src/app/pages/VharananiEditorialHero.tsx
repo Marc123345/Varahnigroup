@@ -1577,10 +1577,10 @@ export function VharananiEditorialHero() {
 
         {/* ── BOTTOM BAR ── */}
         <div className="px-6 sm:px-10 md:px-16 lg:px-20 py-5 flex flex-col sm:flex-row justify-between items-center gap-3" style={{ background: 'var(--vharanani-burgundy)', borderTop: '1px solid rgba(255,255,255,0.15)' }}>
-          <div className="font-inter typo-copy-small text-white/70">
+          <div className="font-inter typo-copy-small text-white/80">
             © 2026 Vharanani Group. All rights reserved.
           </div>
-          <div className="flex items-center gap-6 font-inter typo-copy-small text-white/70">
+          <div className="flex items-center gap-6 font-inter typo-copy-small text-white/80">
             <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <span className="w-px h-3 bg-white/20" />
             <Link to="/terms-of-use" className="hover:text-white transition-colors">Terms of Use</Link>

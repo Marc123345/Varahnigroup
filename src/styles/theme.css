@@ -70,11 +70,13 @@
   --dmf-terracotta: #BF805A;
   --dmf-beige: #B29A8A;
 
-  /* Vharanani Color Tones - Charcoal */
+  /* Vharanani Color Tones - Charcoal
+     60/40 darkened for WCAG-compliant body-copy contrast on light backgrounds
+     (charcoal-60 ~8.5:1, charcoal-40 ~5:1 vs #fff). */
   --vharanani-charcoal-100: #000000;
   --vharanani-charcoal-80: #333333;
-  --vharanani-charcoal-60: #666666;
-  --vharanani-charcoal-40: #999999;
+  --vharanani-charcoal-60: #4c4c4c;
+  --vharanani-charcoal-40: #6e6e6e;
   --vharanani-charcoal-20: #cccccc;
 
   /* Vharanani Typography System — Screen-optimised (px) */

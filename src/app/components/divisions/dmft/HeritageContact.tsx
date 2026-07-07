@@ -58,11 +58,11 @@ export function DMFTWireframe_HeritageContact(): ReactNode {
                 Part of the<br />Vharanani Group.
               </h3>
 
-              <p className="typo-copy font-inter text-white/70 mb-4">
+              <p className="typo-copy font-inter text-white/80 mb-4">
                 DMFT Property Developers forms part of the Vharanani Group, a diversified African holding company with interests across infrastructure, construction, property development, and investment sectors.
               </p>
 
-              <p className="typo-copy-small font-inter text-white/60 mb-8">
+              <p className="typo-copy-small font-inter text-white/80 mb-8">
                 This relationship provides DMFT with access to strong technical expertise, established infrastructure capabilities, and an experienced leadership team with over 20 years of industry experience.
               </p>
 
